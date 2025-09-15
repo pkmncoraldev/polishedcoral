@@ -287,14 +287,12 @@ INCLUDE "maps/SunsetLighthouseTop.asm"
 INCLUDE "maps/Route12Gate.asm"
 INCLUDE "maps/AirportGate.asm"
 INCLUDE "maps/LusterMallBackRoom.asm"
-INCLUDE "maps/LusterSkyscraper1_1F.asm"
-INCLUDE "maps/LusterSkyscraper1_2F.asm"
-INCLUDE "maps/LusterSkyscraper1_3F.asm"
-INCLUDE "maps/LusterSkyscraper1_4F.asm"
-INCLUDE "maps/LusterSkyscraper1_5F.asm"
-INCLUDE "maps/LusterSkyscraper1_Elevator.asm"
-INCLUDE "maps/LusterSkyscraper2_1F.asm"
-INCLUDE "maps/LusterSkyscraper2_Elevator.asm"
+INCLUDE "maps/LusterSkyscraper_1F.asm"
+INCLUDE "maps/LusterSkyscraper_2F.asm"
+INCLUDE "maps/LusterSkyscraper_3F.asm"
+INCLUDE "maps/LusterSkyscraper_4F.asm"
+INCLUDE "maps/LusterSkyscraper_5F.asm"
+INCLUDE "maps/LusterSkyscraper_Elevator.asm"
 
 SECTION "Route 12 Scripts", ROMX
 INCLUDE "maps/Route12.asm"
@@ -330,6 +328,8 @@ INCLUDE "maps/RadiantOrphanage1F.asm"
 INCLUDE "maps/RadiantOrphanage2F.asm"
 INCLUDE "maps/RadiantOrphanageLeilanisRoom.asm"
 INCLUDE "maps/RadiantGym.asm"
+INCLUDE "maps/LusterSpamBuilding_1F.asm"
+INCLUDE "maps/LusterSpamBuilding_Elevator.asm"
 
 SECTION "Brillo Town Scripts", ROMX
 
@@ -384,6 +384,10 @@ INCLUDE "maps/Route9.asm"
 INCLUDE "maps/DodrioRanchHouse.asm"
 INCLUDE "maps/DodrioRanchBarn.asm"
 INCLUDE "maps/DodrioRanchRaceTrack.asm"
+INCLUDE "maps/LusterSpamBuilding_2F.asm"
+INCLUDE "maps/LusterSpamBuilding_3F.asm"
+INCLUDE "maps/LusterSpamBuilding_4F.asm"
+INCLUDE "maps/LusterSpamBuilding_RightRoom.asm"
 
 SECTION "Desert Wasteland Scripts", ROMX
 

@@ -1,10 +1,10 @@
-LusterSkyscraper1_4F_MapScriptHeader:
+LusterSkyscraper_4F_MapScriptHeader:
 	db 0 ; scene scripts
 
 	db 0 ; callbacks
 
 	db 1 ; warp events
-	warp_event  6,  1, LUSTER_SKYSCRAPER_1_ELEVATOR, 1
+	warp_event  6,  1, LUSTER_SKYSCRAPER_ELEVATOR, 1
 
 	db 0 ; coord events
 
@@ -12,49 +12,49 @@ LusterSkyscraper1_4F_MapScriptHeader:
 	signpost  1,  5, SIGNPOST_UP, Skyscraper4FSign
 
 	db 7 ; object events
-	person_event SPRITE_BEAUTY, 5, 6, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, LusterSkyscraper1_4F_NPC1, -1
-	person_event SPRITE_POKEMANIAC, 7, 6, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, LusterSkyscraper1_4F_NPC2, -1
-	person_event SPRITE_POKEMANIAC, 7, 0, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, LusterSkyscraper1_4F_NPC3, -1
+	person_event SPRITE_BEAUTY, 5, 6, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, LusterSkyscraper_4F_NPC1, -1
+	person_event SPRITE_POKEMANIAC, 7, 6, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, LusterSkyscraper_4F_NPC2, -1
+	person_event SPRITE_POKEMANIAC, 7, 0, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, LusterSkyscraper_4F_NPC3, -1
 	person_event SPRITE_SLOWPOKETAIL, 3, 6, SPRITEMOVEDATA_TILE_UP_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, 0, -1
 	person_event SPRITE_SLOWPOKETAIL, 5, 6, SPRITEMOVEDATA_TILE_UP_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, 0, -1
 	person_event SPRITE_SLOWPOKETAIL, 5, 3, SPRITEMOVEDATA_TILE_UP_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, 0, -1
 	person_event SPRITE_SLOWPOKETAIL, 5, 0, SPRITEMOVEDATA_TILE_UP_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, 0, -1
 
 	const_def 1 ; object constants
-	const LUSTER_SKYSCRAPER_1_4F_NPC_1
-	const LUSTER_SKYSCRAPER_1_4F_NPC_2
-	const LUSTER_SKYSCRAPER_1_4F_NPC_3
+	const LUSTER_SKYSCRAPER_4F_NPC_1
+	const LUSTER_SKYSCRAPER_4F_NPC_2
+	const LUSTER_SKYSCRAPER_4F_NPC_3
 	
 	
-LusterSkyscraper1_4F_NPC1:
+LusterSkyscraper_4F_NPC1:
 	faceplayer
 	opentext
-	writetext LusterSkyscraper1_4F_NPC1Text
+	writetext LusterSkyscraper_4F_NPC1Text
 	waitbutton
 	closetext
-	spriteface LUSTER_SKYSCRAPER_1_4F_NPC_1, UP
+	spriteface LUSTER_SKYSCRAPER_4F_NPC_1, UP
 	end
 	
-LusterSkyscraper1_4F_NPC2:
+LusterSkyscraper_4F_NPC2:
 	jumptext LusterSkyscraper_NPCText
 ;	faceplayer
 ;	opentext
-;	writetext LusterSkyscraper1_4F_NPC2Text
+;	writetext LusterSkyscraper_4F_NPC2Text
 ;	waitbutton
 ;	closetext
-;	spriteface LUSTER_SKYSCRAPER_1_4F_NPC_2, UP
+;	spriteface LUSTER_SKYSCRAPER_4F_NPC_2, UP
 ;	end
 
-LusterSkyscraper1_4F_NPC3:
+LusterSkyscraper_4F_NPC3:
 	faceplayer
 	opentext
-	writetext LusterSkyscraper1_4F_NPC3Text
+	writetext LusterSkyscraper_4F_NPC3Text
 	waitbutton
 	closetext
-	spriteface LUSTER_SKYSCRAPER_1_4F_NPC_3, UP
+	spriteface LUSTER_SKYSCRAPER_4F_NPC_3, UP
 	end
 	
-LusterSkyscraper1_4F_NPC1Text:
+LusterSkyscraper_4F_NPC1Text:
 	text "I love my job…"
 	
 	para "Tapping away at a"
@@ -63,11 +63,11 @@ LusterSkyscraper1_4F_NPC1Text:
 	cont "fulfilling…"
 	done
 	
-;LusterSkyscraper1_4F_NPC2Text:
+;LusterSkyscraper_4F_NPC2Text:
 ;	text "TEXT"
 ;	done
 	
-LusterSkyscraper1_4F_NPC3Text:
+LusterSkyscraper_4F_NPC3Text:
 	text "Not now!"
 	
 	para "This is important"

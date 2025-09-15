@@ -399,18 +399,21 @@ LusterMallClothesShop_BlockData:
 LusterMallBackRoom_BlockData:
 	INCBIN "maps/LusterMallBackRoom.ablk.lz"
 	
-LusterSkyscraper1_1F_BlockData:
-LusterSkyscraper2_1F_BlockData:
+LusterSkyscraper_1F_BlockData:
+LusterSpamBuilding_1F_BlockData:
 	INCBIN "maps/LusterSkyscraper1F.ablk.lz"
 	
-LusterSkyscraper1_2F_BlockData:
-LusterSkyscraper1_3F_BlockData:
-LusterSkyscraper1_4F_BlockData:
-LusterSkyscraper1_5F_BlockData:
+LusterSpamBuilding_RightRoom_BlockData:
+	INCBIN "maps/LusterSpamBuilding_RightRoom.ablk.lz"
+	
+LusterSkyscraper_2F_BlockData:
+LusterSkyscraper_3F_BlockData:
+LusterSkyscraper_4F_BlockData:
+LusterSkyscraper_5F_BlockData:
 	INCBIN "maps/LusterSkyscraper2F.ablk.lz"
 	
-LusterSkyscraper1_Elevator_BlockData:
-LusterSkyscraper2_Elevator_BlockData:
+LusterSkyscraper_Elevator_BlockData:
+LusterSpamBuilding_Elevator_BlockData:
 InnElevator_BlockData:
 NettBuildingElevator_BlockData:
 	INCBIN "maps/LusterSkyscraperElevator.ablk.lz"
@@ -985,4 +988,13 @@ RiverRapidsEntrance_BlockData:
 	
 RiverRapids_BlockData:
 	INCBIN "maps/RiverRapids.ablk.lz"
+	
+LusterSpamBuilding_2F_BlockData:
+	INCBIN "maps/LusterSpamBuilding_2F.ablk.lz"
+	
+LusterSpamBuilding_3F_BlockData:
+	INCBIN "maps/LusterSpamBuilding_3F.ablk.lz"
+	
+LusterSpamBuilding_4F_BlockData:
+	INCBIN "maps/LusterSpamBuilding_4F.ablk.lz"
 	

@@ -6414,7 +6414,7 @@ BusinessmanGroup:
 ; ================
 
 	; BUSINESSMAN
-	db "UNUSED@"
+	db "WORKER@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR
@@ -6423,7 +6423,7 @@ BusinessmanGroup:
 ; ================
 
 	; BUSINESSMAN
-	db "UNUSED@"
+	db "WORKER@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR
@@ -6432,7 +6432,7 @@ BusinessmanGroup:
 ; ================
 
 	; BUSINESSMAN
-	db "UNUSED@"
+	db "WORKER@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR
@@ -6441,7 +6441,7 @@ BusinessmanGroup:
 ; ================
 
 	; BUSINESSMAN
-	db "UNUSED@"
+	db "WORKER@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR

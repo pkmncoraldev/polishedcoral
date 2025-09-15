@@ -14,6 +14,8 @@ ElevatorFloorNames:
 	dw ._9F
 	dw ._10F
 	dw ._11F
+	dw ._35F
+	dw ._58F
 	dw .Roof
 
 .B4F:  db "B4F@"
@@ -31,4 +33,7 @@ ElevatorFloorNames:
 ._9F:  db "9F@"
 ._10F: db "10F@"
 ._11F: db "11F@"
+._35F: db "35F@"
+._58F: db "58F@"
+
 .Roof: db "Roof@"

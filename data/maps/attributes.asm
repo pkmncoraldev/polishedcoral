@@ -494,6 +494,24 @@ ENDM
 	map_attributes Route32, ROUTE_32, $02, NORTH
 	connection north, Route11_2, ROUTE_11_2, -4
 	
+	map_attributes LusterSpamBuilding_2F, LUSTER_SPAM_BUILDING_2F, 0, NORTH | SOUTH | WEST | EAST
+	connection north, LusterSpamBuilding_2F, LUSTER_SPAM_BUILDING_2F, 0
+	connection south, LusterSpamBuilding_2F, LUSTER_SPAM_BUILDING_2F, 0
+	connection west, LusterSpamBuilding_2F, LUSTER_SPAM_BUILDING_2F, 8
+	connection east, LusterSpamBuilding_2F, LUSTER_SPAM_BUILDING_2F, -8
+	
+	map_attributes LusterSpamBuilding_3F, LUSTER_SPAM_BUILDING_3F, 0, NORTH | SOUTH | WEST | EAST
+	connection north, LusterSpamBuilding_3F, LUSTER_SPAM_BUILDING_3F, -9
+	connection south, LusterSpamBuilding_3F, LUSTER_SPAM_BUILDING_3F, 9
+	connection west, LusterSpamBuilding_3F, LUSTER_SPAM_BUILDING_3F, 3
+	connection east, LusterSpamBuilding_3F, LUSTER_SPAM_BUILDING_3F, -3
+	
+	map_attributes LusterSpamBuilding_4F, LUSTER_SPAM_BUILDING_4F, 0, NORTH | SOUTH | WEST | EAST
+	connection north, LusterSpamBuilding_4F, LUSTER_SPAM_BUILDING_4F, 20
+	connection south, LusterSpamBuilding_4F, LUSTER_SPAM_BUILDING_4F, -20
+	connection west, LusterSpamBuilding_4F, LUSTER_SPAM_BUILDING_4F, -5
+	connection east, LusterSpamBuilding_4F, LUSTER_SPAM_BUILDING_4F, 5
+	
 	map_attributes FakeRoute1, FAKE_ROUTE_1, $89, NORTH | SOUTH
 	connection north, FakeRoute2, FAKE_ROUTE_2, 0
 	connection south, FakeRoute2, FAKE_ROUTE_2, 0
@@ -674,14 +692,14 @@ ENDM
 	map_attributes LusterMallClothesShop, LUSTER_MALL_CLOTHES_SHOP, 0, 0
 	map_attributes LusterMallFurniture, LUSTER_MALL_FURNITURE, 0, 0
 	map_attributes LusterMallBackRoom, LUSTER_MALL_BACK_ROOM, 0, 0
-	map_attributes LusterSkyscraper1_1F, LUSTER_SKYSCRAPER_1_1F, 0, 0
-	map_attributes LusterSkyscraper1_2F, LUSTER_SKYSCRAPER_1_2F, 0, 0
-	map_attributes LusterSkyscraper1_3F, LUSTER_SKYSCRAPER_1_3F, 0, 0
-	map_attributes LusterSkyscraper1_4F, LUSTER_SKYSCRAPER_1_4F, 0, 0
-	map_attributes LusterSkyscraper1_5F, LUSTER_SKYSCRAPER_1_5F, 0, 0
-	map_attributes LusterSkyscraper1_Elevator, LUSTER_SKYSCRAPER_1_ELEVATOR, 0, 0
-	map_attributes LusterSkyscraper2_1F, LUSTER_SKYSCRAPER_2_1F, 0, 0
-	map_attributes LusterSkyscraper2_Elevator, LUSTER_SKYSCRAPER_2_ELEVATOR, 0, 0
+	map_attributes LusterSkyscraper_1F, LUSTER_SKYSCRAPER_1F, 0, 0
+	map_attributes LusterSkyscraper_2F, LUSTER_SKYSCRAPER_2F, 0, 0
+	map_attributes LusterSkyscraper_3F, LUSTER_SKYSCRAPER_3F, 0, 0
+	map_attributes LusterSkyscraper_4F, LUSTER_SKYSCRAPER_4F, 0, 0
+	map_attributes LusterSkyscraper_5F, LUSTER_SKYSCRAPER_5F, 0, 0
+	map_attributes LusterSkyscraper_Elevator, LUSTER_SKYSCRAPER_ELEVATOR, 0, 0
+	map_attributes LusterSpamBuilding_1F, LUSTER_SPAM_BUILDING_1F, 0, 0
+	map_attributes LusterSpamBuilding_Elevator, LUSTER_SPAM_BUILDING_ELEVATOR, 0, 0
 	map_attributes LusterSkyscraperB1F, LUSTER_SKYSCRAPER_B1F, 0, 0
 	map_attributes LusterSkyscraperPorygonRoom, LUSTER_SKYSCRAPER_PORYGON_ROOM, 0, 0
 	map_attributes NettBuilding1F, NETT_BUILDING_1F, 0, 0
@@ -786,3 +804,4 @@ ENDM
 	map_attributes ObscuraMart, OBSCURA_MART, $0, 0
 	map_attributes RiverRapids, RIVER_RAPIDS, 2, 0
 	map_attributes RiverRapidsHouse, RIVER_RAPIDS_HOUSE, 0, 0
+	map_attributes LusterSpamBuilding_RightRoom, LUSTER_SPAM_BUILDING_RIGHT_ROOM, $0, 0

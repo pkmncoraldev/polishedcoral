@@ -109,6 +109,7 @@ SunsetMomScript:
 	clearevent EVENT_MOM_CAN_GET_BANK_CARD
 	clearevent EVENT_PLAYER_HOUSE_MOM_1
 	setevent EVENT_PLAYER_HOUSE_MOM_3
+	setevent EVENT_CAN_DO_SPAM_BUILDING
 	spriteface PLAYERHOUSE1F_MOM3, UP
 	end
 	

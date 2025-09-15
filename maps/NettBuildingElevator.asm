@@ -30,5 +30,4 @@ NettBuildingElevatorButton:
 	db 2 ; floors
 	elevfloor _1F, 4, NETT_BUILDING_1F
 	elevfloor _9F, 1, NETT_BUILDING_2F
-;	elevfloor _3F, 1, LUSTER_SKYSCRAPER_2_3F
 	db -1 ; end

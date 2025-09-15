@@ -7,10 +7,10 @@ LusterCityBusiness_MapScriptHeader:
 	callback MAPCALLBACK_TILES, BusinessCallback
 
 	db 6 ; warp events
-	warp_event 16, 13, LUSTER_SKYSCRAPER_1_1F, 1
-	warp_event 17, 13, LUSTER_SKYSCRAPER_1_1F, 2
-	warp_event 22, 25, LUSTER_SKYSCRAPER_2_1F, 1
-	warp_event 23, 25, LUSTER_SKYSCRAPER_2_1F, 2
+	warp_event 16, 13, LUSTER_SKYSCRAPER_1F, 1
+	warp_event 17, 13, LUSTER_SKYSCRAPER_1F, 2
+	warp_event 22, 25, LUSTER_SPAM_BUILDING_1F, 1
+	warp_event 23, 25, LUSTER_SPAM_BUILDING_1F, 2
 	warp_event 30, 11, NETT_BUILDING_1F, 1
 	warp_event 31, 11, NETT_BUILDING_1F, 2
 
@@ -78,6 +78,10 @@ LusterCityBusinessTrigger1:
 	end
 	
 BusinessCallback:
+	checkevent EVENT_DONE_SPAM_BUILDING_4F
+	iffalse .skip
+	clearevent EVENT_CAN_DO_SPAM_BUILDING
+.skip
 	domaptrigger LUSTER_CITY_SHOPPING, $0
 	setevent EVENT_DOUBLE_LANDMARK_SIGN
 	clearevent EVENT_IN_RESIDENTIAL_DISTRICT

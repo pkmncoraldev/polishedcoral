@@ -274,17 +274,21 @@ DEF MAP_NONE   EQU 0
 	map_const LUSTER_MALL_CLOTHES_SHOP,					   6,  4 ; 27
 	map_const LUSTER_MALL_FURNITURE,					   6,  6 ; 28
 	map_const LUSTER_MALL_BACK_ROOM,					   7,  8 ; 29
-	map_const LUSTER_SKYSCRAPER_1_1F,					   5,  4 ; 30
-	map_const LUSTER_SKYSCRAPER_1_2F,					   4,  4 ; 31
-	map_const LUSTER_SKYSCRAPER_1_3F,					   4,  4 ; 32
-	map_const LUSTER_SKYSCRAPER_1_4F,					   4,  4 ; 33
-	map_const LUSTER_SKYSCRAPER_1_5F,					   4,  4 ; 34
-	map_const LUSTER_SKYSCRAPER_1_ELEVATOR,				   2,  2 ; 35
-	map_const LUSTER_SKYSCRAPER_2_1F,					   5,  4 ; 36
-	map_const LUSTER_SKYSCRAPER_2_ELEVATOR,				   2,  2 ; 37
+	map_const LUSTER_SKYSCRAPER_1F,						   5,  4 ; 30
+	map_const LUSTER_SKYSCRAPER_2F,						   4,  4 ; 31
+	map_const LUSTER_SKYSCRAPER_3F,						   4,  4 ; 32
+	map_const LUSTER_SKYSCRAPER_4F,						   4,  4 ; 33
+	map_const LUSTER_SKYSCRAPER_5F,						   4,  4 ; 34
+	map_const LUSTER_SKYSCRAPER_ELEVATOR,				   2,  2 ; 35
+	map_const LUSTER_SPAM_BUILDING_1F,					   5,  4 ; 36
+	map_const LUSTER_SPAM_BUILDING_ELEVATOR,			   2,  2 ; 37
 	map_const LUSTER_SKYSCRAPER_B1F,					   8,  2 ; 38
 	map_const LUSTER_SKYSCRAPER_PORYGON_ROOM,			   3,  6 ; 39
 	map_const LUSTER_GYM,								   9, 11 ; 40
+	map_const LUSTER_SPAM_BUILDING_2F,					   9, 16 ; 41
+	map_const LUSTER_SPAM_BUILDING_3F,					  19,  9 ; 42
+	map_const LUSTER_SPAM_BUILDING_4F,					  21, 14 ; 43
+	map_const LUSTER_SPAM_BUILDING_RIGHT_ROOM,			   7,  8 ; 44
 	
 	newgroup													 ; 14
 	

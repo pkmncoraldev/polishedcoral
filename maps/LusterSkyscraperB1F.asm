@@ -4,7 +4,7 @@ LusterSkyscraperB1F_MapScriptHeader:
 	db 0 ; callbacks
 
 	db 2 ; warp events
-	warp_event 14,  0, LUSTER_SKYSCRAPER_1_ELEVATOR, 1
+	warp_event 14,  0, LUSTER_SKYSCRAPER_ELEVATOR, 1
 	warp_event  4,  1, LUSTER_SKYSCRAPER_PORYGON_ROOM, 1
 
 	db 0 ; coord events

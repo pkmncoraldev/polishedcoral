@@ -265,6 +265,7 @@ LoadSpecialMapPalette: ; 494ac
 	jp LoadSevenBGPalettes
 	
 .highway
+	ld a, [wMapNumber]
 	cp MAP_ROUTE_22_TUNNEL
 	jr z, .highway_tunnel
 	cp MAP_BAR_BACK_ALLEY

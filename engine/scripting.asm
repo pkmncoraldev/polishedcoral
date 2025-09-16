@@ -763,7 +763,7 @@ Script_pokemart:
 ;     dialog_id (SingleByteParam)
 ;     mart_id (SingleByteParam)
 	call Script_faceplayer
-	call Script_opentext
+	call Script_opentext2
 	call GetScriptByte
 	ld c, a
 	call GetScriptByte
@@ -2849,7 +2849,7 @@ Script_showtextfaceplayer:
 Script_showtext:
 ; parameters:
 ;     text_pointer (RawTextPointerLabelParam)
-	call Script_opentext
+	call Script_opentext2
 	call Script_writetext
 	call Script_waitbutton
 ; fallthrough
@@ -3155,7 +3155,7 @@ Script_showcrytext:
 ; parameters:
 ;     text_pointer (RawTextPointerLabelParam)
 ;     cry_id (SingleByteParam)
-	call Script_opentext
+	call Script_opentext2
 	call Script_writetext
 	call Script_cry
 	call Script_waitbutton

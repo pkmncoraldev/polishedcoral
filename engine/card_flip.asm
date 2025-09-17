@@ -2201,6 +2201,9 @@ _MoogooMankey:
 	call PlaceString
 	ld c, 60
 	call DelayFrames
+	ld a, [wMoogooRetiredSuit1]
+	cp 0
+	jr nz, .CPUNormalBet
 	ld a, [wMoogooCPU2Score]
 	cp 0
 	jp z, .CPUInitialBet
@@ -2210,6 +2213,9 @@ _MoogooMankey:
 	call PlaceString
 	ld c, 60
 	call DelayFrames
+	ld a, [wMoogooRetiredSuit1]
+	cp 0
+	jr nz, .CPUNormalBet
 	ld a, [wMoogooCPU1Score]
 	cp 0
 	jp z, .CPUInitialBet

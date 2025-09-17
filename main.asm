@@ -5553,13 +5553,6 @@ ProfSpruceSpeech: ; 0x5f99
 	call DelayFrame
 	jr .genderloop
 	
-;	ld hl, .MenuDataHeader
-;	call LoadMenuDataHeader
-;	call ApplyAttrAndTilemapInVBlank
-;	call VerticalMenu
-;	call CloseWindow
-;	ld a, [wMenuCursorY]
-;	dec a
 .got_gender
 	call ClearSprites
 	ld de, SFX_READ_TEXT
@@ -5668,14 +5661,14 @@ ProfSpruceSpeech: ; 0x5f99
 .ContinueOpening
 	ld hl, SpruceText6
 	call PrintText
-	call NamePlayer
+	call NamePlayer	
+	ld c, 15
+	call FadeToWhite
+	call ClearTileMap
+	call ClearSprites
 	ld a, [wPlayerGender]
 	cp PIPPI
 	jr nz, .notpippi2
-	
-	ld c, 15
-	call FadeToWhite
-	call ClearTileMap	
 	farcall _PippiScreen
 	
 	ld de, MUSIC_ROUTE_2 ; remove after demo
@@ -5684,10 +5677,6 @@ ProfSpruceSpeech: ; 0x5f99
 	
 ;	jr .endpippiscreen ;uncomment after demo
 .notpippi2
-	ld c, 15
-	call FadeToWhite
-	call ClearTileMap
-
 	xor a
 	ld [wCurPartySpecies], a
 	farcall DrawIntroPlayerPic
@@ -5725,6 +5714,7 @@ ProfSpruceSpeech: ; 0x5f99
 	ld c, 15
 	call FadeToWhite
 	call ClearTileMap
+	call ClearSprites
 	
 	xor a
 	ld [wCurPartySpecies], a

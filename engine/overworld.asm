@@ -11,54 +11,25 @@ _ReplaceKrisSprite:: ; 14135
 
 GetPlayerSprite: ; 14183
 ; Get Chris or Kris's sprite.
-;	ld hl, .Chris
-;	ld a, [wPlayerSpriteSetupFlags]
-;	bit 2, a
-;	jr nz, .go
 	call CheckExtendedSpace
-	ld a, [wPlayerGender]
-	cp CORY
-	jr z, .loadcory
-	cp CORA
-	jr z, .loadcora
-	cp PIPPI
-	jr z, .loadpippi
-	cp RED
-	jr z, .loadred
-	cp LEAF
-	jr z, .loadleaf
-	cp GOLD
-	jr z, .loadgold
-	cp KRIS
-	jr z, .loadkris
-	
-.loadcory
 	ld hl, .Cory
-	jr .go
-	
-.loadcora
-	ld hl, .Cora
-	jr .go
-	
-.loadpippi
-	ld hl, .Pippi
-	jr .go
-	
-.loadred
-	ld hl, .Red
-	jr .go
-	
-.loadleaf
-	ld hl, .Leaf
-	jr .go
-	
-.loadgold
-	ld hl, .Gold
-	jr .go
-	
-.loadkris
-	ld hl, .Kris
-
+	ld a, [wPlayerGender]
+	ld c, a
+.loop2
+	cp 0
+	jr z, .go
+	ld a, NUM_PLAYER_STATE_SPRITES
+	ld e, a
+.loop3
+	inc hl
+	inc hl
+	dec e
+	ld a, e
+	cp 0
+	jr nz, .loop3
+	dec c
+	ld a, c
+	jr .loop2
 .go
 	ld a, [wPlayerState]
 	ld c, a
@@ -112,7 +83,6 @@ GetPlayerSprite: ; 14183
 	db PLAYER_PHOTO_3,    PLAYER_SPRITE_CORY_PHOTO_3
 	db PLAYER_PHOTO_4,    PLAYER_SPRITE_CORY_PHOTO_4
 	db PLAYER_SNARE,	PLAYER_SPRITE_SNARE
-	db $ff
 	
 .Cora:
 	db PLAYER_NORMAL,    PLAYER_SPRITE_CORA
@@ -138,7 +108,6 @@ GetPlayerSprite: ; 14183
 	db PLAYER_PHOTO_3,    PLAYER_SPRITE_CORA_PHOTO_3
 	db PLAYER_PHOTO_4,    PLAYER_SPRITE_CORA_PHOTO_4
 	db PLAYER_SNARE,	PLAYER_SPRITE_SNARE_GIRL
-	db $ff
 
 .Pippi:
 	db PLAYER_NORMAL,    PLAYER_SPRITE_PIPPI
@@ -164,7 +133,6 @@ GetPlayerSprite: ; 14183
 	db PLAYER_PHOTO_3,    PLAYER_SPRITE_CORY_PHOTO_3
 	db PLAYER_PHOTO_4,    PLAYER_SPRITE_CORY_PHOTO_4
 	db PLAYER_SNARE,	PLAYER_SPRITE_SNARE
-	db $ff
 	
 .Red:
 	db PLAYER_NORMAL,    PLAYER_SPRITE_RED
@@ -190,7 +158,6 @@ GetPlayerSprite: ; 14183
 	db PLAYER_PHOTO_3,    PLAYER_SPRITE_CORY_PHOTO_3
 	db PLAYER_PHOTO_4,    PLAYER_SPRITE_CORY_PHOTO_4
 	db PLAYER_SNARE,	PLAYER_SPRITE_SNARE
-	db $ff
 	
 .Leaf:
 	db PLAYER_NORMAL,    PLAYER_SPRITE_LEAF
@@ -216,7 +183,6 @@ GetPlayerSprite: ; 14183
 	db PLAYER_PHOTO_3,    PLAYER_SPRITE_CORY_PHOTO_3
 	db PLAYER_PHOTO_4,    PLAYER_SPRITE_CORY_PHOTO_4
 	db PLAYER_SNARE,	PLAYER_SPRITE_SNARE_GIRL
-	db $ff
 	
 .Gold:
 	db PLAYER_NORMAL,    PLAYER_SPRITE_GOLD
@@ -242,7 +208,6 @@ GetPlayerSprite: ; 14183
 	db PLAYER_PHOTO_3,    PLAYER_SPRITE_CORY_PHOTO_3
 	db PLAYER_PHOTO_4,    PLAYER_SPRITE_CORY_PHOTO_4
 	db PLAYER_SNARE,	PLAYER_SPRITE_SNARE
-	db $ff
 	
 .Kris:
 	db PLAYER_NORMAL,    PLAYER_SPRITE_KRIS
@@ -268,10 +233,6 @@ GetPlayerSprite: ; 14183
 	db PLAYER_PHOTO_3,    PLAYER_SPRITE_CORY_PHOTO_3
 	db PLAYER_PHOTO_4,    PLAYER_SPRITE_CORY_PHOTO_4
 	db PLAYER_SNARE,	PLAYER_SPRITE_SNARE_GIRL
-	db $ff
-
-; 141c9
-
 
 MapCallbackSprites_LoadUsedSpritesGFX: ; 14209
 	ld a, MAPCALLBACK_SPRITES

@@ -1025,25 +1025,64 @@ Script_AutoWaterfall:
 	step_end
 
 TryWaterfallOW:: ; cb56
-	ld d, WATERFALL
-	call CheckPartyCanLearnMove
-	jr c, .failed
-	ld de, ENGINE_EIGHTHBADGE
-	call CheckEngineFlag
-	jr c, .failed
-	call CheckMapCanWaterfall
-	jr c, .failed
+	ld a, [wOptions1]
+	bit DEBUG_MODE, a
+	jr nz, .debugwaterfall
+
+	call HasWaterfall
+	and a
+	jr nz, .no
+	
 	ld a, BANK(Script_AskWaterfall)
 	ld hl, Script_AskWaterfall
 	call CallScript
 	scf
 	ret
 
-.failed
+.no
 	ld a, BANK(Script_CantDoWaterfall)
 	ld hl, Script_CantDoWaterfall
 	call CallScript
 	scf
+	ret
+	
+.debugwaterfall
+	ld a, BANK(DebugWaterfall)
+	ld hl, DebugWaterfall
+	call CallScript
+	scf
+	ret
+	
+DebugWaterfall:
+	opentext
+	writetext DebugFieldMoveText
+	closetext
+	jump Script_AutoWaterfall
+
+HasWaterfall:
+	ld d, WATERFALL
+	call CheckPartyCanLearnMove
+	jr c, .no
+	
+	ld de, ENGINE_GOT_WATERFALL
+	call CheckEngineFlag
+	jr c, .no
+	
+	ld de, ENGINE_EIGHTHBADGE
+	call CheckEngineFlag
+	jr c, .no
+	
+	call CheckMapCanWaterfall
+	jr c, .no
+	
+.yes
+	xor a
+	jr .done
+
+.no
+	ld a, 1
+.done
+	ld [wScriptVar], a
 	ret
 
 Script_CantDoWaterfall: ; 0xcb7e

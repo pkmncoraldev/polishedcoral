@@ -114,7 +114,7 @@ BrilloGameCornerNpc5:
 BrilloGameCornerMoogooMankey:
 	opentext
 	writetext BrilloGameCornerMoogooMankeyText
-	special Special_DisplayCoinCaseBalance
+	special PlaceCoinsTopRight
 .menu
 	loadmenudata MenuDataHeader_Games
 	verticalmenu
@@ -130,7 +130,7 @@ BrilloGameCornerMoogooMankey:
 	endtext
 .havecoins
 	takecoins 50
-	special Special_DisplayCoinCaseBalance
+	special PlaceCoinsTopRight
 	waitsfx
 	playsound SFX_TRANSACTION
 	waitsfx
@@ -147,12 +147,12 @@ BrilloGameCornerMoogooMankey:
 .win
 	opentext
 	writetext BrilloGameCornerMoogooMankeyTextWin
-	special Special_DisplayCoinCaseBalance
+	special PlaceCoinsTopRight
 	loadmenudata MenuDataHeader_Games
 	closewindow
 	waitbutton
 	givecoins 125
-	special Special_DisplayCoinCaseBalance
+	special PlaceCoinsTopRight
 	waitsfx
 	playsound SFX_TRANSACTION
 	waitsfx
@@ -161,12 +161,12 @@ BrilloGameCornerMoogooMankey:
 .tie
 	opentext
 	writetext BrilloGameCornerMoogooMankeyTextTie
-	special Special_DisplayCoinCaseBalance
+	special PlaceCoinsTopRight
 	loadmenudata MenuDataHeader_Games
 	closewindow
 	waitbutton
 	givecoins 50
-	special Special_DisplayCoinCaseBalance
+	special PlaceCoinsTopRight
 	waitsfx
 	playsound SFX_TRANSACTION
 	waitsfx

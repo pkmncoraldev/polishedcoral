@@ -200,5 +200,6 @@ SpecialsPointers::
 	add_special InitRoamMoltres
 	add_special Special_ForceSkateboard
 	add_special Special_IncSecretCounter
+	add_special PlaceCoinsTopRight
 
 	add_special SpecialNone

@@ -835,6 +835,18 @@ _PlaceMenuQuantity:
 	lb bc, 1, 2
 	jp PrintNum
 
+PlaceCoinsTopRight:
+	hlcoord 12, 0
+	lb bc, 1, 6
+	call TextBox
+	hlcoord 13, 0
+	ld de, CoinString2
+	call PlaceString
+	ld de, wCoins
+	lb bc, 2, 5
+	hlcoord 14, 1
+	jp PrintNum
+
 PlaceMoneyTopRight: ; 24ae8
 	ld hl, MenuDataHeader_0x24b15
 	call CopyMenuDataHeader
@@ -938,12 +950,14 @@ Special_DisplayMoneyAndCoinBalance: ; 24b4e
 	lb bc, 2, 5
 	jp PrintNum
 
-MoneyString: ; 24b83
+MoneyString:
 	db "MONEY@"
-CoinString: ; 24b89
+CoinString:
 	db "COINs ×@"
 PuffString:
 	db "PUFFs ×@"
+CoinString2: ; 24b89
+	db "COINs@"
 
 StartMenu_DrawBugContestStatusBox: ; 24bdc
 	hlcoord 0, 0

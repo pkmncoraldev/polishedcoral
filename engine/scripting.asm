@@ -2855,6 +2855,8 @@ Script_showtext:
 ; fallthrough
 
 Script_closetext:
+	xor a
+	ld [wTextBoxSpeaker], a
 	call BGMapAnchorTopLeft
 	jp CloseText
 

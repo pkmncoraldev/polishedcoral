@@ -231,7 +231,7 @@ ShimmerCityFishMarket:
 	end
 	
 ShimmerCityFishMarketAsm:
-	farcall Script_opentext
+	farcall Script_opentext2
 	ld a, MARTTYPE_FISH_MARKET
 	ld c, a
 	ld a, MART_SHIMMER_FISH_MARKET
@@ -248,7 +248,7 @@ ShimmerCityBerryMarket:
 	end
 	
 ShimmerCityBerryMarketAsm:
-	farcall Script_opentext
+	farcall Script_opentext2
 	ld a, MARTTYPE_BERRY_MARKET
 	ld c, a
 	ld a, MART_SHIMMER_BERRY_MARKET

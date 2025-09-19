@@ -94,8 +94,8 @@
 	RGB 00, 00, 00
 	RGB 00, 00, 00
 ;19 - Radiant Township
-	RGB 26, 20, 31
-	RGB 21, 12, 31
+	RGB 24, 17, 26
+	RGB 19, 07, 26
 	RGB 12, 07, 20
 	RGB 10, 03, 16
 ;20 - Highway

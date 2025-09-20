@@ -407,7 +407,7 @@ ShimmerBerryMarket:
 	db -1
 	
 ShimmerMart:
-	db 14 ; # items
+	db 15 ; # items
 	db POKE_BALL
 	db GREAT_BALL
 	db ULTRA_BALL
@@ -416,6 +416,7 @@ ShimmerMart:
 	db REVIVE
 	db ESCAPE_ROPE
 	db SUPER_REPEL
+	db MAX_REPEL
 	db FULL_HEAL
 	db X_ATTACK
 	db X_DEFEND
@@ -425,7 +426,7 @@ ShimmerMart:
 	db -1
 	
 BrilloMart:
-	db 14 ; # items
+	db 15 ; # items
 	db POKE_BALL
 	db GREAT_BALL
 	db ULTRA_BALL
@@ -434,6 +435,7 @@ BrilloMart:
 	db REVIVE
 	db ESCAPE_ROPE
 	db SUPER_REPEL
+	db MAX_REPEL
 	db FULL_HEAL
 	db X_ATTACK
 	db X_DEFEND
@@ -463,7 +465,7 @@ CoinsMart:
 	db -1
 	
 RadiantMart:
-	db 14 ; # items
+	db 15 ; # items
 	db POKE_BALL
 	db GREAT_BALL
 	db ULTRA_BALL
@@ -472,6 +474,7 @@ RadiantMart:
 	db REVIVE
 	db ESCAPE_ROPE
 	db SUPER_REPEL
+	db MAX_REPEL
 	db FULL_HEAL
 	db X_ATTACK
 	db X_DEFEND
@@ -481,7 +484,7 @@ RadiantMart:
 	db -1
 	
 DuskMart:
-	db 14 ; # items
+	db 15 ; # items
 	db POKE_BALL
 	db GREAT_BALL
 	db ULTRA_BALL
@@ -490,6 +493,7 @@ DuskMart:
 	db REVIVE
 	db ESCAPE_ROPE
 	db SUPER_REPEL
+	db MAX_REPEL
 	db FULL_HEAL
 	db X_ATTACK
 	db X_DEFEND
@@ -499,7 +503,7 @@ DuskMart:
 	db -1
 	
 KomoreMart:
-	db 14 ; # items
+	db 15 ; # items
 	db POKE_BALL
 	db GREAT_BALL
 	db ULTRA_BALL
@@ -508,6 +512,7 @@ KomoreMart:
 	db REVIVE
 	db ESCAPE_ROPE
 	db SUPER_REPEL
+	db MAX_REPEL
 	db FULL_HEAL
 	db X_ATTACK
 	db X_DEFEND
@@ -517,7 +522,7 @@ KomoreMart:
 	db -1
 	
 ObscuraMart:
-	db 14 ; # items
+	db 15 ; # items
 	db POKE_BALL
 	db GREAT_BALL
 	db ULTRA_BALL
@@ -526,6 +531,7 @@ ObscuraMart:
 	db REVIVE
 	db ESCAPE_ROPE
 	db SUPER_REPEL
+	db MAX_REPEL
 	db FULL_HEAL
 	db X_ATTACK
 	db X_DEFEND

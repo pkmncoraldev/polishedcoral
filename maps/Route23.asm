@@ -780,11 +780,20 @@ Route23MasterText5:
 	para "…"
 	
 	para "Your quest next"
-	line "takes you to the"
-	cont "GYM in OBSCURA"
-	cont "CITY."
+	line "takes you to"
+	cont "OBSCURA CITY."
 	
-	para "I must warn you."
+	para "You will seek out"
+	line "a young man named"
+	cont "ROCKY."
+	
+	para "He's the curator of"
+	line "the museum there."
+	
+	para "He is also a GYM"
+	line "LEADER."
+	
+	para "I must warn you…"
 	
 	para "I sense much hard-"
 	line "ship on the way."

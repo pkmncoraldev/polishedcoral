@@ -325,6 +325,13 @@ RadiantGymLeilaniTextTMSpeech:
 	line "all the girls,"
 	cont "I'd love to give"
 	cont "you a rematch!"
+	
+	para "Oh, and do say"
+	line "goodbye to ERIKA"
+	cont "before you leave."
+	
+	para "I'm sure she would"
+	line "appreciate it."
 	done
 	
 RadiantGymLeilaniTextWin:

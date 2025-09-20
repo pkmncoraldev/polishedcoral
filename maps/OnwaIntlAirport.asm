@@ -386,24 +386,24 @@ OnwaIntlAirportWendyText3:
 	done
 	
 OnwaIntlAirportWendyText4:
-	text "I hope you're not"
-	line "trying to catch a"
-	cont "flight."
+	text "So, where are you"
+	line "headed?"
 	
-	para "That line is so"
-	line "long, you may as"
-	cont "well just walk!"
+	para "If you're looking"
+	line "for your next GYM"
+	cont "battle,"
 	
-	para "Hmm…"
+	para "you're probably "
+	line "going to wanna"
+	cont "head SOUTH."
 	
-	para "Well, <WAIT_S>it seems"
-	line "like you're not"
-	cont "going much further"
-	cont "this way…"
+	para "There's a few GYMS"
+	line "in SOUTH ONWA."
 	
-	para "Maybe you can find"
-	line "another way"
-	cont "forward."
+	para "By the looks of"
+	line "this line though,"
+	cont "you won't be flying"
+	cont "there!"
 	
 	para "If you can't travel"
 	line "by land or sky,"
@@ -419,7 +419,7 @@ OnwaIntlAirportWendyText4:
 	line "number."
 	
 	para "Give me a call"
-	line "some time if you"
+	line "sometime if you"
 	cont "need a lift."
 	
 	para "It was great"

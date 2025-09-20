@@ -206,6 +206,30 @@ RadiantOrphanage1FErikaText4:
 	text "You really are"
 	line "amazing, <PLAYER>!"
 	
+	para "Now that you've"
+	line "finished all your"
+	cont "business here,"
+	
+	para "where are you off"
+	line "to next?"
+	
+	para "If you aren't sure,"
+	line "I know of someone"
+	cont "who might help."
+	
+	para "A wise old man"
+	line "known only as"
+	cont "“THE MASTER”."
+	
+	para "He trains to the"
+	line "EAST near a lovely"
+	cont "town called"
+	cont "KOMORE VILLAGE."
+	
+	para "I'm sure he can"
+	line "point you in the"
+	cont "right direction."
+	
 	para "I'm going to stick"
 	line "around a while"
 	cont "longer before I"

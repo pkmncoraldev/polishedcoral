@@ -474,13 +474,15 @@ CrossroadsCutsceneColbyText1:
 	line "losing to you must"
 	cont "be foul play."
 	
-	para "And he's right!"
-	
 	para "So, I'm done"
 	line "playing fair!"
 	
-	para "Get ready,"
-	line "<PLAYER>!"
+	para "I'll prove to him"
+	line "I have what it"
+	cont "takes!"
+	
+	para "I'll prove it to"
+	line "both of them…"
 	done
 	
 CrossroadsCutsceneColbyText2:

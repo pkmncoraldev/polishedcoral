@@ -878,49 +878,32 @@ LighthouseAbnerText9:
 	cont "8 #MON LEAGUE"
 	cont "GYM BADGES."
 	
-	para "In light of this,"
-	line "you kids have been"
-	cont "chosen by PROF."
-	cont "SPRUCE to each"
-	cont "recieve your own"
-	cont "#MON."
-	
-	para "However, SPRUCE's"
-	line "work keeps him"
-	cont "very busy,"
-	
-	para "and he couldn't be"
-	line "here in person"
-	cont "today."
-	
-	para "Because of this,<WAIT_S>"
-	line "I am filling in"
-	cont "for him."
+	para "They call it the"
+	line "GYM CHALLENGE!"
 	
 	para "I have in this"
 	line "bag six rare"
 	cont "#MON."
 
 	para "They were sent"
-	line "from the PROF.'s"
-	cont "lab especially"
-	cont "for all of you."
+	line "from PROF. SPRUCE's"
+	cont "#MON LAB."
 	
-	para "You only get one,<WAIT_S>"
-	line "so choose wisely."
+	para "Unfortunately the"
+	line "PROF. couldn't be"
+	cont "here today,"
+	
+	para "so I am filling"
+	line "in for him!"
+	
+	para "You only get to"
+	line "pick one #MON,"
+	cont "so choose wisely."
 	
 	para "But no matter"
 	line "which you choose,<WAIT_S>"
 	cont "you must train"
 	cont "it well."
-	
-	para "One of you might"
-	line "even become the"
-	cont "next #MON"
-	cont "LEAGUE CHAMPION!"
-	
-	para "Ohohohoho!<WAIT_M>"
-	line "Ahem."
 	
 	para "<PLAYER>!"
 	

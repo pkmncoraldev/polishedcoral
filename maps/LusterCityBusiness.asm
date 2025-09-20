@@ -245,9 +245,7 @@ LusterCityBusinessRival:
 	end
 	
 LusterCityBusinessRivalText1:
-	text "You!"
-	
-	para "What are you doing"
+	text "What are you doing"
 	line "here?"
 	
 	para "Look, <WAIT_S>I have more"

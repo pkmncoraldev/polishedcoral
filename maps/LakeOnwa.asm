@@ -405,6 +405,11 @@ LakeRivalT:
 	applyonemovement PLAYER, step_down
 	spriteface PLAYER, UP
 	applymovement LAKERIVAL, Movement_LakeRivalWalkAway
+	opentext TEXTBOX_RIVAL
+	writetext LakeRivalText3
+	waitbutton
+	closetext
+	applyonemovement LAKERIVAL, step_left
 	disappear LAKERIVAL
 	special Special_FadeOutMusic
 	pause 15
@@ -509,6 +514,11 @@ LakeRivalB:
 	applyonemovement PLAYER, step_up
 	spriteface PLAYER, DOWN
 	applymovement LAKERIVAL, Movement_LakeRivalWalkAway
+	opentext TEXTBOX_RIVAL
+	writetext LakeRivalText3
+	waitbutton
+	closetext
+	applyonemovement LAKERIVAL, step_left
 	disappear LAKERIVAL
 	special Special_FadeOutMusic
 	pause 15
@@ -880,20 +890,16 @@ LakeRivalText1:
 	done
 	
 LakeRivalText2:
-	text "What is going on!?"
-	
-	para "This has to be a"
+	text "This has to be a"
 	line "joke!"
 	
 	para "I KNOW I'm stronger"
 	line "than you!"
 	
-	para "…"
+	para "I…<WAIT_M> I HAVE to be!"
 	
-	para "It's…<WAIT_M> It's these"
-	line "stupid #MON!"
-	
-	para "It has to be!"
+	para "It's…<WAIT_M> these stupid"
+	line "#MON!"
 	
 	para "They aren't trying"
 	line "hard enough!"
@@ -906,6 +912,13 @@ LakeRivalText2:
 	cont "<PLAYER>!"
 	
 	para "Now, step aside!"
+	done
+	
+LakeRivalText3:
+	text "It's been five"
+	line "years…"
+	
+	para "I can't fail…"
 	done
 	
 LakeRivalWinText:
@@ -959,7 +972,5 @@ Movement_LakeRivalWalkAway:
 	step_left
 	step_left
 	step_left
-	step_left
-	step_down
 	step_left
 	step_end

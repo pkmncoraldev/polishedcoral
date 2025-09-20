@@ -26,8 +26,7 @@ SprucePhoneNormalText2:
 	
 SprucePhoneComeToIslandText:
 	text "Hello?"
-	
-	para "Is this <PLAYER>?"
+	line "Is this <PLAYER>?"
 	
 	para "Ah!<WAIT_S>"
 	line "Wonderful!"
@@ -45,39 +44,35 @@ SprucePhoneComeToIslandText:
 	cont "sent the #MON"
 	cont "to you children."
 	
-	para "My work keeps me"
-	line "very busy."
-	
-	para "How has your jour-"
-	line "ney been going so"
-	cont "far?"
+	para "How has my old"
+	line "#MON been?"
 	
 	para "What's that?"
 	
-	para "You just won the"
-	line "SPLASHBADGE in"
+	para "You say you won"
+	line "the SPLASHBADGE in"
 	cont "STARGLOW VALLEY?"
 	
-	para "Impressive!"
+	para "In that case, you"
+	line "must be taking on"
+	cont "the GYM CHALLENGE!"
 	
-	para "My lab on SUNBEAM"
-	line "ISLAND isn't too"
-	cont "far from there by"
-	cont "boat."
+	para "The next GYM will"
+	line "be in EVENTIDE"
+	cont "VILLAGE nearby."
 	
-	para "Why don't you stop"
-	line "by and I'll give"
-	cont "you the grand"
-	cont "tour."
+	para "Before that why"
+	line "don't you stop by"
+	cont "my LAB on SUNBEAM"
+	cont "ISLAND?"
+	
+	para "I'll give you the"
+	line "grand tour!"
 	
 	para "You can catch a"
-	line "ride at the"
-	cont "BOAT HOUSE at"
-	cont "LAKE ONWA."
-	
-	para "It's to the SOUTH"
-	line "of STARGLOW"
-	cont "VALLEY."
+	line "boat ride at"
+	cont "LAKE ONWA to"
+	cont "the SOUTH."
 	
 	para "I look forward to"
 	line "finally meeting"
@@ -95,8 +90,7 @@ SprucePhoneComeToIsland2Text:
 	line "lost?"
 	
 	para "You can catch a"
-	line "ride at the"
-	cont "BOAT HOUSE at"
+	line "boat ride at"
 	cont "LAKE ONWA."
 	
 	para "It's to the SOUTH"
@@ -131,8 +125,6 @@ SprucePhoneComeToIsland3Text:
 	line "but my work has"
 	cont "me tied up as of"
 	cont "right now."
-	
-	para "Ah!"
 	
 	para "Perhaps your"
 	line "MOTHER might"

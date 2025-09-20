@@ -509,7 +509,7 @@ SunsetMomText3:
 	line "CAP'N STAND's?"
 	
 	para "You'd better hurry"
-	line "down to the light-"
+	line "over to the light-"
 	cont "house then."
 	done
 	

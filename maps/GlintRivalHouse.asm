@@ -73,23 +73,17 @@ GotMapCardText:
 	done
 	
 GlintRivalMomText1:
-	text "<RIVAL>'s MOM:You"
-	line "must be <PLAYER>!"
+	text "You must be"
+	line "<PLAYER>!"
 	
 	para "<RIVAL> has told"
 	line "me all about you."
 	
 	para "I know he can be a"
-	line "bit to deal with,"
+	line "lot to deal with,"
 	
 	para "but don't let it"
 	line "get to you."
-	
-	para "I'm hoping that"
-	line "going on a journey"
-	cont "with his #MON"
-	cont "will help him"
-	cont "mature a bit."
 	
 	para "Oh?<WAIT_M>"
 	line "A #DEX?"
@@ -97,6 +91,12 @@ GlintRivalMomText1:
 	para "<RIVAL> ran off"
 	line "before they were"
 	cont "handed out? <WAIT_M>Sigh…"
+	
+	para "That boy is just"
+	line "like his father."
+	
+	para "For better or for"
+	line "worse…"
 	
 	para "Well, thanks for"
 	line "bringing it by."
@@ -131,8 +131,9 @@ GlintRivalMomText4:
 	line "give this to him"
 	cont "when he gets back."
 	
-	para "Say, you have a"
-	line "#GEAR, right?"
+	para "Say, you're taking"
+	line "the GYM CHALLENGE"
+	cont "too, right?"
 	
 	para "Why don't you take"
 	line "this as thanks?"

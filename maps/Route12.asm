@@ -399,8 +399,8 @@ Route12Npc9Text:
 Route12Npc10Text:
 	text "My nephew lives in"
 	line "a little town in"
-	cont "SOUTHERN OWNA"
-	cont "called BRIGHTBURG."
+	cont "SOUTH OWNA called"
+	cont "BRIGHTBURG."
 	
 	para "I haven't heard"
 	line "from him in a long"

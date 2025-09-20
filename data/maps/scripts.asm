@@ -316,8 +316,6 @@ INCLUDE "maps/ShimmerLabResearchRoom.asm"
 INCLUDE "maps/ShimmerLabExperimentalLab.asm"
 INCLUDE "maps/ShimmerUnderBoardwalk.asm"
 INCLUDE "maps/ShimmerBoatHouse.asm"
-INCLUDE "maps/ShimmerHouse1.asm"
-INCLUDE "maps/ShimmerHouse2.asm"
 INCLUDE "maps/ShimmerCafe.asm"
 
 SECTION "Radiant Township Scripts", ROMX
@@ -377,6 +375,8 @@ INCLUDE "maps/SpookhouseBedroom.asm"
 INCLUDE "maps/SpookhouseHallway1.asm"
 INCLUDE "maps/SpookhouseHallway2.asm"
 INCLUDE "maps/SpookhouseTVRoom.asm"
+INCLUDE "maps/ShimmerHouse1.asm"
+INCLUDE "maps/ShimmerHouse2.asm"
 
 SECTION "Dodrio Ranch Scripts", ROMX
 

@@ -40,7 +40,7 @@ DaybreakGrotto3NPC:
 DaybreakGrotto3NPCText1:
 	text "This deep cavern"
 	line "leads down to"
-	cont "SOUTHERN ONWA."
+	cont "SOUTH ONWA."
 	
 	para "Golly, <WAIT_S>it sure is"
 	line "dark, though."

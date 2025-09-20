@@ -36,7 +36,7 @@ SeasideCaveB1FNPC1Text:
 	line "your map!"
 	
 	para "You've made it to"
-	line "SOUTHERN ONWA!"
+	line "SOUTH ONWA!"
 	
 	para "You're pretty close"
 	line "to town, if you're"

@@ -13,7 +13,7 @@ RadiantTownship_MapScriptHeader:
 	warp_def  7,  7, 1, RADIANT_POKECENTER
 	warp_def 15,  7, 2, RADIANT_MART
 	warp_def  9, 17, 1, RADIANT_HOUSE
-	warp_def  5, 33, 3, ROUTE_21_GATE
+	warp_def  5, 35, 3, ROUTE_21_GATE
 
 	db 0 ; coord events
 
@@ -21,7 +21,7 @@ RadiantTownship_MapScriptHeader:
 	signpost 14, 14, SIGNPOST_READ, RadiantTownshipSign
 	signpost -1, -1, SIGNPOST_READ, RadiantMeadowSign
 	signpost 14, 23, SIGNPOST_READ, RadiantTownshipGymSign
-	signpost  6, 34, SIGNPOST_READ, RadiantTownshipRoute21Sign
+	signpost  6, 33, SIGNPOST_READ, RadiantTownshipRoute21Sign
 	signpost  6,  4, SIGNPOST_READ, RadiantTownshipSolarPanel
 	signpost  6,  5, SIGNPOST_READ, RadiantTownshipSolarPanel
 	signpost 14,  4, SIGNPOST_READ, RadiantTownshipSolarPanel
@@ -50,7 +50,7 @@ RadiantTownship_MapScriptHeader:
 	signpost 19, 29, SIGNPOST_READ, RadiantTownshipSunflower
 	signpost 14, 39, SIGNPOST_READ, RadiantTownshipSunflower
 
-	db 16 ; object events
+	db 18 ; object events
 	person_event SPRITE_ERIKA, 14, 24, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, RadiantTownshipErika, -1
 	person_event SPRITE_CUTE_GIRL, 10, 10, SPRITEMOVEDATA_WANDER, 2, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, RadiantTownshipNPC1, -1
 	person_event SPRITE_PONYTAIL, 17, 31, SPRITEMOVEDATA_WANDER, 2, 1, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, RadiantTownshipNPC2, -1
@@ -67,6 +67,8 @@ RadiantTownship_MapScriptHeader:
 	person_event SPRITE_CASINO, 18, 28, SPRITEMOVEDATA_TILE_LEFT_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, -1
 	person_event SPRITE_CASINO, 18, 29, SPRITEMOVEDATA_TILE_LEFT_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, -1
 	person_event SPRITE_CASINO, 13, 39, SPRITEMOVEDATA_TILE_LEFT_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, -1
+	person_event SPRITE_CASINO,  8, 36, SPRITEMOVEDATA_TILE_LEFT_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, -1
+	person_event SPRITE_CASINO,  8, 37, SPRITEMOVEDATA_TILE_LEFT_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, -1
 
 	const_def 1 ; object constants
 	const RADIANT_TOWNSHIP_ERIKA

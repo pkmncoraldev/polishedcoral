@@ -71,3 +71,21 @@
 	const CRY_ESPEON
 	const CRY_SNUBBULL
 	const CRY_DONPHAN
+; gen 3
+	const CRY_WINGULL
+	const CRY_PELIPPER
+	const CRY_SHROOMISH
+	const CRY_BRELOOM
+	const CRY_ARON
+	const CRY_LAIRON
+	const CRY_AGGRON
+; gen 4
+	const CRY_GLACEON
+; gen 5
+; gen 6
+	const CRY_NOIBAT
+	const CRY_NOIVERN
+; gen 7
+; gen 8
+; gen 9
+	

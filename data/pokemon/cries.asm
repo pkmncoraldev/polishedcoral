@@ -177,13 +177,13 @@ CryHeaders::
 	mon_cry CRY_LARVITAR,    $05f,  $0d0 	; Larvitar
 	mon_cry CRY_PUPITAR,   	-$1db,  $150 	; Pupitar
 	mon_cry CRY_LARVITAR,   -$100,  $180 	; Tyranitar
-	mon_cry CRY_WINGULL,      204,   128	; Wingull
-	mon_cry CRY_PELIPPER,     170,   340 	; Pelipper
-	mon_cry CRY_SHROOMISH,    255,   112  	; Shroomish
-	mon_cry CRY_BRELOOM,       80,   278 	; Breloom
-	mon_cry CRY_ARON,          60,   112 	; Aron
-	mon_cry CRY_LAIRON,        30,   112 	; Lairon
-	mon_cry CRY_AGGRON,         0,   256 	; Aggron
+	mon_cry WINGULL,	WingullDEDData		; Wingull
+	mon_cry PELIPPER,	PelipperDEDData		; Pelipper
+	mon_cry SHROOMISH,  ShroomishDEDData 	; Shroomish
+	mon_cry BRELOOM,   	BreloomDEDData	 	; Breloom
+	mon_cry ARON,   	AronDEDData		 	; Aron
+	mon_cry LAIRON, 	LaironDEDData	 	; Lairon
+	mon_cry AGGRON,   	AggronDEDData	 	; Aggron
 	mon_cry MEDITITE,   MedititeDEDData	 	; Meditite
 	mon_cry MEDICHAM,   MedichamDEDData	 	; Medicham
 	mon_cry CARVANHA,   CarvanhaDEDData	 	; Carvanha
@@ -217,7 +217,7 @@ CryHeaders::
 	mon_cry MAGMORTAR,  MagmortarDEDData 	; Magmortar
 	mon_cry TOGEKISS,   TogekissDEDData	 	; Togekiss
 	mon_cry LEAFEON,   	LeafeonDEDData	 	; Leafeon
-	mon_cry CRY_GLACEON,       56,   588 	; Glaceon
+	mon_cry GLACEON,   	GlaceonDEDData	 	; Glaceon
 	mon_cry GLISCOR,   	GliscorDEDData	 	; Gliscor
 	mon_cry MAMOSWINE,  MamoswineDEDData 	; Mamoswine
 	mon_cry PORYGON_Z,  PorygonZDEDData	 	; PorygonZ
@@ -252,8 +252,8 @@ CryHeaders::
 	mon_cry SYLVEON,   	SylveonDEDData	 	; Sylveon
 	mon_cry PHANTUMP,	PhantumpDEDData		; Phantump
 	mon_cry TREVENANT,	TrevenantDEDData	; Trevenant
-	mon_cry CRY_NOIBAT,        167,  132 	; Noibat
-	mon_cry CRY_NOIVERN,        74,  132 	; Noivern
+	mon_cry NOIBAT,   	NoibatDEDData	 	; Noibat
+	mon_cry NOIVERN,   	NoivernDEDData	 	; Noivern
 	mon_cry PIKIPEK,   	PikipekDEDData	 	; Pikipek
 	mon_cry	TRUMBEAK,  	TrumbeakDEDData	 	; Trumbeak
 	mon_cry	TOUCANNON, 	ToucannonDEDData 	; Toucannon
@@ -365,6 +365,9 @@ CryHeaders2::
 	mon_cry CRY_PONYTA,  	 $0aa,  $17f 	; Porygon
 	mon_cry CRY_VILEPLUME,   $020,  $170 	; Aerodactyl
 	mon_cry CRY_GRIMER,      $055,  $081 	; Snorlax
+	mon_cry CRY_RAICHU,      $080,  $0c0 	; Articuno
+	mon_cry CRY_ZAPDOS,  	 $0ff,  $100 	; Zapdos
+	mon_cry CRY_RAICHU,      $0f8,  $0c0 	; Moltres
 	mon_cry CRY_BULBASAUR,   $060,  $0c0 	; Dratini
 	mon_cry CRY_BULBASAUR,   $040,  $100 	; Dragonair
 	mon_cry CRY_BULBASAUR,   $03c,  $140 	; Dragonite

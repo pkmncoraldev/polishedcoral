@@ -114,10 +114,13 @@ GetCryIndex:: ; 381e
 	call GetFarWRAMByte
 	; value is now in a
 	cp 0
-	jr z, .no_extended_space
+	jr z, .classic
+	ld hl, wOptions2
+	bit CRY_STYLE, [hl]
+	jr nz, .classic
 	ld hl, CryHeaders
 	jr .cont
-.no_extended_space
+.classic
 	ld hl, CryHeaders2
 .cont
 	ld a, 5

@@ -78,10 +78,10 @@ StringOptions1: ; e4241
 	db "        :<LNBRK>"
 	db "FRAME<LNBRK>"
 	db "        :TYPE<LNBRK>"
+	db "CRY STYLE<LNBRK>"
+	db "        :<LNBRK>"
 	db "DEBUG MODE<LNBRK>"
 	db "        :<LNBRK>"
-;	db "SOUND TEST<LNBRK>"
-;	db "<LNBRK>"
 	db "DONE@"
 ; e42d6
 
@@ -111,8 +111,8 @@ GetOptionPointer: ; e42d6
 	dw Options_MonAnimations
 	dw Options_BattleStyle
 	dw Options_Frame
+	dw Options_Cries
 	dw Options_DebugMode
-;	dw Options_MusicPlayer
 	dw Options_Done
 ; e42f5
 
@@ -308,29 +308,6 @@ UpdateFrame: ; e4512
 	and a
 	ret
 ; e4520
-
-
-Options_MusicPlayer:
-	ldh a, [hJoyPressed]
-	and A_BUTTON
-	jr nz, .gotomusicplayer
-	and a
-	ret
-
-.gotomusicplayer:
-;	scf
-;	ret
-	ld de, SFX_TRANSACTION
-	call PlaySFX
-	ld c, 5
-	call FadeToWhite
-	call WaitSFX
-	ld a, MUSIC_NONE
-	ld [wMapMusic], a
-	ld e, a
-	ld d, 0
-	farcall PlayMusic
-	farjp MusicPlayer
 	
 
 Options_Done: ; e4520
@@ -345,6 +322,34 @@ Options_Done: ; e4520
 	ret
 ; e452a
 
+Options_Cries:
+	ld hl, wOptions2
+	ldh a, [hJoyPressed]
+	and D_LEFT | D_RIGHT
+	jr nz, .Toggle
+	bit CRY_STYLE, [hl]
+	jr z, .SetDED
+	jr .SetClassic
+.Toggle
+	bit CRY_STYLE, [hl]
+	jr z, .SetClassic
+.SetDED:
+	res CRY_STYLE, [hl]
+	ld de, .DED
+	jr .Display
+.SetClassic:
+	set CRY_STYLE, [hl]
+	ld de, .Classic
+.Display:
+	hlcoord 11, 13
+	call PlaceString
+	and a
+	ret
+
+.DED:
+	db "DED    @"
+.Classic:
+	db "CLASSIC@"	
 
 Options_DebugMode: ; e4365
 	ld hl, wOptions1
@@ -365,7 +370,7 @@ Options_DebugMode: ; e4365
 	set DEBUG_MODE, [hl]
 	ld de, .On
 .Display:
-	hlcoord 11, 13
+	hlcoord 11, 15
 	call PlaceString
 	and a
 	ret
@@ -388,7 +393,7 @@ OptionsControl: ; e452a
 .DownPressed:
 	ld a, [hl] ; load the cursor position to a
 
-	cp $6 ; maximum number of items in option menu
+	cp $7 ; maximum number of items in option menu
 	jr nz, .Increase
 	ld [hl], -1
 .Increase:
@@ -401,7 +406,7 @@ OptionsControl: ; e452a
 
 	and a
 	jr nz, .Decrease
-	ld [hl], $7 ; number of option items + 1
+	ld [hl], $8 ; number of option items + 1
 .Decrease:
 	dec [hl]
 	scf

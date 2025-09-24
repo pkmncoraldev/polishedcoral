@@ -777,12 +777,7 @@ Pokegear_UpdateClock: ; 90f86 (24:4f86)
 	ld b, a
 	ldh a, [hMinutes]
 	ld c, a
-	ld a, [wOptions2]
-	bit CLOCK_FORMAT, a
 	decoord 6, 8
-	jr z, .h12
-	decoord 8, 8
-.h12
 	call PrintHoursMins
 	ld hl, .DayText
 	bccoord 6, 6

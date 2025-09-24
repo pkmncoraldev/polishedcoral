@@ -2140,8 +2140,7 @@ PlayerOrNPCTurnStep:
 	ld [hl], 4
 	ld hl, OBJECT_STEP_DURATION
 	add hl, bc
-	ld a, TURNING_SPEED
-	ld [hl], a
+	ld [hl], 4
 	call IncrementObjectStructField28
 .step1
 	ld hl, OBJECT_STEP_DURATION
@@ -2158,8 +2157,7 @@ PlayerOrNPCTurnStep:
 	ld [hl], a
 	ld hl, OBJECT_STEP_DURATION
 	add hl, bc
-	ld a, TURNING_SPEED
-	ld [hl], a
+	ld [hl], 4
 	call IncrementObjectStructField28
 .step2
 	ld hl, OBJECT_STEP_DURATION

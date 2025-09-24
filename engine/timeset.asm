@@ -617,10 +617,7 @@ GetTimeOfDayString: ; 90b58 (24:4b58)
 
 AdjustHourForAMorPM:
 ; Convert the hour stored in c (0-23) to a 1-12 value
-	ld a, [wOptions2]
-	bit CLOCK_FORMAT, a
 	ld a, c
-	ret nz
 	or a
 	jr z, .midnight
 	cp 12
@@ -635,10 +632,7 @@ AdjustHourForAMorPM:
 
 PrintHoursMins: ; 1dd6bb (77:56bb)
 ; Hours in b, minutes in c
-	ld a, [wOptions2]
-	bit CLOCK_FORMAT, a
 	ld a, b
-	jr nz, .h24
 	cp 12
 	push af
 	jr c, .AM
@@ -674,9 +668,6 @@ PrintHoursMins: ; 1dd6bb (77:56bb)
 	lb bc, PRINTNUM_LEADINGZEROS | 1, 2
 	call PrintNum
 	pop bc
-	ld a, [wOptions2]
-	bit CLOCK_FORMAT, a
-	ret nz
 	ld de, .String_AM
 	pop af
 	jr c, .place_am_pm

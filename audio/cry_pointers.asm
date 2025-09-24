@@ -67,3 +67,20 @@ Cries:
 	dba Cry_Tyrogue
 	dba Cry_Dunsparce
 	dba Cry_Donphan
+; gen 3
+	dba Cry_Wingull
+	dba Cry_Pelipper
+	dba Cry_Shroomish
+	dba Cry_Breloom
+	dba Cry_Aron
+	dba Cry_Lairon
+	dba Cry_Aggron
+; gen 4
+	dba Cry_Glaceon
+; gen 5
+; gen 6
+	dba Cry_Noibat
+	dba Cry_Noivern
+; gen 7
+; gen 8
+; gen 9

@@ -175,7 +175,7 @@ MomPhoneScript: ; 0xbceaa
 	callasm CallingMomCheckPlayerRoomAsm
 	iftrue .upstairs
 	checkevent EVENT_MOM_CAN_GET_BANK_CARD
-	iffalse .bankcard2
+	iftrue .bankcard2
 	checkevent EVENT_GOT_A_POKEMON_FROM_SPRUCE
 	iffalse .gogetmon
 	checkevent EVENT_CAN_CALL_TRAINER_CARD

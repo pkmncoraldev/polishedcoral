@@ -27,9 +27,10 @@ KomoreVillage_MapScriptHeader:
 	signpost 20, 29, SIGNPOST_IFNOTSET, KomoreVillageTree
 	signpost 19, 18, SIGNPOST_READ, KomoreTeaMasterSign
 
-	db 2 ; object events
+	db 3 ; object events
 	object_event -5, -5, SPRITE_LEAVES, SPRITEMOVEDATA_BAGGAGE, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, -1, EVENT_HIDE_OW_OBJECTS_TEAL
 	object_event -5, -5, SPRITE_LEAVES, SPRITEMOVEDATA_BAGGAGE, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, -1, EVENT_HIDE_OW_OBJECTS_PINK
+	person_event SPRITE_PICNICKER, 1, 1, SPRITEMOVEDATA_WANDER, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, KomoreVillageNPC1, -1
 
 KomoreVillageFlyPoint:
 	setflag ENGINE_FLYPOINT_KOMORE
@@ -41,6 +42,27 @@ KomoreVillageCallback:
 	changeblock $1c, $14, $bb
 .skip
 	jump Route23Callback2
+	
+KomoreVillageNPC1:
+	jumptextfaceplayer KomoreVillageNPC1Text
+	
+KomoreVillageNPC1Text:
+	text ""
+	done
+	
+KomoreVillageNPC2:
+	jumptextfaceplayer KomoreVillageNPC2Text
+	
+KomoreVillageNPC2Text:
+	text ""
+	done
+	
+KomoreVillageNPC3:
+	jumptextfaceplayer KomoreVillageNPC3Text
+	
+KomoreVillageNPC3Text:
+	text ""
+	done
 	
 KomoreTeaMasterSign:
 	checkevent EVENT_SPOKEN_TO_TEA_MASTER

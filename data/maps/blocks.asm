@@ -998,3 +998,6 @@ LusterSpamBuilding_3F_BlockData:
 LusterSpamBuilding_4F_BlockData:
 	INCBIN "maps/LusterSpamBuilding_4F.ablk.lz"
 	
+Route22_2_BlockData:
+	INCBIN "maps/Route22_2.ablk.lz"
+	

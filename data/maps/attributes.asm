@@ -406,9 +406,13 @@ ENDM
 	connection south, Route21, ROUTE_21, 1
 	connection east, Route22, ROUTE_22, 4
 	
-	map_attributes Route22, ROUTE_22, $30, WEST | EAST
+	map_attributes Route22, ROUTE_22, $30, SOUTH | WEST | EAST
+	connection south, Route22_2, ROUTE_22_2, 34
 	connection west, DuskTurnpike, DUSK_TURNPIKE, -4
 	connection east, Crossroads, CROSSROADS, 1
+	
+	map_attributes Route22_2, ROUTE_22_2, $30, NORTH
+	connection north, Route22, ROUTE_22, -34
 	
 	map_attributes DuskAutoLobby, DUSK_AUTO_LOBBY, $00, 0
 	

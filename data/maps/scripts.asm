@@ -133,6 +133,9 @@ SECTION "Routes Scripts3", ROMX
 INCLUDE "maps/Route16.asm"
 INCLUDE "maps/Route21.asm"
 INCLUDE "maps/Route22.asm"
+INCLUDE "maps/Route22_2.asm"
+INCLUDE "maps/DuskTurnpike.asm"
+INCLUDE "maps/Crossroads.asm"
 INCLUDE "maps/FakeRoute1.asm"
 
 
@@ -410,7 +413,6 @@ INCLUDE "maps/DesertTemple2.asm"
 
 SECTION "Dusk Turnpike Scripts", ROMX
 
-INCLUDE "maps/DuskTurnpike.asm"
 INCLUDE "maps/DuskHouse1.asm"
 INCLUDE "maps/DuskHouse2.asm"
 INCLUDE "maps/DuskHouse3.asm"
@@ -502,6 +504,5 @@ INCLUDE "maps/Inn2F.asm"
 INCLUDE "maps/Inn3F.asm"
 INCLUDE "maps/InnElevator.asm"
 INCLUDE "maps/InnVent.asm"
-INCLUDE "maps/Crossroads.asm"
 INCLUDE "maps/Route23Gate.asm"
 

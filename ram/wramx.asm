@@ -1104,7 +1104,8 @@ wUnderwaterTemple1Trigger:: ds 1
 wGlintGroveUndergroundTrigger:: ds 1
 wRoute3EastTrigger:: ds 1
 wRoute11Trigger:: ds 1
-ds 13
+wRoute22_2Trigger:: ds 1
+ds 12
 
 wAmpharosFood:: ds 1
 

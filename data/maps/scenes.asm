@@ -155,4 +155,5 @@ MapTriggers::
 	scene_var ROUTE_11_2,					 	 	  wRoute11Trigger
 	scene_var RIVER_RAPIDS,							  wAlways0Trigger
 	scene_var RIVER_RAPIDS_HOUSE,					  wAlways0Trigger
+	scene_var ROUTE_22_2,							  wRoute22_2Trigger
 	db -1

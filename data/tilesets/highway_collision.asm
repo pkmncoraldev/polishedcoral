@@ -13,7 +13,7 @@
 	tilecoll SKATE, SKATE, WALL, WARP_CARPET_DOWN ; 0c
 	tilecoll SKATE, SKATE, WARP_CARPET_DOWN, WALL ; 0d
 	tilecoll FLOOR, FLOOR, WALL, FLOOR ; 0e
-	tilecoll WALL, WALL, WALL, WALL ; 0f
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 0f
 	tilecoll WALL, WALL, WALL, DOOR ; 10
 	tilecoll WALL, WALL, DOOR, WALL ; 11
 	tilecoll SKATE, SKATE, SKATE, SKATE ; 12
@@ -132,7 +132,7 @@
 	tilecoll WALL, WALL, WALL, WALL ; 83
 	tilecoll SKATE, NO_OLLIE, SKATE, NO_OLLIE ; 84
 	tilecoll FLOOR, WALL, WALL, WALL ; 85
-	tilecoll WALL, WALL, WALL, WALL ; 86
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 86
 	tilecoll WALL, WALL, WALL, WALL ; 87
 	tilecoll WALL, WALL, WALL, WALL ; 88
 	tilecoll WALL, WALL, FLOOR, WALL ; 89

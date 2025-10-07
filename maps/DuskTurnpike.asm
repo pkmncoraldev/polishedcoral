@@ -3,9 +3,10 @@ DuskTurnpike_MapScriptHeader:
 	scene_script DuskTurnpikeTrigger0
 	scene_script DuskTurnpikeTrigger1
 
-	db 2 ; callbacks
+	db 3 ; callbacks
 	callback MAPCALLBACK_NEWMAP, DuskTurnpikeFlyPoint
 	callback MAPCALLBACK_TILES, DuskTurnpikeCallback
+	callback MAPCALLBACK_OBJECTS, DuskTurnpikeStopEngine
 
 	db 19 ; warp events
 	warp_event  8, 28, ROUTE_19_DUSK_GATE, 3
@@ -73,10 +74,10 @@ DuskTurnpike_MapScriptHeader:
 	xy_trigger 1, 16, 27, 0, DuskTurnpikeDark, 0, 0
 	xy_trigger 1, 17, 28, 0, DuskTurnpikeDark, 0, 0
 	xy_trigger 1, 17, 29, 0, DuskTurnpikeDark, 0, 0
-	xy_trigger 0, 14, 35, 0, DuskTurnpikeTollBoothStopsYou1, 0, 0
-	xy_trigger 0, 15, 35, 0, DuskTurnpikeTollBoothStopsYou2, 0, 0
-	xy_trigger 0, 16, 35, 0, DuskTurnpikeTollBoothStopsYou3, 0, 0
-	xy_trigger 0, 17, 35, 0, DuskTurnpikeTollBoothStopsYou4, 0, 0
+	xy_trigger 0, 14, 37, 0, DuskTurnpikeTollBoothStopsYou1, 0, 0
+	xy_trigger 0, 15, 37, 0, DuskTurnpikeTollBoothStopsYou2, 0, 0
+	xy_trigger 0, 16, 37, 0, DuskTurnpikeTollBoothStopsYou3, 0, 0
+	xy_trigger 0, 17, 37, 0, DuskTurnpikeTollBoothStopsYou4, 0, 0
 	xy_trigger 0, 19, 34, 0, DuskTurnpikeUnderPassGoLeft, 0, 0
 	xy_trigger 0, 19, 35, 0, DuskTurnpikeUnderPassGoLeft, 0, 0
 	xy_trigger 0, 19, 10, 0, DuskTurnpikeUnderPassGoRight, 0, 0
@@ -99,7 +100,7 @@ DuskTurnpike_MapScriptHeader:
 	
 
 	db 12 ; object events
-	person_event SPRITE_INVISIBLE, 13, 35, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, DuskTurnpikeTollbooth, -1
+	person_event SPRITE_INVISIBLE, 13, 37, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, DuskTurnpikeTollbooth, -1
 	person_event SPRITE_PLANK_BRIDGE,  5, 22, SPRITEMOVEDATA_TILE_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
 	person_event SPRITE_SPA_WORKER, 26, 27, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, DuskTurnpikeNPC1, -1
 	person_event SPRITE_COOLTRAINER_F, 30, 15, SPRITEMOVEDATA_WANDER, 2, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, DuskTurnpikeNPC2, -1
@@ -215,10 +216,10 @@ DuskTurnpikeCallback:
 .done_npc
 	checkevent EVENT_TOLL_BOOTH_OPEN
 	iftrue .done_tollbooth
-	changeblock $24, $0c, $e9
-	changeblock $26, $0c, $0b
-	changeblock $24, $0e, $eb
-	changeblock $24, $10, $ea
+	changeblock $26, $0c, $e9
+	changeblock $28, $0c, $0b
+	changeblock $26, $0e, $eb
+	changeblock $26, $10, $ea
 .done_tollbooth
 	checktime 1<<DUSK
 	iftrue .dusk
@@ -252,6 +253,19 @@ DuskTurnpikeCallback:
 	changeblock $10, $06, $e7
 .end
 	domaptrigger ROUTE_22_TUNNEL, $1
+	return
+	
+DuskTurnpikeStopEngine:
+	checkevent EVENT_BIKE_ENGINE_ON
+	iffalse .end
+	opentext
+	writetext Route22StopEngineText
+	waitbutton
+	closetext
+	clearevent EVENT_BIKE_ENGINE_ON
+	writecode VAR_MOVEMENT, PLAYER_BIKE
+	special MapCallbackSprites_LoadUsedSpritesGFX
+.end
 	return
 	
 RestoreDuskTurnpikeMusic:
@@ -434,10 +448,10 @@ DuskTurnpikeTollbooth:
 	writetext DuskTurnpikeTollboothText3
 	waitbutton
 	closetext
-	changeblock $24, $0c, $42
-	changeblock $26, $0c, $46
-	changeblock $24, $0e, $20
-	changeblock $24, $10, $43
+	changeblock $26, $0c, $42
+	changeblock $28, $0c, $46
+	changeblock $26, $0e, $20
+	changeblock $26, $10, $43
 	pause 20
 	playsound SFX_POKEBALLS_PLACED_ON_TABLE
 	callasm GenericFinishBridge

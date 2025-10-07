@@ -45,7 +45,7 @@ ShimmerPokeCenterNpc2Text:
 	line "to look up all the"
 	cont "stats, info, and"
 	
-	para "abilities in a new"
+	para "techniques in a"
 	line "game before they"
 	cont "even play it!"
 	

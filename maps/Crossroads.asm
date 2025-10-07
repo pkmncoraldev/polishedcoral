@@ -3,9 +3,10 @@ Crossroads_MapScriptHeader:
 	scene_script CrossroadsTrigger0
 	scene_script CrossroadsTrigger1
 
-	db 2 ; callbacks
+	db 3 ; callbacks
 	callback MAPCALLBACK_NEWMAP, CrossroadsFlyPoint
 	callback MAPCALLBACK_TILES, CrossroadsCallback
+	callback MAPCALLBACK_OBJECTS, DuskTurnpikeStopEngine
 
 	db 5 ; warp events
 	warp_event 30,  7, INN_1F, 1

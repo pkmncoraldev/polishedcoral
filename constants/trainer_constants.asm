@@ -524,6 +524,11 @@ DEF PLAYER_F EQU __enum__
 	const JAMES
 	const HERB
 	const SHINTO
+	const WALKER
+	const DONNY
+	const CASSIDY
+	const TOPHER
+	const HAMM
 
 
 	trainerclass CUEBALL
@@ -531,7 +536,10 @@ DEF PLAYER_F EQU __enum__
 	const BONGO
 	const BUBBA
 	const DESMOND
-
+	const BUTCH
+	const WES
+	const PATRICK
+	
 
 	trainerclass COOLTRAINERM
 	const CODY
@@ -727,10 +735,6 @@ DEF PLAYER_F EQU __enum__
 	trainerclass MUSEUM_GUIDE_2
 	
 	trainerclass BUSINESSMAN
-	const BUSINESSMAN_1
-	const BUSINESSMAN_2
-	const BUSINESSMAN_3
-	const BUSINESSMAN_4
 
 	trainerclass TOWERTYCOON ; 1
 

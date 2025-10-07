@@ -78,7 +78,7 @@ Movement_Route22_2_Snare:
 	step_end
 	
 Route22_2Trainer1:
-	generictrainer BIKER, REX, EVENT_BEAT_ROUTE_22_2_TRAINER_1, .SeenText, .BeatenText
+	generictrainer BIKER, WALKER, EVENT_BEAT_ROUTE_22_2_TRAINER_1, .SeenText, .BeatenText
 
 	text "TEXT"
 	done
@@ -92,7 +92,7 @@ Route22_2Trainer1:
 	done
 	
 Route22_2Trainer2:
-	generictrainer BIKER, REX, EVENT_BEAT_ROUTE_22_2_TRAINER_2, .SeenText, .BeatenText
+	generictrainer BIKER, DONNY, EVENT_BEAT_ROUTE_22_2_TRAINER_2, .SeenText, .BeatenText
 
 	text "TEXT"
 	done
@@ -106,7 +106,7 @@ Route22_2Trainer2:
 	done
 	
 Route22_2Trainer3:
-	generictrainer CUEBALL, REX, EVENT_BEAT_ROUTE_22_2_TRAINER_3, .SeenText, .BeatenText
+	generictrainer CUEBALL, BUTCH, EVENT_BEAT_ROUTE_22_2_TRAINER_3, .SeenText, .BeatenText
 
 	text "TEXT"
 	done
@@ -120,7 +120,7 @@ Route22_2Trainer3:
 	done
 	
 Route22_2Trainer4:
-	generictrainer BIKER, REX, EVENT_BEAT_ROUTE_22_2_TRAINER_4, .SeenText, .BeatenText
+	generictrainer BIKER, CASSIDY, EVENT_BEAT_ROUTE_22_2_TRAINER_4, .SeenText, .BeatenText
 
 	text "TEXT"
 	done
@@ -134,7 +134,7 @@ Route22_2Trainer4:
 	done
 	
 Route22_2Trainer5:
-	generictrainer BIKER, REX, EVENT_BEAT_ROUTE_22_2_TRAINER_5, .SeenText, .BeatenText
+	generictrainer BIKER, TOPHER, EVENT_BEAT_ROUTE_22_2_TRAINER_5, .SeenText, .BeatenText
 
 	text "TEXT"
 	done
@@ -148,7 +148,7 @@ Route22_2Trainer5:
 	done
 	
 Route22_2Trainer6:
-	generictrainer BIKER, REX, EVENT_BEAT_ROUTE_22_2_TRAINER_6, .SeenText, .BeatenText
+	generictrainer BIKER, HAMM, EVENT_BEAT_ROUTE_22_2_TRAINER_6, .SeenText, .BeatenText
 
 	text "TEXT"
 	done
@@ -162,7 +162,7 @@ Route22_2Trainer6:
 	done
 	
 Route22_2Trainer7:
-	generictrainer CUEBALL, REX, EVENT_BEAT_ROUTE_22_2_TRAINER_7, .SeenText, .BeatenText
+	generictrainer CUEBALL, WES, EVENT_BEAT_ROUTE_22_2_TRAINER_7, .SeenText, .BeatenText
 
 	text "TEXT"
 	done
@@ -176,7 +176,7 @@ Route22_2Trainer7:
 	done
 	
 Route22_2Trainer8:
-	generictrainer CUEBALL, REX, EVENT_BEAT_ROUTE_22_2_TRAINER_8, .SeenText, .BeatenText
+	generictrainer CUEBALL, PATRICK, EVENT_BEAT_ROUTE_22_2_TRAINER_8, .SeenText, .BeatenText
 
 	text "TEXT"
 	done

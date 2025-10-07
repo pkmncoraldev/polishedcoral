@@ -4647,6 +4647,51 @@ BikerGroup:
 	db -1 ; end
 
 ; ================
+
+	; BIKER
+	db "WALKER@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; BIKER
+	db "DONNY@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; BIKER
+	db "CASSIDY@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; BIKER
+	db "TOPHER@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; BIKER
+	db "HAMM@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
 ; ================================
 
 
@@ -4690,6 +4735,33 @@ CueballGroup:
 	; party
 	db 41, MUNCHLAX
 	db 34, SNORLAX
+	db -1 ; end
+
+; ================
+
+	; CUEBALL
+	db "BUTCH@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; CUEBALL
+	db "WES@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; CUEBALL
+	db "PATRICK@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
 	db -1 ; end
 
 ; ================
@@ -6314,7 +6386,7 @@ MuseumGuideGroup:
 ; ================
 
 	; MUSEUM_GUIDE
-	db "UNUSED@"
+	db "GUIDE@" ;7 BADGES
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR
@@ -6323,7 +6395,7 @@ MuseumGuideGroup:
 ; ================
 
 	; MUSEUM_GUIDE
-	db "UNUSED@"
+	db "GUIDE@" ;8 BADGES
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR
@@ -6332,7 +6404,7 @@ MuseumGuideGroup:
 ; ================
 
 	; MUSEUM_GUIDE
-	db "UNUSED@"
+	db "GUIDE@" ;7 BADGES
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR
@@ -6341,7 +6413,7 @@ MuseumGuideGroup:
 ; ================
 
 	; MUSEUM_GUIDE
-	db "UNUSED@"
+	db "GUIDE@" ;8 BADGES
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR
@@ -6350,7 +6422,7 @@ MuseumGuideGroup:
 ; ================
 
 	; MUSEUM_GUIDE
-	db "UNUSED@"
+	db "GUIDE@" ;7 BADGES
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR
@@ -6359,7 +6431,7 @@ MuseumGuideGroup:
 ; ================
 
 	; MUSEUM_GUIDE
-	db "UNUSED@"
+	db "GUIDE@" ;8 BADGES
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR
@@ -6368,7 +6440,7 @@ MuseumGuideGroup:
 ; ================
 
 	; MUSEUM_GUIDE
-	db "UNUSED@"
+	db "GUIDE@" ;7 BADGES
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR
@@ -6377,7 +6449,7 @@ MuseumGuideGroup:
 ; ================
 
 	; MUSEUM_GUIDE
-	db "UNUSED@"
+	db "GUIDE@" ;8 BADGES
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR
@@ -6391,7 +6463,7 @@ MuseumGuide2Group:
 ; ================
 
 	; MUSEUM_GUIDE_2
-	db "UNUSED@"
+	db "GUIDE@" ;7 BADGES
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR
@@ -6400,7 +6472,7 @@ MuseumGuide2Group:
 ; ================
 
 	; MUSEUM_GUIDE_2
-	db "UNUSED@"
+	db "GUIDE@" ;8 BADGES
 	db TRAINERTYPE_NORMAL
 	; party
 	db 1, BULBASAUR

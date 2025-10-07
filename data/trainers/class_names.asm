@@ -94,8 +94,8 @@ TrainerClassNames::
 	db "PAINTER@"		   ; MINA
 	db "THE LEDIAN@"	   ; LEDIAN_RANGER
 	db "CAPTAIN@"		   ; POLICE_CAPTAIN
-	db "MUSEUM GUIDE@"	   ; MUSEUM_GUIDE
-	db "MUSEUM GUIDE@"	   ; MUSEUM_GUIDE_2
+	db "MUSEUM@"		   ; MUSEUM_GUIDE
+	db "MUSEUM@"		   ; MUSEUM_GUIDE_2
 	db "OFFICE@"	 	   ; BUSINESSMAN
 	db "TYCOON@"		   ; TOWERTYCOON
 	

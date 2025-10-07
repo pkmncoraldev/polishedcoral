@@ -39,7 +39,7 @@ LusterSpamBuilding_RightRoom_NPC1:
 	closetext
 	waitsfx
 	winlosstext LusterSpamBuilding_RightRoom_NPC1WinText, -1
-	loadtrainer BUSINESSMAN, BUSINESSMAN_1
+	loadtrainer BUSINESSMAN, 1
 	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
 	startbattle
 	dontrestartmapmusic
@@ -103,7 +103,7 @@ LusterSpamBuilding_RightRoom_NPC2:
 	closetext
 	waitsfx
 	winlosstext LusterSpamBuilding_RightRoom_NPC2WinText, -1
-	loadtrainer BUSINESSMAN, BUSINESSMAN_2
+	loadtrainer BUSINESSMAN, 2
 	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
 	startbattle
 	dontrestartmapmusic
@@ -164,7 +164,7 @@ LusterSpamBuilding_RightRoom_NPC3:
 	closetext
 	waitsfx
 	winlosstext LusterSpamBuilding_RightRoom_NPC3WinText, -1
-	loadtrainer BUSINESSMAN, BUSINESSMAN_3
+	loadtrainer BUSINESSMAN, 3
 	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
 	startbattle
 	dontrestartmapmusic
@@ -225,7 +225,7 @@ LusterSpamBuilding_RightRoom_NPC4:
 	closetext
 	waitsfx
 	winlosstext LusterSpamBuilding_RightRoom_NPC4WinText, -1
-	loadtrainer BUSINESSMAN, BUSINESSMAN_4
+	loadtrainer BUSINESSMAN, 4
 	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
 	startbattle
 	dontrestartmapmusic

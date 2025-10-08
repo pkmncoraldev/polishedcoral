@@ -2268,44 +2268,44 @@ Cry_Rattata_Ch8: ; f3fa9
 
 
 Cry_Wingull:
-        channel_count 3
-        channel 5, Cry_Wingull_Ch5
-        channel 6, Cry_Wingull_Ch6
-        channel 8, Cry_Wingull_Ch8
+	channel_count 3
+	channel 5, Cry_Wingull_Ch5
+	channel 6, Cry_Wingull_Ch6
+	channel 8, Cry_Wingull_Ch8
 
 Cry_Wingull_Ch5:
-        duty_cycle_pattern 0, 1, 0, 3
-        square_note 8, 8, 2, 1373
+	duty_cycle_pattern 0, 1, 0, 3
+	square_note 8, 8, 2, 1373
 	square_note 2, 9, 2, 1373
 	square_note 8, 11, 2, 1388
 	square_note 12, 4, 2, 1388
 	square_note 4, 9, 2, 1437
 	square_note 16, 11, 2, 1450
-        sound_ret
+	sound_ret
 
 Cry_Wingull_Ch6:
-        duty_cycle_pattern 0, 3, 0, 1
-        square_note 8, 12, 2, 1600
+	duty_cycle_pattern 0, 3, 0, 1
+	square_note 8, 12, 2, 1600
 	square_note 2, 13, 2, 1644
 	square_note 8, 15, 2, 1655
 	square_note 12, 5, 5, 1655
 	square_note 4, 13, 2, 1651
 	square_note 16, 15, 2, 1655
-        sound_ret
+	sound_ret
 
 Cry_Wingull_Ch8:
-        noise_note 8, 8, 2, 136
+	noise_note 8, 8, 2, 136
 	noise_note 2, 5, 2, 136
 	noise_note 8, 8, 3, 136
 	noise_note 2, 5, 2, 136
 	noise_note 8, 8, 3, 136
-        sound_ret
+	sound_ret
 
 Cry_Pelipper:
-        channel_count 3
-        channel 5, Cry_Pelipper_Ch5
-        channel 6, Cry_Pelipper_Ch6
-        channel 8, Cry_Pelipper_Ch8
+	channel_count 3
+	channel 5, Cry_Pelipper_Ch5
+	channel 6, Cry_Pelipper_Ch6
+	channel 8, Cry_Pelipper_Ch8
 
 Cry_Pelipper_Ch5:
 	duty_cycle_pattern 2, 0, 0, 1
@@ -2332,30 +2332,30 @@ Cry_Pelipper_Ch8:
 	sound_ret
 
 Cry_Shroomish:
-        channel_count 3
-        channel 5, Cry_Shroomish_Ch5
-        channel 6, Cry_Shroomish_Ch6
+	channel_count 3
+	channel 5, Cry_Shroomish_Ch5
+	channel 6, Cry_Shroomish_Ch6
 	channel 8, Cry_Shroomish_Ch8
 
 Cry_Shroomish_Ch5:
-        duty_cycle_pattern 0, 1, 0, 0
-        square_note 3, 15, -1, 1688
+	duty_cycle_pattern 0, 1, 0, 0
+	square_note 3, 15, -1, 1688
 	square_note 6, 15, 1, 1700
 	square_note 15, 15, 0, 1677
 	square_note 15, 13, 0, 1677
 	square_note 5, 12, 0, 1677
 	square_note 1, 0, 0, 1677
-        sound_ret
+	sound_ret
 
 Cry_Shroomish_Ch6:
-        duty_cycle_pattern 0, 2, 0, 0
-        square_note 3, 6, -1, 1020
+	duty_cycle_pattern 0, 2, 0, 0
+	square_note 3, 6, -1, 1020
 	square_note 6, 5, 6, 1020
 	square_note 5, 7, 5, 1277
 	square_note 4, 6, 4, 1277
 	square_note 12, 4, 0, 1277
 	square_note 2, 0, 0, 1277
-        sound_ret
+	sound_ret
 
 Cry_Shroomish_Ch8:
 	noise_note 7, 10, 5, 13
@@ -2363,10 +2363,10 @@ Cry_Shroomish_Ch8:
 	sound_ret
 
 Cry_Breloom:
-        channel_count 3
-        channel 5, Cry_Breloom_Ch5
-        channel 6, Cry_Breloom_Ch6
-        channel 8, Cry_Breloom_Ch8
+	channel_count 3
+	channel 5, Cry_Breloom_Ch5
+	channel 6, Cry_Breloom_Ch6
+	channel 8, Cry_Breloom_Ch8
 
 Cry_Breloom_Ch5:
 	duty_cycle_pattern 1, 0, 3, 0
@@ -2394,10 +2394,10 @@ Cry_Breloom_Ch8:
 	sound_ret
 
 Cry_Aron:
-        channel_count 3
-        channel 5, Cry_Aron_Ch5
-        channel 6, Cry_Aron_Ch6
-        channel 8, Cry_Aron_Ch8
+	channel_count 3
+	channel 5, Cry_Aron_Ch5
+	channel 6, Cry_Aron_Ch6
+	channel 8, Cry_Aron_Ch8
 
 Cry_Aron_Ch5:
 	duty_cycle_pattern 0, 1, 2, 3
@@ -2410,24 +2410,24 @@ Cry_Aron_Ch5:
 	sound_ret
 
 Cry_Aron_Ch6:
-        duty_cycle_pattern 2, 2, 2, 2
-        square_note 16, 12, 3, 1890
+	duty_cycle_pattern 2, 2, 2, 2
+	square_note 16, 12, 3, 1890
 	square_note 8, 12, 1, 1886
 	square_note 16, 11, 0, 1881
 	square_note 3, 8, 7, 1885
 	square_note 8, 0, 1, 1885
-        sound_ret
+	sound_ret
 
 Cry_Aron_Ch8:
-        noise_note 10, 10, 0, 10
+	noise_note 10, 10, 0, 10
 	noise_note 8, 8, 2, 48
-        sound_ret
+	sound_ret
 
 Cry_Lairon:
-        channel_count 3
-        channel 5, Cry_Lairon_Ch5
-        channel 6, Cry_Lairon_Ch6
-        channel 8, Cry_Lairon_Ch8
+	channel_count 3
+	channel 5, Cry_Lairon_Ch5
+	channel 6, Cry_Lairon_Ch6
+	channel 8, Cry_Lairon_Ch8
 
 Cry_Lairon_Ch5:
 	duty_cycle_pattern 1, 1, 1, 0
@@ -2468,9 +2468,9 @@ Cry_Lairon_Ch8:
 	sound_ret
 
 Cry_Aggron:
-        channel_count 3
-        channel 5, Cry_Aggron_Ch5
-        channel 6, Cry_Aggron_Ch6
+	channel_count 3
+	channel 5, Cry_Aggron_Ch5
+	channel 6, Cry_Aggron_Ch6
 	channel 8, Cry_Aggron_Ch8
 
 Cry_Aggron_Ch5:
@@ -2507,9 +2507,9 @@ Cry_Aggron_Ch8:
 ; Sinnoh
 
 Cry_Glaceon:
-        channel_count 2
-        channel 5, Cry_Glaceon_Ch5
-        channel 6, Cry_Glaceon_Ch6
+	channel_count 2
+	channel 5, Cry_Glaceon_Ch5
+	channel 6, Cry_Glaceon_Ch6
 
 Cry_Glaceon_Ch5:
 	duty_cycle_pattern 2, 2, 2, 1
@@ -2549,13 +2549,13 @@ Cry_Glaceon_Ch6:
 ; Kalos
 
 Cry_Noibat:
-        channel_count 2
-        channel 5, Cry_Noibat_Ch5
-        channel 6, Cry_Noibat_Ch6
+	channel_count 2
+	channel 5, Cry_Noibat_Ch5
+	channel 6, Cry_Noibat_Ch6
 
 Cry_Noibat_Ch5:
-        duty_cycle_pattern 0, 0, 3, 1
-        square_note 10, 12, 1, 1792
+	duty_cycle_pattern 0, 0, 3, 1
+	square_note 10, 12, 1, 1792
 	square_note 10, 13, 1, 1768
 	square_note 11, 13, 1, 1780
 	square_note 13, 14, 1, 1828
@@ -2576,11 +2576,11 @@ Cry_Noibat_Ch5:
 	square_note 1, 8, 2, 1826
 	square_note 2, 9, 1, 1828
 	square_note 2, 8, 1, 1831
-        sound_ret
+	sound_ret
 
 Cry_Noibat_Ch6:
-        duty_cycle_pattern 2, 2, 3, 2
-        square_note 6, 10, 1, 966
+	duty_cycle_pattern 2, 2, 3, 2
+	square_note 6, 10, 1, 966
 	square_note 4, 0, 1, 966
 	square_note 10, 10, 1, 1565
 	square_note 11, 7, 1, 978
@@ -2596,12 +2596,12 @@ Cry_Noibat_Ch6:
 	square_note 4, 2, 1, 1820
 	square_note 4, 4, 0, 1811
 	square_note 4, 4, 2, 1811
-        sound_ret
+	sound_ret
 
 Cry_Noivern:
-        channel_count 3
-        channel 5, Cry_Noivern_Ch5
-        channel 6, Cry_Noivern_Ch6
+	channel_count 3
+	channel 5, Cry_Noivern_Ch5
+	channel 6, Cry_Noivern_Ch6
 	channel 8, Cry_Noivern_Ch8
 
 Cry_Noivern_Ch5:

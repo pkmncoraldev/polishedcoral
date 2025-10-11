@@ -742,7 +742,7 @@ Inn1FTrigger3:
 	appear INN_1F_CLERK
 	special Special_StopRunning
 	applyonemovement INN_1F_CLERK, big_step_left
-	opentext
+	opentext TEXTBOX_CLERK
 	writetext Inn1FNoRunningHallsText
 	waitbutton
 	closetext
@@ -756,7 +756,7 @@ Inn1FTrigger3:
 	appear INN_1F_CLERK
 	special Special_StopRunning
 	applyonemovement INN_1F_CLERK, big_step_right
-	opentext
+	opentext TEXTBOX_CLERK
 	writetext Inn1FNoRunningHallsText
 	waitbutton
 	closetext
@@ -769,7 +769,7 @@ Inn1FTrigger3:
 .lobby
 	setlasttalked INN_1F_CLERK
 	faceplayer
-	opentext
+	opentext TEXTBOX_CLERK
 	writetext Inn1FNoRunningLobbyText
 	waitbutton
 	closetext

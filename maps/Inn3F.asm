@@ -526,7 +526,7 @@ Inn3FTrigger1:
 	appear INN_3F_CLERK
 	special Special_StopRunning
 	applyonemovement INN_3F_CLERK, big_step_left
-	opentext
+	opentext TEXTBOX_CLERK
 	writetext Inn1FNoRunningHallsText
 	waitbutton
 	closetext
@@ -538,7 +538,7 @@ Inn3FTrigger1:
 	appear INN_3F_CLERK
 	special Special_StopRunning
 	applyonemovement INN_3F_CLERK, big_step_right
-	opentext
+	opentext TEXTBOX_CLERK
 	writetext Inn1FNoRunningHallsText
 	waitbutton
 	closetext

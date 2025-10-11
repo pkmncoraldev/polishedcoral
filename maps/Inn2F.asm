@@ -250,7 +250,7 @@ Inn2FTrigger0:
 	appear INN_2F_CLERK
 	special Special_StopRunning
 	applyonemovement INN_2F_CLERK, big_step_left
-	opentext
+	opentext TEXTBOX_CLERK
 	writetext Inn1FNoRunningHallsText
 	waitbutton
 	closetext
@@ -262,7 +262,7 @@ Inn2FTrigger0:
 	appear INN_2F_CLERK
 	special Special_StopRunning
 	applyonemovement INN_2F_CLERK, big_step_right
-	opentext
+	opentext TEXTBOX_CLERK
 	writetext Inn1FNoRunningHallsText
 	waitbutton
 	closetext

@@ -1,7 +1,8 @@
 Route22_2_MapScriptHeader:
 	db 0 ; scene scripts
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_TILES, Route22_2Callback
 
 	db 0 ; warp events
 
@@ -25,6 +26,15 @@ Route22_2_MapScriptHeader:
 	person_event SPRITE_CUEBALL, 11, 66, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 4, Route22_2Trainer7, -1
 	person_event SPRITE_CUEBALL, 10, 57, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 4, Route22_2Trainer8, -1
 	
+	
+Route22_2Callback:
+	checkevent EVENT_ROUTE_22_ROADBLOCK_GONE
+	iffalse .end
+	changeblock 6, -4, 193
+	changeblock 8, -4, 185
+	changeblock 10, -4, 194
+.end
+	return
 	
 Route22_2_Snare:
 	pause 10

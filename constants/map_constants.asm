@@ -402,7 +402,7 @@ DEF MAP_NONE   EQU 0
 	map_const BAR_BACK_ALLEY,							  10,  6 ; 15
 	map_const BAR_INSIDE,								   8,  5 ; 16
 	map_const CROSSROADS,								  22, 12 ; 17
-	map_const ROUTE_22,									  77,  7 ; 18
+	map_const ROUTE_22,									  77,  8 ; 18
 	map_const ROUTE_22_2,								  36, 20 ; 19
 	
 	newgroup													 ; 21

@@ -136,6 +136,8 @@ CrossroadsCutsceneStart1:
 	special Special_StopRunning
 	playmusic MUSIC_SNARE_THEME
 	applymovement PLAYER, Movement_CrossroadsCutsceneStart1
+	pause 20
+	special Special_ForcePlayerStateNormal
 	moveperson CROSSROADS_PLAYER_CUTSCENE_RED, 23, 10
 	moveperson CROSSROADS_PLAYER_CUTSCENE_BLUE, 23, 10
 	moveperson CROSSROADS_PLAYER_CUTSCENE_GREEN, 23, 10
@@ -151,6 +153,8 @@ CrossroadsCutsceneStart2:
 	special Special_StopRunning
 	playmusic MUSIC_SNARE_THEME
 	applymovement PLAYER, Movement_CrossroadsCutsceneStart2
+	pause 20
+	special Special_ForcePlayerStateNormal
 	moveperson CROSSROADS_PLAYER_CUTSCENE_RED, 23, 10
 	moveperson CROSSROADS_PLAYER_CUTSCENE_BLUE, 23, 10
 	moveperson CROSSROADS_PLAYER_CUTSCENE_GREEN, 23, 10
@@ -166,6 +170,8 @@ CrossroadsCutsceneStart3:
 	special Special_StopRunning
 	playmusic MUSIC_SNARE_THEME
 	applymovement PLAYER, Movement_CrossroadsCutsceneStart2
+	pause 20
+	special Special_ForcePlayerStateNormal
 	moveperson CROSSROADS_PLAYER_CUTSCENE_RED, 23, 11
 	moveperson CROSSROADS_PLAYER_CUTSCENE_BLUE, 23, 11
 	moveperson CROSSROADS_PLAYER_CUTSCENE_GREEN, 23, 11
@@ -181,6 +187,8 @@ CrossroadsCutsceneStart4:
 	special Special_StopRunning
 	playmusic MUSIC_SNARE_THEME
 	applymovement PLAYER, Movement_CrossroadsCutsceneStart3
+	pause 20
+	special Special_ForcePlayerStateNormal
 	moveperson CROSSROADS_PLAYER_CUTSCENE_RED, 23, 11
 	moveperson CROSSROADS_PLAYER_CUTSCENE_BLUE, 23, 11
 	moveperson CROSSROADS_PLAYER_CUTSCENE_GREEN, 23, 11
@@ -193,7 +201,7 @@ CrossroadsCutsceneStart4:
 	jump CrossroadsCutscene2
 	
 CrossroadsCutscene1:
-	pause 40
+	pause 20
 	copybytetovar wPlayerPalette
     if_equal 0, .red
     if_equal 1, .blue

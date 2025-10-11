@@ -929,10 +929,10 @@ FacingJukebox:
 	
 FacingFossil1:
 	db 2 ; #
-	db  4, 0, 0, $00
-	db 12, 8, 0, $02
+	db  4, 0, 0, $08
+	db 12, 8, 0, $0a
 	
 FacingFossil2:
 	db 2 ; #
-	db  4, 0, 0, $01
-	db 12, 8, 0, $03
+	db  4, 0, 0, $09
+	db 12, 8, 0, $0b

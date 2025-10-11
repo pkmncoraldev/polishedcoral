@@ -778,9 +778,6 @@ BarInside_BlockData:
 Route22Tunnel_BlockData:
 	INCBIN "maps/Route22Tunnel.ablk.lz"
 	
-Route22_BlockData:
-	INCBIN "maps/Route22.ablk.lz"
-	
 FakeRoute1_BlockData:
 	INCBIN "maps/FakeRoute1.ablk.lz"
 	
@@ -925,6 +922,9 @@ GreenGrottoB1F_BlockData:
 	INCBIN "maps/GreenGrottoB1F.ablk.lz"
 	
 SECTION "Map Blockdata 3", ROMX
+
+Route22_BlockData:
+	INCBIN "maps/Route22.ablk.lz"
 
 Route30_BlockData:
 	INCBIN "maps/Route30.ablk.lz"

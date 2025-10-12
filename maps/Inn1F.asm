@@ -41,7 +41,7 @@ Inn1F_MapScriptHeader:
 	signpost 11,  7, SIGNPOST_JUMPTEXT, Inn1FPainting1Text
 	signpost 11, 19, SIGNPOST_JUMPTEXT, Inn1FPainting2Text
 	signpost 20, 11, SIGNPOST_JUMPTEXT, Inn1FStatueText
-	signpost 16,  6, SIGNPOST_JUMPTEXT, Inn1FWhiteboardText
+	signpost 16,  7, SIGNPOST_JUMPTEXT, Inn1FWhiteboardText
 	signpost 16, 17, SIGNPOST_READ, Inn1FLemonWater
 	signpost 11, 20, SIGNPOST_JUMPTEXT, Inn1F101Text
 	signpost 11, 16, SIGNPOST_JUMPTEXT, Inn1F102Text
@@ -299,7 +299,7 @@ Inn1FKageText2:
 	line "from SUNBEAM!"
 	
 	para "You ain't leavin'"
-	line "with that HM!"
+	line "here in on piece!"
 	done
 	
 Inn1FKageText3:
@@ -337,8 +337,29 @@ Inn1FKageText7:
 	done
 	
 Inn1FKageText8:
-	text "Fine. <WAIT_M>Keep the"
-	line "stupid HM!"
+	text "You're a serious"
+	line "thorn in our side,"
+	cont "you know that?"
+	
+	para "We had big plans"
+	line "for the highway,"
+	cont "but it looks like "
+	cont "you ruined those."
+	
+	para "Our leader is"
+	line "getting tired of"
+	cont "our screw ups."
+	
+	para "That whizkid's"
+	line "DRAGON STONE plan"
+	cont "better pan out,"
+	
+	para "otherwise, we may"
+	line "have a big problem"
+	cont "on our hands."
+	
+	para "Keep the stupid"
+	line "HM!"
 	
 	para "You can't use it"
 	line "outside of battle"
@@ -349,22 +370,6 @@ Inn1FKageText8:
 	para "And you aren't"
 	line "gettin' there any"
 	cont "time soon!"
-	
-	para "You're a serious"
-	line "thorn in our side,"
-	cont "you know that?"
-	
-	para "Our leader is"
-	line "getting tired of"
-	cont "our screw ups."
-	
-	para "That whizkid's"
-	line "DRAGON STONE thing"
-	cont "better work out."
-	
-	para "Otherwise, we may"
-	line "have a big problem"
-	cont "on our hands."
 	
 	para "Come on, boys.<WAIT_M>"
 	line "We're leaving."
@@ -1086,10 +1091,10 @@ Inn1FPlayersBedText2:
 	done
 	
 Inn1FCustomer1:
-	checkevent EVENT_INN_SNARE_GONE
-	iftrue .snare_gone
 	faceplayer
 	opentext
+	checkevent EVENT_INN_SNARE_GONE
+	iftrue .snare_gone
 	writetext Inn1FCustomer1Text
 	waitbutton
 	closetext
@@ -1097,20 +1102,51 @@ Inn1FCustomer1:
 	callasm Inn1FResertScriptVar
 	end
 .snare_gone
+	writetext Inn1FCustomer1Text2
+	waitbutton
+	closetext
+	spriteface INN_1F_CUSTOMER_1, DOWN
 	callasm Inn1FResertScriptVar
-	jumptext Inn1FCustomer1Text2
+	end
 	
 Inn1FCustomer1Text:
-	text "I just want a"
-	line "place to lie down"
-	cont "for a while."
+	text "The group staying"
+	line "here say they are"
+	cont "doing some job"
+	cont "on the highway."
 	
-	para "I'm so tired!"
+	para "Are they a con-"
+	line "struction crew?"
+	
+	para "They look like"
+	line "that TEAM SNARE"
+	cont "that's been all"
+	cont "over the news…"
 	done
 	
 Inn1FCustomer1Text2:
-	text "He's nodding off"
-	line "standing up."
+	text "This whole area"
+	line "is seeing rapid"
+	cont "development."
+	
+	para "They recently"
+	line "finished a bridge"
+	cont "to the NORTH,"
+	
+	para "there were plans"
+	line "for more housing"
+	cont "to the SOUTH near"
+	cont "BRIGHTBURG,"
+	
+	para "and they might"
+	line "be extending the"
+	cont "highway EAST."
+	
+	para "Expansion can be"
+	line "good, but you risk"
+	cont "losing what makes"
+	cont "places like this"
+	cont "special."
 	done
 	
 Inn1FCustomer2:

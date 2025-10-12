@@ -403,8 +403,8 @@ CrossroadsSnare2:
 	
 CrossroadsSnare1Text:
 CrossroadsSnare2Text:
-	text "Nope. <WAIT_S>"
-	line "Not this way!"
+	text "Our boss told us"
+	line "not to let you by."
 	done
 	
 CrossroadsUnfortunateCustomer:

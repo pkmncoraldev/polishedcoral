@@ -271,7 +271,7 @@ Route22Snare2Text2:
 	done
 	
 Route22Snare2WinText:
-	text "YOU WIN"
+	text "Gahh!"
 	done
 	
 Route22Snare3:
@@ -312,21 +312,40 @@ Route22Snare3:
 	end
 	
 Route22Snare3Text1:
-	text "TEXT 1"
+	text "Yeah, we're the"
+	line "ones blocking"
+	cont "traffic."
+	
+	para "All these fine"
+	line "folks need to do"
+	cont "to pass is give us"
+	cont "their #MON."
+	
+	para "We ain't moving a"
+	line "muscle until that"
+	cont "happens."
+	
+	para "Since you're here,"
+	line "you can do your"
+	cont "part too!"
 	done
 	
 Route22Snare3Text2:
-	text "TEXT 2"
+	text "Big mistake!"
+	
+	para "We'll just go get"
+	line "our boss, then"
+	cont "we'll see what's up!"
 	done
 	
 Route22Snare3Text3:
 	text "With the roadblock"
 	line "gone, the traffic"
-	cont "jam cleared up!"
+	cont "cleared up!"
 	done
 	
 Route22Snare3WinText:
-	text "YOU WIN"
+	text "Why you…"
 	done
 	
 Movement_Route22_Snare3:
@@ -346,12 +365,8 @@ Route22MedicText1:
 	line "out here still"
 	cont "blocking traffic?"
 	
-	para "They're threatening"
-	line "to take everyone's"
-	cont "#MON."
-	
-	para "You're taking care"
-	line "of them?"
+	para "Oh, you're taking"
+	line "care of them!"
 	
 	para "Thank you!"
 	done

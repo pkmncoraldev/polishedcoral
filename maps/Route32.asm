@@ -34,13 +34,13 @@ Route32StrengthMan:
 	callasm Route32CheckBouldersStuck
 	iftrue .unstick
 .skip_stuck_check
-	checktmhm TM_CURSE	;TM_SUPERPOWER
+	checktmhm TM_SUPERPOWER
 	iftrue .got_superpower
 	checktmhm TM_SELFDESTRUCT ;mr pusher reward
 	iffalse .normal
 	writetext Route32StrengthManText2
 	waitbutton
-	verbosegivetmhm TM_CURSE	;TM_SUPERPOWER
+	verbosegivetmhm TM_SUPERPOWER
 .got_superpower
 	writetext Route32StrengthManText3
 	waitbutton

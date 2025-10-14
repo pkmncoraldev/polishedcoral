@@ -46,7 +46,7 @@ TMHMMoves:
 	db ATTRACT                             ; TM45
 	db WEATHER_BALL                        ; TM46
 	db STEEL_WING                          ; TM47
-	db ROCK_SLIDE                          ; TM48
+	db SUPERPOWER                          ; TM48
 	db DAZZLINGLEAM                        ; TM49
 	db THUNDERPUNCH                        ; TM50
 	db FIRE_PUNCH                          ; TM51

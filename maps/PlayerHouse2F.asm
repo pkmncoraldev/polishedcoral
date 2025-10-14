@@ -233,6 +233,7 @@ PlayerHouseDebugPoster:
 	givetmhm TM_THUNDERPUNCH
 	givetmhm TM_FIRE_PUNCH
 	givetmhm TM_ICE_PUNCH
+	givetmhm TM_SUPERPOWER
 	givetmhm HM_CUT
 	givetmhm HM_FLY
 	givetmhm HM_SURF

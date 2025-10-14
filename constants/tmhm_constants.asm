@@ -68,7 +68,7 @@ ENDM
 	add_tm ATTRACT			; $2c
 	add_tm WEATHER_BALL		; $2d
 	add_tm STEEL_WING		; $2e
-	add_tm ROCK_SLIDE		; $2f
+	add_tm SUPERPOWER		; $2f
 	add_tm DAZZLINGLEAM		; $30
 	add_tm THUNDERPUNCH		; $31
 	add_tm FIRE_PUNCH		; $32

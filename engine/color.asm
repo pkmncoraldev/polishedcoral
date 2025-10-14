@@ -1298,11 +1298,18 @@ LoadMapPals::
 	jp FarCopyWRAM
 .highway2
 	ld a, [wMapNumber]
+	cp MAP_ROUTE_32
+	jr z, .route_32
 	cp MAP_ROUTE_11_2
 	jp nz, .highway
 	ld a, [wYCoord]
 	cp $25
 	jp c, .highway
+.route_32
+	ld a, [wYCoord]
+	cp $21
+	jp c, .park
+	jp .rocks
 .computer
 	call .normal
 	ld hl, MapObjectPalsComputer

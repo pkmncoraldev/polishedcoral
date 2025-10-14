@@ -1,5 +1,6 @@
 Route32_MapScriptHeader:
-	db 0 ; scene scripts
+	db 1 ; scene scripts
+	scene_script Route32Trigger0
 
 	db 1 ; callbacks
 	callback MAPCALLBACK_TILES, Route32Callback
@@ -18,6 +19,11 @@ Route32_MapScriptHeader:
 	smashrock_event 30, 48
 	smashrock_event 17, 42
 	smashrock_event 18, 43
+	
+	
+Route32Trigger0:
+	special Special_UpdatePalsInstant
+	end
 	
 Route32Callback:
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_5

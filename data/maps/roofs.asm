@@ -27,7 +27,7 @@ MapGroupRoofs:
 	db  0 ; group 23 (Bright)
 	db  4 ; group 24 (Obscura)
 	db  4 ; group 25 (Aureole)
-	db -1 ; group 26 (Inn)
+	db  4 ; group 26 (Inn)
 	db  0 ; group 27 (Route 32)
 	db -1 ; group last (Fake Route 1)
 

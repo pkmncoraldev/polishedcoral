@@ -300,7 +300,7 @@ Route11_2EggLady:
 	setevent EVENT_ROUTE_11_2_TALKED_TO_EGG_LADY
 	end
 .talked
-	checkevent EVENT_GOT_LUCKY_EGG
+	checkevent EVENT_GOT_FIRE_BLAST
 	iffalse .dropped
 	writetext Route11_2EggLadyText5
 	waitbutton
@@ -352,7 +352,7 @@ Route11_2FloatingBall:
 	callasm Route11_2FloatingBallSetItemAsm
 	farscall FindTMHMInBallScript
 	iffalse .end
-	setevent EVENT_GOT_LUCKY_EGG
+	setevent EVENT_GOT_FIRE_BLAST
 	setevent EVENT_ROUTE_11_2_FLOATING_BALL
 .end
 	end

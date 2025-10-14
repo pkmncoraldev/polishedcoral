@@ -307,7 +307,6 @@ INCLUDE "maps/LusterApartment2_2F.asm"
 INCLUDE "maps/LusterApartment2_1F.asm"
 INCLUDE "maps/Skatepark.asm"
 INCLUDE "maps/Route11_2.asm"
-INCLUDE "maps/Route32.asm"
 INCLUDE "maps/Route11Gate.asm"
 
 SECTION "Shimmer City Scripts", ROMX
@@ -351,6 +350,7 @@ INCLUDE "maps/TrainCabin2.asm"
 INCLUDE "maps/WestTrainCab.asm"
 INCLUDE "maps/EastTrainCaboose.asm"
 INCLUDE "maps/WestTrainCaboose.asm"
+INCLUDE "maps/Route32.asm"
 
 SECTION "Eventide Forest Scripts", ROMX
 

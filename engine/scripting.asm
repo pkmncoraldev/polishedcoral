@@ -1238,7 +1238,7 @@ Script_variablesprite2:
 	farjp ReloadSpriteIndex
 
 Script_priority:
-	; parameters:
+; parameters:
 ;     person (SingleByteParam)
 	call GetScriptByte
 	ldh [hMapObjectIndexBuffer], a

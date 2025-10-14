@@ -226,6 +226,7 @@ PlayerHouseDebugPoster:
 	givetmhm TM_ROOST
 	givetmhm TM_WILL_O_WISP
 	givetmhm TM_ACROBATICS
+	givetmhm TM_SELFDESTRUCT
 	givetmhm TM_GIGA_IMPACT
 	givetmhm TM_SAND_ATTACK_SMOKESCREEN_FLASH
 	givetmhm TM_ANCIENTPOWER

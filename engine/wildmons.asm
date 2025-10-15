@@ -129,7 +129,7 @@ FindNest: ; 2a01f
 
 .AppendNest: ; 2a09c
 	push de
-	call GetWorldMapLocation
+	call GetWorldMapLocationNest
 	ld c, a
 	hlcoord 0, 0
 	ld de, SCREEN_WIDTH * SCREEN_HEIGHT

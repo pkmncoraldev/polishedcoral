@@ -15,7 +15,6 @@
 	const DEXSTATE_EXIT
 
 Pokedex: ; 40000
-	eventflagset EVENT_IN_POKEDEX
 	ldh a, [hWX]
 	ld l, a
 	ldh a, [hWY]
@@ -51,7 +50,6 @@ Pokedex: ; 40000
 	jr .main
 
 .exit
-	eventflagreset EVENT_IN_POKEDEX
 	ld de, SFX_READ_TEXT_2
 	call PlaySFX
 	call WaitSFX

@@ -483,7 +483,7 @@ DEF MAP_NONE   EQU 0
 	map_const ROUTE_23_GATE,                          	   4,  4 ; 6
 	map_const ROUTE_32,									  22, 29 ; 8
 	
-	newgroup
+	newgroup													 ; BY ITSELF FOR TOWN MAP STUFF
 	map_const ROUTE_11_2,								  14, 33 ; 1
 	
 	newgroup													 ; EVO LOCATIONS GROUP

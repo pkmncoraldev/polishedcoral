@@ -77,6 +77,7 @@ Landmarks: ; 0x1ca8c3
 	landmark  92, 116, ObscuraCityName
 	landmark 140,  96, Route30Name
 	landmark 108,  36, Route32Name
+	landmark 100,  36, Route11Name
 	landmark -16, -16, AureoleTownName
 	
 	landmark  20, 124, BrilloTownName

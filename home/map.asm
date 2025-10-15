@@ -1938,14 +1938,27 @@ GetAnyMapTileset:: ; 2ca7
 	ret
 ; 2caf
 
+GetWorldMapLocationNest::
+; given a map group/id in bc, return its location on the Pokégear map.
+	push hl
+	push de
+	push bc
+	jr GetWorldMapLocation.skip
+
 GetWorldMapLocation:: ; 0x2caf
 ; given a map group/id in bc, return its location on the Pokégear map.
 	push hl
 	push de
 	push bc
 
-	eventflagcheck EVENT_IN_POKEDEX
+	ld a, [wMapGroup]	;Route_11_2 is in it's own mapgroup
+	cp GROUP_ROUTE_11_2
 	jr nz, .skip
+	ld a, [wYCoord]
+	cp $25
+	jp c, .skip
+	ld a, ROUTE_11_SOUTH
+	jr .end
 	
 	eventflagcheck EVENT_ON_DODRIO_RANCH
 	ld a, DODRIO_RANCH

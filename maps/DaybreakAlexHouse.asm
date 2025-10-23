@@ -31,6 +31,6 @@ DaybreakAlexDadText:
 	line "“TEAM”… <WAIT_L>something…"
 	
 	para "Things like this"
-	line "didn't used to"
+	line "didn't use to"
 	cont "happen here…"
 	done

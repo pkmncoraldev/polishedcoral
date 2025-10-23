@@ -475,7 +475,7 @@ Route6SouthMinaSceneText9:
 	line "here, how about"
 	cont "another battle?"
 	
-	para "It'll be fun!."
+	para "It'll be fun!"
 	done
 	
 Route6SouthMinaSceneText10:

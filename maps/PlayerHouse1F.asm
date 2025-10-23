@@ -392,8 +392,8 @@ MomAfterGearText:
 	cont "items for your"
 	cont "#MON."
 	
-	para "Good luck out"
-	line "there, sweetie."
+	para "I'll be cheering"
+	line "for you, sweetie."
 	done
 
 UnknownText_0x7a763:
@@ -422,10 +422,11 @@ UnknownText_0x7a763:
 	para "…"
 	
 	para "So, I guess you're"
-	line "heading off, then."
+	line "really a #MON"
+	cont "TRAINER now, huh?"
 	
-	para "My little baby is"
-	line "growing up!"
+	para "Oh, your father"
+	line "would be so proud!"
 	
 	para "Make sure you"
 	line "have everything"
@@ -438,9 +439,8 @@ UnknownText_0x7a763:
 	cont "items for your"
 	cont "#MON."
 	
-	para "Good luck out"
-	line "there, sweetie."
-	done
+	para "I'll be cheering"
+	line "for you, sweetie."
 	done
 	
 UnknownText_0x7a807:
@@ -541,8 +541,8 @@ SunsetMomText4:
 	done
 	
 SunsetMomText5:
-	text "Good luck out"
-	line "there, sweetie."
+	text "I'll be cheering"
+	line "for you, sweetie."
 	done
 
 SunsetMomText6:

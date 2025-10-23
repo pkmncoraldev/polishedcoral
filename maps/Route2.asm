@@ -46,7 +46,7 @@ TrainerRoute2_1:
 	
 	para "you should stay"
 	line "out of other"
-	cont "TRAINER'S view."
+	cont "TRAINERS' view."
 	done
 
 .SeenText:

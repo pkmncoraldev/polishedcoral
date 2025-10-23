@@ -1012,8 +1012,9 @@ LoadMapPals::
 	ld a, [wMapNumber]
 	cp MAP_GLINT_GROVE_EAST
 	jp nz, .normal
-	eventflagcheck EVENT_GLINT_GROVE_EAST_ROCKS_BROWN
-	jp z, .normal
+	ld a, [wYCoord]
+	cp $11
+	jp c, .normal
 	jp .rocks
 .bar
 	ld a, [wPlayerPalette]
@@ -1171,8 +1172,9 @@ LoadMapPals::
 	jp FarCopyWRAM
 	
 .brillo
-	eventflagcheck EVENT_BRILLO_MARACTUS_GREEN
-	jp z, .sailboat
+	ld a, [wXCoord]
+	cp $1F
+	jp c, .sailboat
 	ld a, [wTimeOfDayPal]
 	and 3
 	ld bc, 1 palettes
@@ -1220,8 +1222,11 @@ LoadMapPals::
 	ld a, [wMapNumber]
 	cp MAP_SUNBEAM_JUNGLE
 	jp nz, .outside
-	eventflagcheck EVENT_JUNGLE_CAVE_BLUE
-	jp z, .normal
+	ld a, [wXCoord]
+	cp $6
+	jp c, .normal
+	cp $11
+	jp nc, .normal
 	ld a, [wTimeOfDayPal]
 	and 3
 	ld bc, 1 palettes
@@ -1473,15 +1478,17 @@ LoadMapPals::
 	ld a, [wMapNumber]
 	cp MAP_LAKE_ONWA
 	jp nz, .got_pals_cont
-	eventflagcheck EVENT_LAKE_ROCKS_BROWN
-	jp z, .sailboat
+	ld a, [wYCoord]
+	cp $11
+	jp nc, .sailboat
 	jr .rocks
 .rockscheck2
 	ld a, [wMapNumber]
 	cp MAP_ROUTE_3
 	jp nz, .got_pals_cont
-	eventflagcheck EVENT_ROUTE_3_ROCKS_BROWN
-	jp z, .got_pals_cont
+	ld a, [wXCoord]
+	cp $24
+	jp c, .got_pals_cont
 	jr .rocks
 .rockscheck3
 	ld a, [wMapGroup]
@@ -1520,8 +1527,12 @@ LoadMapPals::
 	jp z, .outside_cont
 	cp MAP_ROUTE_20
 	jp nz, .not_route_20
-	eventflagcheck EVENT_ROUTE_20_GRASS_YELLOW
-	jp z, .outside_cont
+	ld a, [wYCoord]
+	cp $1b
+	jp nc, .not_route_20
+	ld a, [wXCoord]
+	cp $a
+	jp nc, .outside_cont
 .not_route_20
 	ld hl, MapObjectPalsSunflowers
 	jr .sunflowers_cont
@@ -1748,8 +1759,9 @@ LoadMapPals::
 	call .copy_single_pal_to_pal_7
 	jp .outside
 .lighthouse
-	eventflagcheck EVENT_CAPE_LIGHTHOUSE_COLORS
-	jp z, .got_pals_cont
+	ld a, [wXCoord]
+	cp $a
+	jp nc, .got_pals_cont
 	ld a, [wTimeOfDayPal]
 	and 3
 	ld bc, 1 palettes

@@ -35,7 +35,6 @@ MtOnwa1F_MapScriptHeader:
 	itemball_event 44, 22, FULL_RESTORE, 1, EVENT_MT_ONWA_1F_POKE_BALL
 
 MtOnwa1FCallback:
-	setevent EVENT_LAKE_ROCKS_BROWN
 	checkevent EVENT_MT_ONWA_B3F_MAGMAR_2
 	iftrue .end
 	clearevent EVENT_MT_ONWA_B3F_MAGMAR_GONE

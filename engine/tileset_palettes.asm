@@ -190,8 +190,9 @@ LoadSpecialMapPalette: ; 494ac
 	ld a, [wMapNumber]
 	cp MAP_UNDERWATER_TEMPLE_1
 	jr nz, .not_temple
-	eventflagcheck EVENT_UNDERWATER_TEMPLE_GREEN
-	jr z, .underwater_temple
+	ld a, [wYCoord]
+	cp $19
+	jp nc, .underwater_temple
 .not_temple
 	cp MAP_ROUTE_14_15_UNDERWATER
 	ret nz

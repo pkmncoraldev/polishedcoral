@@ -1006,7 +1006,6 @@ wAlways0Trigger:: ds 1
 wPlayerHouse1FTrigger:: ds 1
 wPlayerHouse2FTrigger:: ds 1
 wSunsetBayTrigger:: ds 1
-wSunsetCapeTrigger:: ds 1
 wSunsetGengarHouseTrigger:: ds 1
 wSunsetCaptainsHouseTrigger:: ds 1
 wSunsetLighthouseTrigger:: ds 1
@@ -1014,7 +1013,6 @@ wRoute1GateTrigger:: ds 1
 wDaybreakVillageTrigger:: ds 1
 wGlintGroveEntranceTrigger:: ds 1
 wGlintGroveTrigger:: ds 1
-wGlintGroveEastTrigger:: ds 1
 wGlintApartmentLeft2FTrigger:: ds 1
 wGlintGymTrigger:: ds 1
 wStarglowCavern1FTrigger:: ds 1
@@ -1075,7 +1073,6 @@ wBrilloTownTrigger:: ds 1
 wRoute18Trigger:: ds 1
 wRoute18NorthTrigger:: ds 1
 wAirportTrigger:: ds 1
-wRoute20Trigger:: ds 1
 wLusterSkyscraperPorygonRoomTrigger:: ds 1
 wDuskTurnpikeTrigger:: ds 1
 wRoute22TunnelTrigger:: ds 1
@@ -1100,12 +1097,11 @@ wObscuraCityTrigger:: ds 1
 wInn1FTrigger:: ds 1
 wObscuraMuseum1FTrigger:: ds 1
 wObscuraMuseum3FTrigger:: ds 1
-wUnderwaterTemple1Trigger:: ds 1
 wGlintGroveUndergroundTrigger:: ds 1
 wRoute3EastTrigger:: ds 1
 wRoute11Trigger:: ds 1
 wRoute22_2Trigger:: ds 1
-ds 12
+ds 16
 
 wAmpharosFood:: ds 1
 

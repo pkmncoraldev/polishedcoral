@@ -1,7 +1,6 @@
 SunsetCape_MapScriptHeader:
-	db 2 ; scene scripts
+	db 1 ; scene scripts
 	scene_script SunsetCapeTrigger0
-	scene_script SunsetCapeTrigger1
 
 	db 0 ; callbacks
 
@@ -10,19 +9,7 @@ SunsetCape_MapScriptHeader:
 	warp_event  5,  5, ROUTE_1_GATE, 4
 	warp_event 15, 15, DAYBREAK_GROTTO_3, 4
 
-	db 12 ; coord events
-	coord_event  6, 17, 0, SunsetCapeMakeSilverLighthouse
-	coord_event  7, 17, 0, SunsetCapeMakeSilverLighthouse
-	coord_event  8, 17, 0, SunsetCapeMakeSilverLighthouse
-	coord_event  9, 17, 0, SunsetCapeMakeSilverLighthouse
-	coord_event  6, 18, 0, SunsetCapeMakeSilverLighthouse
-	coord_event  7, 18, 0, SunsetCapeMakeSilverLighthouse
-	coord_event  6, 15, 1, SunsetCapeMakeSilverGreen
-	coord_event  7, 15, 1, SunsetCapeMakeSilverGreen
-	coord_event  6, 16, 1, SunsetCapeMakeSilverGreen
-	coord_event  7, 16, 1, SunsetCapeMakeSilverGreen
-	coord_event  8, 16, 1, SunsetCapeMakeSilverGreen
-	coord_event  9, 16, 1, SunsetCapeMakeSilverGreen
+	db 0 ; coord events
 
 	db 2 ; bg events
 	signpost  8,  6, SIGNPOST_READ, SunsetCapeSign
@@ -67,21 +54,7 @@ SunsetCape_MapScriptHeader:
 	
 	
 SunsetCapeTrigger0:
-	end
-	
-SunsetCapeTrigger1:
-	end
-	
-SunsetCapeMakeSilverLighthouse:
-	setevent EVENT_CAPE_LIGHTHOUSE_COLORS
 	special Special_UpdatePalsInstant
-	dotrigger $1
-	end
-	
-SunsetCapeMakeSilverGreen:
-	clearevent EVENT_CAPE_LIGHTHOUSE_COLORS
-	special Special_UpdatePalsInstant
-	dotrigger $0
 	end
 	
 SunsetCapeNpc1:

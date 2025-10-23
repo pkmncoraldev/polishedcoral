@@ -1,11 +1,10 @@
 LakeOnwa_MapScriptHeader:
-	db 6 ; scene scripts
+	db 5 ; scene scripts
 	scene_script LakeOnwaTrigger0
 	scene_script LakeOnwaTrigger1
 	scene_script LakeOnwaTrigger2
 	scene_script LakeOnwaTrigger3
 	scene_script LakeOnwaTrigger4
-	scene_script LakeOnwaTrigger5
 
 	db 2 ; callbacks
 	callback MAPCALLBACK_NEWMAP, LakeOnwaFlypointCallback
@@ -21,71 +20,9 @@ LakeOnwa_MapScriptHeader:
 	warp_def  1, 57, 3, ROUTE_8_GATE
 	warp_def 13, 23, 2, LAKE_ONWA_MART
 
-	db 64 ; coord events
-	coord_event 22, 18, 0, LakeMakeSilverBrown
-	coord_event 23, 18, 0, LakeMakeSilverBrown
-	coord_event 24, 18, 0, LakeMakeSilverBrown
-	coord_event 25, 18, 0, LakeMakeSilverBrown
-	coord_event 26, 18, 0, LakeMakeSilverBrown
-	coord_event 27, 18, 0, LakeMakeSilverBrown
-	coord_event 28, 18, 0, LakeMakeSilverBrown
-	coord_event 29, 18, 0, LakeMakeSilverBrown
-	coord_event 30, 18, 0, LakeMakeSilverBrown
-	coord_event 31, 18, 0, LakeMakeSilverBrown
-	coord_event 34, 18, 0, LakeMakeSilverBrown
-	coord_event 35, 18, 0, LakeMakeSilverBrown
-	coord_event 36, 18, 0, LakeMakeSilverBrown
-	coord_event 37, 18, 0, LakeMakeSilverBrown
-	coord_event 38, 18, 0, LakeMakeSilverBrown
-	coord_event 39, 18, 0, LakeMakeSilverBrown
-	coord_event 40, 18, 0, LakeMakeSilverBrown
-	coord_event 41, 18, 0, LakeMakeSilverBrown
-	coord_event 42, 18, 0, LakeMakeSilverBrown
-	coord_event 43, 18, 0, LakeMakeSilverBrown
-	coord_event 44, 18, 0, LakeMakeSilverBrown
-	coord_event 45, 18, 0, LakeMakeSilverBrown
-	coord_event 46, 18, 0, LakeMakeSilverBrown
-	coord_event 47, 18, 0, LakeMakeSilverBrown
-	coord_event 50, 18, 0, LakeMakeSilverBrown
-	coord_event 51, 18, 0, LakeMakeSilverBrown
-	coord_event 52, 18, 0, LakeMakeSilverBrown
-	coord_event 53, 18, 0, LakeMakeSilverBrown
-	coord_event 17, 14, 0, LakeMakeSilverBrown
-	coord_event 17, 15, 0, LakeMakeSilverBrown
-	coord_event 22, 19, 5, LakeMakeSilverBlue
-	coord_event 23, 19, 5, LakeMakeSilverBlue
-	coord_event 24, 19, 5, LakeMakeSilverBlue
-	coord_event 25, 19, 5, LakeMakeSilverBlue
-	coord_event 26, 19, 5, LakeMakeSilverBlue
-	coord_event 27, 19, 5, LakeMakeSilverBlue
-	coord_event 28, 19, 5, LakeMakeSilverBlue
-	coord_event 29, 19, 5, LakeMakeSilverBlue
-	coord_event 30, 19, 5, LakeMakeSilverBlue
-	coord_event 31, 19, 5, LakeMakeSilverBlue
-	coord_event 34, 19, 5, LakeMakeSilverBlue
-	coord_event 35, 19, 5, LakeMakeSilverBlue
-	coord_event 36, 19, 5, LakeMakeSilverBlue
-	coord_event 37, 19, 5, LakeMakeSilverBlue
-	coord_event 38, 19, 5, LakeMakeSilverBlue
-	coord_event 39, 19, 5, LakeMakeSilverBlue
-	coord_event 40, 19, 5, LakeMakeSilverBlue
-	coord_event 41, 19, 5, LakeMakeSilverBlue
-	coord_event 42, 19, 5, LakeMakeSilverBlue
-	coord_event 43, 19, 5, LakeMakeSilverBlue
-	coord_event 44, 19, 5, LakeMakeSilverBlue
-	coord_event 45, 19, 5, LakeMakeSilverBlue
-	coord_event 46, 19, 5, LakeMakeSilverBlue
-	coord_event 47, 19, 5, LakeMakeSilverBlue
-	coord_event 50, 19, 5, LakeMakeSilverBlue
-	coord_event 51, 19, 5, LakeMakeSilverBlue
-	coord_event 52, 19, 5, LakeMakeSilverBlue
-	coord_event 53, 19, 5, LakeMakeSilverBlue
-	coord_event 21, 18, 5, LakeMakeSilverBlue
-	coord_event 17, 16, 5, LakeMakeSilverBlue
-	coord_event 17, 17, 5, LakeMakeSilverBlue
-	coord_event 20, 18, 5, LakeMakeSilverBlue
-	coord_event 37,  8, 5, LakeRivalT
-	coord_event 37,  9, 5, LakeRivalB
+	db 2 ; coord events
+	coord_event 37,  8, 0, LakeRivalT
+	coord_event 37,  9, 0, LakeRivalB
 
 	db 9 ; bg events
 	signpost 25, 61, SIGNPOST_READ, LakeSign
@@ -139,6 +76,7 @@ LakeOnwa_MapScriptHeader:
 	const LAKERIVAL
 
 LakeOnwaTrigger0:
+	special Special_UpdatePalsInstant
 	end
 
 LakeOnwaTrigger1:
@@ -155,10 +93,7 @@ LakeOnwaTrigger3:
 	
 LakeOnwaTrigger4:
 	priorityjump JustRodeBoatLakeStrandL
-	end
-	
-LakeOnwaTrigger5:
-	end
+	end	
 
 LakeOnwaFlypointCallback:
 	setflag ENGINE_FLYPOINT_LAKE_ONWA
@@ -177,12 +112,7 @@ LakeOnwaCallback:
 	ifequal $3, .right
 	ifequal $2, .left
 	ifequal $4, .left
-	checkevent EVENT_LAKE_ROCKS_BROWN
-	iftrue .scene5
 	dotrigger $0
-	return
-.scene5
-	dotrigger $5
 	return
 .right
 	disappear LAKEBOATMANOUTSIDE
@@ -194,20 +124,6 @@ LakeOnwaCallback:
 	moveperson LAKEBOATMANOUTSIDE, 25, 25
 	appear LAKEBOATMANOUTSIDE
 	return	
-	
-LakeMakeSilverBrown:
-	setevent EVENT_LAKE_ROCKS_BROWN
-;	loadvar wTimeOfDayPalFlags, $40 | 1
-	special Special_UpdatePalsInstant
-	dotrigger $5
-	end
-	
-LakeMakeSilverBlue:
-	clearevent EVENT_LAKE_ROCKS_BROWN
-;	loadvar wTimeOfDayPalFlags, $40 | 0
-	special Special_UpdatePalsInstant
-	dotrigger $0
-	end
 
 JustRodeBoatR:
 	spriteface LAKEBOATMANOUTSIDE, LEFT

@@ -1,7 +1,6 @@
 UnderwaterTemple1_MapScriptHeader:
-	db 2 ; scene scripts
+	db 1 ; scene scripts
 	scene_script UnderwaterTemple1Trigger0
-	scene_script UnderwaterTemple1Trigger1
 
 	db 1 ; callbacks
 	callback MAPCALLBACK_TILES, UnderwaterTemple1Callback
@@ -22,9 +21,7 @@ UnderwaterTemple1_MapScriptHeader:
 	warp_def  6, 28, 11, UNDERWATER_TEMPLE_2
 	warp_def  6, 29, 12, UNDERWATER_TEMPLE_2
 
-	db 2 ; coord events
-	coord_event 16, 25, 0, UnderwaterTemple1MakeSilverGreen
-	coord_event 16, 26, 1, UnderwaterTemple1MakeSilverBrown
+	db 0 ; coord events
 
 	db 2 ; bg events
 	signpost 33, 20, SIGNPOST_IFNOTSET, UnderwaterTemple1Door2
@@ -59,9 +56,7 @@ UnderwaterTemple1_MapScriptHeader:
 	const UNDERWATER_TEMPLE_1_CORSOLA_5
 	
 UnderwaterTemple1Trigger0:
-	end
-	
-UnderwaterTemple1Trigger1:
+	special Special_UpdatePalsInstant
 	end
 	
 UnderwaterTemple1Callback:
@@ -250,18 +245,6 @@ UnderwaterTemple1CorsolaTextGone:
 	text "CORSOLA gently"
 	line "floated away."
 	done
-	
-UnderwaterTemple1MakeSilverBrown:
-	clearevent EVENT_UNDERWATER_TEMPLE_GREEN
-	loadvar wTimeOfDayPalFlags, $40 | 0
-	dotrigger $0
-	end
-	
-UnderwaterTemple1MakeSilverGreen:
-	setevent EVENT_UNDERWATER_TEMPLE_GREEN
-	loadvar wTimeOfDayPalFlags, $40 | 1
-	dotrigger $1
-	end
 	
 UnderwaterTemple1Door2:
 	dw EVENT_UNDERWATER_TEMPLE_1_DOOR_OPEN

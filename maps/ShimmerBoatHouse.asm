@@ -25,8 +25,6 @@ ShimmerBoatHouseCallback:
 	return
 	
 ShimmerBoatHouseNPC:
-	clearevent EVENT_LAKE_ROCKS_BROWN
-	clearevent EVENT_BRILLO_MARACTUS_GREEN
 	checkevent EVENT_CAN_GO_TO_DESERT
 	iffalse .desert_first_time
 	opentext

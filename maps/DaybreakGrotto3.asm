@@ -1,8 +1,7 @@
 DaybreakGrotto3_MapScriptHeader:
 	db 0 ; scene scripts
 
-	db 1 ; callbacks
-	callback MAPCALLBACK_TILES, DaybreakGrotto3Callback
+	db 0 ; callbacks
 
 	db 8 ; warp events
 	warp_event 13,  5, DAYBREAK_GROTTO_1, 3
@@ -21,10 +20,6 @@ DaybreakGrotto3_MapScriptHeader:
 	db 1 ; object events
 	object_event  3, 35, SPRITE_PONYTAIL, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, DaybreakGrotto3NPC, -1
 
-DaybreakGrotto3Callback:
-	clearevent EVENT_CAPE_LIGHTHOUSE_COLORS
-	domaptrigger SUNSET_CAPE, $0
-	return
 	
 DaybreakGrotto3NPC:
 	checkevent EVENT_HAVE_FLASH

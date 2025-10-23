@@ -1,26 +1,12 @@
 Route20_MapScriptHeader:
-	db 2 ; scene scripts
+	db 1 ; scene scripts
 	scene_script Route20Trigger0
-	scene_script Route20Trigger1
 
-	db 1 ; callbacks
-	callback MAPCALLBACK_NEWMAP, Route20Callback
+	db 0 ; callbacks
 
 	db 0 ; warp events
 
-	db 12 ; coord events
-	coord_event  6, 18, 1, Route20MakeGrassGreen
-	coord_event  7, 18, 1, Route20MakeGrassGreen
-	coord_event  6, 19, 0, Route20MakeGrassYellow
-	coord_event  7, 19, 0, Route20MakeGrassYellow
-	coord_event 10, 26, 1, Route20MakeGrassGreen
-	coord_event 11, 26, 1, Route20MakeGrassGreen
-	coord_event 10, 28, 0, Route20MakeGrassYellow
-	coord_event 10, 29, 0, Route20MakeGrassYellow
-	coord_event  9,  6, 1, Route20MakeGrassGreen
-	coord_event  9,  7, 1, Route20MakeGrassGreen
-	coord_event  8,  6, 0, Route20MakeGrassYellow
-	coord_event  8,  7, 0, Route20MakeGrassYellow
+	db 0 ; coord events
 
 	db 2 ; bg events
 	signpost 29,  2, SIGNPOST_READ, Route20Sunflower
@@ -39,26 +25,7 @@ Route20Sunflower:
 	jumptext Route20SunflowerText
 
 Route20Trigger0:
-	end
-	
-Route20Trigger1:
-	end
-
-Route20Callback:
-	clearevent EVENT_ROUTE_20_GRASS_YELLOW
-	dotrigger $0
-	return
-	
-Route20MakeGrassGreen:
-	clearevent EVENT_ROUTE_20_GRASS_YELLOW
 	special Special_UpdatePalsInstant
-	dotrigger $0
-	end
-	
-Route20MakeGrassYellow:
-	setevent EVENT_ROUTE_20_GRASS_YELLOW
-	special Special_UpdatePalsInstant
-	dotrigger $1
 	end
 	
 Route20NPC:

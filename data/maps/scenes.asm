@@ -9,7 +9,7 @@ MapTriggers::
 	scene_var PLAYER_HOUSE_1F,                        wPlayerHouse1FTrigger
 	scene_var PLAYER_HOUSE_2F,                        wPlayerHouse2FTrigger
 	scene_var SUNSET_BAY,     	                      wSunsetBayTrigger
-	scene_var SUNSET_CAPE,     	                      wSunsetCapeTrigger
+	scene_var SUNSET_CAPE,     	                      wAlways0Trigger
 	scene_var SUNSET_GENGAR_HOUSE,     	        	  wSunsetGengarHouseTrigger
 	scene_var SUNSET_CAPTAINS_HOUSE,     	          wSunsetCaptainsHouseTrigger
 	scene_var SUNSET_LIGHTHOUSE,     	       	      wSunsetLighthouseTrigger
@@ -17,7 +17,7 @@ MapTriggers::
 	scene_var DAYBREAK_VILLAGE,						  wDaybreakVillageTrigger
 	scene_var GLINT_GROVE_ENTRANCE,					  wGlintGroveEntranceTrigger
 	scene_var GLINT_GROVE,							  wGlintGroveTrigger
-	scene_var GLINT_GROVE_EAST,						  wGlintGroveEastTrigger
+	scene_var GLINT_GROVE_EAST,						  wAlways0Trigger
 	scene_var GLINT_GROVE_DEEP,						  wGlintGroveEntranceTrigger
 	scene_var GLINT_GROVE_UNDERGROUND,				  wGlintGroveUndergroundTrigger
 	scene_var GLINT_APARTMENT_LEFT_2F,				  wGlintApartmentLeft2FTrigger
@@ -104,7 +104,7 @@ MapTriggers::
 	scene_var DESERT_TEMPLE_OUTSIDE,				  wSpookyForestEscortTrigger
 	scene_var SAILBOAT_CUTSCENE,					  wAlways0Trigger
 	scene_var AIRPORT,								  wAirportTrigger
-	scene_var ROUTE_20,								  wRoute20Trigger
+	scene_var ROUTE_20,								  wAlways0Trigger
 	scene_var LUSTER_SKYSCRAPER_PORYGON_ROOM,		  wLusterSkyscraperPorygonRoomTrigger
 	scene_var FAKE_ROUTE_1,							  wWestTrainCabooseTrigger
 	scene_var DUSK_TURNPIKE,					 	  wDuskTurnpikeTrigger
@@ -145,7 +145,7 @@ MapTriggers::
 	scene_var OBSCURA_MUSEUM_3F,					  wObscuraMuseum3FTrigger
 	scene_var OBSCURA_MUSEUM_PHOTO,					  wAlways0Trigger
 	scene_var SKATEPARK,							  wAlways0Trigger
-	scene_var UNDERWATER_TEMPLE_1,					  wUnderwaterTemple1Trigger
+	scene_var UNDERWATER_TEMPLE_1,					  wAlways0Trigger
 	scene_var UNDERWATER_TEMPLE_2,					  wAlways0Trigger
 	scene_var BRILLO_POLICE_STATION,				  wAlways0Trigger
 	scene_var BRILLO_POLICE_BACK_ROOM,				  wAlways0Trigger

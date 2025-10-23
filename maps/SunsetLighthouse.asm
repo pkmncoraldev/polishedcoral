@@ -40,8 +40,6 @@ SunsetLighthouseTrigger1:
 	end
 
 SunsetLighthouseCallback:
-	setevent EVENT_CAPE_LIGHTHOUSE_COLORS
-	domaptrigger SUNSET_CAPE, $1
 	checkevent EVENT_SUNSET_LIGHTHOUSE_UNLOCKED
 	iffalse .end
 	changeblock $4, $2, $47

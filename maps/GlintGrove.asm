@@ -392,8 +392,6 @@ GlintGroveSecondPile2:
 	end
 	
 GlintGrovePiles:
-	domaptrigger GLINT_GROVE_EAST, $1
-	setevent EVENT_GLINT_GROVE_EAST_ROCKS_BROWN
 	checkflag ENGINE_GLINT_GROVE_PILE_1
 	iftrue .GlintGrovePile1
 .cont1

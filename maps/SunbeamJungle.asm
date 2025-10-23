@@ -1,8 +1,7 @@
 SunbeamJungle_MapScriptHeader:
-	db 3 ; scene scripts
+	db 2 ; scene scripts
 	scene_script SunbeamJungleTrigger0
 	scene_script SunbeamJungleTrigger1
-	scene_script SunbeamJungleTrigger2
 
 	db 1 ; callbacks
 	callback MAPCALLBACK_TILES, SunbeamJungleCallback
@@ -12,25 +11,8 @@ SunbeamJungle_MapScriptHeader:
 	warp_def 25,  5, 12, SUNBEAM_ISLAND
 	warp_def  5, 11, 1, SUNBEAM_JUNGLE_CAVE
 
-	db 18 ; coord events
+	db 1 ; coord events
 	xy_trigger 1, -6, -6, 0, SunbeamJungleKageScript, 0, 0
-	coord_event  4,  8, 2, JungleMakeSilverBlack
-	coord_event  6, 11, 2, JungleMakeSilverBlack
-	coord_event 17,  7, 2, JungleMakeSilverBlack
-	coord_event  5,  6, 1, JungleMakeSilverBlue
-	coord_event  5,  7, 1, JungleMakeSilverBlue
-	coord_event  5,  8, 1, JungleMakeSilverBlue
-	coord_event 17,  6, 2, JungleMakeSilverBlack
-	coord_event 16,  6, 1, JungleMakeSilverBlue
-	coord_event 16,  7, 1, JungleMakeSilverBlue
-	coord_event 16,  8, 1, JungleMakeSilverBlue
-	coord_event 16,  9, 1, JungleMakeSilverBlue
-	coord_event 17,  8, 2, JungleMakeSilverBlack
-	coord_event 17,  9, 2, JungleMakeSilverBlack
-	coord_event 17, 10, 2, JungleMakeSilverBlack
-	coord_event 17, 11, 2, JungleMakeSilverBlack
-	coord_event  6, 10, 1, JungleMakeSilverBlue
-	coord_event  7, 11, 1, JungleMakeSilverBlue
 
 	db 8 ; bg events
 	signpost  7,  8, SIGNPOST_READ, SunbeamJungleBigWaterfall
@@ -83,20 +65,6 @@ SunbeamJungleCallback:
 	clearevent EVENT_SUNBEAM_JUNGLE_DEEP_ELECTABUZZ_GONE
 .end
 	return
-
-JungleMakeSilverBlue:
-	setevent EVENT_JUNGLE_CAVE_BLUE
-	loadvar wTimeOfDayPalFlags, $40 | 1
-	special Special_UpdatePalsInstant
-	dotrigger $2
-	end
-	
-JungleMakeSilverBlack:
-	clearevent EVENT_JUNGLE_CAVE_BLUE
-	loadvar wTimeOfDayPalFlags, $40 | 0
-	special Special_UpdatePalsInstant
-	dotrigger $1
-	end
 	
 SunbeamJungleBigWaterfall:
 	jumptext SunbeamJungleBigWaterfallText
@@ -152,9 +120,7 @@ SunbeamJungleTrigger0:
 	end
 	
 SunbeamJungleTrigger1:
-	end
-	
-SunbeamJungleTrigger2:
+	special Special_UpdatePalsInstant
 	end
 	
 SunbeamJungleKageScript:

@@ -121,8 +121,6 @@ SunsetBayFlyPoint:
 	return
 		
 SunsetBayCallback:
-	clearevent EVENT_CAPE_LIGHTHOUSE_COLORS
-	domaptrigger SUNSET_CAPE, $0
 	checkevent EVENT_SUNSET_STRAND
 	iftrue .end
 	moveperson SUNSET_SAILBOAT2_T1, 29, 30

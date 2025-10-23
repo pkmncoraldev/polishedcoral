@@ -3134,14 +3134,10 @@ UnknownText_0xd1d0: ; 0xd1d0
 	db "@"
 
 HandleEventsFly:
-	clearevent EVENT_LAKE_ROCKS_BROWN
 HandleEventsEscapeRope:
-	clearevent EVENT_ROUTE_20_GRASS_YELLOW
 	clearevent EVENT_SNOWSTORM_HAPPENING
 	clearevent EVENT_SANDSTORM_HAPPENING
 	clearevent EVENT_AIRPORT_FENCE
-	clearevent EVENT_CAPE_LIGHTHOUSE_COLORS
-	clearevent EVENT_UNDERWATER_TEMPLE_GREEN
 	loadvar wTimeOfDayPalFlags, $40 | 0
 	domaptrigger SUNSET_CAPE, $0
 	domaptrigger ROUTE_10, $0
@@ -3165,7 +3161,6 @@ HandleEventsEscapeRope:
 	clearevent EVENT_IN_SHOPPING_DISTRICT
 	clearevent EVENT_IN_BUSINESS_DISTRICT
 	clearevent EVENT_DOUBLE_LANDMARK_SIGN
-	clearevent EVENT_BRILLO_MARACTUS_GREEN
 	clearevent EVENT_BIKE_ENGINE_ON
 	clearflag ENGINE_ENCOUNTER_HOUSE
 	loadvar wJukeboxSong, 0

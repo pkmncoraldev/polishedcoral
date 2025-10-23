@@ -1,5 +1,6 @@
 Route3_MapScriptHeader:
-	db 0 ; scene scripts
+	db 1 ; scene scripts
+	scene_script Route3Trigger0
 
 	db 1 ; callbacks
 	callback MAPCALLBACK_TILES, Route3Callback
@@ -9,15 +10,7 @@ Route3_MapScriptHeader:
 	warp_def  7, 46, 1, STARGLOW_CAVERN_3F
 	warp_def 15, 39, 1, ROUTE_3_FRIENDSHIP_HOUSE
 
-	db 8 ; coord events
-	coord_event 37, 16, 0, Route3MakeSilverBrown
-	coord_event 37, 17, 0, Route3MakeSilverBrown
-	coord_event 34, 17, 1, Route3MakeSilverGreen
-	coord_event 34, 16, 1, Route3MakeSilverGreen
-	coord_event 34,  4, 0, Route3MakeSilverBrown
-	coord_event 34,  5, 0, Route3MakeSilverBrown
-	coord_event 34, 19, 1, Route3MakeSilverGreen
-	coord_event 34, 20, 1, Route3MakeSilverGreen
+	db 0 ; coord events
 
 	db 3 ; bg events
 	signpost  7, 17, SIGNPOST_READ, Route3_sign
@@ -58,16 +51,11 @@ Route3_MapScriptHeader:
 	const ROUTEWEST_ROCK_SMASH6
 	
 	
+Route3Trigger0:
+	special Special_UpdatePalsInstant
+	end
+	
 Route3Callback:
-	callasm Route3CallbackCheckXPosAsm
-	iftrue .brown
-	clearevent EVENT_ROUTE_3_ROCKS_BROWN
-	dotrigger $0
-	jump .done_rocks
-.brown
-	setevent EVENT_ROUTE_3_ROCKS_BROWN
-	dotrigger $1
-.done_rocks
 	checkevent EVENT_BEAT_CHARLIE
 	iffalse .skip
 	checkflag ENGINE_GOT_ROCK_CLIMB
@@ -75,30 +63,6 @@ Route3Callback:
 	moveperson ROUTE3WEST_PATCHES, -5, -5
 .skip
 	return
-	
-Route3CallbackCheckXPosAsm:
-	ld a, [wXCoord]
-	cp $1f
-	jr nc, .right
-	xor a
-	ld [wScriptVar], a
-	ret
-.right
-	ld a, 1
-	ld [wScriptVar], a
-	ret
-	
-Route3MakeSilverBrown:
-	setevent EVENT_ROUTE_3_ROCKS_BROWN
-	special Special_UpdatePalsInstant
-	dotrigger $1
-	end
-	
-Route3MakeSilverGreen:
-	clearevent EVENT_ROUTE_3_ROCKS_BROWN
-	special Special_UpdatePalsInstant
-	dotrigger $0
-	end
 	
 TrainerRoute3West_1:
 	generictrainer YOUNGSTER, CHRIS, EVENT_BEAT_ROUTE_3_TRAINER_1, .SeenText, .BeatenText

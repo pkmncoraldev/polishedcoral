@@ -1,5 +1,6 @@
 GlintGroveEast_MapScriptHeader:
-	db 0 ; scene scripts
+	db 1 ; scene scripts
+	scene_script GlintGroveEastTrigger0
 
 	db 0 ; callbacks
 
@@ -7,19 +8,7 @@ GlintGroveEast_MapScriptHeader:
 	warp_def 13,  6, 1, GLINT_GROVE_DEEP
 	warp_def 37, 13, 1, GLINT_GROVE_UNDERGROUND
 
-	db 12 ; coord events
-	coord_event 12, 22, 0, GlintGroveEastMakeSilverBrown
-	coord_event 13, 22, 0, GlintGroveEastMakeSilverBrown
-	coord_event  8, 22, 0, GlintGroveEastMakeSilverBrown
-	coord_event  9, 22, 0, GlintGroveEastMakeSilverBrown
-	coord_event  8, 23, 0, GlintGroveEastMakeSilverBrown
-	coord_event  9, 23, 0, GlintGroveEastMakeSilverBrown
-	coord_event 14, 17, 1, GlintGroveEastMakeSilverGreen
-	coord_event 15, 17, 1, GlintGroveEastMakeSilverGreen
-	coord_event  8,  9, 1, GlintGroveEastMakeSilverGreen
-	coord_event  9,  9, 1, GlintGroveEastMakeSilverGreen
-	coord_event  8, 10, 1, GlintGroveEastMakeSilverGreen
-	coord_event  9, 10, 1, GlintGroveEastMakeSilverGreen
+	db 0 ; coord events
 
 	db 0 ; bg events
 
@@ -38,16 +27,8 @@ GlintGroveEast_MapScriptHeader:
 	const_def 1 ; object constants
 	const GLINT_GROVE_EAST_MINA
 	
-GlintGroveEastMakeSilverBrown:
-	setevent EVENT_GLINT_GROVE_EAST_ROCKS_BROWN
+GlintGroveEastTrigger0:
 	special Special_UpdatePalsInstant
-	dotrigger $1
-	end
-	
-GlintGroveEastMakeSilverGreen:
-	clearevent EVENT_GLINT_GROVE_EAST_ROCKS_BROWN
-	special Special_UpdatePalsInstant
-	dotrigger $0
 	end
 	
 GlintGroveEastMina:

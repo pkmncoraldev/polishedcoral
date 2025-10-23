@@ -1,8 +1,7 @@
 BrilloTown_MapScriptHeader:
-	db 3 ; scene scripts
+	db 2 ; scene scripts
 	scene_script BrilloTownTrigger0
 	scene_script BrilloTownTrigger1
-	scene_script BrilloTownTrigger2
 
 	db 2 ; callbacks
 	callback MAPCALLBACK_NEWMAP, BrilloTownFlyPoint
@@ -18,11 +17,7 @@ BrilloTown_MapScriptHeader:
 	warp_event 35, 12, BRILLO_POLICE_STATION, 1
 	warp_event 36, 12, BRILLO_POLICE_STATION, 2
 
-	db 4 ; coord events
-	coord_event 31, 14, 0, BrilloMakeSilverGreen
-	coord_event 31, 15, 0, BrilloMakeSilverGreen
-	coord_event 16, 21, 2, BrilloMakeSilverBlue
-	coord_event 17, 21, 2, BrilloMakeSilverBlue
+	db 0 ; coord events
 
 	db 8 ; bg events
 	signpost 13, 23, SIGNPOST_READ, BrilloTownPokeCenterSign
@@ -67,13 +62,11 @@ BrilloTown_MapScriptHeader:
 	
 	
 BrilloTownTrigger0:
+	special Special_UpdatePalsInstant
 	end
 	
 BrilloTownTrigger1:
 	priorityjump JustRodeBoatBrillo
-	end
-	
-BrilloTownTrigger2:
 	end
 	
 BrilloTownFlyPoint:
@@ -99,20 +92,6 @@ JustRodeBoatBrillo:
 	special Special_StartLandmarkTimer
 	waitsfx
 	setevent EVENT_BRILLO_BOATMAN
-	dotrigger $0
-	end
-	
-BrilloMakeSilverGreen:
-	setevent EVENT_BRILLO_MARACTUS_GREEN
-;	loadvar wTimeOfDayPalFlags, $40 | 1
-	special Special_UpdatePalsInstant
-	dotrigger $2
-	end
-	
-BrilloMakeSilverBlue:
-	clearevent EVENT_BRILLO_MARACTUS_GREEN
-;	loadvar wTimeOfDayPalFlags, $40 | 0
-	special Special_UpdatePalsInstant
 	dotrigger $0
 	end
 	

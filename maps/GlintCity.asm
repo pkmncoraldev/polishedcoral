@@ -67,7 +67,6 @@ GlintCityFlyPoint:
 	return
 	
 GlintCityStanleyRematch:
-	clearevent EVENT_ROUTE_3_ROCKS_BROWN
 	checkevent EVENT_BEAT_STANLEY_REMATCH
 	iffalse .end
 	clearevent EVENT_BEAT_STANLEY_REMATCH

@@ -1,8 +1,7 @@
 Route13_MapScriptHeader:
 	db 0 ; scene scripts
 
-	db 1 ; callbacks
-	callback MAPCALLBACK_TILES, Route13Callback
+	db 0 ; callbacks
 
 	db 16 ; warp events
 	warp_event 20,  9, ROUTE_13_UNDERWATER, 1
@@ -48,10 +47,6 @@ Route13_MapScriptHeader:
 	const ROUTE_13_KID_1
 	const ROUTE_13_KID_2
 
-Route13Callback:
-	clearevent EVENT_CAPE_LIGHTHOUSE_COLORS
-	domaptrigger SUNSET_CAPE, $0
-	return
 
 Route13NPC1:
 	faceplayer

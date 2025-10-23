@@ -1,8 +1,7 @@
 StarglowCavern3F_MapScriptHeader:
 	db 0 ; scene scripts
 
-	db 1 ; callbacks
-	callback MAPCALLBACK_TILES, StarglowCavern3FCallback
+	db 0 ; callbacks
 
 	db 2 ; warp events
 	warp_def 13,  7, 2, ROUTE_3
@@ -18,10 +17,6 @@ StarglowCavern3F_MapScriptHeader:
 	person_event SPRITE_COOLTRAINER_F,  8,  9, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_GENERICTRAINER, 1, TrainerStarglowCavern3F_1, -1
 	person_event SPRITE_COOL_DUDE,  4,  5, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, StarglowCavern3FNPC, -1
 	
-	
-StarglowCavern3FCallback:
-	setevent EVENT_ROUTE_3_ROCKS_BROWN
-	return
 	
 TrainerStarglowCavern3F_1:
 	generictrainer COOLTRAINERF, JULES, EVENT_BEAT_STARGLOW_CAVERN_3F_TRAINER, .SeenText, .BeatenText

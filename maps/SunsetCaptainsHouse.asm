@@ -60,8 +60,6 @@ SunsetCaptainsHouseTrigger0Event:
 	jump .cont
 	
 SunsetCaptain:
-	clearevent EVENT_LAKE_ROCKS_BROWN
-	clearevent EVENT_BRILLO_MARACTUS_GREEN
 	checkevent EVENT_CAPTAIN_GIVES_RIDES_TO_ISLAND
 	iftrue SunsetCaptainRidetoIsland
 	checkevent EVENT_CAN_GET_FIRST_RIDE_TO_ISLAND

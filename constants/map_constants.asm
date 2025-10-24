@@ -442,7 +442,7 @@ DEF MAP_NONE   EQU 0
 	map_const ROUTE_26_WINDY,							   1,  1 ; 22
 	map_const ROUTE_27,									  28, 19 ; 23
 	
-	newgroup													 ; 23
+	newgroup													 ; 23					Only Nett Specs Maps in this group
 	
 	map_const BRIGHTBURG,								  17, 13 ; 1
 	map_const BRIGHT_POKECENTER,                      	   6,  4 ; 2
@@ -452,9 +452,6 @@ DEF MAP_NONE   EQU 0
 	map_const BRIGHT_HOUSE_3,     	             		   4,  4 ; 6
 	map_const ROUTE_25_GATE,                          	   4,  4 ; 7
 	map_const BRIGHTBURG_GATE,							   5,  4 ; 8
-	
-	map_const ROUTE_28_OTTOS_TENT,                     	   2,  3 ; 10
-	map_const ROUTE_30,									  21, 21 ; 11
 	
 	newgroup													 ; 24
 	map_const OBSCURA_CITY,								  19, 27 ; 1
@@ -473,6 +470,8 @@ DEF MAP_NONE   EQU 0
 	map_const AUREOLE_TOWN,								  20, 23 ; 1
 	map_const ROUTE_29,									  38, 12 ; 2
 	map_const ROUTE_29_MEADOW,							  18, 10 ; 3
+	map_const ROUTE_28_OTTOS_TENT,                     	   2,  3 ; 4
+	map_const ROUTE_30,									  21, 21 ; 5
 	
 	newgroup													 ; 26
 	map_const INN_1F,									  13, 12 ; 1

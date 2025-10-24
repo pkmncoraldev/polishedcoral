@@ -320,7 +320,7 @@ _NettSpecs:
 	end
 	
 .youngster_script
-	setlasttalked 7 ;brightburg youngster
+	setlasttalked 8 ;brightburg youngster
 	jumptextfaceplayer NettSpecsYoungsterText
 	
 .nurse_script

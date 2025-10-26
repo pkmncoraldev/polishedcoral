@@ -502,8 +502,8 @@ SunbeamJungleSnareBridgeText1:
 	
 	para "It's the kid again!"
 	
-	para "You're gonna have to"
-	line "deal with CAGE now!"
+	para "You're gonna have"
+	line "to deal with CAGE!"
 	done
 	
 SunbeamJungleSnareBridgeText2:

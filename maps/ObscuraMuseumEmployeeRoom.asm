@@ -18,10 +18,10 @@ ObscuraMuseumEmployeeRoom_MapScriptHeader:
 	signpost  1,  5, SIGNPOST_UP, ObscuraMuseumBooks
 	signpost  1, 10, SIGNPOST_UP, ObscuraMuseumBooks
 	signpost  1, 11, SIGNPOST_UP, ObscuraMuseumBooks
-	signpost  4,  3, SIGNPOST_UP, ObscuraMuseumKeyboard1
-	signpost  4,  9, SIGNPOST_UP, ObscuraMuseumKeyboard2
-	signpost  8,  3, SIGNPOST_UP, ObscuraMuseumKeyboard3
-	signpost  8,  9, SIGNPOST_UP, ObscuraMuseumKeyboard4
+	signpost  4,  3, SIGNPOST_UP, ObscuraMuseumComputer1
+	signpost  4,  9, SIGNPOST_UP, ObscuraMuseumComputer2
+	signpost  8,  3, SIGNPOST_UP, ObscuraMuseumComputer3
+	signpost  8,  9, SIGNPOST_UP, ObscuraMuseumComputer4
 	signpost  4,  2, SIGNPOST_UP, ObscuraMuseumKeyboard1
 	signpost  4,  8, SIGNPOST_UP, ObscuraMuseumKeyboard2
 	signpost  8,  2, SIGNPOST_UP, ObscuraMuseumKeyboard3
@@ -661,7 +661,7 @@ ObscuraMuseumKeyboard1:
 	checkevent EVENT_MUSEUM_CAN_LOWER_BARRIER
 	iffalse .nope
 	opentext
-	writetext ObscuraMuseumComputer1Text2
+	writetext ObscuraMuseumComputer1Text3
 	yesorno
 	iffalse .no
 	closetext
@@ -675,7 +675,7 @@ ObscuraMuseumKeyboard1:
 	ifequal 6, ObscuraMuseumKeyboardDone
 	end
 .no
-	writetext ObscuraMuseumKeyboardText3
+	writetext ObscuraMuseumComputerTextNo
 	waitbutton
 	closetext
 	end
@@ -686,7 +686,7 @@ ObscuraMuseumKeyboard2:
 	checkevent EVENT_MUSEUM_CAN_LOWER_BARRIER
 	iffalse .nope
 	opentext
-	writetext ObscuraMuseumComputer2Text2
+	writetext ObscuraMuseumComputer2Text3
 	yesorno
 	iffalse .no
 	closetext
@@ -701,7 +701,7 @@ ObscuraMuseumKeyboard2:
 	ifequal 6, ObscuraMuseumKeyboardDone
 	end
 .no
-	writetext ObscuraMuseumKeyboardText3
+	writetext ObscuraMuseumComputerTextNo
 	waitbutton
 	closetext
 	end
@@ -712,7 +712,7 @@ ObscuraMuseumKeyboard3:
 	checkevent EVENT_MUSEUM_CAN_LOWER_BARRIER
 	iffalse .nope
 	opentext
-	writetext ObscuraMuseumComputer3Text2
+	writetext ObscuraMuseumComputer3Text3
 	yesorno
 	iffalse .no
 	closetext
@@ -726,7 +726,7 @@ ObscuraMuseumKeyboard3:
 	ifequal 6, ObscuraMuseumKeyboardDone
 	end
 .no
-	writetext ObscuraMuseumKeyboardText3
+	writetext ObscuraMuseumComputerTextNo
 	waitbutton
 	closetext
 	end
@@ -737,7 +737,7 @@ ObscuraMuseumKeyboard4:
 	checkevent EVENT_MUSEUM_CAN_LOWER_BARRIER
 	iffalse .nope
 	opentext
-	writetext ObscuraMuseumComputer4Text2
+	writetext ObscuraMuseumComputer4Text3
 	yesorno
 	iffalse .no
 	closetext
@@ -752,7 +752,7 @@ ObscuraMuseumKeyboard4:
 	ifequal 6, ObscuraMuseumKeyboardDone
 	end
 .no
-	writetext ObscuraMuseumKeyboardText3
+	writetext ObscuraMuseumComputerTextNo
 	waitbutton
 	closetext
 	end
@@ -933,6 +933,13 @@ ObscuraMuseumComputer1Text1:
 ObscuraMuseumComputer1Text2:
 	text "“TERMINAL <SHARP>1”"
 	
+	para "“Use keyboard to"
+	line "activate.”"
+	done
+	
+ObscuraMuseumComputer1Text3:
+	text "“TERMINAL <SHARP>1”"
+	
 	para "Activate the"
 	line "terminal?"
 	done
@@ -945,6 +952,13 @@ ObscuraMuseumComputer2Text1:
 	done
 	
 ObscuraMuseumComputer2Text2:
+	text "“TERMINAL <SHARP>2”"
+	
+	para "“Use keyboard to"
+	line "activate.”"
+	done
+	
+ObscuraMuseumComputer2Text3:
 	text "“TERMINAL <SHARP>2”"
 	
 	para "Activate the"
@@ -961,6 +975,13 @@ ObscuraMuseumComputer3Text1:
 ObscuraMuseumComputer3Text2:
 	text "“TERMINAL <SHARP>3”"
 	
+	para "“Use keyboard to"
+	line "activate.”"
+	done
+	
+ObscuraMuseumComputer3Text3:
+	text "“TERMINAL <SHARP>3”"
+	
 	para "Activate the"
 	line "terminal?"
 	done
@@ -975,21 +996,18 @@ ObscuraMuseumComputer4Text1:
 ObscuraMuseumComputer4Text2:
 	text "“TERMINAL <SHARP>4”"
 	
+	para "“Use keyboard to"
+	line "activate.”"
+	done
+	
+ObscuraMuseumComputer4Text3:
+	text "“TERMINAL <SHARP>4”"
+	
 	para "Activate the"
 	line "terminal?"
 	done
 	
-ObscuraMuseumKeyboardText1:
-	text "Better not touch"
-	line "it…"
-	done
-	
-ObscuraMuseumKeyboardText2:
-	text "Activate the"
-	line "terminal?"
-	done
-	
-ObscuraMuseumKeyboardText3:
+ObscuraMuseumComputerTextNo:
 	text "Better not…"
 	done
 	

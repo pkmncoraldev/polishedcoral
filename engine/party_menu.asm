@@ -432,24 +432,15 @@ PlacePartyMonEvoStoneCompatibility:
 	jr nz, .loop
 	ret
 
-.GetGenderAndWriteInC
-	push bc
+.GetGender
 	push hl
-	ld b, a
-	ld hl, wCurPartyMon
+	ld a, [wTempMon]
+	ld hl, wPartyMon1Gender
+	ld bc, PARTYMON_STRUCT_LENGTH
+	rst AddNTimes
 	ld a, [hl]
-	push af
-	ld [hl], b
-	xor a
-	ld [wMonType], a
-	predef GetGender
-	ld c, a
-	pop af
-	ld [wCurPartyMon], a
-	ld a, c
+	and GENDER_MASK
 	pop hl
-	pop bc
-	ld c, a
 	ret
 
 .DetermineCompatibility
@@ -498,13 +489,13 @@ PlacePartyMonEvoStoneCompatibility:
 
 	jr .checkHeldItem
 .checkItemMale
-	ld a, c
-	dec a
-	jr .goBackToLoop2IfNonZero
+	call .GetGender
+	cp MALE
+	jr z, .checkItem
+	jr .loop2
 .checkItemFemale
-	ld a, c
-	and a
-.goBackToLoop2IfNonZero
+	call .GetGender
+	cp FEMALE
 	jr nz, .loop2
 .checkItem
 	ld a, [wCurItem]

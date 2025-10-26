@@ -122,7 +122,7 @@ SunbeamBoatHouseNPC:
 	jump .DoBoatEnd
 	
 .Shimmer
-	writetext SunbeamBoatHouseNPCText4
+	writetext SunbeamBoatHouseNPCText8
 	yesorno
 	iffalse .return
 	checkmoney $0, 500
@@ -139,7 +139,7 @@ SunbeamBoatHouseNPC:
 	jump .DoBoatEnd
 	
 .Brillo
-	writetext SunbeamBoatHouseNPCText4
+	writetext SunbeamBoatHouseNPCText9
 	yesorno
 	iffalse .return
 	checkmoney $0, 500
@@ -317,6 +317,16 @@ SunbeamBoatHouseNPCText7:
 	text "Alright."
 	
 	para "We'll head out."
+	done
+	
+SunbeamBoatHouseNPCText8:
+	text "Travel to"
+	line "PORT SHIMMER?"
+	done
+	
+SunbeamBoatHouseNPCText9:
+	text "Travel to"
+	line "PUEBLO BRILLO?"
 	done
 	
 SunbeamBoatHouseNPCTextEnd:

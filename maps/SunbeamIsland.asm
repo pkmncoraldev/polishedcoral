@@ -127,6 +127,8 @@ SunbeamIslandCallback:
 .dooropen
 	checkevent EVENT_SAVED_SUNBEAM
 	iffalse .havent_cleared_island
+	checkevent EVENT_ISLAND_BOATMAN		;granny and boatman share same object
+	iffalse .havent_cleared_island
 	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_GRANNY
 .havent_cleared_island
 	checkevent EVENT_ISLAND_STRAND

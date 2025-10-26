@@ -31,6 +31,7 @@ DEF hJoyPressed        EQU $ffa7
 DEF hJoyDown           EQU $ffa8
 DEF hJoyLast           EQU $ffa9
 DEF hInMenu            EQU $ffaa
+DEF hMinigameTimer     EQU $ffab
 
 DEF hGraphicStartTile        EQU $ffad
 DEF hMoveMon                 EQU $ffae

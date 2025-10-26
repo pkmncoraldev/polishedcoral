@@ -31,6 +31,9 @@ GameTimer:: ; 209e
 	ret
 
 CountCentiseconds:	;rough estimation. need to x2. only used for minigame time
+	ldh a, [hMinigameTimer]
+	cp 0
+	ret z
 	ld a, [wCentisecondsHelper]
 	cp 0
 	jr z, .cont

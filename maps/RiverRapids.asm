@@ -70,6 +70,7 @@ RiverRapidsTrigger0:
 	loadvar wRanchRaceSeconds, 0
 	loadvar wRanchRaceMinutes, 0
 	loadvar wMinigameCentiseconds, 0
+	loadvar hMinigameTimer, 1
 	dotrigger $1
 	end
 	
@@ -77,6 +78,7 @@ RiverRapidsTrigger1:
 	end
 	
 RiverRapidsEnd:
+	loadvar hMinigameTimer, 0
 	callasm RiverRapidsStoreScore
 	clearevent EVENT_TIMER_ACTIVE
 	playmusic MUSIC_NONE

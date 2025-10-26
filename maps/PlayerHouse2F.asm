@@ -198,6 +198,7 @@ PlayerHouseDebugPoster:
 	setflag ENGINE_GOT_WATERFALL
 	setflag ENGINE_GOT_STRENGTH
 	setflag ENGINE_GOT_DIVE
+	givetmhm TM_FALSE_SWIPE
 	givetmhm TM_WORK_UP_GROWTH
 	givetmhm TM_CHARM
 	givetmhm TM_CURSE

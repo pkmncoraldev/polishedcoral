@@ -28,6 +28,7 @@ Route29Mina:
 .cont
 	waitsfx
 	special Special_FadeOutMusic
+	wait 5
 	playmusic MUSIC_MINA
 	opentext TEXTBOX_MINA
 	writetext Route29MinaText1
@@ -95,19 +96,33 @@ Route29Mina:
 	pause 50
 	opentext TEXTBOX_MINA
 	writetext Route29MinaText5
-	playsound SFX_READ_TEXT
+	buttonsound
+	farwritetext StdBlankText
+	pause 6
 	writetext Route29MinaText6
 	playsound SFX_READ_TEXT
+	farwritetext StdBlankText
+	pause 6
 	writetext Route29MinaText7
 	playsound SFX_READ_TEXT
+	farwritetext StdBlankText
+	pause 6
 	writetext Route29MinaText8
 	playsound SFX_READ_TEXT
+	farwritetext StdBlankText
+	pause 6
 	writetext Route29MinaText9
 	playsound SFX_READ_TEXT
+	farwritetext StdBlankText
+	pause 3
 	writetext Route29MinaText10
 	playsound SFX_READ_TEXT
+	farwritetext StdBlankText
+	pause 3
 	writetext Route29MinaText11
 	playsound SFX_READ_TEXT
+	farwritetext StdBlankText
+	pause 3
 	writetext Route29MinaText12
 	playsound SFX_READ_TEXT
 	writetext Route29MinaText13
@@ -367,17 +382,17 @@ Route29MinaText5:
 	
 	para "Just talking about"
 	line "anything that"
-	cont "comes to mind.<WAIT_S>"
+	cont "comes to mind."
 	done
 	
 Route29MinaText6:
 	text "Oh! <WAIT_S>You see that"
-	line "big fluffy cloud?<WAIT_M><WAIT_S>"
+	line "big fluffy cloud?<WAIT_M>"
 	done
 	
 Route29MinaText7:
 	text "It looks just like"
-	line "cotton candy!<WAIT_M><WAIT_S>"
+	line "cotton candy!<WAIT_M>"
 	done
 	
 Route29MinaText8:
@@ -399,9 +414,9 @@ Route29MinaText10:
 	
 Route29MinaText11:
 	text "Blue sprinkles!<WAIT_S><WAIT_S>"
-	line "No, pink!<WAIT_S>@"
+	line "No, pink!<WAIT_S><WAIT_S>@"
 	sound_read
-	text "<SCRL2>Pink is better!<WAIT_S>"
+	text "<SCRL2>Pink is better!<WAIT_S><WAIT_S>"
 	done
 	
 Route29MinaText12:
@@ -411,12 +426,12 @@ Route29MinaText12:
 	
 Route29MinaText13:
 	text "Mine's pink, but it"
-	line "used to be blue."
+	line "used to be blue.<WAIT_S>"
 	done
 	
 Route29MinaText14:
 	text "…Or was is green?"
-	line "Yeah! It was!"
+	line "Yeah! It was!<WAIT_S>"
 	done
 	
 Route29MinaText15:
@@ -487,8 +502,8 @@ Route29MinaText22:
 	done
 	
 Route29MinaText23:
-	text "“Cotton in the"
-	line "Sky”."
+	text "“Cotton Candy in"
+	line "the Sky”."
 	done
 	
 Route29MinaText24:
@@ -511,8 +526,7 @@ Route29MinaText25:
 	cont "guard while you"
 	cont "were still groggy…"
 	
-	para "You showed me,"
-	line "though!"
+	para "No luck, though!"
 	
 	para "Anyway, I've been"
 	line "laying around for"

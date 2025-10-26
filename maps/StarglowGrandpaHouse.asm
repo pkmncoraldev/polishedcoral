@@ -23,7 +23,7 @@ StarglowHouse3NPC2:
 	
 StarglowHouse3NPC1Text:
 	text "Thank you for your"
-	line "help child,"
+	line "help, child,"
 	
 	para "but I was never in"
 	line "any danger."

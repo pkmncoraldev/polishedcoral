@@ -51,7 +51,8 @@ RadiantFieldCallback:
 	return
 	
 RadiantFieldMina:
-	pause 5
+	special Special_FadeOutMusic
+	wait 5
 	playmusic MUSIC_MINA
 	applyonemovement RADIANT_FIELD_MINA, turn_step_up
 	opentext TEXTBOX_MINA
@@ -82,7 +83,6 @@ RadiantFieldMina:
 	pause 40
 	opentext TEXTBOX_MINA
 	writetext RadiantFieldMinaText3
-	buttonsound
 	spriteface RADIANT_FIELD_MINA, DOWN
 	farwritetext StdBlankText
 	pause 6

@@ -572,7 +572,7 @@ StarglowHouse1LittleGirlText1:
 	done
 	
 StarglowHouse1LittleGirlText2:
-	text "Please TRAINER."
+	text "Please, TRAINER."
 	
 	para "Help my #MON!"
 	done

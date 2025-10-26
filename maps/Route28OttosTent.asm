@@ -235,8 +235,8 @@ Route28OttosTentOttoText7:
 Route28OttosTentOttoText8:
 	text "No worries."
 	
-	para "Mi tent es"
-	line "su tent!"
+	para "Soy sleeping bag,"
+	line "yo sleeping bag!"
 	done
 	
 Route28OttosTentOttoText9:

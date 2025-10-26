@@ -353,7 +353,8 @@ ShimmerLabResearchRoomProfText8:
 	
 ShimmerLabResearchRoomProfText9:
 	text "Take that pearl"
-	line "to DR. ABIEGAIL!"
+	line "to DR. ABIEGAIL"
+	cont "in OBSCURA CITY!"
 	
 	para "I'll let her know"
 	line "you're coming."

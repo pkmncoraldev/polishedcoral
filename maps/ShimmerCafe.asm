@@ -212,10 +212,7 @@ ShimmerCafeNPC4Text3:
 	cont "of the food!"
 	
 	para "I want something"
-	line "new and exotic…"
-	
-	para "Maybe something"
-	line "a bit weird!"
+	line "new and weird!"
 	
 	para "Bring me something"
 	line "like that, and I'll"
@@ -251,6 +248,9 @@ ShimmerCafeNPC4Text6:
 ShimmerCafeNPC4TextWrong:
 	text "Nah…<WAIT_S> Try"
 	line "something else."
+	
+	para "Maybe something"
+	line "a bit weirder!"
 	done
 	
 ShimmerCafeNPC4TextNo:

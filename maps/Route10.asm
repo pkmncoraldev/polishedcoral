@@ -132,7 +132,9 @@ Route10Mina:
 	writetext Route10MinaText2
 	pause 30
 	closetext
-	pause 40
+	pause 30
+	special Special_FadeOutMusic
+	wait 5
 	playsound SFX_PAY_DAY
 	showemote EMOTE_SHOCK, 3, 15
 	callasm Route10MinaIndoorPermsAsm2
@@ -236,8 +238,9 @@ Route10MinaIndoorPermsAsm2:
 	ret
 	
 Route10MinaText1:
-	text "She's shivering but"
-	line "keeps painting."
+	text "She's shivering,"
+	line "but she keeps"
+	cont "painting."
 	
 	para "Tap her shoulder?"
 	done
@@ -259,7 +262,7 @@ Route10MinaText3:
 	para "I'm just out here"
 	line "p-<WAIT_S>p-<WAIT_S>p-<WAIT_S>p-<WAIT_S>painting!"
 	
-	para "In a snowstorm?"
+	para "…<WAIT_M>In a snowstorm?"
 	done
 	
 Route10MinaText4:
@@ -291,7 +294,8 @@ Route10MinaText5:
 	done
 	
 Route10MinaText6:
-	text "“Light Snowfall”."
+	text "“A Gentle"
+	cont "Snowfall”."
 	done
 	
 Route10MinaText7:

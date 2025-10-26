@@ -223,7 +223,7 @@ RadiantOrphanage1FErikaText4:
 	
 	para "He trains to the"
 	line "EAST near a lovely"
-	cont "town called"
+	cont "little town called"
 	cont "KOMORE VILLAGE."
 	
 	para "I'm sure he can"

@@ -614,7 +614,7 @@ SpruceLabSpruceText18:
 	text "That #FLUTE…"
 	
 	para "A song played on"
-	line "this will wake any"
+	line "it will wake any"
 	cont "#MON from even"
 	cont "the deepest"
 	cont "slumber."

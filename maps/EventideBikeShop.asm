@@ -45,7 +45,7 @@ EventideBikeShopOwnerNpc:
 EventideBikeShopOwnerGiveBikeText1:
 	text "You're the one that"
 	line "helped my son in"
-	cont "woods, aren't you?"
+	cont "the woods, yes?"
 	
 	para "I can't thank you"
 	line "enough!"

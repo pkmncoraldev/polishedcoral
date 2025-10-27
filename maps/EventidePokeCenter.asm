@@ -58,13 +58,14 @@ EventidePokeCenterNPC2Text:
 	done
 	
 EventidePokeCenterNPC3Text:
-	text "Phew!"
-	
-	para "The GYM LEADER"
+	text "The GYM LEADER"
 	line "here is no joke!"
 	
 	para "Maybe I should"
 	line "move on for now…"
+	
+	para "There's no shame"
+	line "coming back later."
 	done
 	
 EventidePokeCenterLitwickText1:

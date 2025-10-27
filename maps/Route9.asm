@@ -143,7 +143,7 @@ Route9NPC1Text:
 	cont "use it on a tree."
 	
 	para "A #MON might"
-	line "fall from out!"
+	line "fall from it!"
 	
 	para "Any old tree will"
 	line "do, even really"

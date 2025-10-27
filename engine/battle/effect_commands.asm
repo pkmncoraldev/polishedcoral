@@ -479,6 +479,11 @@ EndTurn:
 OpponentCantMove:
 	call CallOpponentTurn
 CantMove:
+	; Reset Destiny Bond state.
+	ld a, BATTLE_VARS_SUBSTATUS2
+	call GetBattleVarAddr
+	res SUBSTATUS_DESTINY_BOND, [hl]
+	
 	ld a, BATTLE_VARS_SUBSTATUS1
 	call GetBattleVarAddr
 	res SUBSTATUS_ROLLOUT, [hl]
@@ -3023,15 +3028,16 @@ BattleCommand_postfainteffects:
 
 	farcall GetMaxHP
 	farcall SubtractHPFromUser
-	call SwitchTurn
-	xor a
-	ld [wNumHits], a
-	ld [wFXAnimIDHi], a
-	inc a
-	ld [wKickCounter], a
-	ld a, DESTINY_BOND
-	call LoadAnim
-	call SwitchTurn
+	; call SwitchTurn
+	; xor a
+	; ld [wNumHits], a
+	; ld [wFXAnimIDHi], a
+	; inc a
+	; ld [wKickCounter], a
+	; ld a, DESTINY_BOND
+	; call LoadAnim
+	; call SwitchTurn
+	farcall HandleEnemyMonFaint
 
 	ldh a, [hBattleTurn]
 	and a
@@ -4662,15 +4668,11 @@ BattleCommand_snore:
 BattleCommand_destinybond: ; 35bff
 ; destinybond
 
-	ld a, BATTLE_VARS_LAST_COUNTER_MOVE
-	call GetBattleVarAddr
-	ld a, [hl]
-	ld [hl], $0
-	cp DESTINY_BOND
-	jr z, .failed
-	ld [hl], DESTINY_BOND
 	ld a, BATTLE_VARS_SUBSTATUS2
 	call GetBattleVarAddr
+	bit SUBSTATUS_DESTINY_BOND, [hl]
+	res SUBSTATUS_DESTINY_BOND, [hl]
+	jr nz, .failed
 	set SUBSTATUS_DESTINY_BOND, [hl]
 	call AnimateCurrentMove
 	ld hl, DestinyBondEffectText

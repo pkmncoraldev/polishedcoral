@@ -93,7 +93,7 @@ TwinkleGymBlueRoomTrainer:
 	setevent EVENT_BEAT_TWINKLE_GYM_BLUE_ROOM_TRAINER_REMATCH
 	jump .end
 .FightDone
-	checkevent EVENT_BEAT_CHARLIE
+	checkevent EVENT_BEAT_CAN_DO_TWINKLE_REMATCHES
 	iffalse .skip
 	checkevent EVENT_BEAT_TWINKLE_GYM_BLUE_ROOM_TRAINER_REMATCH
 	iffalse .rematch
@@ -149,7 +149,7 @@ TwinkleGymBlueRoomTrainerRematchBeatenText:
 	
 TwinkleGymBlueRoomLeader:
 	opentext
-	checkevent EVENT_BEAT_CHARLIE
+	checkevent EVENT_BEAT_CAN_DO_TWINKLE_REMATCHES
 	iftrue .rematch
 	checkevent EVENT_CAN_GET_YELLOW_KEY
 	iftrue .end

@@ -66,7 +66,7 @@ TwinkleGymYellowRoomCallback:
 .no_door
 	checkevent EVENT_BEAT_TWINKLE_GYM_YELLOW_ROOM_BATHER_1
 	iffalse .check2ndbather
-	checkevent EVENT_BEAT_CHARLIE
+	checkevent EVENT_BEAT_CAN_DO_TWINKLE_REMATCHES
 	iffalse .change1
 	checkevent EVENT_BEAT_TWINKLE_GYM_YELLOW_ROOM_BATHER_1_REMATCH
 	iffalse .check2ndbather
@@ -75,7 +75,7 @@ TwinkleGymYellowRoomCallback:
 .check2ndbather
 	checkevent EVENT_BEAT_TWINKLE_GYM_YELLOW_ROOM_BATHER_2
 	iffalse .end
-	checkevent EVENT_BEAT_CHARLIE
+	checkevent EVENT_BEAT_CAN_DO_TWINKLE_REMATCHES
 	iffalse .change2
 	checkevent EVENT_BEAT_TWINKLE_GYM_YELLOW_ROOM_BATHER_2_REMATCH
 	iffalse .end
@@ -108,7 +108,7 @@ TwinkleGymYellowRoomPool2Asm:
 	
 TwinkleGymYellowRoomLeader:
 	opentext
-	checkevent EVENT_BEAT_CHARLIE
+	checkevent EVENT_BEAT_CAN_DO_TWINKLE_REMATCHES
 	iftrue .rematch
 	checkevent EVENT_CAN_GET_RED_KEY
 	iftrue .end
@@ -280,7 +280,7 @@ TwinkleGymYellowRoomBather1Script:
 	setevent EVENT_BEAT_TWINKLE_GYM_YELLOW_ROOM_BATHER_1_REMATCH
 	end
 .checkrematch
-	checkevent EVENT_BEAT_CHARLIE
+	checkevent EVENT_BEAT_CAN_DO_TWINKLE_REMATCHES
 	iffalse .end
 	checkevent EVENT_BEAT_TWINKLE_GYM_YELLOW_ROOM_BATHER_1_REMATCH
 	iftrue .end
@@ -373,7 +373,7 @@ TwinkleGymYellowRoomBather2Script:
 	setevent EVENT_BEAT_TWINKLE_GYM_YELLOW_ROOM_BATHER_2_REMATCH
 	end
 .checkrematch
-	checkevent EVENT_BEAT_CHARLIE
+	checkevent EVENT_BEAT_CAN_DO_TWINKLE_REMATCHES
 	iffalse .end
 	checkevent EVENT_BEAT_TWINKLE_GYM_YELLOW_ROOM_BATHER_2_REMATCH
 	iftrue .end
@@ -455,7 +455,7 @@ TwinkleGymYellowRoomTrainer1:
 	setevent EVENT_BEAT_TWINKLE_GYM_YELLOW_ROOM_TRAINER_1_REMATCH
 	jump .end
 .FightDone
-	checkevent EVENT_BEAT_CHARLIE
+	checkevent EVENT_BEAT_CAN_DO_TWINKLE_REMATCHES
 	iffalse .skip
 	checkevent EVENT_BEAT_TWINKLE_GYM_YELLOW_ROOM_TRAINER_1_REMATCH
 	iffalse .rematch
@@ -549,7 +549,7 @@ TwinkleGymYellowRoomTrainer2:
 	setevent EVENT_BEAT_TWINKLE_GYM_YELLOW_ROOM_TRAINER_2_REMATCH
 	jump .end
 .FightDone
-	checkevent EVENT_BEAT_CHARLIE
+	checkevent EVENT_BEAT_CAN_DO_TWINKLE_REMATCHES
 	iffalse .skip
 	checkevent EVENT_BEAT_TWINKLE_GYM_YELLOW_ROOM_TRAINER_2_REMATCH
 	iffalse .rematch

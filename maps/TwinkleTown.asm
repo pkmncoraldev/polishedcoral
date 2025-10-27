@@ -126,8 +126,16 @@ TwinkleTownCallback:
 	iffalse .snowmandone
 	changeblock $12, $1e, $b1
 .snowmandone
+	checkevent EVENT_BEAT_CHARLIE
+	iffalse .skip
+	checkevent EVENT_BEAT_CAN_DO_TWINKLE_REMATCHES
+	iftrue .skip2
+	setevent EVENT_BEAT_CAN_DO_TWINKLE_REMATCHES
+	jump .skip3
+.skip2
 	checkevent EVENT_BEAT_CHARLIE_REMATCH
 	iffalse .skip
+.skip3
 	clearevent EVENT_BEAT_CHARLIE_REMATCH
 	clearevent EVENT_BEAT_TWINKLE_GYM_BLUE_ROOM_TRAINER_REMATCH
 	clearevent EVENT_BEAT_TWINKLE_GYM_BLUE_ROOM_LEADER_REMATCH

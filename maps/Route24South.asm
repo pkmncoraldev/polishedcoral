@@ -75,8 +75,8 @@ Route24SouthNPCText:
 	cont "wind is still,"
 	
 	para "something special"
-	line "can happen in the"
-	cont "clearing nearby."
+	line "can happen at the"
+	cont "big stump."
 	
 	para "How exciting!"
 	done

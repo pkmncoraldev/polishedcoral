@@ -30,7 +30,7 @@ KomoreTeaHouseMaster:
 	waitsfx
 	special SaveMusic
 	special Special_FadeOutMusic
-	pause 15
+	pause 25
 	playmusic MUSIC_DOJO
 	writetext KomoreTeaHouseMasterText1_2
 	playmusic MUSIC_NONE
@@ -224,7 +224,7 @@ KomoreTeaHouseMasterText1:
 	done
 	
 KomoreTeaHouseMasterText1_2:
-	text "I…<WAIT_L><WAIT_M> am the MASTER…<WAIT_L><WAIT_L><WAIT_M>'s<WAIT_S>"
+	text "I…<WAIT_L><WAIT_M> am the MASTER<WAIT_L><WAIT_L><WAIT_M>'s<WAIT_S>"
 	line "brother."
 	done
 	
@@ -246,7 +246,7 @@ KomoreTeaHouseMasterText1_3:
 	
 	para "I mean seriously,"
 	line "you want this tea,"
-	cont "my child."
+	cont "young one."
 	
 	para "I brew them from"
 	line "4 GOLD or SILVER"

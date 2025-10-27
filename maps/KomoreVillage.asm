@@ -19,7 +19,7 @@ KomoreVillage_MapScriptHeader:
 
 	db 8 ; bg events
 	signpost  4, 27, SIGNPOST_JUMPTEXT, KomoreVillageSign
-	signpost 20, 31, SIGNPOST_JUMPTEXT, KomoreCommunityCenterSign
+	signpost -1, -1, SIGNPOST_JUMPTEXT, KomoreCommunityCenterSign
 	signpost  5, 32, SIGNPOST_READ, KomoreVillagePokeCenterSign
 	signpost  7, 20, SIGNPOST_READ, KomoreVillageMartSign
 	signpost 20, 28, SIGNPOST_IFNOTSET, KomoreVillageTree
@@ -27,10 +27,14 @@ KomoreVillage_MapScriptHeader:
 	signpost 20, 29, SIGNPOST_IFNOTSET, KomoreVillageTree
 	signpost 19, 18, SIGNPOST_READ, KomoreTeaMasterSign
 
-	db 3 ; object events
+	db 7 ; object events
 	object_event -5, -5, SPRITE_LEAVES, SPRITEMOVEDATA_BAGGAGE, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, -1, EVENT_HIDE_OW_OBJECTS_TEAL
 	object_event -5, -5, SPRITE_LEAVES, SPRITEMOVEDATA_BAGGAGE, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, -1, EVENT_HIDE_OW_OBJECTS_PINK
-	person_event SPRITE_PICNICKER, 1, 1, SPRITEMOVEDATA_WANDER, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, KomoreVillageNPC1, -1
+	person_event SPRITE_PICNICKER,  9, 28, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, KomoreVillageNPC1, -1
+	person_event SPRITE_BATTLE_GIRL, 20, 10, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, KomoreVillageNPC2, -1
+	person_event SPRITE_FISHING_GURU, 14, 17, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, KomoreVillageNPC3, -1
+	person_event SPRITE_PONYTAIL,  7, 14, SPRITEMOVEDATA_STANDING_DOWN, 1, 1, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, KomoreVillageNPC4, -1
+	object_event 15,  7, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, SHROOMISH, -1, -1, PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, KomoreShroomish, -1
 
 KomoreVillageFlyPoint:
 	setflag ENGINE_FLYPOINT_KOMORE
@@ -47,21 +51,66 @@ KomoreVillageNPC1:
 	jumptextfaceplayer KomoreVillageNPC1Text
 	
 KomoreVillageNPC1Text:
-	text ""
+	text "Have you found"
+	line "any pretty leaves?"
+	
+	para "Just walking in"
+	line "the leaves is all"
+	cont "it takes to find"
+	cont "rare ones."
 	done
 	
 KomoreVillageNPC2:
 	jumptextfaceplayer KomoreVillageNPC2Text
 	
 KomoreVillageNPC2Text:
-	text ""
+	text "Even if you don't"
+	line "buy into the spir-"
+	cont "ituality of it,"
+	
+	para "there is a lot to"
+	line "learn from the"
+	cont "MASTER's teachings."
 	done
 	
 KomoreVillageNPC3:
 	jumptextfaceplayer KomoreVillageNPC3Text
 	
 KomoreVillageNPC3Text:
-	text ""
+	text "I want to catch"
+	line "a SKARMORY, but I"
+	cont "can't find one!"
+	
+	para "Do they only"
+	line "appear on certain"
+	cont "days?"
+	done
+	
+KomoreVillageNPC4:
+	jumptextfaceplayer KomoreVillageNPC4Text
+	
+KomoreVillageNPC4Text:
+	text "I found my friend"
+	line "here while I was"
+	cont "picking mushrooms."
+	
+	para "I thought I found"
+	line "a BALMMUSHROOM,"
+	
+	para "but I actually"
+	line "found a best pal!"
+	done
+	
+KomoreShroomish:
+	opentext TEXTBOX_POKEMON, SHROOMISH
+	writetext KomoreShroomishText
+	cry SHROOMISH
+	waitbutton
+	closetext
+	end
+	
+KomoreShroomishText:
+	text "Mish mish mish!"
 	done
 	
 KomoreTeaMasterSign:

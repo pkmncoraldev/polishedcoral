@@ -2359,6 +2359,8 @@ BattleCommand_hittargetnosub: ; 34f60
 	call GetBattleVar
 	cp FLY
 	jr z, .fly_dig
+	cp DIVE
+	jr z, .fly_dig
 	cp DIG
 	ret nz
 

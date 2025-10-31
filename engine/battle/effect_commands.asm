@@ -1663,18 +1663,10 @@ _CheckTypeMatchup: ; 347d3
 
 BattleCommand_checkpowder:
 	ld de, 1
-	ld a, BATTLE_VARS_MOVE
-	call GetBattleVar
-	cp THUNDER_WAVE
-	jr z, .twave
 	ld hl, PowderMoves
 	call IsInArray
 	ret nc
-	jr BattleCommand_resettypematchup
-.twave
-	call CheckIfTargetIsGroundType
-	ret nz
-	; fallthrough
+; fallthrough
 BattleCommand_resettypematchup: ; 34833
 ; Reset the type matchup multiplier to 1.0, if the type matchup is not 0.
 ; If there is immunity in play, the move automatically misses.
@@ -1694,7 +1686,13 @@ BattleCommand_resettypematchup: ; 34833
 	ld [wTypeMatchup], a
 	ret
 
-; 3484e
+BattleCommand_checktwaveability:
+	ld a, BATTLE_VARS_MOVE
+	call GetBattleVar
+	cp THUNDER_WAVE
+	ret nz
+	farcall CheckNullificationAbilities
+	ret
 
 INCLUDE "engine/battle/ai/switch.asm"
 
@@ -7286,6 +7284,15 @@ BattleCommand_paralyze:
 	call CheckSubstituteOpp
 	ld hl, ButItFailedText
 	jr nz, .failed
+	ld a, [wAttackMissed]
+	and a
+	cp 3
+	jr nz, .no_ability_protection
+	call BattleCommand_lowersub
+	call BattleCommand_movedelay
+	call BattleCommand_raisesub
+	jp FailText_CheckOpponentProtect
+.no_ability_protection
 	ld a, [wAttackMissed]
 	and a
 	ld hl, AttackMissedText

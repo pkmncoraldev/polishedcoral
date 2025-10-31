@@ -946,6 +946,7 @@ ThunderWave:
 	doturn
 	pressure
 	checkpowder
+	checktwaveability
 	checkhit
 	bounceback
 	checksafeguard

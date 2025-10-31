@@ -42,6 +42,9 @@ INCBIN "gfx/font/pack.2bpp"
 BattleExtrasGFX:
 INCBIN "gfx/battle/hpexpbars.2bpp"
 
+StatsExtrasGFX:
+INCBIN "gfx/battle/hpexpbarsstats.2bpp"
+
 GFX_Stats: ; f89b0
 INCBIN "gfx/stats/stats.2bpp"
 ; f8ac0
@@ -191,6 +194,17 @@ _LoadFontsBattleExtra:: ; fb4be
 	lb bc, BANK(BattleExtrasGFX), 32
 	call Get2bpp
 	jp LoadFrame1bpp
+	
+_LoadFontsStatsExtra:: ; fb4be
+	call LoadStandardFontPointer
+	ld d, h
+	ld e, l
+	ld hl, VTiles0 tile "A"
+	ld de, StatsExtrasGFX
+	ld hl, VTiles2 tile BATTLEEXTRA_GFX_START
+	lb bc, BANK(StatsExtrasGFX), 32
+	call Get2bpp
+	jp LoadFrame1bpp
 
 LoadFrame:: ; fb4cc
 	ld a, [wMapGroup]
@@ -290,7 +304,7 @@ LoadEnemyStatusIcon:
 	ret
 
 LoadStatsScreenGFX: ; fb53e
-	call _LoadFontsBattleExtra
+	call _LoadFontsStatsExtra
 
 LoadStatsGFX: ; fb571
 	ld de, GFX_Stats

@@ -442,16 +442,7 @@ endc
 
 
 _CGB_StatsScreenHPPals: ; 8edb
-	ld de, wUnknBGPals
-	ld a, [wCurHPPal]
-	ld l, a
-	ld h, $0
-	add hl, hl
-	add hl, hl
-	ld bc, HPBarInteriorPals
-	add hl, bc
-	call LoadPalette_White_Col1_Col2_Black
-
+	ld de, wUnknBGPals palette 1
 	ld a, [wCurPartySpecies]
 	ld bc, wTempMonPersonality
 	call GetPlayerOrMonPalettePointer
@@ -460,7 +451,7 @@ _CGB_StatsScreenHPPals: ; 8edb
 ;	call VaryBGPal1ByTempMonDVs
 	pop de
 
-	ld hl, GenderAndExpBarPals
+	ld hl, HPBarInteriorPals
 	call LoadPalette_White_Col1_Col2_Black
 
 	ld hl, StatsScreenPals
@@ -484,8 +475,13 @@ _CGB_StatsScreenHPPals: ; 8edb
 	ld a, $1
 	call FillBoxCGB
 
-	hlcoord 12, 16, wAttrMap
-	ld bc, 7
+	hlcoord 00, 09, wAttrMap
+	ld bc, 2
+	ld a, $2
+	call ByteFill
+
+	hlcoord 10, 16, wAttrMap
+	ld bc, 2
 	ld a, $2
 	call ByteFill
 

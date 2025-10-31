@@ -258,6 +258,7 @@ LoadStatsScreenPals:
 	add hl, bc
 	ldh a, [rSVBK]
 	push af
+	push bc
 	ld a, $5
 	ldh [rSVBK], a
 	ld a, [hli]
@@ -266,6 +267,30 @@ LoadStatsScreenPals:
 	ld a, [hl]
 	ld [wUnknBGPals palette 0 + 1], a
 	ld [wUnknBGPals palette 2 + 1], a
+	pop bc
+	ld a, c
+	
+	cp 0
+	jr z, .pink_page
+	ld a, [wCurHPPal]
+	ld e, a
+	ld d, $0
+	ld hl, HPBarInteriorPals + 2
+	add hl, de
+	add hl, de
+	ld bc, 2
+	ld de, wUnknBGPals + 4
+	ld a, $5
+	call FarCopyWRAM
+	jr .cont
+.pink_page
+	ld hl, GenderAndExpBarPals + 2
+	ld bc, 2
+	ld de, wUnknBGPals + 4
+	ld a, $5
+	call FarCopyWRAM
+	
+.cont
 	pop af
 	ldh [rSVBK], a
 	call ApplyPals

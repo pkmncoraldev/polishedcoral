@@ -37,7 +37,7 @@ HPBarInteriorPals:
 
 GenderAndExpBarPals:
 	RGB 31, 12, 06
-	RGB 04, 17, 31
+	RGB 09, 23, 31
 
 
 StatsScreenPals: ; 8f52

@@ -6,8 +6,8 @@ LusterTrainCutscene_MapScriptHeader:
 	db 0 ; callbacks
 
 	db 2 ; warp events
-	warp_event  5,  2, ROUTE_1, 1
-	warp_event 60,  2, LUSTER_TRAIN_STATION, 3
+	warp_event 57,  2, ROUTE_1, 1
+	warp_event  4,  2, LUSTER_TRAIN_STATION, 3
 
 	db 0 ; coord events
 
@@ -16,10 +16,12 @@ LusterTrainCutscene_MapScriptHeader:
 	db 0 ; object events
 	
 LusterTrainCutsceneTrigger0:
+	playmusic MUSIC_TRAIN_LOOP
 	callasm LusterTrainThing
 	applyonemovement PLAYER, remove_fixed_facing
 	applymovement PLAYER, Movement_LusterTrainArrives
 	special FadeOutPalettes
+	callasm LusterTrainThing2
 	warpcheck
 	end
 	
@@ -27,61 +29,59 @@ LusterTrainCutsceneTrigger1:
 	end
 	
 Movement_LusterTrainArrives:
-	big_step_right
-	big_step_right
-	big_step_right
-	big_step_right
-	big_step_right
-	big_step_right
-	big_step_right
-	big_step_right
-	big_step_right
-	big_step_right
-	big_step_right
-	big_step_right
-	big_step_right
-	big_step_right
-	big_step_right
-	big_step_right
-	big_step_right
-	big_step_right
-	big_step_right
-	big_step_right
-	big_step_right
-	big_step_right
-	big_step_right
-	big_step_right
-	big_step_right
-	big_step_right
-	big_step_right
-	big_step_right
-	big_step_right
-	big_step_right
-	big_step_right
-	big_step_right
-	big_step_right
-	big_step_right
-	big_step_right
-	big_step_right
-	big_step_right
-	big_step_right
-	big_step_right
-	big_step_right
-	big_step_right
-	big_step_right
-	big_step_right
-	big_step_right
-	big_step_right
-	big_step_right
-	big_step_right
-	big_step_right
-	big_step_right
-	big_step_right
-	big_step_right
-	big_step_right
-	big_step_right
-	big_step_right
-	big_step_right
+	big_step_left
+	big_step_left
+	big_step_left
+	big_step_left
+	big_step_left
+	big_step_left
+	big_step_left
+	big_step_left
+	big_step_left
+	big_step_left
+	big_step_left
+	big_step_left
+	big_step_left
+	big_step_left
+	big_step_left
+	big_step_left
+	big_step_left
+	big_step_left
+	big_step_left
+	big_step_left
+	big_step_left
+	big_step_left
+	big_step_left
+	big_step_left
+	big_step_left
+	big_step_left
+	big_step_left
+	big_step_left
+	big_step_left
+	big_step_left
+	big_step_left
+	big_step_left
+	big_step_left
+	big_step_left
+	big_step_left
+	big_step_left
+	big_step_left
+	big_step_left
+	big_step_left
+	big_step_left
+	big_step_left
+	big_step_left
+	big_step_left
+	big_step_left
+	big_step_left
+	big_step_left
+	big_step_left
+	big_step_left
+	big_step_left
+	big_step_left
+	big_step_left
+	big_step_left
+	big_step_left
 	step_end
 	
 LusterTrainThing:

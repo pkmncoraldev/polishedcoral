@@ -66,9 +66,10 @@ FlickerTrainCutsceneTrigger0:
 	
 FlickerTrainCutsceneTrigger1:
 	callasm FlickerStationTrainThing
-	playmusic MUSIC_NONE
+	playmusic MUSIC_TRAIN_STOP_2
 	applymovement PLAYER, Movement_FlickerStationTrainArrives
 	pause 5
+	playsound SFX_FAINT
 	earthquake 5
 	pause 35
 	opentext

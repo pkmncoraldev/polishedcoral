@@ -7,28 +7,28 @@ LusterTrainStation_MapScriptHeader:
 	callback MAPCALLBACK_TILES, LusterTrainStationCallback
 
 	db 3 ; warp events
-	warp_event 20, 15, LUSTER_CITY_SHOPPING, 1
-	warp_event 21, 15, LUSTER_CITY_SHOPPING, 2
-	warp_event  5,  2, ROUTE_1, 1
+	warp_event  6, 15, LUSTER_CITY_SHOPPING, 1
+	warp_event  7, 15, LUSTER_CITY_SHOPPING, 2
+	warp_event 19,  2, ROUTE_1, 1
 
 	db 0 ; coord events
 
 	db 0 ; bg events
 
 	db 13 ; object events
-	person_event SPRITE_OFFICER,  4, 26, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, LusterTrainStationConductor, EVENT_MET_MR_NETT
-	person_event SPRITE_REPORTER, 11, 24, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, LusterTrainStationReporter, EVENT_MET_MR_NETT
-	person_event SPRITE_CAMERAMAN, 11, 23, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, LusterTrainStationCameraman, EVENT_MET_MR_NETT
-	person_event SPRITE_PSYCHIC, 12, 22, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_MET_MR_NETT
-	person_event SPRITE_CUTE_GIRL, 11, 22, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_MET_MR_NETT
-	person_event SPRITE_SUPER_NERD, 14, 24, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_MET_MR_NETT
-	person_event SPRITE_ROCKER, 13, 24, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_MET_MR_NETT
-	person_event SPRITE_FAT_GUY, 10, 21, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_MET_MR_NETT
-	person_event SPRITE_OFFICER,  6, 21, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, LusterTrainStationConductor, -1
-	person_event SPRITE_FAT_GUY, 10, 19, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, LusterTrainStationNPC1, EVENT_HAVENT_BEEN_TO_LUSTER_CITY
-	person_event SPRITE_POKEFAN_F, 12, 18, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, LusterTrainStationNPC2, EVENT_HAVENT_BEEN_TO_LUSTER_CITY
-	person_event SPRITE_CUTE_GIRL, 13, 23, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, LusterTrainStationNPC3, EVENT_HAVENT_BEEN_TO_LUSTER_CITY
-	person_event SPRITE_SUPER_NERD, 10, 16, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, LusterTrainStationNPC4, EVENT_HAVENT_BEEN_TO_LUSTER_CITY
+	person_event SPRITE_OFFICER,  9, 12, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, LusterTrainStationConductor, EVENT_MET_MR_NETT
+	person_event SPRITE_REPORTER, 11, 10, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, LusterTrainStationReporter, EVENT_MET_MR_NETT
+	person_event SPRITE_CAMERAMAN, 11,  9, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, LusterTrainStationCameraman, EVENT_MET_MR_NETT
+	person_event SPRITE_PSYCHIC, 12,  8, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_MET_MR_NETT
+	person_event SPRITE_CUTE_GIRL, 11,  8, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_MET_MR_NETT
+	person_event SPRITE_SUPER_NERD, 14, 10, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_MET_MR_NETT
+	person_event SPRITE_ROCKER, 13, 10, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_MET_MR_NETT
+	person_event SPRITE_FAT_GUY, 10,  7, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_MET_MR_NETT
+	person_event SPRITE_OFFICER,  7,  7, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, LusterTrainStationConductor, -1
+	person_event SPRITE_FAT_GUY, 10,  5, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, LusterTrainStationNPC1, EVENT_HAVENT_BEEN_TO_LUSTER_CITY
+	person_event SPRITE_POKEFAN_F, 12,  4, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, LusterTrainStationNPC2, EVENT_HAVENT_BEEN_TO_LUSTER_CITY
+	person_event SPRITE_CUTE_GIRL, 13,  9, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, LusterTrainStationNPC3, EVENT_HAVENT_BEEN_TO_LUSTER_CITY
+	person_event SPRITE_SUPER_NERD, 10,  2, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, LusterTrainStationNPC4, EVENT_HAVENT_BEEN_TO_LUSTER_CITY
 
 	
 	const_def 1 ; object constants
@@ -50,26 +50,32 @@ LusterTrainStationTrigger0:
 	end
 	
 LusterTrainStationTrigger1:
+	priorityjump LusterTrainStationArrive
 	end
 
 LusterTrainStationCallback:
 	checkevent EVENT_MET_MR_NETT
-	iffalse .skip
-	changeblock $16, $8, $59
-	changeblock $16, $a, $5a
-	changeblock $14, $a, $56
-	changeblock $14, $c, $56
-	changeblock $16, $c, $56
-.skip
-	checkmapscene LUSTER_TRAIN_STATION, $1
 	iffalse .end
+	changeblock $8, $8, $59
+	changeblock $8, $a, $5a
+	changeblock $6, $a, $56
+	changeblock $6, $c, $56
+	changeblock $8, $c, $56
+.end
+	return
+
+LusterTrainStationArrive:
 	special Special_StopLandmarkTimer
-	earthquake 5
-	playmusic MUSIC_NONE
-	callasm LusterTrainThing
 	applyonemovement PLAYER, remove_fixed_facing
+	playmusic MUSIC_TRAIN_STOP
+;	refreshscreen
+	disappear LUSTER_TRAIN_STATION_OFFICER
+	disappear LUSTER_TRAIN_STATION_CONDUCTOR
+	clearevent EVENT_MET_MR_NETT
+	callasm LusterTrainThing
 	applymovement PLAYER, Movement_LusterTrainArrives2
 	pause 5
+	playsound SFX_FAINT
 	earthquake 5
 	pause 35
 	special Special_EnableInput
@@ -78,10 +84,13 @@ LusterTrainStationCallback:
 	waitbutton
 	callasm LusterTrainThing2
 	closetext
+	moveperson LUSTER_TRAIN_STATION_OFFICER, 8, 8
+	moveperson LUSTER_TRAIN_STATION_CONDUCTOR, 4, 3
+	appear LUSTER_TRAIN_STATION_OFFICER
 	pause 10
 	applymovement PLAYER, Movement_LusterTrainArrives3
-	applymovement LUSTER_TRAIN_STATION_OFFICER, Movement_LusterStationOfficer1
-	spriteface LUSTER_TRAIN_STATION_OFFICER, UP
+;	applymovement LUSTER_TRAIN_STATION_OFFICER, Movement_LusterStationOfficer1
+;	spriteface LUSTER_TRAIN_STATION_OFFICER, UP
 	pause 15
 	playsound SFX_EXIT_BUILDING
 	special Special_ForcePlayerStateNormal
@@ -94,13 +103,17 @@ LusterTrainStationCallback:
 	writetext LusterTrainStationConductorText1
 	waitbutton
 	closetext
+	appear LUSTER_TRAIN_STATION_CONDUCTOR
+	playsound SFX_EXIT_BUILDING
 	applymovement LUSTER_TRAIN_STATION_CONDUCTOR, Movement_LusterStationConductor
 	pause 10
 	applymovement PLAYER, Movement_LusterTrainArrives5
 	spriteface PLAYER, RIGHT
 	playmusic MUSIC_ENCOUNTER_GYM_LEADER
 	applymovement LUSTER_TRAIN_STATION_OFFICER, Movement_LusterStationOfficer2
-	pause 30
+	pause 1
+	applyonemovement LUSTER_TRAIN_STATION_OFFICER, remove_fixed_facing
+	pause 35
 	applyonemovement LUSTER_TRAIN_STATION_REPORTER, turn_step_left
 	opentext TEXTBOX_REPORTER
 	writetext LusterTrainStationReporterText1
@@ -147,16 +160,16 @@ LusterTrainStationCallback:
 	appear LUSTER_TRAIN_STATION_NPC_3
 	appear LUSTER_TRAIN_STATION_NPC_4
 	applyonemovement LUSTER_TRAIN_STATION_NETT, remove_fixed_facing
-	changeblock $16, $8, $59
-	changeblock $16, $a, $5a
-	changeblock $14, $a, $56
-	changeblock $14, $c, $56
-	changeblock $16, $c, $56
+	changeblock $8, $8, $59
+	changeblock $8, $a, $5a
+	changeblock $6, $a, $56
+	changeblock $6, $c, $56
+	changeblock $8, $c, $56
 	callasm GenericFinishBridge
 	waitsfx
 	special FadeInTextboxPalettes
 	pause 20
-	playmusic MUSIC_MOM
+	playmusic MUSIC_MOM		;Mr Nett's theme song
 	applyonemovement LUSTER_TRAIN_STATION_NETT, step_left
 	spriteface LUSTER_TRAIN_STATION_NETT, UP
 	spriteface PLAYER, DOWN
@@ -169,7 +182,7 @@ LusterTrainStationCallback:
 	showemote EMOTE_SHOCK, LUSTER_TRAIN_STATION_NETT, 15
 	pause 25
 	applyonemovement LUSTER_TRAIN_STATION_NETT, step_up
-	opentext
+	opentext TEXTBOX_UNKNOWN
 	writetext LusterStationNettText2
 	buttonsound
 	changetextboxspeaker TEXTBOX_NETT
@@ -191,7 +204,7 @@ LusterTrainStationCallback:
 	clearevent EVENT_TRAIN_GOING_WEST
 	blackoutmod LUSTER_CITY_RESIDENTIAL
 	dotrigger $0
-	jump .end
+	end
 .met_nett
 	applymovement PLAYER, Movement_LusterTrainArrives6
 	applymovement LUSTER_TRAIN_STATION_OFFICER, Movement_LusterStationOfficer2
@@ -199,8 +212,7 @@ LusterTrainStationCallback:
 	clearevent EVENT_TRAIN_GOING_WEST
 	playmapmusic
 	dotrigger $0
-.end
-	return
+	end
 
 LusterTrainStationConductor:
 	faceplayer
@@ -469,20 +481,20 @@ LusterStationNettText3:
 	done
 	
 Movement_LusterTrainArrives2:
-	step_right
-	step_right
-	step_right
-	step_right
-	step_right
-	step_right
-	step_right
-	step_right
-	step_right
-	step_right
-	step_right
-	slow_step_right
-	slow_step_right
-	slow_step_right
+	step_left
+	step_left
+	step_left
+	step_left
+	step_left
+	step_left
+	step_left
+	step_left
+	step_left
+	step_left
+	step_left
+	slow_step_left
+	slow_step_left
+	slow_step_left
 	step_end
 	
 Movement_LusterTrainArrives3:
@@ -519,12 +531,11 @@ Movement_LusterTrainArrives6:
 	step_end
 	
 Movement_LusterStationConductor:
-	run_step_left
-	run_step_left
-	run_step_left
-	run_step_left
-	run_step_left
 	run_step_down
+	run_step_down
+	run_step_right
+	run_step_right
+	run_step_right
 	run_step_down
 	run_step_down
 	run_step_down
@@ -550,8 +561,8 @@ Movement_LusterStationOfficer1:
 	
 Movement_LusterStationOfficer2:
 	step_left
-	step_down
-	step_down
+	step_up
+	turn_step_down
 	step_end
 	
 Movement_LusterStationBoardTrain:
@@ -563,21 +574,21 @@ Movement_LusterStationBoardTrain:
 	step_end
 	
 Movement_LusterStationTrainLeaves:
-	slow_step_left
-	slow_step_left
-	step_left
-	step_left
-	step_left
-	step_left
-	fast_step_left
-	fast_step_left
-	fast_step_left
-	fast_step_left
-	fast_step_left
-	fast_step_left
-	big_step_left
-	big_step_left
-	big_step_left
+	slow_step_right
+	slow_step_right
+	step_right
+	step_right
+	step_right
+	step_right
+	fast_step_right
+	fast_step_right
+	fast_step_right
+	fast_step_right
+	fast_step_right
+	fast_step_right
+	big_step_right
+	big_step_right
+	big_step_right
 	step_end
 
 Movement_LusterStationTrainCamera:

@@ -90,6 +90,9 @@ Music:
 	dba Music_AfterTheRivalFight
 	dba Music_AfterTeamSnareEncounter
 	dba Music_TrainStartup
+	dba Music_TrainLoop
+	dba Music_TrainStop
+	dba Music_TrainStop2
 	dba Music_DevMessage
 	dba Music_DevMessageEnd
 	dba Music_WildBattle2

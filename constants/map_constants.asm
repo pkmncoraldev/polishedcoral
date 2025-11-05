@@ -211,7 +211,7 @@ DEF MAP_NONE   EQU 0
 	map_const FLICKER_PASS_OUTSIDE,						  12,  9 ; 7
 	map_const FLICKER_TRAIN_CUTSCENE,					  28,  7 ; 8
 	map_const LUSTER_TRAIN_CUTSCENE,					  33,  4 ; 9
-	map_const LUSTER_TRAIN_STATION,						  16,  8 ; 10
+	map_const LUSTER_TRAIN_STATION,						  14,  8 ; 10
 	map_const FLICKER_TRAIN_GRAVEYARD,					  14, 18 ; 11
 	
 	newgroup													 ; 11

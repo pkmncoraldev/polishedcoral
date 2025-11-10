@@ -2040,18 +2040,26 @@ Script_AutoRockClimb:
 	ret
 
 TryRockClimbOW:: ; cb56
+	call CheckRockClimbBlocked
+	jr c, .blocked
 	ld a, [wOptions1]
 	bit DEBUG_MODE, a
 	jr nz, .debugrockclimb
 
 	call HasRockClimb
 	jr z, .no
+	
 	ld a, BANK(Script_AskRockClimb)
 	ld hl, Script_AskRockClimb
 	call CallScript
 	scf
 	ret
-	
+.blocked
+	ld a, BANK(Script_BlockedRockClimb)
+	ld hl, Script_BlockedRockClimb
+	call CallScript
+	scf
+	ret
 .no
 	ld a, BANK(Script_CouldClimb)
 	ld hl, Script_CouldClimb
@@ -2064,6 +2072,25 @@ TryRockClimbOW:: ; cb56
 	ld hl, DebugRockClimb
 	call CallScript
 	scf
+	ret
+	
+CheckRockClimbBlocked:
+	ld a, [wPlayerStandingMapX]
+	ld d, a
+	ld a, [wPlayerDirection]
+	and $c
+	cp OW_UP
+	ld a, [wPlayerStandingMapY]
+	jr z, .facing_up
+	inc a
+	inc a
+	jr .cont
+.facing_up
+	dec a
+	dec a
+.cont
+	ld e, a
+	farcall IsNPCAtCoord
 	ret
 
 Script_CantDoRockClimb: ; 0xcb7e
@@ -2081,6 +2108,17 @@ Script_CouldClimb:
 	
 .CouldClimbText
 	text_jump CantDoRockClimbText
+	db "@"
+
+Script_BlockedRockClimb:
+	opentext
+	writetext .BlockedRockClimb
+	waitbutton
+	endtext
+	end
+
+.BlockedRockClimb
+	text_jump BlockedRockClimbText
 	db "@"
 
 Script_AskRockClimb: ; 0xcb86

@@ -311,6 +311,13 @@ CantDoDiveText::
 	line "here!"
 	done
 
+BlockedRockClimbText::
+	text "A #MON could"
+	line "climb the rocks"
+	cont "if the way was"
+	cont "clear…"
+	done
+
 AskUseRockClimbText::
 	text "Looks like a #-"
 	line "MON could climb"

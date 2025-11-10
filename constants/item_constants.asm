@@ -152,7 +152,7 @@
 	const UNUSED5      ; 82 - replace
 	const UNUSED6      ; 83 - replace
 	const UNUSED7      ; 84 - replace
-	const UNUSED8      ; 85 - replace
+	const RARE_BONE    ; 85
 	const COMET_SHARD  ; 86
 
 	const BERRY_JUICE  ; 87

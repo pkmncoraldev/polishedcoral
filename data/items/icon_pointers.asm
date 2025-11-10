@@ -132,7 +132,7 @@ ItemIconPointers:
 	dba NoItemIcon
 	dba NoItemIcon
 	dba NoItemIcon
-	dba NoItemIcon
+	dba RareBoneIcon
 	dba CometShardIcon
 	dba BerryJuiceIcon
 	dba SilkScarfIcon

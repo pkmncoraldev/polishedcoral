@@ -131,7 +131,7 @@ ItemNames::
 	db "UNUSED@"
 	db "UNUSED@"
 	db "UNUSED@"
-	db "UNUSED@"
+	db "RARE BONE@"
 	db "COMET SHARD@"
 	db "BERRY JUICE@"
 	db "SILK SCARF@"

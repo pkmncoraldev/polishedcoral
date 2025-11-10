@@ -22,7 +22,7 @@ ENDM
 	const_def
 
 	add_tm WORK_UP_GROWTH	; $00
-	add_tm DRAGON_CLAW		; $01
+	add_tm HEADBUTT			; $01
 	add_tm CURSE			; $02
 	add_tm CALM_MIND		; $03
 	add_tm CHARM			; $04
@@ -80,7 +80,7 @@ ENDM
 	add_tm DARK_PULSE		; $38
 	add_tm ENDURE			; $39
 	add_tm DRAGON_PULSE		; $3a
-	add_tm DRAIN_PUNCH		; $3b
+	add_tm DRAGON_CLAW		; $3b
 	add_tm WILL_O_WISP		; $3c
 	add_tm ACROBATICS		; $3d
 	add_tm TOXIC_SPIKES		; $3e

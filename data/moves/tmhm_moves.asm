@@ -1,6 +1,6 @@
 TMHMMoves:
 	db WORK_UP_GROWTH                      ; TM01
-	db DRAGON_CLAW			               ; TM02
+	db HEADBUTT				               ; TM02
 	db CURSE                               ; TM03
 	db CALM_MIND                           ; TM04
 	db CHARM_FEATHER_DANCE                 ; TM05
@@ -58,7 +58,7 @@ TMHMMoves:
 	db DARK_PULSE                          ; TM57
 	db ENDURE                              ; TM58
 	db DRAGON_PULSE                        ; TM59
-	db DRAIN_PUNCH                         ; TM60
+	db DRAGON_CLAW                         ; TM60
 	db WILL_O_WISP                         ; TM61
 	db ACROBATICS	                       ; TM62
 	db TOXIC_SPIKES                        ; TM63

@@ -1063,7 +1063,7 @@ TMHMTypes:
 ; This merges data from battle/moves/moves.asm:Moves and engine/tmhm.asm:TMHMMoves
 ; for efficiency.
 	db NORMAL   ; WORK_UP_GROWTH
-	db DRAGON	; DRAGON_CLAW
+	db NORMAL	; HEADBUTT
 	db GHOST    ; CURSE
 	db PSYCHIC  ; CALM_MIND
 	db FAIRY	; CHARM
@@ -1121,7 +1121,7 @@ TMHMTypes:
 	db DARK     ; DARK_PULSE
 	db NORMAL   ; ENDURE
 	db DRAGON   ; DRAGON_PULSE
-	db FIGHTING ; DRAIN_PUNCH
+	db DRAGON   ; DRAGON_CLAW
 	db FIRE     ; WILL_O_WISP
 	db FLYING   ; ACROBATICS
 	db POISON   ; TOXIC_SPIKES

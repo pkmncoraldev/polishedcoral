@@ -79,10 +79,20 @@
 	const CRY_ARON
 	const CRY_LAIRON
 	const CRY_AGGRON
+	const CRY_MEDITITE
+	const CRY_MEDICHAM
+	const CRY_CARVANHA
+	const CRY_SHARPEDO
+	const CRY_NUMEL
+	const CRY_CAMERUPT
 ; gen 4
+	const CRY_LEAFEON
 	const CRY_GLACEON
 ; gen 5
+	const CRY_DRILBUR
+	const CRY_EXCADRILL
 ; gen 6
+	const CRY_SYLVEON
 	const CRY_NOIBAT
 	const CRY_NOIVERN
 ; gen 7

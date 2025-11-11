@@ -443,12 +443,12 @@ CryHeaders2::
 	mon_cry CRY_ARON,          60,   112 	; Aron
 	mon_cry CRY_LAIRON,        30,   112 	; Lairon
 	mon_cry CRY_AGGRON,         0,   256 	; Aggron
-	mon_cry CRY_BULBASAUR,   $080,  $081 	; Meditite - PLACEHOLDER
-	mon_cry CRY_BULBASAUR,   $080,  $081 	; Medicham - PLACEHOLDER
-	mon_cry CRY_BULBASAUR,   $080,  $081 	; Carvanha - PLACEHOLDER
-	mon_cry CRY_BULBASAUR,   $080,  $081 	; Sharpedo - PLACEHOLDER
-	mon_cry CRY_BULBASAUR,   $080,  $081 	; Numel - PLACEHOLDER
-	mon_cry CRY_BULBASAUR,   $080,  $081 	; Camerupt - PLACEHOLDER
+	mon_cry CRY_MEDITITE,       0,   112 	; Meditite
+	mon_cry CRY_MEDICHAM,     255,   222	; Medicham
+	mon_cry CRY_CARVANHA,      22,   300	; Carvanha
+	mon_cry CRY_SHARPEDO,       0,   324 	; Sharpedo
+	mon_cry CRY_NUMEL,          0,   128 	; Numel
+	mon_cry CRY_CAMERUPT,       0,   384 	; Camerupt
 	mon_cry CRY_SCYTHER,    -$096,  $0a0 	; Cacnea
 	mon_cry CRY_TOTODILE,   -$1c0,  $170 	; Cacturne
 	mon_cry CRY_BULBASAUR,   $080,  $081 	; Swablu - PLACEHOLDER
@@ -475,14 +475,14 @@ CryHeaders2::
 	mon_cry CRY_BULBASAUR,   $080,  $081 	; Electivire - PLACEHOLDER
 	mon_cry CRY_BULBASAUR,   $080,  $081 	; Magmortar - PLACEHOLDER
 	mon_cry CRY_BULBASAUR,   $080,  $081 	; Togekiss - PLACEHOLDER
-	mon_cry CRY_BULBASAUR,   $080,  $081 	; Leafeon - PLACEHOLDER
+	mon_cry CRY_LEAFEON,	   56,   524	; Leafeon
 	mon_cry CRY_GLACEON,       56,   588 	; Glaceon
 	mon_cry CRY_BULBASAUR,   $080,  $081 	; Gliscor - PLACEHOLDER
 	mon_cry CRY_BULBASAUR,   $080,  $081 	; Mamoswine - PLACEHOLDER
 	mon_cry CRY_BULBASAUR,   $080,  $081 	; PorygonZ - PLACEHOLDER
 	mon_cry CRY_BULBASAUR,   $080,  $081 	; Froslass - PLACEHOLDER
-	mon_cry CRY_BULBASAUR,   $080,  $081	; Drilbur - PLACEHOLDER
-	mon_cry CRY_BULBASAUR,   $080,  $081	; Excadrill - PLACEHOLDER
+	mon_cry CRY_DRILBUR,       255,  200	; Drilbur
+	mon_cry CRY_EXCADRILL,      88,  264	; Excadrill
 	mon_cry CRY_BULBASAUR,   $080,  $081 	; Venipede - PLACEHOLDER
 	mon_cry CRY_BULBASAUR,   $080,  $081	; Whirlipede - PLACEHOLDER
 	mon_cry CRY_BULBASAUR,   $080,  $081	; Scolipede - PLACEHOLDER
@@ -508,7 +508,7 @@ CryHeaders2::
 	mon_cry CRY_BULBASAUR,   $080,  $081	; Mienshao - PLACEHOLDER
 	mon_cry CRY_BULBASAUR,   $080,  $081 	; Larvesta - PLACEHOLDER
 	mon_cry CRY_BULBASAUR,   $080,  $081 	; Volcarona - PLACEHOLDER
-	mon_cry CRY_BULBASAUR,   $080,  $081 	; Sylveon - PLACEHOLDER
+	mon_cry CRY_SYLVEON,        0,   664 	; Sylveon
 	mon_cry CRY_BULBASAUR,   $080,  $081	; Phantump - PLACEHOLDER
 	mon_cry CRY_BULBASAUR,   $080,  $081	; Trevenant - PLACEHOLDER
 	mon_cry CRY_NOIBAT,        167,  132 	; Noibat

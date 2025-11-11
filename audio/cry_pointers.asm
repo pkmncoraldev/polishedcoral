@@ -75,10 +75,20 @@ Cries:
 	dba Cry_Aron
 	dba Cry_Lairon
 	dba Cry_Aggron
+	dba Cry_Meditite
+	dba Cry_Medicham
+	dba Cry_Carvanha
+	dba Cry_Sharpedo
+	dba Cry_Numel
+	dba Cry_Camerupt
 ; gen 4
+	dba Cry_Leafeon
 	dba Cry_Glaceon
 ; gen 5
+	dba Cry_Drilbur
+	dba Cry_Excadrill
 ; gen 6
+	dba Cry_Sylveon
 	dba Cry_Noibat
 	dba Cry_Noivern
 ; gen 7

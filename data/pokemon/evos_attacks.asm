@@ -4230,7 +4230,7 @@ ArcheopsEvosAttacks:
 	db 0 ; no more level-up moves
 	
 MinccinoEvosAttacks:
-	db EVOLVE_LEVEL, 22, CINCCINO
+	db EVOLVE_ITEM, SHINY_STONE, CINCCINO
 	db  0 ; no more evolutions
 	db  1, TACKLE_SCRATCH_POUND
 	db  3, GROWL
@@ -4549,7 +4549,6 @@ TrumbeakEvosAttacks:
 
 ToucannonEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, ACROBATICS
 	db 1, ROCK_BLAST
 	db 1, PECK
 	db 1, GROWL

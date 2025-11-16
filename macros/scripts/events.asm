@@ -1332,6 +1332,11 @@ macro strengthtree
 	db strengthtree_command
 	endm
 	
+	enum headbuttbone_command
+macro headbuttbone
+	db headbuttbone_command
+	endm
+	
 	enum opentext2_command
 macro opentext2
 	db opentext2_command

@@ -1001,3 +1001,9 @@ LusterSpamBuilding_4F_BlockData:
 Route22_2_BlockData:
 	INCBIN "maps/Route22_2.ablk.lz"
 	
+BoneCavernB1F_BlockData:
+	INCBIN "maps/BoneCavernB1F.ablk.lz"
+	
+BoneCavernB2F_BlockData:
+	INCBIN "maps/BoneCavernB2F.ablk.lz"
+	

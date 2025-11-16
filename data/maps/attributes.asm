@@ -564,7 +564,8 @@ ENDM
 	map_attributes SeasideCave1F, SEASIDE_CAVE_1F, $09, 0
 	map_attributes SeasideCaveB1F, SEASIDE_CAVE_B1F, $09, 0
 	map_attributes SeasideCaveB2F, SEASIDE_CAVE_B2F, $09, 0
-	
+	map_attributes BoneCavernB1F, BONE_CAVERN_B1F, $09, 0
+	map_attributes BoneCavernB2F, BONE_CAVERN_B2F, $09, 0
 	
 	map_attributes DesertTemple1, DESERT_TEMPLE_1, 0, 0
 	map_attributes DesertTempleTopLeft, DESERT_TEMPLE_TOP_LEFT, 0, 0

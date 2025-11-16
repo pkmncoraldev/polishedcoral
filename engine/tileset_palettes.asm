@@ -229,6 +229,8 @@ LoadSpecialMapPalette: ; 494ac
 	jp z, .rapids
 	cp GROUP_CONNECTING_CAVERN
 	jp z, .starglow_cavern
+	cp GROUP_BONE_CAVERN_B1F
+	jp z, .starglow_cavern
 	ld de, wUnknBGPals + 3 palettes
 	ld hl, StarglowCavernPalette + 3 palettes
 	ld bc, 1 palettes

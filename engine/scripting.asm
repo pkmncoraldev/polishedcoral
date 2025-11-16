@@ -270,6 +270,7 @@ ScriptCommandTable:
 	dw Script_variablesprite2
 	dw Script_playnewmapmusic
 	dw Script_strengthtree
+	dw Script_headbuttbone
 	dw Script_opentext2
 	dw Script_changetextboxspeaker
 	dw Script_priority
@@ -3269,6 +3270,83 @@ Script_movetoplayer:
 	add 4
 	ld e, a
 	farjp CopyDECoordsToMapObject
+	
+Script_headbuttbone:
+	ld a, [wOptions1]
+	bit DEBUG_MODE, a
+	jr nz, .debug
+	ld d, HEADBUTT
+	farcall CheckPartyMove
+	ret nc
+.debug
+	ld b, BANK(DebugHeadbuttBoneScript)
+	ld de, DebugHeadbuttBoneScript
+	jp ScriptCall
+	
+HeadbuttBoneScript:
+	opentext
+	writetext HeadbuttBoneText1
+	yesorno
+	iffalse .said_no
+	callasm StrengthTreeAsm
+	writetext HeadbuttBoneText2
+	waitbutton
+	closetext
+	copybytetovar wBuffer6
+	refreshscreen
+	pokepic 0, 0
+	cry 0
+	waitsfx
+	closepokepic
+	reloadmappart
+	special FadeOutPalettesBlack
+	pause 10
+	playsound SFX_STRENGTH
+	pause 50
+	playsound SFX_KINESIS
+	waitsfx
+	playsound SFX_SUBMISSION
+	pause 10
+	callasm StrengthTreeSetScriptVarAsm
+	end
+.said_no
+	closetext
+	callasm StrengthTreeClearScriptVarAsm
+	end
+	
+DebugHeadbuttBoneScript:
+	opentext
+	writetext DebugStrengthTreeText
+	waitbutton
+	closetext
+	special FadeOutPalettesBlack
+	pause 10
+	playsound SFX_STRENGTH
+	pause 50
+	playsound SFX_KINESIS
+	waitsfx
+	playsound SFX_SUBMISSION
+	pause 10
+	callasm StrengthTreeSetScriptVarAsm
+	end
+	
+HeadbuttBoneText1:
+	text "A pillar of bone"
+	line "stretches up to"
+	cont "the floor above."
+	
+	para "There is a large"
+	line "crack."
+	
+	para "Smash it with"
+	line "HEADBUTT?"
+	done
+	
+HeadbuttBoneText2:
+	text_from_ram wStringBuffer2
+	text " used"
+	line "HEADBUTT!"
+	done
 	
 Script_strengthtree:
 	farcall TryStrengthOW

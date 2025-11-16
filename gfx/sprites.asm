@@ -45,6 +45,7 @@ BalloonsSpriteGFX::      	   INCBIN "gfx/sprites/balloons.2bpp.lz"
 PeepHoleSpriteGFX::      	   INCBIN "gfx/sprites/peep_hole.2bpp.lz"
 CasinoSpriteGFX::      	  	   INCBIN "gfx/sprites/casino.2bpp.lz"
 CopScrubSpriteGFX::      	   INCBIN "gfx/sprites/cop_scrub.2bpp.lz"
+BonesSpriteGFX::      	   	   INCBIN "gfx/sprites/bone.2bpp.lz"
 
 
 SECTION "Overworld Sprites 2", ROMX

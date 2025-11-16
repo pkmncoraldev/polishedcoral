@@ -105,7 +105,7 @@ CheckPartyCanLearnMove: ; c742
     scf
     ret
 
-CheckPartyMove: ; c742
+CheckPartyMove:: ; c742
 ; Check if a monster in your party has move d.
 
 	ld e, 0

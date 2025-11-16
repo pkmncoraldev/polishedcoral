@@ -1519,6 +1519,8 @@ LoadMapPals::
 	ld a, [wMapGroup]
 	cp GROUP_CONNECTING_CAVERN
 	jp z, .starglow
+	cp GROUP_BONE_CAVERN_B1F
+	jp z, .starglow
 	cp GROUP_DAYBREAK_GROTTO_1
 	jr nz, .rocks
 .rocks

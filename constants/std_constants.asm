@@ -13,6 +13,7 @@
 	enum radio2
 	enum trashcan
 	enum strengthboulder
+	enum strengthboulder2
 	enum smashrock
 	enum pokecentersign
 	enum martsign

@@ -13,6 +13,7 @@ StdScripts::
 	dba Radio2Script
 	dba TrashCanScript
 	dba StrengthBoulderScript
+	dba StrengthBoulderScript
 	dba SmashRockScript
 	dba PokeCenterSignScript
 	dba MartSignScript
@@ -743,6 +744,9 @@ InitializeEventsScript:
 	setevent EVENT_SPOOKHOUSE_NOT_LOCKED
 	setevent EVENT_CLEANSE_TAG_GONE
 	setevent EVENT_ROUTE_22_MEDIC_GONE
+	setevent EVENT_BONE_CAVERN_BONE_1_BOTTOM_GONE
+	setevent EVENT_BONE_CAVERN_BONE_2_BOTTOM_GONE
+	setevent EVENT_BONE_CAVERN_BONE_3_BOTTOM_GONE
 	setevent EVENT_ALWAYS_SET
 	setflag ENGINE_PHONE_CARD
 	setflag ENGINE_PUNKS_IN_STARGLOW

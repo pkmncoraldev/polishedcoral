@@ -5,7 +5,8 @@ Route32_MapScriptHeader:
 	db 1 ; callbacks
 	callback MAPCALLBACK_TILES, Route32Callback
 
-	db 0 ; warp events
+	db 1 ; warp events
+	warp_def 21, 37, 1, BONE_CAVERN_B1F
 
 	db 0 ; coord events
 
@@ -14,11 +15,11 @@ Route32_MapScriptHeader:
 	db 7 ; object events
 	strengthboulder_event 29, 48, -1
 	strengthboulder_event 30, 49, -1
-	person_event SPRITE_YOUNGSTER, 50, 29, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, Route32StrengthMan, -1
+	person_event SPRITE_YOUNGSTER, 48, 32, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, Route32StrengthMan, -1
 	smashrock_event 29, 49
 	smashrock_event 30, 48
-	smashrock_event 17, 42
-	smashrock_event 18, 43
+	smashrock_event 37, 44
+	smashrock_event 38, 45
 	
 	
 Route32Trigger0:

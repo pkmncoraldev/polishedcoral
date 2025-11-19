@@ -2259,6 +2259,7 @@ BatonPass:
 
 Pursuit:
 	checkobedience
+	pursuit
 	usedmovetext
 	doturn
 	pressure
@@ -2267,7 +2268,6 @@ Pursuit:
 	damagecalc
 	stab
 	damagevariation
-	pursuit
 	checkhit
 	conditionalboost
 	hittarget

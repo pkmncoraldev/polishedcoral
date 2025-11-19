@@ -95,6 +95,7 @@ INCLUDE "maps/GreenGrottoB1F.asm"
 INCLUDE "maps/GlintGroveUnderground.asm"
 INCLUDE "maps/BoneCavernB1F.asm"
 INCLUDE "maps/BoneCavernB2F.asm"
+INCLUDE "maps/BoneCavernMarowakRoom.asm"
 
 
 SECTION "Routes Scripts", ROMX

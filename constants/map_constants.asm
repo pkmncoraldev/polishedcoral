@@ -485,6 +485,7 @@ DEF MAP_NONE   EQU 0
 	newgroup													 ; 27
 	map_const BONE_CAVERN_B1F,							  19, 15 ; 1
 	map_const BONE_CAVERN_B2F,							  16, 16 ; 2
+	map_const BONE_CAVERN_MAROWAK_ROOM, 				  13,  8 ; 3
 	
 	newgroup													 ; BY ITSELF FOR TOWN MAP STUFF
 	map_const ROUTE_11_2,								  14, 33 ; 1

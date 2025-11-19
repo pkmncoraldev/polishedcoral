@@ -3277,11 +3277,21 @@ Script_headbuttbone:
 	jr nz, .debug
 	ld d, HEADBUTT
 	farcall CheckPartyMove
-	ret nc
+	jr nc, .do_it
+	ld b, BANK(CantHeadbuttBoneScript)
+	ld de, CantHeadbuttBoneScript
+	jp ScriptCall
+.do_it
+	ld b, BANK(HeadbuttBoneScript)
+	ld de, HeadbuttBoneScript
+	jp ScriptCall
 .debug
 	ld b, BANK(DebugHeadbuttBoneScript)
 	ld de, DebugHeadbuttBoneScript
 	jp ScriptCall
+	
+CantHeadbuttBoneScript:
+	jumptext HeadbuttBoneText3
 	
 HeadbuttBoneScript:
 	opentext
@@ -3335,8 +3345,8 @@ HeadbuttBoneText1:
 	line "stretches up to"
 	cont "the floor above."
 	
-	para "There is a large"
-	line "crack."
+	para "A large crack runs"
+	line "through it."
 	
 	para "Smash it with"
 	line "HEADBUTT?"
@@ -3346,6 +3356,19 @@ HeadbuttBoneText2:
 	text_from_ram wStringBuffer2
 	text " used"
 	line "HEADBUTT!"
+	done
+	
+HeadbuttBoneText3:
+	text "A pillar of bone"
+	line "stretches up to"
+	cont "the floor above."
+	
+	para "A large crack runs"
+	line "through it."
+	
+	para "You could probably"
+	line "smaash it with a"
+	cont "#MON's HEADBUTT…"
 	done
 	
 Script_strengthtree:

@@ -4,14 +4,15 @@ BoneCavernB1F_MapScriptHeader:
 	db 1 ; callbacks
 	callback MAPCALLBACK_TILES, BoneCavernB1FCallback
 
-	db 7 ; warp events
+	db 8 ; warp events
 	warp_def  9,  3, 1, ROUTE_32
 	warp_def  3,  5, 3, BONE_CAVERN_B1F
 	warp_def 26,  9, 2, BONE_CAVERN_B1F
-	warp_def  5, 13, 1, BONE_CAVERN_B2F
+	warp_def  5, 15, 1, BONE_CAVERN_B2F
 	warp_def 13, 19, 2, BONE_CAVERN_B2F
 	warp_def 11, 33, 3, BONE_CAVERN_B2F
 	warp_def 21, 33, 4, BONE_CAVERN_B2F
+	warp_def 15,  9, 1, BONE_CAVERN_MAROWAK_ROOM
 
 	db 0 ; coord events
 

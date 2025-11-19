@@ -4,7 +4,7 @@ BoneCavernB2F_MapScriptHeader:
 	db 0 ; callbacks
 
 	db 4 ; warp events
-	warp_def  3,  9, 4, BONE_CAVERN_B1F
+	warp_def  3, 11, 4, BONE_CAVERN_B1F
 	warp_def 13, 15, 5, BONE_CAVERN_B1F
 	warp_def  9, 29, 6, BONE_CAVERN_B1F
 	warp_def 23, 29, 7, BONE_CAVERN_B1F

@@ -1007,3 +1007,6 @@ BoneCavernB1F_BlockData:
 BoneCavernB2F_BlockData:
 	INCBIN "maps/BoneCavernB2F.ablk.lz"
 	
+BoneCavernMarowakRoom_BlockData:
+	INCBIN "maps/BoneCavernMarowakRoom.ablk.lz"
+	

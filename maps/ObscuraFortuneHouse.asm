@@ -640,6 +640,7 @@ TellerUniqueEncounterText:
 	dw UniqueEncounterMimikyuBossText
 	dw UniqueEncounterDittoBossText
 	dw UniqueEncounterNoivernBossText
+	dw UniqueEncounterMarowakBossText
 	
 UniqueEncounterTeacherText:
 	text "TEACHER"
@@ -782,4 +783,8 @@ UniqueEncounterDittoBossText:
 	
 UniqueEncounterNoivernBossText:
 	text "NOIVERN BOSS"
+	done
+
+UniqueEncounterMarowakBossText:
+	text "MAROWAK BOSS"
 	done

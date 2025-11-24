@@ -369,6 +369,7 @@ SeenByBankCardGirlScript:
 	end
 	
 StartBattleWithMapTrainerScript: ; 0xbe68a
+	loadvar wSkateboardGrinding, 0
 	opentext
 	trainertext $0
 	waitbutton

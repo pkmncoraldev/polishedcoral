@@ -1391,7 +1391,7 @@ HandleLeppaBerry:
 	call GetZeroPPMove
 	ret z
 	push bc
-	call ConsumeUserItem
+	farcall ConsumeUserItem
 	pop bc
 	jp LeppaRestorePP
 

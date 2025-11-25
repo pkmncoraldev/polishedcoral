@@ -68,15 +68,15 @@ ObscuraMuseum1F_MapScriptHeader:
 	person_event SPRITE_SUPER_NERD,  8,  2, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, ObscuraMuseum1FNPC6, EVENT_SNARE_AT_MUSEUM
 	person_event SPRITE_REDS_MOM,  8, 11, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ObscuraMuseum1FNPC7, EVENT_SNARE_AT_MUSEUM
 	person_event SPRITE_PONYTAIL,  8, 10, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, ObscuraMuseum1FNPC8, EVENT_SNARE_AT_MUSEUM
-	person_event SPRITE_COOL_DUDE,  2, 11, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, ObscuraMuseum1FNPC9, EVENT_SNARE_AT_MUSEUM
+	person_event SPRITE_COOL_DUDE,  1,  9, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, ObscuraMuseum1FNPC9, EVENT_SNARE_AT_MUSEUM
 	person_event SPRITE_TWIN,  7,  5, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, ObscuraMuseum1FNPC10, EVENT_SNARE_AT_MUSEUM
 	object_event  2, 13, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, BAYLEEF, -1, -1, PAL_NPC_GREEN, PERSONTYPE_SCRIPT, 0, ObscuraMuseum1FBayleef, -1
 	person_event SPRITE_SNARE,  7, 10, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 1, ObscuraMuseum1FSnare1, EVENT_SNARE_GONE_FROM_MUSEUM
 	person_event SPRITE_SNARE,  5,  9, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 3, ObscuraMuseum1FSnare2, EVENT_SNARE_GONE_FROM_MUSEUM
 	person_event SPRITE_SNARE_GIRL, 12,  1, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 0, ObscuraMuseum1FSnare3, EVENT_SNARE_GONE_FROM_MUSEUM
-	person_event SPRITE_FOSSIL_DISPLAYS,  6,  6, SPRITEMOVEDATA_FOSSIL_1, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
-	person_event SPRITE_FOSSIL_DISPLAYS,  6,  7, SPRITEMOVEDATA_FOSSIL_2, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
-	person_event SPRITE_FLOATING_BALL,  4, 11, SPRITEMOVEDATA_FOSSIL_1, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
+	person_event SPRITE_FOSSIL_DISPLAYS,  6,  6, SPRITEMOVEDATA_FOSSIL_1, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObscuraMuseumMassiveFossil, -1
+	person_event SPRITE_FOSSIL_DISPLAYS,  6,  7, SPRITEMOVEDATA_FOSSIL_2, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObscuraMuseumMassiveFossil, -1
+	person_event SPRITE_FLOATING_BALL,  4, 11, SPRITEMOVEDATA_FOSSIL_1, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObscuraMuseumMassiveFossil, -1
 	
 	
 	const_def 1 ; object constants
@@ -353,6 +353,9 @@ ObscuraMuseumLockedDoorText:
 	line "the other side."
 	done
 	
+ObscuraMuseumMassiveFossil:
+	jumptext ObscuraMuseumMassiveFossilText
+	
 ObscuraMuseum1FNPC1:
 	checkevent EVENT_SNARE_AT_MUSEUM
 	iftrue .snare
@@ -411,13 +414,7 @@ ObscuraMuseum1FNPC8:
 	end
 	
 ObscuraMuseum1FNPC9:
-	faceplayer
-	opentext
-	writetext ObscuraMuseum1FNPC9Text
-	waitbutton
-	closetext
-	spriteface OBSCURA_MUSEUM_1F_NPC9, UP
-	end
+	jumptextfaceplayer ObscuraMuseum1FNPC9Text
 	
 ObscuraMuseum1FNPC10:
 	faceplayer
@@ -533,7 +530,8 @@ ObscuraMuseum1FNPC8Text:
 	done
 	
 ObscuraMuseum1FNPC9Text:
-	text "I don't get it…"
+	text "What's with the"
+	line "bookshelves?"
 	
 	para "Who comes to a"
 	line "museum to read"

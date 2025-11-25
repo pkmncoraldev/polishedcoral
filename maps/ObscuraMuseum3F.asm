@@ -198,6 +198,7 @@ ObscuraMuseum3FDragonStoneScene:
 	waitsfx
 	dotrigger $2
 	domaptrigger OBSCURA_CITY, $1
+	clearevent EVENT_MUSEUM_GUARD
 	clearevent EVENT_OBSCURA_CITY_ROCKY_GONE
 	setevent EVENT_MUSEUM_SNARE_GUY_GONE
 	warpfacing LEFT, OBSCURA_CITY, $17, $0e

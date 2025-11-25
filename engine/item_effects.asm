@@ -3360,7 +3360,7 @@ Ball_BoxIsFullAskSwitchText:
 
 BoxIsFullAskSwitchText:
 	text "The #MON BOX"
-	line "is full."
+	line "is now full."
 	
 	para "Save the game"
 	line "and switch boxes?"

@@ -222,11 +222,13 @@ GlintPokeCenterNpc3Text:
 	para "Each box can store"
 	line "up to 20 #MON."
 	
-	para "Make sure to"
-	line "change boxes when"
-	cont "they get full,"
+	para "If you catch a"
+	line "#MON that fills"
+	cont "your box,"
 	
-	para "or you won't be"
-	line "able to catch"
-	cont "anymore #MON."
+	para "you'll be asked"
+	line "if you want to"
+	cont "switch."
+	
+	para "Convenient!"
 	done

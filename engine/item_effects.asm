@@ -1474,6 +1474,7 @@ Text_AskNicknameNewlyCaughtMon: ; 0xedf5
 ; 0xedfa
 
 ReturnToBattle_UseBall: ; edfa (3:6dfa)
+	call Load1bppFont
 	farjp _ReturnToBattle_UseBall
 
 

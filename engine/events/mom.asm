@@ -380,7 +380,7 @@ Mom_SetUpWithdrawMenu: ; 16512
 	jr Mom_ContinueMenuSetup
 
 Mom_SetUpDepositMenu: ; 16517
-	ld de, Mom_WithdrawString
+	ld de, Mom_DepositString
 
 Mom_ContinueMenuSetup: ; 1651a
 	push de

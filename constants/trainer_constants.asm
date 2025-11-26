@@ -323,6 +323,7 @@ DEF PLAYER_F EQU __enum__
 	const THOMAS
 	const NOAH
 	const TRENT
+	const JACK
 
 
 	trainerclass SUPER_NERD
@@ -477,6 +478,7 @@ DEF PLAYER_F EQU __enum__
 	const BARNES
 	const SAL
 	const HERBERT
+	const MARTIN
 
 
 	trainerclass BOARDER
@@ -504,6 +506,7 @@ DEF PLAYER_F EQU __enum__
 	const SHINZO
 	const KIYO
 	const YUJI
+	const MASA
 
 
 	trainerclass TEACHER

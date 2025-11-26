@@ -3115,6 +3115,15 @@ PokemaniacGroup:
 	db 40, HAUNTER
 	db 40, HAUNTER
 	db -1 ; end
+	
+; ================
+
+	; POKEMANIAC
+	db "JACK@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
 
 ; ================
 ; ================================
@@ -4314,6 +4323,15 @@ ScientistGroup:
 	db 41, DRAKLOAK
 	db 40, ALTARIA
 	db -1 ; end
+	
+; ================
+
+	; SCIENTIST
+	db "MARTIN@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
 
 ; ================
 ; ================================
@@ -4511,6 +4529,15 @@ BlackbeltGroup:
 	; party
 	db 39, SLOWKING
 		db PSYCHIC_M, NASTY_PLOT, BUBBLE_BEAM, DISABLE
+	db -1 ; end
+	
+; ================
+
+	; BLACKBELT_T
+	db "MASA@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
 	db -1 ; end
 
 ; ================

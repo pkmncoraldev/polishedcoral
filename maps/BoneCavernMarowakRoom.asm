@@ -10,10 +10,14 @@ BoneCavernMarowakRoom_MapScriptHeader:
 
 	db 0 ; coord events
 
-	db 0 ; bg events
+	db 4 ; bg events
+	bg_event  2,  4, SIGNPOST_READ, BoneCavernB1FBone4
+	bg_event 10,  8, SIGNPOST_READ, BoneCavernB1FBone4
+	bg_event  4, 10, SIGNPOST_READ, BoneCavernB1FBone4
+	bg_event 20,  6, SIGNPOST_READ, BoneCavernB1FBone4
 
 	db 3 ; object events
-	object_event  7,  3, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, MAROWAK, -1, -1, (1 << 3) | PAL_NPC_BROWN, PERSONTYPE_SCRIPT, 0, BoneCavernMarowak, EVENT_BONE_CAVERN_MAROWAK_GONE
+	object_event  7,  3, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, MAROWAK, -1, -1, (1 << 3) | PAL_NPC_TEAL, PERSONTYPE_SCRIPT, ALOLAN_FORM, BoneCavernMarowak, EVENT_BONE_CAVERN_MAROWAK_GONE
 	person_event SPRITE_BONES,  9,  4, SPRITEMOVEDATA_TILE_UP_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, -1
 	person_event SPRITE_BONES,  7, 10, SPRITEMOVEDATA_TILE_UP_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, -1
 	
@@ -25,7 +29,7 @@ BoneCavernMarowak:
 	waitbutton
 	closetext
 	waitsfx
-	loadwildmon MAROWAK, 55
+	loadwildmon MAROWAK, ALOLAN_FORM, 55
 	writecode VAR_BATTLETYPE, BATTLETYPE_LEGENDARY
 	startbattle
 	if_equal $1, .lose

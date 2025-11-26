@@ -11,18 +11,48 @@ BoneCavernB2F_MapScriptHeader:
 
 	db 0 ; coord events
 
-	db 3 ; bg events
+	db 7 ; bg events
 	bg_event  2, 16, SIGNPOST_READ, BoneCavernB2FBone1
 	bg_event  6, 26, SIGNPOST_READ, BoneCavernB2FBone2
 	bg_event 22, 24, SIGNPOST_READ, BoneCavernB2FBone3
+	bg_event 18,  4, SIGNPOST_READ, BoneCavernB1FBone4
+	bg_event 24, 10, SIGNPOST_READ, BoneCavernB1FBone4
+	bg_event 18, 14, SIGNPOST_READ, BoneCavernB1FBone4
+	bg_event 16, 28, SIGNPOST_READ, BoneCavernB1FBone4
 
-	db 6 ; object events
+	db 7 ; object events
 	smashrock_event 14, 28
 	itemball_event 27,  5, RARE_BONE, 1, EVENT_BONE_CAVERN_B2F_ITEM_1
 	tmhmball_event 15, 25, TM_HEADBUTT, EVENT_BONE_CAVERN_B2F_HEADBUTT_TM
 	person_event SPRITE_BONES, 15,  2, SPRITEMOVEDATA_TILE_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, EVENT_BONE_CAVERN_BONE_1_BOTTOM_GONE
 	person_event SPRITE_BONES, 25,  6, SPRITEMOVEDATA_TILE_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, EVENT_BONE_CAVERN_BONE_2_BOTTOM_GONE
 	person_event SPRITE_BONES, 23, 22, SPRITEMOVEDATA_TILE_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, EVENT_BONE_CAVERN_BONE_3_BOTTOM_GONE
+	person_event SPRITE_SCIENTIST,  4, 17, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 3, BoneCavernB2FTrainer1, -1
+	
+	
+BoneCavernB2FTrainer1:
+	generictrainer SCIENTIST, MARTIN, EVENT_BEAT_BONE_CAVERN_B2F_TRAINER_1, .SeenText, .BeatenText
+
+	text "These huge"
+	line "bones!"
+	
+	para "What did they"
+	line "belong to?"
+	done
+
+.SeenText:
+	text "I'm from a LAB"
+	line "in PORT SHIMMER."
+	
+	para "I'm here studying"
+	line "the giant bones"
+	cont "in this cave."
+	done
+
+.BeatenText:
+	text "Aren't they just"
+	line "fascinating?"
+	done
 	
 BoneCavernB2FBone1:
 	checkevent EVENT_BONE_CAVERN_BONE_1_TOP_GONE

@@ -1134,4 +1134,58 @@
 	db 39, CLODSIRE		;4%
 	db 39, CLODSIRE		;1%
 	
+	map_id BONE_CAVERN_B1F
+	db 4 percent, 4 percent, 4 percent ; encounter rates: morn/day/nite
+	; morn
+	db 37, CUBONE		;30%
+	db 37, CUBONE		;30%
+	db 37, HOUNDOUR		;20%
+	db 37, HOUNDOUR		;10%
+	db 37, HOUNDOUR		;5%
+	db 37, MAROWAK		;4%
+	db 37, MAROWAK		;1%
+	; day
+	db 37, CUBONE		;30%
+	db 37, CUBONE		;30%
+	db 37, HOUNDOUR		;20%
+	db 37, HOUNDOUR		;10%
+	db 37, HOUNDOUR		;5%
+	db 37, MAROWAK		;4%
+	db 37, MAROWAK		;1%
+	; nite
+	db 37, CUBONE		;30%
+	db 37, CUBONE		;30%
+	db 37, HOUNDOUR		;20%
+	db 37, HOUNDOUR		;10%
+	db 37, HOUNDOUR		;5%
+	db 37, MAROWAK		;4%
+	db 37, MAROWAK		;1%
+	
+	map_id BONE_CAVERN_B2F
+	db 4 percent, 4 percent, 4 percent ; encounter rates: morn/day/nite
+	; morn
+	db 37, CUBONE		;30%
+	db 37, CUBONE		;30%
+	db 37, HOUNDOUR		;20%
+	db 37, HOUNDOUR		;10%
+	db 37, HOUNDOUR		;5%
+	db 37, MAROWAK		;4%
+	db 37, MAROWAK		;1%
+	; day
+	db 37, CUBONE		;30%
+	db 37, CUBONE		;30%
+	db 37, HOUNDOUR		;20%
+	db 37, HOUNDOUR		;10%
+	db 37, HOUNDOUR		;5%
+	db 37, MAROWAK		;4%
+	db 37, MAROWAK		;1%
+	; nite
+	db 37, CUBONE		;30%
+	db 37, CUBONE		;30%
+	db 37, HOUNDOUR		;20%
+	db 37, HOUNDOUR		;10%
+	db 37, HOUNDOUR		;5%
+	db 37, MAROWAK		;4%
+	db 37, MAROWAK		;1%
+	
 	db -1 ; end

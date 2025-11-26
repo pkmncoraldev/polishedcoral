@@ -92,7 +92,7 @@ KomoreCommunityCenterPikachu2:
 	waitbutton
 	closetext
 	waitsfx
-	loadwildmon MIMIKYU, 47
+	loadwildmon MIMIKYU, DISGUISED_FORM, 47
 	writecode VAR_BATTLETYPE, BATTLETYPE_LEGENDARY
 	startbattle
 	if_equal $1, .lose

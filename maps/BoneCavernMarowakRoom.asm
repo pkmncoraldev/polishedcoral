@@ -16,10 +16,8 @@ BoneCavernMarowakRoom_MapScriptHeader:
 	bg_event  4, 10, SIGNPOST_READ, BoneCavernB1FBone4
 	bg_event 20,  6, SIGNPOST_READ, BoneCavernB1FBone4
 
-	db 3 ; object events
+	db 1 ; object events
 	object_event  7,  3, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, MAROWAK, -1, -1, (1 << 3) | PAL_NPC_TEAL, PERSONTYPE_SCRIPT, ALOLAN_FORM, BoneCavernMarowak, EVENT_BONE_CAVERN_MAROWAK_GONE
-	person_event SPRITE_BONES,  9,  4, SPRITEMOVEDATA_TILE_UP_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, -1
-	person_event SPRITE_BONES,  7, 10, SPRITEMOVEDATA_TILE_UP_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, -1
 	
 	
 BoneCavernMarowak:

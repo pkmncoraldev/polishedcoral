@@ -1,6 +1,8 @@
 Predef_StartBattle: ; 8c20f
 	ld a, [wTileset]
 	ld [wMoogoo], a ;wTileset gets temporarily overwriten during the pal fade
+	ld a, [wMapGroup]
+	ld [wMoogooCard2Value], a ;wMapGroup gets temporarily overwriten during the pal fade
 	ld a, [wPlayerState]
 	cp PLAYER_RUN
 	jr nz, .not_running
@@ -687,6 +689,15 @@ StartTrainerBattle_LoadPokeBallGraphics: ; 8c5dc (23:45dc)
 	call .copy
 	ld de, wUnknOBPals palette PAL_OW_SILVER
 	call .copy
+	
+	ld a, [wMoogooCard2Value]
+	cp GROUP_BONE_CAVERN_B1F
+	jr nz, .not_bone
+	ld hl, .bonetimepals
+	ld de, wUnknBGPals palette PAL_BG_WATER
+	jr .copy
+	
+.not_bone
 	ld a, [wMoogoo]
 	cp TILESET_SNOW
 	ret nz
@@ -767,6 +778,11 @@ StartTrainerBattle_LoadPokeBallGraphics: ; 8c5dc (23:45dc)
 .snowtimepals
 ; morn
 	RGB 31, 18, 29
+	RGB 31, 18, 29
+	RGB 31, 11, 15
+	RGB 07, 07, 07
+.bonetimepals
+	RGB 31, 11, 15
 	RGB 31, 18, 29
 	RGB 31, 11, 15
 	RGB 07, 07, 07

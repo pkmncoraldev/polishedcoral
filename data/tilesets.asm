@@ -244,20 +244,26 @@ INCBIN "gfx/tilesets/cave.2bpp.vram2.lz"
 
 TilesetCaveMeta::
 TilesetStarglowCavernMeta::
-TilesetLavaCaveMeta::
 INCBIN "data/tilesets/cave_metatiles.bin.lz"
 
 TilesetCaveAttr::
-TilesetLavaCaveAttr::
 INCBIN "data/tilesets/cave_attributes.bin.lz"
 
 TilesetCaveColl::
 TilesetStarglowCavernColl:
-TilesetLavaCaveColl::
 INCLUDE "data/tilesets/cave_collision.asm"
 
 TilesetStarglowCavernAttr::
 INCBIN "data/tilesets/starglow_cavern_attributes.bin.lz"
+
+TilesetLavaCaveMeta::
+INCBIN "data/tilesets/lava_cave_metatiles.bin.lz"
+
+TilesetLavaCaveColl::
+INCLUDE "data/tilesets/lava_cave_collision.asm"
+
+TilesetLavaCaveAttr::
+INCBIN "data/tilesets/cave_attributes.bin.lz"
 
 
 SECTION "Tileset Data - grove", ROMX

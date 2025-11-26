@@ -1,7 +1,7 @@
 	tilecoll WALL, WALL, WALL, WALL ; 00
 	tilecoll WALL, WALL, WALL, WALL ; 01
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 02
-	tilecoll WALL, WALL, WALL, WALL ; 03
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 03
 	tilecoll WALL, UP_WALL, WALL, FLOOR ; 04
 	tilecoll UP_WALL, UP_WALL, FLOOR, FLOOR ; 05
 	tilecoll UP_WALL, WALL, FLOOR, WALL ; 06
@@ -84,14 +84,14 @@
 	tilecoll WALL, WALL, CAVE, WALL ; 53
 	tilecoll WALL, FLOOR, WALL, STAIRS ; 54
 	tilecoll FLOOR, WALL, STAIRS, WALL ; 55
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 56
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 57
-	tilecoll FLOOR, FLOOR, ROCK_CLIMB, WALL ; 58
-	tilecoll FLOOR, FLOOR, FLOOR, WALL ; 59
-	tilecoll FLOOR, FLOOR, WALL, WALL ; 5a
-	tilecoll WALL, WALL, WALL, WALL ; 5b
-	tilecoll WALL, WALL, WALL, WALL ; 5c
-	tilecoll WALL, WALL, WALL, WALL ; 5d
+	tilecoll WATER, WATER, WATER, WATER ; 56
+	tilecoll WATER, WATER, WATER, WATER ; 57
+	tilecoll WATER, WATER, WATER, WATER ; 58
+	tilecoll WATER, WATER, WATER, WATER ; 59
+	tilecoll WATER, WATER, WATER, WATER ; 5a
+	tilecoll WATER, WATER, WATER, WATER ; 5b
+	tilecoll WATER, WATER, WATER, WATER ; 5c
+	tilecoll WATER, WATER, WATER, WATER ; 5d
 	tilecoll UP_WALL, UP_WALL, LADDER, LADDER ; 5e
 	tilecoll FLOOR, WALL, FLOOR, WALL ; 5f
 	tilecoll LEDGE_DOWN, LEDGE_DOWN, WALL, WALL ; 60
@@ -169,22 +169,22 @@
 	tilecoll UP_WALL, WALL, FLOOR, WALL ; a8
 	tilecoll LEDGE_RIGHT, WALL, LEDGE_RIGHT, WALL ; a9
 	tilecoll LEDGE_RIGHT, WALL, LEDGE_RIGHT, WALL ; aa
-	tilecoll WALL, WALL, WALL, WALL ; ab
-	tilecoll WALL, WALL, WALL, WALL ; ac
-	tilecoll WALL, WALL, WALL, WALL ; ad
-	tilecoll WALL, WALL, WALL, WALL ; ae
-	tilecoll WALL, WALL, WALL, WALL ; af
-	tilecoll WALL, WALL, WALL, WALL ; b0
-	tilecoll WALL, WALL, WALL, WALL ; b1
-	tilecoll WALL, WALL, WALL, WALL ; b2
-	tilecoll WALL, WALL, WALL, WALL ; b3
-	tilecoll WALL, WALL, WALL, WALL ; b4
-	tilecoll WALL, WALL, WALL, WALL ; b5
-	tilecoll WALL, WALL, WALL, WALL ; b6
-	tilecoll WALL, WALL, WALL, WALL ; b7
-	tilecoll WALL, WALL, WALL, WALL ; b8
-	tilecoll WALL, WALL, WALL, WALL ; b9
-	tilecoll WALL, WALL, WALL, WALL ; ba
+	tilecoll WATER, WATER, WATER, WATER ; ab
+	tilecoll WATER, WATER, WATER, WATER ; ac
+	tilecoll WATER, WATER, WATER, WATER ; ad
+	tilecoll UP_WALL, WALL, FLOOR, WALL ; ae
+	tilecoll WATER, WATER, WATER, WATER ; af
+	tilecoll WATER, WATER, WATER, WATER ; b0
+	tilecoll WATER, WATER, WATER, WATER ; b1
+	tilecoll WALL, UP_WALL, WALL, FLOOR ; b2
+	tilecoll WATER, WATER, WATER, WATER ; b3
+	tilecoll WATER, WATER, WATER, WATER ; b4
+	tilecoll WATER, WATER, WATER, WATER ; b5
+	tilecoll WATER, WATER, WATER, WATER ; b6
+	tilecoll WATER, WATER, WATER, WATER ; b7
+	tilecoll WATER, WATER, WATER, WATER ; b8
+	tilecoll WATER, WATER, WATER, WATER ; b9
+	tilecoll WATER, WATER, WATER, WATER ; ba
 	tilecoll LEDGE_DOWN, FLOOR, WALL, FLOOR ; bb
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; bc
 	tilecoll WATERFALL, WATERFALL, WATERFALL, WATERFALL ; bd

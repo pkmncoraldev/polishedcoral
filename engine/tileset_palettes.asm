@@ -230,7 +230,7 @@ LoadSpecialMapPalette: ; 494ac
 	cp GROUP_CONNECTING_CAVERN
 	jp z, .starglow_cavern
 	cp GROUP_BONE_CAVERN_B1F
-	jp z, .starglow_cavern
+	jp z, .bone_cavern
 	ld de, wUnknBGPals + 3 palettes
 	ld hl, StarglowCavernPalette + 3 palettes
 	ld bc, 1 palettes
@@ -552,6 +552,10 @@ LoadSpecialMapPalette: ; 494ac
 	cp MAP_ROUTE_10
 	jp z, .snowwater
 	jp .snow
+	
+.bone_cavern
+	ld hl, BoneCavernPalette
+	jp LoadSevenBGPalettes
 	
 .starglow_cavern
 	ld a, [wTimeOfDayPal]
@@ -1027,6 +1031,9 @@ INCLUDE "maps/palettes/bgpals/deserthouse.pal"
 	
 StarglowCavernPalette:
 INCLUDE "maps/palettes/bgpals/starglow_cavern.pal"
+
+BoneCavernPalette:
+INCLUDE "maps/palettes/bgpals/bone_cavern.pal"
 
 SpookhousePalette:
 INCLUDE "maps/palettes/bgpals/spookhouse.pal"

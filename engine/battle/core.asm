@@ -7126,7 +7126,10 @@ LoadEnemyMon: ; 3e8eb
 	; Find set ability for Wild Boss mons
 	ld a, [wBattleType]
 	cp BATTLETYPE_LEGENDARY
+	jr z, .legendary
+	cp BATTLETYPE_LEGENDARY_2
 	jr nz, .skip_boss
+.legendary
 	push hl
 	farcall FindBossWildAbility
 	pop hl

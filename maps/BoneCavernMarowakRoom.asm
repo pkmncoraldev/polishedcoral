@@ -30,7 +30,7 @@ BoneCavernMarowak:
 	closetext
 	waitsfx
 	loadwildmon MAROWAK, ALOLAN_FORM, 55
-	writecode VAR_BATTLETYPE, BATTLETYPE_LEGENDARY
+	writecode VAR_BATTLETYPE, BATTLETYPE_LEGENDARY_2
 	startbattle
 	if_equal $1, .lose
 	disappear 1

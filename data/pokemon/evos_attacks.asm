@@ -1253,8 +1253,8 @@ ExeggutorEvosAttacks:
 	db 0 ; no more level-up moves
 
 CuboneEvosAttacks:
-	db EVOLVE_CUBONE, TR_MORNDAY, MAROWAK
-	db EVOLVE_CUBONE, TR_NITE, MAROWAK
+	db EVOLVE_MOVE, SHADOW_BONE, MAROWAK	;EVOLVE_MOVE forces mon to use form 2
+	db EVOLVE_LEVEL, 28, MAROWAK
 	db 0 ; no more evolutions
 	db 1, TACKLE_SCRATCH_POUND
 	db 3, GROWL
@@ -1265,10 +1265,11 @@ CuboneEvosAttacks:
 	db 21, BONEMERANG
 	db 23, RAGE
 	db 27, FALSE_SWIPE
+	db 29, SHADOW_BONE
 	db 31, THRASH
 	db 33, DIG
-	db 47, SWORDS_DANCE
-	db 41, DOUBLE_EDGE
+	db 35, SWORDS_DANCE
+	db 37, DOUBLE_EDGE
 	db 43, EARTHQUAKE
 	db 0 ; no more level-up moves
 

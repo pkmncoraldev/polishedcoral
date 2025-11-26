@@ -97,8 +97,6 @@ EvolveAfterBattle_MasterLoop:
 	jp z, .evs
 	cp EVOLVE_LEVEL
 	jp z, .level
-	cp EVOLVE_CUBONE
-	jp z, .cubone
 	cp EVOLVE_HAPPINESS
 	jp z, .happiness
 
@@ -279,6 +277,7 @@ endr
 	jp .dont_evolve_3
 
 .move_proceed
+	call SetAlolanFormOnEvo
 	pop bc
 	pop hl
 	jp .proceed
@@ -298,37 +297,6 @@ endr
 	jp c, .dont_evolve_3
 	jp .proceed
 
-.cubone
-	ld a, [wTempMonLevel]
-	cp 28
-	jp c, .dont_evolve_3
-
-	call IsMonHoldingEverstone
-	jp z, .dont_evolve_3
-
-	ld a, [hli]
-	cp TR_ANYTIME
-	jp z, .proceed
-	cp TR_MORNDAY
-	jp z, .cubone_daylight
-
-; TR_NITE
-	ld a, [wTimeOfDay]
-	cp DUSK
-	jp z, .set_cubone_form
-	cp NITE
-	jp nz, .dont_evolve_3
-.set_cubone_form
-	call SetAlolanFormOnEvo
-	jp .proceed
-
-.cubone_daylight
-	ld a, [wTimeOfDay]
-	cp DUSK
-	jp z, .dont_evolve_3
-	cp NITE
-	jp z, .dont_evolve_3
-	jp .proceed
 .level
 	ld a, [hli]
 	ld b, a

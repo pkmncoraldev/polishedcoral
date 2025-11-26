@@ -267,7 +267,7 @@ EvolutionMoves::
 	db NO_MOVE                              ; EXEGGCUTE_A
 	db DRAGONHAMMER                         ; EXEGGUTOR_A
 	db NO_MOVE                              ; EXEGGUTOR_RG
-	db SHADOW_BONE                          ; MAROWAK_A
+	db NO_MOVE 		                        ; MAROWAK_A
 	db NO_MOVE                              ; GYARADOS_RG
 	db NO_MOVE                              ; SUNFLORA_S
 	db NO_MOVE                              ; SUNFLORA_S

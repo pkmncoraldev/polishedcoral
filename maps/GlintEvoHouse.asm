@@ -46,11 +46,10 @@ GlintEvoHouseNPC1Text:
 	
 GlintEvoHouseNPC2Text:
 	text "Some #MON"
-	line "evolve into"
-	cont "different #MON"
+	line "will evolve into"
+	cont "different forms"
 	cont "depending on the"
-	cont "time of day they're"
-	cont "trained."
+	cont "circumstances."
 	done
 	
 GlintEvoHouseCuboneText:

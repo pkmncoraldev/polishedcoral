@@ -482,7 +482,7 @@ DEF MAP_NONE   EQU 0
 	map_const ROUTE_23_GATE,                          	   4,  4 ; 6
 	map_const ROUTE_32,									  22, 29 ; 8
 	
-	newgroup													 ; 27
+	newgroup													 ; 27 BY ITSELF FOR FLASHY BATTLE TRANSITION PALETTE
 	map_const BONE_CAVERN_B1F,							  19, 15 ; 1
 	map_const BONE_CAVERN_B2F,							  16, 16 ; 2
 	map_const BONE_CAVERN_MAROWAK_ROOM, 				  13,  8 ; 3

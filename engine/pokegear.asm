@@ -2335,9 +2335,22 @@ _TownMap: ; 9191c
 ; 91a04
 
 .InitTilemap: ; 91a04
-	call LoadTownMapGFX	
+	call LoadTownMapGFX
+	ld a, [wTownMapPlayerIconLandmark]
+	cp SHAMOUTI_LANDMARK
+	jr nc, .south
+	cp SOUTH_ONWA_LANDMARK
+	jr nc, .south
 	call FillNorthOnwaMap
+	call TownMapPals
 	call TownMapNorthOnwaFlips
+	jr .finish
+.south
+	call FillSouthOnwaMap
+	call TownMapBubble.cant_switch
+	call TownMapPals
+	call TownMapSouthOnwaFlips
+.finish
 	hlcoord 0, 0
 	ld bc, SCREEN_WIDTH * 2
 	ld a, " "
@@ -2349,18 +2362,17 @@ _TownMap: ; 9191c
 	ld a, $7
 	call ByteFill
 	ld [hl], $17
-	call TownMapPals
+	
 
 	hlcoord 18, 1
 	ld [hl], "<UPDN>"
-
-	ld a, [wTownMapPlayerIconLandmark]
-	cp SHAMOUTI_LANDMARK
-	jp nc, TownMapOrangeFlips
-	cp SOUTH_ONWA_LANDMARK
-	jp nc, TownMapSouthOnwaFlips
-	jp TownMapNorthOnwaFlips
-; 91a53
+	
+	ld a, [wTownMapCursorLandmark]
+	ld e, a
+	farcall GetLandmarkName
+	hlcoord 2, 1
+	ld de, wStringBuffer1
+	jp PlaceString
 
 PokegearMap: ; 91ae1
 	call LoadTownMapGFX

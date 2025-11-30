@@ -314,7 +314,8 @@ INCBIN "gfx/tilesets/mountain.2bpp.vram0.lz"
 TilesetMountainGFX1::
 INCBIN "gfx/tilesets/mountain.2bpp.vram1.lz"
 
-DEF TilesetMountainGFX2 EQU 0
+TilesetMountainGFX2::
+INCBIN "gfx/tilesets/mountain.2bpp.vram2.lz"
 
 TilesetMountainMeta::
 INCBIN "data/tilesets/mountain_metatiles.bin.lz"

@@ -38,6 +38,8 @@ CheckIfTilesetHasRoof::
 	jr z, .load_roof
 	cp TILESET_AUTUMN
 	jr z, .load_roof
+	cp TILESET_MOUNTAIN
+	jr z, .load_roof
 	xor a
 	ret
 .load_roof

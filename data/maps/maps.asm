@@ -39,6 +39,7 @@ MapGroupPointers::
 	dw MapGroup26
 	dw MapGroup27
 	dw MapGroup28
+	dw MapGroup29
 	dw MapGroup420
 	dw MapGroup69
 
@@ -490,6 +491,9 @@ MapGroup27:
 	
 MapGroup28:
 	map Route11_2, TILESET_HIGHWAY_2, ROUTE, ROUTE_11, MUSIC_ROUTE_4, 0, PALETTE_AUTO, FISHGROUP_NONE
+	
+MapGroup29:
+	map LuminaTown, TILESET_MOUNTAIN, FOREST, LUMINA_TOWN, MUSIC_ROUTE_4, 0, PALETTE_AUTO, FISHGROUP_NONE
 	
 MapGroup420:
 	map IceCaveIceRockRoom, TILESET_ICE_CAVE, CAVE, ROUTE_10, MUSIC_ROUTE_10, 0, PALETTE_NITE, FISHGROUP_NONE

@@ -487,8 +487,11 @@ DEF MAP_NONE   EQU 0
 	map_const BONE_CAVERN_B2F,							  16, 16 ; 2
 	map_const BONE_CAVERN_MAROWAK_ROOM, 				  13,  8 ; 3
 	
-	newgroup													 ; BY ITSELF FOR TOWN MAP STUFF
+	newgroup													 ; 28 BY ITSELF FOR TOWN MAP STUFF
 	map_const ROUTE_11_2,								  14, 33 ; 1
+	
+	newgroup													 ; 29
+	map_const LUMINA_TOWN,								  26, 13 ; 1
 	
 	newgroup													 ; EVO LOCATIONS GROUP
 	map_const ICE_CAVE_ICE_ROCK_ROOM,					   5,  5 ; 1

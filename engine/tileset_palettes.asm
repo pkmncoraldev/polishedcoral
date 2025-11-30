@@ -592,6 +592,22 @@ LoadSpecialMapPalette: ; 494ac
 	ret
 	
 .mountain
+	ld a, [wMapGroup]
+	cp GROUP_MT_ONWA_CLIFF
+	jr z, .cliff
+	ld hl, LuminaPalette
+	ld a, [wTimeOfDayPal]
+	and 3
+	ld bc, 2 palettes
+	rst AddNTimes
+	ld a, $5
+	ld de, wUnknBGPals + 1 palettes
+	ld bc, 2 palettes
+	ld a, $5
+	call FarCopyWRAM
+	scf
+	ret
+.cliff
 	ld hl, OutsideMountainPalette
 	jp LoadSevenTimeOfDayBGPalettes
 	
@@ -1217,3 +1233,6 @@ INCLUDE "maps/palettes/bgpals/underwaterbrown.pal"
 
 TrainGraveyardPalette::
 INCLUDE "maps/palettes/bgpals/traingraveyardwindows.pal"
+
+LuminaPalette::
+INCLUDE "maps/palettes/bgpals/lumina.pal"

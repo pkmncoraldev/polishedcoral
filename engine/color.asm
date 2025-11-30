@@ -2003,8 +2003,8 @@ LoadMapPals::
 	ld a, [wTileset]
 	cp TILESET_GROVE
 	ret z
-	cp TILESET_MOUNTAIN
-	ret z
+;	cp TILESET_MOUNTAIN
+;	ret z
 	cp TILESET_JUNGLE
 	ret z
 	cp TILESET_SNOW

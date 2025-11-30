@@ -6,8 +6,8 @@
 	RGB 31, 00, 31
 	RGB 31, 00, 31
 ;1 - Dungeons
-	RGB 18, 18, 11
-	RGB 08, 15, 09
+	RGB 22, 15, 07
+	RGB 18, 12, 04
 	RGB 31, 00, 31
 	RGB 31, 00, 31
 ;2 - Sunset
@@ -135,11 +135,21 @@
 	RGB 00, 00, 00
 	RGB 00, 00, 00
 	RGB 00, 00, 00
-;27 - Route 32
+;27 - Bone Cavern
+	RGB 00, 00, 00
+	RGB 00, 00, 00
+	RGB 00, 00, 00
+	RGB 00, 00, 00
+;28 - Route 32
 	RGB 21, 15, 08
 	RGB 10, 09, 08
 	RGB 29, 28, 31
 	RGB 11, 09, 25
+;29 - Lumina Town
+	RGB 18, 08, 04
+	RGB 14, 04, 02
+	RGB 00, 00, 00
+	RGB 00, 00, 00
 ;last - Evo Locations
 	RGB 00, 00, 00
 	RGB 00, 00, 00

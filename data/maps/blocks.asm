@@ -1010,3 +1010,6 @@ BoneCavernB2F_BlockData:
 BoneCavernMarowakRoom_BlockData:
 	INCBIN "maps/BoneCavernMarowakRoom.ablk.lz"
 	
+LuminaTown_BlockData:
+	INCBIN "maps/LuminaTown.ablk.lz"
+	

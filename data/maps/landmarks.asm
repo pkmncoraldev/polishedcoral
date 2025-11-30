@@ -79,6 +79,7 @@ Landmarks: ; 0x1ca8c3
 	landmark 108,  36, Route32Name
 	landmark 100,  36, Route11Name
 	landmark -16, -16, BoneCavernName
+	landmark -16, -16, LuminaTownName
 	landmark -16, -16, AureoleTownName
 	
 	landmark  20, 124, BrilloTownName
@@ -160,6 +161,7 @@ ObscuraCityName:	   db "OBSCURA¯CITY@"
 Route30Name:		   db "ROUTE 30@"
 Route32Name:		   db "ROUTE 32@"
 BoneCavernName:	   	   db "BONE CAVERNS@"
+LuminaTownName:	   	   db "LUMINA TOWN@"
 AureoleTownName:	   db "AUREOLE¯TOWN@"
 
 LusterStationName:	   db "LUSTER¯CITY@"

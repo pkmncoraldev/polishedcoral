@@ -480,6 +480,8 @@ ENDM
 	
 	map_attributes AureoleTown, AUREOLE_TOWN, $d4, 0
 	
+	map_attributes LuminaTown, LUMINA_TOWN, $71, 0
+	
 	map_attributes Route6Underwater, ROUTE_6_UNDERWATER, $09, SOUTH
 	connection south, CoralReef, CORAL_REEF, -23
 	

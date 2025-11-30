@@ -30,6 +30,7 @@ MapGroupRoofs:
 	db  4 ; group 26 (Inn)
 	db  0 ; group 27 (Bone Caverns)
 	db  0 ; group 28 (Route 32)
+	db  2 ; group 29 (Lumina Town)
 	db -1 ; group last (Fake Route 1)
 
 Roofs:

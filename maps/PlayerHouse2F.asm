@@ -7,7 +7,7 @@ PlayerHouse2F_MapScriptHeader:
 	callback MAPCALLBACK_NEWMAP, PlayerHouse2FInitializeRoom
 	callback MAPCALLBACK_TILES, PlayerHouse2FSetSpawn
 
-	db 23 ; warp events
+	db 24 ; warp events
 	warp_event  9,  0, PLAYER_HOUSE_1F, 3
 	warp_event  5, 10, SUNSET_BAY, 1
 	warp_event  7, 10, DAYBREAK_VILLAGE, 1
@@ -31,11 +31,12 @@ PlayerHouse2F_MapScriptHeader:
 	warp_event 13, 18, OBSCURA_CITY, 1
 	warp_event 15, 18, UNDERWATER_TEMPLE_2, 1
 	warp_event 17, 18, ROUTE_11_2, 2
+	warp_event 19, 18, LUMINA_TOWN, 1
 
 	db 1 ; coord events
 	xy_trigger 0, 10, 17, 0, SunbeamWarp, 0, 0
 
-	db 29 ; bg events
+	db 30 ; bg events
 	bg_event  4,  1, SIGNPOST_UP, PlayerHousePC
 	bg_event  5,  1, SIGNPOST_READ, PlayerHouseRadio
 	bg_event -1, -1, SIGNPOST_READ, PlayerHouseBookshelf
@@ -66,6 +67,7 @@ PlayerHouse2F_MapScriptHeader:
 	bg_event 12, 18, SIGNPOST_JUMPTEXT, PlayerHouseObscura
 	bg_event 14, 18, SIGNPOST_JUMPTEXT, PlayerHouseUnderwaterTemple
 	bg_event 16, 18, SIGNPOST_JUMPTEXT, PlayerHouseRoute32
+	bg_event 18, 18, SIGNPOST_JUMPTEXT, PlayerHouseLumina
 
 	db 7 ; object events
 	object_event  6,  2, SPRITE_CONSOLE, SPRITEMOVEDATA_DOLL, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, GameConsole, EVENT_KRISS_HOUSE_2F_CONSOLE
@@ -1565,6 +1567,10 @@ PlayerHouseUnderwaterTemple:
 	
 PlayerHouseRoute32:
 	text "ROUTE 11 BRIDGE"
+	done
+	
+PlayerHouseLumina:
+	text "LUMINA TOWN"
 	done
 	
 PlayerHouse2FInitializeRoom:

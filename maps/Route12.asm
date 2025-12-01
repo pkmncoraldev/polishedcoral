@@ -77,10 +77,12 @@ Route12SignText2:
 	
 	para "…"
 	
-	para "Unless MOM's at the"
-	line "SKATEPARK, it's"
-	cont "obviously been"
-	cont "vandalized…"
+	para "Unless MOM's been"
+	line "hanging out at the"
+	cont "SKATEPARK,"
+	
+	para "it's obviously been"
+	line "vandalized…"
 	done
 	
 Route12Trainer1:

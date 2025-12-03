@@ -77,7 +77,7 @@ ENDM
 	add_tm FALSE_SWIPE		; $35
 	add_tm SCALD			; $36
 	add_tm ROOST			; $37
-	add_tm DARK_PULSE		; $38
+	add_tm DRAGONBREATH		; $38
 	add_tm ENDURE			; $39
 	add_tm DRAGON_PULSE		; $3a
 	add_tm DRAGON_CLAW		; $3b

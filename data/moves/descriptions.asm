@@ -1037,8 +1037,8 @@ PetalBlizzardDescription:
 	next "of flower petals.@"
 
 DragonbreathDescription:
-	db   "A strong breath"
-	next "attack.@"
+	db   "A breath attack."
+	next "May paralyze.@"
 
 BatonPassDescription:
 	db   "Switches while"

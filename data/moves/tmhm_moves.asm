@@ -55,7 +55,7 @@ TMHMMoves:
 	db FALSE_SWIPE                         ; TM54
 	db SCALD                               ; TM55
 	db ROOST	                           ; TM56
-	db DARK_PULSE                          ; TM57
+	db DRAGONBREATH                        ; TM57
 	db ENDURE                              ; TM58
 	db DRAGON_PULSE                        ; TM59
 	db DRAGON_CLAW                         ; TM60

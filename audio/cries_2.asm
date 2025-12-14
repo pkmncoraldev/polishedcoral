@@ -459,6 +459,150 @@ Cry_Camerupt_Ch8:
 	noise_note 8, 9, 1, 0x45
 	sound_ret
 
+Cry_Swablu:
+        channel_count 2
+        channel 5, Cry_Swablu_Ch5
+	channel 6, Cry_Swablu_Ch6
+
+Cry_Swablu_Ch5:
+	duty_cycle_pattern 1, 0, 1, 0
+	square_note 5, 15, 1, 1723
+	;square_note 1, 0, 1, 1723
+	square_note 5, 15, 1, 1723
+	;square_note 1, 0, 1, 1723
+	square_note 5, 15, 1, 1723
+	;square_note 1, 0, 1, 1723
+	square_note 4, 15, 1, 1724
+	square_note 10, 15, 0, 1745
+	square_note 1, 0, 1, 1745
+	sound_ret
+
+Cry_Swablu_Ch6:
+	duty_cycle_pattern 1, 1, 1, 2
+	square_note 5, 15, 1, 1724
+	square_note 5, 15, 1, 1724
+	square_note 5, 15, 1, 1724
+	square_note 4, 15, 1, 1725
+	square_note 10, 15, 0, 1746
+	square_note 1, 0, 1, 1746
+	sound_ret
+
+Cry_Altaria:
+        channel_count 3
+        channel 5, Cry_Altaria_Ch5
+	channel 6, Cry_Altaria_Ch6
+	channel 8, Cry_Altaria_Ch8
+
+Cry_Altaria_Ch5:
+	duty_cycle_pattern 1, 0, 1, 0
+	square_note 8, 15, 1, 1743
+	square_note 4, 14, 1, 1741
+	square_note 4, 14, 1, 1738
+	square_note 4, 14, 1, 1736
+	square_note 2, 13, 1, 1734
+	square_note 3, 10, 1, 1731
+	sound_ret
+
+Cry_Altaria_Ch6:
+	duty_cycle_pattern 1, 1, 1, 1
+	square_note 8, 15, 1, 1744
+	square_note 4, 14, 1, 1742
+	square_note 4, 14, 1, 1739
+	square_note 4, 14, 1, 1737
+	square_note 2, 13, 1, 1735
+	square_note 3, 10, 1, 1732
+	sound_ret
+
+Cry_Altaria_Ch8:
+	noise_note 11, 15, 3, 82
+	noise_note 16, 10, 2, 44
+	sound_ret
+
+Cry_Snorunt:
+        channel_count 3
+        channel 5, Cry_Snorunt_Ch5
+	channel 6, Cry_Snorunt_Ch6
+	channel 8, Cry_Snorunt_Ch8
+
+Cry_Snorunt_Ch5:
+	duty_cycle_pattern 1, 0, 1, 1
+	;pitch_offset 128
+	pitch_offset 213
+	sound_call Cry_Snorunt_Ch6_branch
+	square_note 4, 10, 1, 1712
+	square_note 4, 9, -1, 1721
+	square_note 6, 6, 1, 1706
+	sound_ret
+
+Cry_Snorunt_Ch6:
+	duty_cycle_pattern 0, 1, 3, 1
+	sound_call Cry_Snorunt_Ch6_branch
+	square_note 4, 10, 1, 1706
+	square_note 4, 9, -1, 1721
+	square_note 6, 6, 1, 1688
+	sound_ret
+
+Cry_Snorunt_Ch6_branch:
+	square_note 2, 11, -1, 1752
+	square_note 4, 12, 1, 1747
+	square_note 4, 10, -1, 1752
+	square_note 4, 11, 1, 1732
+	square_note 4, 10, -1, 1747
+	square_note 4, 12, 1, 1721
+	square_note 4, 11, -1, 1732
+	sound_ret
+	
+Cry_Snorunt_Ch8:
+.loop1:
+	noise_note 1, 15, 2, 17
+	noise_note 2, 15, 2, 240
+	noise_note 2, 15, 2, 22
+ 	sound_loop 2, .loop1
+	noise_note 2, 15, 2, 17
+	noise_note 2, 15, 2, 240
+	noise_note 4, 11, 5, 22
+	noise_note 16, 9, 2, 21
+	sound_ret
+
+Cry_Glalie:
+        channel_count 3
+        channel 5, Cry_Glalie_Ch5
+	channel 6, Cry_Glalie_Ch6
+	channel 8, Cry_Glalie_Ch8
+
+Cry_Glalie_Ch5:
+	duty_cycle_pattern 1, 0, 1, 0
+	square_note 2, 15, 2, 1838
+	square_note 2, 15, 2, 1841
+	square_note 8, 15, 1, 1846
+	square_note 5, 15, 2, 1832
+	square_note 10, 5, -1, 1850
+	square_note 10, 12, 0, 1846
+	pitch_sweep 5, -7
+	square_note 10, 10, 5, 1846
+	pitch_sweep 8, 8
+	sound_ret
+
+Cry_Glalie_Ch6:
+	duty_cycle_pattern 1, 1, 1, 3
+	square_note 2, 11, 2, 1624
+	square_note 10, 12, 1, 1635
+	square_note 8, 12, 1, 1589
+	square_note 8, 12, 1, 1643
+	square_note 8, 12, 2, 1635
+	square_note 16, 11, 2, 1635
+	sound_ret
+
+Cry_Glalie_Ch8:
+	noise_note 2, 15, 1, 53
+	noise_note 2, 15, 1, 54
+	noise_note 8, 15, 1, 218
+	noise_note 8, 0, 1, 52
+	noise_note 4, 15, 3, 245
+	noise_note 4, 14, 3, 246
+	noise_note 24, 13, 3, 247
+	sound_ret
+
 ; Sinnoh
 
 Cry_Leafeon:
@@ -539,6 +683,43 @@ Cry_Glaceon_Ch6:
 	square_note 7, 8, 2, 1946
 	sound_ret
 
+Cry_Froslass:
+        channel_count 3
+        channel 5, Cry_Froslass_Ch5
+        channel 6, Cry_Froslass_Ch6
+	channel 8, Cry_Froslass_Ch8
+
+Cry_Froslass_Ch5:
+	duty_cycle_pattern 1, 1, 1, 1
+	square_note 16, 2, -4, 1680
+	square_note 10, 6, 0, 1680
+	square_note 16, 6, 6, 1680
+	duty_cycle_pattern 0, 0, 0, 0
+	square_note 10, 2, -4, 1608
+	square_note 8, 5, 7, 1600
+	sound_ret
+
+Cry_Froslass_Ch6:
+	duty_cycle_pattern 0, 0, 0, 1
+	square_note 3, 7, 1, 1789
+	square_note 16, 14, 7, 1793
+	square_note 8, 11, -1, 1793
+	square_note 2, 11, -1, 1797
+	square_note 1, 12, 0, 1800
+	square_note 1, 13, 0, 1803
+	square_note 1, 15, 0, 1806
+	square_note 1, 15, 0, 1809
+	square_note 1, 14, 0, 1811
+	square_note 1, 14, 0, 1814
+	square_note 9, 12, 4, 1816
+	square_note 4, 5, 3, 1814
+	sound_ret
+
+Cry_Froslass_Ch8:
+	noise_note 61, 5, 0, 177
+	noise_note 12, 0, -2, 194 
+	noise_note 24, 4, 7, 190
+	sound_ret
 
 ; Unova
 
@@ -637,6 +818,107 @@ Cry_Excadrill_Ch8:
 	noise_note 16, 6, 7, 231
 	sound_ret
 
+Cry_Venipede:
+        channel_count 3
+        channel 5, Cry_Venipede_Ch5
+	channel 6, Cry_Venipede_Ch6
+        channel 8, Cry_Venipede_Ch8
+
+Cry_Venipede_Ch5:
+	duty_cycle_pattern 1, 0, 1, 0
+	square_note 6, 15, -1, 1807
+	pitch_sweep 3, -7
+	square_note 9, 14, -1, 1807
+	square_note 1, 0, 1, 1807
+	pitch_sweep 8, 8
+	sound_ret
+
+Cry_Venipede_Ch6:
+	duty_cycle_pattern 1, 1, 1, 1
+	square_note 9, 9, 0, 1634
+	square_note 2, 8, 0, 1617
+	square_note 2, 9, 0, 1623
+	square_note 2, 9, 2, 1634
+	sound_ret
+
+Cry_Venipede_Ch8:
+	noise_note 16, 10, 3, 129
+	sound_ret
+
+Cry_Whirlipede:
+        channel_count 3
+        channel 5, Cry_Whirlipede_Ch5
+	channel 6, Cry_Whirlipede_Ch6
+        channel 8, Cry_Whirlipede_Ch8
+
+Cry_Whirlipede_Ch5:
+	duty_cycle_pattern 0, 0, 3, 0
+	square_note 12, 8, -1, 1834
+	square_note 4, 7, 0, 1834
+	square_note 9, 8, -1, 1834
+	square_note 3, 7, 0, 1833
+	square_note 1, 14, 0, 1786
+	square_note 1, 14, 0, 1795
+	square_note 1, 0, 5, 1790
+	square_note 8, 13, 1, 1783
+	sound_ret
+
+Cry_Whirlipede_Ch6:
+	duty_cycle_pattern 1, 1, 0, 1
+	square_note 12, 14, -1, 1657
+	square_note 4, 14, 0, 1667
+	square_note 9, 14, -1, 1673
+	square_note 3, 13, -1, 1689
+	square_note 8, 14, 2, 1706
+	sound_ret
+	
+
+Cry_Whirlipede_Ch8:
+	noise_note 2, 15, 2, 134
+.loop1:
+	noise_note 16, 14, -1, 155
+	noise_note 8, 13, 0, 155
+	sound_loop 2, .loop1
+	noise_note 4, 12, 2, 154
+	sound_ret
+
+Cry_Scolipede:
+        channel_count 3
+        channel 5, Cry_Scolipede_Ch5
+	channel 6, Cry_Scolipede_Ch6
+        channel 8, Cry_Scolipede_Ch8
+
+Cry_Scolipede_Ch5:
+	duty_cycle_pattern 1, 1, 0, 1
+	pitch_offset 255
+	square_note 14, 10, -1, 1299
+	square_note 6, 10, 0, 1299
+	square_note 10, 10, 0, 1299
+	square_note 3, 9, -1, 1346
+	square_note 10, 10, 0, 1356
+	square_note 1, 12, 0, 1474
+	square_note 1, 10, 0, 1483
+	square_note 4, 7, 1, 1496
+	sound_ret
+
+Cry_Scolipede_Ch6:
+	duty_cycle_pattern 0, 0, 3, 0
+	square_note 8, 0, 1, 1657
+	square_note 4, 12, -1, 1706
+	square_note 8, 12, 2, 1712
+	square_note 5, 3, -1, 1677
+	square_note 9, 12, 4, 1666
+	sound_ret
+
+Cry_Scolipede_Ch8:
+	noise_note 2, 15, 2, 113
+	noise_note 16, 13, 0, 76
+	noise_note 16, 12, 0, 76
+	noise_note 16, 12, 0, 76
+	noise_note 9, 12, 6, 76
+	noise_note 16, 12, 0, 68
+	noise_note 16, 9, 3, 68
+	sound_ret
 
 
 ; Kalos

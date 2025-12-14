@@ -85,12 +85,20 @@
 	const CRY_SHARPEDO
 	const CRY_NUMEL
 	const CRY_CAMERUPT
+	const CRY_SWABLU
+	const CRY_ALTARIA
+	const CRY_SNORUNT
+	const CRY_GLALIE
 ; gen 4
 	const CRY_LEAFEON
 	const CRY_GLACEON
+	const CRY_FROSLASS
 ; gen 5
 	const CRY_DRILBUR
 	const CRY_EXCADRILL
+	const CRY_VENIPEDE
+	const CRY_WHIRLIPEDE
+	const CRY_SCOLIPEDE
 ; gen 6
 	const CRY_SYLVEON
 	const CRY_NOIBAT

@@ -1053,10 +1053,10 @@ Cry_Pidgeotto: ; f3531
 	musicheader 1, 8, Cry_Pidgeotto_Ch8
 ; f353a
 
-Cry_Venipede: ; f353a
-	musicheader 3, 5, Cry_Venipede_Ch5
-	musicheader 1, 6, Cry_Venipede_Ch6
-	musicheader 1, 8, Cry_Venipede_Ch8
+;Cry_Venipede: ; f353a
+;	musicheader 3, 5, Cry_Venipede_Ch5
+;	musicheader 1, 6, Cry_Venipede_Ch6
+;	musicheader 1, 8, Cry_Venipede_Ch8
 ; f3543
 
 Cry_Pikipek: ; f3543
@@ -1966,36 +1966,36 @@ Cry_Dwebble_Ch8: ; f3d09
 	endchannel
 ; f3d25
 
-Cry_Venipede_Ch5: ; f3d25
-	sound_duty 0, 0, 3, 3
-	sound __,  5, $f3, $0780
-	sound __, 16, $e7, $0700
-	sound __,  9, $d3, $0710
-	sound __,  5, $c2, $0700
-	sound __,  5, $d2, $06f0
-	sound __,  9, $c1, $06e0
-	endchannel
+;Cry_Venipede_Ch5: ; f3d25
+;	sound_duty 0, 0, 3, 3
+;	sound __,  5, $f3, $0780
+;	sound __, 16, $e7, $0700
+;	sound __,  9, $d3, $0710
+;	sound __,  5, $c2, $0700
+;	sound __,  5, $d2, $06f0
+;	sound __,  9, $c1, $06e0
+;	endchannel
 ; f3d40
 
-Cry_Venipede_Ch6: ; f3d40
-	sound_duty 2, 2, 1, 1
-	sound __,  7, $c3, $0701
-	sound __, 15, $b7, $0681
-	sound __,  8, $b3, $0692
-	sound __,  4, $a2, $0681
-	sound __,  5, $b2, $0672
-	sound __,  9, $a1, $0661
-	endchannel
+;Cry_Venipede_Ch6: ; f3d40
+;	sound_duty 2, 2, 1, 1
+;	sound __,  7, $c3, $0701
+;	sound __, 15, $b7, $0681
+;	sound __,  8, $b3, $0692
+;	sound __,  4, $a2, $0681
+;	sound __,  5, $b2, $0672
+;	sound __,  9, $a1, $0661
+;	endchannel
 ; f3d5b
 
-Cry_Venipede_Ch8: ; f3d5b
-	noise __,  7, $e3, $5c
-	noise __, 15, $d6, $4c
-	noise __,  7, $c6, $3c
-	noise __,  4, $b3, $4c
-	noise __,  4, $a2, $5c
-	noise __,  9, $b1, $6c
-	endchannel
+;Cry_Venipede_Ch8: ; f3d5b
+;	noise __,  7, $e3, $5c
+;	noise __, 15, $d6, $4c
+;	noise __,  7, $c6, $3c
+;	noise __,  4, $b3, $4c
+;	noise __,  4, $a2, $5c
+;	noise __,  9, $b1, $6c
+;	endchannel
 ; f3d6e
 
 Cry_Minccino_Ch5: ; f3d6e

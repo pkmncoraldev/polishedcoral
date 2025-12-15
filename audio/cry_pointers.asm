@@ -81,12 +81,20 @@ Cries:
 	dba Cry_Sharpedo
 	dba Cry_Numel
 	dba Cry_Camerupt
+	dba Cry_Swablu
+	dba Cry_Altaria
+	dba Cry_Snorunt
+	dba Cry_Glalie
 ; gen 4
 	dba Cry_Leafeon
 	dba Cry_Glaceon
+	dba Cry_Froslass
 ; gen 5
 	dba Cry_Drilbur
 	dba Cry_Excadrill
+	dba Cry_Venipede
+	dba Cry_Whirlipede
+	dba Cry_Scolipede
 ; gen 6
 	dba Cry_Sylveon
 	dba Cry_Noibat

@@ -429,7 +429,7 @@ ObscuraMuseum3FRockyText3:
 	done
 	
 ObscuraMuseum3FRockyText4:
-	text "Anyway, let's head"
+	text "Alright, let's head"
 	line "outside for now."
 	done
 	

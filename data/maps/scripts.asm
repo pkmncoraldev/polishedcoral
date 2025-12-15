@@ -479,6 +479,11 @@ INCLUDE "maps/ObscuraMuseumPhoto.asm"
 
 SECTION "Lumina Scripts", ROMX
 INCLUDE "maps/LuminaTown.asm"
+INCLUDE "maps/LuminaGym.asm"
+INCLUDE "maps/LuminaHouse1.asm"
+INCLUDE "maps/LuminaHouse2.asm"
+INCLUDE "maps/LuminaHealerHouse.asm"
+INCLUDE "maps/LuminaEldersHouse.asm"
 
 SECTION "Misc Map Scripts", ROMX
 INCLUDE "maps/ObscuraGym.asm"

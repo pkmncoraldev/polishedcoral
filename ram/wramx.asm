@@ -1101,7 +1101,8 @@ wGlintGroveUndergroundTrigger:: ds 1
 wRoute3EastTrigger:: ds 1
 wRoute11Trigger:: ds 1
 wRoute22_2Trigger:: ds 1
-ds 16
+wLuminaGymTrigger:: ds 1
+ds 15
 
 wAmpharosFood:: ds 1
 

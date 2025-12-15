@@ -3,34 +3,35 @@ LuminaTown_MapScriptHeader:
 
 	db 0 ; callbacks
 
-	db 0 ; warp events
+	db 4 ; warp events
+	warp_def 17, 26, 1, LUMINA_HEALER_HOUSE
+	warp_def 12, 12, 1, LUMINA_HOUSE_1
+	warp_def  8, 28, 1, LUMINA_HOUSE_2
+	warp_def  7, 44, 1, LUMINA_ELDERS_HOUSE
 
 	db 0 ; coord events
 
 	db 15 ; bg events
-	signpost 18, 19, SIGNPOST_JUMPTEXT, LuminaTownSignText
-	signpost 16, 25, SIGNPOST_JUMPTEXT, LuminaTownHealerSignText
-	signpost 14, 37, SIGNPOST_JUMPTEXT, LuminaTownElderHouseSignText
-	signpost  5, 14, SIGNPOST_JUMPTEXT, LuminaTownSmallStatueText
-	signpost  5, 17, SIGNPOST_JUMPTEXT, LuminaTownSmallStatueText
-	signpost 11, 37, SIGNPOST_JUMPTEXT, LuminaTownSmallStatueText
-	signpost  1, 35, SIGNPOST_JUMPTEXT, LuminaTownSmallStatueText
-	signpost 13, 45, SIGNPOST_JUMPTEXT, LuminaTownSmallStatueText
-	signpost 11, 47, SIGNPOST_JUMPTEXT, LuminaTownSmallStatueText
-	signpost 12, 17, SIGNPOST_READ, LuminaTownBigStatue
-	signpost 12, 18, SIGNPOST_READ, LuminaTownBigStatue
-	signpost 13, 17, SIGNPOST_READ, LuminaTownBigStatue
-	signpost 13, 18, SIGNPOST_READ, LuminaTownBigStatue
+	signpost 20, 19, SIGNPOST_JUMPTEXT, LuminaTownSignText
+	signpost 18, 25, SIGNPOST_JUMPTEXT, LuminaTownHealerSignText
+	signpost 16, 37, SIGNPOST_JUMPTEXT, LuminaTownElderHouseSignText
+	signpost  7, 14, SIGNPOST_JUMPTEXT, LuminaTownSmallStatueText
+	signpost  7, 17, SIGNPOST_JUMPTEXT, LuminaTownSmallStatueText
+	signpost 13, 37, SIGNPOST_JUMPTEXT, LuminaTownSmallStatueText
+	signpost  3, 35, SIGNPOST_JUMPTEXT, LuminaTownSmallStatueText
+	signpost 15, 45, SIGNPOST_JUMPTEXT, LuminaTownSmallStatueText
+	signpost 13, 47, SIGNPOST_JUMPTEXT, LuminaTownSmallStatueText
 	signpost 14, 17, SIGNPOST_READ, LuminaTownBigStatue
 	signpost 14, 18, SIGNPOST_READ, LuminaTownBigStatue
+	signpost 15, 17, SIGNPOST_READ, LuminaTownBigStatue
+	signpost 15, 18, SIGNPOST_READ, LuminaTownBigStatue
+	signpost 16, 17, SIGNPOST_READ, LuminaTownBigStatue
+	signpost 16, 18, SIGNPOST_READ, LuminaTownBigStatue
 
-	db 6 ; object events
-	person_event SPRITE_GRANNY,  4, 15, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, LuminaTownNPC1, EVENT_LUMINA_LADIES_1_GONE
-	person_event SPRITE_GRANNY,  4, 16, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, LuminaTownNPC1, EVENT_LUMINA_LADIES_1_GONE
-	person_event SPRITE_GRANNY,  4, 14, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, LuminaTownNPC2, EVENT_LUMINA_LADIES_2_GONE
-	person_event SPRITE_GRANNY,  4, 17, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, LuminaTownNPC2, EVENT_LUMINA_LADIES_2_GONE
-	itemball_event 27, 11, DRAGON_FANG, 1, EVENT_LUMINA_TOWN_ITEMBALL
-	tmhmball_event 37,  2, TM_DRAGONBREATH, EVENT_LUMINA_TOWN_DRAGON_BREATH_TM
+	db 2 ; object events
+	
+	itemball_event  8,  8, DRAGON_FANG, 1, EVENT_LUMINA_TOWN_ITEMBALL
+	tmhmball_event 37,  4, TM_DRAGONBREATH, EVENT_LUMINA_TOWN_DRAGON_BREATH_TM
 	
 	
 LuminaTownNPC1:

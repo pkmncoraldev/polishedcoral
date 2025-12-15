@@ -480,7 +480,11 @@ ENDM
 	
 	map_attributes AureoleTown, AUREOLE_TOWN, $d4, 0
 	
-	map_attributes LuminaTown, LUMINA_TOWN, $71, 0
+	map_attributes LuminaTown, LUMINA_TOWN, $71, NORTH
+	connection north, LuminaGym, LUMINA_GYM, 5
+	
+	map_attributes LuminaGym, LUMINA_GYM, $71, SOUTH
+	connection south, LuminaTown, LUMINA_TOWN, -5
 	
 	map_attributes Route6Underwater, ROUTE_6_UNDERWATER, $09, SOUTH
 	connection south, CoralReef, CORAL_REEF, -23
@@ -815,3 +819,7 @@ ENDM
 	map_attributes RiverRapids, RIVER_RAPIDS, 2, 0
 	map_attributes RiverRapidsHouse, RIVER_RAPIDS_HOUSE, 0, 0
 	map_attributes LusterSpamBuilding_RightRoom, LUSTER_SPAM_BUILDING_RIGHT_ROOM, $0, 0
+	map_attributes LuminaHouse1, LUMINA_HOUSE_1, $0, 0
+	map_attributes LuminaHouse2, LUMINA_HOUSE_2, $0, 0
+	map_attributes LuminaHealerHouse, LUMINA_HEALER_HOUSE, $0, 0
+	map_attributes LuminaEldersHouse, LUMINA_ELDERS_HOUSE, $0, 0

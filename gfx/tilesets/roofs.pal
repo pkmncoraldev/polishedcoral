@@ -133,11 +133,21 @@
 	RGB 00, 00, 00
 	RGB 00, 00, 00
 	RGB 00, 00, 00
-;26 - Route 32
+;27 - Bone Cavern
+	RGB 00, 00, 00
+	RGB 00, 00, 00
+	RGB 00, 00, 00
+	RGB 00, 00, 00
+;28 - Route 32
 	RGB 21, 21, 21
 	RGB 11, 09, 25
 	RGB 11, 11, 19
 	RGB 05, 03, 15
+;29 - Lumina Town
+	RGB 20, 13, 12
+	RGB 16, 09, 10
+	RGB 10, 05, 08
+	RGB 07, 02, 06
 ;last - Evo Locations
 	RGB 00, 00, 00
 	RGB 00, 00, 00

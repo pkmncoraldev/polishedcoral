@@ -42,6 +42,7 @@ Marts: ; 160a9
 	dw ShimmerCafe
 	dw PollenMart
 	dw OttoMart
+	dw HealerMart
 MartsEnd:
 
 
@@ -571,4 +572,15 @@ OttoMart:
 	db ENERGY_ROOT
 	db HEAL_POWDER
 	db REVIVAL_HERB
+	db -1
+	
+HealerMart:
+	db 7 ; # items
+	db ENERGYPOWDER
+	db ENERGY_ROOT
+	db HEAL_POWDER
+	db REVIVAL_HERB
+	db MENTAL_HERB
+	db POWER_HERB
+	db WHITE_HERB
 	db -1

@@ -2963,6 +2963,8 @@ INCLUDE "audio/nite_music.asm"
 
 CheckChangeMusic::
 	ld a, [wSlotBias]
+	cp MUSIC_LUMINA
+	jr z, .lumina
 	cp MUSIC_STARGLOW
 	jr z, .starglow
 	cp MUSIC_JUNGLE
@@ -2978,17 +2980,26 @@ CheckChangeMusic::
 	cp MUSIC_BRIGHTBURG
 	jr z, .bright
 	cp MUSIC_BRIGHT_CENTER
-	jr z, .bright_center
+	jp z, .bright_center
 	cp MUSIC_CROSSROADS_OUTSIDE
-	jr z, .crossroads_outside
+	jp z, .crossroads_outside
 	cp MUSIC_CROSSROADS_INSIDE
-	jr z, .crossroads_inside
+	jp z, .crossroads_inside
 	cp MUSIC_MUSEUM
 	jp z, .museum
 	ld a, $ff
 .done
 	ld [wSlotBias], a
 	ret
+	
+.lumina
+	eventflagcheck EVENT_LUMINA_GYM_MUSIC
+	jr nz, .gym
+	ld a, MUSIC_EVENTIDE_VILLAGE
+	jr .done
+.gym
+	ld a, MUSIC_GYM
+	jr .done
 	
 .starglow
 	ld a, [wSnareFlags]
@@ -3062,11 +3073,11 @@ CheckChangeMusic::
 	jr z, .none
 .crossroads
 	ld a, MUSIC_CROSSROADS
-	jr .done
+	jp .done
 	
 .crossroads_inside
 	eventflagcheck EVENT_INN_SNARE_MUSIC
-	jr z, .crossroads
+	jp z, .crossroads
 	ld a, MUSIC_SNARE_INVASION
 	jp .done
 	

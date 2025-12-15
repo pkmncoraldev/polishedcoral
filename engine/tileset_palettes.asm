@@ -595,6 +595,9 @@ LoadSpecialMapPalette: ; 494ac
 	ld a, [wMapGroup]
 	cp GROUP_MT_ONWA_CLIFF
 	jr z, .cliff
+	ld a, [wMapNumber]
+	cp MAP_LUMINA_GYM
+	jr z, .lumina_gym
 	ld hl, LuminaPalette
 	ld a, [wTimeOfDayPal]
 	and 3
@@ -603,6 +606,29 @@ LoadSpecialMapPalette: ; 494ac
 	ld a, $5
 	ld de, wUnknBGPals + 1 palettes
 	ld bc, 2 palettes
+	ld a, $5
+	call FarCopyWRAM
+	scf
+	ret
+.lumina_gym
+	ld hl, OutsideMountainPalette
+	ld a, [wTimeOfDayPal]
+	and 3
+	ld bc, 8 palettes
+	rst AddNTimes
+	ld a, $5
+	ld de, wUnknBGPals
+	ld bc, 5 palettes
+	ld a, $5
+	call FarCopyWRAM
+	ld hl, LuminaPalette + 1 palettes
+	ld a, [wTimeOfDayPal]
+	and 3
+	ld bc, 2 palettes
+	rst AddNTimes
+	ld a, $5
+	ld de, wUnknBGPals + 2 palettes
+	ld bc, 1 palettes
 	ld a, $5
 	call FarCopyWRAM
 	scf

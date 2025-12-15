@@ -1013,3 +1013,14 @@ BoneCavernMarowakRoom_BlockData:
 LuminaTown_BlockData:
 	INCBIN "maps/LuminaTown.ablk.lz"
 	
+LuminaGym_BlockData:
+	INCBIN "maps/LuminaGym.ablk.lz"
+	
+LuminaHouse1_BlockData:
+LuminaHouse2_BlockData:
+LuminaEldersHouse_BlockData:
+	INCBIN "maps/LuminaHouse.ablk.lz"
+	
+LuminaHealerHouse_BlockData:
+	INCBIN "maps/LuminaHealerHouse.ablk.lz"
+	

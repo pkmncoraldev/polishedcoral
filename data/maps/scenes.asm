@@ -107,6 +107,7 @@ MapTriggers::
 	scene_var ROUTE_20,								  wAlways0Trigger
 	scene_var LUSTER_SKYSCRAPER_PORYGON_ROOM,		  wLusterSkyscraperPorygonRoomTrigger
 	scene_var FAKE_ROUTE_1,							  wWestTrainCabooseTrigger
+	scene_var FAKE_PLAYERS_HOUSE_2F,				  wWestTrainCabooseTrigger
 	scene_var DUSK_TURNPIKE,					 	  wDuskTurnpikeTrigger
 	scene_var ROUTE_22_TUNNEL,						  wRoute22TunnelTrigger
 	scene_var STARGLOW_CAVERN_DEPTHS,				  wStarglowCavernDepthsTrigger

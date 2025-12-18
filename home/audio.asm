@@ -350,6 +350,8 @@ PopAFBCDEHL:
 	jp _PopAFBCDEHL
 
 EnterMapMusic:: ; 3d03
+	eventflagcheck EVENT_SKIP_MAP_MUSIC
+	ret nz
 	eventflagcheck EVENT_YOU_CHEATED
 	ret nz
 	push hl

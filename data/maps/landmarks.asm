@@ -50,6 +50,8 @@ Landmarks: ; 0x1ca8c3
 	landmark  24,  40, ResidentialName
 	landmark  24,  40, ShoppingName
 	landmark  24,  40, BusinessName
+	landmark -16, -16, SunsetBay_2Name
+	landmark -16, -16, SunsetCape_2Name
 	landmark -16, -16, Route1_2Name
 	landmark  84,  44, StarglowDepthsName
 	landmark -16, -16, UnkownPassageName
@@ -132,6 +134,8 @@ Route13Name:		   db "ROUTE 13@"
 Route14Name:		   db "ROUTE 14@"
 Route15Name:		   db "ROUTE 15@"
 Route16Name:		   db "ROUTE 16@"
+SunsetBay_2Name:       db "SUNSET BAY?@"
+SunsetCape_2Name:      db "SUNSET¯CAPE?@"
 Route1_2Name:		   db "ROUTE 1?@"
 StarglowDepthsName:    db "STARGLOW¯DEPTHS@"
 ShimmerName:           db "PORT¯SHIMMER@"

@@ -26,7 +26,7 @@ SpawnPoints: ; 0x152ab
 	spawn OBSCURA_CITY,	 			   21, 40
 	
 	spawn STARGLOW_CAVERN_DEPTHS,	   16, 15
-	spawn FAKE_ROUTE_1,   		       20, 29
+	spawn FAKE_PLAYERS_HOUSE_2F,	    1,  4
 	
 	spawn N_A,                        -1, -1 ; SPAWN_LASTFLYPOINT
 	spawn N_A,                        -1, -1 ; SPAWN_KANTO

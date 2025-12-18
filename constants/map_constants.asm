@@ -506,3 +506,8 @@ DEF MAP_NONE   EQU 0
 	newgroup													 ; last
 	map_const FAKE_ROUTE_1,                               14, 17 ;  1
 	map_const FAKE_ROUTE_2,                               14, 17 ;  2
+	map_const FAKE_SUNSET_BAY,                            22, 25 ;  3
+	map_const FAKE_SUNSET_CAPE,                           12, 23 ;  4
+	map_const FAKE_PLAYERS_HOUSE_1F,                       4,  4 ;  5
+	map_const FAKE_PLAYERS_HOUSE_2F,                       4,  3 ;  6
+	map_const FAKE_NORTH_SOUTH_GATE,                       4,  4 ;  7

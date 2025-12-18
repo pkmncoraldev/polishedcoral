@@ -112,6 +112,7 @@ INCLUDE "audio/music/rbywildbattle.asm"
 INCLUDE "audio/music/rivalbattle2.asm"
 INCLUDE "audio/music/erika.asm"
 INCLUDE "audio/music/obscura.asm"
+INCLUDE "audio/music/fakesunsetbay.asm"
 
 
 SECTION "Music 6", ROMX

@@ -73,7 +73,7 @@ LusterSkyscraperPorygonRoomComputer:
 	closetext
 	wait 14
 	callasm SetupPorygonEncounterAsm
-	domaptrigger FAKE_ROUTE_1, $0
+	domaptrigger FAKE_ROUTE_1, $1
 ;	special FadeOutPalettes
 	callasm LoadMapPals
 	special FadeInPalettes
@@ -180,6 +180,7 @@ LusterSkyscraperPorygonRoomComputer:
 	clearevent EVENT_IN_RESIDENTIAL_DISTRICT
 	clearevent EVENT_IN_SHOPPING_DISTRICT
 	clearevent EVENT_IN_BUSINESS_DISTRICT
+	setevent EVENT_SKIP_MAP_MUSIC
 	
 	waitsfx
 ;	warp2 UP, FAKE_ROUTE_1, $14, $1d
@@ -269,7 +270,7 @@ BackupPorygonPassword:
 SetupPorygonEncounterAsm:
 	ld a, 30
 	ld [wTorchSteps], a
-	ld a, SPAWN_FAKE_ROUTE_1
+	ld a, SPAWN_FAKE_SUNSET
 	ld [wDefaultSpawnpoint], a
 	ret
 	

@@ -1024,3 +1024,18 @@ LuminaEldersHouse_BlockData:
 LuminaHealerHouse_BlockData:
 	INCBIN "maps/LuminaHealerHouse.ablk.lz"
 	
+FakeSunsetBay_BlockData:
+	INCBIN "maps/FakeSunsetBay.ablk.lz"
+	
+FakeSunsetCape_BlockData:
+	INCBIN "maps/FakeSunsetCape.ablk.lz"
+	
+FakePlayersHouse1F_BlockData:
+	INCBIN "maps/FakePlayersHouse1F.ablk.lz"
+	
+FakePlayersHouse2F_BlockData:
+	INCBIN "maps/FakePlayersHouse2F.ablk.lz"
+	
+FakeNorthSouthGate_BlockData:
+	INCBIN "maps/FakeNorthSouthGate.ablk.lz"
+	

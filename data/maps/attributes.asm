@@ -524,6 +524,12 @@ ENDM
 	connection west, LusterSpamBuilding_4F, LUSTER_SPAM_BUILDING_4F, -5
 	connection east, LusterSpamBuilding_4F, LUSTER_SPAM_BUILDING_4F, 5
 	
+	map_attributes FakeSunsetBay, FAKE_SUNSET_BAY, $89, EAST
+	connection east, FakeSunsetCape, FAKE_SUNSET_CAPE, 2
+	
+	map_attributes FakeSunsetCape, FAKE_SUNSET_CAPE, $89, WEST
+	connection west, FakeSunsetBay, FAKE_SUNSET_BAY, -2
+	
 	map_attributes FakeRoute1, FAKE_ROUTE_1, $89, NORTH | SOUTH
 	connection north, FakeRoute2, FAKE_ROUTE_2, 0
 	connection south, FakeRoute2, FAKE_ROUTE_2, 0
@@ -531,6 +537,8 @@ ENDM
 	map_attributes FakeRoute2, FAKE_ROUTE_2, $89, NORTH | SOUTH
 	connection north, FakeRoute2, FAKE_ROUTE_2, 0
 	connection south, FakeRoute2, FAKE_ROUTE_2, 0
+	
+	
 	
 	map_attributes DaybreakGrotto1, DAYBREAK_GROTTO_1, $9, 0
 	map_attributes DaybreakGrotto2, DAYBREAK_GROTTO_2, $9, 0
@@ -823,3 +831,6 @@ ENDM
 	map_attributes LuminaHouse2, LUMINA_HOUSE_2, $0, 0
 	map_attributes LuminaHealerHouse, LUMINA_HEALER_HOUSE, $0, 0
 	map_attributes LuminaEldersHouse, LUMINA_ELDERS_HOUSE, $0, 0
+	map_attributes FakePlayersHouse1F, FAKE_PLAYERS_HOUSE_1F, $0, 0
+	map_attributes FakePlayersHouse2F, FAKE_PLAYERS_HOUSE_2F, $0, 0
+	map_attributes FakeNorthSouthGate, FAKE_NORTH_SOUTH_GATE, $0, 0

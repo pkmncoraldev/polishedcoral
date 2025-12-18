@@ -7,7 +7,9 @@ FakeRoute2_MapScriptHeader:
 	db 1 ; callbacks
 	callback MAPCALLBACK_TILES, FakeRoute1Callback
 
-	db 0 ; warp events
+	db 2 ; warp events
+	warp_event 19, 29, FAKE_NORTH_SOUTH_GATE, 1
+	warp_event 20, 29, FAKE_NORTH_SOUTH_GATE, 2
 
 	db 4 ; coord events
 	coord_event 18, 24, 0, FakeRoute1ChangeBlocks
@@ -16,8 +18,8 @@ FakeRoute2_MapScriptHeader:
 	coord_event 21, 24, 0, FakeRoute1ChangeBlocks
 
 	db 5 ; bg events
-	signpost 30, 19, SIGNPOST_IFNOTSET, FakeRoute1DoorSign
-	signpost 30, 20, SIGNPOST_IFNOTSET, FakeRoute1DoorSign
+	signpost -1, -1, SIGNPOST_IFNOTSET, FakeRoute1DoorSign
+	signpost -1, -1, SIGNPOST_IFNOTSET, FakeRoute1DoorSign
 	signpost 26, 21, SIGNPOST_JUMPTEXT, FakeRoute1SignText
 	signpost 11, 22, SIGNPOST_JUMPTEXT, FakeRoute1DoorSignText
 	signpost 17, 15, SIGNPOST_JUMPTEXT, FakeRoute1DoorSignText
@@ -59,16 +61,15 @@ FakeRoute1ChangeBlocks:
 	end
 	
 FakeRoute1NPCScript:
-	jumptextfaceplayer FakeRoute1SignText
+	jumptextfaceplayer FakeRoute1NPCText
+	
+FakeRoute1NPCText:
+	text "MONSTERS HIDE"
+	line "IN TALL GRASS."
+	done
 	
 FakeRoute1SignText:
-	text "ROUTE 1"
-	
-	para "NORTH:"
-	line "ROUTE 1"
-	
-	para "SOUTH:"
-	line "ROUTE 1"
+	text "ROUTE 1 AHEAD"
 	done
 	
 FakeRoute1DoorSign:
@@ -77,8 +78,5 @@ FakeRoute1DoorSign:
 	
 	
 FakeRoute1DoorSignText:
-	text "Blocked…"
-	
-	para "Better keep"
-	line "moving…"
+	text "BLOCKED."
 	done

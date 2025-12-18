@@ -52,6 +52,8 @@
 	const RESIDENTIAL_DISTRICT		; 2a
 	const SHOPPING_DISTRICT			; 2b
 	const BUSINESS_DISTRICT			; 2c
+	const FAKE_SUNSET_BAY				; 
+	const FAKE_SUNSET_CAPE				; 
 	const FAKE_ROUTE_1				; 2d
 	const STARGLOW_DEPTHS			; 2e
 	const UNKNOWN_PASSAGE

@@ -140,6 +140,11 @@ INCLUDE "maps/Route22_2.asm"
 INCLUDE "maps/DuskTurnpike.asm"
 INCLUDE "maps/Crossroads.asm"
 INCLUDE "maps/FakeRoute1.asm"
+INCLUDE "maps/FakeSunsetBay.asm"
+INCLUDE "maps/FakeSunsetCape.asm"
+INCLUDE "maps/FakePlayersHouse1F.asm"
+INCLUDE "maps/FakePlayersHouse2F.asm"
+INCLUDE "maps/FakeNorthSouthGate.asm"
 
 
 SECTION "Sunset Bay Scripts", ROMX

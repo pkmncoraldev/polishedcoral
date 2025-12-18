@@ -97,4 +97,5 @@ Music:
 	dba Music_DevMessageEnd
 	dba Music_WildBattle2
 	dba Music_FakeRoute1
+	dba Music_FakeSunsetBay
 	

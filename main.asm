@@ -5428,9 +5428,9 @@ MovementLeaf::
 	ret
 
 ProfSpruceSpeech: ; 0x5f99
-	ld de, OriginalGameByGFX
+	ld de, OriginalGameByGFX + $26 tiles
 	ld hl, VTiles0
-	lb bc, BANK(OriginalGameByGFX), $0c
+	lb bc, BANK(OriginalGameByGFX), 1
 	call Request2bpp
 
 	ld de, MUSIC_ROUTE_2
@@ -5834,24 +5834,23 @@ ChooseGender_UpdateCursorOAM:
 	jr z, .one
 .two
 	ld hl, ChooseGender_OAM02
-	ld de, wSprites
-	ld bc, 9
-	jp CopyBytes
+	jr .end
 .one
 	ld hl, ChooseGender_OAM01
+.end
 	ld de, wSprites
 	ld bc, 9
 	jp CopyBytes
 	
 ChooseGender_OAM01:
 ;y pos, x pos, tile, palette
-	dsprite  4,  4, 6,  0, $09, $0 | PRIORITY
-	dsprite  4,  4, 7,  0, $0a, $0 | PRIORITY
+	dsprite  4,  4, 6,  0, $00, $0
+	dsprite  4,  4, 7,  0, $00, $0| X_FLIP
 	
 ChooseGender_OAM02:
 ;y pos, x pos, tile, palette
-	dsprite  4,  4, 15,  0, $09, $0 | PRIORITY
-	dsprite  4,  4, 16,  0, $0a, $0 | PRIORITY
+	dsprite  4,  4, 14,  5, $00, $0
+	dsprite  4,  4, 15,  5, $00, $0| X_FLIP
 	
 PlayerIntroPaletteWhite:
 	RGB 31, 31, 31

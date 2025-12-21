@@ -7,10 +7,10 @@ LuminaGym_MapScriptHeader:
 	db 0 ; warp events
 
 	db 4 ; coord events
-	coord_event  9,  9, 1, StartLuminaGymMusic
-	coord_event 10,  9, 1, StartLuminaGymMusic
-	coord_event  9, 10, 2, StopLuminaGymMusic
-	coord_event 10, 10, 2, StopLuminaGymMusic
+	coord_event  9,  9, 2, StartLuminaGymMusic
+	coord_event 10,  9, 2, StartLuminaGymMusic
+	coord_event  9, 10, 3, StopLuminaGymMusic
+	coord_event 10, 10, 3, StopLuminaGymMusic
 
 	db 3 ; bg events
 	signpost 10, 11, SIGNPOST_JUMPTEXT, LuminaGymSign
@@ -479,13 +479,13 @@ Movement_LuminaGymDarcy1:
 StartLuminaGymMusic:
 	setevent EVENT_LUMINA_GYM_MUSIC
 	callasm FadeToMapMusic
-	dotrigger $2
+	dotrigger $3
 	end
 	
 StopLuminaGymMusic:
 	clearevent EVENT_LUMINA_GYM_MUSIC
 	callasm FadeToMapMusic
-	dotrigger $1
+	dotrigger $2
 	end
 
 LuminaGymSign:

@@ -93,6 +93,12 @@ ObscuraGymRocky:
 	waitbutton
 	closetext
 	spriteface OBSCURA_GYM_ROCKY, DOWN
+	clearevent EVENT_LUMINA_ELDERS_HOUSE_ELDER_GONE
+	clearevent EVENT_LUMINA_ELDERS_HOUSE_DARCY_GONE
+	setevent EVENT_LUMINA_ELDERS_HOUSE_ELDER_GONE_2
+	setevent EVENT_LUMINA_ELDERS_HOUSE_DARCY_GONE_2
+	setevent EVENT_LUMINA_TOWN_UNDER_ATTACK
+	domaptrigger LUMINA_GYM, $1
 	end
 
 .GotTMFromRocky:

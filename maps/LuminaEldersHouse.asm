@@ -1,8 +1,9 @@
 LuminaEldersHouse_MapScriptHeader:
-	db 3 ; scene scripts
+	db 4 ; scene scripts
 	scene_script LuminaEldersHouseTrigger0
 	scene_script LuminaEldersHouseTrigger1
 	scene_script LuminaEldersHouseTrigger2
+	scene_script LuminaEldersHouseTrigger3
 
 	db 0 ; callbacks
 
@@ -14,17 +15,53 @@ LuminaEldersHouse_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 2 ; object events
+	db 4 ; object events
 	person_event SPRITE_ELDER,  4,  5, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, LuminaEldersHouseElder, EVENT_LUMINA_ELDERS_HOUSE_ELDER_GONE
 	person_event SPRITE_DARCY,  4,  6, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, LuminaEldersHouseDarcy, EVENT_LUMINA_ELDERS_HOUSE_DARCY_GONE
+	person_event SPRITE_ELDER,  4,  5, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, LuminaEldersHouseElder2, EVENT_LUMINA_ELDERS_HOUSE_ELDER_GONE_2
+	person_event SPRITE_DARCY,  3,  2, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, LuminaEldersHouseDarcy2, EVENT_LUMINA_ELDERS_HOUSE_DARCY_GONE_2
 	
-LuminaEldersHouseTrigger0:
+	
+LuminaEldersHouseTrigger1:
 	priorityjump LuminaEldersHouseScene
 	end
-
-LuminaEldersHouseTrigger1:
+LuminaEldersHouseTrigger0:
 LuminaEldersHouseTrigger2:
+LuminaEldersHouseTrigger3:
 	end
+	
+LuminaEldersHouseElder2:
+	faceplayer
+	opentext TEXTBOX_UNKNOWN
+	writetext LuminaEldersHouseElder2Text
+	waitbutton
+	closetext
+	end
+	
+LuminaEldersHouseElder2Text:
+	text "Hello."
+	
+	para "Welcome to my"
+	line "home."
+	
+	para "Can I help you?"
+	done
+	
+LuminaEldersHouseDarcy2:
+	faceplayer
+	opentext TEXTBOX_DARCY
+	writetext LuminaEldersHouseDarcy2Text
+	waitbutton
+	closetext
+	end
+	
+LuminaEldersHouseDarcy2Text:
+	text "What could that"
+	line "thief be up to?"
+	
+	para "You'd better find"
+	line "out!"
+	done
 	
 LuminaEldersHouseScene:
 	priority 2, HIGH_PRIORITY
@@ -140,7 +177,7 @@ LuminaEldersHouseScene:
 	setevent EVENT_LUMINA_ELDERS_HOUSE_DARCY_GONE
 	clearevent EVENT_LUMINA_GYM_ELDER_GONE
 	clearevent EVENT_LUMINA_GYM_DARCY_GONE
-	dotrigger $1
+	dotrigger $2
 	end
 	
 LuminaEldersHouseSceneDarcyText1:

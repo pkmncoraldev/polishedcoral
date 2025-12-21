@@ -35,19 +35,16 @@ LuminaTown_MapScriptHeader:
 	
 	
 LuminaTownNPC1:
-	faceplayer
-	opentext
+	checkevent EVENT_LUMINA_TOWN_UNDER_ATTACK
+	iffalse .early
 	checkevent EVENT_TALKED_TO_LUMINA_LADIES
 	iftrue .talked
-	writetext LuminaTownNPC1Text1
 	setevent EVENT_TALKED_TO_LUMINA_LADIES
-	jump .finish
+	jumptextfaceplayer LuminaTownNPC1Text1
 .talked
-	writetext LuminaTownNPC1Text2
-.finish
-	waitbutton
-	closetext
-	end
+	jumptextfaceplayer LuminaTownNPC1Text2
+.early
+	jumptextfaceplayer LuminaTownNPC1Text3
 
 LuminaTownNPC1Text1:
 	text "Ahead is the way"
@@ -73,6 +70,15 @@ LuminaTownNPC1Text1:
 LuminaTownNPC1Text2:
 	text "Please, seek out"
 	line "the ELDER at once."
+	
+	para "You mustn't enter"
+	line "the shrine without"
+	cont "permission."
+	done
+	
+LuminaTownNPC1Text3:
+	text "Ahead is the way"
+	line "to the shrine."
 	
 	para "You mustn't enter"
 	line "the shrine without"

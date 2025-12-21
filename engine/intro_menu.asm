@@ -25,7 +25,7 @@ INCBIN "gfx/new_game/intro_gradient.2bpp"
 
 _MainMenu: ; 5ae8
 	farcall MainMenu
-	farjp StartTitleScreen
+	farjp RestartTitleScreen
 ; 5b04
 
 PrintDayOfWeek: ; 5b05
@@ -655,6 +655,43 @@ Continue_DisplayGameTime: ; 5f84
 	jp PrintNum
 ; 5f99
 
+RestartTitleScreen:
+	ld hl, rIE
+	set LCD_STAT, [hl]
+	ldh a, [rSVBK]
+	push af
+	ld a, $5
+	ldh [rSVBK], a
+;	ldh a, [hVBlank]
+;	push af
+;	ld a, $1
+;	ldh [hVBlank], a
+	
+	ld a, $5
+	ld [wMusicFade], a
+	ld a, MUSIC_NONE % $100
+	ld [wMusicFadeIDLo], a
+	ld a, MUSIC_NONE / $100
+	ld [wMusicFadeIDHi], a
+	call SetWhitePals
+	ld c, 15
+	call FadePalettes
+
+	farcall _TitleScreen
+	call DelayFrame
+	ldh a, [rLCDC]
+	set rLCDC_SPRITES_ENABLE, a
+	ldh [rLCDC], a
+	ld de, 73 * 39
+	ld hl, wcf65
+	ld [hl], e
+	inc hl
+	ld [hl], d
+	ld hl, wJumptableIndex
+	ld a, 9
+	ld [hl], a
+	jp StartTitleScreen.loop
+
 CrystalIntroSequence: ; 620b
 	farcall Copyright_GFPresents
 ;	jr c, StartTitleScreen
@@ -675,12 +712,13 @@ StartTitleScreen: ; 6219
 	farcall _TitleScreen
 	call DelayFrame
 	
+	farcall CoralDevScreen
+	
 .loop
 	farcall RunTitleScreen
 	jr nc, .loop
 
 	call ClearSprites
-	call ClearBGPalettes
 
 ;	pop af
 ;	ldh [hVBlank], a
@@ -701,9 +739,9 @@ StartTitleScreen: ; 6219
 	ldh [hWX], a
 	ld a, $90
 	ldh [hWY], a
-	ld b, CGB_DIPLOMA
-	call GetCGBLayout
-	call UpdateTimePals
+;	ld b, CGB_DIPLOMA
+;	call GetCGBLayout
+;	call UpdateTimePals
 	ld a, [wIntroSceneFrameCounter]
 	cp $6
 	jr c, .ok
@@ -747,16 +785,31 @@ Copyright: ; 63e2
 	
 	ld de, OriginalGameByGFX
 	ld hl, VTiles2 tile $01
-	lb bc, BANK(OriginalGameByGFX), $0c
+	lb bc, BANK(OriginalGameByGFX), $26
 	call Request2bpp
 	
-	hlcoord 2, 5
+	hlcoord 2, 3
 	ld de, CopyrightString
 	call PlaceString
 	
-	hlcoord 2, 7
+	hlcoord 2, 5
 	lb bc, 1, 13
 	lb de, $60, 0
+	farcall DrawTitleGraphic
+	
+	hlcoord 2, 7
+	lb bc, 1, 7
+	lb de, $60, 0
+	farcall DrawTitleGraphic
+	
+	hlcoord 9, 7
+	lb bc, 1, 6
+	lb de, $6d, 0
+	farcall DrawTitleGraphic
+	
+	hlcoord 15, 7
+	lb bc, 1, 3
+	lb de, $7a, 0
 	farcall DrawTitleGraphic
 	
 	hlcoord 2, 9
@@ -765,25 +818,19 @@ Copyright: ; 63e2
 	farcall DrawTitleGraphic
 	
 	hlcoord 9, 9
-	lb bc, 1, 6
-	lb de, $6d, 0
-	farcall DrawTitleGraphic
-	
-	hlcoord 15, 9
-	lb bc, 1, 3
-	lb de, $7a, 0
-	farcall DrawTitleGraphic
-	
-	hlcoord 2, 11
-	lb bc, 1, 7
-	lb de, $60, 0
-	farcall DrawTitleGraphic
-	
-	hlcoord 9, 11
 	lb bc, 1, 10
 	lb de, $73, 0
 	farcall DrawTitleGraphic
 	
+	hlcoord 2, 13
+	lb bc, 1, 15
+	lb de, $0a, 0
+	farcall DrawTitleGraphic
+	
+	hlcoord 2, 14
+	lb bc, 1, 14
+	lb de, $19, 0
+	farcall DrawTitleGraphic
 	ret
 ; 63fd
 
@@ -1041,43 +1088,6 @@ ClearSplashScreenPalettes:
 	ldh [rVBK], a
 	ret
 	
-BusterScreenTilemapAndAttrMap::
-	ld hl, CoralDevScreenTilemap
-	decoord 0, 0
-	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
-	rst CopyBytes
-	
-	ld a, 1
-	ldh [rVBK], a
-	
-	ld hl, CoralDevScreenAttrmap
-	decoord 0, 0, wAttrMap
-	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
-	rst CopyBytes
-	ret
-	
-BusterScreenTilemap2::
-	ld hl, CoralDevScreenTilemap2
-	decoord $08, $06
-	ld bc, 4 * 1
-	rst CopyBytes
-	
-	ld hl, CoralDevScreenTilemap2 + 4
-	decoord $08, $07
-	ld bc, 4 * 1
-	rst CopyBytes
-	
-	ld hl, CoralDevScreenTilemap2 + 8
-	decoord $08, $08
-	ld bc, 4 * 1
-	rst CopyBytes
-	
-	ld hl, CoralDevScreenTilemap2 + 12
-	decoord $08, $09
-	ld bc, 4 * 1
-	rst CopyBytes
-	ret
-	
 GameInit:: ; 642e
 	farcall TryLoadSaveData
 	call ClearWindowData
@@ -1093,10 +1103,9 @@ GameInit:: ; 642e
 	ld a, $90
 	ldh [hWY], a
 	call ApplyTilemapInVBlank
-	jp CrystalIntroSequence
-; 6454
+	jp CrystalIntroSequence	
 	
-CoralDevScreenBusterPalette:
+CoralDevScreenPalette1:
 	RGB 31, 00, 31
 	RGB 31, 31, 31
 	RGB 14, 17, 30
@@ -1106,22 +1115,6 @@ CoralDevScreenBusterPalette:
 	RGB 31, 08, 23
 	RGB 15, 07, 00
 	RGB 00, 00, 00
-	
-CoralDevScreenTilemap:
-INCBIN "gfx/intro/splash/coraldev.tilemap"
-
-CoralDevScreenTilemap2:
-INCBIN "gfx/intro/splash/coraldev2.tilemap"
-
-CoralDevScreenAttrmap:
-INCBIN "gfx/intro/splash/coraldev.attrmap"
-	
-	
-CoralDevScreenPalette1:
-	RGB 00, 00, 00
-	RGB 00, 00, 00
-	RGB 31, 31, 31
-	RGB 31, 31, 31
 
 	RGB 31, 31, 31
 	RGB 31, 31, 31
@@ -1129,10 +1122,15 @@ CoralDevScreenPalette1:
 	RGB 00, 00, 00
 	
 CoralDevScreenPalette2:
-	RGB 00, 00, 00
-	RGB 00, 00, 00
+	RGB 31, 00, 31
 	RGB 31, 31, 31
-	RGB 31, 31, 31
+	RGB 14, 17, 30
+	RGB 00, 00, 00
+	
+	RGB 31, 00, 31
+	RGB 31, 08, 23
+	RGB 15, 07, 00
+	RGB 00, 00, 00
 	
 	RGB 31, 31, 31
 	RGB 31, 30, 25

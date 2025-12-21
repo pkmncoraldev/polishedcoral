@@ -4927,8 +4927,8 @@ INCLUDE "engine/sgb_border.asm"
 
 SECTION "Coral Data 1", ROMX
 
-CoralDevScreenGFX:: ; e4000
-INCBIN "gfx/intro/splash/coraldev.2bpp"
+TitleSpritesGFX:
+INCBIN "gfx/title/title_sprites.2bpp"
 
 BusterGFX::
 INCBIN "gfx/intro/splash/buster.2bpp"

@@ -1,6 +1,8 @@
 _TitleScreen: ; 10ed67
-
-	call ClearBGPalettes
+	call SetWhitePals
+	ld c, 15
+	call FadePalettes
+;	call ClearBGPalettes
 	call ClearSprites
 	call ClearTileMap
 
@@ -87,13 +89,6 @@ _TitleScreen: ; 10ed67
 	ld bc, 2 * BG_MAP_WIDTH
 	ld a, 6
 	call ByteFill
-
-
-; Suicune gfx
-	hlbgcoord 0, 8
-	ld bc, 11 * BG_MAP_WIDTH ; the rest of the screen
-	ld a, 8
-	call ByteFill
 	
 	
 ; Back to VRAM bank 0
@@ -105,9 +100,21 @@ _TitleScreen: ; 10ed67
 	ld de, VTiles1
 	call Decompress
 	
-	ld hl, TitleSpritesGFX
-	ld de, VTiles0
+	ld hl, TitleLogoGFX
+	ld de, VTiles2
 	call Decompress
+	
+; VRAM bank 1
+	ld a, 1
+	ldh [rVBK], a
+	
+	ld hl, TitleSunGFX
+	ld de, VTiles1
+	call Decompress
+	
+; Back to VRAM bank 0
+	xor a
+	ldh [rVBK], a
 	
 ; Clear screen tiles
 	hlbgcoord 0, 0
@@ -117,22 +124,7 @@ _TitleScreen: ; 10ed67
 	
 ; Draw Lighthouse
 	ld hl, TitleScreenTilemap
-	debgcoord 0, 0
-	ld bc, BG_MAP_WIDTH * BG_MAP_HEIGHT
-.copy
-	ld a, 0
-	ldh [rVBK], a
-	ld a, [hli]
-	ld [de], a
-	ld a, 1
-	ldh [rVBK], a
-	ld a, [hli]
-	ld [de], a
-	inc de
-	dec bc
-	ld a, b
-	or c
-	jr nz, .copy
+	call LoadTitleScreenTilemap	
 	
 ; Draw logo
 	hlcoord 0, 1
@@ -205,17 +197,40 @@ DrawTitleGraphic: ; 10eeef
 	ret
 ; 10ef06
 
+LoadTitleScreenTilemap::
+	debgcoord 0, 0
+	ld bc, BG_MAP_WIDTH * BG_MAP_HEIGHT
+.copy
+	ld a, 0
+	ldh [rVBK], a
+	ld a, [hli]
+	ld [de], a
+	ld a, 1
+	ldh [rVBK], a
+	ld a, [hli]
+	ld [de], a
+	inc de
+	dec bc
+	ld a, b
+	or c
+	jr nz, .copy
+	ret
+
 TitleLogoGFX: ; 10f326
-INCBIN "gfx/title/logo.w160.t4.2bpp.lz"
+INCBIN "gfx/title/logo.2bpp.lz"
 ; 10fcee
 
 TitleLighthouseGFX:
 INCBIN "gfx/title/lighthouse.2bpp.lz"
 
-TitleSpritesGFX:
-INCBIN "gfx/title/title_sprites.2bpp.lz"
+TitleSunGFX:
+INCBIN "gfx/title/sun.2bpp.lz"
 
 TitleScreenTilemap:
 ; 32x32 (alternating tiles and attributes)
 INCBIN "gfx/title/title.bin"
+
+TitleLogoTilemap:
+; 32x32 (alternating tiles and attributes)
+INCBIN "gfx/title/logo.bin"
 	

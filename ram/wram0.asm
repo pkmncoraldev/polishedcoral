@@ -821,6 +821,13 @@ wMoogooRetiredSuit2:: ds 1
 wMoogooCardsWithLowestValue:: ds 1
 wMoogooEnd::
 
+NEXTU
+wTitleBird1:: ds 1
+wTitleBird2:: ds 1
+wTitleBird1TileTimer:: ds 1
+wTitleBird2TileTimer:: ds 1
+wWaveFrame:: ds 1
+
 ;NEXTU
 ;; dummy game
 ;wDummyGame::

@@ -125,8 +125,6 @@ StartIntroSequence::
 	call GetCGBLayout
 	ld c, 60
 	call DelayFrames
-	ld de, MUSIC_TITLE
-	call PlayMusic
 	ld c, 30
 	call DelayFrames
 	farcall Copyright
@@ -142,7 +140,6 @@ StartIntroSequence::
 	call ClearTileMap
 	ld c, 80
 	call DelayFrames
-	farcall CoralDevScreen
 	ret
 ; e45e8
 

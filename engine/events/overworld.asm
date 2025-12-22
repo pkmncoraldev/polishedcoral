@@ -698,43 +698,10 @@ TrySurfOW:: ; c9e7
 	ret
 
 .lava
-	ld e, 0
-	xor a
-	ld [wCurPartyMon], a
-.loop
-	ld c, e
-	ld b, 0
-	ld hl, wPartySpecies
-	add hl, bc
-	ld a, [hl]
-	and a
-	jr z, .quit
-	cp a, -1
-	jr z, .quit
-	dec a
-	ld hl, BaseData + 6
-	ld bc, BaseData1 - BaseData0
-	call AddNTimes
-	ld a, BANK(BaseData)
-	call GetFarHalfword
-	ld a, FIRE
-	cp h
-	jr z, .cont
-	cp l
-	jr z, .cont
+	ld d, FLAME_CHARGE
+	call CheckPartyMove
+	jr c, .quit
 	
-.next
-	inc e
-	jr .loop
-.no
-	scf
-	ret
-
-.cont
-	ld a, e
-	ld [wCurPartyMon], a
-	xor a
-
 	ld hl, wOWState
 	bit OWSTATE_BIKING_FORCED, [hl]
 	jr nz, .quit

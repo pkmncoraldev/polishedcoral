@@ -241,10 +241,8 @@ _AskLavaSurfText::
 	text "The lava is"
 	line "bubbling."
 	
-	para "Want to ride on"
-	line "@"
-	text_from_ram wStringBuffer2
-	text "?"
+	para "Ride through with"
+	line "FLAME CHARGE?"
 	done
 	
 _UsedLavaSurfText::

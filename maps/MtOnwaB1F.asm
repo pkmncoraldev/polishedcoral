@@ -93,47 +93,13 @@ LavaCaveBF1Trainer3:
 	done
 	
 LavaCaveBF1NPC1:
-	faceplayer 
-	opentext
-	checkevent EVENT_PLAYER_IS_CORA
-	iftrue .girl
-	checkevent EVENT_PLAYER_IS_PIPPI
-	iftrue .girl
-	checkevent EVENT_PLAYER_IS_LEAF
-	iftrue .girl
-	checkevent EVENT_PLAYER_IS_KRIS
-	iftrue .girl
-	writetext LavaCaveBF1NPC1Text_boy
-	jump .cont
-.girl
-	writetext LavaCaveBF1NPC1Text_girl
-.cont
-	waitbutton
-	closetext
-	end
+	jumptextfaceplayer LavaCaveBF1NPC1Text
 	
 LavaCaveBF1NPC2:
-	faceplayer 
-	opentext
-	checkevent EVENT_PLAYER_IS_CORA
-	iftrue .girl
-	checkevent EVENT_PLAYER_IS_PIPPI
-	iftrue .girl
-	checkevent EVENT_PLAYER_IS_LEAF
-	iftrue .girl
-	checkevent EVENT_PLAYER_IS_KRIS
-	iftrue .girl
-	writetext LavaCaveBF1NPC2Text_boy
-	jump .cont
-.girl
-	writetext LavaCaveBF1NPC2Text_girl
-.cont
-	waitbutton
-	closetext
-	end
+	jumptextfaceplayer LavaCaveBF1NPC2Text
 	
-LavaCaveBF1NPC1Text_boy:
-	text "Yo, little bro!"
+LavaCaveBF1NPC1Text:
+	text "Yo, little dude!"
 	
 	para "Another lava"
 	line "surfer!"
@@ -152,58 +118,22 @@ LavaCaveBF1NPC1Text_boy:
 	line "deal!"
 	
 	para "Stay spicy, little"
-	line "bro!"
+	line "dude!"
 	done
 	
-LavaCaveBF1NPC1Text_girl:
-	text "Yo, little mama!"
+LavaCaveBF1NPC2Text:
+	text "Yo, little dude!"
 	
-	para "Another lava"
-	line "surfer!"
-	
-	para "You see my bro by"
-	line "the entrance?"
-	
-	para "I thought we were"
-	line "the only two cool"
-	cont "enough to ride"
-	cont "these hot waves!"
-	
-	para "But you?"
-	
-	para "You're the real"
-	line "deal!"
-	
-	para "Stay spicy,"
-	line "sister!"
-	done
-	
-LavaCaveBF1NPC2Text_boy:
-	text "Hey, little bro."
-	
-	para "You have a FIRE-"
-	line "type #MON?"
+	para "You ever hear of"
+	line "a move called"
+	cont "FLAME CHARGE?"
 	
 	para "Me and my bro surf"
 	line "over the lava on"
-	cont "our FIRE #MON"
-	cont "all the time, bro."
+	cont "our #MON with"
+	cont "FLAME CHARGE all"
+	cont "the time!"
 	
 	para "You should try it,"
 	line "little dude."
-	done
-	
-LavaCaveBF1NPC2Text_girl:
-	text "Hey, little mama."
-	
-	para "You have a FIRE-"
-	line "type #MON?"
-	
-	para "Me and my bro surf"
-	line "over the lava on"
-	cont "our FIRE #MON"
-	cont "all the time."
-	
-	para "You should try it,"
-	line "sister."
 	done

@@ -964,6 +964,8 @@ LoadMapPals::
 	jp z, .route_29
 .got_pals_cont
 	ld a, [wTileset]
+	cp TILESET_LAVA_CAVE
+	jp z, .rocks
 	cp TILESET_CAVE
 	jp z, .cave
 	cp TILESET_STARGLOW_CAVERN

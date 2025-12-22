@@ -263,7 +263,7 @@ TilesetLavaCaveColl::
 INCLUDE "data/tilesets/lava_cave_collision.asm"
 
 TilesetLavaCaveAttr::
-INCBIN "data/tilesets/cave_attributes.bin.lz"
+INCBIN "data/tilesets/lava_cave_attributes.bin.lz"
 
 
 SECTION "Tileset Data - grove", ROMX

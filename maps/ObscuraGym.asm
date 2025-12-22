@@ -92,16 +92,62 @@ ObscuraGymRocky:
 	writetext ObscuraGymRockyTextTMSpeech
 	waitbutton
 	closetext
+	
+	pause 5
+	playmusic MUSIC_NONE
+	playsound SFX_CALL
+	waitsfx
+	pause 20
+	playsound SFX_CALL
+	waitsfx
+	pause 20
+	playsound SFX_CALL
+	pause 2
+	spriteface OBSCURA_GYM_ROCKY, UP
+	playsound SFX_HANG_UP
+	opentext TEXTBOX_ROCKY
+	writetext ObscuraGymRockyCallText1
+	buttonsound
+	farwritetext StdBlankText
+	pause 6
+	playmusic MUSIC_RIVAL_AFTER
+	checkevent EVENT_PLAYER_IS_CORA
+	iftrue .girl
+	checkevent EVENT_PLAYER_IS_PIPPI
+	iftrue .girl
+	checkevent EVENT_PLAYER_IS_LEAF
+	iftrue .girl
+	checkevent EVENT_PLAYER_IS_KRIS
+	iftrue .girl
+	writetext ObscuraGymRockyCallText2
+	jump .cont
+.girl
+	writetext ObscuraGymRockyCallText2_girl
+.cont
+	waitbutton
+	closetext
+	playsound SFX_HANG_UP
+	pause 5
+	faceplayer
+	opentext TEXTBOX_ROCKY
+	writetext ObscuraGymRockyCallText3
+	waitbutton
+	closetext
 	spriteface OBSCURA_GYM_ROCKY, DOWN
+	special Special_FadeOutMusic
+	pause 15
 	clearevent EVENT_LUMINA_ELDERS_HOUSE_ELDER_GONE
 	clearevent EVENT_LUMINA_ELDERS_HOUSE_DARCY_GONE
 	setevent EVENT_LUMINA_ELDERS_HOUSE_ELDER_GONE_2
 	setevent EVENT_LUMINA_ELDERS_HOUSE_DARCY_GONE_2
 	setevent EVENT_LUMINA_TOWN_UNDER_ATTACK
+	playmapmusic
 	domaptrigger LUMINA_GYM, $1
 	end
 
 .GotTMFromRocky:
+	checkevent EVENT_LUMINA_TOWN_UNDER_ATTACK
+	iftrue RockyTextLoop.underattack
 	checkevent EVENT_BEAT_OBSCURA_GYM_TRAINER_1_REMATCH
 	iffalse RockyTextLoop
 	checkevent EVENT_BEAT_OBSCURA_GYM_TRAINER_2_REMATCH
@@ -114,6 +160,11 @@ ObscuraGymRocky:
 	iftrue ObscuraGymRockyRematch
 RockyTextLoop:
 	writetext ObscuraGymRockyTextLoop
+	waitbutton
+	closetext
+	end
+.underattack
+	writetext ObscuraGymRockyTextLoop2
 	waitbutton
 	closetext
 	end
@@ -192,6 +243,133 @@ ObscuraGymRockyTextLoss:
 ObscuraGymRockyTextWinRematch:
 	text "YOU WIN REMATCH"
 	done
+	
+ObscuraGymRockyCallText1:
+	text "Hello?"
+	
+	para "DARCY?<WAIT_S>"
+	line "What is it?"
+	done
+	
+ObscuraGymRockyCallText2:
+	text "What!?<WAIT_S>"
+	line "Slow down!"
+	
+	para "…"
+	
+	para "Already?"
+	
+	para "Darn, I was hoping"
+	line "it wouldn't come to"
+	cont "that…"
+	
+	para "…"
+	
+	para "Ok."
+	
+	para "…"
+	
+	para "Ok, calm down,"
+	line "DARCY."
+	
+	para "I'll let him know."
+	
+	para "We'll figure this"
+	line "out."
+	
+	para "…"
+	
+	para "Ok, bye."
+	done
+	
+ObscuraGymRockyCallText2_girl:
+	text "What!?<WAIT_S>"
+	line "Slow down!"
+	
+	para "…"
+	
+	para "Already?"
+	
+	para "Darn, I was hoping"
+	line "it wouldn't come to"
+	cont "that…"
+	
+	para "…"
+	
+	para "Ok."
+	
+	para "…"
+	
+	para "Ok, calm down,"
+	line "DARCY."
+	
+	para "I'll let her know."
+	
+	para "We'll figure this"
+	line "out."
+	
+	para "…"
+	
+	para "Ok, bye."
+	done
+	
+ObscuraGymRockyCallText3:
+	text "We have a bit of"
+	line "a situation."
+	
+	para "That kid who took"
+	line "the DRAGON STONE"
+	cont "is in LUMINA TOWN."
+	
+	para "He's barged into"
+	line "the shrine without"
+	cont "permission."
+	
+	para "That's where the"
+	line "stone is said to"
+	cont "summon the DRAGON"
+	cont "in the legend."
+	
+	para "Legend or not,"
+	line "you can't just"
+	cont "enter the shrine"
+	cont "like that!"
+	
+	para "It's strictly"
+	line "forbidden!"
+	
+	para "You know that"
+	line "thief, right?"
+	
+	para "You need to head"
+	line "over there and"
+	cont "talk some sense"
+	cont "into him!"
+	
+	para "LUMINA TOWN is"
+	line "EAST of a little"
+	cont "place called"
+	cont "BRIGHTBURG."
+	
+	para "That'll be your"
+	line "best way to get"
+	cont "there."
+	done
+	
+ObscuraGymRockyTextLoop2:
+	text "I need you to head"
+	line "to LUMINA TOWN and"
+	cont "stop that thief."
+	
+	para "LUMINA TOWN is"
+	line "EAST of a little"
+	cont "place called"
+	cont "BRIGHTBURG."
+	
+	para "That'll be your"
+	line "best way to get"
+	cont "there."
+	done	
 	
 ObscuraGymClerk1:
 	opentext

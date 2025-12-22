@@ -44,6 +44,10 @@ ObscuraCityTrigger0:
 	end
 	
 ObscuraCityTrigger1:
+	priorityjump ObscuraCityPostSnareScene
+	end
+
+ObscuraCityPostSnareScene:
 	opentext TEXTBOX_ROCKY
 	writetext ObscuraCityRockyText1
 	waitbutton

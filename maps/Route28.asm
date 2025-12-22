@@ -361,7 +361,11 @@ Route28ColbyText2:
 Route28ColbyText3:
 	text "What?"
 	
+	para "…"
+	
 	para "Yeah, I know."
+	
+	para "…"
 	
 	para "No, we're still"
 	line "good to go."

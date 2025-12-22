@@ -100,6 +100,11 @@ _VBAScreen:
 	ld a, 1
 	ldh [rVBK], a
 	; Apply logo gradient:
+; initialize screen pal
+	hlbgcoord 0, 0
+	ld bc, BG_MAP_WIDTH * SCREEN_HEIGHT
+	ld a, 0
+	call ByteFill
 ; line 0
 	hlbgcoord 0, 0
 	ld bc, BG_MAP_WIDTH

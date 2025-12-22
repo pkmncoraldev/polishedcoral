@@ -574,7 +574,7 @@ TitleScreenFlash:
 	
 	ld hl, Title_OAM
 	ld de, wSprites
-	ld bc, 39 * 4	;number of sprites * 4 bytes per sprite
+	ld bc, 40 * 4	;number of sprites * 4 bytes per sprite
 	call CopyBytes
 	
 	xor a
@@ -1445,6 +1445,7 @@ Title_OAM:
 	dsprite 19,  0, 18,  0, $42, 6
 	dsprite 19,  0, 19,  0, $43, 6
 	dsprite 19,  0, 20,  0, $44, 6
+	dsprite 19,  0, 1,  0, $4a, 6
 	
 TitleLensFlare_OAM00:
 ;y pos, x pos, tile, palette

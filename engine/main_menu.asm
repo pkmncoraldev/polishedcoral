@@ -24,7 +24,7 @@ MainMenu: ; 49cdc
 .MenuDataHeader: ; 49d14
 	db $40 ; flags
 	db 00, 00 ; start coords
-	db 07, 16 ; end coords
+	db 07, 11 ; end coords
 	dw .MenuData2
 	db 1 ; default option
 ; 49d1c
@@ -194,6 +194,16 @@ endc
 	decoord 1, 15
 	call .PlaceCurrentDay
 	call .VersionNumberPrint
+	call CheckExtendedSpace
+	
+	ld a, BANK(wExtendedSpace)
+	ld hl, wExtendedSpace
+	call GetFarWRAMByte
+	; value is now in a
+	cp 0
+	jr z, .no_mbc30
+	call .PlaceMBC30
+.no_mbc30
 	decoord 4, 16
 	ldh a, [hHours]
 	ld c, a
@@ -205,8 +215,17 @@ endc
 	jp PrintNum
 ; 49e75
 
-.VersionNumberPrint:
+.PlaceMBC30
 	hlcoord 0, 13
+	ld de, .MBC30Text
+	call PlaceString
+	ret
+	
+.MBC30Text
+	db "MBC30 OK!@"
+
+.VersionNumberPrint:
+	hlcoord 10, 13
 	ld de, .VersionNumberText
 	call PlaceString
 	ret

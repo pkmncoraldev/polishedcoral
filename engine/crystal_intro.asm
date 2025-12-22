@@ -50,46 +50,7 @@ Copyright_GFPresents: ; e4579
 	ld [wMusicFade], a
 	
 .skip_vba
-	call CheckExtendedSpace
-	
-	ld a, BANK(wExtendedSpace)
-	ld hl, wExtendedSpace
-	call GetFarWRAMByte
-	; value is now in a
-	cp 0
-	jr nz, .skip
-	farcall _WarnScreen
-	ld hl, WarnScreenPalette
-	ld de, wUnknBGPals
-	ld bc, 1 palettes
-	ld a, $5
-	call FarCopyWRAM
-	ld c, 15
-	call FadePalettes
-.loop2
-	ld a, [wPlaceBallsX]
-	inc a
-	ld [wPlaceBallsX], a
-	cp $ff
-	jr nz, .skip2
-	ld a, [wPlaceBallsY]
-	inc a
-	ld [wPlaceBallsY], a
-	cp $20
-	jr nz, .skip2
-	ld hl, wLowHealthAlarm
-	set 7, [hl]
-.skip2
-	call GetJoypad
-	ld hl, hJoyPressed
-	bit A_BUTTON_F, [hl]
-	jr z, .loop2
-	call SetBlackPals
-	ld c, 15
-	call FadePalettes
-.skip
 	xor a
-	ld [wLowHealthAlarm], a
 	ld [wPlaceBallsX], a
 	ld [wPlaceBallsY], a
 	farcall CoralSplashScreen
@@ -161,20 +122,6 @@ SplashScreenPalette:
 	RGB 00, 00, 00
 	RGB 00, 00, 00
 	RGB 00, 00, 00
-
-WarnScreenPalette:
-	RGB 31, 31, 31
-	RGB 31, 25, 00
-	RGB 00, 00, 00
-	RGB 00, 00, 00
-	
-WarnScreenPalette2:
-	RGB 31, 31, 31
-	RGB 31, 31, 31
-	RGB 00, 00, 00
-	RGB 00, 00, 00
-	
-
 
 CrystalIntro: ; e48ac
 	ld hl, rIE

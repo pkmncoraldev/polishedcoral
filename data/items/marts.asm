@@ -223,7 +223,7 @@ LusterMallElectronics4:
 	db -1
 	
 LusterMallElectronicsTM:
-	db 10 ; # items
+	db 13 ; # items
 	dbw TM_SAFEGUARD, 		6000
 	dbw TM_SUBSTITUTE, 		6000
 	dbw TM_PROTECT, 		6000
@@ -232,6 +232,9 @@ LusterMallElectronicsTM:
 	dbw TM_REST,		 	8000
 	dbw TM_TOXIC,		 	8000
 	dbw TM_SOLAR_BEAM, 		12000
+	dbw TM_THUNDERPUNCH, 	12000
+	dbw TM_FIRE_PUNCH, 		12000
+	dbw TM_ICE_PUNCH,	 	12000
 	dbw TM_HYPER_BEAM, 		14000
 	dbw TM_GIGA_IMPACT,		14000
 	db -1

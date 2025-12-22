@@ -6,7 +6,7 @@ IceCaveB1F_MapScriptHeader:
 
 	db 4 ; warp events
 	warp_def 11, 22, 6, TWINKLE_TOWN
-	warp_def  5, 21, 2, ICE_CAVE_B2F
+	warp_def  3, 21, 2, ICE_CAVE_B2F
 	warp_def 11,  4, 2, ROUTE_10_EAST
 	warp_def  7,  3, 1, ICE_CAVE_B2F
 
@@ -14,12 +14,10 @@ IceCaveB1F_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 4 ; object events
+	db 3 ; object events
 	person_event SPRITE_HIKER,  6, 10, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, IceCaveB1FNPC1, -1
-	person_event SPRITE_HIKER,  3, 20, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, IceCaveB1FNPC2, -1
+	person_event SPRITE_HIKER,  6, 21, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, IceCaveB1FNPC2, -1
 	person_event SPRITE_BALL_CUT_FRUIT,  9, 20, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, IceCaveB1FPokeballRockClimb, EVENT_GOT_HM08_ROCK_CLIMB
-	tmhmball_event 23,  5, TM_ICE_PUNCH, EVENT_ICE_CAVE_ICE_PUNCH
-	
 	
 IceCaveB1FStopSnowstorm:
 	clearevent EVENT_SNOWSTORM_HAPPENING

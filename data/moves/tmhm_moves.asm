@@ -63,7 +63,7 @@ TMHMMoves:
 	db ACROBATICS	                       ; TM62
 	db TOXIC_SPIKES                        ; TM63
 	db SELFDESTRUCT                        ; TM64
-	db SHADOW_CLAW                         ; TM65
+	db FLAME_CHARGE                        ; TM65
 	db POISON_JAB                          ; TM66
 	db RAPID_SPIN                          ; TM67
 	db GIGA_IMPACT                         ; TM68

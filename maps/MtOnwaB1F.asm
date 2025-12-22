@@ -6,7 +6,7 @@ MtOnwaB1F_MapScriptHeader:
 	db 7 ; warp events
 	warp_def 15, 17, 5, MT_ONWA_1F
 	warp_def 19, 31, 4, MT_ONWA_B1F
-	warp_def  3,  5, 5, MT_ONWA_B1F
+	warp_def -1, -1, 5, MT_ONWA_B1F
 	warp_def 37, 29, 2, MT_ONWA_B1F
 	warp_def 37, 5, 3, MT_ONWA_B1F
 	warp_def 35, 29, 1, MT_ONWA_B2F
@@ -16,8 +16,8 @@ MtOnwaB1F_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 9 ; object events
-	tmhmball_event  2, 4, TM_FIRE_PUNCH, EVENT_MT_ONWA_B1F_POKE_BALL_1
+	db 10 ; object events
+	tmhmball_event  2, 4, TM_FLAME_CHARGE, EVENT_MT_ONWA_B1F_POKE_BALL_1
 	itemball_event 32, 7, RARE_CANDY, 1, EVENT_MT_ONWA_B1F_POKE_BALL_2
 	itemball_event 10,18, GREAT_BALL, 1, EVENT_MT_ONWA_B1F_POKE_BALL_3
 	person_event SPRITE_FIREBREATHER, 26, 17, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_GENERICTRAINER, 2, LavaCaveBF1Trainer1, -1
@@ -26,6 +26,7 @@ MtOnwaB1F_MapScriptHeader:
 	person_event SPRITE_ROCKER,  7, 20, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, LavaCaveBF1NPC1, -1
 	person_event SPRITE_ROCKER, 21, 19, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, LavaCaveBF1NPC2, -1
 	tapeball_event 21,  6, MUSIC_LAVA, 1, EVENT_MUSIC_LAVA
+	smashrock_event  4,  6
 	
 LavaCaveBF1Trainer1:
 	generictrainer FIREBREATHER, MORT, EVENT_BEAT_MT_ONWA_B1F_TRAINER_1, .SeenText, .BeatenText

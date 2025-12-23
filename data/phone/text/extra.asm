@@ -105,14 +105,14 @@ SpamPhoneText1:
 	cont "regard to your"
 	cont "#DEX's warranty!"
 	
-	para "Renew now to-<WAIT_S>"
+	para "Renew now to-<WAIT_L>"
 	done
 
 SpamPhoneText2:
 	text "Feeling lonely?"
 	
 	para "Single TRAINERS"
-	line "in your area are-<WAIT_S>"
+	line "in your area are-<WAIT_L>"
 	done
 	
 SpamPhoneText3:
@@ -120,7 +120,7 @@ SpamPhoneText3:
 	line "miss this deal!"
 	
 	para "Buy RARE CANDY for"
-	line "the low price of-<WAIT_S>"
+	line "the low price of-<WAIT_L>"
 	done
 	
 SpamPhoneText4:
@@ -133,7 +133,7 @@ SpamPhoneText4:
 	line "NUGGET!"
 	
 	para "In order to claim"
-	line "your prize, you-<WAIT_S>"
+	line "your prize, you-<WAIT_L>"
 	done
 	
 SpamPhoneText5:
@@ -144,7 +144,7 @@ SpamPhoneText5:
 	
 	para "Call back in the"
 	line "next 30 minutes,"
-	cont "or service will-<WAIT_S>"
+	cont "or service will-<WAIT_L>"
 	done
 	
 SpamPhoneText6:

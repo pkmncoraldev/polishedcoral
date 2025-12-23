@@ -43,6 +43,7 @@ ChineseSpamCall:
 	call PlaceChineseString
 	call ClearSpeechBox
 	call LoadStandardFont
+	farcall _LoadPhoneTile
 	pop af
 	ld [wTextBoxFlags], a
 	ret

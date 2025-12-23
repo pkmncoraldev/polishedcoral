@@ -1762,7 +1762,7 @@
 	; morn
 	db 31, NOIBAT		;30%
 	db 31, GOLBAT		;30%
-	db 31, DRILBUR		;20%
+	db 31, ZUBAT		;20%
 	db 31, DRILBUR		;10%
 	db 31, ZUBAT		;5%
 	db 31, ZUBAT		;4%
@@ -1770,7 +1770,7 @@
 	; day
 	db 31, NOIBAT		;30%
 	db 31, GOLBAT		;30%
-	db 31, DRILBUR		;20%
+	db 31, ZUBAT		;20%
 	db 31, DRILBUR		;10%
 	db 31, ZUBAT		;5%
 	db 31, ZUBAT		;4%
@@ -1778,7 +1778,7 @@
 	; nite
 	db 31, NOIBAT		;30%
 	db 31, GOLBAT		;30%
-	db 31, DRILBUR		;20%
+	db 31, ZUBAT		;20%
 	db 31, DRILBUR		;10%
 	db 31, ZUBAT		;5%
 	db 31, ZUBAT		;4%

@@ -197,7 +197,7 @@ SpookHouseNPC3:
 SpookHouseTVRoomMenuData: ; 49d14
 	db $40 ; flags
 	db 00, 00 ; start coords
-	db 05, 16 ; end coords
+	db 05, 11 ; end coords
 	dw .MenuData2
 	db 1 ; default option
 ; 49d1c

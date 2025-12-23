@@ -681,8 +681,9 @@ ObscuraMuseum3FPearl:
 	jumptext ObscuraMuseum3FPearlText
 	
 ObscuraMuseum3FPearlText:
-	text "The BLACK PEARL"
-	line "you found in the"
+	text "A BLACK PEARL"
+	line "just like the one"
+	cont "you found in the"
 	cont "DESERT TEMPLE."
 	done
 	

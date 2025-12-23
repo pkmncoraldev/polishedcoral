@@ -12,7 +12,7 @@ ObscuraGym_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 12 ; object events
+	db 13 ; object events
 	person_event SPRITE_ROCKY,  2, 15, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, ObscuraGymRocky, -1
 	person_event SPRITE_RECEPTIONIST, 17, 15, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ObscuraGymClerk1, -1
 	person_event SPRITE_RECEPTIONIST,  8, 13, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, ObscuraGymClerk2, EVENT_BEAT_ROCKY
@@ -25,6 +25,7 @@ ObscuraGym_MapScriptHeader:
 	person_event SPRITE_RECEPTIONIST,  6, 25, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ObscuraGymTrainerRematch2, EVENT_HAVENT_BEAT_ROCKY
 	person_event SPRITE_RECEPTIONIST, 15,  2, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ObscuraGymTrainerRematch3, EVENT_HAVENT_BEAT_ROCKY
 	person_event SPRITE_RECEPTIONIST, 15, 27, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ObscuraGymTrainerRematch4, EVENT_HAVENT_BEAT_ROCKY
+	object_event 19, 21, SPRITE_GYM_GUY, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, ObscuraGymGuy, -1
 
 	
 	const_def 1 ; object constants
@@ -2147,4 +2148,48 @@ ObscuraGymTrainer5RematchSeenText:
 	
 	para "Ready for battle"
 	line "time once again?"
+	done
+	
+ObscuraGymGuy:
+	checkevent EVENT_BEAT_ROCKY
+	iftrue .won
+	jumptextfaceplayer ObscuraGymGuyText1
+.won
+	jumptextfaceplayer ObscuraGymGuyText2
+	
+ObscuraGymGuyText1:
+	text "Ayo!"
+	line "Champ in making!"
+	
+	para "This MUSEUM is"
+	line "great!"
+	
+	para "The GYM LEADER"
+	line "here, ROCKY,"
+	cont "specializes in,"
+	cont "you guessed it:"
+	
+	para "ELECTRIC-types!"
+	
+	para "Just kidding,"
+	line "it's ROCK-type."
+	
+	para "Try and knock 'em"
+	line "dead with WATER"
+	cont "or GRASS,"
+	
+	para "but it probably"
+	line "won't be easy."
+	
+	para "Good luck!"
+	done
+	
+ObscuraGymGuyText2:
+	text "Way to go!"
+	
+	para "Seven badges down,"
+	line "only one more to"
+	cont "go!"
+	
+	para "Almost there now."
 	done

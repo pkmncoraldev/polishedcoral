@@ -220,9 +220,9 @@ ObscuraMuseum2FNPC8Text:
 	cont "also the museum"
 	cont "director."
 	
-	para "Seems like he feels"
-	line "he has a lot to"
-	cont "prove."
+	para "Seems like he"
+	line "feels he has a"
+	cont "lot to prove."
 	done
 	
 ObscuraMuseum2FPhoto:

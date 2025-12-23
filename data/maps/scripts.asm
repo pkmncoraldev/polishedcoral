@@ -497,8 +497,6 @@ INCLUDE "maps/LusterApartment4_1F.asm"
 INCLUDE "maps/LusterApartment4_2F.asm"
 INCLUDE "maps/LusterApartment5_1F.asm"
 INCLUDE "maps/LusterApartment5_2F.asm"
-INCLUDE "maps/LusterApartment6_1F.asm"
-INCLUDE "maps/LusterApartment6_2F.asm"
 
 SECTION "Misc Map Scripts 2", ROMX
 INCLUDE "maps/RadiantPokeCenter.asm"
@@ -512,6 +510,8 @@ INCLUDE "maps/RadiantField.asm"
 SECTION "Misc Map Scripts 3", ROMX
 
 INCLUDE "maps/ObscuraMuseumEmployeeRoom.asm"
+INCLUDE "maps/LusterApartment6_1F.asm"
+INCLUDE "maps/LusterApartment6_2F.asm"
 
 SECTION "Aureole Scripts", ROMX
 INCLUDE "maps/AureoleTown.asm"

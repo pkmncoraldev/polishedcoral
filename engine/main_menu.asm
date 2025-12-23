@@ -150,7 +150,19 @@ MainMenu_PrintCurrentTimeAndDay: ; 49e09
 	ret
 
 .nofile
+	call CheckExtendedSpace
+
+	ld a, BANK(wExtendedSpace)
+	ld hl, wExtendedSpace
+	call GetFarWRAMByte
+	; value is now in a
+	cp 0
+	jr z, .no_mbc30_newgame
 	hlcoord 0, 17
+	ld de, .MBC30Text
+	call PlaceString
+.no_mbc30_newgame
+	hlcoord 10, 17
 	ld de, .VersionNumberText
 	call PlaceString
 	ret

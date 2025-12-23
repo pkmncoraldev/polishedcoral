@@ -1,4 +1,4 @@
-DEF NUM_DEBUG_QUEST_MENU_OPTIONS EQU 7
+DEF NUM_DEBUG_QUEST_MENU_OPTIONS EQU 8
 
 PlayerHouse2F_MapScriptHeader:
 	db 0 ; scene scripts
@@ -139,6 +139,7 @@ PlayerHouseDebugPoster:
 	if_equal $5, .pearl_2
 	if_equal $6, .ancient_ball
 	if_equal $7, .bridge
+	if_equal $8, .lumina
 	closewindow
 	jump .page2
 .Items
@@ -413,6 +414,17 @@ PlayerHouseDebugPoster:
 	setevent EVENT_ROUTE_11_BRIDGE_BUILT
 	clearevent EVENT_ROUTE_11_BRIDGE_NOT_BUILT
 	jump .return
+.lumina
+	closewindow
+	writetext PlayerHouseDebug2LuminaText
+	waitbutton
+	clearevent EVENT_LUMINA_ELDERS_HOUSE_ELDER_GONE
+	clearevent EVENT_LUMINA_ELDERS_HOUSE_DARCY_GONE
+	setevent EVENT_LUMINA_ELDERS_HOUSE_ELDER_GONE_2
+	setevent EVENT_LUMINA_ELDERS_HOUSE_DARCY_GONE_2
+	setevent EVENT_LUMINA_TOWN_UNDER_ATTACK
+	domaptrigger LUMINA_GYM, $1
+	jump .return
 .end
 	closetext
 	end
@@ -502,6 +514,11 @@ PlayerHouseDebug2AncientBallText:
 PlayerHouseDebug2BridgeText:
 	text "ROUTE 11 bridge"
 	line "built."
+	done
+	
+PlayerHouseDebug2LuminaText:
+	text "DRAGON SHRINE"
+	line "under attack."
 	done
 	
 PlayerRoomEventFlagTest:
@@ -1826,6 +1843,7 @@ QuestStrings:
 	dw .BlackPearl2
 	dw .AncientBall
 	dw .Route11Bridge
+	dw .LuminaTown
 	dw .Back
 	
 .Mina:				db "ACTIVATE MINA@"
@@ -1835,6 +1853,7 @@ QuestStrings:
 .BlackPearl2:		db "BLACK PEARL 2@"
 .AncientBall:		db "ANCIENT BALL@"
 .Route11Bridge:		db "ROUTE 11 BRIDGE@"
+.LuminaTown:		db "LUMINA TOWN@"
 .Back:				db "BACK@"
 
 PlayerHouseBookshelf:

@@ -288,10 +288,9 @@ ObscuraMuseum3FColbyText2:
 	para "Now that I have"
 	line "this stone,"
 	
-	para "the dragon will"
+	para "the DRAGON will"
 	line "recognize me for"
-	cont "who I am and show"
-	cont "itself."
+	cont "who I am."
 	
 	para "And then we'll"
 	line "finally be on even"
@@ -411,12 +410,11 @@ ObscuraMuseum3FRockyText3:
 	line "they were just one"
 	cont "step ahead."
 	
-	para "Oh man, she's never"
-	line "going to let me"
-	cont "hear the end of"
-	cont "this…"
+	para "Oh man, I'm never"
+	line "going to hear the"
+	cont "end of this…"
 	
-	para "Anyway, one of"
+	para "…<WAIT_M>Anyway, one of"
 	line "the goons dropped"
 	cont "something on their"
 	cont "way out."

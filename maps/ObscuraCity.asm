@@ -194,14 +194,14 @@ ObscuraCityFortuneTellerSign:
 	done
 	
 ObscuraCityRockyText1:
-	text "What did that"
-	line "kid say?"
+	text "What does that"
+	line "kid want with the"
+	cont "DRAGON STONE?"
 	
-	para "Summoning the"
-	line "dragon?"
-	
-	para "He can't be"
-	line "serious."
+	para "Surely he's not"
+	line "actually trying"
+	cont "to summon the"
+	cont "DRAGON, right?"
 	
 	para "That's just an old"
 	line "folktale."
@@ -250,15 +250,12 @@ ObscuraCityRockyText4:
 ObscuraCityRockyText5:
 	text "Relax, DARCY."
 	
-	para "We know the kid"
-	line "took it."
-	
-	para "He thinks he can"
-	line "use it to awaken"
-	cont "the dragon."
-	
 	para "<PLAYER> here"
-	line "will get it back."
+	line "knows the kid"
+	cont "who took it."
+	
+	para "We'll get it"
+	line "back."
 	done
 	
 ObscuraCityRockyText6:
@@ -326,11 +323,11 @@ ObscuraCityDarcyText4:
 	done
 	
 ObscuraCityDarcyText5:
-	text "He'd better!"
+	text "You'd better!"
 	done
 	
 ObscuraCityDarcyText5_girl:
-	text "She'd better!"
+	text "You'd better!"
 	done
 	
 ObscuraCityDarcyText6:
@@ -341,14 +338,14 @@ ObscuraCityDarcyText6:
 	cont "to our family!"
 	
 	para "To the people of"
-	line "LUMINA TOWN!"		;TODO come up with town name
+	line "LUMINA TOWN!"
 	
 	para "You do remember"
-	line "LUMINA TOWN,"		;TODO come up with town name
+	line "LUMINA TOWN,"
 	cont "don't you ROCKY?"
 	
 	para "You were only born"
-	line "and raised there."
+	line "and raised there!"
 	
 	para "You may not care"
 	line "anymore, but I do,"

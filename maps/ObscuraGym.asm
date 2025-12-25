@@ -2181,6 +2181,12 @@ ObscuraGymGuyText1:
 	para "but it probably"
 	line "won't be easy."
 	
+	para "Apparently you"
+	line "gotta pass some"
+	cont "quiz first."
+	
+	para "Hope you studied!"
+	
 	para "Good luck!"
 	done
 	

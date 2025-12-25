@@ -113,6 +113,7 @@ FightingDojoTrigger2:
 FightingDojoZeroOutCounters:
 	loadvar wRanchRaceFrames, 0
 	loadvar wRanchRaceSeconds, 0
+	loadvar wRanchRaceMinutes, 0
 	loadvar wCurrentAirportBaggage, 0
 	end
 	
@@ -787,12 +788,12 @@ FightingDojoMasterText3:
 	done
 	
 FightingDojoMasterText4:
-	text "MASTER: Excellent…<WAIT_M>"
+	text "Excellent…<WAIT_M>"
 	line "Let us continue…"
 	done
 	
 FightingDojoMasterText5:
-	text "MASTER: Excellent…"
+	text "Excellent…"
 	
 	para "…"
 	

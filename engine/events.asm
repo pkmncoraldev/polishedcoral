@@ -541,8 +541,8 @@ CheckTimeEvents: ; 9693a
 	ret
 	
 .trialofmind
-	ld a, [wRanchRaceSeconds]
-	cp 178 ; time limit
+	ld a, [wRanchRaceMinutes]
+	cp 3 ; time limit
 	jr c, .skip_ranch
 	ld a, BANK(TrialOfMindTimesUp)
 	ld hl, TrialOfMindTimesUp

@@ -24,9 +24,9 @@ Route11_2_MapScriptHeader:
 	db 19 ; object events
 	object_event 21, 52, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, SNUBBULL, -1, -1, PAL_NPC_PINK, PERSONTYPE_SCRIPT, 0, Route11_2Snubbull, -1
 	person_event SPRITE_ARTIFACTS, 52, 21, SPRITEMOVEDATA_TILE_DOWN_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_ROUTE_11_2_BONE
-	person_event SPRITE_BAGGAGE, -5, -5, SPRITEMOVEDATA_TILE_DOWN_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_ALWAYS_SET
+	person_event SPRITE_BAGGAGE, -5, -5, SPRITEMOVEDATA_TILE_DOWN_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_ALWAYS_SET
 	person_event SPRITE_POKEFAN_F, 41, 12, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, Route11_2EggLady, -1
-	person_event SPRITE_FLOATING_BALL, 41, 14, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, Route11_2FloatingBall, EVENT_ROUTE_11_2_FLOATING_BALL
+	person_event SPRITE_FLOATING_BALL, 41, 14, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, Route11_2FloatingBall, EVENT_ROUTE_11_2_FLOATING_BALL
 	person_event SPRITE_SCHOOLGIRL, 38,  8, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, Route11_2Kid1, -1
 	person_event SPRITE_CHILD, 36,  8, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, Route11_2Kid2, -1
 	person_event SPRITE_POKEFAN_M, 37,  8, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, Route11_2NPC1, -1
@@ -350,16 +350,17 @@ Route11_2EggLadyText5:
 	
 Route11_2FloatingBall:
 	callasm Route11_2FloatingBallSetItemAsm
-	farscall FindTMHMInBallScript
+	farscall FindItemInBallScript
 	iffalse .end
-	setevent EVENT_GOT_FIRE_BLAST
 	setevent EVENT_ROUTE_11_2_FLOATING_BALL
 .end
 	end
 	
 Route11_2FloatingBallSetItemAsm:
-	ld a, TM_FIRE_BLAST
+	ld a, LUCKY_EGG
 	ld [wCurItemBallContents], a
+	ld a, 1
+	ld [wCurItemBallQuantity], a
 	ret
 	
 Route11_2DogSign:

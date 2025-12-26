@@ -58,26 +58,26 @@
 	map_id DAYBREAK_GROTTO_1
 	db 20 percent, 20 percent, 20 percent ; encounter rates: morn/day/nite
 	; morn
-	db 4, CUBONE		;30%
+	db 4, RATTATA		;30%
 	db 4, ZUBAT			;30%
 	db 4, MACHOP		;20%
-	db 4, ZUBAT			;10%
+	db 4, CUBONE		;10%
 	db 4, MACHOP		;5%
 	db 4, ZUBAT			;4%
 	db 4, ZUBAT			;1%
 	; day
-	db 4, CUBONE		;30%
+	db 4, RATTATA		;30%
 	db 4, ZUBAT			;30%
 	db 4, MACHOP		;20%
-	db 4, ZUBAT			;10%
+	db 4, CUBONE		;10%
 	db 4, MACHOP		;5%
 	db 4, ZUBAT			;4%
 	db 4, ZUBAT			;1%
 	; nite
-	db 4, CUBONE		;30%
+	db 4, RATTATA		;30%
 	db 4, ZUBAT			;30%
 	db 4, MACHOP		;20%
-	db 4, ZUBAT			;10%
+	db 4, CUBONE		;10%
 	db 4, MACHOP		;5%
 	db 4, ZUBAT			;4%
 	db 4, ZUBAT			;1%
@@ -85,26 +85,26 @@
 	map_id DAYBREAK_GROTTO_2
 	db 5 percent, 5 percent, 5 percent ; encounter rates: morn/day/nite
 	; morn
-	db 4, CUBONE		;30%
+	db 4, RATTATA		;30%
 	db 4, ZUBAT			;30%
 	db 4, MACHOP		;20%
-	db 4, ZUBAT			;10%
+	db 4, CUBONE		;10%
 	db 4, MACHOP		;5%
 	db 4, ZUBAT			;4%
 	db 4, ZUBAT			;1%
 	; day
-	db 4, CUBONE		;30%
+	db 4, RATTATA		;30%
 	db 4, ZUBAT			;30%
 	db 4, MACHOP		;20%
-	db 4, ZUBAT			;10%
+	db 4, CUBONE		;10%
 	db 4, MACHOP		;5%
 	db 4, ZUBAT			;4%
 	db 4, ZUBAT			;1%
 	; nite
-	db 4, CUBONE		;30%
+	db 4, RATTATA		;30%
 	db 4, ZUBAT			;30%
 	db 4, MACHOP		;20%
-	db 4, ZUBAT			;10%
+	db 4, CUBONE		;10%
 	db 4, MACHOP		;5%
 	db 4, ZUBAT			;4%
 	db 4, ZUBAT			;1%

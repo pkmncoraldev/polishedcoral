@@ -3347,6 +3347,16 @@ LassGroup:
 	db -1 ; end
 
 ; ================
+
+	; LASS
+	db "DEEDEE@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+; ================================
 ; ================================
 
 
@@ -3989,6 +3999,16 @@ LadyGroup:
 	db -1 ; end
 
 ; ================
+
+	; LADY
+	db "MURIEL@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+; ================================
 ; ================================
 
 
@@ -4577,6 +4597,16 @@ TeacherGroup:
 	db -1 ; end
 
 ; ================
+
+	; TEACHER
+	db "WANDA@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+; ================================
 ; ================================
 
 

@@ -351,6 +351,7 @@ DEF PLAYER_F EQU __enum__
 	const HARLEY_6
 	const HARLEY_7
 	const HARLEY_8
+	const DEEDEE
 
 
 	trainerclass BEAUTY
@@ -434,6 +435,7 @@ DEF PLAYER_F EQU __enum__
 	const GRETCHEN
 	const LYDIA
 	const JUDY
+	const MURIEL
 
 
 	trainerclass SAILOR
@@ -513,6 +515,7 @@ DEF PLAYER_F EQU __enum__
 	const LYNN
 	const KINSEY
 	const MARIE
+	const WANDA
 	
 
 	trainerclass GUITARIST

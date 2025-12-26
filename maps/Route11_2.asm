@@ -459,7 +459,9 @@ Route11_2SnubbullJump:
 	pause 5
 	iffalse .no
 	callasm Route11_2CheckBoneAsm
+	if_equal RARE_BONE, .works
 	if_not_equal THICK_CLUB, .wont_work
+.works
 	writetext Route11_2ThrowText
 	waitbutton
 	closetext

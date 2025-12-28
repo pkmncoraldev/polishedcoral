@@ -109,7 +109,8 @@ DEF MAP_NONE   EQU 0
 	map_const ROUTE_8_GARDEN,                             31, 20 ; 16
 	map_const ROUTE_8_GATE,                                4,  4 ; 17
 	map_const ROUTE_3_STARGLOW_CAVERN_TOP,				  10, 13 ; 18
-	map_const ROUTE_28,									  20, 38 ; 9
+	map_const ROUTE_28,									  20, 38 ; 19
+	map_const ROUTE_28_OTTOS_TENT,                     	   2,  3 ; 20
 
 	newgroup                                                     ;  5
 
@@ -471,8 +472,7 @@ DEF MAP_NONE   EQU 0
 	map_const AUREOLE_TOWN,								  20, 23 ; 1
 	map_const ROUTE_29,									  38, 12 ; 2
 	map_const ROUTE_29_MEADOW,							  18, 10 ; 3
-	map_const ROUTE_28_OTTOS_TENT,                     	   2,  3 ; 4
-	map_const ROUTE_30,									  21, 21 ; 5
+	map_const ROUTE_30,									  21, 21 ; 4
 	
 	newgroup													 ; 26
 	map_const INN_1F,									  13, 12 ; 1

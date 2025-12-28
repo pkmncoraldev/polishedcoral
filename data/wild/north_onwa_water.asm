@@ -359,5 +359,15 @@
 	db 31, HORSEA		;5%
 	db 31, CHINCHOU		;4%
 	db 31, CHINCHOU		;1%
+	
+	map_id ROUTE_11_2
+	db 2 percent ; encounter rate
+	db 31, MAGIKARP		;30%
+	db 31, MAGIKARP		;30%
+	db 31, MAGIKARP		;20%
+	db 31, MAGIKARP		;10%
+	db 31, MAGIKARP		;5%
+	db 31, MAGIKARP		;4%
+	db 31, MAGIKARP		;1%
 
 	db -1 ; end

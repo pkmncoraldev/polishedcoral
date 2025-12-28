@@ -63,6 +63,12 @@ Route11_2_MapScriptHeader:
 Route11_2Trigger0:
 Route11_2Trigger2:
 	special Special_UpdatePalsInstant
+	callasm Route11CheckRegion
+	if_equal 1, .south
+	loadvar wCurrentLandmark, ROUTE_11
+	end
+.south
+	loadvar wCurrentLandmark, ROUTE_11_SOUTH
 	end
 	
 Route11_2Trigger1:
@@ -79,6 +85,18 @@ Route11_2Trigger1:
 	closetext
 	dotrigger $2
 	end
+	
+Route11CheckRegion:
+	ld a, [wYCoord]
+	cp $25
+	jp c, .north
+	ld a, 1
+	ld [wScriptVar], a
+	ret
+.north
+	ld a, 0
+	ld [wScriptVar], a
+	ret
 	
 Route11_2BridgeSign:
 	text "NORTH ONWA ahead."

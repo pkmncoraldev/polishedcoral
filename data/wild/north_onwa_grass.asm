@@ -1352,6 +1352,33 @@
 	db 21, DWEBBLE		;4%
 	db 21, DWEBBLE		;1%
 	
+	map_id ROUTE_11_2
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	; morn
+	db 21, MACHOP		;30%
+	db 21, DWEBBLE		;30%
+	db 21, DRIFLOON		;20%
+	db 21, MACHOKE		;10%
+	db 21, DRIFLOON		;5%
+	db 21, DWEBBLE		;4%
+	db 21, DWEBBLE		;1%
+	; day
+	db 21, MACHOP		;30%
+	db 21, DWEBBLE		;30%
+	db 21, DRIFLOON		;20%
+	db 21, MACHOKE		;10%
+	db 21, DRIFLOON		;5%
+	db 21, DWEBBLE		;4%
+	db 21, DWEBBLE		;1%
+	; nite
+	db 21, MACHOP		;30%
+	db 21, DWEBBLE		;30%
+	db 21, DRIFLOON		;20%
+	db 21, MACHOKE		;10%
+	db 21, DRIFLOON		;5%
+	db 21, DWEBBLE		;4%
+	db 21, DWEBBLE		;1%
+	
 	map_id FLICKER_PASS_OUTSIDE
 	db 20 percent, 20 percent, 20 percent ; encounter rates: morn/day/nite
 	; morn

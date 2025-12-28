@@ -534,6 +534,12 @@ CheckTimeEvents: ; 9693a
 	ret
 	
 .ranch_times_up
+	ld a, [wMapGroup]
+	cp GROUP_DODRIO_RANCH_RACETRACK
+	jr nz, .nothing
+	ld a, [wMapNumber]
+	cp MAP_DODRIO_RANCH_RACETRACK
+	jr nz, .nothing
 	ld a, BANK(RanchRideRaceTimesUp)
 	ld hl, RanchRideRaceTimesUp
 	call CallScript

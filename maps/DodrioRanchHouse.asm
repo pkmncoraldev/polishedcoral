@@ -37,6 +37,9 @@ RanchHouseDodrioGirl:
 	domaptrigger DODRIO_RANCH_RACETRACK, $3
 	waitsfx
 	setevent EVENT_CANT_HEADBUTT
+	loadvar wRanchRaceFrames, 0
+	loadvar wRanchRaceSeconds, 0
+	loadvar wRanchRaceMinutes, 0
 	warpfacing DOWN, DODRIO_RANCH_RACETRACK, 8, 14
 	end
 .no

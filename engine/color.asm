@@ -1337,16 +1337,16 @@ LoadMapPals::
 	ld a, [wYCoord]
 	cp $25
 	jp c, .highway
-.route_32
-	ld a, [wYCoord]
-	cp $21
-	jp c, .park
-	jp .rocks
 .computer
 	call .normal
 	ld hl, MapObjectPalsComputer
 	call LoadSingleOBPalLinePal7
 	jp FarCopyWRAM
+.route_32
+	ld a, [wYCoord]
+	cp $21
+	jp c, .park
+	jp .rocks
 	
 .gate
 	ld a, [wMapGroup]

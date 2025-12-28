@@ -1915,8 +1915,8 @@ LoadMapPals::
 	call FarCopyWRAM
 	
 	ld a, [wPlayerPalette]
-	cp 0
-	jr z, .community_center_pink
+	cp 6
+	jr nz, .community_center_pink
 	ld de, wUnknOBPals + 4 palettes
 	jr .community_center_cont
 .community_center_pink

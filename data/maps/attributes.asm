@@ -834,3 +834,4 @@ ENDM
 	map_attributes FakePlayersHouse1F, FAKE_PLAYERS_HOUSE_1F, $0, 0
 	map_attributes FakePlayersHouse2F, FAKE_PLAYERS_HOUSE_2F, $0, 0
 	map_attributes FakeNorthSouthGate, FAKE_NORTH_SOUTH_GATE, $0, 0
+	map_attributes Route11House, ROUTE_11_HOUSE, $0, 0

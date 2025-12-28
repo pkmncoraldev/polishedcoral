@@ -512,6 +512,7 @@ SECTION "Misc Map Scripts 3", ROMX
 INCLUDE "maps/ObscuraMuseumEmployeeRoom.asm"
 INCLUDE "maps/LusterApartment6_1F.asm"
 INCLUDE "maps/LusterApartment6_2F.asm"
+INCLUDE "maps/Route11House.asm"
 
 SECTION "Aureole Scripts", ROMX
 INCLUDE "maps/AureoleTown.asm"

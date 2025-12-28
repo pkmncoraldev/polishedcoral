@@ -88,6 +88,7 @@ Route3FriendshipHouse_BlockData:
 DuskHouse1_BlockData:
 BrightHouse3_BlockData:
 ObscuraFortuneHouse_BlockData:
+Route11House_BlockData:
 	INCBIN "maps/NormalHouse1.ablk.lz"
 	
 SunsetGengarHouse_BlockData:

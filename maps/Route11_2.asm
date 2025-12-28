@@ -8,7 +8,7 @@ Route11_2_MapScriptHeader:
 
 	db 2 ; warp events
 	warp_def  3, 19, 3, ROUTE_11_GATE
-	warp_def 55, 15, 2, ROUTE_11_2
+	warp_def 55, 15, 1, ROUTE_11_HOUSE
 
 	db 1 ; coord events
 	coord_event 21, 54, 0, Route11_2SnubbullJump

@@ -201,7 +201,7 @@ RiverRapidsHouseLady:
 	waitbutton
 	closetext
 	special FadeOutPalettes
-	changeblock $2, $4, $45
+	changeblock $2, $4, $db
 	applyonemovement PLAYER, hide_person
 	warpcheck
 	end

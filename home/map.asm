@@ -1956,10 +1956,11 @@ GetWorldMapLocation:: ; 0x2caf
 	jr nz, .skip
 	ld a, [wYCoord]
 	cp $25
-	jp c, .skip
+	jp c, .skip2
 	ld a, ROUTE_11_SOUTH
 	jr .end
 	
+.skip
 	eventflagcheck EVENT_ON_DODRIO_RANCH
 	ld a, DODRIO_RANCH
 	jr nz, .end
@@ -1984,7 +1985,7 @@ GetWorldMapLocation:: ; 0x2caf
 	ld a, BUSINESS_DISTRICT
 	jr nz, .end
 
-.skip
+.skip2
 	pop bc
 	push bc
 	ld de, 5 ; landmark

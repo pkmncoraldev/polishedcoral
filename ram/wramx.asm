@@ -787,7 +787,7 @@ wTradeMeowthName:: ds NAME_LENGTH
 wTradeCacneaName:: ds NAME_LENGTH
 wTradeGirafarigName:: ds NAME_LENGTH
 wTradeSunkernName:: ds NAME_LENGTH
-wTradeMon9Name:: ds NAME_LENGTH
+wTradeDrowzeeName:: ds NAME_LENGTH
 wTradeMon10Name:: ds NAME_LENGTH
 
 wTrendyPhrase:: ds NAME_LENGTH

@@ -1584,6 +1584,81 @@ UnknownText_TradeAfterText8::
 	line "doing funny faces."
 	done
 	
+UnknownText_TradeIntroText9::
+	text "Aw shucks!"
+	
+	para "I love PSYCHIC"
+	line "#MON, but I"
+	cont "wish mine wasn't"
+	cont "so frilly…"
+	
+	para "It's hurting my"
+	line "image!"
+	
+	para "I want a more"
+	line "cool, dashing,"
+	cont "and suave one."
+	
+	para "Like DROWZEE!"
+	
+	para "Do you have a"
+	line "@"
+	text_from_ram wStringBuffer1
+	text "?"
+
+	para "Would you trade"
+	line "for my @"
+	text_from_ram wStringBuffer2
+	text "?"
+	done
+	
+UnknownText_TradeCancelText9::
+	text "Guess I'm stuck"
+	line "with my girly"
+	cont "FLITTLE!"
+	done
+	
+UnknownText_TradeWrongText9::
+	text "That's not @"
+	text_from_ram wStringBuffer1
+	text "!"
+	
+	para "That's way less"
+	line "suave!"
+	done
+	
+UnknownText_TradeCompleteText9::
+	text "Yes!"
+
+	para "Look at how suave"
+	line "@"
+	text_from_ram wStringBuffer1
+	text " is!"
+	
+	para "This is sure to"
+	line "help my image!"
+	done
+	
+UnknownText_TradeAfterText9::
+	text "Ah, hello."
+	
+	para "My image has com-"
+	line "pletely turned"
+	cont "around thanks to"
+	cont "@"
+	text_from_ram wTradeDrowzeeName
+	text "."
+	
+	para "Now I'm known as a"
+	line "cool, mysterious,"
+	cont "and debonaire guy."
+	
+	para "How's my silly,"
+	line "frilly, little"
+	cont "CLEO doing?"
+	done
+	
+	
 UnknownText_0x1bd88e::
 	text "Transaction"
 	line "cancelled!"

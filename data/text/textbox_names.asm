@@ -69,6 +69,7 @@ TextBoxSpeakers:
 	dw TextBoxJuniper
 	dw TextBoxFlower
 	dw TextBoxElder
+	dw TextBoxGuy
 	
 TextBoxUnknown:			db "『???@"
 TextBoxMom:				db "『MOM@"
@@ -139,6 +140,7 @@ TextBoxSpirit:			db "『SPIRIT@"
 TextBoxJuniper:			db "『JUNIPER@"
 TextBoxFlower:			db "『FLOWER@"
 TextBoxElder:			db "『ELDER@"
+TextBoxGuy:				db "『GUY@"
 
 	
 ChangeTextboxName::

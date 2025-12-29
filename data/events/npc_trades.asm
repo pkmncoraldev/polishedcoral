@@ -40,3 +40,8 @@ NPCTrades:
 	db $DD, $DD, $DD, HIDDEN_ABILITY | LAX,   MALE,   POKE_BALL,    MACHO_BRACE
 	dw 63426
 	db "BEV@@@@@", $00
+; TRADE_WITH_BILL_FOR_FLITTLE in Route 11 Gate
+	db 8, DROWZEE, FLITTLE,      "CLEO@@@@@@@"
+	db $DD, $DD, $DD, HIDDEN_ABILITY | MODEST,   FEMALE,   POKE_BALL,    ABILITY_CAP
+	dw 39821
+	db "BILL@@@@", $00

@@ -4,7 +4,8 @@ Route11_2_MapScriptHeader:
 	scene_script Route11_2Trigger1
 	scene_script Route11_2Trigger2
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_TILES, Route11_2Callback
 
 	db 2 ; warp events
 	warp_def  3, 19, 3, ROUTE_11_GATE
@@ -85,6 +86,11 @@ Route11_2Trigger1:
 	closetext
 	dotrigger $2
 	end
+	
+Route11_2Callback:
+	setevent EVENT_ROUTE_11_BRIDGE_BUILT
+	clearevent EVENT_ROUTE_11_BRIDGE_NOT_BUILT
+	return
 	
 Route11CheckRegion:
 	ld a, [wYCoord]

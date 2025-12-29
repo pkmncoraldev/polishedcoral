@@ -126,6 +126,11 @@ NPCTrade:: ; fcba8
 	rst CopyBytes
 	jr .cont
 .trade9
+	ld hl, wBackupName
+	ld de, wTradeDrowzeeName
+	ld bc, NAME_LENGTH
+	rst CopyBytes
+	jr .cont
 .trade10
 .cont
 	call RestartMapMusic
@@ -487,7 +492,7 @@ TradeTexts: ; fcf53
 	dw TradeIntroText6
 	dw TradeIntroText7
 	dw TradeIntroText8
-	dw TradeIntroText1
+	dw TradeIntroText9
 	dw TradeIntroText1
 
 ; cancel
@@ -499,7 +504,7 @@ TradeTexts: ; fcf53
 	dw TradeCancelText6
 	dw TradeCancelText7
 	dw TradeCancelText8
-	dw TradeCancelText1
+	dw TradeCancelText9
 	dw TradeCancelText1
 
 ; wrong mon
@@ -511,7 +516,7 @@ TradeTexts: ; fcf53
 	dw TradeWrongText6
 	dw TradeWrongText7
 	dw TradeWrongText8
-	dw TradeWrongText1
+	dw TradeWrongText9
 	dw TradeWrongText1
 
 ; completed
@@ -523,7 +528,7 @@ TradeTexts: ; fcf53
 	dw TradeCompleteText6
 	dw TradeCompleteText7
 	dw TradeCompleteText8
-	dw TradeCompleteText1
+	dw TradeCompleteText9
 	dw TradeCompleteText1
 
 ; after
@@ -535,7 +540,7 @@ TradeTexts: ; fcf53
 	dw TradeAfterText6
 	dw TradeAfterText7
 	dw TradeAfterText8
-	dw TradeAfterText1
+	dw TradeAfterText9
 	dw TradeAfterText1
 ; fcf7b
 
@@ -723,5 +728,25 @@ TradeCompleteText8:
 
 TradeAfterText8:
 	text_jump UnknownText_TradeAfterText8
+	db "@"
+	
+TradeIntroText9:
+	text_jump UnknownText_TradeIntroText9
+	db "@"
+
+TradeCancelText9:
+	text_jump UnknownText_TradeCancelText9
+	db "@"
+
+TradeWrongText9:
+	text_jump UnknownText_TradeWrongText9
+	db "@"
+
+TradeCompleteText9:
+	text_jump UnknownText_TradeCompleteText9
+	db "@"
+
+TradeAfterText9:
+	text_jump UnknownText_TradeAfterText9
 	db "@"
 	

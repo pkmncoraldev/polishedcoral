@@ -151,6 +151,10 @@ Route9NPC1Text:
 	done
 	
 Route9NPC2:
+	checkevent EVENT_ROUTE_11_BRIDGE_BUILT
+	iffalse .no_bridge
+	jumptextfaceplayer Route9NPC2Text2
+.no_bridge
 	jumptextfaceplayer Route9NPC2Text
 	
 Route9NPC2Text:
@@ -161,6 +165,12 @@ Route9NPC2Text:
 	line "of roadblock."
 	
 	para "NORTH it is, then!"
+	done
+	
+Route9NPC2Text2:
+	text "NORTH or SOUTH."
+	
+	para "Decisions, decisions…"
 	done
 	
 Route9Sign:

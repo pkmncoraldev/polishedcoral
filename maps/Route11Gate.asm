@@ -136,7 +136,13 @@ Route11NPCsText5:
 	
 	para "And his #MON…"
 	
-	para "Talk about suave!"
+	para "So suave!"
+	
+	para "A debonaire dude"
+	line "like him would"
+	cont "never have a cute,"
+	cont "girly #MON like"
+	cont "FLITTLE!"
 	done
 	
 Route11NPCsCheckDialog:

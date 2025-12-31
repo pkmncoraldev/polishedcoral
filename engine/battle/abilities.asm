@@ -975,6 +975,17 @@ DampAbility:
 	ld hl, DampAbilityText
 	jp StdBattleTextBox
 
+RunOpportunistAbility:
+	ld a, BATTLE_VARS_ABILITY_OPP
+	call GetBattleVar
+	cp OPPORTUNIST
+	ret nz
+	call SwitchTurn
+	ld a, [wLoweredStat]
+	ld b, a
+	call StatUpAbility
+	jp SwitchTurn
+
 RunEnemyStatIncreaseAbilities:
 	call SwitchTurn
 	ld hl, StatIncreaseAbilities
@@ -1050,6 +1061,15 @@ StatUpAbility:
 	ld a, [wAttackMissed]
 	and a
 	jr nz, .cant_raise
+	ld a, BATTLE_VARS_ABILITY	; otherwise we get in an opportunist loop
+	call GetBattleVar
+	cp OPPORTUNIST
+	jr nz, .not_opportunist
+	ld a, 1
+	ld [wOpportunistActivated], a
+	farcall BattleCommand_statupmessage
+	jr .done
+.not_opportunist
 	call ShowAbilityActivation
 	farcall BattleCommand_statupmessage
 	jr .done
@@ -1074,6 +1094,8 @@ StatUpAbility:
 	call StdBattleTextBox
 	call SwitchTurn
 .done
+	xor a
+	ld [wOpportunistActivated], a
 	pop af
 	ld [wAttackMissed], a
 	jp EnableAnimations

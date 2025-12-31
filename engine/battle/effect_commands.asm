@@ -5507,6 +5507,8 @@ DoubleUp:
 	pop bc
 	ld b, c
 	push de
+	ld a, 0 ; opportunist works for both increases
+	ld [wOpportunistActivated], a
 	call ResetMiss
 	call BattleCommand_statup
 	pop de
@@ -5938,9 +5940,21 @@ BattleCommand_statupmessage: ; 363b8
 	ld b, a
 	inc b
 	call GetStatName
+	ld a, [wOpportunistActivated]
+	and a
+	jr nz, .opportunist
 	ld hl, .stat
+	call BattleTextBox
+	; Opportunist activates here to give proper messages. A bit awkward,
+	; but the alternative is to rewrite the stat-up logic.
+;	ld a, [wLoweredStat]
+;	and $f
+;	ret nz
+	
+	farjp RunOpportunistAbility
+.opportunist
+	ld hl, .opportunist_text
 	jp BattleTextBox
-
 .stat
 	text_jump UnknownText_0x1c0cc6
 	start_asm
@@ -5950,6 +5964,16 @@ BattleCommand_statupmessage: ; 363b8
 	ret z
 	ld hl, .wayup
 	ret
+	
+.opportunist_text
+	text_jump UnknownText_0x1c0cc6
+	start_asm
+	ld hl, .up_opportunist
+	ld a, [wLoweredStat]
+	and $f0
+	ret z
+	ld hl, .wayup_opportunist
+	ret
 
 .wayup
 	text_jump UnknownText_0x1c0cd0
@@ -5957,6 +5981,14 @@ BattleCommand_statupmessage: ; 363b8
 
 .up
 	text_jump UnknownText_0x1c0ce0
+	db "@"
+	
+.wayup_opportunist
+	text_jump UnknownText_0x1c0cd0_2
+	db "@"
+	
+.up_opportunist
+	text_jump UnknownText_0x1c0ce0_2
 	db "@"
 
 BattleCommand_statdownmessage:

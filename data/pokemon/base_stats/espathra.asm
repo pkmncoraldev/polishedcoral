@@ -8,7 +8,7 @@
 	db NO_ITEM ; item 2
 	dn FEMALE_50, 3 ; gender, step cycles to hatch
 	dn 7, 7 ; frontpic dimensions
-	db NO_ABILITY ; OPPORTUNIST ; ability 1
+	db OPPORTUNIST ; ability 1
 	db FRISK ; ability 2
 	db SPEED_BOOST ; hidden ability
 	db MEDIUM_SLOW ; growth rate

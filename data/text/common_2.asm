@@ -652,9 +652,20 @@ UnknownText_0x1c0cd0::
 	interpret_data
 	text $4c, "rose sharply!"
 	prompt
+	
+UnknownText_0x1c0cd0_2::
+	interpret_data
+	text $4c, "rose sharply@"
+	text $4c, "via OPPORTUNIST!"
+	prompt
 
 UnknownText_0x1c0ce0::
 	text " rose!"
+	prompt
+
+UnknownText_0x1c0ce0_2::
+	text " rose@"
+	text $4c, "via OPPORTUNIST!"
 	prompt
 
 UnknownText_0x1c0ceb::

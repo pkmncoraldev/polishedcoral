@@ -146,6 +146,7 @@ AbilityNames:
 	dw FlowerGift
 	dw Triage
 	dw Defeatist
+	dw Opportunist
 
 NoAbility:     db "-","-","-","@"
 Stench:        db "STENCH@"
@@ -294,6 +295,7 @@ SurgeSurfer:   db "SURGE SURFER@"
 FlowerGift:	   db "FLOWER GIFT@"
 Triage:        db "TRIAGE@"
 Defeatist:	   db "DEFEATIST@"
+Opportunist:   db "OPPORTUNIST@"
 
 
 AbilityDescriptions:
@@ -444,6 +446,7 @@ AbilityDescriptions:
 	dw FlowerGiftDescription
 	dw TriageDescription
 	dw DefeatistDescription
+	dw OpportunistDescription
 
 NoAbilityDescription:
 	db    "Abilities are"
@@ -1016,3 +1019,7 @@ TriageDescription:
 DefeatistDescription:
 	db    "Half power at"
 	next1 "below half HP.@"
+	
+OpportunistDescription:
+	db    "Copies the foe's"
+	next1 "stat increases.@"

@@ -174,7 +174,7 @@ BattleAnimations::
 	dba BattleAnim_FlameBurst
 	dba BattleAnim_HyperVoice
 	dba BattleAnim_Curse
-	dba BattleAnim_GyroBall
+	dba BattleAnim_LuminaCrash
 	dba BattleAnim_EnergyBall
 	dba BattleAnim_PsyshieldBash
 	dba BattleAnim_GunkShot

@@ -72,7 +72,7 @@ TMHMMoves:
 	db STONE_EDGE                          ; TM71
 	db THUNDER_FANG                        ; TM72
 	db THUNDER_WAVE                        ; TM73
-	db GYRO_BALL                           ; TM74
+	db LUMINA_CRASH                           ; TM74
 	db SWORDS_DANCE                        ; TM75
 	db LEECH_LIFE
 	db X_SCISSOR

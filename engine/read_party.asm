@@ -206,31 +206,31 @@ endr
 	inc de
 	cp RETURN
 	jr z, .return
-	cp GYRO_BALL
-	jr nz, .done_special_moves
+	; cp GYRO_BALL
+	; jr nz, .done_special_moves
 
-	; Set speed EVs and IVs to 0
-	push hl
-	push de
-	push bc
-	ld a, [wOTPartyCount]
-	dec a
-	ld hl, wOTPartyMon1SpdEV
-	ld bc, PARTYMON_STRUCT_LENGTH
-	rst AddNTimes
-	ld [hl], 0
-	ld a, [wOTPartyCount]
-	dec a
-	ld hl, wOTPartyMon1DefSpdDV
-	ld bc, PARTYMON_STRUCT_LENGTH
-	rst AddNTimes
-	ld a, [hl]
-	; $f1, not $f0, to leave Hidden Power type alone
-	and $f1
-	ld [hl], a
-	pop bc
-	pop de
-	pop hl
+	; ; Set speed EVs and IVs to 0
+	; push hl
+	; push de
+	; push bc
+	; ld a, [wOTPartyCount]
+	; dec a
+	; ld hl, wOTPartyMon1SpdEV
+	; ld bc, PARTYMON_STRUCT_LENGTH
+	; rst AddNTimes
+	; ld [hl], 0
+	; ld a, [wOTPartyCount]
+	; dec a
+	; ld hl, wOTPartyMon1DefSpdDV
+	; ld bc, PARTYMON_STRUCT_LENGTH
+	; rst AddNTimes
+	; ld a, [hl]
+	; ; $f1, not $f0, to leave Hidden Power type alone
+	; and $f1
+	; ld [hl], a
+	; pop bc
+	; pop de
+	; pop hl
 	jr .done_special_moves
 
 .return

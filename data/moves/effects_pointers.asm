@@ -144,7 +144,7 @@ MoveEffectsPointers:
 	dw ParalyzeFlinchHit
 	dw KnockOff
 	dw FuryStrikes
-	dw GyroBall
+	dw SpecialDefenseDown2Hit
 	dw BodySlam
 	dw BrickBreak
 	dw LockOn

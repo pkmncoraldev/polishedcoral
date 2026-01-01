@@ -174,7 +174,7 @@
 	const FLAME_BURST  ; $ac
 	const HYPER_VOICE  ; $ad
 	const CURSE        ; $ae
-	const GYRO_BALL    ; $af
+	const LUMINA_CRASH ; $af
 	const ENERGY_BALL  ; $b0
 	const PSYSHIELD_BASH		   ; $b1
 	const GUNK_SHOT    ; $b2

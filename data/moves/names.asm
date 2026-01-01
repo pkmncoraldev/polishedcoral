@@ -173,7 +173,7 @@ MoveNames::
 	db "FLAME BURST@"
 	db "HYPER VOICE@"
 	db "CURSE@"
-	db "GYRO BALL@"
+	db "LUMINA CRASH@"
 	db "ENERGY BALL@"
 	db "PSYSHIELD@"
 	db "GUNK SHOT@"

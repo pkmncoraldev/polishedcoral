@@ -94,7 +94,7 @@ ENDM
 	add_tm STONE_EDGE		; $46
 	add_tm FIRE_FANG		; $47
 	add_tm THUNDER_WAVE		; $48
-	add_tm GYRO_BALL		; $49
+	add_tm LUMINA_CRASH		; $49
 	add_tm SWORDS_DANCE		; $4a
 	add_tm LEECH_LIFE		; $4b
 	add_tm X_SCISSOR		; $4c

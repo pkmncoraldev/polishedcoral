@@ -1,6 +1,5 @@
 BattleAnim_MirrorMove:
 BattleAnim_0:
-BattleAnim_GyroBall:
 BattleAnim_ElectroBall:
 	anim_ret
 
@@ -578,6 +577,7 @@ BattleAnim_HornLeech:
 	anim_ret
 
 BattleAnim_PowerGem:
+BattleAnim_LuminaCrash:
 	anim_1gfx ANIM_GFX_SHINE
 	anim_bgp $1b
 	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0

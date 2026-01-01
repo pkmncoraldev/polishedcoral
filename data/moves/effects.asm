@@ -783,6 +783,30 @@ ShadowBall:
 	statdownmessage
 	pickpocket
 	endmove
+	
+SpecialDefenseDown2Hit:
+	checkobedience
+	usedmovetext
+	doturn
+	pressure
+	critical
+	effectchance
+	damagestats
+	damagecalc
+	stab
+	damagevariation
+	checkhit
+	hittarget
+	failuretext
+	checkfaint
+	criticaltext
+	supereffectivetext
+	postfainteffects
+	posthiteffects
+	specialdefensedown2
+	statdownmessage
+	pickpocket
+	endmove
 
 AccuracyDownHit:
 MudSlap:

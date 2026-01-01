@@ -428,7 +428,6 @@ ContactMoves::
 	db FLARE_BLITZ
 	db FLY
 	db MULTI_MOVE_FURY_COMET_BARRAGE_SLAP_CANNON
-	db GYRO_BALL
 	db GIGA_IMPACT
 	db HEADBUTT
 	db HI_JUMP_KICK
@@ -525,7 +524,6 @@ SubstituteBypassMoves::
 DynamicPowerMoves::
 ; used by Forewarn and for move power listing
 	db DRAGON_RAGE
-	db GYRO_BALL
 	db MAGNITUDE
 	db NIGHT_SHADE
 	db RETURN

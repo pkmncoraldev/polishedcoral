@@ -239,6 +239,8 @@ BattleAnimFrameData: ; ce85e
 	dw .Frameset_SpikeShield_NNE         ; BATTLEANIMFRAMESET_SPIKE_SHIELD_NNE
 	dw .Frameset_SpikeShield_NE          ; BATTLEANIMFRAMESET_SPIKE_SHIELD_NE
 	dw .Frameset_SpikeShield_E           ; BATTLEANIMFRAMESET_SPIKE_SHIELD_E
+	dw .Frameset_LuminaCrash             ; BATTLEANIMFRAMESET_LUMINA_CRASH
+	dw .Frameset_LuminaCrashTiny         ; BATTLEANIMFRAMESET_LUMINA_CRASH_TINY
 
 
 	 ; OAM index (see battle/objects/oam.asm), flip flags / duration
@@ -889,12 +891,12 @@ BattleAnimFrameData: ; ce85e
 
 .Frameset_Chick1:
 	db BATTLEANIMOAMSET_1B, $04
-	db BATTLEANIMOAMSET_7E, $04
+	db BATTLEANIMOAMSET_21, $04
 	db -2
 
 .Frameset_Chick2:
 	db BATTLEANIMOAMSET_1B, $44
-	db BATTLEANIMOAMSET_7E, $44
+	db BATTLEANIMOAMSET_21, $44
 	db -2
 
 .Frameset_Amnesia1:
@@ -986,7 +988,7 @@ BattleAnimFrameData: ; ce85e
 
 .Frameset_Flower:
 	db BATTLEANIMOAMSET_1B, $07
-	db BATTLEANIMOAMSET_7E, $07
+	db BATTLEANIMOAMSET_21, $07
 	db -2
 
 .Frameset_BarrageBall:
@@ -1155,7 +1157,7 @@ BattleAnimFrameData: ; ce85e
 	db -1
 
 .Frameset_Pencil:
-	db BATTLEANIMOAMSET_BA, $20
+	db BATTLEANIMOAMSET_21, $20
 	db -1
 
 .Frameset_EncoreHand:
@@ -1172,7 +1174,7 @@ BattleAnimFrameData: ; ce85e
 
 .Frameset_MorningSun:
 	db BATTLEANIMOAMSET_20, $0b
-	db BATTLEANIMOAMSET_BA, $0b
+	db BATTLEANIMOAMSET_21, $0b
 	db BATTLEANIMOAMSET_1B, $0b
 	db -4
 
@@ -1257,7 +1259,7 @@ BattleAnimFrameData: ; ce85e
 
 .Frameset_Taunt:
 	frame BATTLEANIMOAMSET_1B,  20
-	frame BATTLEANIMOAMSET_7E,  10
+	frame BATTLEANIMOAMSET_21,  10
 	dorestart
 
 .Frameset_LongPunch:
@@ -1692,14 +1694,32 @@ BattleAnimFrameData: ; ce85e
 	frame BATTLEANIMOAMSET_10F,  4, OAM_X_FLIP, OAM_Y_FLIP
 	delanim
 
-.Frameset_SpikeShield_NNE
+.Frameset_SpikeShield_NNE:
 	frame BATTLEANIMOAMSET_21,  8
 	endanim
 
-.Frameset_SpikeShield_NE
+.Frameset_SpikeShield_NE:
 	frame BATTLEANIMOAMSET_9A,  8
 	endanim
 
-.Frameset_SpikeShield_E
+.Frameset_SpikeShield_E:
 	frame BATTLEANIMOAMSET_7F,  8, OAM_Y_FLIP
 	endanim
+
+.Frameset_LuminaCrash:
+	frame BATTLEANIMOAMSET_111, 2
+	frame BATTLEANIMOAMSET_110, 2
+	dorestart
+
+.Frameset_LuminaCrashTiny:
+	frame BATTLEANIMOAMSET_20, 2
+	frame BATTLEANIMOAMSET_06, 2
+	frame BATTLEANIMOAMSET_20, 2
+	frame BATTLEANIMOAMSET_06, 2
+	frame BATTLEANIMOAMSET_20, 2
+	frame BATTLEANIMOAMSET_06, 2
+	frame BATTLEANIMOAMSET_20, 2
+	frame BATTLEANIMOAMSET_06, 2
+	frame BATTLEANIMOAMSET_20, 2
+	frame BATTLEANIMOAMSET_06, 2
+	delanim

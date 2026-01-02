@@ -611,25 +611,25 @@ BattleAnim_Waterfall:
 	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $14, $2, $0
 	anim_sound 0, 1, SFX_BUBBLE_BEAM
 	anim_wait 8
-	anim_obj ANIM_OBJ_HIT_YFIX, 136, 64, $0
-	anim_obj ANIM_OBJ_BUBBLE_SPLASH, 140, 64, $d0
-	anim_obj ANIM_OBJ_BUBBLE_SPLASH, 140, 64, $50
+	anim_obj ANIM_OBJ_HIT_YFIX, 134, 64, $0
+	anim_obj ANIM_OBJ_BUBBLE_SPLASH, 138, 64, $d0
+	anim_obj ANIM_OBJ_BUBBLE_SPLASH, 130, 64, $10
 	anim_wait 3
-	anim_obj ANIM_OBJ_HIT_YFIX, 136, 56, $0
-	anim_obj ANIM_OBJ_BUBBLE_SPLASH, 140, 56, $d0
-	anim_obj ANIM_OBJ_BUBBLE_SPLASH, 140, 56, $50
+	anim_obj ANIM_OBJ_HIT_YFIX, 134, 56, $0
+	anim_obj ANIM_OBJ_BUBBLE_SPLASH, 138, 56, $d0
+	anim_obj ANIM_OBJ_BUBBLE_SPLASH, 130, 56, $10
 	anim_wait 3
-	anim_obj ANIM_OBJ_HIT_YFIX, 136, 48, $0
-	anim_obj ANIM_OBJ_BUBBLE_SPLASH, 140, 48, $d0
-	anim_obj ANIM_OBJ_BUBBLE_SPLASH, 140, 48, $50
+	anim_obj ANIM_OBJ_HIT_YFIX, 134, 48, $0
+	anim_obj ANIM_OBJ_BUBBLE_SPLASH, 138, 48, $d0
+	anim_obj ANIM_OBJ_BUBBLE_SPLASH, 130, 48, $10
 	anim_wait 3
-	anim_obj ANIM_OBJ_HIT_YFIX, 136, 40, $0
-	anim_obj ANIM_OBJ_BUBBLE_SPLASH, 140, 40, $d0
-	anim_obj ANIM_OBJ_BUBBLE_SPLASH, 140, 40, $50
+	anim_obj ANIM_OBJ_HIT_YFIX, 134, 40, $0
+	anim_obj ANIM_OBJ_BUBBLE_SPLASH, 138, 40, $d0
+	anim_obj ANIM_OBJ_BUBBLE_SPLASH, 130, 40, $10
 	anim_wait 3
-	anim_obj ANIM_OBJ_HIT_YFIX, 136, 32, $0
-	anim_obj ANIM_OBJ_BUBBLE_SPLASH, 140, 32, $d0
-	anim_obj ANIM_OBJ_BUBBLE_SPLASH, 140, 32, $50
+	anim_obj ANIM_OBJ_HIT_YFIX, 134, 32, $0
+	anim_obj ANIM_OBJ_BUBBLE_SPLASH, 138, 32, $d0
+	anim_obj ANIM_OBJ_BUBBLE_SPLASH, 130, 32, $10
 	anim_wait 8
 	anim_ret
 

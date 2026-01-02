@@ -151,6 +151,18 @@ RunBattleAnimScript: ; cc163
 	jr nz, .find
 
 .not_rollout
+; Slow down Surf's animation for DoubleSpeed
+	ld a, [wFXAnimID]
+	cp SURF
+	jr nz, .not_surf
+	ld a, [wUnusedScriptByte]
+	and 1
+	xor 1
+	ld [wUnusedScriptByte], a
+	jr z, .not_surf
+	call DelayFrame
+	
+.not_surf
 	call DelayFrame
 
 .done

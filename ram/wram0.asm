@@ -127,7 +127,9 @@ wAutoInputLength:: ds 1
 wMonStatusFlags:: ds 1
 wGameLogicPaused:: ds 1
 wSpriteUpdatesEnabled:: ds 1
-	ds 1
+
+wUnusedScriptByte:: ds 1
+
 wMapTimeOfDay:: ds 1
 	ds 3
 wPrinterConnectionOpen:: ds 1

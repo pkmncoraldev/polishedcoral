@@ -1559,7 +1559,7 @@ BattleAnim_ThunderFang:
 	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $8, $2
 	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
 	anim_sound 0, 1, SFX_THUNDER
-	anim_obj ANIM_OBJ_THUNDER_RIGHT, 152, 68, $0
+	anim_obj ANIM_OBJ_THUNDER_CENTER, 136, 68, $0
 	anim_wait 32
 	anim_ret
 
@@ -1811,8 +1811,8 @@ BattleAnim_Par:
 	anim_1gfx ANIM_GFX_STATUS
 	anim_call BattleAnimSub_BGCycleOBPalsGrayAndYellow_2
 	anim_sound 0, 0, SFX_THUNDERSHOCK
-	anim_obj ANIM_OBJ_PARALYZED, 20, 88, $42
-	anim_obj ANIM_OBJ_PARALYZED, 76, 88, $c2
+	anim_obj ANIM_OBJ_PARALYZED, 20, 90, $42
+	anim_obj ANIM_OBJ_PARALYZED, 76, 90, $c2
 	anim_wait 128
 	anim_ret
 
@@ -2246,11 +2246,11 @@ BattleAnim_WaterGun:
 	anim_1gfx ANIM_GFX_WATER
 	anim_call BattleAnim_FollowPlayerHead_1
 	anim_sound 16, 2, SFX_WATER_GUN
-	anim_obj ANIM_OBJ_WATER_GUN, 64, 88, $0
+	anim_obj ANIM_OBJ_WATER_GUN, 64, 84, $0
 	anim_wait 8
-	anim_obj ANIM_OBJ_WATER_GUN, 64, 76, $0
+	anim_obj ANIM_OBJ_WATER_GUN, 64, 72, $0
 	anim_wait 8
-	anim_obj ANIM_OBJ_WATER_GUN, 64, 82, $0
+	anim_obj ANIM_OBJ_WATER_GUN, 64, 78, $0
 	anim_wait 24
 	anim_bgeffect ANIM_BG_WATER, $1c, $0, $0
 	anim_wait 8
@@ -2306,8 +2306,8 @@ BattleAnim_Surf:
 	anim_obj ANIM_OBJ_SURF, 88, 104, $8
 .loop
 	anim_sound 0, 1, SFX_SURF
-	anim_wait 112
-	anim_loop 1, .loop
+	anim_wait 40
+	anim_loop 3, .loop
 	anim_incobj  1
 	anim_wait 56
 	anim_ret
@@ -2421,7 +2421,7 @@ BattleAnim_Thunderpunch:
 	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $8, $2
 	anim_call BattleAnimSub_BGCycleOBPalsGrayAndYellow_2
 	anim_sound 0, 1, SFX_THUNDER
-	anim_obj ANIM_OBJ_THUNDER_RIGHT, 152, 68, $0
+	anim_obj ANIM_OBJ_THUNDER_CENTER, 136, 68, $0
 	anim_wait 64
 	anim_ret
 
@@ -2453,7 +2453,7 @@ BattleAnim_ThunderWave:
 	anim_call BattleAnimSub_BGCycleOBPalsGrayAndYellow_2
 	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $4, $3
 	anim_sound 0, 1, SFX_THUNDERSHOCK
-	anim_obj ANIM_OBJ_THUNDER_WAVE, 136, 50, $0
+	anim_obj ANIM_OBJ_THUNDER_WAVE, 136, 52, $0
 	anim_wait 20
 	anim_bgp $1b
 	anim_incobj  1
@@ -3852,10 +3852,23 @@ BattleAnim_LeechLife:
 	anim_setobjpal PAL_BATTLE_OB_BLUE, PAL_BTLCUSTOM_GRAY
 	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_RED
 	anim_3gfx ANIM_GFX_HORN, ANIM_GFX_HIT, ANIM_GFX_CHARGE
-	anim_call BattleAnim_PoisonSting.hit
+	anim_obj ANIM_OBJ_NEEDLE, 64, 92, $14
+	anim_wait 16
+	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $8, $2
+	anim_sound 0, 1, SFX_POISON_STING
+	anim_obj ANIM_OBJ_HIT_SMALL, 136, 56, $0
+	anim_wait 16
 .loop
-	anim_call BattleAnimSub_Drain
-	anim_loop 4, .loop
+	anim_sound 6, 3, SFX_WATER_GUN
+	anim_obj ANIM_OBJ_ABSORB, 128, 48, $2
+	anim_wait 3
+	anim_sound 6, 3, SFX_WATER_GUN
+	anim_obj ANIM_OBJ_ABSORB, 136, 64, $3
+	anim_wait 4
+	anim_sound 6, 3, SFX_WATER_GUN
+	anim_obj ANIM_OBJ_ABSORB, 136, 32, $4
+	anim_wait 3
+	anim_loop 6, .loop
 	anim_wait 28
 	anim_ret
 
@@ -3880,17 +3893,22 @@ BattleAnim_Psywave:
 
 BattleAnim_Thrash:
 	anim_1gfx ANIM_GFX_HIT
-	anim_sound 0, 1, SFX_POUND
-	anim_obj ANIM_OBJ_PALM, 120, 72, $0
-	anim_obj ANIM_OBJ_HIT_BIG_YFIX, 120, 72, $0
-	anim_wait 6
-	anim_sound 0, 1, SFX_MOVE_PUZZLE_PIECE
-	anim_obj ANIM_OBJ_PUNCH, 136, 56, $0
-	anim_obj ANIM_OBJ_HIT_BIG_YFIX, 136, 56, $0
-	anim_wait 6
-	anim_sound 0, 1, SFX_DOUBLE_KICK
-	anim_obj ANIM_OBJ_KICK, 152, 40, $0
-	anim_obj ANIM_OBJ_HIT_BIG_YFIX, 152, 40, $0
+	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $60, $2, $0
+.loop
+	anim_sound 0, 1, SFX_TACKLE
+	anim_obj ANIM_OBJ_PUNCH, 120, 64, $0
+	anim_obj ANIM_OBJ_HIT_BIG_YFIX, 120, 64, $0
+	anim_wait 10
+	anim_sound 0, 1, SFX_MEGA_KICK
+	anim_obj ANIM_OBJ_KICK, 152, 48, $0
+	anim_obj ANIM_OBJ_HIT_BIG_YFIX, 152, 48, $0
+	anim_wait 10
+	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $6, $2
+	anim_sound 0, 1, SFX_KARATE_CHOP
+	anim_obj ANIM_OBJ_PALM, 128, 36, $0
+	anim_obj ANIM_OBJ_HIT_BIG_YFIX, 128, 36, $0
+	anim_wait 10
+	anim_loop 2, .loop
 	anim_wait 16
 	anim_ret
 
@@ -4110,7 +4128,7 @@ BattleAnim_PsychicM:
 .loop
 	anim_sound 6, 2, SFX_PSYCHIC
 	anim_obj ANIM_OBJ_WAVE, 64, 88, $2
-	anim_wait 8
+	anim_wait 10
 	anim_loop 8, .loop
 	anim_wait 96
 	anim_incbgeffect ANIM_BG_PSYCHIC
@@ -4182,11 +4200,11 @@ BattleAnim_WingAttack:
 BattleAnim_Disable:
 	anim_2gfx ANIM_GFX_LIGHTNING, ANIM_GFX_STATUS
 	anim_call BattleAnimSub_BGCycleOBPalsGrayAndYellow_2
-	anim_obj ANIM_OBJ_DISABLE, 132, 56, $0
+	anim_obj ANIM_OBJ_DISABLE, 132, 52, $0
 	anim_wait 16
 	anim_sound 0, 1, SFX_BIND
-	anim_obj ANIM_OBJ_PARALYZED, 104, 56, $42
-	anim_obj ANIM_OBJ_PARALYZED, 160, 56, $c2
+	anim_obj ANIM_OBJ_PARALYZED, 104, 52, $42
+	anim_obj ANIM_OBJ_PARALYZED, 160, 52, $c2
 	anim_wait 96
 	anim_ret
 
@@ -5321,7 +5339,7 @@ BattleAnim_FutureSight:
 	anim_call BattleAnimSub_Agility
 .loop
 	anim_sound 0, 0, SFX_THROW_BALL
-	anim_wait 16
+	anim_wait 24
 	anim_loop 4, .loop
 	anim_incbgeffect ANIM_BG_PSYCHIC
 	anim_ret

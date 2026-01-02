@@ -1298,7 +1298,7 @@ BattleAnimFunction_WaterGun: ; cd71a (33:571a)
 	ld hl, BATTLEANIMSTRUCT_YCOORD
 	add hl, bc
 	ld a, [hl]
-	cp $30
+	cp $2c
 	jr c, .run_down
 	ld a, $2
 	call Functionce70a
@@ -1322,7 +1322,7 @@ BattleAnimFunction_WaterGun: ; cd71a (33:571a)
 	ld [hl], $0
 	ld hl, BATTLEANIMSTRUCT_YCOORD
 	add hl, bc
-	ld [hl], $30
+	ld [hl], $2c
 	ld hl, BATTLEANIMSTRUCT_01
 	add hl, bc
 	ld a, [hl]
@@ -1332,7 +1332,7 @@ BattleAnimFunction_WaterGun: ; cd71a (33:571a)
 	ld hl, BATTLEANIMSTRUCT_YOFFSET
 	add hl, bc
 	ld a, [hl]
-	cp $10
+	cp $18
 	jr nc, .splash
 	inc [hl]
 	ret

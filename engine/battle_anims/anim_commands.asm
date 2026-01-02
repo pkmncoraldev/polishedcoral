@@ -139,8 +139,8 @@ RunBattleAnimScript: ; cc163
 	cp ROLLOUT
 	jr nz, .not_rollout
 
-	ld a, $2e
-	ld b, 5
+	ld a, ANIM_BG_ROLLOUT
+	ld b, NUM_ANIM_BG_EFFECTS
 	ld de, 4
 	ld hl, wActiveBGEffects
 .find
@@ -155,10 +155,10 @@ RunBattleAnimScript: ; cc163
 	ld a, [wFXAnimID]
 	cp SURF
 	jr nz, .not_surf
-	ld a, [wUnusedScriptByte]
+	ld a, [wSurfAnimSpeedRegulator]
 	and 1
 	xor 1
-	ld [wUnusedScriptByte], a
+	ld [wSurfAnimSpeedRegulator], a
 	jr z, .not_surf
 	call DelayFrame
 	
@@ -169,7 +169,8 @@ RunBattleAnimScript: ; cc163
 	ld a, [wBattleAnimFlags]
 	bit 0, a
 	jr z, .playframe
-
+	xor a
+	ld [wSurfAnimSpeedRegulator], a
 	jp BattleAnim_ClearCGB_OAMFlags
 ; cc1a1
 

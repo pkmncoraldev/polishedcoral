@@ -1,4 +1,4 @@
-;MoveTable: ; - for debugging
+;MoveTable: ; - for Sour's move animation debugging
 ;;; Gen 1
 ;;	db TACKLE_SCRATCH_POUND
 ;;	db MULTI_MOVE_FURY_COMET_BARRAGE_SLAP_CANNON
@@ -275,8 +275,7 @@
 ;	db 0
 
 DisplayUsedMoveText:
-;	;jr .do_it ; comment this out for testing all move animations
-;	ld a, BATTLE_VARS_MOVE
+;	ld a, BATTLE_VARS_MOVE	 ; this block is for testing all move animations
 ;	call GetBattleVarAddr
 ;	ld de, MoveTable
 ;.loop
@@ -293,8 +292,7 @@ DisplayUsedMoveText:
 ;	pop de
 ;	pop hl
 ;	jr .loop
-;
-;.do_it
+
 ; battle command 03
 
 	ldh a, [hBattleTurn]

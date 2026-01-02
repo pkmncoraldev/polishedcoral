@@ -128,7 +128,7 @@ wMonStatusFlags:: ds 1
 wGameLogicPaused:: ds 1
 wSpriteUpdatesEnabled:: ds 1
 
-wUnusedScriptByte:: ds 1
+	ds 1
 
 wMapTimeOfDay:: ds 1
 	ds 3
@@ -648,6 +648,7 @@ wLastEnemyMove:: ds 1
 wEnemyUsingItem:: ds 1
 wEnemySwitchItemCheck:: ds 1
 
+wSurfAnimSpeedRegulator::
 wOpportunistActivated:: ds 1
 	ds 6
 

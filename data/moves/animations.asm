@@ -4778,6 +4778,7 @@ BattleAnim_Charm:
 BattleAnim_Rollout:
 	anim_1gfx ANIM_GFX_HIT
 	anim_sound 0, 0, SFX_SPARK
+	anim_wait 12
 	anim_call BattleAnim_TargetObj_2Row
 	anim_bgeffect ANIM_BG_ROLLOUT, $60, $1, $1
 	anim_bgeffect ANIM_BG_BODY_SLAM, $0, $1, $0

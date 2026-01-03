@@ -250,7 +250,7 @@ EvolutionMoves::
 	db DRAGON_DARTS                         ; DRAGAPULT
 	db PSYSHOCK                             ; WYRDEER
 	db NO_MOVE                              ; FLITTLE
-	db NO_MOVE	;TODO LUMINA CRASH                            ; ESPATHRA
+	db LUMINA_CRASH                         ; ESPATHRA
 	db AMNESIA                              ; CLODSIRE
 	db NO_MOVE                              ; FARIGIRAF
 	db NO_MOVE                              ; EGG

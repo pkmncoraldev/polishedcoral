@@ -19,5 +19,5 @@
 	;         hp, atk, def, spd, sat, sdf
 
 	; tmhm
-	tmhm PROTECT, SUBSTITUTE
+	tmhm DRAGONBREATH, DOUBLE_TEAM, ENDURE, REST, ATTRACT, RETURN, TOXIC, HEADBUTT, PROTECT, SUBSTITUTE
 	; end

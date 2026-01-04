@@ -22,7 +22,7 @@ Route11_2_MapScriptHeader:
 	signpost 23, 13, SIGNPOST_JUMPTEXT, Route11_2BridgeSign2
 	signpost 37, 12, SIGNPOST_JUMPTEXT, Route11_2BorderSign
 
-	db 19 ; object events
+	db 20 ; object events
 	object_event 21, 52, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, SNUBBULL, -1, -1, PAL_NPC_PINK, PERSONTYPE_SCRIPT, 0, Route11_2Snubbull, -1
 	person_event SPRITE_ARTIFACTS, 52, 21, SPRITEMOVEDATA_TILE_DOWN_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_ROUTE_11_2_BONE
 	person_event SPRITE_BAGGAGE, -5, -5, SPRITEMOVEDATA_TILE_DOWN_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_ALWAYS_SET
@@ -265,6 +265,7 @@ Route11_2Kid1Text:
 	done
 	
 Route11_2Kid2:
+	priority ROUTE_11_2_NPC1, HIGH_PRIORITY
 	applyonemovement ROUTE_11_2_KID2, fix_facing
 	playsound SFX_JUMP_OVER_LEDGE
 	applyonemovement ROUTE_11_2_KID2, jump_in_place

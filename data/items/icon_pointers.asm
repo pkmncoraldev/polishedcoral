@@ -125,7 +125,7 @@ ItemIconPointers:
 	dba LumBerryIcon
 	dba SitrusBerryIcon
 	dba FigyBerryIcon
-	dba NoItemIcon
+	dba SodaPopIcon
 	dba NoItemIcon
 	dba NoItemIcon
 	dba NoItemIcon

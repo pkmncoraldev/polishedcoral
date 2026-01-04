@@ -124,7 +124,7 @@ ItemDescriptions:
 	dw LumBerryDesc
 	dw SitrusBerryDesc
 	dw FigyBerryDesc
-	dw TeruSamaDesc
+	dw SerpsprillaDesc
 	dw TeruSamaDesc
 	dw TeruSamaDesc
 	dw TeruSamaDesc
@@ -723,6 +723,10 @@ SitrusBerryDesc:
 FigyBerryDesc:
 	db   "Self-restore item."
 	next "(1/2 max HP, HOLD)@"
+	
+SerpsprillaDesc:
+	db   "Heals 150 HP."
+	next "Ups ATK and SPEED.@"
 	
 TeruSamaDesc:
 	db   "?@"

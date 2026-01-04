@@ -124,7 +124,7 @@ ItemNames::
 	db "LUM BERRY@"
 	db "SITRUS BERRY@"
 	db "FIGY BERRY@"
-	db "UNUSED@"
+	db "SERPSPARILLA@"
 	db "UNUSED@"
 	db "UNUSED@"
 	db "UNUSED@"

@@ -145,7 +145,7 @@
 	const SITRUS_BERRY ; 7c
 	const FIGY_BERRY   ; 7d
 	
-	const UNUSED1      ; 7e - replace
+	const SERPSPARILLA ; 7e - replace
 	const UNUSED2      ; 7f - replace
 	const UNUSED3      ; 80 - replace
 	const UNUSED4      ; 81 - replace
@@ -396,7 +396,7 @@
 	const NAM_LEMONADE     ; 63
 	const NAM_LEPPA_BERRY  ; 64
 	const NAM_LEVEL_BALL   ; 65
-	const NAM_UNUSED1      ; 66
+	const NAM_SERPSPARILLA      ; 66
 	const NAM_LIFE_ORB     ; 67
 	const NAM_LIGHT_BALL   ; 68
 	const NAM_LIGHT_CLAY   ; 69

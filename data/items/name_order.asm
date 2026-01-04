@@ -144,7 +144,7 @@ ItemNameOrder:
 	db NAM_LUM_BERRY    ; 70
 	db NAM_SITRUS_BERRY ; d7
 	db NAM_FIGY_BERRY   ; 40
-	db NAM_UNUSED1 ; 66
+	db NAM_SERPSPARILLA ; 66
 	db NAM_UNUSED2 ; 4a
 	db NAM_UNUSED3  ; ca
 	db NAM_UNUSED4 ; a0

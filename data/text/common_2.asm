@@ -651,22 +651,23 @@ UnknownText_0x1c0cc6::
 UnknownText_0x1c0cd0::
 	interpret_data
 	text $4c, "rose sharply!"
-	prompt
+	done
 	
 UnknownText_0x1c0cd0_2::
 	interpret_data
 	text $4c, "rose sharply@"
 	text $4c, "via OPPORTUNIST!"
-	prompt
+	done
 
 UnknownText_0x1c0ce0::
 	text " rose!"
-	prompt
+	done
 
 UnknownText_0x1c0ce0_2::
+	interpret_data
 	text " rose@"
 	text $4c, "via OPPORTUNIST!"
-	prompt
+	done
 
 UnknownText_0x1c0ceb::
 	text "<TARGET>'s"

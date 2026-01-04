@@ -309,6 +309,7 @@ AI_Items: ; 39196
 	dbw X_ACCURACY,   .XAccuracy
 	dbw SODA_POP,	  .SodaPop
 	dbw SUNSHINE_TEA, .SunshineTea
+	dbw SERPSPARILLA, .Serpsparilla
 	db $ff
 ; 381be
 
@@ -405,22 +406,29 @@ AI_Items: ; 39196
 	cp -1 + 20 percent
 	jp nc, .DontUse
 
-.UseHealItem: ; 38281 (e:4281)
+.UseHealItem:
 	jp .Use
-; 38284
 
-.HyperPotion: ; 38284
+
+.HyperPotion:
 	call .HealItem
 	jp c, .DontUse
 	ld b, 200
 	call EnemyUsedHyperPotion
 	jp .Use
-; 38292 (e:4292)
+
 .SodaPop:
 	call .HealItem
 	jp c, .DontUse
 	ld b, 50
 	call EnemyUsedSodaPop
+	jp .Use
+	
+.Serpsparilla:
+	call .HealItem
+	jp c, .DontUse
+	ld b, 200
+	call EnemyUsedSerpsparilla
 	jp .Use
 	
 .SunshineTea:
@@ -461,8 +469,8 @@ AI_Items: ; 39196
 ; 3831d (e:431d)
 
 .XAttack: ; 3831d
-	call .XItem
-	jp c, .DontUse
+;	call .XItem
+;	jp c, .DontUse
 	call EnemyUsedXAttack
 	jp .Use
 ; 38329
@@ -595,7 +603,7 @@ FullRestoreContinue: ; 383c6
 	ld [de], a
 	ld [wCurHPAnimMaxHP + 1], a
 	ld [wEnemyMonHP], a
-	jr EnemyPotionFinish
+	jp EnemyPotionFinish
 ; 383e8 (e:43e8)
 
 EnemyUsedPotion: ; 383e8
@@ -612,6 +620,34 @@ EnemyUsedSodaPop:
 	ld a, SODA_POP
 	ld b, 50
 	jr EnemyPotionContinue
+	
+EnemyUsedSerpsparilla:
+	ld a, SERPSPARILLA
+	ld b, 200
+	call EnemyPotionContinue
+	ld b, ATTACK
+	farcall CheckIfStatCanBeRaised
+	ld a, [wAttackMissed]
+	and a
+	jr nz, .max_atk
+	farcall BattleCommand_statupmessage
+	jr .speed
+.max_atk
+	farcall BattleCommand_statupfailtext
+.speed
+	xor a
+	ld [wAttackMissed], a
+	ld b, SPEED
+	farcall CheckIfStatCanBeRaised
+	ld a, [wAttackMissed]
+	and a
+	jr nz, .max_spd
+	farcall BattleCommand_statupmessage
+	jr .end
+.max_spd
+	farcall BattleCommand_statupfailtext
+.end
+	jp AIUpdateHUD
 	
 EnemyUsedSunshineTea:
 	ld a, SUNSHINE_TEA

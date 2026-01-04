@@ -139,7 +139,7 @@ ItemEffects: ; e73c
 	dw HealStatusEffect ; LUM_BERRY
 	dw RestoreHPEffect  ; SITRUS_BERRY
 	dw RestoreHPEffect  ; FIGY_BERRY
-	dw NoEffect         ; UNUSED1
+	dw SerpsparillaEffect         ; SERPSPARILLA
 	dw NoEffect         ; UNUSED2
 	dw NoEffect         ; UNUSED3
 	dw NoEffect         ; UNUSED4
@@ -2028,6 +2028,34 @@ DubiousDogEffect:
 	call ItemTakeHP
 	jp StatusHealer_Jumptable
 
+SerpsparillaEffect:
+	call IsItemUsedOnBattleMon
+	jr c, .battle
+	jp RestoreHPEffect
+.battle
+	call ItemRestoreHP
+	
+	call Play_SFX_FULL_HEAL
+	ld a, ATTACK
+	ld b, a
+
+	xor a
+	ldh [hBattleTurn], a
+	ld [wAttackMissed], a
+	ld [wEffectFailed], a
+	farcall CheckIfStatCanBeRaised
+	call WaitSFX
+
+	ld a, 1
+	ldh [hInMenu], a
+	farcall BattleCommand_statupmessage
+	farcall BattleCommand_statupfailtext
+	xor a
+	ldh [hInMenu], a
+	
+	ld a, SPEED
+	jp XItemEffect2
+
 RestoreHPEffect: ; f186
 	call ItemRestoreHP
 	jp StatusHealer_Jumptable
@@ -2690,6 +2718,7 @@ XItemEffect: ; f4c5
 	call UseItemText
 
 	farcall CheckItemParam
+XItemEffect2:
 	ld b, a
 
 	xor a
@@ -2699,14 +2728,19 @@ XItemEffect: ; f4c5
 	farcall CheckIfStatCanBeRaised
 	call WaitSFX
 
+	ld a, 1
+	ldh [hInMenu], a
 	farcall BattleCommand_statupmessage
 	farcall BattleCommand_statupfailtext
+	xor a
+	ldh [hInMenu], a
 
 	ld a, [wCurBattleMon]
 	ld [wCurPartyMon], a
 	ld c, HAPPINESS_USEDXITEM
 	farcall ChangeHappiness
 	call ClearPalettes
+	call Load1bppFont
 	jp ClearTileMap
 
 
@@ -3166,7 +3200,7 @@ UseItemText: ; f789
 	ld hl, UsedItemText
 	call PrintText
 	call Play_SFX_FULL_HEAL
-	call WaitPressAorB_BlinkCursor
+;	call WaitPressAorB_BlinkCursor
 UseDisposableItem: ; f795
 	ld hl, wNumItems
 	ld a, 1

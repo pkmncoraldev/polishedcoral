@@ -5945,16 +5945,30 @@ BattleCommand_statupmessage: ; 363b8
 	jr nz, .opportunist
 	ld hl, .stat
 	call BattleTextBox
+	ldh a, [hInMenu]
+	and a
+	jr nz, .delay1
+	call ButtonSound
+	jr .end
+.delay1
+	ld c, 40
+	call DelayFrames
 	; Opportunist activates here to give proper messages. A bit awkward,
 	; but the alternative is to rewrite the stat-up logic.
-;	ld a, [wLoweredStat]
-;	and $f
-;	ret nz
-	
+.end
 	farjp RunOpportunistAbility
 .opportunist
 	ld hl, .opportunist_text
-	jp BattleTextBox
+	call BattleTextBox
+	ldh a, [hInMenu]
+	and a
+	jr nz, .delay2
+	call ButtonSound
+	ret
+.delay2
+	ld c, 40
+	call DelayFrames
+	ret
 .stat
 	text_jump UnknownText_0x1c0cc6
 	start_asm

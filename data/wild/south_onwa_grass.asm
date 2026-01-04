@@ -762,26 +762,26 @@
 	db 37, BUNEARY		;30%
 	db 37, DITTO		;30%
 	db 37, DITTO		;20%
-	db 37, TEDDIURSA	;10%
-	db 37, TEDDIURSA	;5%
-	db 37, TEDDIURSA	;4%
-	db 37, TEDDIURSA	;1%
+	db 37, PIDGEOTTO	;10%
+	db 37, PIDGEOTTO	;5%
+	db 37, PIDGEOTTO	;4%
+	db 37, PIDGEOTTO	;1%
 	; day
 	db 37, BUNEARY		;30%
 	db 37, DITTO		;30%
 	db 37, DITTO		;20%
-	db 37, TEDDIURSA	;10%
-	db 37, TEDDIURSA	;5%
-	db 37, TEDDIURSA	;4%
-	db 37, TEDDIURSA	;1%
+	db 37, PIDGEOTTO	;10%
+	db 37, PIDGEOTTO	;5%
+	db 37, PIDGEOTTO	;4%
+	db 37, PIDGEOTTO	;1%
 	; nite
 	db 37, BUNEARY		;30%
 	db 37, DITTO		;30%
 	db 37, DITTO		;20%
-	db 37, TEDDIURSA	;10%
-	db 37, TEDDIURSA	;5%
-	db 37, TEDDIURSA	;4%
-	db 37, TEDDIURSA	;1%
+	db 37, PIDGEOTTO	;10%
+	db 37, PIDGEOTTO	;5%
+	db 37, PIDGEOTTO	;4%
+	db 37, PIDGEOTTO	;1%
 	
 	map_id ROUTE_28
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite

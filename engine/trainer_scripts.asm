@@ -72,7 +72,13 @@ TalkToBankCardGirlScript::
 	writetext BankCardNPCText4
 	waitbutton
 	closetext
+	checkcode VAR_FACING
+	if_equal UP, .YouAreFacingUp
+	applymovement 13, Movement_BankGirl1
+	jump .cont4
+.YouAreFacingUp
 	applymovement 13, Movement_BankGirl2
+.cont4
 	disappear 13
 	pause 10
 	spriteface PLAYER, DOWN
@@ -177,7 +183,7 @@ BankCardNPCText3_girl:
 	
 BankCardNPCText4:
 	text "Thank you!!!<WAIT_S>"
-	line "I'm finally done!"
+	line "I'm finally done!!!"
 	
 	para "I met my quota!"
 	
@@ -186,9 +192,7 @@ BankCardNPCText4:
 	para "Huh?<WAIT_S> Your gift?"
 	
 	para "It'll be in the"
-	line "mail."
-	
-	para "…<WAIT_M>I think."
+	line "mail…<WAIT_M>I think."
 	
 	para "Oh well, not my"
 	line "problem."

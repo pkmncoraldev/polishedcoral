@@ -13,7 +13,7 @@ LusterMallBackRoom_MapScriptHeader:
 
 	db 20 ; bg events
 	signpost  4,  6, SIGNPOST_UP, LusterMallBackRoomSecuritySign
-	signpost  3,  9, SIGNPOST_JUMPTEXT, LusterMallBackRoomExitSignText
+	signpost  0,  0, SIGNPOST_JUMPTEXT, LusterMallBackRoomExitSignText
 	signpost  2,  0, SIGNPOST_JUMPTEXT, LusterMallBackRoomMonitorsText
 	signpost  2,  1, SIGNPOST_JUMPTEXT, LusterMallBackRoomMonitorsText
 	signpost  2,  2, SIGNPOST_JUMPTEXT, LusterMallBackRoomMonitorsText

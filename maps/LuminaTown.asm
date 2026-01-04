@@ -4,7 +4,7 @@ LuminaTown_MapScriptHeader:
 	db 0 ; callbacks
 
 	db 4 ; warp events
-	warp_def 17, 26, 1, LUMINA_HEALER_HOUSE
+	warp_def 17, 25, 1, LUMINA_HEALER_HOUSE
 	warp_def 12, 12, 1, LUMINA_HOUSE_1
 	warp_def  8, 28, 1, LUMINA_HOUSE_2
 	warp_def  7, 44, 1, LUMINA_ELDERS_HOUSE
@@ -12,8 +12,8 @@ LuminaTown_MapScriptHeader:
 	db 0 ; coord events
 
 	db 15 ; bg events
-	signpost 20, 19, SIGNPOST_JUMPTEXT, LuminaTownSignText
-	signpost 18, 25, SIGNPOST_JUMPTEXT, LuminaTownHealerSignText
+	signpost 20, 17, SIGNPOST_JUMPTEXT, LuminaTownSignText
+	signpost  0,  0, SIGNPOST_JUMPTEXT, LuminaTownHealerSignText
 	signpost 16, 37, SIGNPOST_JUMPTEXT, LuminaTownElderHouseSignText
 	signpost  7, 14, SIGNPOST_JUMPTEXT, LuminaTownSmallStatueText
 	signpost  7, 17, SIGNPOST_JUMPTEXT, LuminaTownSmallStatueText

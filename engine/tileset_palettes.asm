@@ -601,11 +601,11 @@ LoadSpecialMapPalette: ; 494ac
 	ld hl, LuminaPalette
 	ld a, [wTimeOfDayPal]
 	and 3
-	ld bc, 2 palettes
+	ld bc, 3 palettes
 	rst AddNTimes
 	ld a, $5
 	ld de, wUnknBGPals + 1 palettes
-	ld bc, 2 palettes
+	ld bc, 3 palettes
 	ld a, $5
 	call FarCopyWRAM
 	scf

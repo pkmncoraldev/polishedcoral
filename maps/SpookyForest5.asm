@@ -36,11 +36,10 @@ SpookyForest5LostKid:
 	yesorno
 	iffalse .no
 	waitsfx
-	special FadeOutPalettes
 	closetext
 	special Special_ForcePlayerStateNormal
 	domaptrigger SPOOKY_FOREST_ESCORT, $1
-	warp2 UP, SPOOKY_FOREST_ESCORT, $24, $13
+	warp_stealth UP, SPOOKY_FOREST_ESCORT, $24, $13
 	end
 .no
 	writetext SpookyForest5LostKidText3

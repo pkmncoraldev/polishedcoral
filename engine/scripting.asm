@@ -274,6 +274,7 @@ ScriptCommandTable:
 	dw Script_opentext2
 	dw Script_changetextboxspeaker
 	dw Script_priority
+	dw Script_warp_stealth
 
 StartScript:
 	ld hl, wScriptFlags
@@ -3215,8 +3216,6 @@ Script_warp2:
 	ld [wPlayerSpriteSetupFlags], a
 
 	call GetScriptByte
-	and a
-	jr z, .not_ok
 	ld [wMapGroup], a
 	call GetScriptByte
 	ld [wMapNumber], a
@@ -3226,19 +3225,37 @@ Script_warp2:
 	ld [wYCoord], a
 	ld a, -1
 	ld [wDefaultSpawnpoint], a
-	ld a, MAPSETUP_BADWARP
+	ld a, MAPSETUP_BADWARP	;does not reset music
 	ldh [hMapEntryMethod], a
 	ld a, 1
 	ld [wMapStatus], a
 	jp StopScript
+	
+Script_warp_stealth:
+; parameters:
+;     map_group (MapGroupParam)
+;     map_id (MapIdParam)
+;     x (SingleByteParam)
+;     y (SingleByteParam)
+	call GetScriptByte
+	and $3
+	ld c, a
+	ld a, [wPlayerSpriteSetupFlags]
+	set 5, a
+	or c
+	ld [wPlayerSpriteSetupFlags], a
 
-.not_ok
 	call GetScriptByte
+	ld [wMapGroup], a
 	call GetScriptByte
+	ld [wMapNumber], a
 	call GetScriptByte
+	ld [wXCoord], a
+	call GetScriptByte
+	ld [wYCoord], a
 	ld a, -1
 	ld [wDefaultSpawnpoint], a
-	ld a, MAPSETUP_BADWARP
+	ld a, MAPSETUP_STEALTH
 	ldh [hMapEntryMethod], a
 	ld a, 1
 	ld [wMapStatus], a

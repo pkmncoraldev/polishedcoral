@@ -12,7 +12,22 @@ MapSetupScripts: ; 15377
 	dw MapSetupScript_BadWarp
 	dw MapSetupScript_Fly
 	dw MapSetupScript_ReloadMapClown
+	dw MapSetupScript_Stealth
 ; 1538f
+
+MapSetupScript_Stealth:
+	db map_load_spawn
+	db map_load_attributes
+	db map_spawn_coord
+	db map_player_coord
+	db map_anchor_screen
+	db map_load_blocks
+	db map_load_objects
+	db map_face_down
+	db map_sprites
+	db map_animations_on
+	db map_wildmons
+	db map_end
 
 MapSetupScript_Teleport: ; 1538f
 	db map_prolong_sprites

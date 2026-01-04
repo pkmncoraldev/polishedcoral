@@ -87,9 +87,7 @@ SpookyForestSavedKidLeft:
 	closetext
 	applymovement SPOOKY_FOREST_ESCORT_LOST_KID, Movement_SpookyForestSavedKidLeft
 	disappear SPOOKY_FOREST_ESCORT_LOST_KID
-	playsound SFX_EXIT_BUILDING
-	special FadeOutPalettes
-	warp2 UP, SPOOKY_FOREST_1, $6, $f
+	warp_stealth UP, SPOOKY_FOREST_1, $6, $f
 	end
 	
 SpookyForestSavedKidRight:
@@ -108,9 +106,7 @@ SpookyForestSavedKidRight:
 	closetext
 	applymovement SPOOKY_FOREST_ESCORT_LOST_KID, Movement_SpookyForestSavedKidRight
 	disappear SPOOKY_FOREST_ESCORT_LOST_KID
-	playsound SFX_EXIT_BUILDING
-	special FadeOutPalettes
-	warp2 UP, SPOOKY_FOREST_1, $7, $f
+	warp_stealth UP, SPOOKY_FOREST_1, $7, $f
 	end
 
 SpookyForestEscortLostKid:

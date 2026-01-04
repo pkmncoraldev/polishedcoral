@@ -1138,8 +1138,7 @@ DepositSellPack: ; 106be
 	dw .MedicinePocket
 	dw .BallsPocket
 	dw .TMHMPocket
-	dw .BerriesPocket
-	dw .KeyItemsPocket
+	dw .KeyItemsPocket	
 
 .ItemsPocket: ; 106d9 (4:46d9)
 	ld a, ITEM - 1
@@ -1278,7 +1277,7 @@ DepositSellTutorial_InterpretJoypad: ; 1076f
 	dec a
 	cp -1
 	jr nz, .left_ok
-	ld a, 5
+	ld a, 4
 .left_ok
 	ld [wJumptableIndex], a
 	push de
@@ -1291,7 +1290,7 @@ DepositSellTutorial_InterpretJoypad: ; 1076f
 .d_right
 	ld a, [wJumptableIndex]
 	inc a
-	cp 6
+	cp 5
 	jr nz, .right_ok
 	xor a
 .right_ok

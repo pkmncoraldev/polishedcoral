@@ -43,7 +43,7 @@ SunbeamTradeHouseNpc1Text:
 
 SunbeamTradeHouseNpc2Text:
 	text "SUNBEAM ISLAND is"
-	line "known for it's"
+	line "known for its"
 	cont "sunny skies and"
 	cont "bright blue water."
 	

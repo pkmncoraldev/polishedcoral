@@ -305,7 +305,7 @@ LuminaEldersHouseSceneElderText3:
 	line "LUMINA TOWN."
 	
 	para "I also serve as"
-	line "it's GYM LEADER,"
+	line "its GYM LEADER,"
 	
 	para "though none have"
 	line "come seeking a"

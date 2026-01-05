@@ -1878,7 +1878,7 @@ ObscuraGymQ4Q2Text:
 	done
 	
 ObscuraGymQ4Q2CorrectText:
-	text "It used it's jaw"
+	text "It used its jaw"
 	line "to crush rocks"
 	cont "and prey."
 	
@@ -1887,7 +1887,7 @@ ObscuraGymQ4Q2CorrectText:
 	done
 	
 ObscuraGymQ4Q2WrongText:
-	text "It used it's jaw"
+	text "It used its jaw"
 	line "to crush rocks"
 	cont "and prey."
 	

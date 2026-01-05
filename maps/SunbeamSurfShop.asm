@@ -356,7 +356,7 @@ SunbeamIslandSurfShopNPC2Text5:
 	
 SunbeamIslandSurfShopNPC2Text6:
 	text "That's a RAICHU,"
-	line "but it's tail is"
+	line "but its tail is"
 	cont "too small to ride!"
 	
 	para "Maybe it's just a"

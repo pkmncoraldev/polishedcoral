@@ -219,12 +219,14 @@ Music_LuminaTown_Ch2:
 	octave 1
 	note G#, 6
 	note D#, 2
-	note G#, 4
+	note G#, 2
+	note __, 2
 	note G#, 2
 	note D#, 2
 	note G#, 6
 	note D#, 2
-	note G#, 4
+	note G#, 2
+	note __, 2
 	note G#, 2
 	note D#, 2
 	callchannel Music_LuminaTown_Ch2_Part_1
@@ -233,12 +235,14 @@ Music_LuminaTown_Ch2:
 Music_LuminaTown_Ch2_loop:
 	note G#, 6
 	note D#, 2
-	note G#, 4
+	note G#, 2
+	note __, 2
 	note G#, 2
 	note D#, 2
 	note G#, 6
 	note D#, 2
-	note G#, 4
+	note G#, 2
+	note __, 2
 	note G#, 2
 	note D#, 2
 	callchannel Music_LuminaTown_Ch2_Part_1
@@ -251,17 +255,20 @@ Music_LuminaTown_Ch2_Part_1:
 	octave 1
 	note G#, 6
 	note D#, 2
-	note G#, 4
+	note G#, 2
+	note __, 2
 	note G#, 2
 	note D#, 2
 	note F#, 6
 	note C#, 2
-	note F#, 4
+	note F#, 2
+	note __, 2
 	note F#, 2
 	note C#, 2
 	note E_, 6
 	note B_, 2
-	note F#, 4
+	note F#, 2
+	note __, 2
 	note F#, 2
 	note C#, 2
 	note G#, 4
@@ -271,12 +278,14 @@ Music_LuminaTown_Ch2_Part_1:
 	note G_, 2
 	note G#, 6
 	note D#, 2
-	note G#, 4
+	note G#, 2
+	note __, 2
 	note G#, 2
 	note D#, 2
 	note F#, 6
 	note C#, 2
-	note F#, 4
+	note F#, 2
+	note __, 2
 	note F#, 2
 	note C#, 2
 	note E_, 4
@@ -285,7 +294,8 @@ Music_LuminaTown_Ch2_Part_1:
 	note A#, 4
 	note G#, 6
 	note D#, 2
-	note G#, 4
+	note G#, 2
+	note __, 2
 	note G#, 2
 	note D#, 2
 	endchannel
@@ -293,32 +303,38 @@ Music_LuminaTown_Ch2_Part_1:
 Music_LuminaTown_Ch2_Part_2:
 	note B_, 6
 	note E_, 2
-	note B_, 4
+	note B_, 2
+	note __, 2
 	note B_, 2
 	note E_, 2
 	note B_, 6
 	note F#, 2
-	note B_, 4
+	note B_, 2
+	note __, 2
 	note B_, 2
 	note F#, 2
 	note A#, 6
 	note E_, 2
-	note A#, 4
+	note A#, 2
+	note __, 2
 	note A#, 2
 	note E_, 2
 	note D#, 6
 	note A#, 2
-	note D#, 4
+	note D#, 2
+	note __, 2
 	note D#, 2
 	note A#, 2
 	note E_, 6
 	note B_, 2
-	note E_, 4
+	note E_, 2
+	note __, 2
 	note B_, 2
 	note E_, 2
 	note B_, 6
 	note F#, 2
-	note B_, 4
+	note B_, 2
+	note __, 2
 	note B_, 2
 	note F#, 2
 	note A#, 6
@@ -335,12 +351,14 @@ Music_LuminaTown_Ch2_Part_2:
 	note A#, 4
 	note G#, 6
 	note D#, 2
-	note G#, 4
+	note G#, 2
+	note __, 2
 	note G#, 2
 	note D#, 2
 	note G#, 6
 	note D#, 2
-	note G#, 4
+	note G#, 2
+	note __, 2
 	note G#, 2
 	note D#, 2
 	endchannel

@@ -234,6 +234,7 @@ DEF MAP_NONE   EQU 0
 	map_const ROUTE_10_MOVE_REMINDER_HOUSE,				   4,  5 ; 15
 	map_const ROUTE_18_TRAILER,							   3,  2 ; 16
 	map_const RIVER_RAPIDS_HOUSE,						   4,  5 ; 17
+	map_const LUMINA_HEALER_HOUSE,						   5,  5 ; 18
 	
 	newgroup													 ; 12
 	
@@ -496,8 +497,7 @@ DEF MAP_NONE   EQU 0
 	map_const LUMINA_GYM,								  16, 10 ; 2
 	map_const LUMINA_HOUSE_1,							   4,  4 ; 3
 	map_const LUMINA_HOUSE_2,							   4,  4 ; 4
-	map_const LUMINA_HEALER_HOUSE,						   4,  4 ; 5
-	map_const LUMINA_ELDERS_HOUSE,						   4,  4 ; 6
+	map_const LUMINA_ELDERS_HOUSE,						   4,  4 ; 5
 	
 	newgroup													 ; EVO LOCATIONS GROUP
 	map_const ICE_CAVE_ICE_ROCK_ROOM,					   5,  5 ; 1

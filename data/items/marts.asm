@@ -43,6 +43,7 @@ Marts: ; 160a9
 	dw PollenMart
 	dw OttoMart
 	dw HealerMart
+	dw LuminaBar
 MartsEnd:
 
 
@@ -586,4 +587,15 @@ HealerMart:
 	db MENTAL_HERB
 	db POWER_HERB
 	db WHITE_HERB
+	db -1
+	
+LuminaBar:
+	db 7 ; # items
+	db MOOMOO_BREW
+	db MOOMOO_MILK
+	db FRESH_WATER
+	db BERRY_JUICE
+	db SODA_POP
+	db BLOSSOM_TEA
+	db SWEET_HONEY
 	db -1

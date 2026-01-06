@@ -67,6 +67,7 @@ Music:
 	dba Music_RivalBattle2
 	dba Music_Erika
 	dba Music_Obscura
+	dba Music_LuminaTown
 	
 	dba Music_ClefairyDance
 	dba Music_Crossroads

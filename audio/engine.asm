@@ -2995,7 +2995,7 @@ CheckChangeMusic::
 .lumina
 	eventflagcheck EVENT_LUMINA_GYM_MUSIC
 	jr nz, .gym
-	ld a, MUSIC_EVENTIDE_VILLAGE
+	ld a, MUSIC_LUMINA_TOWN
 	jr .done
 .gym
 	ld a, MUSIC_GYM

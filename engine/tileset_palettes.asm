@@ -624,7 +624,7 @@ LoadSpecialMapPalette: ; 494ac
 	ld hl, LuminaPalette + 1 palettes
 	ld a, [wTimeOfDayPal]
 	and 3
-	ld bc, 2 palettes
+	ld bc, 3 palettes
 	rst AddNTimes
 	ld a, $5
 	ld de, wUnknBGPals + 2 palettes

@@ -38,7 +38,8 @@ LuminaHealerHouseBartenderText1:
 	done
 
 LuminaHealerHouseBartenderText2:
-	text "Come again, stranger."
+	text "Come again,"
+	line "stranger."
 	done
 	
 	

@@ -591,7 +591,7 @@ HealerMart:
 	
 LuminaBar:
 	db 7 ; # items
-	db MOOMOO_BREW
+	db SERPSPARILLA
 	db MOOMOO_MILK
 	db FRESH_WATER
 	db BERRY_JUICE

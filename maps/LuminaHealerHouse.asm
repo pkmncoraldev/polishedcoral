@@ -233,16 +233,8 @@ LuminaHealerHouseHealer:
 	faceplayer
 	opentext
 	writetext LuminaHealerHouseHealerText1
-	special PlaceMoneyTopRight
 	yesorno
 	iffalse .no_heal
-	checkmoney $0, 1000
-	if_equal $2, .nomoney
-	playsound SFX_TRANSACTION
-	takemoney $0, 1000
-	special PlaceMoneyTopRight
-	pause 15
-	refreshscreen $0
 	pause 5
 	closetext	
 	special FadeOutPalettesBlack
@@ -256,11 +248,6 @@ LuminaHealerHouseHealer:
 	jumptext LuminaHealerHouseHealerText2
 .no_heal
 	writetext LuminaHealerHouseHealerText3
-	waitbutton
-	closetext
-	end
-.nomoney
-	writetext LuminaHealerHouseHealerText4
 	waitbutton
 	closetext
 	end
@@ -318,12 +305,7 @@ LuminaHealerHouseHealerText1:
 	cont "to restore your"
 	cont "#MON's power."
 	
-	para "Of course, my"
-	line "services aren't"
-	cont "free."
-	
-	para "I can heal you for"
-	line "¥1000, Yes?"
+	para "Shall I?"
 	done
 	
 LuminaHealerHouseHealerText2:
@@ -339,12 +321,4 @@ LuminaHealerHouseHealerText3:
 	
 	para "Return if you are"
 	line "in need of help."
-	done
-	
-LuminaHealerHouseHealerText4:
-	text "You do not have"
-	line "enough cash!"
-	
-	para "I'm not running a"
-	line "charity here!"
 	done

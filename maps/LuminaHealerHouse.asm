@@ -9,7 +9,21 @@ LuminaHealerHouse_MapScriptHeader:
 
 	db 0 ; coord events
 
-	db 0 ; bg events
+	db 14 ; bg events
+	signpost  3,  2, SIGNPOST_JUMPTEXT, LuminaHealerHouseFireplaceText
+	signpost  3,  3, SIGNPOST_JUMPTEXT, LuminaHealerHouseFireplaceText
+	signpost  3,  0, SIGNPOST_JUMPTEXT, LuminaHealerHouseWoodText
+	signpost  3,  1, SIGNPOST_JUMPTEXT, LuminaHealerHouseWoodText
+	signpost  3,  4, SIGNPOST_JUMPTEXT, LuminaHealerHousePlatesText
+	signpost  3,  5, SIGNPOST_JUMPTEXT, LuminaHealerHousePlatesText
+	signpost  6,  0, SIGNPOST_JUMPTEXT, LuminaHealerHouseBarrelsText
+	signpost  7,  0, SIGNPOST_JUMPTEXT, LuminaHealerHouseBarrelsText
+	signpost  8,  2, SIGNPOST_JUMPTEXT, LuminaHealerHouseBarrelsText
+	signpost  8,  8, SIGNPOST_JUMPTEXT, LuminaHealerHouseBarrelsText
+	signpost  8,  9, SIGNPOST_JUMPTEXT, LuminaHealerHouseBarrelsText
+	signpost  9,  2, SIGNPOST_JUMPTEXT, LuminaHealerHouseBarrelsText
+	signpost  9,  8, SIGNPOST_JUMPTEXT, LuminaHealerHouseBarrelsText
+	signpost  9,  9, SIGNPOST_JUMPTEXT, LuminaHealerHouseBarrelsText
 
 	db 5 ; object events
 	person_event SPRITE_COOL_DUDE,  5,  5, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, LuminaHealerHouseHealer, -1
@@ -17,6 +31,32 @@ LuminaHealerHouse_MapScriptHeader:
 	person_event SPRITE_GENTLEMAN,  3,  7, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, LuminaHealerHouseRuss, EVENT_RUSS_GONE
 	person_event SPRITE_POKEFAN_M,  6,  7, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, LuminaHealerHouseNPC1, -1
 	person_event SPRITE_SAILOR,  4,  9, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, LuminaHealerHouseBartender, -1
+	
+LuminaHealerHouseFireplaceText:
+	text "Ah…<WAIT_S>"
+	line "Toasty…"
+	done
+	
+LuminaHealerHouseWoodText:
+	text "A pile of neatly"
+	line "stacked firewood."
+	done
+	
+LuminaHealerHousePlatesText:
+	text "Plates, forks,"
+	line "knives…"
+	
+	para "The whole"
+	line "shebang."
+	done
+	
+LuminaHealerHouseBarrelsText:
+	text "A sweet aroma"
+	line "wafts from the"
+	cont "barrel."
+	
+	para "Smells tasty!"
+	done
 	
 LuminaHealerHouseBartender:
 	faceplayer

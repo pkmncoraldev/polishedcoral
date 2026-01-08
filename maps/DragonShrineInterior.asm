@@ -4,8 +4,8 @@ DragonShrineInterior_MapScriptHeader:
 	db 0 ; callbacks
 
 	db 4 ; warp events
-	warp_def 73,  7, 1, LUMINA_GYM
-	warp_def 73,  8, 2, LUMINA_GYM
+	warp_def 75,  7, 1, LUMINA_GYM
+	warp_def 75,  8, 2, LUMINA_GYM
 	warp_def  1,  7, 1, ROUTE_1
 	warp_def  1,  8, 1, ROUTE_1
 

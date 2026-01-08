@@ -4,7 +4,9 @@ LuminaGym_MapScriptHeader:
 	db 1 ; callbacks
 	callback MAPCALLBACK_TILES, LuminaGymCallback
 
-	db 0 ; warp events
+	db 2 ; warp events
+	warp_def  5, 23, 1, DRAGON_SHRINE_INTERIOR
+	warp_def  5, 24, 2, DRAGON_SHRINE_INTERIOR
 
 	db 4 ; coord events
 	coord_event  9,  9, 2, StartLuminaGymMusic
@@ -12,17 +14,21 @@ LuminaGym_MapScriptHeader:
 	coord_event  9, 10, 3, StopLuminaGymMusic
 	coord_event 10, 10, 3, StopLuminaGymMusic
 
-	db 3 ; bg events
+	db 7 ; bg events
 	signpost 10, 11, SIGNPOST_JUMPTEXT, LuminaGymSign
-	signpost  9, 22, SIGNPOST_JUMPTEXT, LuminaTownSmallStatueText
-	signpost  9, 25, SIGNPOST_JUMPTEXT, LuminaTownSmallStatueText
+	signpost  7, 22, SIGNPOST_JUMPTEXT, LuminaTownSmallStatueText
+	signpost  7, 25, SIGNPOST_JUMPTEXT, LuminaTownSmallStatueText
+	signpost  6, 15, SIGNPOST_JUMPTEXT, LuminaTownBarrelsText
+	signpost  7, 15, SIGNPOST_JUMPTEXT, LuminaTownBarrelsText
+	signpost 10,  6, SIGNPOST_JUMPTEXT, LuminaTownBarrelsText
+	signpost 10,  7, SIGNPOST_JUMPTEXT, LuminaTownBarrelsText
 
 	db 7 ; object events
 	person_event SPRITE_DARCY,  5, 10, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, LuminaGymDarcy, EVENT_LUMINA_GYM_DARCY_GONE
 	person_event SPRITE_ELDER,  5,  9, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, LuminaGymElder, EVENT_LUMINA_GYM_ELDER_GONE
 	person_event SPRITE_ELDER,  8,  7, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, LuminaGymElder, EVENT_LUMINA_GYM_ELDER_2_GONE
-	person_event SPRITE_GRANNY,  9, 23, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, LuminaTownNPC1, EVENT_LUMINA_LADIES_1_GONE
-	person_event SPRITE_GRANNY,  9, 24, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, LuminaTownNPC1, EVENT_LUMINA_LADIES_1_GONE
+	person_event SPRITE_GRANNY,  7, 23, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, LuminaTownNPC1, EVENT_LUMINA_LADIES_1_GONE
+	person_event SPRITE_GRANNY,  7, 24, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, LuminaTownNPC1, EVENT_LUMINA_LADIES_1_GONE
 	person_event SPRITE_GRANNY,  8, 22, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, LuminaTownNPC2, EVENT_LUMINA_LADIES_2_GONE
 	person_event SPRITE_GRANNY,  8, 25, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, LuminaTownNPC2, EVENT_LUMINA_LADIES_2_GONE
 

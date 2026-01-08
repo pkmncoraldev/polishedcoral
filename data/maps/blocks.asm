@@ -1040,3 +1040,6 @@ FakePlayersHouse2F_BlockData:
 FakeNorthSouthGate_BlockData:
 	INCBIN "maps/FakeNorthSouthGate.ablk.lz"
 	
+DragonShrineInterior_BlockData:
+	INCBIN "maps/DragonShrineInterior.ablk.lz"
+	

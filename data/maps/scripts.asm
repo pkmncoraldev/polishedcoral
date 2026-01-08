@@ -488,6 +488,7 @@ INCLUDE "maps/LuminaHouse1.asm"
 INCLUDE "maps/LuminaHouse2.asm"
 INCLUDE "maps/LuminaHealerHouse.asm"
 INCLUDE "maps/LuminaEldersHouse.asm"
+INCLUDE "maps/DragonShrineInterior.asm"
 
 SECTION "Misc Map Scripts", ROMX
 INCLUDE "maps/ObscuraGym.asm"

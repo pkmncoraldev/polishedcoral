@@ -108,6 +108,23 @@ TilesetDiveAnim::
 	dw NULL,  WaitTileAnimation
 	dw NULL,  DoneTileAnimation
 	
+TilesetDragonShrineAnim::
+	dw NULL,  StandingTileFrame
+	dw CandleFrames, AnimateWaterfallTiles
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  DoneTileAnimation
+	
 TilesetLighthouseAnim::
 	dw VTiles2 tile $14, WriteTileToBuffer
 	dw wTileAnimBuffer, ScrollTileRightLeft
@@ -1347,6 +1364,10 @@ SeaweedTiles: INCBIN "gfx/tilesets/water/seaweed.2bpp"
 TreeWindFrames: dw VTiles2 tile $7b, TreeWindTiles
 
 TreeWindTiles: INCBIN "gfx/tilesets/forest-tree/1.2bpp"
+
+CandleFrames: dw VTiles2 tile $62, CandleTiles
+
+CandleTiles: INCBIN "gfx/tilesets/candles/1.2bpp"
 
 	
 WriteTwoTiles:

@@ -1986,6 +1986,8 @@ LoadMapPals::
 	ld a, [wTileset]
 	cp TILESET_SPOOKY
 	jr z, .outside
+	cp TILESET_DRAGON_SHRINE
+	jr z, .outside
 	ld a, [wPermission]
 	cp FOREST
 	jr z, .outside

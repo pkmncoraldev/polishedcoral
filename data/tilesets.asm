@@ -839,6 +839,26 @@ INCBIN "data/tilesets/south_buildings_attributes.bin.lz"
 TilesetSouthBuildingsColl::
 INCLUDE "data/tilesets/south_buildings_collision.asm"
 
+SECTION "Tileset Data - dragon shrine", ROMX
+
+TilesetDragonShrineGFX0::
+INCBIN "gfx/tilesets/dragon_shrine.2bpp.vram0.lz"
+
+TilesetDragonShrineGFX1::
+INCBIN "gfx/tilesets/dragon_shrine.2bpp.vram1.lz"
+
+TilesetDragonShrineGFX2::
+INCBIN "gfx/tilesets/dragon_shrine.2bpp.vram2.lz"
+
+TilesetDragonShrineMeta::
+INCBIN "data/tilesets/dragon_shrine_metatiles.bin.lz"
+
+TilesetDragonShrineAttr::
+INCBIN "data/tilesets/dragon_shrine_attributes.bin.lz"
+
+TilesetDragonShrineColl::
+INCLUDE "data/tilesets/dragon_shrine_collision.asm"
+
 SECTION "Tileset Headers", ROMX
 
 macro tileset
@@ -892,3 +912,4 @@ Tilesets::
 	tileset TilesetGreenCave
 	tileset TilesetSouthBuildings
 	tileset TilesetLavaCave
+	tileset TilesetDragonShrine

@@ -11,7 +11,7 @@ LuminaTown_MapScriptHeader:
 
 	db 0 ; coord events
 
-	db 15 ; bg events
+	db 17 ; bg events
 	signpost 20, 17, SIGNPOST_JUMPTEXT, LuminaTownSignText
 	signpost  0,  0, SIGNPOST_JUMPTEXT, LuminaTownHealerSignText
 	signpost 16, 37, SIGNPOST_JUMPTEXT, LuminaTownElderHouseSignText
@@ -27,6 +27,8 @@ LuminaTown_MapScriptHeader:
 	signpost 15, 18, SIGNPOST_READ, LuminaTownBigStatue
 	signpost 16, 17, SIGNPOST_READ, LuminaTownBigStatue
 	signpost 16, 18, SIGNPOST_READ, LuminaTownBigStatue
+	signpost 16, 23, SIGNPOST_JUMPTEXT, LuminaTownBarrelsText
+	signpost 17, 23, SIGNPOST_JUMPTEXT, LuminaTownBarrelsText
 
 	db 2 ; object events
 	
@@ -119,12 +121,16 @@ LuminaTownNPC2Text2:
 	line "legend?"
 	done
 	
+LuminaTownBarrelsText:
+	text "Large barrels too"
+	line "heavy to move."
+	done
+	
 LuminaTownSmallStatueText:
 	text "A smaller statue"
 	line "depicting the same"
-	cont "#MON as the one"
-	cont "in the center of"
-	cont "town."
+	cont "#MON as in the"
+	cont "center of town."
 	done
 	
 LuminaTownBigStatue:
@@ -147,6 +153,9 @@ LuminaTownBigStatueText:
 	line "of a legendary"
 	cont "dragon #MON."
 	
+	para "It is dull and"
+	line "tarnished."
+	
 	para "There is a plaque"
 	line "up front depicting"
 	cont "the legend of the"
@@ -158,6 +167,9 @@ LuminaTownBigStatueLegendText1:
 	line "of a legendary"
 	cont "dragon #MON."
 	
+	para "It is dull and"
+	line "tarnished."
+	
 	para "There is a plaque"
 	line "under it depicting"
 	cont "the legend of the"
@@ -167,8 +179,8 @@ LuminaTownBigStatueLegendText1:
 	done
 	
 LuminaTownBigStatueLegendText2:
-	text "big dragon like"
-	line "the stone a lot :)"
+	text "TODO: DRAGON STONE"
+	line "LEGEND PART"
 	done
 	
 LuminaTownSignText:

@@ -114,6 +114,7 @@ INCLUDE "audio/music/erika.asm"
 INCLUDE "audio/music/obscura.asm"
 INCLUDE "audio/music/fakesunsetbay.asm"
 INCLUDE "audio/music/luminatown.asm"
+INCLUDE "audio/music/dragonshrine.asm"
 
 
 SECTION "Music 6", ROMX

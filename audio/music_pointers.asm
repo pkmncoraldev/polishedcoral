@@ -68,6 +68,7 @@ Music:
 	dba Music_Erika
 	dba Music_Obscura
 	dba Music_LuminaTown
+	dba Music_DragonShrine
 	
 	dba Music_ClefairyDance
 	dba Music_Crossroads

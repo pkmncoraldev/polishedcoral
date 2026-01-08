@@ -67,3 +67,4 @@ TapeNames::
 	db "“RADIANT TOWN”@"
 	db "“OBSCURA CITY”@"
 	db "“LUMINA TOWN”@"
+	db "“DRAGON SHRINE”@"

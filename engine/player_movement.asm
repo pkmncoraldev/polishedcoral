@@ -651,6 +651,9 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	ld hl, wHaveFollower
 	bit 0, [hl] ; ENGINE_BIKE_GEAR
 	jp nz, .DoNotRun
+	ld a, [wPermission]
+	cp DUNGEON
+	jp z, .DoNotRun
 	eventflagcheck EVENT_RUNNING_SHOES
 	jp z, .DoNotRun
 	xor a

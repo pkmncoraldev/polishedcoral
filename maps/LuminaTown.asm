@@ -170,7 +170,7 @@ LuminaTownBigStatueLegendText1:
 	para "It is dull and"
 	line "tarnished."
 	
-	para "There is a plaque"
+	para "A worn plaque sits"
 	line "under it depicting"
 	cont "the legend of the"
 	cont "DRAGON STONE."

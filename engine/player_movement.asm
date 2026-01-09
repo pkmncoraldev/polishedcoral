@@ -647,23 +647,14 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 .skipstaircheck
 	call .SnowCheck
 	jp z, .DoNotRun
-
-	ld hl, wHaveFollower
-	bit 0, [hl] ; ENGINE_BIKE_GEAR
-	jp nz, .DoNotRun
-	ld a, [wPermission]
-	cp DUNGEON
-	jp z, .DoNotRun
-	eventflagcheck EVENT_RUNNING_SHOES
-	jp z, .DoNotRun
 	xor a
 	call .RunCheck
-	jp z, .run
+	jp c, .run
 	jp .DoNotRun
 	
 .stairs
 	call .RunCheck
-	jp z, .walkcont
+	jp c, .walkcont
 	jp .slow
 
 .conveyorup
@@ -2023,10 +2014,19 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 
 ; Routine by Victoria Lacroix
 ; https://github.com/VictoriaLacroix/pokecrystal/commit/ed7f525d642cb02e84e856f2e506d2a6425d95db
-.RunCheck:	
+.RunCheck:
+	ld hl, wHaveFollower
+	bit 0, [hl] ; ENGINE_BIKE_GEAR
+	jr nz, .RunCheckNo
+	ld a, [wPermission]
+	cp DUNGEON
+	jr z, .RunCheckNo
+	eventflagcheck EVENT_RUNNING_SHOES
+	jr z, .RunCheckNo
+
 	ld a, [wWalkingDirection]
 	cp STANDING
-	ret z
+	jr z, .RunCheckNo
 	ld a, [wPlayerState]
 	and a ; cp PLAYER_NORMAL
 	jr nz, .checkifalreadyrunning
@@ -2038,6 +2038,12 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	ldh a, [hJoypadDown]
 	and B_BUTTON
 	cp B_BUTTON
+	jr nz, .RunCheckNo
+	scf
+	ret
+	
+.RunCheckNo
+	xor a
 	ret
 
 .CheckWalkable: ; 803d3

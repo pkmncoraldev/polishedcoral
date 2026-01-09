@@ -1038,7 +1038,7 @@ ObscuraGymQuizLady2:
 	db "4@"
 	db "2@"
 	db "3@"
-	db "255@"
+	db "256@"
 	
 .Q2Q2MenuData:
 	db $40 ; flags

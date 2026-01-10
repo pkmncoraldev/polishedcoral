@@ -2525,7 +2525,6 @@ Stomp:
 	doturn
 	pressure
 	critical
-	effectchance
 	damagestats
 	damagecalc
 	stab
@@ -2539,6 +2538,7 @@ Stomp:
 	supereffectivetext
 	postfainteffects
 	posthiteffects
+	effectchance
 	flinchtarget
 	pickpocket
 	endmove

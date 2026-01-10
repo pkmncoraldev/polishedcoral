@@ -69,23 +69,141 @@ Music_DragonShrine_Ch1:
 	octave 3
 	notetype $C, $28
 	dutycycle 1
-Music_DragonShrine_Ch1_loop:
-	note D#, 16
-	note C#, 16
+Music_DragonShrine_Ch1_loop:	; i know this is ugly and inefficient. i dont care. this is a big moment and i want the notes to come back asap when interrupted by the textbox sound.
+	note D#, 1
+	note D#, 1
+	note D#, 1
+	note D#, 1
+	note D#, 1
+	note D#, 1
+	note D#, 1
+	note D#, 1
+	note D#, 1
+	note D#, 1
+	note D#, 1
+	note D#, 1
+	note D#, 1
+	note D#, 1
+	note D#, 1
+	note D#, 1
+	note C#, 1
+	note C#, 1
+	note C#, 1
+	note C#, 1
+	note C#, 1
+	note C#, 1
+	note C#, 1
+	note C#, 1
+	note C#, 1
+	note C#, 1
+	note C#, 1
+	note C#, 1
+	note C#, 1
+	note C#, 1
+	note C#, 1
+	note C#, 1
 	octave 2
-	note B_, 8
+	note B_, 1
+	note B_, 1
+	note B_, 1
+	note B_, 1
+	note B_, 1
+	note B_, 1
+	note B_, 1
+	note B_, 1
 	octave 3
-	note C#, 8
+	note C#, 1
+	note C#, 1
+	note C#, 1
+	note C#, 1
+	note C#, 1
+	note C#, 1
+	note C#, 1
+	note C#, 1
 	octave 2
-	note F#, 16
+	note F#, 1
+	note F#, 1
+	note F#, 1
+	note F#, 1
+	note F#, 1
+	note F#, 1
+	note F#, 1
+	note F#, 1
+	note F#, 1
+	note F#, 1
+	note F#, 1
+	note F#, 1
+	note F#, 1
+	note F#, 1
+	note F#, 1
+	note F#, 1
 	octave 3
-	note D#, 16
-	note C#, 16
+	note D#, 1
+	note D#, 1
+	note D#, 1
+	note D#, 1
+	note D#, 1
+	note D#, 1
+	note D#, 1
+	note D#, 1
+	note D#, 1
+	note D#, 1
+	note D#, 1
+	note D#, 1
+	note D#, 1
+	note D#, 1
+	note D#, 1
+	note D#, 1
+	note C#, 1
+	note C#, 1
+	note C#, 1
+	note C#, 1
+	note C#, 1
+	note C#, 1
+	note C#, 1
+	note C#, 1
+	note C#, 1
+	note C#, 1
+	note C#, 1
+	note C#, 1
+	note C#, 1
+	note C#, 1
+	note C#, 1
+	note C#, 1
 	octave 2
-	note B_, 8
+	note B_, 1
+	note B_, 1
+	note B_, 1
+	note B_, 1
+	note B_, 1
+	note B_, 1
+	note B_, 1
+	note B_, 1
 	octave 3
-	note C#, 8
-	note D#, 16
+	note C#, 1
+	note C#, 1
+	note C#, 1
+	note C#, 1
+	note C#, 1
+	note C#, 1
+	note C#, 1
+	note C#, 1
+	note D#, 1
+	note D#, 1
+	note D#, 1
+	note D#, 1
+	note D#, 1
+	note D#, 1
+	note D#, 1
+	note D#, 1
+	note D#, 1
+	note D#, 1
+	note D#, 1
+	note D#, 1
+	note D#, 1
+	note D#, 1
+	note D#, 1
+	note D#, 1
 	loopchannel 0, Music_DragonShrine_Ch1_loop
 
 Music_DragonShrine_Ch2:

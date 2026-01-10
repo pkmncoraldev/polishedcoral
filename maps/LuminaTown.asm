@@ -157,9 +157,7 @@ LuminaTownBigStatueText:
 	line "tarnished."
 	
 	para "There is a plaque"
-	line "up front depicting"
-	cont "the legend of the"
-	cont "DRAGON STONE."
+	line "up front."
 	done
 	
 LuminaTownBigStatueLegendText1:
@@ -170,17 +168,43 @@ LuminaTownBigStatueLegendText1:
 	para "It is dull and"
 	line "tarnished."
 	
-	para "A worn plaque sits"
-	line "under it depicting"
-	cont "the legend of the"
-	cont "DRAGON STONE."
+	para "There is a plaque"
+	line "under it."
 	
 	para "Read it?"
 	done
 	
 LuminaTownBigStatueLegendText2:
-	text "TODO: DRAGON STONE"
-	line "LEGEND PART"
+	text "You can only make"
+	line "out a few parts:"
+	
+	para "THE DRAGON STONE"
+	
+	para "Long ago, before…"
+	
+	para "…dragon descended"
+	line "upon the land…"
+	
+	para "…formed from the"
+	line "dragon's…"
+	
+	para "…climbed high up"
+	line "the mountia…"
+	
+	para "…and tore its"
+	line "flesh…"
+	
+	para "…small jade pearl…"
+	
+	para "When the best of"
+	line "your kind returns"
+	cont "and presents it, I"
+	cont "will show myself…"
+	
+	para "…"
+	
+	para "The rest is worn"
+	line "away."
 	done
 	
 LuminaTownSignText:

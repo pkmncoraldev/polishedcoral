@@ -414,7 +414,7 @@ RanchHayText:
 	line "haystacks."
 	
 	para "Not a needle"
-	line "in site!"
+	line "in sight!"
 	done
 	
 RanchSignText:

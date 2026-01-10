@@ -7,6 +7,7 @@ FindItemInBallScript:: ; 0x122ce
 	specialsound
 	itemnotify
 	closetext
+	waitsfx
 	end
 ; 0x122e3
 
@@ -16,6 +17,7 @@ FindItemInBallScript:: ; 0x122ce
 	waitbutton
 	pocketisfull
 	closetext
+	waitsfx
 	end
 ; 0x122ee
 
@@ -53,6 +55,7 @@ FindKeyItemInBallScript::
 	pause 60
 	itemnotify
 	closetext
+	waitsfx
 	end
 
 .text_found
@@ -86,6 +89,7 @@ FindTMHMInBallScript::
 	waitsfx
 	tmhmnotify
 	closetext
+	waitsfx
 	end
 
 .text_found
@@ -161,6 +165,7 @@ FindTapeInBallScript::
 	writetext PutAwayTapeText
 	waitbutton
 	closetext
+	waitsfx
 	end
 .two_line_name
 	writetext TapeNameText2
@@ -168,6 +173,7 @@ FindTapeInBallScript::
 	writetext PutAwayTapeText
 	waitbutton
 	closetext
+	waitsfx
 	end
 	
 .No_Player
@@ -177,6 +183,7 @@ FindTapeInBallScript::
 	writetext NoTapePlayerText
 	waitbutton
 	closetext
+	waitsfx
 	end
 
 .text_found

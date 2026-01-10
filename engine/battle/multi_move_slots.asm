@@ -2580,6 +2580,8 @@ CottonSporeUsers:
 	db CACNEA
 	db CACTURNE
 	db MARACTUS
+	db SWABLU
+	db ALTARIA
 	db -1
 	
 StringShotUsers:

@@ -4150,7 +4150,11 @@ PostBattleTasks::
 	pop de
 	pop bc
 	ret
-
+	
+ClearFlagRunBothActivationAbilities:
+	xor a
+	ld [wHoldOffOnActivationAbilities], a
+;fallthru
 RunBothActivationAbilities:
 ; runs both pokémon's activation abilities (Intimidate, etc.).
 ; The faster Pokémon activates abilities first. This mostly
@@ -4166,6 +4170,12 @@ RunBothActivationAbilities:
 	ret
 
 RunActivationAbilities:
+	ld a, [wHoldOffOnActivationAbilities]
+	and a
+	jr nz, ClearFlagRunBothActivationAbilities
+	call HasOpponentFainted
+	jr z, .dead
+
 ; Trace will, on failure, copy a later switched in Pokémon's
 ; Ability. To handle this correctly without redundancy except
 ; on double switch-ins or similar, we need to do some extra
@@ -4183,6 +4193,11 @@ RunActivationAbilities:
 	call SwitchTurn
 	farcall RunActivationAbilitiesInner
 	jp SwitchTurn
+	
+.dead
+	ld a, 1
+	ld [wHoldOffOnActivationAbilities], a
+	ret
 
 SpikesDamage_CheckMoldBreaker:
 ; Called when a Pokémon with Mold Breaker uses Roar/Whirlwind.

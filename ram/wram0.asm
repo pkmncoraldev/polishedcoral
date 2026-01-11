@@ -648,9 +648,10 @@ wLastEnemyMove:: ds 1
 wEnemyUsingItem:: ds 1
 wEnemySwitchItemCheck:: ds 1
 
-wSurfAnimSpeedRegulator::
+wSurfAnimSpeedRegulator:: ds 1
+wHoldOffOnActivationAbilities::
 wOpportunistActivated:: ds 1
-	ds 6
+	ds 5
 
 wPlayerFutureSightCount:: ds 1
 wEnemyFutureSightCount:: ds 1

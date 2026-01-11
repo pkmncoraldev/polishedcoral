@@ -224,7 +224,6 @@ ZenHeadbutt:
 	doturn
 	pressure
 	critical
-	effectchance
 	damagestats
 	damagecalc
 	stab
@@ -237,6 +236,7 @@ ZenHeadbutt:
 	supereffectivetext
 	postfainteffects
 	posthiteffects
+	effectchance
 	flinchtarget
 	pickpocket
 	endmove
@@ -247,7 +247,6 @@ BurnFlinchHit:
 	doturn
 	pressure
 	critical
-	effectchance
 	damagestats
 	damagecalc
 	stab
@@ -260,6 +259,7 @@ BurnFlinchHit:
 	supereffectivetext
 	postfainteffects
 	posthiteffects
+	effectchance
 	flinchtarget
 	effectchance
 	burntarget
@@ -272,7 +272,6 @@ FreezeFlinchHit:
 	doturn
 	pressure
 	critical
-	effectchance
 	damagestats
 	damagecalc
 	stab
@@ -285,6 +284,7 @@ FreezeFlinchHit:
 	supereffectivetext
 	postfainteffects
 	posthiteffects
+	effectchance
 	flinchtarget
 	effectchance
 	freezetarget
@@ -297,7 +297,6 @@ ParalyzeFlinchHit:
 	doturn
 	pressure
 	critical
-	effectchance
 	damagestats
 	damagecalc
 	stab
@@ -310,6 +309,7 @@ ParalyzeFlinchHit:
 	supereffectivetext
 	postfainteffects
 	posthiteffects
+	effectchance
 	flinchtarget
 	effectchance
 	paralyzetarget
@@ -325,7 +325,6 @@ PoisonJab:
 	doturn
 	pressure
 	critical
-	effectchance
 	damagestats
 	damagecalc
 	stab
@@ -338,6 +337,7 @@ PoisonJab:
 	supereffectivetext
 	postfainteffects
 	posthiteffects
+	effectchance
 	poisontarget
 	pickpocket
 	endmove
@@ -352,7 +352,6 @@ FireBlast:
 	doturn
 	pressure
 	critical
-	effectchance
 	damagestats
 	damagecalc
 	stab
@@ -365,6 +364,7 @@ FireBlast:
 	supereffectivetext
 	postfainteffects
 	posthiteffects
+	effectchance
 	burntarget
 	pickpocket
 	endmove
@@ -382,7 +382,6 @@ ZapCannon:
 	doturn
 	pressure
 	critical
-	effectchance
 	damagestats
 	damagecalc
 	stab
@@ -395,6 +394,7 @@ ZapCannon:
 	supereffectivetext
 	postfainteffects
 	posthiteffects
+	effectchance
 	paralyzetarget
 	pickpocket
 	endmove
@@ -405,7 +405,6 @@ BodySlam:
 	doturn
 	pressure
 	critical
-	effectchance
 	damagestats
 	damagecalc
 	stab
@@ -419,6 +418,7 @@ BodySlam:
 	supereffectivetext
 	postfainteffects
 	posthiteffects
+	effectchance
 	paralyzetarget
 	pickpocket
 	endmove
@@ -429,7 +429,6 @@ SleepHit:
 	doturn
 	pressure
 	critical
-	effectchance
 	damagestats
 	damagecalc
 	stab
@@ -442,6 +441,7 @@ SleepHit:
 	supereffectivetext
 	postfainteffects
 	posthiteffects
+	effectchance
 	sleeptarget
 	pickpocket
 	endmove
@@ -455,7 +455,6 @@ Blizzard:
 	doturn
 	pressure
 	critical
-	effectchance
 	damagestats
 	damagecalc
 	stab
@@ -468,6 +467,7 @@ Blizzard:
 	supereffectivetext
 	postfainteffects
 	posthiteffects
+	effectchance
 	freezetarget
 	pickpocket
 	endmove
@@ -484,7 +484,6 @@ Hurricane:
 	doturn
 	pressure
 	critical
-	effectchance
 	damagestats
 	damagecalc
 	stab
@@ -497,6 +496,7 @@ Hurricane:
 	supereffectivetext
 	postfainteffects
 	posthiteffects
+	effectchance
 	confusetarget
 	pickpocket
 	endmove
@@ -508,7 +508,6 @@ MetalClaw:
 	doturn
 	pressure
 	critical
-	effectchance
 	damagestats
 	damagecalc
 	stab
@@ -521,6 +520,7 @@ MetalClaw:
 	supereffectivetext
 	postfainteffects
 	posthiteffects
+	effectchance
 	attackup
 	statupmessage
 	pickpocket
@@ -533,7 +533,6 @@ SteelWing:
 	doturn
 	pressure
 	critical
-	effectchance
 	damagestats
 	damagecalc
 	stab
@@ -546,6 +545,7 @@ SteelWing:
 	supereffectivetext
 	postfainteffects
 	posthiteffects
+	effectchance
 	defenseup
 	statupmessage
 	pickpocket
@@ -557,7 +557,6 @@ SpeedUpHit:
 	doturn
 	pressure
 	critical
-	effectchance
 	damagestats
 	damagecalc
 	stab
@@ -570,6 +569,7 @@ SpeedUpHit:
 	supereffectivetext
 	postfainteffects
 	posthiteffects
+	effectchance
 	speedup
 	statupmessage
 	pickpocket
@@ -581,7 +581,6 @@ SpecialAttackUpHit:
 	doturn
 	pressure
 	critical
-	effectchance
 	damagestats
 	damagecalc
 	stab
@@ -594,6 +593,7 @@ SpecialAttackUpHit:
 	supereffectivetext
 	postfainteffects
 	posthiteffects
+	effectchance
 	specialattackup
 	statupmessage
 	pickpocket
@@ -606,7 +606,6 @@ Ancientpower:
 	doturn
 	pressure
 	critical
-	effectchance
 	damagestats
 	damagecalc
 	stab
@@ -619,6 +618,7 @@ Ancientpower:
 	supereffectivetext
 	postfainteffects
 	posthiteffects
+	effectchance
 	allstatsup
 	pickpocket
 	endmove
@@ -630,7 +630,6 @@ AuroraBeam:
 	doturn
 	pressure
 	critical
-	effectchance
 	damagestats
 	damagecalc
 	stab
@@ -643,6 +642,7 @@ AuroraBeam:
 	supereffectivetext
 	postfainteffects
 	posthiteffects
+	effectchance
 	attackdown
 	statdownmessage
 	pickpocket
@@ -656,7 +656,6 @@ IronTail:
 	doturn
 	pressure
 	critical
-	effectchance
 	damagestats
 	damagecalc
 	stab
@@ -669,6 +668,7 @@ IronTail:
 	supereffectivetext
 	postfainteffects
 	posthiteffects
+	effectchance
 	defensedown
 	statdownmessage
 	pickpocket
@@ -680,7 +680,6 @@ BrickBreak:
 	doturn
 	pressure
 	critical
-	effectchance
 	resettypematchup
 	brickbreak
 	damagestats
@@ -695,6 +694,7 @@ BrickBreak:
 	supereffectivetext
 	postfainteffects
 	posthiteffects
+	effectchance
 	defensedown
 	statdownmessage
 	pickpocket
@@ -709,7 +709,6 @@ Bulldoze:
 	doturn
 	pressure
 	critical
-	effectchance
 	damagestats
 	damagecalc
 	stab
@@ -722,6 +721,7 @@ Bulldoze:
 	supereffectivetext
 	postfainteffects
 	posthiteffects
+	effectchance
 	speeddown
 	statdownmessage
 	pickpocket
@@ -734,7 +734,6 @@ Moonblast:
 	doturn
 	pressure
 	critical
-	effectchance
 	damagestats
 	damagecalc
 	stab
@@ -747,6 +746,7 @@ Moonblast:
 	supereffectivetext
 	postfainteffects
 	posthiteffects
+	effectchance
 	specialattackdown
 	statdownmessage
 	pickpocket
@@ -766,7 +766,6 @@ ShadowBall:
 	doturn
 	pressure
 	critical
-	effectchance
 	damagestats
 	damagecalc
 	stab
@@ -779,6 +778,7 @@ ShadowBall:
 	supereffectivetext
 	postfainteffects
 	posthiteffects
+	effectchance
 	specialdefensedown
 	statdownmessage
 	pickpocket
@@ -790,7 +790,6 @@ SpecialDefenseDown2Hit:
 	doturn
 	pressure
 	critical
-	effectchance
 	damagestats
 	damagecalc
 	stab
@@ -803,6 +802,7 @@ SpecialDefenseDown2Hit:
 	supereffectivetext
 	postfainteffects
 	posthiteffects
+	effectchance
 	specialdefensedown2
 	statdownmessage
 	pickpocket
@@ -815,7 +815,6 @@ MudSlap:
 	doturn
 	pressure
 	critical
-	effectchance
 	damagestats
 	damagecalc
 	stab
@@ -828,6 +827,7 @@ MudSlap:
 	supereffectivetext
 	postfainteffects
 	posthiteffects
+	effectchance
 	accuracydown
 	statdownmessage
 	pickpocket
@@ -839,7 +839,6 @@ EvasionDownHit:
 	doturn
 	pressure
 	critical
-	effectchance
 	damagestats
 	damagecalc
 	stab
@@ -852,6 +851,7 @@ EvasionDownHit:
 	supereffectivetext
 	postfainteffects
 	posthiteffects
+	effectchance
 	evasiondown
 	statdownmessage
 	pickpocket
@@ -863,7 +863,6 @@ Superpower:
 	doturn
 	pressure
 	critical
-	effectchance
 	damagestats
 	damagecalc
 	stab
@@ -932,7 +931,6 @@ PoisonFang:
 	doturn
 	pressure
 	critical
-	effectchance
 	damagestats
 	damagecalc
 	stab
@@ -945,6 +943,7 @@ PoisonFang:
 	supereffectivetext
 	postfainteffects
 	posthiteffects
+	effectchance
 	toxictarget
 	pickpocket
 	endmove
@@ -1997,7 +1996,6 @@ FlameWheel:
 	doturn
 	pressure
 	critical
-	effectchance
 	damagestats
 	damagecalc
 	stab
@@ -2011,6 +2009,7 @@ FlameWheel:
 	defrost
 	postfainteffects
 	posthiteffects
+	effectchance
 	burntarget
 	pickpocket
 	endmove
@@ -2462,7 +2461,6 @@ Earthquake:
 	doturn
 	pressure
 	critical
-	effectchance
 	damagestats
 	damagecalc
 	stab
@@ -2573,7 +2571,6 @@ Thunder:
 	doturn
 	pressure
 	critical
-	effectchance
 	damagestats
 	damagecalc
 	thunderaccuracy
@@ -2587,6 +2584,7 @@ Thunder:
 	supereffectivetext
 	postfainteffects
 	posthiteffects
+	effectchance
 	paralyzetarget
 	pickpocket
 	endmove
@@ -2597,7 +2595,6 @@ Twister:
 	doturn
 	pressure
 	critical
-	effectchance
 	damagestats
 	damagecalc
 	stab
@@ -2611,6 +2608,7 @@ Twister:
 	supereffectivetext
 	postfainteffects
 	posthiteffects
+	effectchance
 	flinchtarget
 	pickpocket
 	endmove
@@ -2667,7 +2665,6 @@ FlareBlitz:
 	doturn
 	pressure
 	critical
-	effectchance
 	damagestats
 	damagecalc
 	stab
@@ -2682,6 +2679,7 @@ FlareBlitz:
 	defrost
 	postfainteffects
 	posthiteffects
+	effectchance
 	burntarget
 	pickpocket
 	endmove

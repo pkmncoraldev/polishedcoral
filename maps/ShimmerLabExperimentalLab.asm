@@ -86,26 +86,20 @@ ShimmerLabExperimentalLabBook:
 	pokepic TIRTOUGA
 	waitbutton
 	closepokepic
-	callasm SetCoverDex
+	loadvar wScriptVar, TIRTOUGA
+	special SpecialSeenMon
 	end
 .plume
 	closetext
 	pokepic ARCHEN
 	waitbutton
 	closepokepic
-	callasm SetPlumeDex
+	loadvar wScriptVar, ARCHEN
+	special SpecialSeenMon
 	end
 .cancel
 	closetext
 	end
-	
-SetCoverDex:
-	ld a, TIRTOUGA
-	jp SetSeenMon
-	
-SetPlumeDex:
-	ld a, ARCHEN
-	jp SetSeenMon
 	
 ShimmerLabExperimentalLabBookMenuData:
 	db $40 ; flags

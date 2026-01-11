@@ -107,10 +107,10 @@ Inn3FKage:
 	waitbutton
 	closetext
 	setevent EVENT_INN_3F_TALKED_TO_KAGE
-	callasm Inn1FResertScriptVar
+	loadvar wScriptVar, 0
 	end
 .done
-	callasm Inn1FResertScriptVar
+	loadvar wScriptVar, 0
 	jumptextfaceplayer TEXTBOX_CAGE, Inn3FKageText7
 	
 Inn3FKageStop:
@@ -258,7 +258,7 @@ Inn3F302Door:
 	writetext Inn2F201LockedDoorText3
 	waitbutton
 	closetext
-	callasm Inn1FResertScriptVar
+	loadvar wScriptVar, 0
 	end
 .default
 	writetext Inn3F302DoorText4
@@ -279,13 +279,13 @@ Inn3F302Door:
 	writetext Inn3F302DoorText7
 	waitbutton
 	closetext
-	callasm Inn1FResertScriptVar
+	loadvar wScriptVar, 0
 	end
 .no
 	writetext Inn1FLemonWaterNo
 	waitbutton
 	closetext
-	callasm Inn1FResertScriptVar
+	loadvar wScriptVar, 0
 	end
 	
 Inn3fKnockMenuData:
@@ -377,7 +377,7 @@ Inn3FBall1:
 	iffalse .end
 	disappear INN_3F_POKEBALL_1
 .end
-	callasm Inn1FResertScriptVar
+	loadvar wScriptVar, 0
 	end
 	
 Inn3FSetItem1Asm:
@@ -393,7 +393,7 @@ Inn3FBall2:
 	iffalse .end
 	disappear INN_3F_POKEBALL_2
 .end
-	callasm Inn1FResertScriptVar
+	loadvar wScriptVar, 0
 	end
 	
 Inn3FSetItem2Asm:
@@ -409,7 +409,7 @@ Inn3FBall3:
 	iffalse .end
 	disappear INN_3F_POKEBALL_3
 .end
-	callasm Inn1FResertScriptVar
+	loadvar wScriptVar, 0
 	end
 	
 Inn3FSetItem3Asm:
@@ -425,7 +425,7 @@ Inn3FBall4:
 	iffalse .end
 	disappear INN_3F_POKEBALL_4
 .end
-	callasm Inn1FResertScriptVar
+	loadvar wScriptVar, 0
 	end
 	
 Inn3FSetItem4Asm:
@@ -453,7 +453,7 @@ Inn3FBall5:
 	waitbutton
 	closetext
 	setevent EVENT_INN_3F_TALKED_TO_KAGE
-	callasm Inn1FResertScriptVar
+	loadvar wScriptVar, 0
 .collect
 	spriteface PLAYER, RIGHT
 	pause 5
@@ -464,7 +464,7 @@ Inn3FBall5:
 	setflag ENGINE_GOT_WATERFALL
 	closetext
 	setevent EVENT_INN_3F_POKEBALL_5
-	callasm Inn1FResertScriptVar
+	loadvar wScriptVar, 0
 	end
 .talked
 	playsound SFX_PAY_DAY
@@ -482,7 +482,7 @@ Inn3FBall5:
 	waitbutton
 	closetext
 	setevent EVENT_INN_3F_TALKED_TO_KAGE
-	callasm Inn1FResertScriptVar
+	loadvar wScriptVar, 0
 	jump .collect
 	
 Inn3FNettSpecsTextKage:
@@ -532,7 +532,7 @@ Inn3FTrigger1:
 	closetext
 	applyonemovement INN_3F_CLERK, slow_step_right
 	disappear INN_3F_CLERK
-	callasm Inn1FResertScriptVar
+	loadvar wScriptVar, 0
 	end
 .right
 	appear INN_3F_CLERK
@@ -544,7 +544,7 @@ Inn3FTrigger1:
 	closetext
 	applyonemovement INN_3F_CLERK, slow_step_left
 	disappear INN_3F_CLERK
-	callasm Inn1FResertScriptVar
+	loadvar wScriptVar, 0
 	end
 	
 Inn3FClothes:
@@ -572,7 +572,7 @@ Inn3FClothes:
 	setevent EVENT_SNARE_DISGUISE
 	setevent EVENT_INN_3F_SNARE_HALLWAY
 	domaptrigger INN_1F, $2
-	callasm Inn1FResertScriptVar
+	loadvar wScriptVar, 0
 	end
 	
 Inn3FChangeClothesASM:
@@ -628,10 +628,10 @@ Inn3FClothesText3:
 Inn3FSnareNPC:
 	checkevent EVENT_SNARE_DISGUISE
 	iffalse .normal
-	callasm Inn1FResertScriptVar
+	loadvar wScriptVar, 0
 	jumptextfaceplayer Inn3FSnareNPCText1
 .normal
-	callasm Inn1FResertScriptVar
+	loadvar wScriptVar, 0
 	jumptextfaceplayer Inn3FSnareNPCText2
 	
 Inn3FSnareNPC2:
@@ -686,7 +686,7 @@ Inn3FServiceDoor:
 	writetext Inn1F104LockedDoorText2
 	waitbutton
 	closetext
-	callasm Inn1FResertScriptVar
+	loadvar wScriptVar, 0
 	end
 .locked
 	jumptext Inn1FLockedDoorText

@@ -480,7 +480,7 @@ Inn1FSnareSupervisor:
 	waitbutton
 	closetext
 	spriteface INN_1F_LOBBY_SNARE, LEFT
-	callasm Inn1FResertScriptVar
+	loadvar wScriptVar, 0
 	end
 .start
 	faceplayer
@@ -555,7 +555,7 @@ Inn1FSnareSupervisor:
 	applyonemovement PLAYER, step_up
 	applyonemovement PLAYER, step_up
 	clearflag ENGINE_HAVE_FOLLOWER
-	callasm Inn1FResertScriptVar
+	loadvar wScriptVar, 0
 	warpcheck
 	end
 	
@@ -753,7 +753,7 @@ Inn1FTrigger3:
 	closetext
 	applyonemovement INN_1F_CLERK, slow_step_right
 	disappear INN_1F_CLERK
-	callasm Inn1FResertScriptVar
+	loadvar wScriptVar, 0
 	moveperson INN_1F_CLERK, $0a, $13
 	appear INN_1F_CLERK
 	end
@@ -767,7 +767,7 @@ Inn1FTrigger3:
 	closetext
 	applyonemovement INN_1F_CLERK, slow_step_left
 	disappear INN_1F_CLERK
-	callasm Inn1FResertScriptVar
+	loadvar wScriptVar, 0
 	moveperson INN_1F_CLERK, $0a, $13
 	appear INN_1F_CLERK
 	end
@@ -779,7 +779,7 @@ Inn1FTrigger3:
 	waitbutton
 	closetext
 	spriteface INN_1F_CLERK, RIGHT
-	callasm Inn1FResertScriptVar
+	loadvar wScriptVar, 0
 	end
 	
 Inn1FCallback:
@@ -796,11 +796,11 @@ Inn1FCallback:
 	checkevent EVENT_PLAYER_IS_KRIS
 	iftrue .playerfemale
 	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_POKEMANIAC
-	callasm Inn1FResertScriptVar
+	loadvar wScriptVar, 0
 	return
 .playerfemale
 	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_PONYTAIL
-	callasm Inn1FResertScriptVar
+	loadvar wScriptVar, 0
 	return
 	
 Inn1FNoRunningHallsText:
@@ -889,11 +889,6 @@ Inn1FMoveClerkAsm2:
 	ld e, a
 	farjp CopyDECoordsToMapObject
 	
-Inn1FResertScriptVar:
-	xor a
-	ld [wScriptVar], a
-	ret
-	
 Inn1FRunningInTheHallsASM:
 	ld a, [wPlayerState]
 	cp PLAYER_RUN
@@ -964,11 +959,11 @@ Inn1FSnareGirlWinText:
 Inn1FTrashCanPassword:
 	checkevent EVENT_BEAT_INN_1F_TRAINER
 	iffalse .nope
-	callasm Inn1FResertScriptVar
+	loadvar wScriptVar, 0
 	setevent EVENT_INN_1F_READ_103_NOTE
 	jumptext Inn1FTrashCanPasswordText
 .nope
-	callasm Inn1FResertScriptVar
+	loadvar wScriptVar, 0
 	jumptext Inn1FTrashCanPasswordText2
 	
 Inn1FTrashCanPasswordText:
@@ -1026,10 +1021,10 @@ Inn1FSnareGirl:
 	setevent EVENT_BEAT_INN_1F_TRAINER
 	end
 .did
-	callasm Inn1FResertScriptVar
+	loadvar wScriptVar, 0
 	jumptextfaceplayer Inn1FSnareGirlScriptText3
 .found
-	callasm Inn1FResertScriptVar
+	loadvar wScriptVar, 0
 	jumptextfaceplayer Inn1FSnareGirlText
 	
 Inn1FSnareGirlText:
@@ -1065,7 +1060,7 @@ Inn1FPlayersBed:
 	spriteface PLAYER, DOWN
 	callasm LoadMapPals
 	special FadeInPalettes
-	callasm Inn1FResertScriptVar
+	loadvar wScriptVar, 0
 	playnewmapmusic
 	jumptext Inn1FPlayersBedText2
 .skip
@@ -1074,11 +1069,11 @@ Inn1FPlayersBed:
 	spriteface PLAYER, DOWN
 	callasm LoadMapPals
 	special FadeInPalettes
-	callasm Inn1FResertScriptVar
+	loadvar wScriptVar, 0
 	jumptext Inn1FPlayersBedText2
 .end
 	closetext
-	callasm Inn1FResertScriptVar
+	loadvar wScriptVar, 0
 	end
 	
 Inn1FPlayersBedText1:
@@ -1099,14 +1094,14 @@ Inn1FCustomer1:
 	waitbutton
 	closetext
 	spriteface INN_1F_CUSTOMER_1, DOWN
-	callasm Inn1FResertScriptVar
+	loadvar wScriptVar, 0
 	end
 .snare_gone
 	writetext Inn1FCustomer1Text2
 	waitbutton
 	closetext
 	spriteface INN_1F_CUSTOMER_1, DOWN
-	callasm Inn1FResertScriptVar
+	loadvar wScriptVar, 0
 	end
 	
 Inn1FCustomer1Text:
@@ -1158,14 +1153,14 @@ Inn1FCustomer2:
 	waitbutton
 	closetext
 	spriteface INN_1F_CUSTOMER_2, UP
-	callasm Inn1FResertScriptVar
+	loadvar wScriptVar, 0
 	end
 .snare_gone
 	writetext Inn1FCustomer2Text2
 	waitbutton
 	closetext
 	spriteface INN_1F_CUSTOMER_2, UP
-	callasm Inn1FResertScriptVar
+	loadvar wScriptVar, 0
 	end
 	
 Inn1FCustomer2Text:
@@ -1206,7 +1201,7 @@ Inn1FUnfortunateCustomer:
 	pause 5
 	spriteface PLAYER, DOWN
 	pause 10
-	callasm Inn1FResertScriptVar
+	loadvar wScriptVar, 0
 	jumptext Inn1FUnfortunateCustomerText4
 	
 Inn1FUnfortunateCustomerText1:
@@ -1244,7 +1239,7 @@ Inn1FUnfortunateCustomerText4:
 Inn1F104LockedDoor:
 	checkitem ROOM_104_KEY
 	iftrue .unlock_door
-	callasm Inn1FResertScriptVar
+	loadvar wScriptVar, 0
 	jumptext Inn1FLockedDoorText
 .unlock_door
 	opentext
@@ -1259,7 +1254,7 @@ Inn1F104LockedDoor:
 	writetext Inn1F104LockedDoorText2
 	waitbutton
 	closetext
-	callasm Inn1FResertScriptVar
+	loadvar wScriptVar, 0
 	end
 	
 Inn1F104LockedDoorText1:
@@ -1294,7 +1289,7 @@ Inn1FLemonWater:
 	writetext Inn1FLemonWaterText1
 	yesorno
 	iffalse .no
-	callasm Inn1FResertScriptVar
+	loadvar wScriptVar, 0
 	closetext
 	pause 20
 	opentext
@@ -1440,19 +1435,19 @@ Inn1FClerkDesk:
 	writetext Inn1FClerkDeskText4
 	waitbutton
 	closetext
-	callasm Inn1FResertScriptVar
+	loadvar wScriptVar, 0
 	end
 .have_key
 	writetext Inn1FClerkDeskText5
 	waitbutton
 	closetext
-	callasm Inn1FResertScriptVar
+	loadvar wScriptVar, 0
 	end
 .snare_gone
 	writetext Inn1FClerkDeskText6
 	waitbutton
 	closetext
-	callasm Inn1FResertScriptVar
+	loadvar wScriptVar, 0
 	end
 	
 Inn1FClerkDeskText1:

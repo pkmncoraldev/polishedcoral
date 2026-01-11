@@ -33,6 +33,7 @@ ItemFinder: ; 12580
 	opentext
 	writetext .Text_FoundSomething
 	closetext
+	loadvar wScriptVar, 0
 	end
 ; 0x125ba
 
@@ -40,6 +41,7 @@ ItemFinder: ; 12580
 	opentext
 	writetext .Text_FoundNothing
 	closetext
+	loadvar wScriptVar, 0
 	end
 ; 0x125c3
 

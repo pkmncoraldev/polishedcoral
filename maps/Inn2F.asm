@@ -101,10 +101,10 @@ TrainerInn2FSnareNPC:
 	writetext TrainerInn2FSnareNPCText6
 	waitbutton
 	closetext
-	callasm Inn1FResertScriptVar
+	loadvar wScriptVar, 0
 	end
 .normal
-	callasm Inn1FResertScriptVar
+	loadvar wScriptVar, 0
 	jumptextfaceplayer TrainerInn2FSnareNPCText1
 	
 TrainerInn2FSnareNPCText1:
@@ -179,7 +179,7 @@ Inn2FCustomer1:
 	iftrue .got_key
 	jumptextfaceplayer Inn2FCustomer1Text
 .got_key
-	callasm Inn1FResertScriptVar
+	loadvar wScriptVar, 0
 	jumptextfaceplayer Inn2FCustomer1Text2
 	
 Inn2FCustomer1Text:
@@ -206,7 +206,7 @@ Inn2FBall:
 	iffalse .end
 	disappear INN_2F_POKEBALL
 .end
-	callasm Inn1FResertScriptVar
+	loadvar wScriptVar, 0
 	end
 	
 Inn2FSetItemAsm:
@@ -256,7 +256,7 @@ Inn2FTrigger0:
 	closetext
 	applyonemovement INN_2F_CLERK, slow_step_right
 	disappear INN_2F_CLERK
-	callasm Inn1FResertScriptVar
+	loadvar wScriptVar, 0
 	end
 .right
 	appear INN_2F_CLERK
@@ -268,7 +268,7 @@ Inn2FTrigger0:
 	closetext
 	applyonemovement INN_2F_CLERK, slow_step_left
 	disappear INN_2F_CLERK
-	callasm Inn1FResertScriptVar
+	loadvar wScriptVar, 0
 	end
 	
 Inn2FMoveClerkAsm:
@@ -316,7 +316,7 @@ Inn2F204Door:
 	writetext Inn2F204DoorText2
 	waitbutton
 	closetext
-	callasm Inn1FResertScriptVar
+	loadvar wScriptVar, 0
 	end
 	
 Inn2F204DoorText1:
@@ -347,7 +347,7 @@ TrainerInn2F_1:
 	trainer GRUNTF, INN_GRUNTF_2, EVENT_BEAT_INN_2F_TRAINER_1, .SeenText, .BeatenText, 0, .Script
 	
 .Script:
-	callasm Inn1FResertScriptVar
+	loadvar wScriptVar, 0
 	end_if_just_battled
 	jumptextfaceplayer .NormalText
 
@@ -374,7 +374,7 @@ TrainerInn2F_2:
 	trainer GRUNTM, INN_GRUNTM_1, EVENT_BEAT_INN_2F_TRAINER_2, .SeenText, .BeatenText, 0, .Script
 	
 .Script:
-	callasm Inn1FResertScriptVar
+	loadvar wScriptVar, 0
 	jumptextfaceplayer .NormalText
 
 .NormalText:
@@ -428,7 +428,7 @@ Inn2F201LockedDoor:
 	closetext
 	callasm Inn2F201InitializeBackupName
 	disappear INN_2F_DOOR_LOCK_5
-	callasm Inn1FResertScriptVar
+	loadvar wScriptVar, 0
 	end
 	
 .nothing
@@ -440,7 +440,7 @@ Inn2F201LockedDoor:
 	writetext Inn2F201LockedDoorTextNothing2
 	waitbutton
 	closetext
-	callasm Inn1FResertScriptVar
+	loadvar wScriptVar, 0
 	end
 .wrong
 	writetext Inn2F201LockedDoorTextPlayerSaid
@@ -451,7 +451,7 @@ Inn2F201LockedDoor:
 	writetext Inn2F201LockedDoorTextWrong
 	waitbutton
 	closetext
-	callasm Inn1FResertScriptVar
+	loadvar wScriptVar, 0
 	end
 	
 .normal

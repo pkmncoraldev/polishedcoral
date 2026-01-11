@@ -1024,7 +1024,7 @@ GetMartDialogGroup: ; 15ca3
 	dw Text_Mart_HowMany
 	dw Text_ClothesMart_CostsThisMuch
 	dw Text_Mart_InsufficientFunds
-	dw Text_Mart_BagFull
+	dw Text_Mart_PartyFull
 	dw Text_Mart_HereYouGo
 	dw BuyPokemonMenuLoop
 	
@@ -1490,6 +1490,11 @@ BuyPokemonMenuLoop: ; 15cef
 	ld bc, hMoneyTemp
 	farcall CompareMoney
 	jp c, MartMenuLoop_InsufficientFunds
+	
+	ld a, [wPartyCount]
+	cp 6
+	jp nc, MartMenuLoop_InsufficientBagSpace
+	
 	ld de, wMoney
 	ld bc, hMoneyTemp
 	farcall TakeMoney
@@ -2607,6 +2612,10 @@ Text_Mart_BagFull: ; 0x15faa
 	text_jump UnknownText_0x1c4fb7
 	db "@"
 ; 0x15faf
+
+Text_Mart_PartyFull:
+	text_jump UnknownText_0x1c4fb72
+	db "@"
 
 TextMart_CantBuyFromYou: ; 0x15faf
 	; Sorry, I can't buy that from you.

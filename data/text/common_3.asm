@@ -558,6 +558,11 @@ UnknownText_0x1c4fb7::
 	text "You can't carry"
 	line "any more items."
 	done
+	
+UnknownText_0x1c4fb72::
+	text "Your party is"
+	line "full!"
+	done
 
 UnknownText_0x1c4fd7::
 	text "Sorry, <WAIT_S>I can't buy"

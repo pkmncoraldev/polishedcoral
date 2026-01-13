@@ -134,7 +134,7 @@ SubtractFunds: ; 16037
 
 AddMoney: ; 16053
 	ld a, 3
-AddFunds: ; 16055
+AddFunds:: ; 16055
 ; a: number of bytes
 ; bc: start addr of amount (big-endian)
 ; de: start addr of account (big-endian)

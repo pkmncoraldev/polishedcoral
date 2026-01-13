@@ -145,13 +145,14 @@ BrilloGameCornerMoogooMankey:
 	waitbutton
 	endtext
 .win
+	callasm MoogooMankeyCalcCoins
 	opentext
 	writetext BrilloGameCornerMoogooMankeyTextWin
 	special PlaceCoinsTopRight
 	loadmenudata MenuDataHeader_Games
 	closewindow
 	waitbutton
-	givecoins 125
+	callasm MoogooMankeyGiveCoins
 	special PlaceCoinsTopRight
 	waitsfx
 	playsound SFX_TRANSACTION
@@ -189,6 +190,45 @@ MenuDataHeader_Games:
 	db "YES@"
 	db "NO@"
 	db "RULES@"
+	
+MoogooMankeyCalcCoins:
+	xor a
+	ldh [hMoneyTemp], a
+	ldh [hMoneyTemp + 1], a
+	ldh [hMoneyTemp + 2], a
+	ldh [hProduct], a
+	ldh [hProduct + 1], a
+	ldh [hProduct + 2], a
+	ld a, [wMoogooPlayerScore]
+	inc a
+	push af
+	ld a, 100
+.loop
+	ldh [hProduct + 1], a
+	ld de, hMoneyTemp
+	ld bc, hProduct
+	ld a, 2
+	farcall AddFunds
+	pop af
+	dec a
+	cp 0
+	ret z
+	push af
+	ld a, 25
+	push af
+	xor a
+	ldh [hProduct], a
+	ldh [hProduct + 1], a
+	pop af
+	jr .loop
+	xor a
+	ld [wMoogooPlayerScore], a
+	ret
+	
+MoogooMankeyGiveCoins:
+	ld bc, hMoneyTemp
+	farcall GiveCoins
+	ret
 	
 BrilloGameCornerTableWrong:
 	opentext
@@ -335,7 +375,10 @@ BrilloGameCornerMoogooMankeyTextNoCoins:
 BrilloGameCornerMoogooMankeyTextWin:
 	text "Congratulations!"
 	
-	para "You get 125 COINs!"
+	para "You get @"
+	deciram hMoneyTemp, 2, 7
+	text ""
+	line "COINs!"
 	done
 	
 BrilloGameCornerMoogooMankeyTextTie:

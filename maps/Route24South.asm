@@ -139,6 +139,7 @@ BreloomRandomAsm:
 	ret
 	
 Route24SouthBreloom:
+	special Special_StopRunning
 	applyonemovement PLAYER, step_right
 	special Special_FadeOutMusic
 	pause 10

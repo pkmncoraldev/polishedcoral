@@ -5100,9 +5100,18 @@ endr
 	ld [hl], a
 
 	ld a, [wBattleType]
+	cp BATTLETYPE_PORYGON
+	jr nz, .not_porygon
+	ld a, [wWalkingOnBridge]
+	and a
+	jr nz, .unknown_level
+	jr .normal_level
+	
+.not_porygon
 	cp BATTLETYPE_LEGENDARY ; or BATTLETYPE_LEGENDARY_2
-	jp nc, .unknown_level
+	jr nc, .unknown_level
 
+.normal_level
 	hlcoord 5, 1
 	ld a, [wEnemyMonLevel]
 	ld [wTempMonLevel], a
@@ -7836,6 +7845,7 @@ GiveExperiencePoints: ; 3ee3b
 	ld a, [wWalkingOnBridge]
 	cp 5
 	jr z, .legendary_boost
+	jr .not_legendary
 .not_porygon
 	cp BATTLETYPE_LEGENDARY ; or BATTLETYPE_LEGENDARY_2
 	jr c, .not_legendary

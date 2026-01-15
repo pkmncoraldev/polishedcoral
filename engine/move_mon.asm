@@ -1667,8 +1667,16 @@ CalcPkmnStats: ; e167
 	and a
 	jr z, .no_boss_boost
 	ld a, [wBattleType]
+	cp BATTLETYPE_PORYGON
+	jr nz, .not_porygon
+	ld a, [wWalkingOnBridge]
+	cp 5
+	jr z, .boss_boost
+	jr .no_boss_boost
+.not_porygon
 	cp BATTLETYPE_LEGENDARY ; or BATTLETYPE_LEGENDARY_2
 	jp c, .no_boss_boost
+.boss_boost
 	ld a, [wCurPartyLevel]
 	push af
 	farcall BoostStatLevels

@@ -5275,17 +5275,22 @@ CheckUniqueWildMove:
 	ld a, [wEnemyMonForm]
 	and FORM_MASK
 	ld b, a
-	ld hl, BossWildMoves
+	ld hl, BossWildInfo
 .loop2
 	ld a, [hli] ; species
 	cp -1
 	ret z
 	cp c
-	jr nz, .inc4andloop2
+	jr nz, .inc10andloop2
 	ld a, [hli] ; form
 	and FORM_MASK
 	cp b
-	jr nz, .inc3andloop2
+	jr nz, .inc9andloop2
+	inc hl
+	inc hl
+	inc hl
+	inc hl
+	inc hl
 	ld a, [hli] ; move
 	ld b, a
 	push hl
@@ -5317,9 +5322,14 @@ CheckUniqueWildMove:
 	ld [hl], a
 	ret
 
-.inc4andloop2
+.inc10andloop2
 	inc hl
-.inc3andloop2
+.inc9andloop2
+	inc hl
+	inc hl
+	inc hl
+	inc hl
+	inc hl
 	inc hl
 	inc hl
 	inc hl
@@ -5328,7 +5338,7 @@ CheckUniqueWildMove:
 	jr .loop2
 
 INCLUDE "data/pokemon/unique_wild_moves.asm"
-INCLUDE "data/pokemon/boss_wild_moves.asm"
+INCLUDE "data/pokemon/boss_wild_info.asm"
 
 MovementLeaf::
 	ld hl, wDailyFlags2

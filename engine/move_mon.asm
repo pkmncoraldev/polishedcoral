@@ -1663,7 +1663,22 @@ CalcPkmnStats: ; e167
 	ld c, $0
 .loop
 	inc c
+	ld a, [wCalculatingEnemyStats]
+	and a
+	jr z, .no_boss_boost
+	ld a, [wBattleType]
+	cp BATTLETYPE_LEGENDARY ; or BATTLETYPE_LEGENDARY_2
+	jp c, .no_boss_boost
+	ld a, [wCurPartyLevel]
+	push af
+	farcall BoostStatLevels
 	call CalcPkmnStatC
+	pop af
+	ld [wCurPartyLevel], a
+	jr .cont
+.no_boss_boost
+	call CalcPkmnStatC
+.cont
 	ldh a, [hMultiplicand + 1]
 	ld [de], a
 	inc de

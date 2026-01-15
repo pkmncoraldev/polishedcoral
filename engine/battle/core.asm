@@ -5099,11 +5099,28 @@ endr
 	hlcoord 8, 1
 	ld [hl], a
 
+	ld a, [wBattleType]
+	cp BATTLETYPE_LEGENDARY ; or BATTLETYPE_LEGENDARY_2
+	jp nc, .unknown_level
+
 	hlcoord 5, 1
 	ld a, [wEnemyMonLevel]
 	ld [wTempMonLevel], a
 	call PrintLevel
+	jr .level_done
+.unknown_level
+	hlcoord 5, 1
+	ld a, "<LV>"
+	ld [hl], a
+	inc hl
+	ld a, "?"
+	ld [hl], a
+	inc hl
+	ld a, "?"
+	ld [hl], a
+	inc hl
 
+.level_done
 	ld hl, wEnemyMonHP
 	ld a, [hli]
 	ldh [hMultiplicand + 1], a
@@ -7316,7 +7333,11 @@ endr
 	ld de, wEnemyMonMaxHP
 	ld b, FALSE
 	ld hl, wEnemyMonDVs - (MON_DVS - (MON_EVS - 1))
+	ld a, 1
+	ld [wCalculatingEnemyStats], a
 	predef CalcPkmnStats
+	xor a
+	ld [wCalculatingEnemyStats], a
 
 	; If we're headbutting trees, some monsters enter battle asleep
 	call CheckSleepingTreeMon

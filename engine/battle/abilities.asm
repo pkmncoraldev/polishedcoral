@@ -2105,8 +2105,8 @@ GetRandomPickupItem::
 
 .BasePickupTable:
 	db POTION
-	db ANTIDOTE
 	db SUPER_POTION
+	db BOTTLE_CAP
 	db GREAT_BALL
 	db REPEL
 	db ESCAPE_ROPE
@@ -2114,9 +2114,9 @@ GetRandomPickupItem::
 	db HYPER_POTION
 	db ULTRA_BALL
 	db REVIVE
-	db RARE_CANDY
-	db DUSK_STONE
-	db SHINY_STONE
+	db ETHER
+	db MAX_POTION
+	db ELIXIR
 	db MAX_ETHER
 	db FULL_RESTORE
 	db MAX_REVIVE
@@ -2124,16 +2124,16 @@ GetRandomPickupItem::
 	db MAX_ELIXIR
 
 .RarePickupTable:
-	db HYPER_POTION
-	db NUGGET
-	db KINGS_ROCK
-	db FULL_RESTORE
-	db ETHER
-	db LUCKY_EGG
-	db DESTINY_KNOT
-	db ELIXIR
-	db BIG_NUGGET
-	db LEFTOVERS
+	db BOTTLE_CAP
+	db BOTTLE_CAP
+	db BOTTLE_CAP
+	db BOTTLE_CAP
+	db BOTTLE_CAP
+	db BOTTLE_CAP
+	db BOTTLE_CAP
+	db BOTTLE_CAP
+	db BOTTLE_CAP
+	db BOTTLE_CAP
 	db BOTTLE_CAP
 	
 DisguiseAbility::

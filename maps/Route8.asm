@@ -83,7 +83,7 @@ TrainerRoute8_1:
 TrainerRoute8_2:
 	generictrainer POKEFANM, REG, EVENT_BEAT_ROUTE_8_TRAINER_2, .SeenText, .BeatenText
 
-	text "You're #MON are"
+	text "Your #MON are"
 	line "seriously good!"
 	done
 

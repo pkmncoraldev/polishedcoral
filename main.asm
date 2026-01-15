@@ -5956,9 +5956,12 @@ FakeProfSpruceSpeech::
 	ld hl, SpruceTextE
 	call PrintTextBoxText2
 	call RestoreMusic
+	ld a, 11
+.loop3
 	inc bc
-	inc bc
-	inc bc
+	dec a
+	cp 0
+	jr nz, .loop3
 	pop de
 	dec d
 	jr nz, .loop

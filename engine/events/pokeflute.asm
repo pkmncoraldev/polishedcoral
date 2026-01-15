@@ -285,7 +285,7 @@ _NettSpecs:
 	closetext
 	waitsfx
 	setlasttalked 1
-	loadwildmon DITTO, 54
+	loadwildmon DITTO, 50
 	writecode VAR_BATTLETYPE, BATTLETYPE_LEGENDARY
 	startbattle
 	if_equal $1, .lose

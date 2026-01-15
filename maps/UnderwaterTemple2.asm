@@ -93,7 +93,7 @@ UnderwaterTemple2Cursola2:
 	closetext
 	waitsfx
 	setlasttalked UNDERWATER_TEMPLE_CURSOLA
-	loadwildmon CURSOLA, 43
+	loadwildmon CURSOLA, 50
 	writecode VAR_BATTLETYPE, BATTLETYPE_LEGENDARY
 	startbattle
 	disappear UNDERWATER_TEMPLE_CURSOLA

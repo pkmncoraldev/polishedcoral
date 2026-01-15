@@ -23,7 +23,7 @@ SeasideCaveB2FDrakloak:
 	waitbutton
 	closetext
 	waitsfx
-	loadwildmon DRAKLOAK, 50
+	loadwildmon DRAKLOAK, 45
 	writecode VAR_BATTLETYPE, BATTLETYPE_LEGENDARY
 	startbattle
 	if_equal $1, .lose

@@ -132,7 +132,7 @@ IceTempleMamoswineCutscene:
 	closetext
 	waitsfx
 	setevent EVENT_BIG_OW_MON_BATTLE
-	loadwildmon MAMOSWINE, 38
+	loadwildmon MAMOSWINE, 32
 	writecode VAR_BATTLETYPE, BATTLETYPE_LEGENDARY
 	startbattle
 	if_equal $1, .lose

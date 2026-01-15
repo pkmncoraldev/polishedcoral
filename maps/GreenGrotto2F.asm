@@ -49,7 +49,7 @@ GreenGrotto2FNoivern:
 	waitbutton
 	closetext
 	waitsfx
-	loadwildmon NOIVERN, 52
+	loadwildmon NOIVERN, 49
 	writecode VAR_BATTLETYPE, BATTLETYPE_LEGENDARY
 	startbattle
 	disappear 1

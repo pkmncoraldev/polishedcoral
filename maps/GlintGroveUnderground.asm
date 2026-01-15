@@ -378,7 +378,7 @@ endr
 	closetext
 	waitsfx
 	setlasttalked GLINT_GROVE_UNDERGROUND_CLEFABLE
-	loadwildmon CLEFABLE, 47
+	loadwildmon CLEFABLE, 45
 	writecode VAR_BATTLETYPE, BATTLETYPE_LEGENDARY
 	startbattle
 	disappear GLINT_GROVE_UNDERGROUND_CLEFABLE

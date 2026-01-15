@@ -26,7 +26,7 @@ Route6UnderwaterCaveLapras:
 	waitbutton
 	closetext
 	waitsfx
-	loadwildmon LAPRAS, 43
+	loadwildmon LAPRAS, 50
 	writecode VAR_BATTLETYPE, BATTLETYPE_LEGENDARY
 	startbattle
 	if_equal $1, .lose

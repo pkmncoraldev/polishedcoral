@@ -339,13 +339,13 @@ BrilloMartDoorAsm:
 BrilloMartCheckPassword:
 	ld hl, DefaultPassword
 	ld de, wBackupName
-	ld c, PLAYER_NAME_LENGTH
+	ld c, NAME_LENGTH
 	call StringCmp
 	jr z, .default
 	
 	ld hl, CorrectPassword
 	ld de, wBackupName
-	ld c, PLAYER_NAME_LENGTH
+	ld c, NAME_LENGTH
 	call StringCmp
 	jr z, .correct
 	ld a, 0

@@ -227,13 +227,13 @@ PorygonRoomCheckPassword:
 
 	ld hl, DefaultPorygonPassword
 	ld de, wBackupName
-	ld c, PLAYER_NAME_LENGTH
+	ld c, NAME_LENGTH
 	call StringCmp
 	jr z, .default
 	
 	ld hl, SecretWord
 	ld de, wBackupName
-	ld c, 10
+	ld c, NAME_LENGTH
 	call StringCmp
 	jr z, .correct
 	ld a, 0

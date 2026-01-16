@@ -467,13 +467,13 @@ Inn2F201LockedDoorAsm:
 Inn2F201LockedDoorCheckPassword:
 	ld hl, Room201DefaultPassword
 	ld de, wBackupName
-	ld c, PLAYER_NAME_LENGTH
+	ld c, NAME_LENGTH
 	call StringCmp
 	jr z, .default
 	
 	ld hl, Room201CorrectPassword
 	ld de, wBackupName
-	ld c, PLAYER_NAME_LENGTH
+	ld c, NAME_LENGTH
 	call StringCmp
 	jr z, .correct
 	ld a, 0

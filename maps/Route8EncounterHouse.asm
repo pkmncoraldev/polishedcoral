@@ -70,6 +70,11 @@ Route8EncounterHouseLadyAsm:
 	jr c, .cancel
 	ld a, [wCurPartySpecies]
 	ld [wEncounterHouseMon], a
+	cp CLODSIRE
+	call z, .clodsire_cursola
+	cp CURSOLA
+	call z, .clodsire_cursola
+	
 	ld a, [wCurForm]
 	ld [wEncounterHouseMonForm], a
 	farcall GetPreEvolution
@@ -93,6 +98,10 @@ Route8EncounterHouseLadyAsm:
 	ld [wStringBuffer1], a
 	ld a, 3
 	ld [wScriptVar], a
+	ret
+.clodsire_cursola
+	ld a, 2
+	ld [wCurForm], a
 	ret
 	
 Route8EncounterHouseLadyAsm2:

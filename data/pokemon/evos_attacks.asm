@@ -2340,6 +2340,7 @@ SunfloraEvosAttacks:
 
 WooperEvosAttacks:
 	db EVOLVE_LEVEL, 20, QUAGSIRE
+	db EVOLVE_DUMMY, -1, CLODSIRE	; for route 8 encounter house
 	db 0 ; no more evolutions
 	db 1, WATER_GUN
 	db 1, LEER_TAIL_WHIP
@@ -2732,6 +2733,7 @@ PiloswineEvosAttacks:
 	db 0 ; no more level-up moves
 
 CorsolaEvosAttacks:
+	db EVOLVE_DUMMY, -1, CURSOLA	; for route 8 encounter house
 	db 0 ; no more evolutions
 	db 1, TACKLE_SCRATCH_POUND
 	db 1, MULTI_MOVE_FURY_COMET_BARRAGE_SLAP_CANNON

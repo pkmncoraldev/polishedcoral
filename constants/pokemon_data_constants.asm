@@ -153,6 +153,7 @@ DEF BATTLEMON_STRUCT_LENGTH EQUS "(wBattleMonStructEnd - wBattleMonSpecies)"
 	const EVOLVE_HOLDING_DAY
 	const EVOLVE_HOLDING_NITE
 	const EVOLVE_LOCATION_SPECIFIC
+	const EVOLVE_DUMMY	; for Cursola and Clodsire at route 8 encounter house
 
 ; happiness evolution triggers
 DEF HAPPINESS_TO_EVOLVE EQU 220

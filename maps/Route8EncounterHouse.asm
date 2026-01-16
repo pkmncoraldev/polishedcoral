@@ -38,6 +38,7 @@ Route8EncounterHouseLady:
 	writetext Route8EncounterHouseLadyText1
 	waitbutton
 	callasm Route8EncounterHouseLadyAsm
+	ifequal 4, .banned
 	ifequal 3, .yesand
 	iffalse .no
 	writetext Route8EncounterHouseLadyText2
@@ -64,11 +65,20 @@ Route8EncounterHouseLady:
 	waitbutton
 	closetext
 	end
+.banned
+	writetext Route8EncounterHouseLadyText6
+	waitbutton
+	closetext
+	end
 	
 Route8EncounterHouseLadyAsm:
 	farcall SelectEncounterHouseMon
 	jr c, .cancel
 	ld a, [wCurPartySpecies]
+	ld hl, EncounterHouseBannedMons
+	ld de, 1
+	call IsInArray
+	jr c, .no
 	ld [wEncounterHouseMon], a
 	cp CLODSIRE
 	call z, .clodsire_cursola
@@ -103,6 +113,42 @@ Route8EncounterHouseLadyAsm:
 	ld a, 2
 	ld [wCurForm], a
 	ret
+.no
+	ld a, 4
+	ld [wScriptVar], a
+	ret
+	
+EncounterHouseBannedMons:
+	db BULBASAUR
+	db IVYSAUR
+	db VENUSAUR
+	db CHARMANDER
+	db CHARMELEON
+	db CHARIZARD
+	db SQUIRTLE
+	db WARTORTLE
+	db BLASTOISE
+	db PORYGON
+	db PORYGON2
+	db PORYGON_Z
+	db ARTICUNO
+	db ZAPDOS
+	db MOLTRES
+	db CHIKORITA
+	db BAYLEEF
+	db MEGANIUM
+	db CYNDAQUIL
+	db QUILAVA
+	db TYPHLOSION
+	db TOTODILE
+	db CROCONAW
+	db FERALIGATR
+	db SPIRITOMB
+	db ARCHEN
+	db ARCHEOPS
+	db TIRTOUGA
+	db CARRACOSTA
+	db -1
 	
 Route8EncounterHouseLadyAsm2:
 	ld a, [wEncounterHouseMon]
@@ -163,4 +209,12 @@ Route8EncounterHouseLadyText5:
 	
 	para "I wonder if it's"
 	line "still back there…"
+	done
+	
+Route8EncounterHouseLadyText6:
+	text "Hmm… <WAIT_S>No…"
+	
+	para "It didn't look"
+	line "anything like that"
+	cont "#MON…"
 	done

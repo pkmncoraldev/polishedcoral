@@ -7,4 +7,4 @@
 	next "electricity, it"
 	page "sticks onto larger"
 	next "#MON to absorb"
-	next "static electricity.@"
+	next "static electricity@"

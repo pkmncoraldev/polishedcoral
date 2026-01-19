@@ -1306,7 +1306,12 @@ LoadMapPals::
 	cp MAP_OBSCURA_MUSEUM_PHOTO
 	jr z, .standee
 	cp MAP_OBSCURA_MUSEUM_3F
-	jr nz, .computer
+	jr z, .museum
+.computer
+	call .normal
+	ld hl, MapObjectPalsComputer
+	call LoadSingleOBPalLinePal7
+	jp FarCopyWRAM
 .museum
 	ld hl, MapObjectPalsMuseum
 	ld a, [wPlayerPalette]
@@ -1337,9 +1342,13 @@ LoadMapPals::
 	ld a, [wYCoord]
 	cp $25
 	jp c, .highway
-.computer
+.bone
 	call .normal
-	ld hl, MapObjectPalsComputer
+	ld a, [wTimeOfDayPal]
+	and 3
+	ld bc, 1 palettes
+	ld hl, MapObjectPalsBone
+	call AddNTimes
 	call LoadSingleOBPalLinePal7
 	jp FarCopyWRAM
 .route_32
@@ -2308,6 +2317,9 @@ INCLUDE "maps/palettes/obpals/playerroom.pal"
 
 MapObjectPalsComputer::
 INCLUDE "maps/palettes/obpals/computer.pal"
+
+MapObjectPalsBone::
+INCLUDE "maps/palettes/obpals/bone.pal"
 
 MapObjectPalsMuseum::
 INCLUDE "maps/palettes/obpals/museum.pal"

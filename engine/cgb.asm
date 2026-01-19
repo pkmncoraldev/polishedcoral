@@ -1051,9 +1051,7 @@ _CGB_TrainerCard2: ; 9289
 	call GetTrainerPalettePointer
 	call LoadPalette_White_Col1_Col2_Black
 
-	ld a, [wMetGymLeaderFlags]
-	bit 7, a
-	jr nz, .all_uncovered
+	ld a, [wOnwaBadges]
 	bit 6, a
 	jr nz, .seven_uncovered
 	
@@ -1061,8 +1059,6 @@ _CGB_TrainerCard2: ; 9289
 	ld de, wUnknBGPals palette $07
 	call LoadPalette_White_Col1_Col2_Black
 	jr .skip
-.all_uncovered
-	ld a, DARCY
 .seven_uncovered
 	ld a, ROCKY
 	call GetTrainerPalettePointer

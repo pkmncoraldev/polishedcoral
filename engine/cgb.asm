@@ -1008,7 +1008,7 @@ _CGB_PackPals: ; 93d3
 	jp _CGB_FinishLayout
 
 _CGB_TrainerCard:
-	call LoadFirstTwoTrainerCardPals
+	call LoadFirstTrainerCardPal
 
 	; Trainer stars
 	hlcoord 2, 16, wAttrMap
@@ -1025,7 +1025,7 @@ _CGB_TrainerCard:
 
 
 _CGB_TrainerCard2: ; 9289
-	call LoadFirstTwoTrainerCardPals
+	call LoadFirstTrainerCardPal
 	
 	ld a, STANLEY
 	call GetTrainerPalettePointer
@@ -1053,15 +1053,18 @@ _CGB_TrainerCard2: ; 9289
 
 	ld a, [wMetGymLeaderFlags]
 	bit 7, a
-	jp nz, .all_uncovered
+	jr nz, .all_uncovered
+	bit 6, a
+	jr nz, .seven_uncovered
 	
 	ld hl, TrainerCardMonochromePals
 	ld de, wUnknBGPals palette $07
 	call LoadPalette_White_Col1_Col2_Black
 	jr .skip
-	
 .all_uncovered
 	ld a, DARCY
+.seven_uncovered
+	ld a, ROCKY
 	call GetTrainerPalettePointer
 	call LoadPalette_White_Col1_Col2_Black
 .skip
@@ -1072,7 +1075,17 @@ _CGB_TrainerCard2: ; 9289
 	ld bc, 8 palettes
 	ld a, $5
 	call FarCopyWRAM
+	
+	ld a, [wOnwaBadges]
+	bit 7, a
+	jr nz, .skip_darcy
+	ld hl, TrainerCardMonochromeDarcy
+	ld de, wUnknOBPals + 7 palettes
+	ld bc, 1 palettes
+	ld a, $5
+	call FarCopyWRAM
 
+.skip_darcy
 	hlcoord 3, 11, wAttrMap
 	lb bc, 2, 15
 	ld a, $7
@@ -1085,15 +1098,15 @@ _CGB_TrainerCard2: ; 9289
 	
 	ld a, [wOnwaBadges]
 	bit 7, a
-	jr nz, .leader8
+	jr nz, .darcy
 	bit 6, a
-	jr nz, .leader7
+	jr nz, .rocky
 	bit 5, a
-	jr nz, .leader6
+	jr nz, .leilani
 	bit 4, a
-	jr nz, .leader5
+	jr nz, .polly
 	bit 3, a
-	jr nz, .leader4
+	jr nz, .charlie
 	bit 2, a
 	jr nz, .wendy
 	bit 1, a
@@ -1102,52 +1115,52 @@ _CGB_TrainerCard2: ; 9289
 	jr nz, .stanley
 	jr .none
 	
-.leader8
+.darcy
 	hlcoord 15, 14, wAttrMap
 	lb bc, 3, 3
-	ld a, $7
+	ld a, $6
 	call FillBoxCGB
 	
-.leader7
+.rocky
 	hlcoord 11, 14, wAttrMap
 	lb bc, 3, 3
 	ld a, $7
 	call FillBoxCGB
 	
-.leader6
+.leilani
 	hlcoord 7, 14, wAttrMap
 	lb bc, 3, 3
 	ld a, $6
 	call FillBoxCGB
 	
-.leader5
+.polly
 	hlcoord 3, 14, wAttrMap
 	lb bc, 3, 3
-	ld a, $6
+	ld a, $5
 	call FillBoxCGB
 	
-.leader4
+.charlie
 	hlcoord 15, 11, wAttrMap
 	lb bc, 3, 3
-	ld a, $5
+	ld a, $4
 	call FillBoxCGB
 	
 .wendy
 	hlcoord 11, 11, wAttrMap
 	lb bc, 3, 3
-	ld a, $4
+	ld a, $3
 	call FillBoxCGB
 	
 .rodney
 	hlcoord 7, 11, wAttrMap
 	lb bc, 3, 3
-	ld a, $3
+	ld a, $2
 	call FillBoxCGB
 	
 .stanley
 	hlcoord 3, 11, wAttrMap
 	lb bc, 2, 3
-	ld a, $2
+	ld a, $1
 	call FillBoxCGB
 
 .none
@@ -1159,22 +1172,7 @@ _CGB_TrainerCard3:
 	ret
 
 
-LoadFirstTwoTrainerCardPals:
-	; trainer card
-;	ld c, VAR_TRAINER_STARS
-;	farcall _GetVarAction
-;	ld a, [wStringBuffer2]
-;	ld bc, TrainerCardPals
-;	ld l, a
-;	ld h, 0
-;	add hl, hl
-;	add hl, hl
-;	add hl, bc
-
-;	ld hl, TrainerCardPals
-;	ld de, wUnknBGPals
-;	call LoadPalette_White_Col1_Col2_Black
-
+LoadFirstTrainerCardPal:
 ; player sprite
 	ld a, [wPlayerGender]
 	cp PIPPI
@@ -1182,85 +1180,63 @@ LoadFirstTwoTrainerCardPals:
 	ld a, [wPlayerPalette]
 	cp 0
 	jp nz, .cont1
-	ld hl, TrainerCardRedPals
+	ld hl, PlayerPalette
 	ld de, wUnknBGPals
 	call LoadPalette_White_Col1_Col2_Black
-	ld hl, PlayerPalette
 	jp .ok
 .cont1
 	ld a, [wPlayerPalette]
 	cp 1
 	jp nz, .cont2
-	ld hl, TrainerCardBluePals
+	ld hl, PlayerPalette2
 	ld de, wUnknBGPals
 	call LoadPalette_White_Col1_Col2_Black
-	ld hl, PlayerPalette2
 	jp .ok
 .cont2
 	ld a, [wPlayerPalette]
 	cp 2
 	jp nz, .cont3
-	ld hl, TrainerCardGreenPals
+	ld hl, PlayerPalette3
 	ld de, wUnknBGPals
 	call LoadPalette_White_Col1_Col2_Black
-	ld hl, PlayerPalette3
 	jp .ok
 .cont3
 	ld a, [wPlayerPalette]
 	cp 3
 	jp nz, .cont4
-	ld hl, TrainerCardBrownPals
+	ld hl, PlayerPalette4
 	ld de, wUnknBGPals
 	call LoadPalette_White_Col1_Col2_Black
-	ld hl, PlayerPalette4
 	jp .ok
 .cont4
 	ld a, [wPlayerPalette]
 	cp 4
 	jp nz, .cont5
-	ld hl, TrainerCardPurplePals
+	ld hl, PlayerPalette5
 	ld de, wUnknBGPals
 	call LoadPalette_White_Col1_Col2_Black
-	ld hl, PlayerPalette5
 	jp .ok
 .cont5
 	ld a, [wPlayerPalette]
 	cp 5
 	jp nz, .cont6
-	ld hl, TrainerCardTealPals
+	ld hl, PlayerPalette6
 	ld de, wUnknBGPals
 	call LoadPalette_White_Col1_Col2_Black
-	ld hl, PlayerPalette6
 	jp .ok
 .cont6
-	ld hl, TrainerCardPinkPals
+	ld hl, PlayerPalette7
 	ld de, wUnknBGPals
 	call LoadPalette_White_Col1_Col2_Black
-	ld hl, PlayerPalette7
 	jp .ok
 .pippi
-	ld hl, TrainerCardPippiPals
+	ld hl, ClefairyPalette
 	ld de, wUnknBGPals
 	call LoadPalette_White_Col1_Col2_Black
-	ld hl, ClefairyPalette
 .ok
-	call LoadPalette_White_Col1_Col2_Black
-	
 	push de
-	; border
 	hlcoord 0, 0, wAttrMap
 	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
-	xor a
-	call ByteFill
-
-	; player
-	hlcoord 14, 1, wAttrMap
-	lb bc, 7, 5
-	ld a, $1
-	call FillBoxCGB
-	
-	hlcoord $12, 1, wAttrMap
-	ld bc, 1
 	xor a
 	call ByteFill
 

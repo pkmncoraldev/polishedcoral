@@ -1404,7 +1404,7 @@ JohtoBadgePalettes:
 	RGB 23, 22, 26
 	RGB 11, 10, 23
 	RGB 00, 00, 00
-; 3
+; 3/7
 	RGB 31, 31, 31
 	RGB 29, 29, 29
 	RGB 27, 24, 00
@@ -1424,15 +1424,15 @@ JohtoBadgePalettes:
 	RGB 23, 26, 29
 	RGB 15, 19, 23
 	RGB 00, 00, 00
-; 7
-	RGB 31, 31, 31
-	RGB 23, 26, 29
-	RGB 15, 19, 23
-	RGB 00, 00, 00
 ; 8
 	RGB 31, 31, 31
 	RGB 23, 26, 29
 	RGB 15, 19, 23
+	RGB 00, 00, 00
+; darcy face
+	RGB 31, 31, 31
+	RGB 28, 20, 09
+	RGB 11, 11, 00
 	RGB 00, 00, 00
 
 
@@ -1594,42 +1594,16 @@ SlotMachinePals2:
 ClothesIconPalettes:
 	RGB 00, 00, 00
 	RGB 00, 00, 00
-	
-TrainerCardRedPals:
-	RGB 30, 24, 12
-	RGB 30, 11, 09
-
-TrainerCardBluePals:
-	RGB 30, 24, 12
-	RGB 10, 18, 28
-	
-TrainerCardGreenPals:
-	RGB 30, 24, 12
-	RGB $0d, $19, $02
-	
-TrainerCardBrownPals:
-	RGB 30, 24, 12
-	RGB $11, $0c, $04
-	
-TrainerCardPurplePals:
-	RGB 30, 24, 12
-	RGB $16, $0c, $1a
-	
-TrainerCardTealPals:
-	RGB 30, 24, 12
-	RGB $0b, $17, $15
-	
-TrainerCardPinkPals:
-	RGB 30, 24, 12
-	RGB $1d, $11, $16
-	
-TrainerCardPippiPals:
-	RGB 30, 24, 12
-	RGB $1f, $12, $16
 
 TrainerCardMonochromePals:
 	RGB $13, $13, $13
 	RGB $09, $09, $09
+	
+TrainerCardMonochromeDarcy:
+	RGB 31, 31, 31
+	RGB $13, $13, $13
+	RGB $09, $09, $09
+	RGB 00, 00, 00
 
 DiplomaPals:
 ; gray

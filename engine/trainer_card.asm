@@ -245,7 +245,7 @@ TrainerCard_LoadGFX:
 
 	ld de, BadgeGFX
 	ld hl, VTiles0 tile $00
-	lb bc, BANK(BadgeGFX), $2c
+	lb bc, BANK(BadgeGFX), $32
 	call Request2bpp
 	
 	jp Load1bppFont
@@ -659,25 +659,7 @@ TrainerCard_Page3_3_InitObjectsAndStrings: ; 2536c (9:536c)
 
 	hlcoord 2, 10
 	ld a, $35
-	ld c, 4
-.loop
 	call TrainerCard_Page3_3_PlaceLeadersFaces
-rept 4
-	inc hl
-endr
-	dec c
-	jr nz, .loop
-
-	hlcoord 2, 13
-	ld a, $57
-	ld c, 4
-.loop2
-	call TrainerCard_Page3_3_PlaceLeadersFaces
-rept 4
-	inc hl
-endr
-	dec c
-	jr nz, .loop2
 
 	xor a
 	ld [wcf64], a
@@ -707,84 +689,91 @@ TrainerCard_Page3_3_PlaceLeadersFaces: ; 253f4 (9:53f4)
 	ld de, .Faces2Tilemap
 	call TrainerCardSetup_PlaceTilemapString
 	
-	eventflagcheck EVENT_MET_DARCY
-	jp nz, .leader8
-.return_1
-	eventflagcheck EVENT_MET_ROCKY
-	jp nz, .leader7
-.return_2
-	eventflagcheck EVENT_MET_LEILANI
-	jp nz, .leilani
-.return_3
-	eventflagcheck EVENT_MET_POLLY
-	jp nz, .polly
-.return_4
-	eventflagcheck EVENT_MET_CHARLIE
-	jp nz, .charlie
-.return_5
-	eventflagcheck EVENT_MET_WENDY
-	jp nz, .wendy
-.return_6
-	eventflagcheck EVENT_MET_RODNEY
-	jp nz, .rodney
-.return_7
-	eventflagcheck EVENT_MET_STANLEY
-	jp nz, .stanley
+	ld de, ENGINE_MET_DARCY
+	farcall CheckEngineFlag
+	call nc, .darcy
+	ld de, ENGINE_MET_ROCKY
+	farcall CheckEngineFlag
+	call nc, .rocky
+	ld de, ENGINE_MET_LEILANI
+	farcall CheckEngineFlag
+	call nc, .leilani
+	ld de, ENGINE_MET_POLLY
+	farcall CheckEngineFlag
+	call nc, .polly
+	ld de, ENGINE_MET_CHARLIE
+	farcall CheckEngineFlag
+	call nc, .charlie
+	ld de, ENGINE_MET_WENDY
+	farcall CheckEngineFlag
+	call nc, .wendy
+	ld de, ENGINE_MET_RODNEY
+	farcall CheckEngineFlag
+	call nc, .rodney
+	ld de, ENGINE_MET_STANLEY
+	farcall CheckEngineFlag
+	call nc, .stanley
 	ret
 	
-.leader8
+.darcy
 	hlcoord $f, $e
-	ld de, .Leader81Tilemap
+	ld de, .Darcy1Tilemap
 	call TrainerCardSetup_PlaceTilemapString
 	hlcoord $f, $f
-	ld de, .Leader82Tilemap
+	ld de, .Darcy2Tilemap
 	call TrainerCardSetup_PlaceTilemapString
-	jp .return_1
 	
-.leader7
+	ld hl, DarcyFaceOAM
+	ld de, wSprites + 128 ;number of badge tiles * 4
+	ld bc, 4 * 4	;number of sprites * 4 bytes per sprite
+	call CopyBytes
+	
+	ret
+	
+.rocky
 	hlcoord $b, $e
-	ld de, .Leader71Tilemap
+	ld de, .Rocky1Tilemap
 	call TrainerCardSetup_PlaceTilemapString
 	hlcoord $b, $f
-	ld de, .Leader72Tilemap
+	ld de, .Rocky2Tilemap
 	call TrainerCardSetup_PlaceTilemapString
-	jp .return_2
+	ret
 	
 .leilani
 	hlcoord 7, $e
-	ld de, .Leader61Tilemap
+	ld de, .Leilani1Tilemap
 	call TrainerCardSetup_PlaceTilemapString
 	hlcoord 7, $f
-	ld de, .Leader62Tilemap
+	ld de, .Leilani2Tilemap
 	call TrainerCardSetup_PlaceTilemapString
-	jp .return_3
+	ret
 	
 .polly
 	hlcoord 3, $e
-	ld de, .Leader51Tilemap
+	ld de, .Polly1Tilemap
 	call TrainerCardSetup_PlaceTilemapString
 	hlcoord 3, $f
-	ld de, .Leader52Tilemap
+	ld de, .Polly2Tilemap
 	call TrainerCardSetup_PlaceTilemapString
-	jp .return_4
+	ret
 	
 .charlie
 	hlcoord $f, $b
-	ld de, .Leader41Tilemap
+	ld de, .Charlie1Tilemap
 	call TrainerCardSetup_PlaceTilemapString
 	hlcoord $f, $c
-	ld de, .Leader42Tilemap
+	ld de, .Charlie2Tilemap
 	call TrainerCardSetup_PlaceTilemapString
-	jp .return_5
+	ret
 	
 .wendy
 	hlcoord $b, $b
-	ld de, .Leader31Tilemap
+	ld de, .Wendy1Tilemap
 	call TrainerCardSetup_PlaceTilemapString
 	hlcoord $b, $c
-	ld de, .Leader32Tilemap
+	ld de, .Wendy2Tilemap
 	call TrainerCardSetup_PlaceTilemapString
-	jp .return_6
+	ret
 	
 .rodney
 	hlcoord 7, $b
@@ -793,7 +782,7 @@ TrainerCard_Page3_3_PlaceLeadersFaces: ; 253f4 (9:53f4)
 	hlcoord 7, $c
 	ld de, .Rodney2Tilemap
 	call TrainerCardSetup_PlaceTilemapString
-	jp .return_7
+	ret
 	
 .stanley
 	hlcoord 3, $b
@@ -828,41 +817,41 @@ TrainerCard_Page3_3_PlaceLeadersFaces: ; 253f4 (9:53f4)
 .Rodney2Tilemap:
 	db $42, $43, $44, $ff
 	
-.Leader31Tilemap:
+.Wendy1Tilemap:
 	db $46, $47, $48, $ff
 	
-.Leader32Tilemap:
+.Wendy2Tilemap:
 	db $49, $4a, $4b, $ff
 	
-.Leader41Tilemap:
+.Charlie1Tilemap:
 	db $4d, $4e, $4f, $ff
 	
-.Leader42Tilemap:
+.Charlie2Tilemap:
 	db $50, $51, $52, $ff
 	
-.Leader51Tilemap:
+.Polly1Tilemap:
 	db $54, $55, $56, $ff
 	
-.Leader52Tilemap:
+.Polly2Tilemap:
 	db $57, $58, $59, $ff
 	
-.Leader61Tilemap:
+.Leilani1Tilemap:
 	db $5b, $5c, $5d, $ff
 	
-.Leader62Tilemap:
+.Leilani2Tilemap:
 	db $5e, $5f, $60, $ff
 	
-.Leader71Tilemap:
+.Rocky1Tilemap:
 	db $62, $63, $64, $ff
 	
-.Leader72Tilemap:
+.Rocky2Tilemap:
 	db $65, $66, $67, $ff
 	
-.Leader81Tilemap:
-	db $69, $6a, $6b, $ff
+.Darcy1Tilemap:
+	db $69, $7f, $7f, $ff
 	
-.Leader82Tilemap:
-	db $6c, $6d, $6e, $ff
+.Darcy2Tilemap:
+	db $6c, $7f, $7f, $ff
 
 TrainerCard_Page3_3_AnimateBadges: ; 25438 (9:5438)
 	ldh a, [hVBlankCounter]
@@ -992,6 +981,13 @@ TrainerCardSetup_PlaceTilemapString: ; 253a8 (9:53a8)
 	inc de
 	jr .loop
 	
+DarcyFaceOAM:
+;y pos, x pos, tile, palette
+	dsprite  16,  0, 17,  0, $2d, 7 | PRIORITY
+	dsprite  16,  0, 18,  0, $2e, 7 | PRIORITY
+	dsprite  17,  0, 17,  0, $30, 7 | PRIORITY
+	dsprite  17,  0, 18,  0, $31, 7 | PRIORITY
+	
 TrainerCard_OnwaBadgesOAM: ; 254c9
 ; Template OAM data for each badge on the trainer card.
 ; Format:
@@ -1032,12 +1028,12 @@ TrainerCard_OnwaBadgesOAM: ; 254c9
 	db $10, $20, $24, $20 | $80
 
 	; Glacier Badge
-	db $80, $58, 6, 6, 6, 6
+	db $80, $58, 2, 2, 2, 2
 	db $18, $20, $24, $20 | $80
 	db $18, $20, $24, $20 | $80
 
 	; Rising Badge
-	db $80, $78, 7, 7, 7, 7
+	db $80, $78, 6, 6, 6, 6
 	db $1c, $20, $24, $20 | $80
 	db $1c, $20, $24, $20 | $80
 ; 25523

@@ -30,11 +30,11 @@ FindNest: ; 2a01f
 ; e: 0 = North Onwa, 1 = South Onwa
 ; wNamedObjectIndexBuffer: species
 	ld a, [wCurSpecies]
-	cp SMEARGLE
-	jr nz, .not_smeargle
-	ld a, BULBASAUR ;pokemon with no nest
+	cp MAGIKARP
+	jr nz, .not_magikarp
+	ld a, EGG ;pokemon with no nest
 	ld [wNamedObjectIndexBuffer], a
-.not_smeargle
+.not_magikarp
 	hlcoord 0, 0
 	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
 	xor a

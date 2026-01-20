@@ -2347,7 +2347,6 @@ _TownMap: ; 9191c
 	jr .finish
 .south
 	call FillSouthOnwaMap
-	call TownMapBubble.cant_switch
 	call TownMapPals
 	call TownMapSouthOnwaFlips
 .finish

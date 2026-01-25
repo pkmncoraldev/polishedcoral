@@ -64,7 +64,7 @@ TMHMMoves:
 	db TOXIC_SPIKES                        ; TM63
 	db SELFDESTRUCT                        ; TM64
 	db FLAME_CHARGE                        ; TM65
-	db POISON_JAB                          ; TM66
+	db X_SCISSOR                          ; TM66
 	db RAPID_SPIN                          ; TM67
 	db GIGA_IMPACT                         ; TM68
 	db ANCIENTPOWER                        ; TM69
@@ -75,7 +75,7 @@ TMHMMoves:
 	db LUMINA_CRASH                           ; TM74
 	db SWORDS_DANCE                        ; TM75
 	db LEECH_LIFE
-	db X_SCISSOR
+	db POISON_JAB
 	db FOCUS_BLAST
 	
 	db CUT                                 ; HM01

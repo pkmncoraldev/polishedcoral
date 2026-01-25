@@ -86,7 +86,7 @@ ENDM
 	add_tm TOXIC_SPIKES		; $3e
 	add_tm SELFDESTRUCT		; $3f
 	add_tm FLAME_CHARGE		; $40
-	add_tm POISON_JAB		; $41
+	add_tm X_SCISSOR		; $41
 	add_tm RAPID_SPIN		; $42
 	add_tm GIGA_IMPACT		; $43
 	add_tm ANCIENTPOWER		; $44
@@ -97,7 +97,7 @@ ENDM
 	add_tm LUMINA_CRASH		; $49
 	add_tm SWORDS_DANCE		; $4a
 	add_tm LEECH_LIFE		; $4b
-	add_tm X_SCISSOR		; $4c
+	add_tm POISON_JAB		; $4c
 	add_tm FOCUS_BLAST		; $4d
 DEF NUM_TMS = const_value - TM01
 

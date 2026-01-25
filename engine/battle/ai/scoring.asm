@@ -210,6 +210,8 @@ AI_Types: ; 38635
 	call AIGetEnemyMove
 	ld a, [wEnemyMoveStructAnimation]
 	ld [wCurMove], a
+	cp TOXIC_SPIKES
+	ret z
 
 	push hl
 	push bc
@@ -3144,8 +3146,6 @@ AI_Status: ; 39453
 	push de
 	push hl
 	ld a, [wEnemyMoveStruct + MOVE_EFFECT]
-	cp EFFECT_TOXIC_SPIKES
-	jr z, .poison
 	cp EFFECT_TOXIC
 	jr z, .poison
 	cp EFFECT_POISON

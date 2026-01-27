@@ -17,7 +17,7 @@ SunbeamPokeCenter_MapScriptHeader:
 	person_event SPRITE_SUPER_NERD, 3, 8, SPRITEMOVEDATA_WANDER, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, SunbeamPokecenterNPC1, -1
 	person_event SPRITE_COOLTRAINER_F, 5, 2, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, SunbeamPokecenterNPC2, -1
 	object_event 2, 4, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, MEOWTH, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, SunbeamPokecenterNPC3, -1
-	person_event SPRITE_SPRUCE, 3, 4, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, SunbeamPokecenterSpruce, EVENT_MET_SPRUCE_AT_CENTER
+	person_event SPRITE_SPRUCE, 3, 5, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, SunbeamPokecenterSpruce, EVENT_MET_SPRUCE_AT_CENTER
 
 	
 	const_def 1 ; object constants
@@ -109,21 +109,15 @@ SunbeamPokecenterSpruceText1:
 SunbeamPokecenterSpruceText2:
 	text "Oh, excuse me."
 	
-	para "…"
-	
-	para "Ah, <WAIT_S>hold on a"
-	line "moment…"
+	para "…<WAIT_M>Hold on a moment…"
 	
 	para "You are <PLAYER>,"
 	line "are you not?"
 	
-	para "…"
+	para "…<WAIT_L>Ah <WAIT_S>ha!"
 	
-	para "Ah <WAIT_S>ha!"
-	
-	para "I was sure of it!"
-	
-	para "I'm PROF. SPRUCE."
+	para "I was sure of it!<WAIT_S>"
+	line "I'm PROF. SPRUCE."
 	done
 	
 SunbeamPokecenterSpruceText3:

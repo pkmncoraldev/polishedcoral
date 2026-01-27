@@ -15,9 +15,10 @@ SunbeamSurfShop_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 2 ; object events
+	db 3 ; object events
 	person_event SPRITE_FISHING_GURU, 5, 7, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, SunbeamIslandSurfShopNPC1, -1
 	person_event SPRITE_ROCKER, 3, 0, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, SunbeamIslandSurfShopNPC2, -1
+	person_event SPRITE_PONYTAIL,  4,  3, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, SunbeamIslandSurfShopNPC3, -1
 
 	const_def 1 ; object constants
 	const SUNBEAM_SURF_SHOP_CLERK
@@ -203,6 +204,9 @@ SunbeamIslandSurfShopRaichuAsm:
 	ld [wScriptVar], a
 	ret
 	
+SunbeamIslandSurfShopNPC3:
+	jumptextfaceplayer SunbeamIslandSurfShopNPC3Text
+	
 SunbeamIslandSurfShopNPC1Text1:
 	text "Hey dude!"
 	
@@ -366,4 +370,18 @@ SunbeamIslandSurfShopNPC2Text6:
 SunbeamIslandSurfShopNPC2Text7:
 	text "You and your"
 	line "RAICHU stay cool!"
+	done
+	
+SunbeamIslandSurfShopNPC3Text:
+	text "I was on a hike"
+	line "in the jungle and"
+	cont "these scary dudes"
+	cont "rushed the place."
+	
+	para "I was so shocked"
+	line "that I dropped my"
+	cont "bag in the river."
+	
+	para "All of my stuff"
+	line "washed downstream!"
 	done

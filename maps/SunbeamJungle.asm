@@ -6,13 +6,16 @@ SunbeamJungle_MapScriptHeader:
 	db 1 ; callbacks
 	callback MAPCALLBACK_TILES, SunbeamJungleCallback
 
-	db 3 ; warp events
+	db 7 ; warp events
 	warp_def 25,  4, 3, SUNBEAM_ISLAND
 	warp_def 25,  5, 12, SUNBEAM_ISLAND
 	warp_def  5, 11, 1, SUNBEAM_JUNGLE_CAVE
+	warp_def 33, 10, 1, SUNBEAM_ISLAND_EAST
+	warp_def 33, 11, 2, SUNBEAM_ISLAND_EAST
+	warp_def 33, 12, 3, SUNBEAM_ISLAND_EAST
+	warp_def 33, 13, 4, SUNBEAM_ISLAND_EAST
 
-	db 1 ; coord events
-	xy_trigger 1, -6, -6, 0, SunbeamJungleKageScript, 0, 0
+	db 0 ; coord events
 
 	db 8 ; bg events
 	signpost  7,  8, SIGNPOST_READ, SunbeamJungleBigWaterfall
@@ -120,8 +123,37 @@ SunbeamJungleTrigger0:
 	end
 	
 SunbeamJungleTrigger1:
+	callasm SunbeamJungleCheckSurf
+	iffalse .no_surf
+	changeblock 8, 16, 164
+	changeblock 10, 16, 161
+	changeblock 12, 16, 161
+	changeblock 14, 16, 165
+	changeblock 10, 18, 166
+	changeblock 12, 18, 167
 	special Special_UpdatePalsInstant
 	end
+.no_surf
+	changeblock 8, 16, 65
+	changeblock 10, 16, 67
+	changeblock 12, 16, 67
+	changeblock 14, 16, 64
+	changeblock 10, 18, 26
+	changeblock 12, 18, 34
+	special Special_UpdatePalsInstant
+	end
+	
+SunbeamJungleCheckSurf:
+	ld a, [wPlayerState]
+	cp PLAYER_SURF
+	jr nz, .no
+	ld a, 1
+	ld [wScriptVar], a
+	ret
+.no
+	xor a
+	ld [wScriptVar], a
+	ret
 	
 SunbeamJungleKageScript:
 ;	checkevent EVENT_SAVED_SUNBEAM

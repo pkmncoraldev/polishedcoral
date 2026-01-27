@@ -15,7 +15,7 @@ SunbeamReserve_MapScriptHeader:
 
 	db 12 ; object events
 	person_event SPRITE_SPRUCE, 48,  7, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_ISLAND_BOATMAN
-	object_event 19,  8, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, DONPHAN, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, SunbeamReserveDonphan, -1
+	object_event 19,  7, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, DONPHAN, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, SunbeamReserveDonphan, -1
 	person_event SPRITE_SLOWPOKETAIL, 15,  6, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, SunbeamReserveSlowpoke, -1
 	person_event SPRITE_CUTE_GIRL, 17,  7, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, SunbeamIslandNPC3, -1
 	object_event 13,  8, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, NIDOQUEEN, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, SunbeamReserveNidoqueen, -1
@@ -278,6 +278,7 @@ Movement_SunbeamSpruce2:
 	step_up
 	step_up
 	step_up
+	step_up
 	step_end
 	
 Movement_SunbeamSpruce3:
@@ -292,6 +293,7 @@ Movement_SunbeamSpruce5:
 	step_left
 	step_left
 	step_left
+	step_down
 	step_down
 	step_left
 	step_down

@@ -317,10 +317,10 @@ TilesetSunsetAnim::
 	dw VTiles2 tile $36, AnimateTopofWaterfall
 	dw NULL,  WaitTileAnimation
 	dw ShorelineFrames,  AnimateWaterfallTiles2
-	dw NULL,  WaitTileAnimation
-	dw NULL,  WaitTileAnimation
-	dw NULL,  WaitTileAnimation
-	dw NULL,  WaitTileAnimation
+	dw VTiles2 tile $38, ScrollTileDown
+	dw VTiles2 tile $28, ScrollTileRight
+	dw VTiles2 tile $38, ScrollTileDown
+	dw VTiles2 tile $28, ScrollTileRight
 	dw NULL,  DoneTileAnimation
 	
 TilesetHighwayAnim::
@@ -515,12 +515,13 @@ TilesetJungleAnim::
 	dw NULL,  WaitTileAnimation
 	dw VTiles2 tile $14, WriteTileFromBuffer
 	dw NULL,  AnimateFlowerTile
-	dw NULL,  WaitTileAnimation
+	dw VTiles2 tile $40, ScrollTileDown
 	dw WaterfallPriorityFrames, AnimateWaterfallTiles2
 	dw WaterfallPriority2Frames, AnimateWaterfallTiles2
 	dw Waterfall3Frames, AnimateWaterfallTiles
 	dw Waterfall4Frames, AnimateWaterfallTiles
 	dw Waterfall5Frames, AnimateWaterfallTiles
+	dw VTiles2 tile $40, ScrollTileDown
 	dw NULL,  DoneTileAnimation
 	
 TilesetCaveAnim::

@@ -23,7 +23,7 @@ Route3East_MapScriptHeader:
 	itemball_event  4, 20, SUPER_POTION, 1, EVENT_ROUTE_3_SUPER_POTION
 	itemball_event 18, 23, PARALYZEHEAL, 1, EVENT_ROUTE_3_PARALYZEHEAL
 	fruittree_event 35, 14, FRUITTREE_ROUTE_3_2, LEPPA_BERRY
-	tmhmball_event 10,  5, TM_THUNDERPUNCH, EVENT_ROUTE_3_POKE_BALL_THUNDERPUNCH
+	tmhmball_event 10,  5, TM_X_SCISSOR, EVENT_ROUTE_3_POKE_BALL_X_SCISSOR
 	
 	const_def 1 ; object constants
 	const ROUTE3EAST_TRAINER1

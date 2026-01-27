@@ -145,7 +145,7 @@ DEF MAP_NONE   EQU 0
 	
 	newgroup                                                     ;  7
 
-	map_const SUNBEAM_ISLAND,                             25, 30 ;  1
+	map_const SUNBEAM_ISLAND,                             18, 30 ;  1
 	map_const SUNBEAM_BEACH,                              10, 30 ;  2
 	map_const SUNBEAM_POKECENTER,                          6,  4 ;  3
 	map_const SUNBEAM_MART,								   6,  4 ;  4
@@ -158,10 +158,11 @@ DEF MAP_NONE   EQU 0
 	map_const SUNBEAM_TRADE_HOUSE,						   4,  4 ; 11
 	map_const SPRUCES_LAB, 								   5,  4 ; 12
 	map_const SUNBEAM_RESERVE,                            25, 11 ; 13
-	map_const SUNBEAM_JUNGLE,  			             	  16, 16 ; 14
+	map_const SUNBEAM_JUNGLE,  			             	  16, 18 ; 14
 	map_const SUNBEAM_JUNGLE_CAVE,  			          10, 10 ; 15
 	map_const SUNBEAM_JUNGLE_DEEP,  			          20, 17 ; 16
 	map_const ROUTE_13,                            		  31, 10 ; 17
+	map_const SUNBEAM_ISLAND_EAST,                         7, 30 ; 18
 	
 	newgroup                                                     ;  8
 	

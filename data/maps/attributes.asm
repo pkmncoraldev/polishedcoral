@@ -203,13 +203,17 @@ ENDM
 	connection south, Route13, ROUTE_13, 2
 	connection east, Route7, ROUTE_7, 11
 	
-	map_attributes SunbeamIsland, SUNBEAM_ISLAND, $35, WEST
+	map_attributes SunbeamIsland, SUNBEAM_ISLAND, $35, WEST| EAST
 	connection west, SunbeamBeach, SUNBEAM_BEACH, 0
+	connection east, SunbeamIslandEast, SUNBEAM_ISLAND_EAST, 0
 	
 	map_attributes SunbeamBeach, SUNBEAM_BEACH, $35, NORTH | WEST | EAST
 	connection north, Route6South, ROUTE_6_SOUTH, 0
 	connection west, Route15, ROUTE_15, 14
 	connection east, SunbeamIsland, SUNBEAM_ISLAND, 0
+	
+	map_attributes SunbeamIslandEast, SUNBEAM_ISLAND_EAST, $35, WEST
+	connection west, SunbeamIsland, SUNBEAM_ISLAND, 0
 	
 	map_attributes EventideForest, EVENTIDE_FOREST, $80, NORTH
 	connection north, SpookyForest1, SPOOKY_FOREST_1, 14

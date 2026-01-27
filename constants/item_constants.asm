@@ -145,7 +145,7 @@
 	const SITRUS_BERRY ; 7c
 	const FIGY_BERRY   ; 7d
 	
-	const SERPSPARILLA ; 7e - replace
+	const SERPSPARILLA ; 7e
 	const UNUSED2      ; 7f - replace
 	const UNUSED3      ; 80 - replace
 	const UNUSED4      ; 81 - replace

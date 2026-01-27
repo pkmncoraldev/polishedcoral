@@ -212,6 +212,7 @@ INCLUDE "maps/SunbeamSurfShop.asm"
 INCLUDE "maps/SunbeamBikiniContest.asm"
 INCLUDE "maps/SprucesLab.asm"
 INCLUDE "maps/SunbeamReserve.asm"
+INCLUDE "maps/SunbeamIslandEast.asm"
 
 SECTION "Sunbeam Island Scripts2", ROMX
 

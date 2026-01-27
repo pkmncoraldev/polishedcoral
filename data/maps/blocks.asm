@@ -260,6 +260,9 @@ SunbeamIsland_BlockData:
 SunbeamReserve_BlockData:
 	INCBIN "maps/SunbeamIsland.ablk.lz"
 	
+SunbeamIslandEast_BlockData:
+	INCBIN "maps/SunbeamIslandEast.ablk.lz"
+	
 SunbeamBeach_BlockData:
 	INCBIN "maps/SunbeamBeach.ablk.lz"
 	

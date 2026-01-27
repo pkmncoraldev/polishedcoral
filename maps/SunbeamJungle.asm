@@ -1,7 +1,8 @@
 SunbeamJungle_MapScriptHeader:
-	db 2 ; scene scripts
+	db 3 ; scene scripts
 	scene_script SunbeamJungleTrigger0
 	scene_script SunbeamJungleTrigger1
+	scene_script SunbeamJungleTrigger2
 
 	db 1 ; callbacks
 	callback MAPCALLBACK_TILES, SunbeamJungleCallback
@@ -15,7 +16,27 @@ SunbeamJungle_MapScriptHeader:
 	warp_def 33, 12, 3, SUNBEAM_ISLAND_EAST
 	warp_def 33, 13, 4, SUNBEAM_ISLAND_EAST
 
-	db 0 ; coord events
+	db 19 ; coord events
+	coord_event  4,  8, 2, JungleMakeSilverBlack
+	coord_event  6, 11, 2, JungleMakeSilverBlack
+	coord_event 17,  7, 2, JungleMakeSilverBlack
+	coord_event  5,  6, 1, JungleMakeSilverBlue
+	coord_event  5,  7, 1, JungleMakeSilverBlue
+	coord_event  5,  8, 1, JungleMakeSilverBlue
+	coord_event 17,  6, 2, JungleMakeSilverBlack
+	coord_event 16,  6, 1, JungleMakeSilverBlue
+	coord_event 16,  7, 1, JungleMakeSilverBlue
+	coord_event 16,  8, 1, JungleMakeSilverBlue
+	coord_event 16,  9, 1, JungleMakeSilverBlue
+	coord_event 17,  8, 2, JungleMakeSilverBlack
+	coord_event 17,  9, 2, JungleMakeSilverBlack
+	coord_event 17, 10, 2, JungleMakeSilverBlack
+	coord_event 17, 11, 2, JungleMakeSilverBlack
+	coord_event  6, 10, 1, JungleMakeSilverBlue
+	coord_event  4, 24, 2, JungleMakeSilverBlack
+	coord_event  5, 24, 2, JungleMakeSilverBlack
+	coord_event  7, 11, 1, JungleMakeSilverBlue
+
 
 	db 8 ; bg events
 	signpost  7,  8, SIGNPOST_READ, SunbeamJungleBigWaterfall
@@ -68,6 +89,20 @@ SunbeamJungleCallback:
 	clearevent EVENT_SUNBEAM_JUNGLE_DEEP_ELECTABUZZ_GONE
 .end
 	return
+	
+JungleMakeSilverBlue:
+	setevent EVENT_JUNGLE_CAVE_BLUE
+	loadvar wTimeOfDayPalFlags, $40 | 1
+	special Special_UpdatePalsInstant
+	dotrigger $2
+	end
+	
+JungleMakeSilverBlack:
+	clearevent EVENT_JUNGLE_CAVE_BLUE
+	loadvar wTimeOfDayPalFlags, $40 | 0
+	special Special_UpdatePalsInstant
+	dotrigger $1
+	end
 	
 SunbeamJungleBigWaterfall:
 	jumptext SunbeamJungleBigWaterfallText
@@ -123,6 +158,7 @@ SunbeamJungleTrigger0:
 	end
 	
 SunbeamJungleTrigger1:
+SunbeamJungleTrigger2:
 	callasm SunbeamJungleCheckSurf
 	iffalse .no_surf
 	changeblock 8, 16, 164

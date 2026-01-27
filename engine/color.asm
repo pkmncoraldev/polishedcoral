@@ -1249,11 +1249,8 @@ LoadMapPals::
 	ld a, [wMapNumber]
 	cp MAP_SUNBEAM_JUNGLE
 	jp nz, .outside
-	ld a, [wXCoord]
-	cp $6
-	jp c, .normal
-	cp $11
-	jp nc, .normal
+	eventflagcheck EVENT_JUNGLE_CAVE_BLUE
+	jp z, .normal
 	ld a, [wTimeOfDayPal]
 	and 3
 	ld bc, 1 palettes

@@ -160,7 +160,7 @@ DEF MAP_NONE   EQU 0
 	map_const SUNBEAM_RESERVE,                            25, 11 ; 13
 	map_const SUNBEAM_JUNGLE,  			             	  16, 25 ; 14
 	map_const SUNBEAM_JUNGLE_CAVE,  			          10, 10 ; 15
-	map_const SUNBEAM_JUNGLE_DEEP,  			          20, 17 ; 16
+	map_const SUNBEAM_JUNGLE_DEEP,  			          20, 19 ; 16
 	map_const ROUTE_13,                            		  31, 10 ; 17
 	map_const SUNBEAM_ISLAND_EAST,                         7, 30 ; 18
 	

@@ -708,7 +708,7 @@ _CGB_Diploma: ; 91ad
 	RGB 00, 00, 00
 
 _CGB_MapPals: ; 91c8
-	call LoadMapPals
+	farcall LoadMapPals
 	ld a, CGB_MAPPALS
 	ld [wMemCGBLayout], a
 	ret

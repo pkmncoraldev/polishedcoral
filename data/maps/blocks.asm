@@ -552,9 +552,6 @@ MtOnwa1F_BlockData:
 MtOnwa2F_BlockData:
 	INCBIN "maps/MtOnwa2F.ablk.lz"
 	
-MtOnwaB1F_BlockData:
-	INCBIN "maps/MtOnwaB1F.ablk.lz"
-	
 	
 SECTION "Map Blockdata 2", ROMX
 	
@@ -926,6 +923,9 @@ GreenGrottoB1F_BlockData:
 	INCBIN "maps/GreenGrottoB1F.ablk.lz"
 	
 SECTION "Map Blockdata 3", ROMX
+
+MtOnwaB1F_BlockData:
+	INCBIN "maps/MtOnwaB1F.ablk.lz"
 
 Route22_BlockData:
 	INCBIN "maps/Route22.ablk.lz"

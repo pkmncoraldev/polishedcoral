@@ -970,6 +970,23 @@ Script_UsedWaterfall: ; 0xcb20
 	db "@"
 
 Script_AutoWaterfall:
+	callasm CheckSunbeamJungle
+	iffalse .skip_jungle
+	changeblock 8, 14, 175
+	changeblock 8, 16, 175
+	changeblock 8, 18, 175
+	changeblock 8, 20, 176
+	changeblock 12, 14, 175
+	changeblock 12, 16, 175
+	changeblock 12, 18, 175
+	changeblock 12, 20, 176
+	changeblock 14, 14, 175
+	changeblock 14, 16, 175
+	changeblock 14, 18, 175
+	changeblock 14, 20, 176
+	callasm GenericFinishBridge
+	dotrigger $3
+.skip_jungle
 	playsound SFX_BUBBLE_BEAM
 .loop
 	applymovement PLAYER, .WaterfallStep
@@ -990,6 +1007,21 @@ Script_AutoWaterfall:
 .WaterfallStep: ; cb4f
 	turn_waterfall_up
 	step_end
+
+CheckSunbeamJungle:
+	ld a, [wMapGroup]
+	cp GROUP_SUNBEAM_JUNGLE
+	jr nz, .no
+	ld a, [wMapNumber]
+	cp MAP_SUNBEAM_JUNGLE
+	jr nz, .no
+	ld a, 1
+	ld [wScriptVar], a
+	ret
+.no
+	xor a
+	ld [wScriptVar], a
+	ret
 
 TryWaterfallOW:: ; cb56
 	ld a, [wOptions1]

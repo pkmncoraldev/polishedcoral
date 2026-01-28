@@ -1,69 +1,75 @@
 SunbeamJungle_MapScriptHeader:
-	db 3 ; scene scripts
+	db 4 ; scene scripts
 	scene_script SunbeamJungleTrigger0
 	scene_script SunbeamJungleTrigger1
 	scene_script SunbeamJungleTrigger2
+	scene_script SunbeamJungleTrigger3
 
 	db 1 ; callbacks
 	callback MAPCALLBACK_TILES, SunbeamJungleCallback
 
 	db 7 ; warp events
-	warp_def 25,  4, 3, SUNBEAM_ISLAND
-	warp_def 25,  5, 12, SUNBEAM_ISLAND
-	warp_def  5, 11, 1, SUNBEAM_JUNGLE_CAVE
-	warp_def 33, 10, 1, SUNBEAM_ISLAND_EAST
-	warp_def 33, 11, 2, SUNBEAM_ISLAND_EAST
-	warp_def 33, 12, 3, SUNBEAM_ISLAND_EAST
-	warp_def 33, 13, 4, SUNBEAM_ISLAND_EAST
+	warp_def 39,  4, 3, SUNBEAM_ISLAND
+	warp_def 39,  5, 12, SUNBEAM_ISLAND
+	warp_def 19, 11, 1, SUNBEAM_JUNGLE_CAVE
+	warp_def 47, 10, 1, SUNBEAM_ISLAND_EAST
+	warp_def 47, 11, 2, SUNBEAM_ISLAND_EAST
+	warp_def 47, 12, 3, SUNBEAM_ISLAND_EAST
+	warp_def 47, 13, 4, SUNBEAM_ISLAND_EAST
 
-	db 19 ; coord events
-	coord_event  4,  8, 2, JungleMakeSilverBlack
-	coord_event  6, 11, 2, JungleMakeSilverBlack
-	coord_event 17,  7, 2, JungleMakeSilverBlack
-	coord_event  5,  6, 1, JungleMakeSilverBlue
-	coord_event  5,  7, 1, JungleMakeSilverBlue
-	coord_event  5,  8, 1, JungleMakeSilverBlue
-	coord_event 17,  6, 2, JungleMakeSilverBlack
-	coord_event 16,  6, 1, JungleMakeSilverBlue
-	coord_event 16,  7, 1, JungleMakeSilverBlue
-	coord_event 16,  8, 1, JungleMakeSilverBlue
-	coord_event 16,  9, 1, JungleMakeSilverBlue
-	coord_event 17,  8, 2, JungleMakeSilverBlack
-	coord_event 17,  9, 2, JungleMakeSilverBlack
-	coord_event 17, 10, 2, JungleMakeSilverBlack
-	coord_event 17, 11, 2, JungleMakeSilverBlack
-	coord_event  6, 10, 1, JungleMakeSilverBlue
-	coord_event  4, 24, 2, JungleMakeSilverBlack
-	coord_event  5, 24, 2, JungleMakeSilverBlack
-	coord_event  7, 11, 1, JungleMakeSilverBlue
-
+	db 25 ; coord events
+	coord_event  4, 22, 2, JungleMakeSilverBlack
+	coord_event  6, 25, 2, JungleMakeSilverBlack
+	coord_event 17, 21, 2, JungleMakeSilverBlack
+	coord_event  5, 20, 1, JungleMakeSilverBlue
+	coord_event  5, 21, 1, JungleMakeSilverBlue
+	coord_event  5, 22, 1, JungleMakeSilverBlue
+	coord_event 17, 20, 2, JungleMakeSilverBlack
+	coord_event 16, 20, 1, JungleMakeSilverBlue
+	coord_event 16, 21, 1, JungleMakeSilverBlue
+	coord_event 16, 22, 1, JungleMakeSilverBlue
+	coord_event 16, 23, 1, JungleMakeSilverBlue
+	coord_event 17, 22, 2, JungleMakeSilverBlack
+	coord_event 17, 23, 2, JungleMakeSilverBlack
+	coord_event 17, 24, 2, JungleMakeSilverBlack
+	coord_event 17, 25, 2, JungleMakeSilverBlack
+	coord_event  6, 24, 1, JungleMakeSilverBlue
+	coord_event  4, 38, 2, JungleMakeSilverBlack
+	coord_event  5, 38, 2, JungleMakeSilverBlack
+	coord_event  7, 25, 1, JungleMakeSilverBlue
+	coord_event  8, 23, 3, JungleResetWaterfallBlocks
+	coord_event  9, 23, 3, JungleResetWaterfallBlocks
+	coord_event 12, 23, 3, JungleResetWaterfallBlocks
+	coord_event 13, 23, 3, JungleResetWaterfallBlocks
+	coord_event 14, 23, 3, JungleResetWaterfallBlocks
+	coord_event 15, 23, 3, JungleResetWaterfallBlocks
 
 	db 8 ; bg events
-	signpost  7,  8, SIGNPOST_READ, SunbeamJungleBigWaterfall
-	signpost  7,  9, SIGNPOST_READ, SunbeamJungleBigWaterfall
-	signpost  7, 10, SIGNPOST_READ, SunbeamJungleBigWaterfall
-	signpost  7, 11, SIGNPOST_READ, SunbeamJungleBigWaterfall
-	signpost  7, 12, SIGNPOST_READ, SunbeamJungleBigWaterfall
-	signpost  7, 13, SIGNPOST_READ, SunbeamJungleBigWaterfall
-	signpost  7, 14, SIGNPOST_READ, SunbeamJungleBigWaterfall
-	signpost  7, 15, SIGNPOST_READ, SunbeamJungleBigWaterfall
+	signpost 21,  8, SIGNPOST_READ, SunbeamJungleBigWaterfall
+	signpost 21,  9, SIGNPOST_READ, SunbeamJungleBigWaterfall
+	signpost 21, 10, SIGNPOST_READ, SunbeamJungleBigWaterfall
+	signpost 21, 11, SIGNPOST_READ, SunbeamJungleBigWaterfall
+	signpost 21, 12, SIGNPOST_READ, SunbeamJungleBigWaterfall
+	signpost 21, 13, SIGNPOST_READ, SunbeamJungleBigWaterfall
+	signpost 21, 14, SIGNPOST_READ, SunbeamJungleBigWaterfall
+	signpost 21, 15, SIGNPOST_READ, SunbeamJungleBigWaterfall
 
 	db 15 ; object events
-	cuttree_event  4,  9, EVENT_SUNBEAM_JUNGLE_CUT_TREE_1
-	cuttree_event 24,  5, EVENT_SUNBEAM_JUNGLE_CUT_TREE_2
-	cuttree_event 25, 18, EVENT_SUNBEAM_JUNGLE_CUT_TREE_3
-	person_event SPRITE_KAGE, 22,  4, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_SUNBEAM_JUNGLE_CUTSCENE
-	person_event SPRITE_SNARE, 22,  5, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_SUNBEAM_JUNGLE_CUTSCENE
-	person_event SPRITE_KAGE, 16,  7, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_SAVED_SUNBEAM
-	person_event SPRITE_SNARE, 17, 10, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, SunbeamJungleKageScript, EVENT_SAVED_SUNBEAM
-	person_event SPRITE_SNARE, 14,  4, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 2, SunbeamJungleSnare2, EVENT_SAVED_SUNBEAM
-	person_event SPRITE_SNARE_GIRL,  6, 19, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 1, SunbeamJungleSnare3, EVENT_SAVED_SUNBEAM
-	person_event SPRITE_SNARE, 12, 18, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 2, SunbeamJungleSnare4, EVENT_SAVED_SUNBEAM
-	person_event SPRITE_SNARE, 13, 24, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 3, SunbeamJungleSnare5, EVENT_SAVED_SUNBEAM
-	person_event SPRITE_SNARE_GIRL, 19, 27, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 3, SunbeamJungleSnare6, EVENT_SAVED_SUNBEAM
+	cuttree_event  4, 23, EVENT_SUNBEAM_JUNGLE_CUT_TREE_1
+	cuttree_event 24, 19, EVENT_SUNBEAM_JUNGLE_CUT_TREE_2
+	cuttree_event 25, 32, EVENT_SUNBEAM_JUNGLE_CUT_TREE_3
+	person_event SPRITE_KAGE, 36,  4, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_SUNBEAM_JUNGLE_CUTSCENE
+	person_event SPRITE_SNARE, 36,  5, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_SUNBEAM_JUNGLE_CUTSCENE
+	person_event SPRITE_KAGE, 30,  7, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_SAVED_SUNBEAM
+	person_event SPRITE_SNARE, 31, 10, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, SunbeamJungleKageScript, EVENT_SAVED_SUNBEAM
+	person_event SPRITE_SNARE, 28,  4, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 2, SunbeamJungleSnare2, EVENT_SAVED_SUNBEAM
+	person_event SPRITE_SNARE_GIRL, 20, 19, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 1, SunbeamJungleSnare3, EVENT_SAVED_SUNBEAM
+	person_event SPRITE_SNARE, 26, 18, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 2, SunbeamJungleSnare4, EVENT_SAVED_SUNBEAM
+	person_event SPRITE_SNARE, 27, 24, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 3, SunbeamJungleSnare5, EVENT_SAVED_SUNBEAM
+	person_event SPRITE_SNARE_GIRL, 33, 27, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 3, SunbeamJungleSnare6, EVENT_SAVED_SUNBEAM
 	person_event SPRITE_KAGE_WATER, -1, -1, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_SAVED_SUNBEAM
 	person_event SPRITE_SNARE_WATER, -1, -1, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_SAVED_SUNBEAM
-	person_event SPRITE_TRAFFIC_LIGHT,  5, 11, SPRITEMOVEDATA_TILE_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, NULL, -1
+	person_event SPRITE_TRAFFIC_LIGHT, 19, 11, SPRITEMOVEDATA_TILE_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, NULL, -1
 
 	
 	const_def 1 ; object constants
@@ -101,6 +107,23 @@ JungleMakeSilverBlack:
 	clearevent EVENT_JUNGLE_CAVE_BLUE
 	loadvar wTimeOfDayPalFlags, $40 | 0
 	special Special_UpdatePalsInstant
+	dotrigger $1
+	end
+	
+JungleResetWaterfallBlocks:
+	changeblock 8, 14, 92
+	changeblock 8, 16, 92
+	changeblock 8, 18, 92
+	changeblock 8, 20, 38
+	changeblock 12, 14, 92
+	changeblock 12, 16, 92
+	changeblock 12, 18, 92
+	changeblock 12, 20, 38
+	changeblock 14, 14, 92
+	changeblock 14, 16, 92
+	changeblock 14, 18, 92
+	changeblock 14, 20, 38
+	callasm GenericFinishBridge
 	dotrigger $1
 	end
 	
@@ -161,21 +184,37 @@ SunbeamJungleTrigger1:
 SunbeamJungleTrigger2:
 	callasm SunbeamJungleCheckSurf
 	iffalse .no_surf
-	changeblock 8, 16, 164
-	changeblock 10, 16, 161
-	changeblock 12, 16, 161
-	changeblock 14, 16, 165
-	changeblock 10, 18, 166
-	changeblock 12, 18, 167
+	changeblock 8, 30, 164
+	changeblock 10, 30, 161
+	changeblock 12, 30, 161
+	changeblock 14, 30, 165
+	changeblock 10, 32, 166
+	changeblock 12, 32, 167
 	special Special_UpdatePalsInstant
 	end
 .no_surf
-	changeblock 8, 16, 65
-	changeblock 10, 16, 67
-	changeblock 12, 16, 67
-	changeblock 14, 16, 64
-	changeblock 10, 18, 26
-	changeblock 12, 18, 34
+	changeblock 8, 30, 65
+	changeblock 10, 30, 67
+	changeblock 12, 30, 67
+	changeblock 14, 30, 64
+	changeblock 10, 32, 26
+	changeblock 12, 32, 34
+	special Special_UpdatePalsInstant
+	end
+	
+SunbeamJungleTrigger3:
+	changeblock 8, 14, 175
+	changeblock 8, 16, 175
+	changeblock 8, 18, 175
+	changeblock 8, 20, 176
+	changeblock 12, 14, 175
+	changeblock 12, 16, 175
+	changeblock 12, 18, 175
+	changeblock 12, 20, 176
+	changeblock 14, 14, 175
+	changeblock 14, 16, 175
+	changeblock 14, 18, 175
+	changeblock 14, 20, 176
 	special Special_UpdatePalsInstant
 	end
 	
@@ -269,7 +308,7 @@ SunbeamJungleKageScript:
 	playsound SFX_KARATE_CHOP
 	disappear SUNBEAM_JUNGLE_KAGE
 	disappear SUNBEAM_JUNGLE_KAGE_WATER
-	moveperson SUNBEAM_JUNGLE_KAGE_WATER, $c, $13
+	moveperson SUNBEAM_JUNGLE_KAGE_WATER, $c, $21
 	appear SUNBEAM_JUNGLE_KAGE_WATER
 	applymovement SUNBEAM_JUNGLE_KAGE_WATER, Movement_SunbeamJungleKage10
 	disappear SUNBEAM_JUNGLE_KAGE_WATER
@@ -285,7 +324,7 @@ SunbeamJungleKageScript:
 	playsound SFX_KARATE_CHOP
 	disappear SUNBEAM_JUNGLE_SNARE_BRIDGE
 	disappear SUNBEAM_JUNGLE_SNARE_WATER
-	moveperson SUNBEAM_JUNGLE_SNARE_WATER, $c, $13
+	moveperson SUNBEAM_JUNGLE_SNARE_WATER, $c, $21
 	appear SUNBEAM_JUNGLE_SNARE_WATER
 	applymovement SUNBEAM_JUNGLE_SNARE_WATER, Movement_SunbeamJungleKage10
 	disappear SUNBEAM_JUNGLE_SNARE_WATER

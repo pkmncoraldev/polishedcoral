@@ -520,7 +520,7 @@ TilesetJungleAnim::
 	dw WaterfallPriority2Frames, AnimateWaterfallTiles2
 	dw Waterfall3Frames, AnimateWaterfallTiles
 	dw Waterfall4Frames, AnimateWaterfallTiles
-	dw Waterfall5Frames, AnimateWaterfallTiles
+	dw VTiles2 tile $36, AnimateTopofWaterfall
 	dw VTiles2 tile $40, ScrollTileDown
 	dw NULL,  DoneTileAnimation
 	
@@ -1284,7 +1284,7 @@ Waterfall3Frames: dw VTiles2 tile $34, Waterfall3Tiles
 
 Waterfall3Tiles: INCBIN "gfx/tilesets/waterfall/3.2bpp"
 
-Waterfall4Frames: dw VTiles2 tile $36, Waterfall4Tiles
+Waterfall4Frames: dw VTiles2 tile $37, Waterfall4Tiles
 
 Waterfall4Tiles: INCBIN "gfx/tilesets/waterfall/4.2bpp"
 

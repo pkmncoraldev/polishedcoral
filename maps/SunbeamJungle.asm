@@ -1,9 +1,8 @@
 SunbeamJungle_MapScriptHeader:
-	db 4 ; scene scripts
+	db 3 ; scene scripts
 	scene_script SunbeamJungleTrigger0
 	scene_script SunbeamJungleTrigger1
 	scene_script SunbeamJungleTrigger2
-	scene_script SunbeamJungleTrigger3
 
 	db 1 ; callbacks
 	callback MAPCALLBACK_TILES, SunbeamJungleCallback
@@ -17,32 +16,13 @@ SunbeamJungle_MapScriptHeader:
 	warp_def 47, 12, 3, SUNBEAM_ISLAND_EAST
 	warp_def 47, 13, 4, SUNBEAM_ISLAND_EAST
 
-	db 25 ; coord events
-	coord_event  4, 22, 2, JungleMakeSilverBlack
-	coord_event  6, 25, 2, JungleMakeSilverBlack
-	coord_event 17, 21, 2, JungleMakeSilverBlack
-	coord_event  5, 20, 1, JungleMakeSilverBlue
-	coord_event  5, 21, 1, JungleMakeSilverBlue
-	coord_event  5, 22, 1, JungleMakeSilverBlue
-	coord_event 17, 20, 2, JungleMakeSilverBlack
-	coord_event 16, 20, 1, JungleMakeSilverBlue
-	coord_event 16, 21, 1, JungleMakeSilverBlue
-	coord_event 16, 22, 1, JungleMakeSilverBlue
-	coord_event 16, 23, 1, JungleMakeSilverBlue
-	coord_event 17, 22, 2, JungleMakeSilverBlack
-	coord_event 17, 23, 2, JungleMakeSilverBlack
-	coord_event 17, 24, 2, JungleMakeSilverBlack
-	coord_event 17, 25, 2, JungleMakeSilverBlack
-	coord_event  6, 24, 1, JungleMakeSilverBlue
-	coord_event  4, 38, 2, JungleMakeSilverBlack
-	coord_event  5, 38, 2, JungleMakeSilverBlack
-	coord_event  7, 25, 1, JungleMakeSilverBlue
-	coord_event  8, 23, 3, JungleResetWaterfallBlocks
-	coord_event  9, 23, 3, JungleResetWaterfallBlocks
-	coord_event 12, 23, 3, JungleResetWaterfallBlocks
-	coord_event 13, 23, 3, JungleResetWaterfallBlocks
-	coord_event 14, 23, 3, JungleResetWaterfallBlocks
-	coord_event 15, 23, 3, JungleResetWaterfallBlocks
+	db 6 ; coord events
+	coord_event  8, 23, 2, JungleResetWaterfallBlocks
+	coord_event  9, 23, 2, JungleResetWaterfallBlocks
+	coord_event 12, 23, 2, JungleResetWaterfallBlocks
+	coord_event 13, 23, 2, JungleResetWaterfallBlocks
+	coord_event 14, 23, 2, JungleResetWaterfallBlocks
+	coord_event 15, 23, 2, JungleResetWaterfallBlocks
 
 	db 8 ; bg events
 	signpost 21,  8, SIGNPOST_READ, SunbeamJungleBigWaterfall
@@ -95,20 +75,6 @@ SunbeamJungleCallback:
 	clearevent EVENT_SUNBEAM_JUNGLE_DEEP_ELECTABUZZ_GONE
 .end
 	return
-	
-JungleMakeSilverBlue:
-	setevent EVENT_JUNGLE_CAVE_BLUE
-	loadvar wTimeOfDayPalFlags, $40 | 1
-	special Special_UpdatePalsInstant
-	dotrigger $2
-	end
-	
-JungleMakeSilverBlack:
-	clearevent EVENT_JUNGLE_CAVE_BLUE
-	loadvar wTimeOfDayPalFlags, $40 | 0
-	special Special_UpdatePalsInstant
-	dotrigger $1
-	end
 	
 JungleResetWaterfallBlocks:
 	changeblock 8, 14, 92
@@ -181,7 +147,6 @@ SunbeamJungleTrigger0:
 	end
 	
 SunbeamJungleTrigger1:
-SunbeamJungleTrigger2:
 	callasm SunbeamJungleCheckSurf
 	iffalse .no_surf
 	changeblock 8, 30, 164
@@ -202,7 +167,7 @@ SunbeamJungleTrigger2:
 	special Special_UpdatePalsInstant
 	end
 	
-SunbeamJungleTrigger3:
+SunbeamJungleTrigger2:
 	changeblock 8, 14, 175
 	changeblock 8, 16, 175
 	changeblock 8, 18, 175

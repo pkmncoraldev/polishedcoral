@@ -985,7 +985,7 @@ Script_AutoWaterfall:
 	changeblock 14, 18, 175
 	changeblock 14, 20, 176
 	callasm GenericFinishBridge
-	dotrigger $3
+	dotrigger $2
 .skip_jungle
 	playsound SFX_BUBBLE_BEAM
 .loop

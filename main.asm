@@ -138,7 +138,6 @@ SECTION "Code 2", ROMX
 
 
 INCLUDE "data/predef_pointers.asm"
-INCLUDE "engine/color.asm"
 
 CheckTime:: ; c000
 	ld a, [wTimeOfDay]
@@ -6293,3 +6292,6 @@ SECTION "Coral Data 6", ROMX
     INCLUDE "engine/mart.asm"
     INCLUDE "data/items/marts.asm"
 	INCLUDE "data/text/textbox_names.asm"
+	
+SECTION "Coral Data 7", ROMX
+	INCLUDE "engine/color.asm"

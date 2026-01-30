@@ -70,7 +70,14 @@ OWCutAnimation: ; 8c940
 	ld a, e
 	and $1
 	ld [wJumptableIndex], a
+	ld a, [wCuttingRafflesia]
+	and a
+	jr nz, .rafflesia
 	call .LoadCutGFX
+	jr .got_gfx
+.rafflesia
+	call .LoadCutGFX2
+.got_gfx
 	call WaitSFX
 	ld de, SFX_PLACE_PUZZLE_PIECE_DOWN
 	call PlaySFX
@@ -88,23 +95,26 @@ OWCutAnimation: ; 8c940
 
 .LoadCutGFX: ; 8c96d
 	call ClearSpriteAnims
-	ld de, CutGrassGFX
-	ld hl, VTiles1
-	lb bc, BANK(CutGrassGFX), 4
-	call Request2bpp
 	ld de, CutTreeGFX
 	ld hl, VTiles1 tile $4
 	lb bc, BANK(CutTreeGFX), 4
 	jp Request2bpp
-; 8c98c
 
-CutTreeGFX: ; c898c
+.LoadCutGFX2:
+	call ClearSpriteAnims
+	ld de, CutFlowerGFX
+	ld hl, VTiles1 tile $4
+	lb bc, BANK(CutTreeGFX), 4
+	jp Request2bpp
+
+CutTreeGFX:
 INCBIN "gfx/overworld/cut_tree.2bpp"
-; c89cc
 
-CutGrassGFX: ; 8c9cc
+CutGrassGFX:
 INCBIN "gfx/overworld/cut_grass.2bpp"
-; 8ca0c
+
+CutFlowerGFX:
+INCBIN "gfx/overworld/cut_flower.2bpp"
 
 OWCutJumptable: ; 8ca0c
 	ld a, [wJumptableIndex]

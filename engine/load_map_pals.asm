@@ -37,6 +37,17 @@ LoadSingleOBPalLinePal7:
 	ld bc, 1 palettes
 	ld a, $5 ; BANK(UnknOBPals)
 	ret
+	
+MakeCutFlowerRed::
+	ld a, [wTimeOfDayPal]
+	and 3
+	ld bc, 8 palettes
+	ld hl, MapObjectPals
+	call AddNTimes
+	ld de, wUnknOBPals + 7 palettes
+	ld bc, 1 palettes
+	ld a, $5 ; BANK(UnknOBPals)
+	jp FarCopyWRAM
 
 LoadMapPals::
 ;	farcall LoadSpecialMapPalette

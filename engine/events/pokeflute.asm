@@ -407,7 +407,7 @@ DittoExclamationAsm:
 	ld [hl], "!"
 	jp ApplyTilemapInVBlank
 	
-BrightburgMoveDittoAsm:
+BrightburgMoveDittoAsm::
 	call GetFacingTileCoord
 	ld c, a
 	ld a, 1 ;brightburg ditto

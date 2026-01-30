@@ -34,25 +34,30 @@ SunbeamJungle_MapScriptHeader:
 	signpost 21, 14, SIGNPOST_READ, SunbeamJungleBigWaterfall
 	signpost 21, 15, SIGNPOST_READ, SunbeamJungleBigWaterfall
 
-	db 15 ; object events
-	cuttree_event  4, 23, EVENT_SUNBEAM_JUNGLE_CUT_TREE_1
-	cuttree_event 24, 19, EVENT_SUNBEAM_JUNGLE_CUT_TREE_2
-	cuttree_event 25, 32, EVENT_SUNBEAM_JUNGLE_CUT_TREE_3
+	db 19 ; object events
+	person_event SPRITE_MISC_OVERHEAD, -2, -2, SPRITEMOVEDATA_TILE_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
+	object_event 4, 22, SPRITE_RAFFLESIA, SPRITEMOVEDATA_CUTTABLE_TREE, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, SunbeamJungleRafflesia, -1
+	object_event 24, 19, SPRITE_RAFFLESIA, SPRITEMOVEDATA_CUTTABLE_TREE, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, SunbeamJungleRafflesia, -1
+	object_event  4, 30, SPRITE_RAFFLESIA, SPRITEMOVEDATA_CUTTABLE_TREE, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, SunbeamJungleRafflesia, -1
 	person_event SPRITE_KAGE, 36,  4, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_SUNBEAM_JUNGLE_CUTSCENE
 	person_event SPRITE_SNARE, 36,  5, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_SUNBEAM_JUNGLE_CUTSCENE
 	person_event SPRITE_KAGE, 30,  7, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_SAVED_SUNBEAM
 	person_event SPRITE_SNARE, 31, 10, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, SunbeamJungleKageScript, EVENT_SAVED_SUNBEAM
-	person_event SPRITE_SNARE, 28,  4, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 2, SunbeamJungleSnare2, EVENT_SAVED_SUNBEAM
+	person_event SPRITE_SNARE, 27,  2, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 1, SunbeamJungleSnare2, EVENT_SAVED_SUNBEAM
 	person_event SPRITE_SNARE_GIRL, 20, 19, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 1, SunbeamJungleSnare3, EVENT_SAVED_SUNBEAM
 	person_event SPRITE_SNARE, 26, 18, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 2, SunbeamJungleSnare4, EVENT_SAVED_SUNBEAM
 	person_event SPRITE_SNARE, 27, 24, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 3, SunbeamJungleSnare5, EVENT_SAVED_SUNBEAM
-	person_event SPRITE_SNARE_GIRL, 33, 27, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 3, SunbeamJungleSnare6, EVENT_SAVED_SUNBEAM
+	person_event SPRITE_SNARE_GIRL, 33, 27, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 3, SunbeamJungleSnare6, EVENT_SAVED_SUNBEAM
 	person_event SPRITE_KAGE_WATER, -1, -1, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_SAVED_SUNBEAM
 	person_event SPRITE_SNARE_WATER, -1, -1, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_SAVED_SUNBEAM
 	person_event SPRITE_TRAFFIC_LIGHT, 19, 11, SPRITEMOVEDATA_TILE_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, NULL, -1
+	object_event 15, 36, SPRITE_RAFFLESIA, SPRITEMOVEDATA_CUTTABLE_TREE, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, SunbeamJungleRafflesia, -1
+	object_event 23, 33, SPRITE_RAFFLESIA, SPRITEMOVEDATA_CUTTABLE_TREE, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, SunbeamJungleRafflesia, -1
+	object_event 23, 34, SPRITE_RAFFLESIA, SPRITEMOVEDATA_CUTTABLE_TREE, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, SunbeamJungleRafflesia, -1
 
 	
 	const_def 1 ; object constants
+	const SUNBEAM_JUNGLE_SPORES
 	const SUNBEAM_JUNGLE_TREE_1
 	const SUNBEAM_JUNGLE_TREE_2
 	const SUNBEAM_JUNGLE_TREE_3
@@ -91,6 +96,12 @@ JungleResetWaterfallBlocks:
 	changeblock 14, 20, 38
 	callasm GenericFinishBridge
 	dotrigger $1
+	end
+	
+SunbeamJungleRafflesia:
+	loadvar wCuttingRafflesia, 1
+	farscall AskCutTreeScript
+	loadvar wCuttingRafflesia, 0
 	end
 	
 SunbeamJungleBigWaterfall:
@@ -309,23 +320,22 @@ SunbeamJungleKageScript:
 SunbeamJungleSnare2:
 	generictrainer GRUNTM, SUNBEAM_GRUNTM_2, EVENT_BEAT_SUNBEAM_JUNGLE_SNARE_2, .SeenText, .BeatenText
 
-	text "Run along now."
-	
-	para "I won't ask any"
-	line "more questions…"
+	text "You'd better have"
+	line "packed some"
+	cont "medicine!"
 	done
 
 .SeenText:
-	text "Where was he going"
-	line "in such a rush?"
+	text "These smelly"
+	line "flowers are making"
+	cont "my #MON sick!"
 	
-	para "Where are YOU<WAIT_S>"
-	line "going in such a"
-	cont "rush?"
+	para "It's seriously"
+	line "ticking me off!"
 	done
 
 .BeatenText:
-	text "Alright. You win."
+	text "I'm gonna be sick…"
 	done
 	end
 	

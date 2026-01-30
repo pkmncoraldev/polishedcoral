@@ -483,6 +483,13 @@ UnknownText_0x1c09dd::
 
 	para "Want to use CUT?"
 	done
+	
+UnknownText_0x1c09dd2::
+	text "This big flower"
+	line "can be CUT!"
+	
+	para "Want to use CUT?"
+	done
 
 UnknownText_0x1c0a05::
 	text "This tree can be"

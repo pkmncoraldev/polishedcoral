@@ -1478,10 +1478,13 @@ MakePalGray::
 MakePalGreen::
 	ld hl, StandardGrassPalette
 	jp MakePalFinished
+
+MakePalOrange::
+	ld hl, AutumnGrassPalette
+	jp MakePalFinished
 	
 MakePalPink::
 	ld hl, PinkGrassPalette
-	jp MakePalFinished
 ;fallthru
 MakePalFinished:
 	ld a, [wTimeOfDayPal]

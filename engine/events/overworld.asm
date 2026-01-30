@@ -375,7 +375,7 @@ Script_CutTree:
 	endtext
 
 AutoCutTreeScript:
-	callasm RefreshScreenFast
+	refreshscreen
 	disappear -2
 	callasm CutDownTree
 	endtext
@@ -3137,7 +3137,9 @@ HasCutAvailable:: ; d186
 	ld [wScriptVar], a
 	ret
 
-AskCutTreeScript: ; 0xd1a9
+AskCutTreeScript::
+	copybytetovar wCuttingRafflesia
+	ifequal 1, .flower
 	checkdebugmode
 	iftrue .debugcut
 	callasm HasCutAvailable
@@ -3151,7 +3153,55 @@ AskCutTreeScript: ; 0xd1a9
 	iftrue Script_CutTree
 	endtext
 
-.no ; 0xd1cd
+.flower
+	checkdebugmode
+	iftrue .debugcut
+	callasm HasCutAvailable
+	ifequal 1, .no
+	callasm MakeCutFlowerRed
+	
+	playsound SFX_READ_TEXT_2
+	checkflag ENGINE_AUTOCUT_ACTIVE
+	iftrue .do_flower_auto
+	opentext
+	writetext UnknownText_0xd1c82
+	yesorno
+	iftrue .do_flower
+	endtext
+
+.do_flower_auto
+	scall AutoCutTreeScript
+	jump .powder
+.do_flower
+	scall Script_CutTree
+.powder
+	random 2
+	iffalse .end
+	disappear 1
+	refreshscreen
+	callasm MakePalOrange
+	callasm BrightburgMoveDittoAsm
+	appear 1
+	priority 1, HIGH_PRIORITY
+	playsound SFX_POWDER
+	applyonemovement 1, slow_slide_step_down
+	pause 3
+	disappear 1
+	callasm MakePalGreen
+	callasm CutFlowerStatus
+	if_equal 1, .sleep
+	if_equal 2, .para
+	if_equal 3, .poison
+	jumptext CutFlowerNothingText
+.sleep
+	jumptext CutFlowerSleepText
+.para
+	jumptext CutFlowerParaText
+.poison
+	jumptext CutFlowerPoisonText
+.end
+	endtext
+.no
 	end
 
 .debugcut
@@ -3160,15 +3210,170 @@ AskCutTreeScript: ; 0xd1a9
 	writetext DebugFieldMoveText
 	jump AutoCutTreeScript
 	
+CutFlowerNothingText:
+	text "The flower shot"
+	line "spores in the air!"
+	
+	para "…<WAIT_M>But nothing"
+	line "happened!"
+	done
+	
+CutFlowerSleepText:
+	text "The flower shot"
+	line "spores in the air!"
+
+	para "@"
+	text_from_ram wStringBuffer3
+	text ""
+	line "fell asleep!"
+	done
+	
+CutFlowerParaText:
+	text "The flower shot"
+	line "spores in the air!"
+
+	para "@"
+	text_from_ram wStringBuffer3
+	text " is"
+	line "paralyzed!"
+	done
+	
+CutFlowerPoisonText:
+	text "The flower shot"
+	line "spores in the air!"
+
+	para "@"
+	text_from_ram wStringBuffer3
+	text ""
+	line "was poisoned!"
+	done
+	
 UnknownText_0xd1c8: ; 0xd1c8
 	; This tree can be CUT! Want to use CUT?
 	text_jump UnknownText_0x1c09dd
+	db "@"
+	
+UnknownText_0xd1c82: ; 0xd1c8
+	; This tree can be CUT! Want to use CUT?
+	text_jump UnknownText_0x1c09dd2
 	db "@"
 
 UnknownText_0xd1d0: ; 0xd1d0
 	; This tree can be CUT!
 	text_jump UnknownText_0x1c0a05
 	db "@"
+	
+CutFlowerStatus:
+	ld a, [wPartyCount]
+	ld e, a
+	call Random
+	and $7
+	cp e
+	jr nc, CutFlowerStatus
+.loop
+	push af
+	ld a, e
+	cp -1
+	jr z, .end
+	dec e
+	pop af
+	ld [wCurPartyMon], a
+	ld a, MON_STATUS
+	call GetPartyParamLocation
+	ld a, [hl]
+	and a
+	jr z, .infect
+	ld a, [wCurPartyMon]
+	inc a
+	cp e
+	jr nc, .reset_then_loop
+	jr .loop
+.reset_then_loop
+	xor a
+	jr .loop
+.end
+	pop af
+	xor a
+	ld [wScriptVar], a
+	ret
+.infect
+	call Random
+	and $3
+	cp 0
+	jr z, .sleep
+	cp 1
+	jr z, .para
+	cp 2
+	jr z, .poison
+	jr .infect
+.sleep
+	ld a, MON_ABILITY
+	call GetPartyParamLocation
+	call GetAbility
+	ld a, b
+	cp INSOMNIA
+	jr z, .infect
+	cp VITAL_SPIRIT
+	jr z, .infect
+	ld a, MON_STATUS
+	call GetPartyParamLocation	
+	ld a, SLP
+	ld [hl], a
+	ld a, 1
+	ld [wScriptVar], a
+	farcall GetPartyNick
+	ret
+.para
+	ld a, MON_ABILITY
+	call GetPartyParamLocation
+	call GetAbility
+	ld a, b
+	cp LIMBER
+	jr z, .infect
+	ld a, MON_STATUS
+	call GetPartyParamLocation	
+	ld a, 1 << PAR
+	ld [hl], a
+	ld a, 2
+	ld [wScriptVar], a
+	farcall GetPartyNick
+	ret
+.poison
+	ld a, MON_SPECIES
+	call GetPartyParamLocation
+	ld a, [hl]
+	dec a
+	ld hl, BASEMON_TYPE_1
+	ld bc, BASEMON_STRUCT_LENGTH
+	rst AddNTimes
+	ld a, BANK(BaseData)
+	call GetFarByte
+	cp POISON
+	jp z, .infect
+	cp STEEL
+	jp z, .infect
+	inc hl
+	ld a, BANK(BaseData)
+	call GetFarByte
+	cp POISON
+	jp z, .infect
+	cp STEEL
+	jp z, .infect
+	
+	ld a, MON_ABILITY
+	call GetPartyParamLocation
+	call GetAbility
+	ld a, b
+	cp IMMUNITY
+	jp z, .infect
+	ld a, MON_STATUS
+	call GetPartyParamLocation	
+	ld a, 1 << PSN
+	ld [hl], a
+	ld a, 3
+	ld [wScriptVar], a
+	farcall GetPartyNick
+	ret
 
 HandleEventsFly:
 HandleEventsEscapeRope:

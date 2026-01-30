@@ -72,7 +72,6 @@ SpookHousePainting2:
 	writetext SpookHousePainting2Text
 	playsound SFX_THIEF_2
 	waitsfx
-	waitbutton
 	closetext
 	callasm PaintingPoison
 	end
@@ -102,15 +101,38 @@ PaintingPoison:
 	cp -1
 	ret z
 	dec e
-	ld a, MON_STATUS
+	ld a, MON_SPECIES
 	call GetPartyParamLocation
 	ld a, [hl]
-	and 1 << PSN
-	jr nz, .loop
+	dec a
+	ld hl, BASEMON_TYPE_1
+	ld bc, BASEMON_STRUCT_LENGTH
+	rst AddNTimes
+	ld a, BANK(BaseData)
+	call GetFarByte
+	cp POISON
+	jr z, .loop
+	cp STEEL
+	jr z, .loop
+	inc hl
+	ld a, BANK(BaseData)
+	call GetFarByte
+	cp POISON
+	jr z, .loop
+	cp STEEL
+	jr z, .loop
 	
+	ld a, MON_ABILITY
+	call GetPartyParamLocation
+	call GetAbility
+	ld a, b
+	cp IMMUNITY
+	jr z, .loop
+	ld a, MON_STATUS
+	call GetPartyParamLocation	
 	ld a, 1 << PSN
 	ld [hl], a
-	ret
+	jr .loop
 	
 SpookHouseJournal:
 	checkevent EVENT_SPOOKHOUSE_BEATEN

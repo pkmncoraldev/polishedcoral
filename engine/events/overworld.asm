@@ -3299,11 +3299,9 @@ CutFlowerStatus:
 	and a
 	jr z, .infect
 	ld a, [wCurPartyMon]
-	inc a
 	cp e
-	jr nc, .reset_then_loop
-	jr .loop
-.reset_then_loop
+	inc a
+	jr c, .loop
 	xor a
 	jr .loop
 .end

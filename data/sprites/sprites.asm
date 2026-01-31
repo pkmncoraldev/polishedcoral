@@ -122,7 +122,7 @@ SpriteHeaders:
 	overworld_sprite CandleSpriteGFX, STANDING_SPRITE, PAL_OW_SILVER
 	overworld_sprite GoldTrophySpriteGFX, STANDING_SPRITE, PAL_OW_BROWN
 	overworld_sprite SailboatSpriteGFX, STANDING_SPRITE, PAL_OW_PURPLE
-	overworld_sprite MiscOverheadSpriteGFX, STANDING_SPRITE, PAL_OW_BROWN
+	overworld_sprite MiscOverheadSpriteGFX, WALKING_SPRITE, PAL_OW_BROWN
 	overworld_sprite SunbatherSpriteGFX, STANDING_SPRITE, PAL_OW_BROWN
 	overworld_sprite UmbrellaSpriteGFX, STANDING_SPRITE, PAL_OW_SILVER
 	overworld_sprite SittingYoungsterGFX, STANDING_SPRITE, PAL_OW_RED

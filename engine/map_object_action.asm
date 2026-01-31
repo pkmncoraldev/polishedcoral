@@ -447,6 +447,9 @@ SetFacingBoulderDust: ; 45da
 ; 45ed
 
 SetFacingGrassShake:
+	ld a, [wCuttingRafflesia]
+	and a
+	ret nz
 	ld hl, OBJECT_STEP_FRAME
 	add hl, bc
 	inc [hl]

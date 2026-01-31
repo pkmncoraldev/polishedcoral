@@ -3184,7 +3184,7 @@ AskCutTreeScript::
 	appear 1
 	priority 1, HIGH_PRIORITY
 	playsound SFX_POWDER
-	applyonemovement 1, slow_slide_step_down
+	applyonemovement 1, slow_step_down
 	pause 3
 	disappear 1
 	callasm MakePalGreen
@@ -3194,11 +3194,26 @@ AskCutTreeScript::
 	if_equal 3, .poison
 	jumptext CutFlowerNothingText
 .sleep
-	jumptext CutFlowerSleepText
+	opentext
+	writetext CutFlowerSleepText
+	playsound SFX_TAIL_WHIP
+	waitsfx
+	closetext
+	end
 .para
-	jumptext CutFlowerParaText
+	opentext
+	writetext CutFlowerParaText
+	playsound SFX_THUNDERSHOCK
+	waitsfx
+	closetext
+	end
 .poison
-	jumptext CutFlowerPoisonText
+	opentext
+	writetext CutFlowerPoisonText
+	playsound SFX_POISON
+	waitsfx
+	closetext
+	end
 .end
 	endtext
 .no

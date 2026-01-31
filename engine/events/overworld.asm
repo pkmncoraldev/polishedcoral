@@ -3330,7 +3330,9 @@ CutFlowerStatus:
 	jr z, .infect
 	ld a, MON_STATUS
 	call GetPartyParamLocation	
-	ld a, SLP
+	ld a, 3
+	call BattleRandomRange
+	add 2
 	ld [hl], a
 	ld a, 1
 	ld [wScriptVar], a

@@ -163,6 +163,7 @@ DEF MAP_NONE   EQU 0
 	map_const SUNBEAM_JUNGLE_DEEP,  			          20, 19 ; 16
 	map_const ROUTE_13,                            		  31, 10 ; 17
 	map_const SUNBEAM_ISLAND_EAST,                         7, 30 ; 18
+	map_const SUNBEAM_JUNGLE_PLUME_CAVE,  			       9,  8 ; 19
 	
 	newgroup                                                     ;  8
 	

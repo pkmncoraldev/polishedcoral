@@ -7,7 +7,7 @@ SunbeamJungle_MapScriptHeader:
 	db 1 ; callbacks
 	callback MAPCALLBACK_TILES, SunbeamJungleCallback
 
-	db 7 ; warp events
+	db 8 ; warp events
 	warp_def 39,  4, 3, SUNBEAM_ISLAND
 	warp_def 39,  5, 12, SUNBEAM_ISLAND
 	warp_def 19, 11, 1, SUNBEAM_JUNGLE_CAVE
@@ -15,6 +15,7 @@ SunbeamJungle_MapScriptHeader:
 	warp_def 47, 11, 2, SUNBEAM_ISLAND_EAST
 	warp_def 47, 12, 3, SUNBEAM_ISLAND_EAST
 	warp_def 47, 13, 4, SUNBEAM_ISLAND_EAST
+	warp_def  5,  5, 1, SUNBEAM_JUNGLE_PLUME_CAVE
 
 	db 6 ; coord events
 	coord_event  8, 23, 2, JungleResetWaterfallBlocks
@@ -35,7 +36,7 @@ SunbeamJungle_MapScriptHeader:
 	signpost 21, 15, SIGNPOST_READ, SunbeamJungleBigWaterfall
 
 	db 19 ; object events
-	person_event SPRITE_MISC_OVERHEAD, -2, -2, SPRITEMOVEDATA_TILE_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
+	person_event SPRITE_MISC_OVERHEAD, -2, -2, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
 	object_event 4, 22, SPRITE_RAFFLESIA, SPRITEMOVEDATA_CUTTABLE_TREE, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, SunbeamJungleRafflesia, -1
 	object_event 24, 19, SPRITE_RAFFLESIA, SPRITEMOVEDATA_CUTTABLE_TREE, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, SunbeamJungleRafflesia, -1
 	object_event  4, 30, SPRITE_RAFFLESIA, SPRITEMOVEDATA_CUTTABLE_TREE, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, SunbeamJungleRafflesia, -1

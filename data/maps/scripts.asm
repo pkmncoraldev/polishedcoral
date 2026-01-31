@@ -223,6 +223,7 @@ INCLUDE "maps/SunbeamTradeHouse.asm"
 INCLUDE "maps/SunbeamJungleCave.asm"
 INCLUDE "maps/SunbeamJungleDeep.asm"
 INCLUDE "maps/SunbeamJungle.asm"
+INCLUDE "maps/SunbeamJunglePlumeCave.asm"
 
 SECTION "Eventide Village Scripts", ROMX
 

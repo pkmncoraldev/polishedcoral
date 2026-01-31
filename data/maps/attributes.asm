@@ -650,6 +650,7 @@ ENDM
 	map_attributes SunbeamReserve, SUNBEAM_RESERVE, $35, 0
 	map_attributes SunbeamJungle, SUNBEAM_JUNGLE, $07, 0
 	map_attributes SunbeamJungleCave, SUNBEAM_JUNGLE_CAVE, $09, 0
+	map_attributes SunbeamJunglePlumeCave, SUNBEAM_JUNGLE_PLUME_CAVE, $09, 0
 	map_attributes SunbeamJungleDeep, SUNBEAM_JUNGLE_DEEP, $07, 0
 	map_attributes SpookhouseLivingRoom, SPOOKHOUSE_LIVING_ROOM, $00, 0
 	map_attributes SpookhouseDiningRoom, SPOOKHOUSE_DINING_ROOM, $00, 0

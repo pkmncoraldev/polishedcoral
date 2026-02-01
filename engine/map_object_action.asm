@@ -742,13 +742,19 @@ FacingCursolaData:
 	dbw 135, 	FACING_CURSOLA_8
 	dbw -1, 	TRUE
 
-IncrementOWSpriteAnimationTimer:
+IncrementOWSpriteAnimationTimer::
 	ld a, [wOWSpriteAnimationTimer]
 	inc a
 	ld [wOWSpriteAnimationTimer], a
 	ret
 
 AnimateOWSprite:
+	ld a, [wOWSpriteAnimationScript]
+	cp TRUE
+	jr nz, .not_in_script
+	ld a, 2
+	ld [wScriptDelay], a
+.not_in_script
 	ld a, [hli]
 	cp -1
 	jr z, .end
@@ -763,6 +769,8 @@ AnimateOWSprite:
 	ld a, [hl]
 	jp SetFixedFacing
 .end
+	xor a
+	ld [wOWSpriteAnimationScript], a
 	ld a, [hl]
 	cp TRUE ;loop
 	ret z

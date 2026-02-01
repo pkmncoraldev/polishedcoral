@@ -1377,6 +1377,18 @@ macro warp_stealth
 	db \4 ; y
 	endm
 	
+	enum changeaction_command
+macro changeaction
+	db changeaction_command
+	db \1 ; person
+	db \2 ; action
+if _NARG >= 3
+	db \3 ; direction
+else
+	db DOWN ; down direction
+endc
+	endm
+	
 macro thisasm
 	callasm .asm\@
 	end

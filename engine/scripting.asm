@@ -275,6 +275,7 @@ ScriptCommandTable:
 	dw Script_changetextboxspeaker
 	dw Script_priority
 	dw Script_warp_stealth
+	dw Script_changeaction
 
 StartScript:
 	ld hl, wScriptFlags
@@ -1257,6 +1258,45 @@ Script_priority:
 	rst AddNTimes
 	call GetScriptByte
 	ld [hl], a
+	ret
+	
+Script_changeaction:
+; parameters:
+;     person (SingleByteParam)
+	xor a
+	ld [wOWSpriteAnimationTimer], a
+	call GetScriptByte
+	push af
+	ldh [hMapObjectIndexBuffer], a
+	call GetMapObject
+	ld l, c
+	ld h, b
+	ld a, [hl]
+	push af
+	call GetObjectStruct
+	pop af
+	dec a
+	ld bc, OBJECT_STRUCT_LENGTH
+	ld hl, wObject1Action
+	rst AddNTimes
+	call GetScriptByte
+	ld [hl], a
+	dec hl
+	dec hl
+	dec hl
+	call GetScriptByte
+	add a
+	add a
+	ld e, a
+	pop af
+	ld d, a
+	call ApplyPersonFacing
+	ld a, 1
+	ld [wOWSpriteAnimationScript], a
+	ld a, SCRIPT_WAIT
+	ld [wScriptMode], a
+	ld a, 2
+	ld [wScriptDelay], a
 	ret
 
 Script_appear:

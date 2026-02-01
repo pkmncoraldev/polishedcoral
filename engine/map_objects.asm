@@ -656,6 +656,7 @@ MapObjectMovementPattern:
 	dw .MovementJukebox
 	dw .MovementFossil1
 	dw .MovementFossil2
+	dw .MovementPlumeBoss
 
 .RandomWalkY:
 	call Random
@@ -1111,6 +1112,10 @@ MapObjectMovementPattern:
 	
 .MovementCursola
 	ld a, PERSON_ACTION_CURSOLA
+	jp ._ActionA_StepType04
+	
+.MovementPlumeBoss
+	ld a, PERSON_ACTION_PLUME_BOSS
 	jp ._ActionA_StepType04
 	
 .MovementTileUpDown:

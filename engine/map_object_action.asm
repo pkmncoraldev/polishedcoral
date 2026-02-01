@@ -84,6 +84,7 @@ Pointers445f: ; 445f
 	dw SetFacingJukebox,    		   SetFacingJukebox			  ; PERSON_ACTION_JUKEBOX
 	dw SetFacingFossil1,		       SetFacingFossil1	  		  ; PERSON_ACTION_FOSSIL_1
 	dw SetFacingFossil2,		       SetFacingFossil2	  		  ; PERSON_ACTION_FOSSIL_2
+	dw SetFacingPlumeBoss,			   SetFacingPlumeBoss		  ; PERSON_ACTION_PLUME_BOSS
 	
 ; 44a3
 
@@ -741,6 +742,24 @@ FacingCursolaData:
 	dbw 134, 	FACING_CURSOLA_7
 	dbw 135, 	FACING_CURSOLA_8
 	dbw -1, 	TRUE
+	
+SetFacingPlumeBoss:
+	ld a, 1
+	ld [wScriptDelay], a
+	call IncrementOWSpriteAnimationTimer
+	ld a, [wOWSpriteAnimationTimer]
+	ld hl, FacingPlumeBossData
+	jp AnimateOWSprite
+	
+FacingPlumeBossData:
+	;frame number, facing
+	;last entry determines whether or not to loop
+	dbw 1,		FACING_STEP_UP_0
+	dbw 6, 		FACING_STEP_UP_1
+	dbw 200, 	FACING_STEP_LEFT_1
+	dbw 220, 	FACING_STEP_DOWN_1
+	dbw 221,	FACING_STEP_LEFT_0
+	dbw -1, 	FALSE
 
 IncrementOWSpriteAnimationTimer::
 	ld a, [wOWSpriteAnimationTimer]

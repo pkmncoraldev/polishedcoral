@@ -363,6 +363,9 @@ CheckOverworldTileArrays: ; c840
 
 INCLUDE "data/events/field_move_blocks.asm"
 
+_VileplumeCutAsm::
+	jp PrepareOverworldMove
+
 Script_CutTree:
 	callasm PrepareOverworldMove
 	writetext Text_UsedCut

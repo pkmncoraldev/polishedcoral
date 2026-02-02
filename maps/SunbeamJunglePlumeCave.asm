@@ -26,6 +26,8 @@ SunbeamJunglePlumeCaveBoss:
 	callasm HasCutAvailable
 ;	ifequal 1, .no
 	opentext
+	checkflag ENGINE_AUTOCUT_ACTIVE
+	iftrue .cont
 	writetext SunbeamJunglePlumeCaveCutText
 	yesorno
 	iftrue .cont

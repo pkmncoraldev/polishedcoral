@@ -762,7 +762,7 @@ TrySurfOW:: ; c9e7
 	
 AskSurfScript: ; ca2c
 	checkflag ENGINE_AUTOSURF_ACTIVE
-	iftrue AutoSurfScript
+	iftrue UsedSurfScript
 	opentext
 	writetext AskSurfText
 	yesorno
@@ -775,7 +775,7 @@ AskSurfText: ; ca36
 	
 AskLavaSurfScript: ; ca2c
 	checkflag ENGINE_AUTOSURF_ACTIVE
-	iftrue AutoSurfScript
+	iftrue UsedSurfScript
 	opentext
 	writetext AskLavaSurfText
 	yesorno
@@ -1097,7 +1097,7 @@ Script_CantDoWaterfall: ; 0xcb7e
 
 Script_AskWaterfall: ; 0xcb86
 	checkflag ENGINE_AUTOWATERFALL_ACTIVE
-	iftrue Script_AutoWaterfall
+	iftrue Script_UsedWaterfall
 	opentext
 	writetext .AskUseWaterfall
 	yesorno
@@ -1737,7 +1737,7 @@ AskHeadbuttScript: ; 0xcedc
 	checkevent EVENT_CANT_HEADBUTT
 	iftrue .not_now
 	checkflag ENGINE_HEADBUTT_ACTIVE
-	iftrue AutoHeadbuttScript
+	iftrue HeadbuttScript
 	opentext
 	writetext UnknownText_0xcee6
 	yesorno
@@ -2125,7 +2125,7 @@ Script_BlockedRockClimb:
 
 Script_AskRockClimb: ; 0xcb86
 	checkflag ENGINE_ROCK_CLIMB_ACTIVE
-	iftrue Script_AutoRockClimb
+	iftrue Script_UsedRockClimb
 	opentext
 	writetext .AskUseRockClimb
 	yesorno
@@ -2526,7 +2526,7 @@ AskRockSmashScript2::
 	callasm HasRockSmash
 	ifequal 1, .no
 	checkflag ENGINE_ROCK_SMASH_ACTIVE
-	iftrue AutoRockSmashScript
+	iftrue RockSmashScript
 	opentext
 	writetext UnknownText_0xcf77
 	yesorno
@@ -3149,7 +3149,7 @@ AskCutTreeScript::
 	ifequal 1, .no
 	playsound SFX_READ_TEXT_2
 	checkflag ENGINE_AUTOCUT_ACTIVE
-	iftrue AutoCutTreeScript
+	iftrue Script_CutTree
 	opentext
 	writetext UnknownText_0xd1c8
 	yesorno
@@ -3165,19 +3165,15 @@ AskCutTreeScript::
 	
 	playsound SFX_READ_TEXT_2
 	checkflag ENGINE_AUTOCUT_ACTIVE
-	iftrue .do_flower_auto
+	iftrue .do_flower
 	opentext
 	writetext UnknownText_0xd1c82
 	yesorno
 	iftrue .do_flower
 	endtext
 
-.do_flower_auto
-	scall AutoCutTreeScript
-	jump .powder
 .do_flower
 	scall Script_CutTree
-.powder
 	random 2
 	iffalse .end
 	disappear 1

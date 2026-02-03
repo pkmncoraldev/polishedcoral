@@ -158,20 +158,17 @@ Route8EncounterHouseLadyAsm2:
 Route8EncounterHouseLadyText1:
 	text "Ah!"
 	
-	para "I just love tend-"
-	line "ing to the flowers"
-	cont "in my garden!"
+	para "#MON just love"
+	line "the flowers in my"
+	cont "garden."
 	
-	para "They attract #-"
-	line "MON of all kinds!"
+	para "Many #MON come"
+	line "from far and wide"
+	cont "to play in them."
 	
-	para "I saw one earlier"
-	line "that I don't see"
-	cont "normally!"
-	
-	para "I can't really"
-	line "describe it very"
-	cont "well."
+	para "I saw one earlier,"
+	line "but I forgot what"
+	cont "it looked like…"
 	
 	para "Maybe you could"
 	line "show me one of"
@@ -185,8 +182,8 @@ Route8EncounterHouseLadyText2:
 	para "That's the #MON"
 	line "I saw!"
 	
-	para "I wonder if it's"
-	line "still back there…"
+	para "Maybe you'll find"
+	line "it back there…"
 	done
 	
 Route8EncounterHouseLadyText3:
@@ -207,8 +204,8 @@ Route8EncounterHouseLadyText5:
 	text "That's not it, but"
 	line "it looked similar…"
 	
-	para "I wonder if it's"
-	line "still back there…"
+	para "Maybe you'll find"
+	line "it back there…"
 	done
 	
 Route8EncounterHouseLadyText6:

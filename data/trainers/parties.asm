@@ -3255,17 +3255,6 @@ LassGroup:
 ; ================
 
 	; LASS
-	db "SARAH@"
-	db TRAINERTYPE_PERSONALITY
-	; party
-	db 15, WINGULL, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM
-	db 15, MEOWTH, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM
-	db 15, PIKACHU, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM
-	db -1 ; end
-
-; ================
-
-	; LASS
 	db "MARSHA@"
 	db TRAINERTYPE_PERSONALITY
 	; party
@@ -5949,6 +5938,15 @@ SpaTrainerFGroup:
 
 AromaLadyGroup:
 ; ================================
+; ================
+
+	; AROMA_LADY
+	db "SARAH@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 19, GLOOM
+	db -1 ; end
+
 ; ================
 
 	; AROMA_LADY

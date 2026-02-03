@@ -580,7 +580,7 @@ RadiantFieldTrainer4:
 	done
 
 .BeatenText:
-	text "Ok! <WAIT_S>You won!"
+	text "Ok! You won!"
 	done
 	
 RadiantFieldRose:

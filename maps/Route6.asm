@@ -54,7 +54,7 @@ Route6_MapScriptHeader:
 	person_event SPRITE_POKEFAN_M,  6, 39, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_GENERICTRAINER, 3, TrainerRoute6_3, -1
 	person_event SPRITE_POKEFAN_F,  7, 40, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_GENERICTRAINER, 3, TrainerRoute6_4, -1
 	person_event SPRITE_GRANNY, 4, 31, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 3, TrainerRoute6_5, -1
-	person_event SPRITE_LASS, 4, 9, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_GENERICTRAINER, 2, TrainerRoute6_6, -1
+	person_event SPRITE_AROMA_LADY, 4, 9, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_GENERICTRAINER, 2, TrainerRoute6_6, -1
 	person_event SPRITE_GENTLEMAN, 6, 15, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 2, TrainerRoute6_7, -1
 	person_event SPRITE_SWIMMER_GIRL_LAND, 13,  6, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 2, TrainerRoute6_8, -1
 	person_event SPRITE_SWIMMER_GUY, 16, 21, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 2, TrainerRoute6_9, -1
@@ -270,25 +270,35 @@ TrainerRoute6_5:
 	done
 	
 TrainerRoute6_6:
-	generictrainer LASS, SARAH, EVENT_BEAT_ROUTE_6_TRAINER_6, .SeenText, .BeatenText
+	generictrainer AROMA_LADY, SARAH, EVENT_BEAT_ROUTE_6_TRAINER_6, .SeenText, .BeatenText
 
-	text "Fine! <WAIT_M>I'll admit"
-	line "it!"
+	text "The rafflesia is a"
+	line "big, red flower."
 	
-	para "I haven't ever been"
-	line "to SUNBEAM ISLAND…"
+	para "If you touch them,"
+	line "they'll kick up"
+	cont "spores that make"
+	cont "your #MON sick."
+	
+	para "Oh, and it smells"
+	line "like rotten fish!"
 	done
 
 .SeenText:
-	text "Have you been to"
-	line "SUNBEAM ISLAND?"
+	text "Have you heard of"
+	line "the rafflesia?"
 	
-	para "Anyone who's anyone"
-	line "has been there."
+	para "They're all over"
+	line "the jungle on"
+	cont "SUNBEAM ISLAND."
+	
+	para "Beat me and I'll"
+	line "tell you more!"
 	done
 
 .BeatenText:
-	text "What? But how?"
+	text "Ok, you won!"
+	para "I'll tell you."
 	done
 	
 TrainerRoute6_7:

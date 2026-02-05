@@ -164,14 +164,15 @@ DragonShrineInteriorBigStatueLegendText4:
 	
 	para "The boy approached"
 	line "it, not with the"
-	cont "malice common to"
-	cont "his kind,"
+	cont "malice so common"
+	cont "to man,"
 	
 	para "but with grace and"
-	line "and kindness."
+	line "and compassion."
 	
-	para "In turn, the beast"
-	line "answered in kind."
+	para "Seeing this, the"
+	line "beast responded"
+	cont "in kind."
 	
 	para "Keep reading?"
 	done

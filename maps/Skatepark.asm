@@ -107,6 +107,7 @@ SkateparkTrigger3:
 	writetext SkateparkTMNPCText2	;TODO let the player lose
 	waitbutton
 	verbosegivetmhm TM_RAPID_SPIN
+	setevent EVENT_TM67
 	writetext SkateparkTMNPCText8
 	waitbutton
 	closetext

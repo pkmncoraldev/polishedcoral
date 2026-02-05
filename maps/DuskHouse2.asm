@@ -24,6 +24,7 @@ DuskHouse2NPC1:
 	writetext DuskHouse2NPC1Text1
 	waitbutton
 	verbosegivetmhm TM_DESTINY_BOND
+	setevent EVENT_TM23
 	writetext DuskHouse2NPC1Text2
 	waitbutton
 	closetext

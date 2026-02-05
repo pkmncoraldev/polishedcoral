@@ -49,7 +49,7 @@ StarglowGymRodneyScript:
 	changetextboxspeaker TEXTBOX_RODNEY
 	
 .FightDone:	
-	checkevent EVENT_GOT_TM_FROM_RODNEY
+	checkevent EVENT_TM18
 	iftrue .GotTMFromRodney
 	setevent EVENT_BEAT_STARGLOW_GYM_TRAINER_1
 	setevent EVENT_BEAT_STARGLOW_GYM_TRAINER_2
@@ -60,7 +60,7 @@ StarglowGymRodneyScript:
 	buttonsound
 	changetextboxspeaker
 	verbosegivetmhm TM_RAIN_DANCE
-	setevent EVENT_GOT_TM_FROM_RODNEY
+	setevent EVENT_TM18
 	changetextboxspeaker TEXTBOX_RODNEY
 	writetext StarglowGymRodneyTextTMSpeech
 	waitbutton

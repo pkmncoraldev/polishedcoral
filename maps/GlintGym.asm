@@ -96,7 +96,7 @@ GlintGymStanley:
 	changetextboxspeaker TEXTBOX_STANLEY
 	
 .FightDone:	
-	checkevent EVENT_GOT_TM_FROM_STANLEY
+	checkevent EVENT_TM40
 	iftrue .GotTMFromStanley
 	setevent EVENT_BEAT_GLINT_GYM_TRAINER_1
 	setevent EVENT_BEAT_GLINT_GYM_TRAINER_2
@@ -104,7 +104,7 @@ GlintGymStanley:
 	buttonsound
 	changetextboxspeaker
 	verbosegivetmhm TM_FAKE_OUT
-	setevent EVENT_GOT_TM_FROM_STANLEY
+	setevent EVENT_TM40
 	setevent EVENT_GLINT_BIRDS
 	changetextboxspeaker TEXTBOX_STANLEY
 	writetext GlintGymStanleyTextTMSpeech

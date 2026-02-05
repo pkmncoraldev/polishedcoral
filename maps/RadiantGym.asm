@@ -108,7 +108,7 @@ RadiantGymLeilanicont:
 	changetextboxspeaker TEXTBOX_LEILANI
 	
 .FightDone:	
-	checkevent EVENT_GOT_TM_FROM_LEILANI
+	checkevent EVENT_TM46
 	iftrue .GotTMFromLeilani
 	setevent EVENT_BEAT_RADIANT_GYM_ROSE
 	setevent EVENT_BEAT_RADIANT_GYM_LILY
@@ -121,7 +121,7 @@ RadiantGymLeilanicont:
 	buttonsound
 	changetextboxspeaker
 	verbosegivetmhm TM_WEATHER_BALL
-	setevent EVENT_GOT_TM_FROM_LEILANI
+	setevent EVENT_TM46
 	changetextboxspeaker TEXTBOX_LEILANI
 	writetext RadiantGymLeilaniTextTMSpeech
 	waitbutton

@@ -63,6 +63,7 @@ RiverRapidsHouseNewRecord:
 	writetext RiverRapidsHouseLadyText12
 	buttonsound
 	verbosegivetmhm TM_ENERGY_BALL
+	setevent EVENT_TM53
 .cont
 	writetext RiverRapidsHouseLadyText11
 	waitbutton

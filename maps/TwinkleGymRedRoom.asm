@@ -47,7 +47,7 @@ TwinkleGymCharlie:
 	changetextboxspeaker TEXTBOX_CHARLIE
 	
 .FightDone:	
-	checkevent EVENT_GOT_TM_FROM_CHARLIE
+	checkevent EVENT_TM11
 	iftrue .GotTMFromCharlie
 	setevent EVENT_BEAT_TWINKLE_GYM_BLUE_ROOM_TRAINER
 	setevent EVENT_BEAT_TWINKLE_GYM_BLUE_ROOM_LEADER
@@ -67,7 +67,7 @@ TwinkleGymCharlie:
 	buttonsound
 	changetextboxspeaker
 	verbosegivetmhm TM_SUNNY_DAY
-	setevent EVENT_GOT_TM_FROM_CHARLIE
+	setevent EVENT_TM11
 	changetextboxspeaker TEXTBOX_CHARLIE
 	writetext TwinkleGymCharlieTextTMSpeech
 	waitbutton

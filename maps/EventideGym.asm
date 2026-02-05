@@ -256,7 +256,7 @@ EventideGymWendy:
 	setflag ENGINE_THIRDBADGE
 	changetextboxspeaker TEXTBOX_WENDY
 .FightDone:	
-	checkevent EVENT_GOT_TM_FROM_WENDY
+	checkevent EVENT_TM56
 	iftrue .GotTMFromWendy
 	setevent EVENT_BEAT_EVENTIDE_GYM_TRAINER_1
 	setevent EVENT_BEAT_EVENTIDE_GYM_TRAINER_2
@@ -267,7 +267,7 @@ EventideGymWendy:
 	buttonsound
 	changetextboxspeaker
 	verbosegivetmhm TM_ROOST
-	setevent EVENT_GOT_TM_FROM_WENDY
+	setevent EVENT_TM56
 	changetextboxspeaker TEXTBOX_WENDY
 	writetext EventideGymWendyTextTMSpeech
 	waitbutton

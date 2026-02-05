@@ -24,7 +24,7 @@ BoneCavernB2F_MapScriptHeader:
 	db 4 ; object events
 	smashrock_event 14, 28
 	itemball_event 27,  5, RARE_BONE, 1, EVENT_BONE_CAVERN_B2F_ITEM_1
-	tmhmball_event 15, 25, TM_HEADBUTT, EVENT_BONE_CAVERN_B2F_HEADBUTT_TM
+	tmhmball_event 15, 25, TM_HEADBUTT, EVENT_TM02
 	person_event SPRITE_SCIENTIST,  4, 17, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 3, BoneCavernB2FTrainer1, -1
 	
 	

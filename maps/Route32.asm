@@ -167,6 +167,7 @@ Route32StrengthMan:
 	writetext Route32StrengthManText2
 	waitbutton
 	verbosegivetmhm TM_SUPERPOWER
+	setevent EVENT_TM48
 .got_superpower
 	writetext Route32StrengthManText3
 	waitbutton

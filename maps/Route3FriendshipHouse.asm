@@ -31,7 +31,7 @@ Route3FriendshipHouseNPC:
 	jumpopenedtext FriendshipHateText
 	
 .Happiest:
-	checkevent EVENT_GOT_RETURN_TM
+	checkevent EVENT_TM27
 	iffalse .tm
 	writetext FriendshipHappiestText
 	waitbutton
@@ -44,7 +44,7 @@ Route3FriendshipHouseNPC:
 	writetext FriendshipHappiestTextReturn
 	waitbutton
 	closetext
-	setevent EVENT_GOT_RETURN_TM
+	setevent EVENT_TM27
 	end
 .Happy:
 	jumpopenedtext FriendshipHappyText

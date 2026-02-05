@@ -160,6 +160,7 @@ Route5Gate1FNPC4:
 	writetext Route5Gate1FNPC4Text5
 	waitbutton
 	verbosegivetmhm TM_FALSE_SWIPE
+	setevent EVENT_TM54
 	writetext Route5Gate1FNPC4Text6
 	waitbutton
 	closetext

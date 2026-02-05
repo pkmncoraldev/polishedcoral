@@ -19,7 +19,7 @@ Route20_MapScriptHeader:
 	person_event SPRITE_CASINO, 28,  2, SPRITEMOVEDATA_TILE_LEFT_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, -1
 	person_event SPRITE_CASINO, 28,  3, SPRITEMOVEDATA_TILE_LEFT_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, -1
 	itemball_event  2,  6, REVIVE, 1, EVENT_ROUTE_20_POKE_BALL_1
-	tmhmball_event  2, 28, TM_ACROBATICS, EVENT_ROUTE_20_POKE_BALL_2
+	tmhmball_event  2, 28, TM_ACROBATICS, EVENT_TM62
 
 Route20Sunflower:
 	jumptext Route20SunflowerText

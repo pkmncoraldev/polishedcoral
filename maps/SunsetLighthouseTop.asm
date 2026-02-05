@@ -96,6 +96,7 @@ SunsetLighthouseTopAmpharos:
 	writetext SunsetLighthouseTopAmpharosTextFull
 	waitbutton
 	verbosegivetmhm TM_ZAP_CANNON
+	setevent EVENT_TM42
 	closetext
 	setevent EVENT_SUNSET_LIGHTHOUSE_FED_AMPHAROS
 	end

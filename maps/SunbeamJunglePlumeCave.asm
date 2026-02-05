@@ -18,7 +18,7 @@ SunbeamJunglePlumeCave_MapScriptHeader:
 	object_event 6, 6, SPRITE_RAFFLESIA, SPRITEMOVEDATA_CUTTABLE_TREE, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, SunbeamJungleRafflesia, -1
 	object_event 13, 3, SPRITE_RAFFLESIA, SPRITEMOVEDATA_CUTTABLE_TREE, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, SunbeamJungleRafflesia, -1
 	object_event 15, 6, SPRITE_RAFFLESIA, SPRITEMOVEDATA_CUTTABLE_TREE, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, SunbeamJungleRafflesia, -1
-	tmhmball_event 13,  9, TM_GIGA_DRAIN, EVENT_SUNBEAM_JUNGLE_PLUME_CAVE_GIGA_DRAIN
+	tmhmball_event 13,  9, TM_GIGA_DRAIN, EVENT_TM19
 
 
 SunbeamJunglePlumeCaveBoss:

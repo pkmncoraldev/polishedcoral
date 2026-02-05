@@ -92,6 +92,7 @@ FightingDojoTrigger2:
 	writetext FightingDojoMasterTestofBodyPassedText
 	waitbutton
 	verbosegivetmhm TM_BULK_UP
+	setevent EVENT_TM08
 	writetext FightingDojoMasterTestofBodyPassedText2
 	buttonsound
 	farwritetext StdBlankText
@@ -499,6 +500,7 @@ TrialOfMindTimesUp::
 	writetext FightingDojoMasterTestofMindPassedText
 	waitbutton
 	verbosegivetmhm TM_CALM_MIND
+	setevent EVENT_TM04
 	writetext FightingDojoMasterTestofMindPassedText2
 	buttonsound
 	farwritetext StdBlankText

@@ -17,7 +17,7 @@ MtOnwaB1F_MapScriptHeader:
 	db 0 ; bg events
 
 	db 10 ; object events
-	tmhmball_event  2, 4, TM_FLAME_CHARGE, EVENT_MT_ONWA_B1F_POKE_BALL_1
+	tmhmball_event  2, 4, TM_FLAME_CHARGE, EVENT_TM65
 	itemball_event 32, 7, RARE_CANDY, 1, EVENT_MT_ONWA_B1F_POKE_BALL_2
 	itemball_event 10,18, GREAT_BALL, 1, EVENT_MT_ONWA_B1F_POKE_BALL_3
 	person_event SPRITE_FIREBREATHER, 26, 17, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_GENERICTRAINER, 2, LavaCaveBF1Trainer1, -1

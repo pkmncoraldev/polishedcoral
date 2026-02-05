@@ -17,7 +17,7 @@ ConnectingCavernEntrance_MapScriptHeader:
 	person_event SPRITE_PONYTAIL,  5, 17, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, ConnectingCavernEntranceNPC, -1
 
 ConnectingCavernEntranceNPC:
-	checkevent EVENT_HAVE_FLASH
+	checkevent EVENT_TM70
 	iftrue .haveflash
 	checkevent EVENT_SNARKY_GIRL_2
 	iftrue .snarky

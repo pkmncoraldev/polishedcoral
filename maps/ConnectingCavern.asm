@@ -37,7 +37,7 @@ ConnectingCavern_MapScriptHeader:
 	itemball_event 21, 29, RARE_CANDY, 1, EVENT_CONNECTING_CAVERN_RARE_CANDY
 	tapeball_event 27, 14, MUSIC_DARKNESS, 1, EVENT_MUSIC_DARKNESS
 	itemball_event 35, 36, METAL_COAT, 1, EVENT_CONNECTING_CAVERN_METAL_COAT
-	tmhmball_event 16, 16, TM_BRICK_BREAK, EVENT_CONNECTING_CAVERN_BRICK_BREAK
+	tmhmball_event 16, 16, TM_BRICK_BREAK, EVENT_TM43
 	smashrock_event 32, 24
 	smashrock_event 31, 24
 	smashrock_event 18, 18

@@ -386,6 +386,7 @@ Luster3NPC4:
 	writetext Luster3NPC4Text2
 	waitbutton
 	closetext
+	setevent EVENT_TM01
 	end
 .got_tm
 	writetext Luster3NPC4Text3

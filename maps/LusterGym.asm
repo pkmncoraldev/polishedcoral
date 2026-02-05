@@ -108,7 +108,7 @@ LusterGymPolly:
 	changetextboxspeaker TEXTBOX_POLLY
 	
 .FightDone:	
-	checkevent EVENT_GOT_TM_FROM_POLLY
+	checkevent EVENT_TM09
 	iftrue .GotTMFromPolly
 	setevent EVENT_BEAT_LUSTER_GYM_TRAINER_1
 	setevent EVENT_BEAT_LUSTER_GYM_TRAINER_2
@@ -120,7 +120,7 @@ LusterGymPolly:
 	buttonsound
 	changetextboxspeaker
 	verbosegivetmhm TM_VENOSHOCK
-	setevent EVENT_GOT_TM_FROM_POLLY
+	setevent EVENT_TM09
 	changetextboxspeaker TEXTBOX_POLLY
 	writetext LusterGymPollyTextTMSpeech
 	waitbutton

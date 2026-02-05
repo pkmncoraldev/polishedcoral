@@ -49,6 +49,7 @@ LusterApartment5_2F_NPC1:
 	writetext LusterApartment5_2F_NPC1Text2
 	waitbutton
 	closetext
+	setevent EVENT_TM03
 	end
 .got_tm
 	jumptextfaceplayer LusterApartment5_2F_NPC1Text3

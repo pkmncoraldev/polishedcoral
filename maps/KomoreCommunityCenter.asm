@@ -39,15 +39,15 @@ KomoreCommunityCenter_MapScriptHeader:
 	signpost  1,  4, SIGNPOST_JUMPTEXT, KomoreCommunityCenterDoorText
 
 	db 2 ; object events
-	person_event SPRITE_BALL_CUT_FRUIT,  4,  1, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, KomoreCommunityCenterItemBall, EVENT_KOMORE_COMMUNITY_CENTER_ITEM
-	person_event SPRITE_BALL_CUT_FRUIT,  4,  1, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, KomoreCommunityCenterItemBall, EVENT_KOMORE_COMMUNITY_CENTER_ITEM
+	person_event SPRITE_BALL_CUT_FRUIT,  4,  1, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, KomoreCommunityCenterItemBall, EVENT_TM30
+	person_event SPRITE_BALL_CUT_FRUIT,  4,  1, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, KomoreCommunityCenterItemBall, EVENT_TM30
 
 	const_def 1 ; object constants
 	const KOMORE_COMMUNITY_CENTER_ITEM_1
 	const KOMORE_COMMUNITY_CENTER_ITEM_2
 
 KomoreCommunityCenterCallback:
-	checkevent EVENT_KOMORE_COMMUNITY_CENTER_ITEM
+	checkevent EVENT_TM30
 	iffalse .skip
 	checkevent EVENT_MIMIKYU_WILL_GO_LEFT
 	iftrue .left

@@ -31,7 +31,7 @@ SunbeamSurfShopTrigger1:
 	opentext 
 	writetext SunbeamIslandSurfShopNPC1Text5
 	waitbutton
-	checkevent EVENT_BIKINI_CONTEST_GOT_CHARM
+	checkevent EVENT_TM05
 	iffalse .get_charm
 	checkevent EVENT_BIKINIP
 	iffalse .lilacwon
@@ -40,7 +40,7 @@ SunbeamSurfShopTrigger1:
 	checkevent EVENT_BIKINIBR
 	iffalse .hazelwon
 .get_charm
-	setevent EVENT_BIKINI_CONTEST_GOT_CHARM
+	setevent EVENT_TM05
 	verbosegivetmhm TM_CHARM
 	writetext SunbeamIslandSurfShopNPC1Text9
 	buttonsound
@@ -157,6 +157,7 @@ SunbeamIslandSurfShopNPC2:
 	writetext SunbeamIslandSurfShopNPC2Text2
 	waitbutton
 	verbosegivetmhm TM_THUNDER
+	setevent EVENT_TM25
 	writetext SunbeamIslandSurfShopNPC2Text3
 	waitbutton
 	closetext

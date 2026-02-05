@@ -623,6 +623,7 @@ Route28StrengthMan:
 	waitbutton
 	changetextboxspeaker
 	verbosegivetmhm TM_SELFDESTRUCT
+	setevent EVENT_TM64
 	changetextboxspeaker TEXTBOX_PUSHER
 .end
 	writetext Route28StrengthManText9

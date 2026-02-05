@@ -38,7 +38,6 @@ ShimmerLabLobbyCallback:
 	moveperson SHIMMER_LAB_LOBBY_NPC2, 4, 3
 	moveperson SHIMMER_LAB_LOBBY_WIGGLYTUFF, 5, 3
 	domaptrigger ROUTE_10_EAST, $2
-	clearevent EVENT_ROUTE_10_EAST_POKE_BALL_BLIZZARD
 	return
 .earthquake
 	checktmhm TM_EARTHQUAKE
@@ -47,7 +46,6 @@ ShimmerLabLobbyCallback:
 	moveperson SHIMMER_LAB_LOBBY_NPC3, 4, 3
 	moveperson SHIMMER_LAB_LOBBY_TOUCANNON, 5, 3
 	domaptrigger ROUTE_18_NORTH, $3
-	clearevent EVENT_ROUTE_18_NORTH_POKE_BALL_EARTHQUAKE
 .end
 	return
 

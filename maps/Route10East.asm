@@ -39,7 +39,7 @@ Route10East_MapScriptHeader:
 	db 4 ; object events
 	object_event 11, 24, SPRITE_CAMPFIRE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, Route10EastCampfire, EVENT_HIDE_OW_OBJECTS_BROWN
 	object_event 11, 24, SPRITE_CAMPFIRE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, Route10EastCampfire, EVENT_HIDE_OW_OBJECTS_TEAL
-	tmhmball_event 11, 21, TM_BLIZZARD, EVENT_ROUTE_10_EAST_POKE_BALL_BLIZZARD
+	tmhmball_event -5, -5, TM_BLIZZARD, EVENT_TM14
 	itemball_event 19, 21, NEVERMELTICE, 1, EVENT_ROUTE_10_EAST_POKE_BALL_NEVERMELTICE
 
 	const_def 1 ; object constants
@@ -76,6 +76,7 @@ Route10EastCallback:
 	changeblock $0c, $18, $02
 	moveperson ROUTE_10_EAST_FIRE_1, -5, -5
 	moveperson ROUTE_10_EAST_FIRE_2, -5, -5
+	moveperson 3, 11, 21
 .tent_done
 	readvar VAR_PLAYER_COLOR
 	if_equal 3, .brown

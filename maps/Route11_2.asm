@@ -325,7 +325,7 @@ Route11_2EggLady:
 	setevent EVENT_ROUTE_11_2_TALKED_TO_EGG_LADY
 	end
 .talked
-	checkevent EVENT_GOT_FIRE_BLAST
+	checkevent EVENT_ROUTE_11_2_FLOATING_BALL
 	iffalse .dropped
 	writetext Route11_2EggLadyText5
 	waitbutton

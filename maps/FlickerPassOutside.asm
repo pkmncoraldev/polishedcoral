@@ -13,7 +13,7 @@ FlickerPassOutside_MapScriptHeader:
 	db 3 ; object events
 	person_event SPRITE_COOLTRAINER_F,  7,  8, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, FlickerPassOutsideNPC, -1
 	strengthboulder_event 13, 11, -1
-	tmhmball_event 15, 10, TM_FIRE_BLAST, EVENT_GOT_FIRE_BLAST
+	tmhmball_event 15, 10, TM_FIRE_BLAST, EVENT_TM38
 	
 	
 FlickerPassOutsideNPC:

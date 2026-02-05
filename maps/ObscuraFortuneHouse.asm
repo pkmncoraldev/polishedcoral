@@ -11,20 +11,19 @@ ObscuraFortuneHouse_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 2 ; object events
+	db 1 ; object events
 	person_event SPRITE_BREEDER, 4, 2, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ObscuraFortuneHouseTeller, -1
-	tapeball_event  2,  2, MUSIC_TITLE, 1, EVENT_MUSIC_TITLE
 	
 ObscuraFortuneHouseTeller:
 	faceplayer
 	opentext
 	checkevent EVENT_TALKED_TO_FORTUNE_TELLER
 	iftrue .talked_once
+	setevent EVENT_TALKED_TO_FORTUNE_TELLER
 	writetext ObscuraFortuneHouseTellerText1
 	yesorno
 	iffalse .no
 	writetext ObscuraFortuneHouseTellerText2
-	setevent EVENT_TALKED_TO_FORTUNE_TELLER
 	jump .cont
 .talked_once
 	writetext ObscuraFortuneHouseTellerText3
@@ -40,6 +39,8 @@ ObscuraFortuneHouseTeller:
 	if_equal $3, .decos
 	if_equal $4, .encounters
 .tms
+	callasm ObscuraFortuneHouseTellerSetupTMsAsm
+	waitbutton
 	closetext
 	end
 .tapes
@@ -63,7 +64,7 @@ ObscuraFortuneHouseTeller:
 
 .ObscuraFortuneHouseTellerMenuData
 	db $40 ; flags
-	db 02, 00 ; start coords
+	db 04, 00 ; start coords
 	db 11, 19 ; end coords
 	dw .MenuDataObscuraFortuneHouseTeller
 	db 1 ; default option
@@ -71,16 +72,16 @@ ObscuraFortuneHouseTeller:
 
 .MenuDataObscuraFortuneHouseTeller: ; 0x48e04
 	db $80 ; flags
-	db 4 ; items
+	db 3 ; items
 	db "TMs@"
 	db "AUDIO CASSETTES@"
 	db "ROOM DECOR@"
-	db "UNIQUE ENCOUNTERS@"
+	db "UNIQUE ENCOUNTERS@"	;dummied out
 	
 ObscuraFortuneHouseTellerText1:
-	text "Welcome to-<WAIT_S><LNBRK><LNBRK>Cough! Cough!"
+	text "Welcome to-<WAIT_S><LNBRK><LNBRK>Cough!<WAIT_S> Cough!"
 	
-	para "Aagh! Whew!"
+	para "Aagh!<WAIT_S> Whew!"
 	
 	para "Uhhhhgh…"
 	
@@ -136,24 +137,27 @@ ObscuraFortuneHouseTellerText3:
 	line "be ¥1500. Deal?"
 	done
 	
+ObscuraFortuneHouseTellerSetupTMsAsm:
+	ld a, 66 ;number of tracked TMHMs + 1
+	ld hl, TM_FLAGS_START
+	jr ObscuraFortuneHouseTellerAsm
+	
 ObscuraFortuneHouseTellerSetupTapesAsm:
 	ld a, NUM_TAPE_PLAYER_SONGS
-	ld [wCurBattleMon], a
 	ld hl, TAPE_FLAGS_START
 	jr ObscuraFortuneHouseTellerAsm
 
 ObscuraFortuneHouseTellerSetupDecosAsm:
 	ld a, 4 ;number of tracked decos + 1
-	ld [wCurBattleMon], a
 	ld hl, DECO_FLAGS_START
 	jr ObscuraFortuneHouseTellerAsm
 	
 ObscuraFortuneHouseTellerSetupUniqueEncountersAsm:
 	ld a, 34 ;number of unique encounters + 1
-	ld [wCurBattleMon], a
 	ld hl, UNIQUE_ENCOUNTER_FLAGS_START
 ; fallthru
 ObscuraFortuneHouseTellerAsm:
+	ld [wCurBattleMon], a
 	xor a
 	ld c, a
 	ld a, [wCurBattleMon]
@@ -199,6 +203,8 @@ ObscuraFortuneHouseTellerAsm:
 	pop hl
 	jr nz, .loop2
 	ld a, [wCurBattleMon]
+	ld a, 66 ;number of tracked TMHMs + 1
+	jr z, .tms
 	cp 4 ;number of tracked decos + 1
 	jr z, .decos
 	cp NUM_TAPE_PLAYER_SONGS
@@ -211,45 +217,590 @@ ObscuraFortuneHouseTellerAsm:
 	ld hl, NoMoreFortunesText
 	jp PrintText
 	
+.tms
+	ld hl, TM_Text
+	call PrintText
+	ld hl, BlankTextFortune
+	call PrintText
+	ld c, 12
+	call DelayFrames
+	ld hl, TellerTMText
+	jr .finish
+	
 .tape
-	ld a, [wCurTMHM]
-	ld e, a
-	ld d, 0
+	ld hl, Music_Text
+	call PrintText
+	ld hl, BlankTextFortune
+	call PrintText
+	ld c, 12
+	call DelayFrames
 	ld hl, TellerTapeText
-	add hl, de
-	add hl, de
-	ld a, [hli]
-	ld h, [hl]
-	ld l, a
-	jp PrintText
+	jr .finish
 	
 .decos
-	ld a, [wCurTMHM]
-	ld e, a
-	ld d, 0
 	ld hl, TellerDecosText
-	add hl, de
-	add hl, de
-	ld a, [hli]
-	ld h, [hl]
-	ld l, a
-	jp PrintText
+	jr .finish
 	
 .unique_encounters
+	ld hl, TellerUniqueEncounterText
+	
+.finish
 	ld a, [wCurTMHM]
 	ld e, a
 	ld d, 0
-	ld hl, TellerUniqueEncounterText
 	add hl, de
 	add hl, de
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
+	call PrintText
+	ld hl, BlankTextFortune
+	call PrintText
+	ld c, 12
+	call DelayFrames
+	ld hl, TellerEndText
 	jp PrintText
 
 NoMoreFortunesText:
 	text "NO MORE"
 	done
+	
+BlankTextFortune:
+	text ""
+	done
+	
+TellerEndText:
+	text "…<WAIT_S>And that's all"
+	line "I can see for now."
+	
+	para "Come again if you"
+	line "need my help."
+	
+	para "For a modest fee,"
+	line "of course…"
+	done
+	
+TellerTMText:
+	dw TM01Text
+	dw TM02Text
+	dw TM03Text
+	dw TM04Text
+	dw TM05Text
+;	dw TM06Text
+	dw TM07Text
+	dw TM08Text
+	dw TM09Text
+	dw TM10Text
+	dw TM11Text
+	dw TM12Text
+	dw TM13Text
+	dw TM14Text
+;	dw TM15Text
+;	dw TM16Text
+;	dw TM17Text
+	dw TM18Text
+	dw TM19Text
+;	dw TM20Text
+	dw TM21Text
+;	dw TM22Text
+	dw TM23Text
+	dw TM24Text
+	dw TM25Text
+	dw TM26Text
+	dw TM27Text
+	dw TM28Text
+	dw TM29Text
+	dw TM30Text
+	dw TM31Text
+	dw TM32Text
+;	dw TM33Text
+	dw TM34Text
+	dw TM35Text
+	dw TM36Text
+	dw TM37Text
+	dw TM38Text
+	dw TM39Text
+	dw TM40Text
+;	dw TM41Text
+	dw TM42Text
+	dw TM43Text
+;	dw TM44Text
+	dw TM45Text
+	dw TM46Text
+	dw TM47Text
+	dw TM48Text
+	dw TM49Text
+;	dw TM50Text
+;	dw TM51Text
+;	dw TM52Text
+	dw TM53Text
+	dw TM54Text
+	dw TM55Text
+	dw TM56Text
+	dw TM57Text
+	dw TM58Text
+	dw TM59Text
+	dw TM60Text
+	dw TM61Text
+	dw TM62Text
+	dw TM63Text
+	dw TM64Text
+	dw TM65Text
+	dw TM66Text
+	dw TM67Text
+;	dw TM68Text
+	dw TM69Text
+	dw TM70Text
+	
+TM_Text:
+	text "I see a TM…"
+	prompt
+	
+TM01Text:
+	text "There's a man in"
+	line "LUSTER CITY."
+	
+	para "He's outside in the"
+	line "BUSINESS DISTRICT."
+	
+	para "He'll give it to"
+	line "you."
+	prompt
+
+TM02Text:
+	text "It's deep"
+	line "underground."
+	
+	para "Look in a cave"
+	line "NORTH of the"
+	cont "CROSSROADS INN."
+	prompt
+
+TM03Text:
+	text "There's a girl in"
+	line "LUSTER CITY."
+	
+	para "She lives in an"
+	line "apartment in the"
+	cont "HOUSING DISTRICT."
+	
+	para "She'll give it to"
+	line "you."
+	prompt
+
+TM04Text:
+	text "The MASTER…"
+	
+	para "You must return to"
+	line "his dojo for more"
+	cont "training…"
+	prompt
+
+TM05Text:
+	text "You're on a sunny"
+	line "island."
+	
+	para "Beautiful ladies"
+	line "in bikinis walk"
+	cont "down a runway."
+	
+	para "Oh my!"
+	prompt
+
+TM07Text:
+	text "It's in"
+	line "FLICKER PASS."
+	
+	para "It's close to the"
+	line "SOUTH entrance,"
+	
+	para "but you'll need to"
+	line "walk around some"
+	cont "rocks."
+	prompt
+
+TM08Text:
+	text "The MASTER…"
+	
+	para "You must return to"
+	line "his dojo for more"
+	cont "training…"
+	prompt
+
+TM09Text:
+TM11Text:
+TM18Text:
+TM40Text:
+TM46Text:
+TM56Text:
+TM59Text:
+TM63Text:
+	text "It's a given to"
+	line "you by a strong"
+	cont "TRAINER."
+	
+	para "A GYM LEADER."
+	prompt
+
+TM10Text:
+	text "It's deep in "
+	line "STARGLOW CAVERN."
+	
+	para "If you're coming"
+	line "from GLINT CITY,"
+	cont "you can't miss it."
+	prompt
+
+TM12Text:
+	text "DUSK TURNPIKE is"
+	line "where it is."
+	
+	para "To get behind the"
+	line "house, you'll need"
+	cont "to go under the"
+	cont "highway."
+	prompt
+
+TM13Text:
+	text "It's underwater."
+	
+	para "You DIVE into the"
+	line "ocean NORTH of"
+	cont "SUNBEAM ISLAND."
+	prompt
+
+TM14Text:
+   text "It's somewhere in"
+	line "the snow."
+	
+	para "It's in a place"
+	line "someone was once"
+	cont "camping."
+	
+	para "They're gone now,"
+	line "though."
+	prompt
+
+TM19Text:
+	text "It's in a cave"
+	line "above a giant"
+	cont "waterfall in the"
+	cont "jungle."
+	
+	para "It's guarded by"
+	line "a big… flower?"
+	prompt
+
+TM21Text:
+	text "It's in the snow."
+	
+	para "It's NORTH of a"
+	line "frozen lake EAST"
+	cont "of TWINKLE TOWN."
+	prompt
+
+TM23Text:
+	text "It's in a house in"
+	line "DUSK TURNPIKE."
+	
+	para "That should narrow"
+	line "it down…"
+	prompt
+
+TM24Text:
+	text "It's floating off"
+	line "the coast of"
+	cont "SUNBEAM ISLAND."
+	
+	para "It's in a spot you"
+	line "can only reach"
+	cont "from the jungle."
+	prompt
+
+TM25Text:
+	text "There's a man in"
+	line "the SURF SHACK on"
+	cont "SUNBEAM ISLAND."
+	
+	para "I think he's a"
+	line "surfer."
+	prompt
+
+TM26Text:
+	text "It's dry and hot."
+	
+	para "A trailer was once"
+	line "on top of it, but"
+	cont "it's gone now…"
+	prompt
+
+TM27Text:
+	text "There's a house on"
+	line "ROUTE 3."
+	
+	para "Go there and prove"
+	line "your friendship."
+	prompt
+
+TM28Text:
+	text "It's on a dry,"
+	line "desert route, but…"
+	
+	para "how do you get up"
+	line "there?"
+	prompt
+
+TM29Text:
+	text "TM29"
+	line "TODO"
+	prompt
+
+TM30Text:
+	text "It's in the ruins"
+	line "where a community"
+	cont "once gathered."
+	
+	para "I see dolls and"
+	line "fallen leaves from"
+	cont "outside."
+	
+	para "Does that narrow"
+	line "it down?"
+	prompt
+
+TM31Text:
+	text "It's in"
+	line "GLINT GROVE."
+	
+	para "It's in some grass"
+	line "SOUTH of a pair of"
+	cont "TWINS."
+	prompt
+
+TM32Text:
+	text "TM32"
+	line "TODO"
+	prompt
+
+TM34Text:
+	text "It's in the grass"
+	line "in the hear of"
+	cont "the jungle."
+	
+	para "It's past a"
+	line "cave behind the"
+	cont "waterfall."
+	prompt
+
+TM35Text:
+	text "TM35"
+	line "TODO"
+	prompt
+
+TM36Text:
+	text "TM36"
+	line "TODO"
+	prompt
+
+TM37Text:
+	text "It's in a desert"
+	line "town."
+	
+	para "Just climb the"
+	line "rocks, and it's"
+	cont "yours."
+	prompt
+
+TM38Text:
+	text "It's on the outside"
+	line "of FLICKER PASS."
+	
+	para "You'll need to move"
+	line "a rock from the"
+	cont "path."
+	prompt
+
+TM39Text:
+	text "TM39"
+	line "TODO"
+	prompt
+
+TM42Text:
+	text "It's at the top of"
+	line "the LIGHTHOUSE."
+	
+	para "There waits a"
+	line "hungry #MON."
+	prompt
+
+TM43Text:
+	text "It's in the"
+	line "CONNECTING CAVERN."
+	
+	para "You can get there"
+	line "from under the"
+	cont "LIGHTHOUSE."
+	prompt
+
+TM45Text:
+	text "It's past the grass"
+	line "on ROUTE 6."
+	
+	para "It's pretty hard"
+	line "to miss…"
+	prompt
+
+TM47Text:
+	text "It's on the airport"
+	line "runway."
+	
+	para "Now if you sneak"
+	line "out there, I don't"
+	cont "responsibility!"
+	prompt
+
+TM48Text:
+	text "There's a pusher"
+	line "fan on ROUTE 32."
+	
+	para "Show him how it's"
+	line "done, and he'll"
+	cont "reward you."
+	prompt
+
+TM49Text:
+	text "It's in a cave"
+	line "under GLINT GROVE."
+	
+	para "Try going down"
+	line "the river."
+	prompt
+
+TM53Text:
+	text "You'll get it from"
+	line "a slightly smelly"
+	cont "lady for winning"
+	cont "her game."
+	
+	para "Check the water"
+	line "around ROUTE 30."
+	prompt
+
+TM54Text:
+	text "There's a thirsty"
+	line "girl in the"
+	cont "ROUTE 5 gate."
+	
+	para "Help her out!"
+	prompt
+
+TM55Text:
+	text "It's underwater."
+	
+	para "Check the ocean"
+	line "around ROUTE 13."
+	prompt
+
+TM57Text:
+	text "It's in LUMINA"
+	line "TOWN."
+	
+	para "It's nearby an"
+	line "ELDER's house."
+	prompt
+
+TM58Text:
+	text "It's EAST of"
+	line "BRIGHTBURG."
+	
+	para "If the way is"
+	line "blocked, try a"
+	cont "different path."
+	prompt
+
+TM60Text:
+	text "It's high up a"
+	line "hill on ROUTE 29."
+	
+	para "Try looking for"
+	line "spots to climb."
+	prompt
+
+TM61Text:
+	text "It's guarded by"
+	line "some girls at a"
+	cont "train's graveyard."
+	
+	para "Try climbing the"
+	line "rocks by FLICKER"
+	cont "PASS."
+	prompt
+
+TM62Text:
+	text "It's hiding behind"
+	line "a sunflower in"
+	cont "some blue flowers."
+	prompt
+
+TM64Text:
+	text "Go to ROUTE 28."
+	
+	para "It's there you'll"
+	line "prove your pushing"
+	cont "prowess."
+	prompt
+
+TM65Text:
+	text "It's deep inside"
+	line "MT. ONWA."
+	
+	para "If you see molten"
+	line "lava, try looking"
+	cont "NORTHWEST."
+	prompt
+
+TM66Text:
+	text "It's atop the first"
+	line "waterfall you saw"
+	cont "on your journey."
+	
+	para "Do you remember"
+	line "where that is?"
+	prompt
+
+TM67Text:
+	text "It's a reward for"
+	line "showing your sick"
+	cont "SKATEBOARD skills"
+	cont "at the SKATEPARK."
+	
+	para "If you need a"
+	line "SKATEBOARD, look"
+	cont "NORTHWEST in"
+	cont "LUSTER CITY."
+	prompt
+
+TM69Text:
+	text "It's on ROUTE 8,"
+	line "but you can't reach"
+	cont "it from ROUTE 8."
+	
+	para "What on earth does"
+	line "THAT mean?"
+	prompt
+
+TM70Text:
+	text "There's a shady"
+	line "character atop"
+	cont "STARGLOW CAVERN."
+	
+	para "You'll need to"
+	line "climb from the"
+	cont "outside."
+	
+	para "Check near"
+	line "GLINT CITY."
+	prompt
 
 TellerTapeText:
 	dw Music_TitleScreenText
@@ -319,292 +870,570 @@ TellerTapeText:
 	dw Music_RivalBattle2Text
 	dw Music_ErikaText
 	dw Music_ObscuraText
+	dw Music_LuminaText
+	dw Music_DragonShrine
+	dw Music_Unused
+	dw Music_Unused
+	dw Music_Unused
+	dw Music_Unused
+	dw Music_Unused
+	dw Music_Unused
+	dw Music_Unused
+	dw Music_Unused
+	dw Music_Unused
+	dw Music_Unused
+	dw Music_Unused
+	dw Music_Unused
+	dw Music_Unused
+	dw Music_Unused
+	dw Music_Unused
+	dw Music_Unused
+	dw Music_Unused
+	dw Music_Unused
+	dw Music_Unused
 	
- Music_TitleScreenText:
+Music_Text:
+	text "I see an"
+	line "AUDIO CASSETTE…"
+	prompt
+	
+Music_TitleScreenText:
 	text "TITLE SCREEN"
-	done
+	line "TODO"
+	prompt
 	
- Music_SunsetBayText:
-	text "SUNSET BAY"
-	done
+Music_SunsetBayText:
+	text "It's behind a house"
+	line "in your hometown,"
+	cont "near some trees…"
+	prompt
 	
- Music_MomText:
-	text "MOM"
-	done
+Music_MomText:
+	text "It's on the table"
+	line "at home!"
 	
- Music_PokemonCenterText:
-	text "#MON CENTER"
-	done
+	para "Weren't you even"
+	line "paying attention?"
+	prompt
 	
- Music_RivalEncounterText:
+Music_PokemonCenterText:
+	text "It's in a bookcase"
+	line "inside a #MON"
+	cont "CENTER."
+	
+	para "No one is around…<WAIT_S>"
+	line "How eerie!"
+	prompt
+	
+Music_RivalEncounterText:
  	text "RIVAL ENCOUNTER"
-	done
+	line "TODO"
+	prompt
 	
- Music_RivalBattleText:
- 	text "RIVAL BATTLE"
-	done
+Music_RivalBattleText:
+ 	text "It's at the foot"
+	line "of a skyscraper."
 	
- Music_Route1Text:
- 	text "ROUTE 1"
-	done
+	para "You think you can't"
+	line "go further EAST,"
+	cont "but you can…"
+	prompt
 	
- Music_WildBattleText:
- 	text "WILD BATTLE"
-	done
+Music_Route1Text:
+ 	text "It's hidden in the"
+	line "trees on ROUTE 1."
 	
- Music_WildPokemonVictoryText:
- 	text "WILD VICTORY"
-	done
+	para "It's EAST of a"
+	line "ledge."
+	prompt
 	
- Music_DayBreakVillageText:
- 	text "DAYBREAK VILLAGE"
-	done
+Music_WildBattleText:
+ 	text "It's in the back"
+	line "garden of an old"
+	cont "woman's house."
 	
- Music_Route2Text:
- 	text "ROUTE 2"
-	done
+	para "Between GLINT CITY"
+	line "and STARGLOW."
+	prompt
 	
- Music_YoungsterEncounterText:
- 	text "YOUNGSTER"
-	line "ENCOUNTER"
-	done
+Music_WildPokemonVictoryText:
+ 	text "It's behind a"
+	line "fence on a ROUTE"
+	cont "SOUTH of MOOMOO's."
+	prompt
 	
- Music_TrainerBattleText:
+Music_DayBreakVillageText:
+ 	text "It's in a bookcase"
+	line "at school."
+	prompt
+	
+Music_Route2Text:
+ 	text "It's past a pond"
+	line "SOUTH of your"
+	cont "first GYM BADGE."
+	prompt
+	
+Music_YoungsterEncounterText:
+ 	text "It's near the rocks"
+	line "by a clueless man"
+	cont "on ROUTE 2."
+	prompt
+	
+Music_TrainerBattleText:
  	text "TRAINER BATTLE"
-	done
+	line "TODO"
+	prompt
 	
- Music_TrainerVictoryText:
+Music_TrainerVictoryText:
  	text "TRAINER VICTORY"
-	done
+	line "TODO"
+	prompt
 	
- Music_DayBreakGrottoText:
- 	text "DAYBREAK GROTTO"
-	done
+Music_DayBreakGrottoText:
+ 	text "It's in a cave in"
+	line "MT. ONWA."
 	
- Music_GlintCityText:
- 	text "GLINT CITY"
-	done
+	para "A room with many"
+	line "stairs nearby"
+	cont "DAYBREAK VILLAGE."
+	prompt
 	
- Music_GlintGroveText:
- 	text "GLINT GROVE"
-	done
+Music_GlintCityText:
+ 	text "It's in GLINT CITY."
 	
- Music_GymText:
- 	text "GYM"
-	done
+	para "Look between two"
+	line "tall buildings."
+	prompt
 	
- Music_GymBattleText:
+Music_GlintGroveText:
+ 	text "It's in a cave"
+	line "in a pink forest."
+	
+	para "I can see many"
+	line "painters."
+	prompt
+	
+Music_GymText:
+ 	text "It's in a bookcase"
+	line "in the library."
+	
+	para "You remember where"
+	line "the library was,"
+	cont "right?"
+	prompt
+	
+Music_GymBattleText:
  	text "GYM BATTLE"
-	done
+	line "TODO"
+	prompt
 	
- Music_GymLeaderVictoryText:
- 	text "GYM VICTORY"
-	done
+Music_GymLeaderVictoryText:
+ 	text "It's in a tackle"
+	line "shop."
 	
- Music_EvolutionText:
- 	text "EVOLUTION"
-	done
+	para "It's in a cooler"
+	line "by some fishing"
+	cont "rods."
+	prompt
 	
- Music_LassEncounterText:
- 	text "LASS ENCOUNTER"
-	done
+Music_EvolutionText:
+ 	text "It's in a cave"
+	line "by the sea in"
+	cont "SOUTH ONWA."
 	
- Music_SnareInvasionText:
- 	text "SNARE INVASION"
-	done
+	para "Try getting caught"
+	line "in the current."
+	prompt
 	
- Music_TeamSnareEncounterText:
- 	text "SNARE ENCOUNTER"
-	done
+Music_LassEncounterText:
+ 	text "It's in a pink"
+	line "forest."
 	
- Music_SnareBattleText:
+	para "Look below a"
+	line "very large tree."
+	prompt
+	
+Music_SnareInvasionText:
+ 	text "It's hidden near"
+	line "a tent in a dense"
+	cont "jungle."
+	prompt
+	
+Music_TeamSnareEncounterText:
+ 	text "It's in a house in"
+	line "STARGLOW VALLEY."
+	
+	para "It's on a table."
+	prompt
+	
+Music_SnareBattleText:
  	text "SNARE BATTLE"
-	done
+	line "TODO"
+	prompt
 	
- Music_SnareVictoryText:
+Music_SnareVictoryText:
  	text "SNARE VICTORY"
-	done
+	line "TODO"
+	prompt
 	
- Music_EncounterGymLeaderText:
- 	text "GYM LEADER"
-	line "ENCOUNTER"
-	done
+Music_EncounterGymLeaderText:
+ 	text "It's EAST of"
+	line "STARGLOW VALLEY."
 	
- Music_StarglowValleyText:
- 	text "STARGLOW VALLEY"
-	done
+	para "Try heading up"
+	line "the river nearby."
+	prompt
 	
- Music_Route4Text:
- 	text "ROUTE 4"
-	done
+Music_StarglowValleyText:
+ 	text "It's by the river"
+	line "SOUTH of ROUTE 3."
 	
- Music_HikerEncounterText:
- 	text "HIKER ENCOUNTER"
-	done
+	para "Try using SURF."
+	prompt
 	
- Music_LavaText:
- 	text "LAVA"
-	done
+Music_Route4Text:
+ 	text "It's in the middle"
+	line "of a great lake."
 	
- Music_WildBossBattleText:
- 	text "WILD BOSS"
-	done
+	para "That should be"
+	line "enough info…"
+	prompt
 	
- Music_SunbeamIslandText:
- 	text "SUNBEAM ISLAND"
-	done
+Music_HikerEncounterText:
+ 	text "It's inside of"
+	line "MT. ONWA."
 	
- Music_GscGameCornerText:
- 	text "GSC GAME CORNER"
-	done
+	para "In a room right"
+	line "before you get"
+	cont "some fresh air."
+	prompt
 	
- Music_SpruceLabText:
- 	text "SPRUCE LAB"
-	done
+Music_LavaText:
+ 	text "It's deep inside"
+	line "MT. ONWA."
 	
- Music_SnareThemeText:
+	para "On a small island"
+	line "in the lava."
+	prompt
+	
+Music_WildBossBattleText:
+ 	text "It's in a cave"
+	line "under GLINT GROVE."
+	
+	para "Try going down"
+	line "the river."
+	prompt
+	
+Music_SunbeamIslandText:
+ 	text "It's on a beach"
+	line "on a big island."
+	
+	para "It's hidden in a"
+	line "sandcastle."
+	prompt
+	
+Music_GscGameCornerText:
+ 	text "It's on ROUTE 12."
+	
+	para "Check EAST of"
+	line "the SKATEPARK."
+	prompt
+	
+Music_SpruceLabText:
+ 	text "It's in the"
+	line "PROF.'s LAB."
+	
+	para "Maybe it got"
+	line "thrown away?"
+	prompt
+	
+Music_SnareThemeText:
  	text "SNARE THEME"
-	done
+	line "TODO"
+	prompt
 	
- Music_SnareAdminBattleText:
+Music_SnareAdminBattleText:
  	text "SNARE ADMIN"
 	line "BATTLE"
-	done
+	cont "TODO"
+	prompt
 	
- Music_EventideText:
- 	text "EVENTIDE FOREST"
-	done
+Music_EventideText:
+ 	text "It's in the yard"
+	line "of a big house"
+	cont "in the woods."
 	
- Music_EventideVillageText:
- 	text "EVENTIDE VILLAGE"
-	done
+	para "Spooky…"
+	prompt
 	
- Music_DodrioRaceText:
- 	text "DODRIO RACE"
-	done
+Music_EventideVillageText:
+ 	text "It's in a wheat"
+	line "field."
 	
- Music_FlickerStationText:
- 	text "FLICKER STATION"
-	done
+	para "You could probably"
+	line "see it by plane…"
+	prompt
 	
- Music_PokemaniacEncounterText:
- 	text "#MANIAC"
-	line "ENCOUNTER"
-	done
+Music_DodrioRaceText:
+ 	text "It's in a spot"
+	line "you'll only reach"
+	cont "on a big bird."
 	
- Music_Route10Text:
- 	text "ROUTE 10"
-	done
+	para "I can see you"
+	line "running really"
+	cont "fast."
+	prompt
 	
- Music_TwinkleTownText:
- 	text "TWINKLE TOWN"
-	done
+Music_FlickerStationText:
+ 	text "It's in a place"
+	line "trains go to die."
 	
- Music_LusterSewerText:
- 	text "LUSTER SEWER"
-	done
+	para "Try climbing the"
+	line "rocks by FLICKER"
+	cont "PASS."
+	prompt
 	
- Music_TrainText:
- 	text "TRAIN"
-	done
+Music_PokemaniacEncounterText:
+ 	text "It's in FLICKER"
+	line "PASS."
 	
- Music_LusterCityText:
- 	text "LUSTER CITY"
-	done
+	para "It's as far EAST"
+	line "as you can go"
+	cont "in there."
+	prompt
 	
- Music_HardcoreEncounterText:
- 	text "HARDCORE ENCOUNTER"
-	done
+Music_Route10Text:
+ 	text "It's very deep"
+	line "in an icy temple."
 	
- Music_MinibossBattleText:
- 	text "MINIBOSS TRAINER"
-	done
+	para "Check to the EAST"
+	line "of ROUTE 10."
+	prompt
 	
- Music_Route12Text:
- 	text "ROUTE 12"
-	done
+Music_TwinkleTownText:
+ 	text "It's by some"
+	line "firewood in"
+	cont "TWINKLE TOWN."
+	prompt
 	
- Music_WaterRouteText:
- 	text "WATER ROUTES"
-	done
+Music_LusterSewerText:
+ 	text "It's under"
+	line "LUSTER CITY."
 	
- Music_ShimmerCityText:
- 	text "SHIMMER CITY"
-	done
+	para "There's a room"
+	line "with a powerful"
+	cont "#MON."
+	prompt
 	
- Music_BrilloTownText:
- 	text "BRILLO TOWN"
-	done
+Music_TrainText:
+ 	text "It's somewhere"
+	line "on the train."
 	
- Music_OasisText:
- 	text "OASIS"
-	done
+	para "Have you taken"
+	line "a return trip?"
+	prompt
 	
- Music_SnareLeaderBattleText:
+Music_LusterCityText:
+ 	text "It's in shop in the"
+	line "SHOPPING MALL."
+	
+	para "CASSETTE TAPES"
+	line "are outdated."
+	
+	para "They got rid of"
+	line "some old stock…"
+	prompt
+	
+Music_HardcoreEncounterText:
+ 	text "It's on ROUTE 9."
+	
+	para "Try the grass to"
+	line "the SOUTH."
+	prompt
+	
+Music_MinibossBattleText:
+ 	text "It's NORTH of the"
+	line "INN but SOUTH of"
+	cont "the bridge."
+	
+	para "Climb some rocks"
+	line "and walk down."
+	prompt
+	
+Music_Route12Text:
+ 	text "It's on ROUTE 19."
+	
+	para "You can see it"
+	line "from the tunnel,"
+	
+	para "but you can only"
+	line "reach it from"
+	cont "the flowerbed."
+	prompt
+	
+Music_WaterRouteText:
+ 	text "It's in the"
+	line "ocean SOUTH of"
+	cont "LAKE ONWA."
+	
+	para "Look EAST of the"
+	line "LIGHTHOUSE."
+	prompt
+	
+Music_ShimmerCityText:
+ 	text "It's in SHIMMER"
+	line "CITY."
+	
+	para "It's in a dark,"
+	line "wet place."
+	
+	para "You can hear"
+	line "footsteps above."
+	prompt
+	
+Music_BrilloTownText:
+ 	text "It's in the"
+	line "POLICE STATION"
+	cont "in a desert town."
+	
+	para "I think it's in"
+	line "the trash can."
+	prompt
+	
+Music_OasisText:
+ 	text "There's a secret"
+	line "spot in the"
+	cont "DESERT WASTELAND."
+	
+	para "Pay attention to"
+	line "the flags."
+	prompt
+	
+Music_SnareLeaderBattleText:
  	text "SNARE LEADER"
 	line "BATTLE"
-	done
+	cont "TODO"
+	prompt
 	
- Music_GentlemanEncounterText:
- 	text "GENTLEMAN"
-	line "ENCOUNTER"
-	done
+Music_GentlemanEncounterText:
+ 	text "It's on ROUTE 11."
 	
- Music_BarText:
- 	text "MOOMOOS"
-	done
+	para "A construction"
+	line "barrier blocks"
+	cont "the way."
 	
- Music_DarknessText:
- 	text "DARKNESS"
-	done
+	para "Maybe you can hop"
+	line "it somehow?"
+	prompt
 	
- Music_AutumnText:
- 	text "AUTUMN"
-	done
+Music_BarText:
+ 	text "It's in a seedy"
+	line "bar…"
 	
- Music_DojoText:
+	para "Wherever it is,"
+	line "I can hear music…"
+	prompt
+	
+Music_DarknessText:
+ 	text "It's in the"
+	line "CONNECTING CAVERN."
+	
+	para "You can get there"
+	line "from under the"
+	cont "LIGHTHOUSE."
+	prompt
+	
+Music_AutumnText:
+ 	text "It's on ROUTE 27."
+	
+	para "Try getting into"
+	line "the construction"
+	cont "plots."
+	prompt
+	
+Music_DojoText:
  	text "DOJO"
-	done
+	line "TODO"
+	prompt
 	
- Music_UnderwaterText:
- 	text "UNDERWATER"
-	done
+Music_UnderwaterText:
+ 	text "It's on ROUTE 15."
 	
- Music_Route28Text:
- 	text "ROUTE 28"
-	done
+	para "Head EAST."
 	
- Music_MinasThemeText:
+	para "It's on a rock"
+	line "you can't reach"
+	cont "easily."
+	prompt
+	
+Music_Route28Text:
+ 	text "It's on ROUTE 29."
+	
+	para "Look SOUTH after"
+	line "leaving town."
+	prompt
+	
+Music_MinasThemeText:
  	text "MINAS THEME"
-	done
+	line "TODO"
+	prompt
 	
- Music_RBYWildBattleText:
+Music_RBYWildBattleText:
  	text "LEGENDARY BIRDS"
-	done
+	line "TODO"
+	prompt
 	
- Music_RivalBattle2Text:
+Music_RivalBattle2Text:
  	text "RIVAL BATTLE 2"
-	done
+	line "TODO"
+	prompt
 	
- Music_ErikaText:
- 	text "RADIANT TOWN"
-	done
+Music_ErikaText:
+ 	text "It's in RADIANT"
+	line "TOWN."
 	
- Music_ObscuraText:
+	para "It's inside of"
+	line "a radio."
+	prompt
+	
+Music_ObscuraText:
 	text "OBSCURA CITY"
-	done
+	line "TODO"
+	prompt
+	
+Music_LuminaText:
+	text "LUMINA TOWN"
+	line "TODO"
+	prompt
+	
+Music_DragonShrine:
+	text "DRAGON SHRINE"
+	line "TODO"
+	prompt
+	
+Music_Unused:
+	text "ERROR!!"
+	prompt
 	
 TellerDecosText:
 	dw MareepDollText
 	dw GirafarigDollText
+	dw MuseumPhotoText
 	
 MareepDollText:
 	text "MAREEP DOLL"
-	done
+	line "TODO"
+	prompt
 	
 GirafarigDollText:
 	text "GIRAFARIG DOLL"
-	done
+	line "TODO"
+	prompt
+	
+MuseumPhotoText:
+	text "MUSEUM PHOTO"
+	line "TODO"
+	prompt
 	
 TellerUniqueEncounterText:
 	dw UniqueEncounterTeacherText
@@ -641,6 +1470,7 @@ TellerUniqueEncounterText:
 	dw UniqueEncounterDittoBossText
 	dw UniqueEncounterNoivernBossText
 	dw UniqueEncounterMarowakBossText
+	dw UniqueEncounterVileplumeBossText
 	
 UniqueEncounterTeacherText:
 	text "TEACHER"
@@ -787,4 +1617,8 @@ UniqueEncounterNoivernBossText:
 
 UniqueEncounterMarowakBossText:
 	text "MAROWAK BOSS"
+	done
+	
+UniqueEncounterVileplumeBossText:
+	text "VILEPLUME BOSS"
 	done

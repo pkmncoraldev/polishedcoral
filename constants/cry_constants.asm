@@ -89,7 +89,13 @@
 	const CRY_ALTARIA
 	const CRY_SNORUNT
 	const CRY_GLALIE
+	const CRY_CACNEA
+	const CRY_CACTURNE
 ; gen 4
+	const CRY_BUIZEL
+	const CRY_FLOATZEL
+	const CRY_DRIFLOON
+	const CRY_DRIFBLIM
 	const CRY_LEAFEON
 	const CRY_GLACEON
 	const CRY_FROSLASS
@@ -103,6 +109,7 @@
 	const CRY_SYLVEON
 	const CRY_NOIBAT
 	const CRY_NOIVERN
+	const CRY_COMFEY
 ; gen 7
 ; gen 8
 ; gen 9

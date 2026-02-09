@@ -331,7 +331,7 @@ CryHeaders2::
 	mon_cry CRY_DODUO,   	 $099,  $0a0 	; Dodrio
 	mon_cry CRY_GRIMER,      $000,  $100    ; Grimer
 	mon_cry CRY_MUK,         $0ef,  $17f    ; Muk
-	mon_cry CRY_ABRA,  		 $000,  $100 	; Gastly
+	mon_cry CRY_ABRA,  	 $000,  $100 	; Gastly
 	mon_cry CRY_ABRA,     	 $030,  $0c0 	; Haunter
 	mon_cry CRY_MUK,         $000,  $17f 	; Gengar
 	mon_cry CRY_EKANS,       $0ff,  $140 	; Onix
@@ -449,18 +449,18 @@ CryHeaders2::
 	mon_cry CRY_SHARPEDO,       0,   324 	; Sharpedo
 	mon_cry CRY_NUMEL,          0,   128 	; Numel
 	mon_cry CRY_CAMERUPT,       0,   384 	; Camerupt
-	mon_cry CRY_SCYTHER,    -$096,  $0a0 	; Cacnea - to fix
-	mon_cry CRY_TOTODILE,   -$1c0,  $170 	; Cacturne - to fix
+	mon_cry CRY_CACNEA,         0,   256	; Cacnea
+	mon_cry CRY_CACTURNE,     130,   384 	; Cacturne
 	mon_cry CRY_SWABLU,       240,   128  	; Swablu
 	mon_cry CRY_ALTARIA,      255,   256 	; Altaria
 	mon_cry CRY_SNORUNT,      100,   208 	; Snorunt
 	mon_cry CRY_GLALIE,       100,   256 	; Glalie
-	mon_cry CRY_BULBASAUR,   $080,  $081 	; Buizel - PLACEHOLDER
-	mon_cry CRY_BULBASAUR,   $080,  $081 	; Floatzel - PLACEHOLDER
+	mon_cry CRY_BUIZEL,         0,   256 	; Buizel
+	mon_cry CRY_FLOATZEL,       0,   284 	; Floatzel
 	mon_cry CRY_BULBASAUR,   $080,  $081 	; Cherubi - PLACEHOLDER
 	mon_cry CRY_BULBASAUR,   $080,  $081 	; Cherrim - PLACEHOLDER
-	mon_cry CRY_BULBASAUR,   $080,  $081 	; Drifloon - PLACEHOLDER
-	mon_cry CRY_BULBASAUR,   $080,  $081 	; Drifblim - PLACEHOLDER
+	mon_cry CRY_DRIFLOON,       0,   256 	; Drifloon
+	mon_cry CRY_DRIFBLIM,     255,   236	; Drifblim
 	mon_cry CRY_BULBASAUR,   $080,  $081 	; Buneary - PLACEHOLDER
 	mon_cry CRY_BULBASAUR,   $080,  $081 	; Lopunny - PLACEHOLDER
 	mon_cry CRY_BULBASAUR,   $080,  $081 	; Honchkrow - PLACEHOLDER
@@ -518,7 +518,7 @@ CryHeaders2::
 	mon_cry CRY_BULBASAUR,   $080,  $081 	; Toucannon - PLACEHOLDER
 	mon_cry CRY_BULBASAUR,   $080,  $081	; Mareanie - PLACEHOLDER
 	mon_cry CRY_BULBASAUR,   $080,  $081	; Toxapex - PLACEHOLDER
-	mon_cry CRY_BULBASAUR,   $080,  $081 	; Comfey - PLACEHOLDER
+	mon_cry CRY_COMFEY,       128,   142 	; Comfey
 	mon_cry CRY_BULBASAUR,   $080,  $081 	; Mimikyu - PLACEHOLDER
 	mon_cry CRY_MAGCARGO,    $081,  $0ff 	; Cursola
 	mon_cry CRY_BULBASAUR,   $080,  $081	; Dreepy - PLACEHOLDER

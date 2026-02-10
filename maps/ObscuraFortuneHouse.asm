@@ -98,6 +98,9 @@ ObscuraFortuneHouseTeller:
 	if_equal $2, .tapes
 	if_equal $3, .decos
 	if_equal $4, .encounters
+.no
+	closetext
+	end
 .tms
 	playsound SFX_TRANSACTION
 	takemoney $0, 1500
@@ -150,9 +153,6 @@ ObscuraFortuneHouseTeller:
 	waitbutton
 	closetext
 	end
-.no
-	closetext
-	end
 .no_more
 	writetext NoMoreFortunesText
 	special PlaceMoneyTopRight
@@ -188,6 +188,8 @@ ObscuraFortuneHouseTeller:
 	db "UNIQUE ENCOUNTERS@"	;dummied out
 	
 ObscuraFortuneHouseTellerCutscene:
+	writetext ObscuraFortuneHouseTellerCutsceneText
+	waitbutton
 	closetext
 	pause 20
 	special Special_FadeOutMusic
@@ -204,8 +206,6 @@ ObscuraFortuneHouseTellerCutscene:
 	pause 10
 	playmusic MUSIC_CRYSTAL_BALL
 	pause 10
-	opentext
-	writetext ObscuraFortuneHouseTellerCutsceneText1
 	changeaction 3, PERSON_ACTION_TILE_HALFWAY_LEFT
 	pause 15
 	changeaction 3, PERSON_ACTION_LEMONADE
@@ -240,9 +240,7 @@ ObscuraFortuneHouseTellerCutscene:
 	playsound SFX_RAGE
 	callasm ObscuraFortuneTellerPalettesAsm3
 	special FadeInPalettes
-	writetext ObscuraFortuneHouseTellerCutsceneText2
 	pause 35
-	closetext
 	changeaction 3, PERSON_ACTION_LEMONADE
 	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_BREEDER
 	callasm LoadMapPals
@@ -252,12 +250,14 @@ ObscuraFortuneHouseTellerCutscene:
 	opentext
 	end
 	
-ObscuraFortuneHouseTellerCutsceneText1:
-	text "ABRA! KADABRA!"
-	done
+ObscuraFortuneHouseTellerCutsceneText:
+	text "Alright."
 	
-ObscuraFortuneHouseTellerCutsceneText2:
-	text "ALAKAZAM!"
+	para "I shall consult"
+	line "the spirits…"
+	
+	para "They will guide"
+	line "your way!"
 	done
 	
 ObscuraFortuneTellerPalettesAsm1:
@@ -522,7 +522,7 @@ BlankTextFortune:
 	done
 	
 TellerEndText:
-	text "…<WAIT_S>And that's all"
+	text "…<WAIT_L>And that's all"
 	line "I can see for now."
 	
 	para "Come again if you"

@@ -165,8 +165,8 @@ LoadSpecialMapPalette: ; 494ac
 	call LoadTimeofDayBGPal6
 	jp .do_nothing
 .green_cave
-	ld a, [wMapGroup]
-	cp GROUP_GLINT_GROVE_UNDERGROUND
+	ld a, [wCurrentLandmark]
+	cp GLINT_GROVE
 	jr z, .pink_cave
 	ld hl, GreenCavePalette
 	jp LoadSevenBGPalettes

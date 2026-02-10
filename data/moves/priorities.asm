@@ -25,4 +25,7 @@ TriageMoves:
 	db WISH
 	db SOFTBOILED_MILK_DRINK_RECOVER
 	db ROOST
+	db LEECH_LIFE
+	db DRAIN_PUNCH
+	db HORN_LEECH
 	db -1

@@ -1,34 +1,94 @@
 ObscuraFortuneHouse_MapScriptHeader:
 	db 0 ; scene scripts
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_TILES, ObscuraFortuneHouseCallback
 
 	db 2 ; warp events
-	warp_def 7, 2, 5, OBSCURA_CITY
-	warp_def 7, 3, 5, OBSCURA_CITY
+	warp_def  6,  2, 5, OBSCURA_CITY
+	warp_def  6,  3, 5, OBSCURA_CITY
 
 	db 0 ; coord events
 
-	db 0 ; bg events
+	db 1 ; bg events
+	signpost  3,  2, SIGNPOST_READ, ObscuraFortuneHouseTeller
 
-	db 1 ; object events
-	person_event SPRITE_BREEDER, 4, 2, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ObscuraFortuneHouseTeller, -1
+	db 5 ; object events
+	person_event SPRITE_ARTIFACTS,  3,  3, SPRITEMOVEDATA_DEALER_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, ObscuraFortuneHouseTeller, EVENT_HIDE_OW_OBJECTS_PURPLE
+	person_event SPRITE_ARTIFACTS,  3,  3, SPRITEMOVEDATA_DEALER_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, ObscuraFortuneHouseTeller, EVENT_HIDE_OW_OBJECTS_TEAL
+	person_event SPRITE_GENERAL_VARIABLE_1,  2,  3, SPRITEMOVEDATA_LEMONADE, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ObscuraFortuneHouseTeller, -1
+	object_event  1,  2, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, MEOWTH, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, ALOLAN_FORM, ObscuraFortuneHouseMoewth, -1
+	object_event  4,  2, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, PERSIAN, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, ALOLAN_FORM, ObscuraFortuneHousePersian, -1
+	
+	
+ObscuraFortuneHouseCallback:
+	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_BREEDER
+	readvar VAR_PLAYER_COLOR
+	if_equal 4, .purple
+	setevent EVENT_HIDE_OW_OBJECTS_TEAL
+	clearevent EVENT_HIDE_OW_OBJECTS_BLUE
+	clearevent EVENT_HIDE_OW_OBJECTS_BROWN
+	clearevent EVENT_HIDE_OW_OBJECTS_PURPLE
+	clearevent EVENT_HIDE_OW_OBJECTS_PINK
+	clearevent EVENT_HIDE_OW_OBJECTS_RED
+	return
+.purple
+	clearevent EVENT_HIDE_OW_OBJECTS_TEAL
+	clearevent EVENT_HIDE_OW_OBJECTS_BLUE
+	clearevent EVENT_HIDE_OW_OBJECTS_BROWN
+	setevent EVENT_HIDE_OW_OBJECTS_PURPLE
+	clearevent EVENT_HIDE_OW_OBJECTS_PINK
+	clearevent EVENT_HIDE_OW_OBJECTS_RED
+	return
+	
+ObscuraFortuneHouseMoewth:
+	opentext TEXTBOX_POKEMON, MEOWTH
+	writetext ObscuraFortuneHouseMoewthText
+	cry MEOWTH
+	waitsfx
+	waitbutton
+	endtext
+	
+ObscuraFortuneHouseMoewthText:
+	text "Mee-OW!"
+	done
+	
+ObscuraFortuneHousePersian:
+	opentext TEXTBOX_POKEMON, PERSIAN
+	writetext ObscuraFortuneHousePersianText
+	cry PERSIAN
+	waitsfx
+	waitbutton
+	endtext
+	
+ObscuraFortuneHousePersianText:
+	text "Purrrr…"
+	done
 	
 ObscuraFortuneHouseTeller:
-	faceplayer
+	checkcode VAR_FACING
+	if_equal UP, .YouAreFacingUp
+	jumptext ObscuraFortuneHouseTellerBallText
+.YouAreFacingUp
 	opentext
 	checkevent EVENT_TALKED_TO_FORTUNE_TELLER
 	iftrue .talked_once
 	setevent EVENT_TALKED_TO_FORTUNE_TELLER
 	writetext ObscuraFortuneHouseTellerText1
+	special PlaceMoneyTopRight
 	yesorno
 	iffalse .no
+	checkmoney $0, 1500
+	if_equal $2, .nomoney
 	writetext ObscuraFortuneHouseTellerText2
 	jump .cont
 .talked_once
 	writetext ObscuraFortuneHouseTellerText3
+	special PlaceMoneyTopRight
 	yesorno
 	iffalse .no
+	checkmoney $0, 1500
+	if_equal $2, .nomoney
 	writetext ObscuraFortuneHouseTellerText2
 .cont
 	loadmenu .ObscuraFortuneHouseTellerMenuData
@@ -39,26 +99,75 @@ ObscuraFortuneHouseTeller:
 	if_equal $3, .decos
 	if_equal $4, .encounters
 .tms
+	playsound SFX_TRANSACTION
+	takemoney $0, 1500
+	special PlaceMoneyTopRight
+	pause 15
+	refreshscreen $0
+	pause 5
+	scall ObscuraFortuneHouseTellerCutscene
 	callasm ObscuraFortuneHouseTellerSetupTMsAsm
+	if_equal $69, .no_more
 	waitbutton
 	closetext
 	end
 .tapes
+	playsound SFX_TRANSACTION
+	takemoney $0, 1500
+	special PlaceMoneyTopRight
+	pause 15
+	refreshscreen $0
+	pause 5
+	scall ObscuraFortuneHouseTellerCutscene
 	callasm ObscuraFortuneHouseTellerSetupTapesAsm
+	if_equal $69, .no_more
 	waitbutton
 	closetext
 	end
 .decos
+	playsound SFX_TRANSACTION
+	takemoney $0, 1500
+	special PlaceMoneyTopRight
+	pause 15
+	refreshscreen $0
+	pause 5
+	scall ObscuraFortuneHouseTellerCutscene
 	callasm ObscuraFortuneHouseTellerSetupDecosAsm
+	if_equal $69, .no_more
 	waitbutton
 	closetext
 	end
 .encounters
+	playsound SFX_TRANSACTION
+	takemoney $0, 1500
+	special PlaceMoneyTopRight
+	pause 15
+	refreshscreen $0
+	pause 5
+	scall ObscuraFortuneHouseTellerCutscene
 	callasm ObscuraFortuneHouseTellerSetupUniqueEncountersAsm
+	if_equal $69, .no_more
 	waitbutton
 	closetext
 	end
 .no
+	closetext
+	end
+.no_more
+	writetext NoMoreFortunesText
+	special PlaceMoneyTopRight
+	callasm BGMapAnchorTopLeft
+	pause 5
+	playsound SFX_TRANSACTION
+	givemoney $0, 1500
+	special PlaceMoneyTopRight
+	pause 15
+	refreshscreen $0
+	pause 5
+	end
+.nomoney
+	writetext ObscuraFortuneHouseTellerTextNoMoney
+	waitbutton
 	closetext
 	end
 
@@ -77,6 +186,123 @@ ObscuraFortuneHouseTeller:
 	db "AUDIO CASSETTES@"
 	db "ROOM DECOR@"
 	db "UNIQUE ENCOUNTERS@"	;dummied out
+	
+ObscuraFortuneHouseTellerCutscene:
+	closetext
+	pause 20
+	special Special_FadeOutMusic
+	pause 15
+	callasm ObscuraFortuneTellerPalettesAsm2
+	special FadeInPalettes
+	pause 20
+	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_FORTUNE_TELLER
+	pause 15
+	playsound SFX_FORESIGHT
+	callasm ObscuraFortuneTellerPalettesAsm1
+	special FadeInPalettes
+	waitsfx
+	pause 10
+	playmusic MUSIC_CRYSTAL_BALL
+	pause 10
+	opentext
+	writetext ObscuraFortuneHouseTellerCutsceneText1
+	changeaction 3, PERSON_ACTION_TILE_HALFWAY_LEFT
+	pause 15
+	changeaction 3, PERSON_ACTION_LEMONADE
+	pause 3
+	changeaction 3, PERSON_ACTION_TILE_HALFWAY_RIGHT
+	pause 15
+	changeaction 3, PERSON_ACTION_LEMONADE
+	pause 3
+	changeaction 3, PERSON_ACTION_TILE_HALFWAY_LEFT
+	pause 15
+	changeaction 3, PERSON_ACTION_LEMONADE
+	pause 3
+	changeaction 3, PERSON_ACTION_TILE_HALFWAY_RIGHT
+	pause 7
+	changeaction 3, PERSON_ACTION_LEMONADE
+	pause 1
+	changeaction 3, PERSON_ACTION_TILE_HALFWAY_LEFT
+	pause 7
+	changeaction 3, PERSON_ACTION_LEMONADE
+	pause 1
+	changeaction 3, PERSON_ACTION_TILE_HALFWAY_RIGHT
+	pause 3
+	changeaction 3, PERSON_ACTION_LEMONADE
+	changeaction 3, PERSON_ACTION_TILE_HALFWAY_LEFT
+	pause 3
+	changeaction 3, PERSON_ACTION_LEMONADE
+	changeaction 3, PERSON_ACTION_TILE_HALFWAY_RIGHT
+	pause 3
+	changeaction 3, PERSON_ACTION_LEMONADE
+	changeaction 3, PERSON_ACTION_LEMONADE_UP
+	playmusic MUSIC_NONE
+	playsound SFX_RAGE
+	callasm ObscuraFortuneTellerPalettesAsm3
+	special FadeInPalettes
+	writetext ObscuraFortuneHouseTellerCutsceneText2
+	pause 35
+	closetext
+	changeaction 3, PERSON_ACTION_LEMONADE
+	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_BREEDER
+	callasm LoadMapPals
+	special FadeInPalettes
+	pause 20
+	playmapmusic
+	opentext
+	end
+	
+ObscuraFortuneHouseTellerCutsceneText1:
+	text "ABRA! KADABRA!"
+	done
+	
+ObscuraFortuneHouseTellerCutsceneText2:
+	text "ALAKAZAM!"
+	done
+	
+ObscuraFortuneTellerPalettesAsm1:
+	ld hl, ObscuraFortuneTellerDarkCrystalBallPalette
+	jr ObscuraFortuneTellerGetBallPalette
+	
+ObscuraFortuneTellerPalettesAsm3:
+	ld hl, ObscuraFortuneTellerDarkCrystalBallPalette2
+ObscuraFortuneTellerGetBallPalette:
+	ld a, [wPlayerPalette]
+	cp 4
+	jr z, .purple
+	ld de, wUnknOBPals + 4 palettes
+	jr .cont
+.purple
+	ld de, wUnknOBPals + 5 palettes
+.cont
+	ld bc, 1 palettes
+	ld a, $5 ; BANK(UnknOBPals)
+	jp FarCopyWRAM
+	
+ObscuraFortuneTellerPalettesAsm2:
+	ld hl, ObscuraFortuneTellerDarkPalette
+	ld a, $5
+	ld de, wUnknBGPals
+	ld bc, 7 palettes
+	call FarCopyWRAM
+	scf
+	ld hl, ObscuraFortuneTellerDarkPalette
+	ld de, wUnknOBPals + 7 palettes
+	ld bc, 1 palettes
+	ld a, $5 ; BANK(UnknOBPals)
+	jp FarCopyWRAM
+	
+ObscuraFortuneTellerDarkPalette:
+INCLUDE "maps/palettes/bgpals/darkcave.pal"
+
+ObscuraFortuneTellerDarkCrystalBallPalette:
+INCLUDE "maps/palettes/obpals/candle.pal"
+
+ObscuraFortuneTellerDarkCrystalBallPalette2:
+	RGB 30, 28, 26
+	RGB 30, 28, 26
+	RGB 30, 28, 26
+	RGB 30, 28, 26
 	
 ObscuraFortuneHouseTellerText1:
 	text "Welcome to-<WAIT_S><LNBRK><LNBRK>Cough!<WAIT_S> Cough!"
@@ -137,8 +363,22 @@ ObscuraFortuneHouseTellerText3:
 	line "be ¥1500. Deal?"
 	done
 	
+ObscuraFortuneHouseTellerTextNoMoney:
+	text "Sorry, kiddo."
+	
+	para "You ain't got the"
+	line "funds…"
+	
+	para "This ain't a charity,"
+	line "ya know!"
+	
+ObscuraFortuneHouseTellerBallText:
+	text "A shiny"
+	line "crystal ball."
+	done
+	
 ObscuraFortuneHouseTellerSetupTMsAsm:
-	ld a, 66 ;number of tracked TMHMs + 1
+	ld a, 58 ;number of tracked TMHMs + 1
 	ld hl, TM_FLAGS_START
 	jr ObscuraFortuneHouseTellerAsm
 	
@@ -203,7 +443,7 @@ ObscuraFortuneHouseTellerAsm:
 	pop hl
 	jr nz, .loop2
 	ld a, [wCurBattleMon]
-	ld a, 66 ;number of tracked TMHMs + 1
+	ld a, 58 ;number of tracked TMHMs + 1
 	jr z, .tms
 	cp 4 ;number of tracked decos + 1
 	jr z, .decos
@@ -214,8 +454,9 @@ ObscuraFortuneHouseTellerAsm:
 	
 .no_more
 	pop hl
-	ld hl, NoMoreFortunesText
-	jp PrintText
+	ld a, $69
+	ld [wScriptVar], a
+	ret
 	
 .tms
 	ld hl, TM_Text
@@ -262,7 +503,18 @@ ObscuraFortuneHouseTellerAsm:
 	jp PrintText
 
 NoMoreFortunesText:
-	text "NO MORE"
+	text "Hmm…"
+	
+	para "I can't see"
+	line "anything…"
+	
+	para "I guess I can't"
+	line "help you with that"
+	cont "anymore…"
+	
+	para "Here, I'll give"
+	line "you your money"
+	cont "back."
 	done
 	
 BlankTextFortune:

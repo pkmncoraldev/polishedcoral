@@ -111,6 +111,7 @@ Facings:
 	dw FacingJukebox
 	dw FacingFossil1
 	dw FacingFossil2
+	dw FacingLemonade2
 FacingsEnd: dw 0
 
 DEF NUM_FACINGS EQU (FacingsEnd - Facings) / 2
@@ -883,6 +884,13 @@ FacingLemonade:
 	db  6,  0, 0, $01
 	db 14, -8, 2, $02
 	db 14,  0, 2, $03
+	
+FacingLemonade2:
+	db 4 ; #
+	db  6, -8, 0, $04
+	db  6,  0, 0, $05
+	db 14, -8, 2, $06
+	db 14,  0, 2, $07
 	
 FacingTileHalfwayLeft:
 	db 4 ; #

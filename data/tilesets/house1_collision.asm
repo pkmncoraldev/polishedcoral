@@ -245,3 +245,10 @@
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; f4
 	tilecoll FLOOR, FLOOR, FLOOR, WARP_CARPET_DOWN ; f5
 	tilecoll FLOOR, FLOOR, WARP_CARPET_DOWN, FLOOR ; f6
+	tilecoll WALL, WALL, WALL, WALL ; f7
+	tilecoll WALL, WALL, WALL, WALL ; f8
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; f9
+	tilecoll WARP_CARPET_DOWN, WARP_CARPET_DOWN, WALL, WALL ; fa
+	tilecoll FLOOR, FLOOR, WALL, WALL ; fb
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; fc
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; fd

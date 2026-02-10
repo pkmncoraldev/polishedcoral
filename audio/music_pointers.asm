@@ -70,6 +70,7 @@ Music:
 	dba Music_LuminaTown
 	dba Music_DragonShrine
 	
+	dba Music_CrystalBall
 	dba Music_ClefairyDance
 	dba Music_Crossroads
 	dba Music_StarglowOld

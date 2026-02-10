@@ -1134,7 +1134,7 @@ LoadMapPals::
 	jp z, .sailboat
 	cp MAP_SHIMMER_LAB_EXPERIMENTAL_LAB
 	jp z, .fossil_lab
-	jr .normal
+	jp .normal
 	
 .fossil_lab
 	call .normal
@@ -1151,10 +1151,12 @@ LoadMapPals::
 	call AddNTimes
 	call LoadSingleOBPalLinePal7
 	call FarCopyWRAM
-	jr .outside
+	jp .outside
 	
 .house1
 	ld a, [wMapGroup]
+	cp GROUP_OBSCURA_FORTUNE_HOUSE
+	jp z, .fortune
 	cp GROUP_BRILLO_TOWN
 	jp z, .computer
 	cp GROUP_DUSK_TURNPIKE
@@ -1168,7 +1170,22 @@ LoadMapPals::
 	ld hl, MapObjectPalsCandle
 	call LoadSingleOBPalLinePal7
 	jp FarCopyWRAM
-
+.fortune
+	ld a, [wPlayerPalette]
+	cp 4
+	jr z, .fortune_purple
+	ld de, wUnknOBPals + 4 palettes
+	jr .fortune_cont
+.fortune_purple
+	ld de, wUnknOBPals + 5 palettes
+.fortune_cont
+	ld hl, MapObjectPalsCrystalBall
+	ld bc, 1 palettes
+	ld a, $5 ; BANK(UnknOBPals)
+	call FarCopyWRAM
+	ld hl, MapObjectPalsEvilMeowth
+	call LoadSingleOBPalLinePal7
+	jp FarCopyWRAM
 	
 .normal
 	ld a, [wTileset]
@@ -1474,6 +1491,9 @@ INCLUDE "maps/palettes/obpals/obballoon.pal"
 
 MapObjectPalsCoralShards:
 INCLUDE "maps/palettes/obpals/coralshards.pal"
+
+MapObjectPalsCrystalBall:
+INCLUDE "maps/palettes/obpals/crystalball.pal"
 
 RoofPals::
 INCLUDE "maps/palettes/roofpals/roof.pal"

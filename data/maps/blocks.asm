@@ -87,7 +87,6 @@ ShimmerHouse1_BlockData:
 Route3FriendshipHouse_BlockData:
 DuskHouse1_BlockData:
 BrightHouse3_BlockData:
-ObscuraFortuneHouse_BlockData:
 Route11House_BlockData:
 	INCBIN "maps/NormalHouse1.ablk.lz"
 	
@@ -1048,4 +1047,7 @@ DragonShrineInterior_BlockData:
 	
 SunbeamJunglePlumeCave_BlockData:
 	INCBIN "maps/SunbeamJunglePlumeCave.ablk.lz"
+	
+ObscuraFortuneHouse_BlockData:
+	INCBIN "maps/ObscuraFortuneHouse.ablk.lz"
 	

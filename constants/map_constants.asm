@@ -178,6 +178,7 @@ DEF MAP_NONE   EQU 0
 	map_const SPOOKY_FOREST_6, 							   8,  8 ;  9
 	map_const SPOOKY_FOREST_7, 							   8,  8 ; 10
 	map_const SPOOKY_FOREST_8, 							   8,  8 ; 11
+	map_const OBSCURA_FORTUNE_HOUSE,              		   4,  4 ; 8
 	map_const SPOOKY_FOREST_9, 							   8,  8 ; 12
 	map_const SPOOKY_FOREST_BLANK,						   8,  8 ; 13
 	map_const SPOOKY_FOREST_ESCORT,						  24, 16 ; 14
@@ -467,9 +468,8 @@ DEF MAP_NONE   EQU 0
 	map_const OBSCURA_MUSEUM_EMPLOYEE_ROOM,				   7,  7 ; 6
 	map_const OBSCURA_GYM,								  15, 12 ; 7
 	map_const OBSCURA_MUSEUM_PHOTO,						   4,  2 ; 7
-	map_const OBSCURA_FORTUNE_HOUSE,              		   4,  4 ; 8
-	map_const OBSCURA_POKECENTER,						   6,  4 ; 9
-	map_const OBSCURA_MART,								   6,  4 ; 10
+	map_const OBSCURA_POKECENTER,						   6,  4 ; 8
+	map_const OBSCURA_MART,								   6,  4 ; 9
 	
 	newgroup													 ; 25
 	map_const AUREOLE_TOWN,								  20, 23 ; 1

@@ -85,6 +85,7 @@ Pointers445f: ; 445f
 	dw SetFacingFossil1,		       SetFacingFossil1	  		  ; PERSON_ACTION_FOSSIL_1
 	dw SetFacingFossil2,		       SetFacingFossil2	  		  ; PERSON_ACTION_FOSSIL_2
 	dw SetFacingPlumeBoss,			   SetFacingPlumeBoss		  ; PERSON_ACTION_PLUME_BOSS
+	dw SetFacingLemonade2,    		   SetFacingLemonade2		  ; PERSON_ACTION_LEMONADE_2
 	
 ; 44a3
 
@@ -681,6 +682,10 @@ SetFacingCardTable4:
 	
 SetFacingLemonade:
 	ld a, FACING_LEMONADE
+	jp SetFixedFacing
+	
+SetFacingLemonade2:
+	ld a, FACING_LEMONADE_UP
 	jp SetFixedFacing
 	
 SetFacingJukebox:

@@ -421,6 +421,8 @@ LoadSpecialMapPalette: ; 494ac
 	jr z, .desert_house
 	cp GROUP_LUSTER_APARTMENT_5_2F
 	jp z, .house_1_cont
+	cp GROUP_OBSCURA_FORTUNE_HOUSE
+	jp z, .house_1_cont
 	cp GROUP_DUSK_TURNPIKE
 	jp nz, .do_nothing
 .house_1_cont

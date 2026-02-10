@@ -215,6 +215,7 @@ SpriteHeaders:
 	overworld_sprite FossilDisplaysSpriteGFX, STANDING_SPRITE, PAL_OW_SILVER
 	overworld_sprite FloatingBallSpriteGFX, STANDING_SPRITE, PAL_OW_RED
 	overworld_sprite RafflesiaSpriteGFX, STANDING_SPRITE, PAL_OW_RED
+	overworld_sprite FortuneTellerSpriteGFX, STANDING_SPRITE, PAL_OW_RED
 
 SpriteHeadersPlayers:
 	overworld_sprite CorySpriteGFX, WALKING_SPRITE, PAL_OW_RED

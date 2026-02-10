@@ -474,7 +474,6 @@ INCLUDE "maps/Route4.asm"
 SECTION "Obscura Scripts", ROMX
 INCLUDE "maps/ObscuraCity.asm"
 INCLUDE "maps/ObscuraGate.asm"
-INCLUDE "maps/ObscuraFortuneHouse.asm"
 INCLUDE "maps/FightingDojo.asm"
 
 SECTION "Obscura Museum Scripts", ROMX
@@ -516,6 +515,7 @@ INCLUDE "maps/LusterApartment6_1F.asm"
 INCLUDE "maps/LusterApartment6_2F.asm"
 INCLUDE "maps/Route11House.asm"
 INCLUDE "maps/Route11Gate.asm"
+INCLUDE "maps/ObscuraFortuneHouse.asm"
 
 SECTION "Aureole Scripts", ROMX
 INCLUDE "maps/AureoleTown.asm"

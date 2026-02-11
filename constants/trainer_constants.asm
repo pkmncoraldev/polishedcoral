@@ -428,6 +428,7 @@ DEF PLAYER_F EQU __enum__
 	const HOWARD
 	const ELWARD
 	const VICTOR
+	const REGINALD
 
 
 	trainerclass LADY

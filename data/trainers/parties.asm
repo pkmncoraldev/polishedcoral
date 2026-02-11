@@ -3943,6 +3943,15 @@ GentlemanGroup:
 	db 41, TREVENANT, ABILITY_1 | QUIRKY, MALE
 	db 43, PERSIAN, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM
 	db -1 ; end
+	
+; ================
+
+	; GENTLEMAN
+	db "REGINALD@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
 
 ; ================
 ; ================================

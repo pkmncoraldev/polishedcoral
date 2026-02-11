@@ -847,8 +847,16 @@ TM35Text:
 	prompt
 
 TM36Text:
-	text "TM36"
-	line "TODO"
+	text "It's on the"
+	line "southern part"
+	cont "of the highway."
+	
+	para "Go off the road,"
+	line "through the grass,"
+	cont "and across a pond."
+	
+	para "You'll find it"
+	line "there."
 	prompt
 
 TM37Text:

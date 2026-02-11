@@ -12,7 +12,7 @@ Cries:
 	dba Cry_Nidoqueen
 	dba Cry_Diglett
 	dba Cry_Shroomish
-	dba Cry_Meditite
+	dba Cry_Exeggutor
 	dba Cry_Pidgey
 	dba Cry_Bulbasaur
 	dba Cry_Farfetch_d
@@ -20,7 +20,7 @@ Cries:
 	dba Cry_Golem
 	dba Cry_Blastoise
 	dba Cry_Pidgeotto
-	dba Cry_Venipede
+	dba Cry_Weedle
 	dba Cry_Pikipek
 	dba Cry_Minccino
 	dba Cry_Shellder
@@ -29,13 +29,13 @@ Cries:
 	dba Cry_Lapras
 	dba Cry_Trumbeak
 	dba Cry_Squirtle
-	dba Cry_Dwebble
+	dba Cry_Staryu
 	dba Cry_Growlithe
 	dba Cry_Carvanha
 	dba Cry_Psyduck
 	dba Cry_Rattata
 	dba Cry_Vileplume
-	dba Cry_Buizel
+	dba Cry_Geodude
 	dba Cry_Weepinbell
 	dba Cry_Spearow
 	dba Cry_Spinarak
@@ -85,7 +85,13 @@ Cries:
 	dba Cry_Altaria
 	dba Cry_Snorunt
 	dba Cry_Glalie
+	dba Cry_Cacnea
+	dba Cry_Cacturne
 ; gen 4
+	dba Cry_Buizel
+	dba Cry_Floatzel
+	dba Cry_Drifloon
+	dba Cry_Drifblim
 	dba Cry_Leafeon
 	dba Cry_Glaceon
 	dba Cry_Froslass
@@ -99,6 +105,7 @@ Cries:
 	dba Cry_Sylveon
 	dba Cry_Noibat
 	dba Cry_Noivern
+	dba Cry_Comfey
 ; gen 7
 ; gen 8
 ; gen 9

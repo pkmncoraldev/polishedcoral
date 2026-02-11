@@ -356,9 +356,6 @@ ObscuraFortuneHouseTellerText3:
 	para "You want your"
 	line "fortune told?"
 	
-	para "Well, it'll cost"
-	line "ya!"
-	
 	para "After tax, it'll"
 	line "be ¥1500. Deal?"
 	done
@@ -443,7 +440,7 @@ ObscuraFortuneHouseTellerAsm:
 	pop hl
 	jr nz, .loop2
 	ld a, [wCurBattleMon]
-	ld a, 58 ;number of tracked TMHMs + 1
+	cp 58 ;number of tracked TMHMs + 1
 	jr z, .tms
 	cp 4 ;number of tracked decos + 1
 	jr z, .decos

@@ -51,7 +51,7 @@ RadiantTownship_MapScriptHeader:
 	signpost 14, 39, SIGNPOST_READ, RadiantTownshipSunflower
 
 	db 18 ; object events
-	person_event SPRITE_ERIKA, 14, 24, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, RadiantTownshipErika, -1
+	person_event SPRITE_ERIKA, 14, 24, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, RadiantTownshipErika, -1
 	person_event SPRITE_CUTE_GIRL, 10, 10, SPRITEMOVEDATA_WANDER, 2, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, RadiantTownshipNPC1, -1
 	person_event SPRITE_PONYTAIL, 17, 31, SPRITEMOVEDATA_WANDER, 2, 1, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, RadiantTownshipNPC2, -1
 	person_event SPRITE_SUPER_NERD,  9, 34, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, RadiantTownshipNPC3, -1

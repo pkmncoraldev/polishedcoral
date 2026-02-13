@@ -248,8 +248,7 @@ RadiantOrphanage2FPhotoText1:
 RadiantOrphanage2FPhotoText2:
 	text "A photo of a much"
 	line "younger looking"
-	cont "LEILANI and a"
-	cont "little girl."
+	cont "LEILANI and ERIKA."
 	
 	para "They are wearing"
 	line "kimonos."

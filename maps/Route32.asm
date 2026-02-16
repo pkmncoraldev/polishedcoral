@@ -204,6 +204,11 @@ Route32StrengthManText1:
 	line "but I aspire to"
 	cont "be a true pusher"
 	cont "like MR. PUSHER!"
+	
+	para "If you ever meet"
+	line "him, be sure to"
+	cont "come back and"
+	cont "tell me about it!"
 	done
 	
 Route32StrengthManText2:

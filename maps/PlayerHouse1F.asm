@@ -269,7 +269,7 @@ SunsetMomTextBankCard1:
 SunsetMomTextBankCard2:
 	text "It was sent from"
 	line "a company called"
-	cont "FRIENDLY CO. LLC."
+	cont "FRIENDLY CO."
 	
 	para "Why would they"
 	line "send you something"
@@ -282,7 +282,7 @@ SunsetMomTextBankCard2:
 	
 	para "Oh, <PLAYER>…"
 	
-	para "I'll bet you are"
+	para "I'll bet you're"
 	line "getting spam phone"
 	cont "calls, too…"
 	

@@ -79,8 +79,8 @@ LusterSpamBuilding_1F_NPC2:
 	end
 	
 LusterSpamBuilding_1F_NPC1Text1:
-	text "This is"
-	line "FRIENDLY CO. LLC."
+	text "How can I help"
+	line "you?"
 	
 	para "If you don't have"
 	line "business here,"
@@ -88,12 +88,14 @@ LusterSpamBuilding_1F_NPC1Text1:
 	done
 	
 LusterSpamBuilding_1F_NPC1Text2:
-	text "This is"
-	line "FRIENDLY CO. LLC."
+	text "How can I help"
+	line "you?"
 	
 	para "If you don't have"
 	line "business here,"
 	cont "be on your way."
+	
+	para "…"
 	
 	para "You say you want"
 	line "to be taken off"

@@ -559,16 +559,17 @@ NettBuildingSignText:
 	done
 	
 GenericBuildingSignText:
-	text "GENERICON"
-	line "ENTERPRISES"
+	text "GENERICON INC."
 	
 	para "“Business is Our"
 	line "Business”"
 	done
 	
 BankBuildingSignText:
-	text "FRIENDLY CO. LLC."
-	line "Coorperate Offices"
+	text "FRIENDLY CO."
+	line "ENTERPRISES"
+	
+	para "“We know you.”"
 	
 	para "NO SOLICITING!"
 	done

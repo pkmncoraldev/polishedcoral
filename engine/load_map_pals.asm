@@ -32,6 +32,14 @@ LightUpPlayerPalTimeOfDay:
 	ld a, $5 ; BANK(UnknOBPals)
 	jp FarCopyWRAM
 
+LoadSingleOBTimeofDayPalLinePal7:
+	ld a, [wTimeOfDayPal]
+	and 3
+	ld bc, 1 palettes
+	call AddNTimes
+	call LoadSingleOBPalLinePal7
+	jp FarCopyWRAM
+
 LoadSingleOBPalLinePal7:
 	ld de, wUnknOBPals + 7 palettes
 	ld bc, 1 palettes
@@ -716,12 +724,7 @@ LoadMapPals::
 .rocks
 	ld hl, MapObjectPalsRocks
 .rockscont
-	ld a, [wTimeOfDayPal]
-	and 3
-	ld bc, 1 palettes
-	call AddNTimes
-	call LoadSingleOBPalLinePal7
-	call FarCopyWRAM
+	call LoadSingleOBTimeofDayPalLinePal7
 	ld a, [wPermission]
 	cp FOREST
 	jp z, .outside
@@ -756,12 +759,7 @@ LoadMapPals::
 .radiant_field
 	ld hl, MapObjectPalsSunflowers2
 .sunflowers_cont
-	ld a, [wTimeOfDayPal]
-	and 3
-	ld bc, 1 palettes
-	call AddNTimes
-	call LoadSingleOBPalLinePal7
-	call FarCopyWRAM
+	call LoadSingleOBTimeofDayPalLinePal7
 	jp .outside_cont
 .starglow
 	ld a, [wTimeOfDayPal]
@@ -1019,6 +1017,10 @@ LoadMapPals::
 	jr z, .tunnel
 	cp MAP_CROSSROADS
 	jp z, .crossroads
+	cp MAP_ROUTE_22
+	jp z, .billboards1
+	cp MAP_ROUTE_22_2
+	jp z, .billboards2
 	cp MAP_DUSK_TURNPIKE
 	jp nz, .normal
 	ld a, [wTimeOfDayPal]
@@ -1028,6 +1030,35 @@ LoadMapPals::
 	call AddNTimes
 	call .copy_single_pal_to_pal_7
 	jp LightUpPlayerPal
+.billboards2
+	ld a, [wYCoord]
+	cp $11
+	jr c, .billboards1_3
+	ld a, [wXCoord]
+	cp $22
+	jr nc, .billboards1_4
+	jr .billboards1_2
+.billboards1
+	ld a, [wXCoord]
+	cp $4a
+	jr nc, .billboards1_3
+	cp $2a
+	jr nc, .billboards1_2
+;.billboards1_1
+	ld hl, MapObjectPalsBillboard1
+	jr .billboards_end
+.billboards1_2
+	ld hl, MapObjectPalsBillboard2
+	jr .billboards_end
+.billboards1_3
+	ld hl, MapObjectPalsBillboard3
+	jr .billboards_end
+.billboards1_4
+	ld hl, MapObjectPalsBillboard4
+.billboards_end
+	call LoadSingleOBPalLinePal7
+	call FarCopyWRAM
+	jp .normal
 .crossroads
 	ld a, 1
 	and 3
@@ -1450,8 +1481,18 @@ INCLUDE "maps/palettes/obpals/luggage4.pal"
 MapObjectPalsSlowpoke::
 INCLUDE "maps/palettes/obpals/slowpoke.pal"
 
+MapObjectPalsBillboard1::
+INCLUDE "maps/palettes/obpals/billboard_1.pal"
+
 MapObjectPalsMoomoo::
+MapObjectPalsBillboard2::
 INCLUDE "maps/palettes/obpals/moomoo.pal"
+
+MapObjectPalsBillboard3::
+INCLUDE "maps/palettes/obpals/billboard_3.pal"
+
+MapObjectPalsBillboard4::
+INCLUDE "maps/palettes/obpals/billboard_4.pal"
 
 MapObjectPalsDark::
 INCLUDE "maps/palettes/obpals/dark.pal"

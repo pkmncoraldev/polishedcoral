@@ -37,7 +37,16 @@ GetSpriteVTile:: ; 180e
 	jr z, .use_2nd_last_struct
 	cp SPRITE_SAILBOAT
 	jr z, .use_last_struct
+	cp SPRITE_BILLBOARD_1
+	jr z, .use_3rd_last_struct
+	cp SPRITE_BILLBOARD_2
+	jr z, .use_3rd_last_struct
+	cp SPRITE_BILLBOARD_3
+	jr z, .use_3rd_last_struct
 	ldh a, [hObjectStructIndexBuffer]
+	jr .got_sprite_tile
+.use_3rd_last_struct
+	ld a, NUM_OBJECT_STRUCTS - 3
 	jr .got_sprite_tile
 .use_2nd_last_struct
 	ld a, NUM_OBJECT_STRUCTS - 2

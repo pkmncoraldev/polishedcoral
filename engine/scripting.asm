@@ -276,6 +276,7 @@ ScriptCommandTable:
 	dw Script_priority
 	dw Script_warp_stealth
 	dw Script_changeaction
+	dw Script_billboard_move
 
 StartScript:
 	ld hl, wScriptFlags
@@ -1276,6 +1277,7 @@ Script_changeaction:
 	call GetObjectStruct
 	pop af
 	dec a
+.cont
 	ld bc, OBJECT_STRUCT_LENGTH
 	ld hl, wObject1Action
 	rst AddNTimes
@@ -1297,6 +1299,42 @@ Script_changeaction:
 	ld [wScriptMode], a
 	ld a, 2
 	ld [wScriptDelay], a
+	ret
+	
+Script_billboard_move:
+; parameters:
+;     person (SingleByteParam)
+	call GetScriptByte
+	ldh [hMapObjectIndexBuffer], a
+	call GetMapObject
+	ld l, c
+	ld h, b
+	ld a, [hl]
+	push af
+	call GetObjectStruct
+	pop af
+	dec a
+	ld bc, OBJECT_STRUCT_LENGTH
+	ld hl, wObject1StandingMapX
+	rst AddNTimes
+	call GetScriptByte
+	add 4
+	ld [hl], a
+	inc hl
+	call GetScriptByte
+	add 4
+	ld [hl], a
+	call GetScriptByte
+	ld e, a
+	inc hl
+	inc hl
+	inc hl
+	inc hl
+	inc hl
+	inc hl
+	ld a, [hl]
+	add e
+	ld [hl], a
 	ret
 
 Script_appear:

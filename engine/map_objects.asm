@@ -657,6 +657,10 @@ MapObjectMovementPattern:
 	dw .MovementFossil1
 	dw .MovementFossil2
 	dw .MovementPlumeBoss
+	dw .MovementBillboard1L
+	dw .MovementBillboard1R
+	dw .MovementBillboard2L
+	dw .MovementBillboard2R
 
 .RandomWalkY:
 	call Random
@@ -1116,6 +1120,22 @@ MapObjectMovementPattern:
 	
 .MovementPlumeBoss
 	ld a, PERSON_ACTION_PLUME_BOSS
+	jp ._ActionA_StepType04
+	
+.MovementBillboard1L
+	ld a, PERSON_ACTION_BILLBOARD_1_L
+	jp ._ActionA_StepType04
+	
+.MovementBillboard1R
+	ld a, PERSON_ACTION_BILLBOARD_1_R
+	jp ._ActionA_StepType04
+	
+.MovementBillboard2L
+	ld a, PERSON_ACTION_BILLBOARD_2_L
+	jp ._ActionA_StepType04
+	
+.MovementBillboard2R
+	ld a, PERSON_ACTION_BILLBOARD_2_R
 	jp ._ActionA_StepType04
 	
 .MovementTileUpDown:

@@ -12,26 +12,82 @@ Route22_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 16 ; object events
+	db 19 ; object events
 	person_event SPRITE_FISHING_GURU,  6, 104, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, Route22NPC1, EVENT_ROUTE_22_ROADBLOCK_GONE
 	person_event SPRITE_BEAUTY,  9, 108, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, Route22NPC2, EVENT_ROUTE_22_ROADBLOCK_GONE
-	person_event SPRITE_COOL_DUDE,  7, 110, SPRITEMOVEDATA_STANDING_UP, 1, 1, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, Route22NPC3, EVENT_ROUTE_22_ROADBLOCK_GONE
-	person_event SPRITE_SNARE, 12, 77, SPRITEMOVEDATA_STANDING_UP, 1, 1, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, Route22Snare1, EVENT_ROUTE_22_1_SNARE_GONE
+	person_event SPRITE_COOL_DUDE,  7, 110, SPRITEMOVEDATA_STANDING_RIGHT, 1, 1, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, Route22NPC3, EVENT_ROUTE_22_ROADBLOCK_GONE
+	person_event SPRITE_SNARE, 11, 77, SPRITEMOVEDATA_STANDING_UP, 1, 1, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, Route22Snare1, EVENT_ROUTE_22_1_SNARE_GONE
 	person_event SPRITE_SNARE,  6, 131, SPRITEMOVEDATA_SPINRANDOM_SLOW, 1, 1, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, Route22Snare2, EVENT_ROUTE_22_1_SNARE2_GONE
 	person_event SPRITE_SNARE,  7, 137, SPRITEMOVEDATA_STANDING_LEFT, 1, 1, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, Route22Snare3, EVENT_ROUTE_22_ROADBLOCK_GONE
 	person_event SPRITE_COOL_DUDE,  7, 130, SPRITEMOVEDATA_STANDING_DOWN, 1, 1, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, Route22Medic, EVENT_ROUTE_22_MEDIC_GONE
 	person_event SPRITE_FOSSIL_DISPLAYS,  6, 126, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_ROUTE_22_ROADBLOCK_GONE
 	person_event SPRITE_CHILD,  7, 127, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, Route22NPC4, EVENT_ROUTE_22_ROADBLOCK_GONE
-	person_event SPRITE_MISC_CONE, 12, 75, SPRITEMOVEDATA_TILE_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_ROUTE_22_ROADBLOCK_GONE
-	person_event SPRITE_MISC_CONE, 12, 76, SPRITEMOVEDATA_TILE_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_ROUTE_22_ROADBLOCK_GONE
-	person_event SPRITE_MISC_CONE, 12, 78, SPRITEMOVEDATA_TILE_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_ROUTE_22_ROADBLOCK_GONE
+	person_event SPRITE_MISC_CONE, 10, 75, SPRITEMOVEDATA_TILE_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_ROUTE_22_ROADBLOCK_GONE
+	person_event SPRITE_MISC_CONE, 10, 76, SPRITEMOVEDATA_TILE_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_ROUTE_22_ROADBLOCK_GONE
+	person_event SPRITE_MISC_CONE, 10, 78, SPRITEMOVEDATA_TILE_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_ROUTE_22_ROADBLOCK_GONE
 	person_event SPRITE_MISC_CONE,  5, 137, SPRITEMOVEDATA_TILE_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_ROUTE_22_ROADBLOCK_GONE
 	person_event SPRITE_MISC_CONE,  6, 137, SPRITEMOVEDATA_TILE_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_ROUTE_22_ROADBLOCK_GONE
 	person_event SPRITE_MISC_CONE,  8, 137, SPRITEMOVEDATA_TILE_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_ROUTE_22_ROADBLOCK_GONE
 	person_event SPRITE_MISC_CONE,  9, 137, SPRITEMOVEDATA_TILE_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_ROUTE_22_ROADBLOCK_GONE
+	person_event SPRITE_BILLBOARD_1,  4, 18, SPRITEMOVEDATA_BILLBOARD_1_L, 1, 1, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, Route22NPC1, -1
+	person_event SPRITE_BILLBOARD_1,  4, 58, SPRITEMOVEDATA_BILLBOARD_2_L, 1, 1, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, Route22NPC1, -1
+	person_event SPRITE_BILLBOARD_2,  4, 90, SPRITEMOVEDATA_BILLBOARD_1_L, 1, 1, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, Route22NPC1, -1
 
 
 Route22Trigger0:
+	special Special_UpdatePalsInstant
+	callasm Route22GetXCoordAsm
+	if_equal 1, .first_right
+	if_equal 2, .second_left
+	if_equal 3, .second_right
+	if_equal 4, .third_left
+	if_equal 5, .third_right
+	if_equal 6, .clear
+	checkevent EVENT_BILLBOARDS_RIGHT
+	iffalse .billboards_done
+;.first_left
+	moveperson 17, 18, 4
+	billboard_move 17, 18, 4, -$30
+	clearevent EVENT_BILLBOARDS_RIGHT
+	jump .billboards_done
+.first_right
+	checkevent EVENT_BILLBOARDS_RIGHT
+	iftrue .billboards_done
+	moveperson 17, 21, 4
+	billboard_move 17, 21, 4, $30
+	setevent EVENT_BILLBOARDS_RIGHT
+	jump .billboards_done
+.second_left
+	checkevent EVENT_BILLBOARDS_RIGHT
+	iffalse .billboards_done
+	moveperson 18, 58, 4
+	billboard_move 18, 58, 4, -$30
+	clearevent EVENT_BILLBOARDS_RIGHT
+	jump .billboards_done
+.second_right
+	checkevent EVENT_BILLBOARDS_RIGHT
+	iftrue .billboards_done
+	moveperson 18, 61, 4
+	billboard_move 18, 61, 4, $30
+	setevent EVENT_BILLBOARDS_RIGHT
+	jump .billboards_done
+.third_left
+	checkevent EVENT_BILLBOARDS_RIGHT
+	iffalse .billboards_done
+	moveperson 19, 90, 4
+	billboard_move 19, 90, 4, -$30
+	clearevent EVENT_BILLBOARDS_RIGHT
+	jump .billboards_done
+.third_right
+	checkevent EVENT_BILLBOARDS_RIGHT
+	iftrue .billboards_done
+	moveperson 19, 93, 4
+	billboard_move 19, 93, 4, $30
+	setevent EVENT_BILLBOARDS_RIGHT
+	jump .billboards_done
+.clear
+	clearevent EVENT_BILLBOARDS_RIGHT
+.billboards_done
 	checkflag ENGINE_STREETLIGHTS
 	iftrue .checkmorn
 	checktime 1<<DUSK
@@ -53,6 +109,49 @@ Route22Trigger0:
 	callasm CrossroadsStreetlightPaletteUpdateThingMoreWordsExtraLongStyle
 .end
 	end
+	
+Route22GetXCoordAsm:
+	ld a, [wXCoord]
+	cp $74
+	jr nc, .clear
+	cp $5c
+	jr nc, .third_right
+	cp $4a
+	jr nc, .third_left
+	cp $3c
+	jr nc, .second_right
+	cp $2a
+	jr nc, .second_left
+	cp $14
+	jr nc, .first_right
+;.first_left
+	xor a
+	ld [wScriptVar], a
+	ret
+.first_right
+	ld a, 1
+	ld [wScriptVar], a
+	ret
+.second_left
+	ld a, 2
+	ld [wScriptVar], a
+	ret
+.second_right
+	ld a, 3
+	ld [wScriptVar], a
+	ret
+.third_left
+	ld a, 4
+	ld [wScriptVar], a
+	ret
+.third_right
+	ld a, 5
+	ld [wScriptVar], a
+	ret
+.clear
+	ld a, 6
+	ld [wScriptVar], a
+	ret
 
 Route22Callback:
 	checktime 1<<DUSK
@@ -419,8 +518,9 @@ Route22NPC3:
 	jumptext Route22NPC3Text
 	
 Route22NPC3Text:
-	text "Yes sir, I know"
-	line "I'm late for work."
+	text "I'm calling to say"
+	line "I'll be late to"
+	cont "work."
 	
 	para "I'm stuck in a"
 	line "traffic jam!"

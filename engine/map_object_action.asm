@@ -86,6 +86,10 @@ Pointers445f: ; 445f
 	dw SetFacingFossil2,		       SetFacingFossil2	  		  ; PERSON_ACTION_FOSSIL_2
 	dw SetFacingPlumeBoss,			   SetFacingPlumeBoss		  ; PERSON_ACTION_PLUME_BOSS
 	dw SetFacingLemonade2,    		   SetFacingLemonade2		  ; PERSON_ACTION_LEMONADE_2
+	dw SetFacingBillboard1L,   		   SetFacingBillboard1L		  ; PERSON_ACTION_BILLBOARD_1_L
+	dw SetFacingBillboard1R,   		   SetFacingBillboard1R		  ; PERSON_ACTION_BILLBOARD_1_R
+	dw SetFacingBillboard2L,   		   SetFacingBillboard2L		  ; PERSON_ACTION_BILLBOARD_2_L
+	dw SetFacingBillboard2R,   		   SetFacingBillboard2R		  ; PERSON_ACTION_BILLBOARD_2_R
 	
 ; 44a3
 
@@ -686,6 +690,32 @@ SetFacingLemonade:
 	
 SetFacingLemonade2:
 	ld a, FACING_LEMONADE_UP
+	jp SetFixedFacing
+	
+SetFacingBillboard1L:
+	eventflagcheck EVENT_BILLBOARDS_RIGHT
+	jr nz, .right
+	ld a, FACING_BILLBOARD_1_L
+	jp SetFixedFacing
+.right
+	ld a, FACING_BILLBOARD_1_R
+	jp SetFixedFacing
+	
+SetFacingBillboard1R:
+	ld a, FACING_BILLBOARD_1_R
+	jp SetFixedFacing
+	
+SetFacingBillboard2L:
+	eventflagcheck EVENT_BILLBOARDS_RIGHT
+	jr nz, .right
+	ld a, FACING_BILLBOARD_2_L
+	jp SetFixedFacing
+.right
+	ld a, FACING_BILLBOARD_2_R
+	jp SetFixedFacing
+	
+SetFacingBillboard2R:
+	ld a, FACING_BILLBOARD_2_R
 	jp SetFixedFacing
 	
 SetFacingJukebox:

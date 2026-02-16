@@ -6,6 +6,7 @@
 	const BIG_GYARADOS_SPRITE
 	const BIG_MUK_SPRITE
 	const BIG_CURSOLA_SPRITE
+	const BILLBOARD_SPRITE
 
 ; sprite header fields
 	const_def

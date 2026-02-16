@@ -1389,6 +1389,15 @@ else
 endc
 	endm
 	
+	enum billboard_move_command
+macro billboard_move
+	db billboard_move_command
+	db \1 ; person
+	db \2 ; x
+	db \3 ; y
+	db \4 ; spritex
+	endm
+	
 macro thisasm
 	callasm .asm\@
 	end

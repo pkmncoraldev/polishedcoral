@@ -131,6 +131,9 @@ PicnicSpriteGFX::         	   INCBIN "gfx/sprites/picnic.2bpp.lz"
 OttoSpriteGFX::         	   INCBIN "gfx/sprites/otto.2bpp.lz"
 FossilDisplaysSpriteGFX::      INCBIN "gfx/sprites/fossil_displays.2bpp.lz"
 FloatingBallSpriteGFX::   	   INCBIN "gfx/sprites/floating_ball.2bpp.lz"
+BillboardSpriteGFX::   	  	   INCBIN "gfx/sprites/billboard.2bpp.lz"
+Billboard2SpriteGFX::   	   INCBIN "gfx/sprites/billboard2.2bpp.lz"
+Billboard3SpriteGFX::   	   INCBIN "gfx/sprites/billboard3.2bpp.lz"
 
 
 SECTION "Overworld Sprites 4", ROMX

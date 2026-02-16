@@ -432,6 +432,8 @@ GetSprite:: ; 1423c
 	; load the length into c
 	ld c, 15
 	ld a, l
+	cp BILLBOARD_SPRITE
+	jr z, .billboard
 	cp BIG_MUK_SPRITE
 	jr z, .muk
 	cp BIG_CURSOLA_SPRITE
@@ -439,6 +441,9 @@ GetSprite:: ; 1423c
 	cp BIG_GYARADOS_SPRITE
 	ret z
 	ld c, 12
+	ret
+.billboard
+	ld c, 32
 	ret
 .muk
 	ld c, 17

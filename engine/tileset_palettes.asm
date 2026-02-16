@@ -281,6 +281,10 @@ LoadSpecialMapPalette: ; 494ac
 	ret
 .highway2
 	ld a, [wMapNumber]
+	cp MAP_ROUTE_22
+	jr z, .highway_route
+	cp MAP_ROUTE_22_2
+	jr z, .highway_route
 	cp MAP_CROSSROADS
 	jp nz, .ranch
 	ld hl, CrossroadsPalette
@@ -294,6 +298,9 @@ LoadSpecialMapPalette: ; 494ac
 	call FarCopyWRAM
 	scf
 	ret
+.highway_route
+	call .ranch
+	jr .highway
 	
 .back_alley
 	ld hl, BarBackAlleyPalette

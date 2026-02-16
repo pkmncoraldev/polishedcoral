@@ -1057,8 +1057,7 @@ LoadMapPals::
 	ld hl, MapObjectPalsBillboard4
 .billboards_end
 	call LoadSingleOBPalLinePal7
-	call FarCopyWRAM
-	jp .normal
+	jp FarCopyWRAM
 .crossroads
 	ld a, 1
 	and 3

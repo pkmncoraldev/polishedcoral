@@ -225,9 +225,9 @@ ItemIconPointers:
 	dba ChlorophialIcon
 	dba NuggetIcon
 	dba BigNuggetIcon
-	dba NoItemIcon
-	dba NoItemIcon
-	dba NoItemIcon
+	dba TinyMushroomIcon
+	dba BigMushroomIcon
+	dba BalmMushroomIcon
 	dba PearlIcon
 	dba BigPearlIcon
 	dba BlackPearlIcon

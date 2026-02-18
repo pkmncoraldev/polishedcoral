@@ -213,7 +213,7 @@
 	tilecoll FLOOR, FLOOR, ROCK_CLIMB, NO_OLLIE ; d4
 	tilecoll FLOOR, FLOOR, NO_OLLIE, DOOR ; d5
 	tilecoll WALL, WALL, WALL, WALL ; d6
-	tilecoll WALL, WALL, WALL, SKATE ; d7
+	tilecoll WALL, WALL, SKATE, SKATE ; d7
 	tilecoll NO_OLLIE, NO_OLLIE, NO_OLLIE, NO_OLLIE ; d8
 	tilecoll NO_OLLIE, NO_OLLIE, NO_OLLIE, NO_OLLIE ; d9
 	tilecoll WALL, WALL, SKATE, SKATE ; da

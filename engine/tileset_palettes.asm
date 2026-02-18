@@ -269,6 +269,7 @@ LoadSpecialMapPalette: ; 494ac
 	cp MAP_BAR_BACK_ALLEY
 	jr z, .back_alley
 	ld hl, HighwayPalette
+.highway_cont
 	ld a, [wTimeOfDayPal]
 	and 3
 	ld bc, 3 palettes
@@ -300,7 +301,8 @@ LoadSpecialMapPalette: ; 494ac
 	ret
 .highway_route
 	call .ranch
-	jr .highway
+	ld hl, HighwayPalette2
+	jr .highway_cont
 	
 .back_alley
 	ld hl, BarBackAlleyPalette
@@ -1215,6 +1217,9 @@ INCLUDE "maps/palettes/bgpals/airportfence.pal"
 
 HighwayPalette:
 INCLUDE "maps/palettes/bgpals/highway.pal"
+
+HighwayPalette2:
+INCLUDE "maps/palettes/bgpals/highway2.pal"
 
 CrossroadsPalette:
 INCLUDE "maps/palettes/bgpals/crossroads.pal"

@@ -93,7 +93,7 @@ Route22Trigger0:
 	checktime 1<<DUSK
 	iffalse .end
 	changeblock -$2, $4, $f2
-	changeblock $c, $4, $f2
+	changeblock $98, $4, $f2
 	setflag ENGINE_STREETLIGHTS
 	callasm GenericFinishBridge
 	callasm CrossroadsStreetlightPaletteUpdateThingMoreWordsExtraLongStyle
@@ -102,7 +102,7 @@ Route22Trigger0:
 	checktime 1<<MORN
 	iffalse .end
 	changeblock -$2, $4, $f3
-	changeblock $c, $4, $f3
+	changeblock $98, $4, $f3
 	clearflag ENGINE_STREETLIGHTS
 	clearflag ENGINE_STREETLIGHTS2
 	callasm GenericFinishBridge
@@ -160,7 +160,7 @@ Route22Callback:
 	iffalse .notnite
 .nite
 	changeblock -$2, $4, $f2
-	changeblock $c, $4, $f2
+	changeblock $98, $4, $f2
 	setflag ENGINE_STREETLIGHTS
 .notnite
 	checkevent EVENT_ROUTE_22_1_SNARE2_MOVED

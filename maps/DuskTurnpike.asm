@@ -147,7 +147,7 @@ DuskTurnpikeTrigger1:
 	changeblock $1a, $10, $a4
 ;	changeblock $22, $10, $a4
 ;	changeblock $2c, $10, $a4
-	changeblock $22, $0c, $f2
+	changeblock $24, $0c, $f2
 	changeblock $1c, $16, $10
 	changeblock $1e, $16, $11
 	setflag ENGINE_STREETLIGHTS
@@ -171,7 +171,7 @@ DuskTurnpikeTrigger1:
 	changeblock $1a, $10, $aa
 ;	changeblock $22, $10, $aa
 ;	changeblock $2c, $10, $aa
-	changeblock $22, $0c, $f3
+	changeblock $24, $0c, $f3
 	changeblock $1c, $16, $4a
 	changeblock $1e, $16, $4b
 	changeblock $18, $14, $85
@@ -243,7 +243,7 @@ DuskTurnpikeCallback:
 	changeblock $1a, $10, $a4
 ;	changeblock $22, $10, $a4
 ;	changeblock $2c, $10, $a4
-	changeblock $22, $0c, $f2
+	changeblock $24, $0c, $f2
 	changeblock $1c, $16, $10
 	changeblock $1e, $16, $11
 	setflag ENGINE_STREETLIGHTS

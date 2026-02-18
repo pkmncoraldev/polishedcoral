@@ -336,7 +336,7 @@ TilesetGroveAnim::
 	dw WaterFrames, AnimateWaterfallTiles2
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
-	dw AmublanceFrames, AnimateWaterfallTiles
+	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
@@ -1250,11 +1250,6 @@ endr
 	ld h, d
 
 	jp WriteFourTiles
-	
-AmublanceFrames:dw VTiles2 tile $08, AmublanceTiles
-
-AmublanceTiles: INCBIN "gfx/tilesets/ambulance/1.2bpp"
-	
 	
 CasinoSignFrames: dw VTiles2 tile $02, CasinoSignTiles
 

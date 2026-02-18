@@ -233,7 +233,7 @@
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; e8
 	tilecoll WALL, WALL, WALL, WALL ; e9
 	tilecoll WALL, WALL, SKATE, WALL ; ea
-	tilecoll WALL, WALL, WALL, WALL ; eb
+	tilecoll WALL, WALL, SKATE, SKATE ; eb
 	tilecoll WALL, FLOOR, WALL, NO_OLLIE ; ec
 	tilecoll SKATE, WALL, SKATE, WALL ; ed
 	tilecoll WALL, WALL, WALL, WALL ; ee

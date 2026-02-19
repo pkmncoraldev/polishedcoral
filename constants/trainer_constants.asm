@@ -534,7 +534,7 @@ DEF PLAYER_F EQU __enum__
 	const HERB
 	const SHINTO
 	const WALKER
-	const DONNY
+	const WES
 	const CASSIDY
 	const TOPHER
 	const HAMM
@@ -546,7 +546,7 @@ DEF PLAYER_F EQU __enum__
 	const BUBBA
 	const DESMOND
 	const BUTCH
-	const WES
+	const DONNY
 	const PATRICK
 	
 

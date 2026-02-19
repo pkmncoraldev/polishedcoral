@@ -200,126 +200,186 @@ Movement_Route22_2_Snare:
 Route22_2Trainer1:
 	generictrainer BIKER, WALKER, EVENT_BEAT_ROUTE_22_2_TRAINER_1, .SeenText, .BeatenText
 
-	text "TEXT"
+	text "Causing a traffic"
+	line "jam is a serious"
+	cont "problem!"
 	done
 
 .SeenText:
-	text "SEEN TEXT"
+	text "Is something"
+	line "happenin' on the"
+	cont "main highway?"
+	
+	para "I just saw some"
+	line "masked guy run"
+	cont "by."
 	done
 
 .BeatenText:
-	text "YOU WIN"
+	text "What's goin'"
+	line "on?"
 	done
 	
 Route22_2Trainer2:
-	generictrainer BIKER, DONNY, EVENT_BEAT_ROUTE_22_2_TRAINER_2, .SeenText, .BeatenText
+	generictrainer BIKER, WES, EVENT_BEAT_ROUTE_22_2_TRAINER_2, .SeenText, .BeatenText
 
-	text "TEXT"
+	text "You got some real"
+	line "nerve knockin' out"
+	cont "my #MON!"
 	done
 
 .SeenText:
-	text "SEEN TEXT"
+	text "You ready for us?"
+	
+	para "With me and my"
+	line "#MON, it's"
+	cont "ride or die!"
 	done
 
 .BeatenText:
-	text "YOU WIN"
+	text "My guys!"
 	done
 	
 Route22_2Trainer3:
 	generictrainer CUEBALL, BUTCH, EVENT_BEAT_ROUTE_22_2_TRAINER_3, .SeenText, .BeatenText
 
-	text "TEXT"
+	text "I keep catching"
+	line "myself staring at"
+	cont "the billboards."
+	
+	para "I'm a distracted"
+	line "driver!"
 	done
 
 .SeenText:
-	text "SEEN TEXT"
+	text "You see all these"
+	line "billboards on the"
+	cont "side of the road?"
+	
+	para "I wonder how much"
+	line "it costs to rent"
+	cont "one?"
 	done
 
 .BeatenText:
-	text "YOU WIN"
+	text "Gah. I lost it!"
 	done
 	
 Route22_2Trainer4:
 	generictrainer BIKER, CASSIDY, EVENT_BEAT_ROUTE_22_2_TRAINER_4, .SeenText, .BeatenText
 
-	text "TEXT"
+	text "Ain't you a little"
+	line "bit young to be"
+	cont "drivin', anyway?"
 	done
 
 .SeenText:
-	text "SEEN TEXT"
+	text "Woah! What a crazy"
+	line "set of wheels."
+	
+	para "Where'd you get"
+	line "that from?"
 	done
 
 .BeatenText:
-	text "YOU WIN"
+	text "Crazy!"
 	done
 	
 Route22_2Trainer5:
 	generictrainer BIKER, TOPHER, EVENT_BEAT_ROUTE_22_2_TRAINER_5, .SeenText, .BeatenText
 
-	text "TEXT"
+	text "You may out battle"
+	line "me, but I would"
+	cont "win in a race!"
 	done
 
 .SeenText:
-	text "SEEN TEXT"
+	text "Not so fast."
+	
+	para "I challenge you"
+	line "to a road duel!"
 	done
 
 .BeatenText:
-	text "YOU WIN"
+	text "Alright."
+	line "You got me."
 	done
 	
 Route22_2Trainer6:
 	generictrainer BIKER, HAMM, EVENT_BEAT_ROUTE_22_2_TRAINER_6, .SeenText, .BeatenText
 
-	text "TEXT"
+	text "Alright, keep it"
+	line "movin'!"
 	done
 
 .SeenText:
-	text "SEEN TEXT"
+	text "Pull over!"
+	
+	para "Time for a pit"
+	line "stop!"
 	done
 
 .BeatenText:
-	text "YOU WIN"
+	text "Graagh!"
 	done
 	
 Route22_2Trainer7:
-	generictrainer CUEBALL, WES, EVENT_BEAT_ROUTE_22_2_TRAINER_7, .SeenText, .BeatenText
+	generictrainer CUEBALL, DONNY, EVENT_BEAT_ROUTE_22_2_TRAINER_7, .SeenText, .BeatenText
 
-	text "TEXT"
+	text "My #MON are"
+	line "heavy hitters, but"
+	cont "you outpaced us."
 	done
 
 .SeenText:
-	text "SEEN TEXT"
+	text "Can you handle my"
+	line "heavy metal?"
 	done
 
 .BeatenText:
-	text "YOU WIN"
+	text "Oh man!"
 	done
 	
 Route22_2Trainer8:
 	generictrainer CUEBALL, PATRICK, EVENT_BEAT_ROUTE_22_2_TRAINER_8, .SeenText, .BeatenText
 
-	text "TEXT"
+	text "Do you ever get"
+	line "bugs in your face"
+	cont "on the highway?"
+	
+	para "I hate that!"
 	done
 
 .SeenText:
-	text "SEEN TEXT"
+	text "Sorry to bug you,"
+	line "but it's battle"
+	cont "time!"
 	done
 
 .BeatenText:
-	text "YOU WIN"
+	text "Bugger!"
 	done
 	
 Route22_2Trainer9:
 	generictrainer GENTLEMAN, REGINALD, EVENT_BEAT_ROUTE_22_2_TRAINER_9, .SeenText, .BeatenText
 
-	text "TEXT"
+	text "I should probably"
+	line "hit the road soon."
+	
+	para "Maybe I'll stay a"
+	line "bit longer…"
 	done
 
 .SeenText:
-	text "SEEN TEXT"
+	text "Isn't this such a"
+	line "pleasant nature"
+	cont "spot?"
+	
+	para "I had to pull over"
+	line "and take it in!"
 	done
 
 .BeatenText:
-	text "YOU WIN"
+	text "Ah!"
 	done
 	

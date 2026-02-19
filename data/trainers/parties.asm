@@ -2554,7 +2554,9 @@ GruntMGroup:
 	db "GRUNT@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 43, NIDORINO
+	db 42, NIDOQUEEN
+	db 43, VENOMOTH
 	db -1 ; end
 
 ; ================
@@ -2563,7 +2565,9 @@ GruntMGroup:
 	db "GRUNT@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 43, ELECTABUZZ
+	db 44, GOLBAT
+	db 43, QUAGSIRE
 	db -1 ; end
 
 ; ================
@@ -3950,7 +3954,9 @@ GentlemanGroup:
 	db "REGINALD@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 42, MURKROW
+	db 42, MURKROW
+	db 43, DODRIO
 	db -1 ; end
 
 ; ================
@@ -4727,16 +4733,20 @@ BikerGroup:
 	db "WALKER@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 40, KOFFING
+	db 41, KOFFING
+	db 42, KOFFING
+	db 43, KOFFING
 	db -1 ; end
 
 ; ================
 
 	; BIKER
-	db "DONNY@"
+	db "WES@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 42, ESPEON
+	db 43, UMBREON
 	db -1 ; end
 
 ; ================
@@ -4745,7 +4755,8 @@ BikerGroup:
 	db "CASSIDY@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 43, PIDGEOT
+	db 42, JOLTEON
 	db -1 ; end
 
 ; ================
@@ -4754,7 +4765,8 @@ BikerGroup:
 	db "TOPHER@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 42, ONIX
+	db 42, STEELIX
 	db -1 ; end
 
 ; ================
@@ -4763,7 +4775,7 @@ BikerGroup:
 	db "HAMM@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 43, MAGMAR
 	db -1 ; end
 
 ; ================
@@ -4818,16 +4830,18 @@ CueballGroup:
 	db "BUTCH@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 43, TOUCANNON
+	db 42, FLAREON
 	db -1 ; end
 
 ; ================
 
 	; CUEBALL
-	db "WES@"
+	db "DONNY@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 43, LAIRON
+	db 42, AGGRON
 	db -1 ; end
 
 ; ================
@@ -4836,7 +4850,9 @@ CueballGroup:
 	db "PATRICK@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 43, VENONAT
+	db 43, VENONAT
+	db 43, GALVANTULA
 	db -1 ; end
 
 ; ================

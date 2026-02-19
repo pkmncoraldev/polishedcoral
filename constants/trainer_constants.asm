@@ -554,6 +554,7 @@ DEF PLAYER_F EQU __enum__
 	const CODY
 	const SAMMY
 	const ANDY
+	const ANDY_2
 	const TRIPP
 	const TREY
 	const KEN
@@ -564,6 +565,7 @@ DEF PLAYER_F EQU __enum__
 	const SALLY
 	const JULES
 	const MARY
+	const MARY_2
 	const JANE
 	const LOIS
 	const TAMMY

@@ -2328,11 +2328,11 @@ HikerGroup:
 
 	; HIKER
 	db "GILL@"
-	db TRAINERTYPE_MOVES
+	db TRAINERTYPE_MOVES | TRAINERTYPE_PERSONALITY
 	; party
-	db 17, NUMEL
+	db 17, NUMEL, ABILITY_1 | QUIRKY, MALE
 		db AMNESIA, FIRE_SPIN, MAGNITUDE, FOCUS_ENERGY
-	db 15, CORSOLA
+	db 15, CORSOLA, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM
 		db TACKLE_SCRATCH_POUND, DEFENSE_CURL_HARDEN_WITHDRAW, WATER_GUN, SOFTBOILED_MILK_DRINK_RECOVER
 	db -1 ; end
 
@@ -2605,11 +2605,11 @@ GruntMGroup:
 
 	; MUSEUM_GRUNTM_3
 	db "GRUNT@"
-	db TRAINERTYPE_MOVES
+	db TRAINERTYPE_MOVES | TRAINERTYPE_PERSONALITY
 	; party
-	db 47, CORSOLA
+	db 47, CORSOLA, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM
 		db BUBBLE_BEAM, BARRIER_IRON_DEFENSE_ACID_ARMOR, ROCK_BLAST, 0
-	db 49, MAGCARGO
+	db 49, MAGCARGO, ABILITY_1 | QUIRKY, MALE
 		db SOFTBOILED_MILK_DRINK_RECOVER, BODY_SLAM, AMNESIA, FLAME_BURST
 	db -1 ; end
 
@@ -3128,7 +3128,8 @@ PokemaniacGroup:
 	db "JACK@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 44, GENGAR
+	db 43, MAROWAK
 	db -1 ; end
 
 ; ================
@@ -3347,7 +3348,9 @@ LassGroup:
 	db "DEEDEE@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 46, MAREEP
+	db 45, FLAAFFY
+	db 44, AMPHAROS
 	db -1 ; end
 
 ; ================
@@ -3979,10 +3982,10 @@ LadyGroup:
 
 	; LADY
 	db "GRETCHEN@"
-	db TRAINERTYPE_NORMAL
+	db TRAINERTYPE_PERSONALITY
 	; party
-	db 29, CORSOLA
-	db 28, NIDORINA
+	db 29, CORSOLA, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM
+	db 28, NIDORINA, ABILITY_1 | QUIRKY, FEMALE
 	db -1 ; end
 
 ; ================
@@ -4010,7 +4013,9 @@ LadyGroup:
 	db "MURIEL@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 44, SNEASEL
+	db 44, SNEASEL
+	db 42, WEAVILE
 	db -1 ; end
 
 ; ================
@@ -4232,10 +4237,10 @@ SwimmerFGroup:
 
 	; SWIMMERF
 	db "SHANNON@"
-	db TRAINERTYPE_NORMAL
+	db TRAINERTYPE_PERSONALITY
 	; party
-	db 34, CORSOLA
-	db 35, MAREANIE
+	db 34, CORSOLA, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM
+	db 35, MAREANIE, ABILITY_1 | QUIRKY, FEMALE
 	db -1 ; end
 
 ; ================
@@ -4354,9 +4359,10 @@ ScientistGroup:
 
 	; SCIENTIST
 	db "MARTIN@"
-	db TRAINERTYPE_NORMAL
+	db TRAINERTYPE_PERSONALITY
 	; party
-	db 1, BULBASAUR
+	db 50, EXEGGUTOR, ABILITY_1 | HARDY, MALE | PLAIN_FORM
+	db 49, LAPRAS, ABILITY_1 | HARDY, FEMALE
 	db -1 ; end
 
 ; ================
@@ -4563,7 +4569,9 @@ BlackbeltGroup:
 	db "MASA@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 45, POLIWRATH
+	db 45, TOXICROAK
+	db 45, SCRAFTY
 	db -1 ; end
 
 ; ================
@@ -4576,9 +4584,9 @@ TeacherGroup:
 
 	; TEACHER
 	db "LYNN@"
-	db TRAINERTYPE_MOVES
+	db TRAINERTYPE_MOVES | TRAINERTYPE_PERSONALITY
 	; party
-	db 32, RAICHU
+	db 32, RAICHU, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM
 		db THUNDERBOLT, THUNDER_WAVE, QUICK_ATTACK, 0
 	db -1 ; end
 
@@ -4606,9 +4614,11 @@ TeacherGroup:
 
 	; TEACHER
 	db "WANDA@"
-	db TRAINERTYPE_NORMAL
+	db TRAINERTYPE_PERSONALITY
 	; party
-	db 1, BULBASAUR
+	db 44, CLEFABLE, ABILITY_1 | QUIRKY, FEMALE
+	db 43, RAICHU, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM
+	db 44, PERSIAN, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM
 	db -1 ; end
 
 ; ================
@@ -4893,6 +4903,16 @@ CooltrainerMGroup:
 ; ================
 
 	; COOLTRAINERM
+	db "ANDY@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 45, GASTLY
+	db 45, MACHOP
+	db -1 ; end
+
+; ================
+
+	; COOLTRAINERM
 	db "TRIPP@"
 	db TRAINERTYPE_NORMAL
 	; party
@@ -4973,6 +4993,17 @@ CooltrainerFGroup:
 	db 24, COTTONEE
 	db 24, GROWLITHE
 	db 24, BUIZEL
+	db -1 ; end
+
+; ================
+
+	; COOLTRAINERF
+	db "MARY@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 44, COTTONEE
+	db 44, GROWLITHE
+	db 44, BUIZEL
 	db -1 ; end
 
 ; ================

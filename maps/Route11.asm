@@ -231,7 +231,7 @@ TrainerRoute11_2:
 	done
 	
 TrainerRoute11_1_2:
-	generictrainer COOLTRAINERM, ANDY, EVENT_BEAT_ROUTE_11_TRAINER_1, .SeenText, .BeatenText
+	generictrainer COOLTRAINERM, ANDY_2, EVENT_BEAT_ROUTE_11_TRAINER_1, .SeenText, .BeatenText
 
 	text "The new bridge"
 	line "makes getting to"
@@ -261,7 +261,7 @@ TrainerRoute11_1_2:
 	done
 
 TrainerRoute11_2_2:
-	generictrainer COOLTRAINERF, MARY, EVENT_BEAT_ROUTE_11_TRAINER_2, .SeenText, .BeatenText
+	generictrainer COOLTRAINERF, MARY_2, EVENT_BEAT_ROUTE_11_TRAINER_2, .SeenText, .BeatenText
 
 	text "I can't wait to"
 	line "cross the new"

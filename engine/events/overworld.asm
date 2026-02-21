@@ -761,9 +761,9 @@ TrySurfOW:: ; c9e7
 	
 	
 AskSurfScript: ; ca2c
+	opentext
 	checkflag ENGINE_AUTOSURF_ACTIVE
 	iftrue UsedSurfScript
-	opentext
 	writetext AskSurfText
 	yesorno
 	iftrue UsedSurfScript
@@ -774,9 +774,9 @@ AskSurfText: ; ca36
 	db "@"              ; Want to SURF?
 	
 AskLavaSurfScript: ; ca2c
+	opentext
 	checkflag ENGINE_AUTOSURF_ACTIVE
 	iftrue UsedSurfScript
-	opentext
 	writetext AskLavaSurfText
 	yesorno
 	iftrue UsedLavaSurfScript
@@ -1096,9 +1096,9 @@ Script_CantDoWaterfall: ; 0xcb7e
 	db "@"
 
 Script_AskWaterfall: ; 0xcb86
+	opentext
 	checkflag ENGINE_AUTOWATERFALL_ACTIVE
 	iftrue Script_UsedWaterfall
-	opentext
 	writetext .AskUseWaterfall
 	yesorno
 	iftrue Script_UsedWaterfall
@@ -1734,17 +1734,16 @@ TryHeadbuttOW:: ; cec9
 	ret
 
 AskHeadbuttScript: ; 0xcedc
+	opentext
 	checkevent EVENT_CANT_HEADBUTT
 	iftrue .not_now
 	checkflag ENGINE_HEADBUTT_ACTIVE
 	iftrue HeadbuttScript
-	opentext
 	writetext UnknownText_0xcee6
 	yesorno
 	iftrue HeadbuttScript
 	endtext
 .not_now
-	opentext
 	writetext HeadbuttNotNowText
 	waitbutton
 	endtext
@@ -2124,9 +2123,9 @@ Script_BlockedRockClimb:
 	db "@"
 
 Script_AskRockClimb: ; 0xcb86
+	opentext
 	checkflag ENGINE_ROCK_CLIMB_ACTIVE
 	iftrue Script_UsedRockClimb
-	opentext
 	writetext .AskUseRockClimb
 	yesorno
 	iftrue Script_UsedRockClimb
@@ -2525,9 +2524,9 @@ AskRockSmashScript2::
 	iftrue .debugrocksmash
 	callasm HasRockSmash
 	ifequal 1, .no
+	opentext
 	checkflag ENGINE_ROCK_SMASH_ACTIVE
 	iftrue RockSmashScript
-	opentext
 	writetext UnknownText_0xcf77
 	yesorno
 	iftrue RockSmashScript
@@ -3148,9 +3147,9 @@ AskCutTreeScript::
 	callasm HasCutAvailable
 	ifequal 1, .no
 	playsound SFX_READ_TEXT_2
+	opentext
 	checkflag ENGINE_AUTOCUT_ACTIVE
 	iftrue Script_CutTree
-	opentext
 	writetext UnknownText_0xd1c8
 	yesorno
 	iftrue Script_CutTree
@@ -3164,9 +3163,9 @@ AskCutTreeScript::
 	callasm MakeCutFlowerRed
 	
 	playsound SFX_READ_TEXT_2
+	opentext
 	checkflag ENGINE_AUTOCUT_ACTIVE
 	iftrue .do_flower
-	opentext
 	writetext UnknownText_0xd1c82
 	yesorno
 	iftrue .do_flower

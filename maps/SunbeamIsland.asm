@@ -122,7 +122,7 @@ SunbeamIslandFlyPoint:
 SunbeamIslandCallback:
 	checkevent EVENT_MET_SPRUCE_AT_CENTER
 	iftrue .dooropen
-	changeblock $10, $10, $c9
+	changeblock $10, $10, $e3
 .dooropen
 	checkevent EVENT_SAVED_SUNBEAM
 	iffalse .havent_cleared_island

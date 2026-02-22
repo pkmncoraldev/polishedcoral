@@ -236,7 +236,7 @@ SpruceLabComeBackInside:
 	wait 5
 	disappear SPRUCELAB_MUNCHLAX1
 	opentext TEXTBOX_POKEMON, MUNCHLAX
-	writetext SpruceLabMunchlaxText2
+	writetext SpruceLabMunchlaxText3
 	cry MUNCHLAX
 	waitsfx
 	buttonsound
@@ -290,11 +290,18 @@ SpruceLabComeBackInside:
 	end
 
 SpruceLabMunchlaxSleep:
-	jumptext SpruceLabMunchlaxText1
+	opentext TEXTBOX_POKEMON, MUNCHLAX
+	writetext SpruceLabMunchlaxText1
+	waitbutton
+	changetextboxspeaker
+	writetext SpruceLabMunchlaxText2
+	waitbutton
+	closetext
+	end
 	
 SpruceLabMunchlax:
-	opentext
-	writetext SpruceLabMunchlaxText2
+	opentext TEXTBOX_POKEMON, MUNCHLAX
+	writetext SpruceLabMunchlaxText3
 	cry MUNCHLAX
 	waitsfx
 	waitbutton
@@ -648,12 +655,14 @@ SpruceLabPokeFluteText3:
 	
 SpruceLabMunchlaxText1:
 	text "Muuunch…"
-	
-	para "It's sleeping"
-	line "soundly."
 	done
 	
 SpruceLabMunchlaxText2:
+	text "It's sleeping"
+	line "soundly."
+	done
+	
+SpruceLabMunchlaxText3:
 	text "Lax! Lax!"
 	done
 	

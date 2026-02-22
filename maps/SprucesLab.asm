@@ -223,12 +223,14 @@ SpruceLabComeBackInside:
 	closetext
 	spriteface PLAYER, RIGHT
 	spriteface SPRUCELAB_SPRUCE2, RIGHT
+	special SaveMusic
+	special Special_FadeOutMusic
 	pause 20
 	opentext
 	writetext SpruceLabPokeFluteText1
 	playsound SFX_POKEFLUTE
 	waitsfx
-	buttonsound
+	special RestoreMusic
 	writetext SpruceLabPokeFluteText2
 	appear SPRUCELAB_MUNCHLAX2
 	waitbutton

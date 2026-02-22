@@ -105,11 +105,14 @@ _PokeFlute: ; 50730
 	farjump SunbeamPlayedFluteForSleepingBeauty
 
 .NothingHappenedScript:
+	special SaveMusic
+	special Special_FadeOutMusic
+	pause 20
 	opentext
 	writetext PokefluteText1
 	playsound SFX_POKEFLUTE
 	waitsfx
-	buttonsound
+	special RestoreMusic
 	writetext PokefluteText2
 	waitbutton
 	closetext

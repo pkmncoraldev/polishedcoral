@@ -421,9 +421,13 @@ SumbeamSnare:
 	jumptext SunbeamSnareAsleepText
 
 SunbeamPlayedFluteForSleepySnare::
+	special SaveMusic
+	special Special_FadeOutMusic
+	pause 20
 	writetext SunbeamTextUseFlute
 	playsound SFX_POKEFLUTE
 	waitsfx
+	special RestoreMusic
 	closetext
 	wait 10
 	opentext

@@ -176,9 +176,13 @@ Route4PlayedFluteForSnorlax::
 	spriteface ROUTE4SNORLAXNPC1, RIGHT
 	spriteface ROUTE4SNORLAXNPC2, LEFT
 	spriteface ROUTE4SNORLAXNPC3, LEFT
+	special SaveMusic
+	special Special_FadeOutMusic
+	pause 20
 	writetext Route4SnorlaxTextUseFlute
 	playsound SFX_POKEFLUTE
 	waitsfx
+	special RestoreMusic
 	writetext Route4SnorlaxTextWakeUp
 	cry SNORLAX
 	waitbutton

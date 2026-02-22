@@ -528,9 +528,13 @@ LakeSudowoodo:
 	yesorno
 	iffalse LakeDontUseFlute
 LakePlayedFluteForSudowoodo::
+	special SaveMusic
+	special Special_FadeOutMusic
+	pause 20
 	writetext LakeSudowoodoTextUseFlute
 	playsound SFX_POKEFLUTE
 	waitsfx
+	special RestoreMusic
 	playsound SFX_SANDSTORM
 	applymovement LAKESUDOWOODO, SudowoodoShakeMovement
 	writetext LakeSudowoodoTextWakeUp

@@ -341,7 +341,6 @@ DEF PLAYER_F EQU __enum__
 	const CHARLOTTE
 	const JUNE
 	const MELANIE
-	const SARAH
 	const MARSHA
 	const KATHY_5
 	const KATHY_6
@@ -697,6 +696,7 @@ DEF PLAYER_F EQU __enum__
 	const ANDREA
 	
 	trainerclass AROMA_LADY
+	const SARAH
 	const LINDA
 	const MARTHA
 	const TAYLOR

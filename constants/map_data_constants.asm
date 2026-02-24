@@ -9,6 +9,7 @@
 	const DUNGEON
 	const FOREST
 	const TUNNEL
+	const CAVE_FOREST
 
 	const_def
 	const PALETTE_AUTO

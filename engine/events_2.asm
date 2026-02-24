@@ -184,6 +184,8 @@ PlaceMapNameSign:: ; b8098 (2e:4098)
 	jr z, .forestcave
 	cp CAVE
 	jr z, .forestcave
+	cp CAVE_FOREST
+	jr z, .forestcave
 	call InitMapNameFrame
 	jr .cont
 .forestcave
@@ -251,6 +253,8 @@ LoadMapNameSignGFX:: ; b80c6
 	cp CAVE
 	jp z, .cave
 	cp FOREST
+	jp z, .forest
+	cp CAVE_FOREST
 	jp z, .forest
 	farcall LoadRouteSignPalette
 	farcall ApplyPals

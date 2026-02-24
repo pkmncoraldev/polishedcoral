@@ -227,6 +227,8 @@ CheckOutdoorMap:: ; 22ee
 	cp TOWN
 	ret z
 	cp FOREST
+	ret z
+	cp CAVE_FOREST
 	ret
 ; 22f4
 

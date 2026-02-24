@@ -832,9 +832,6 @@ FlyFunction: ; ca3b
 	ld de, ENGINE_THIRDBADGE
 	call CheckBadge
 	jr c, .nobadge
-	ld a, [wTileset]
-	cp TILESET_SPOOKY
-	jr z, .outdoors
 	call CheckFlyAllowedOnMap
 	jr nz, .indoors
 .outdoors
@@ -1135,8 +1132,6 @@ dig_incave:
 
 .CheckCanDig: ; cbb8
 	ld a, [wTileset]
-	cp TILESET_SPOOKY
-	jr z, .fail
 	cp TILESET_SOUTH_BUILDINGS
 	jr z, .fail
 	call GetMapPermission

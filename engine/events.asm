@@ -423,6 +423,8 @@ SetUpFiveStepWildEncounterCooldown: ; 968d1
 	ld a, [wPermission]
 	cp CAVE
 	jr z, .cave
+	cp CAVE_FOREST
+	jr z, .cave
 	ld a, 5
 	ld [wWildEncounterCooldown], a
 	ret
@@ -1882,7 +1884,7 @@ CanUseSweetScent:: ; 97cfd
 	ld a, [wPermission]
 	cp CAVE
 	jr z, .ice_check
-	cp DUNGEON
+	cp CAVE_FOREST
 	jr z, .ice_check
 	farcall CheckGrassCollision
 	jr nc, .no

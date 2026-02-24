@@ -17,18 +17,26 @@ SpookhouseHallway2_MapScriptHeader:
 SpookhouseHallway2Callback:
 	checkevent EVENT_SPOOKHOUSE_BEATEN
 	iftrue .beaten
+	checkscene
+	ifequal 12, .change
 	callasm SpookhouseRandomHallway
 	ifequal 1, .change
 .beaten
 	warpmod 1, SPOOKHOUSE_LIVING_ROOM
 	return
 .change
-	changeblock $6, $0, $54
-	callasm GenericFinishBridge
+	domaptrigger SPOOKHOUSE_LIVING_ROOM, $2
+	changeblock $2, $0, $54
+;	callasm GenericFinishBridge
 	warpmod 1, SPOOKHOUSE_TV_ROOM
 	return
 	
 SpookhouseRandomHallway:
+	ld a, [wSpookhouseLivingRoomTrigger]
+	cp 12
+	call z, .reset
+	inc a
+	ld [wSpookhouseLivingRoomTrigger], a
 	call Random
 	cp 10 percent
 	jr c, .yes
@@ -38,6 +46,9 @@ SpookhouseRandomHallway:
 .yes
 	ld a, 1
 	ld [wScriptVar], a
+	ret
+.reset
+	ld a, 1
 	ret
 	
 SpookHousePainting:

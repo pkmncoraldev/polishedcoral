@@ -66,7 +66,7 @@ SpookHouseGhost1:
 	playsound SFX_EXIT_BUILDING
 	disappear SPOOKHOUSE_NPC1
 	clearevent EVENT_SPOOKHOUSE_GHOST_WILL_APPEAR
-	dotrigger $0
+	dotrigger $2
 	end
 	
 SpookHouseGhost2:
@@ -84,7 +84,7 @@ SpookHouseGhost2:
 	playsound SFX_EXIT_BUILDING
 	disappear SPOOKHOUSE_NPC1
 	clearevent EVENT_SPOOKHOUSE_GHOST_WILL_APPEAR
-	dotrigger $0
+	dotrigger $2
 	end
 	
 NoGhost:

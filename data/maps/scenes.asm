@@ -37,6 +37,8 @@ MapTriggers::
 	scene_var SUNBEAM_RESERVE,						  wSunbeamReserveTrigger
 	scene_var EVENTIDE_FOREST,						  wEventideForestTrigger
 	scene_var SPOOKHOUSE_LIVING_ROOM,				  wSpookhouseLivingRoomTrigger
+	scene_var SPOOKHOUSE_HALLWAY_1,					  wSpookhouseLivingRoomTrigger
+	scene_var SPOOKHOUSE_HALLWAY_2,					  wSpookhouseLivingRoomTrigger
 	scene_var SPOOKHOUSE_TV_ROOM,					  wSpookhouseTVRoomTrigger
 	scene_var EVENTIDE_VILLAGE,						  wEventideVillageTrigger
 	scene_var ROUTE_9,								  wRoute9Trigger

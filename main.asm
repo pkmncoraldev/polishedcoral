@@ -4361,7 +4361,6 @@ INCLUDE "data/pokemon/variant_forms.asm"
 SECTION "Code 14", ROMX
 
 INCLUDE "engine/battle/abilities.asm"
-INCLUDE "data/trainers/final_text.asm"
 INCLUDE "engine/player_movement.asm"
 INCLUDE "engine/engine_flags.asm"
 INCLUDE "engine/variables.asm"
@@ -6296,3 +6295,6 @@ SECTION "Coral Data 6", ROMX
 	
 SECTION "Coral Data 7", ROMX
 	INCLUDE "engine/load_map_pals.asm"
+	
+SECTION "Coral Data 8", ROMX
+	INCLUDE "data/trainers/final_text.asm"

@@ -2571,6 +2571,7 @@ EnemyPartyMonEntrance: ; 3cf78
 	call SetEnemyTurn
 	call SpikesDamage
 	call RunActivationAbilities
+	call FinalPkmnAnimation
 	xor a
 	ld [wEnemyMoveStruct + MOVE_ANIM], a
 	ld [wBattlePlayerAction], a
@@ -7536,7 +7537,35 @@ CheckSleepingTreeMon: ; 3eb38
 
 INCLUDE "data/wild/treemons_asleep.asm"
 
-FinalPkmnSlideInEnemyMonFrontpic:
+FinalPkmnAnimation:
+	; if this is not a link battle...
+	ld a, [wLinkMode]
+	and a
+	ret nz
+	; ...and this trainer has final text...
+	farcall GetFinalPkmnTextPointer
+	ret nc
+	; ...and this is their last Pokémon...
+	farcall CheckAnyOtherAliveEnemyMons
+	ret nz
+	; ...then hide the Pokémon...
+	call EmptyBattleTextBox
+	ld c, 20
+	call DelayFrames
+	call SlideEnemyPicOut
+	; ...show their sprite and final dialog...
+	ld a, [wTempEnemyMonSpecies]
+	push af
+	call BattleWinSlideInEnemyTrainerFrontpic
+	farcall WriteFinalPkmnText
+	pop af
+	ld [wTempEnemyMonSpecies], a
+	; ...and return the Pokémon
+	call EmptyBattleTextBox
+	call ApplyTilemapInVBlank
+	call SlideEnemyPicOut
+	ld c, 10
+	call DelayFrames
 	call FinishBattleAnim
 	call GetMonFrontpic
 	hlcoord 19, 0

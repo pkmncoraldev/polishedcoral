@@ -87,6 +87,7 @@ SpookyForestSavedKidLeft:
 	closetext
 	applymovement SPOOKY_FOREST_ESCORT_LOST_KID, Movement_SpookyForestSavedKidLeft
 	disappear SPOOKY_FOREST_ESCORT_LOST_KID
+	pause 10
 	warp_stealth UP, SPOOKY_FOREST_1, $6, $f
 	end
 	
@@ -106,6 +107,7 @@ SpookyForestSavedKidRight:
 	closetext
 	applymovement SPOOKY_FOREST_ESCORT_LOST_KID, Movement_SpookyForestSavedKidRight
 	disappear SPOOKY_FOREST_ESCORT_LOST_KID
+	pause 10
 	warp_stealth UP, SPOOKY_FOREST_1, $7, $f
 	end
 

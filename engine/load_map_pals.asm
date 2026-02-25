@@ -1,3 +1,20 @@
+LoadTownSignPalette::
+	ld a, [wMapGroup]
+	ld l, a
+	ld h, 0
+	add hl, hl
+	add hl, hl
+	add hl, hl
+	ld de, RoofPalsDusk
+	add hl, de
+rept 4
+	inc hl
+endr
+	ld de, wUnknBGPals + 7 palettes + 2
+	ld bc, 4
+	ld a, $5
+	jp FarCopyWRAM
+
 LightUpPlayerPal:
 	ld a, [wIsNearCampfire]
 	bit 0, a
@@ -1537,6 +1554,9 @@ INCLUDE "maps/palettes/obpals/crystalball.pal"
 
 RoofPals::
 INCLUDE "maps/palettes/roofpals/roof.pal"
+
+RoofPalsDusk::
+INCLUDE "maps/palettes/roofpals/roofdusk.pal"
 
 StandardGrassPalette::
 INCLUDE "maps/palettes/obpals/grass.pal"

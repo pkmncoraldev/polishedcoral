@@ -908,24 +908,6 @@ LoadPlayerPalettewUnknOBPalsDe:
 .pink
 	ld de, wUnknOBPals + 6 palettes
 	ret
-
-LoadTownSignPalette::
-	ld a, [wMapGroup]
-	ld l, a
-	ld h, 0
-	add hl, hl
-	add hl, hl
-	add hl, hl
-	ld de, RoofPalsDusk
-	add hl, de
-rept 4
-	inc hl
-endr
-	ld de, wUnknBGPals + 7 palettes + 2
-	ld bc, 4
-	ld a, $5
-	jp FarCopyWRAM
-
 	
 Palette_b309: ; b309 mobile
 	RGB 31, 31, 31
@@ -938,9 +920,6 @@ Palette_b311: ; b311 not mobile
 	RGB 17, 19, 31
 	RGB 14, 16, 31
 	RGB 00, 00, 00
-	
-RoofPalsDusk::
-INCLUDE "maps/palettes/roofpals/roofdusk.pal"
 
 INCLUDE "data/pokemon/palettes.asm"
 

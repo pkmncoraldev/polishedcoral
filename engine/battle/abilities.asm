@@ -1830,7 +1830,7 @@ EnemyFlowerGiftAbility:
 	cp WEATHER_SUN
 	ret nz
 	ld a, $23
-	jp ApplyPhysicalDefenseDamageMod
+	jp ApplySpecialDefenseDamageMod
 
 EnemySolidRockAbility:
 EnemyFilterAbility:

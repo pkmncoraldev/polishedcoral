@@ -1010,7 +1010,7 @@ DisguiseDescription:
 	
 FlowerGiftDescription:
 	db    "Boosts ATK and"
-	next1 "SP.ATK in sun.@"
+	next1 "SP.DEF in sun.@"
 	
 TriageDescription:
 	db    "Healing moves"

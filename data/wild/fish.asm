@@ -9,6 +9,7 @@ FishGroups: ; 92488
 	dbwww 75 percent + 1, .Grove_Old,        	 .Grove_Good,        	 .Grove_Super
 	dbwww 75 percent + 1, .Route_3_Pond_Old,     .Route_3_Pond_Good,     .Route_3_Pond_Super
 	dbwww 75 percent + 1, .Sunbeam_Reserve_Old,  .Sunbeam_Reserve_Good,  .Sunbeam_Reserve_Super
+	dbwww 75 percent + 1, .Snow_Old,  			 .Snow_Good, 			 .Snow_Super
 	dbwww 75 percent + 1, .Sewer_Old,  			 .Sewer_Good, 			 .Sewer_Super
 	dbwww 75 percent + 1, .Temple_Old,  		 .Temple_Good, 			 .Temple_Super
 	dbwww 75 percent + 1, .Autumn_Old,  		 .Autumn_Good, 			 .Autumn_Super
@@ -130,6 +131,21 @@ FishGroups: ; 92488
 	db 100 percent, SLOWPOKE,   15	;100%
 .Sunbeam_Reserve_Super:
 	db 100 percent, SLOWPOKE,   34	;100%
+
+.Snow_Old:
+	db  70 percent, MAGIKARP,   23	;70%
+	db  85 percent, MAGIKARP,   23	;15%
+	db 100 percent, MAGIKARP,   23	;15%
+.Snow_Good:
+	db  40 percent, MARILL,   	23	;40%
+	db  70 percent, POLIWAG,  	23	;30%
+	db  90 percent, MAGIKARP,   23	;20%
+	db 100 percent, MAGIKARP, 	23	;10%
+.Snow_Super:
+	db  40 percent, AZUMARILL,  34	;40%
+	db  70 percent, POLIWHIRL,  34	;30%
+	db  90 percent, AZUMARILL, 	34	;20%
+	db 100 percent, POLIWHIRL, 	34	;10%
 
 .Sewer_Old:
 .Sewer_Good:

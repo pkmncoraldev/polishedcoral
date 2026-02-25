@@ -145,15 +145,12 @@ FlickerMart:
 	db -1
 	
 TwinkleMart:
-	db 17 ; # items
+	db 14 ; # items
 	db POKE_BALL
 	db GREAT_BALL
-	db POTION
 	db SUPER_POTION
 	db ESCAPE_ROPE
-	db REPEL
 	db SUPER_REPEL
-	db ANTIDOTE
 	db PARALYZEHEAL
 	db AWAKENING
 	db BURN_HEAL
@@ -162,7 +159,7 @@ TwinkleMart:
 	db X_DEFEND
 	db X_SPEED
 	db X_SPCL_ATK
-	db X_SPCL_DEF
+;	db X_SPCL_DEF
 	db -1
 	
 LusterMart:

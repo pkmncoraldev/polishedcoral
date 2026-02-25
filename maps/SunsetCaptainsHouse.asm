@@ -151,7 +151,8 @@ SunsetCaptainFirstRidetoIslandText1:
 	line "take you there!"
 	
 	para "It might be a long"
-	line "voyage."
+	line "while before you"
+	cont "can come back."
 	
 	para "You should take"
 	line "care of anything"

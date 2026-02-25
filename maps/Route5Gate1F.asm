@@ -351,7 +351,7 @@ Route5Gate1FNPC4Text6:
 	
 	para "but it's useful"
 	line "when catching a"
-	cont "WILD #MON!"
+	cont "wild #MON!"
 	done
 	
 Route5Gate1FNPC4Text7:

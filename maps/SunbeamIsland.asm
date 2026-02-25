@@ -806,8 +806,8 @@ SunbeamSnareFallAsleepText:
 	para "That song is so"
 	line "soothing…"
 
-	para "I think I'll <WAIT_S>just<WAIT_S>"
-	line "close my <WAIT_M>eyes for"
+	para "I think I'll… <WAIT_M>just…<WAIT_M>"
+	line "close my… <WAIT_L>eyes for"
 	cont "a sec…"
 
 	para "…"

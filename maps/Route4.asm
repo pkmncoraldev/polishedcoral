@@ -34,7 +34,7 @@ Route4_MapScriptHeader:
 	itemball_event 33,  9, SILK_SCARF, 1, EVENT_ROUTE_4_SILK_SCARF
 	itemball_event 53, 13, POKE_DOLL, 1, EVENT_ROUTE_4_POKE_DOLL
 	fruittree_event 16, 15, FRUITTREE_ROUTE_4_1, CHERI_BERRY
-	fruittree_event 35, 12, FRUITTREE_ROUTE_4_2, PECHA_BERRY
+	fruittree_event 35, 13, FRUITTREE_ROUTE_4_2, PECHA_BERRY
 
 	const_def 1 ; object constants
 	const ROUTE4SNORLAX1

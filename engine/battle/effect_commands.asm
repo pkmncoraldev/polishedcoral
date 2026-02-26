@@ -9431,7 +9431,7 @@ GetUserItemAfterUnnerve::
 	call IsInArray
 	pop hl
 	pop de
-	ret c
+	ret nc
 	ld hl, NoItem
 	ld b, HELD_NONE
 	ret
@@ -9453,7 +9453,6 @@ EdibleBerries:
 	db SUNSHINE_TEA
 	db MOOMOO_BREW
 	db DUBIOUS_DOG
-	; not eaten, so unaffected: jaboca, rowap
 	db -1
 NoItem:
 	db NO_ITEM

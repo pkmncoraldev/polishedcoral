@@ -137,7 +137,8 @@ LusterMallBallShop_NPC2:
 	faceplayer
 	opentext
 	writetext LusterMallBallShop_NPC2Text4
-	waitbutton
+	playsound SFX_KEY_ITEM
+	waitsfx
 	closetext
 	disappear LUSTER_MALL_BALL_SHOP_CLERK
 	disappear LUSTER_MALL_BALL_SHOP_CLERK2

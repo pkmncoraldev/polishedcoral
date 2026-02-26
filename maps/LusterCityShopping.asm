@@ -251,6 +251,15 @@ Luster2Delivery:
 	callasm LoadMapPals
 	special FadeInPalettes
 	pause 7
+	opentext
+	writetext LusterShoppingDeliveryText4
+	playsound SFX_DEX_FANFARE_80_109
+	waitsfx
+	farwritetext StdBlankText
+	pause 6
+	writetext LusterShoppingDeliveryText5
+	waitbutton
+	closetext
 	setevent EVENT_PART_TIME_JOB_SAVED_DELIVERY
 	end
 
@@ -547,6 +556,16 @@ LusterShoppingDeliveryText3:
 	
 	para "I'm already super"
 	line "late!"
+	done
+	
+LusterShoppingDeliveryText4:
+	text "You finished your"
+	line "job!"
+	done
+	
+LusterShoppingDeliveryText5:
+	text "You should report"
+	line "to your boss."
 	done
 	
 Movement_LusterShoppingSnare1:

@@ -616,11 +616,11 @@ SafeguardDescription:
 	next "status problems.@"
 
 ReflectDescription:
-	db   "Raises Defense"
+	db   "Raises DEFENSE"
 	next "with a barrier.@"
 
 LightScreenDescription:
-	db   "Ups Spcl.Def with"
+	db   "Ups SPCL.DEF with"
 	next "a wall of light.@"
 
 SoftboiledDescription:
@@ -854,7 +854,7 @@ EarthquakeDescription:
 	next "vs. flying foes.@"
 
 RageDescription:
-	db   "Raises Attack if"
+	db   "Raises ATTACK if"
 	next "the user is hit.@"
 
 TeleportDescription:
@@ -957,7 +957,7 @@ ProtectDescription:
 
 BellyDrumDescription:
 	db   "Sacrifices HP to"
-	next "maximize Attack.@"
+	next "maximize ATTACK.@"
 
 ForesightDescription:
 	db   "Negates foe's eva-"
@@ -981,7 +981,7 @@ RolloutDescription:
 
 SwaggerDescription:
 	db   "Causes confusion"
-	next "but raises Attack.@"
+	next "but raises ATTACK.@"
 
 MeanLookDescription:
 	db   "Prevents fleeing"

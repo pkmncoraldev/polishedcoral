@@ -635,7 +635,7 @@ SavedAlmostAllGirlsText:
 SavedAllGirlsScript:
 	opentext
 	writetext SavedAllGirlsText1
-	playsound SFX_REGISTER_PHONE_NUMBER
+	playsound SFX_DEX_FANFARE_80_109
 	waitsfx
 	farwritetext StdBlankText
 	pause 6

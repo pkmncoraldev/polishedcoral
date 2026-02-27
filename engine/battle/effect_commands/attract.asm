@@ -1,16 +1,5 @@
-BattleCommand_cutecharm:
-	ld a, BATTLE_VARS_SUBSTATUS1
-	call GetBattleVarAddr
-	bit SUBSTATUS_IN_LOVE, [hl]
-	jr z, BattleCommand_attract.failed
-	jr BattleCommand_attract.cont
 BattleCommand_attract:
 ; attract
-	ld a, BATTLE_VARS_SUBSTATUS1_OPP
-	call GetBattleVarAddr
-	bit SUBSTATUS_IN_LOVE, [hl]
-	jr z, .failed
-.cont
 	ld a, [wAttackMissed]
 	and a
 	jr nz, .failed
@@ -18,6 +7,10 @@ BattleCommand_attract:
 	jr c, .failed
 	jr z, .failed
 	call CheckHiddenOpponent
+	jr nz, .failed
+	ld a, BATTLE_VARS_SUBSTATUS1_OPP
+	call GetBattleVarAddr
+	bit SUBSTATUS_IN_LOVE, [hl]
 	jr nz, .failed
 	call GetOpponentAbilityAfterMoldBreaker
 	cp OBLIVIOUS

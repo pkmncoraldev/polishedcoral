@@ -734,7 +734,7 @@ CuteCharmAbility:
 	ret z
 	call DisableAnimations
 	; this runs ShowAbilityActivation when relevant
-	farcall BattleCommand_cutecharm
+	farcall BattleCommand_attract
 	jp EnableAnimations
 
 RoughSkinAbility:

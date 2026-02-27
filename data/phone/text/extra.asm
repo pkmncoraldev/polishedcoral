@@ -116,11 +116,12 @@ SpamPhoneText2:
 	done
 	
 SpamPhoneText3:
-	text "You don't want to"
-	line "miss this deal!"
+	text "You're pre-approved"
+	line "for a loan of up"
+	cont "to ¥50,000."
 	
-	para "Buy RARE CANDY for"
-	line "the low price of-<WAIT_L>"
+	para "Call us for more"
+	line "information at-<WAIT_L>"
 	done
 	
 SpamPhoneText4:
@@ -129,8 +130,9 @@ SpamPhoneText4:
 	
 	para "Congratulations!"
 	
-	para "You've won a free"
-	line "NUGGET!"
+	para "You've just won an"
+	line "infinite supply of"
+	cont "RARE CANDY!"
 	
 	para "In order to claim"
 	line "your prize, you-<WAIT_L>"

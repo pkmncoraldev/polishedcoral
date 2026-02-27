@@ -259,7 +259,7 @@ LusterMallBallShop_NPC2Text5:
 	para "He taught me to"
 	line "make #BALLS out"
 	cont "of APRICORNS when"
-	cont "I was just a kid."
+	cont "I was just a girl."
 	
 	para "We still make our"
 	line "#BALLS the old-"

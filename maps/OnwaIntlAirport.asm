@@ -391,7 +391,8 @@ OnwaIntlAirportWendyText4:
 	
 	para "If you're looking"
 	line "for your next GYM"
-	cont "battle,"
+	cont "battle after"
+	cont "LUSTER CITY,"
 	
 	para "you're probably "
 	line "going to wanna"
@@ -421,9 +422,6 @@ OnwaIntlAirportWendyText4:
 	para "Give me a call"
 	line "sometime if you"
 	cont "need a lift."
-	
-	para "It was great"
-	line "seeing you!"
 	done
 	
 OnwaIntlAirportWendyText5:

@@ -827,7 +827,7 @@ TrainCabin1OfficerText2:
 	
 TrainCabin1Snare1Text1:
 	text "I'm getting tired"
-	line "of this, <WAIT_S>old man."
+	line "of this, old man."
 	
 	para "Hand it over!"
 	done

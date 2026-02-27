@@ -370,7 +370,7 @@ Route22Snare2Text2:
 	done
 	
 Route22Snare2WinText:
-	text "Gahh!"
+	text "Cripes!"
 	done
 	
 Route22Snare3:

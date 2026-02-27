@@ -163,6 +163,7 @@ GlintGroveDeepSmeargleScene:
 	applymovement GLINTSECRET_MINA, Movement_GlintDeepMinaLeave
 	playsound SFX_EXIT_BUILDING
 	disappear GLINTSECRET_MINA
+	waitsfx
 	dotrigger $4
 	clearevent EVENT_MINA_APARTMENT_EMPTY
 	clearevent EVENT_UNIQUE_ENCOUNTER_MINA_JOURNAL

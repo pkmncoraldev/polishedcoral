@@ -1625,24 +1625,24 @@
 	map_id LUSTER_SEWERS_B1F
 	db 5 percent, 5 percent, 5 percent ; encounter rates: morn/day/nite
 	; morn
-	db 27, RATICATE		;30%
-	db 27, GOLBAT		;30%
+	db 24, RATICATE		;30%
+	db 24, GOLBAT		;30%
 	db 27, GRIMER		;20%
 	db 27, CROAGUNK		;10%
 	db 27, ZUBAT		;5%
 	db 27, ZUBAT		;4%
 	db 27, ZUBAT		;1%
 	; day
-	db 27, RATICATE		;30%
-	db 27, GOLBAT		;30%
+	db 24, RATICATE		;30%
+	db 24, GOLBAT		;30%
 	db 27, GRIMER		;20%
 	db 27, CROAGUNK		;10%
 	db 27, ZUBAT		;5%
 	db 27, ZUBAT		;4%
 	db 27, ZUBAT		;1%
 	; nite
-	db 27, RATICATE		;30%
-	db 27, GOLBAT		;30%
+	db 24, RATICATE		;30%
+	db 24, GOLBAT		;30%
 	db 27, GRIMER		;20%
 	db 27, CROAGUNK		;10%
 	db 27, ZUBAT		;5%
@@ -1652,24 +1652,24 @@
 	map_id LUSTER_SEWERS_B2F
 	db 5 percent, 5 percent, 5 percent ; encounter rates: morn/day/nite
 	; morn
-	db 27, RATICATE		;30%
-	db 27, GOLBAT		;30%
+	db 24, RATICATE		;30%
+	db 24, GOLBAT		;30%
 	db 27, GRIMER		;20%
 	db 27, CROAGUNK		;10%
 	db 27, RATTATA		;5%
 	db 27, RATTATA		;4%
 	db 27, RATTATA		;1%
 	; day
-	db 27, RATICATE		;30%
-	db 27, GOLBAT		;30%
+	db 24, RATICATE		;30%
+	db 24, GOLBAT		;30%
 	db 27, GRIMER		;20%
 	db 27, CROAGUNK		;10%
 	db 27, RATTATA		;5%
 	db 27, RATTATA		;4%
 	db 27, RATTATA		;1%
 	; nite
-	db 27, RATICATE		;30%
-	db 27, GOLBAT		;30%
+	db 24, RATICATE		;30%
+	db 24, GOLBAT		;30%
 	db 27, GRIMER		;20%
 	db 27, CROAGUNK		;10%
 	db 27, RATTATA		;5%

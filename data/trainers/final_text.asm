@@ -116,44 +116,44 @@ FinalTextClassList:
 	dw Darcy_RematchFinalPkmnText
 
 .FinalText_Rival:
-	dw Rival_1_1_FinalPkmnText
-	dw Rival_1_2_FinalPkmnText
-	dw Rival_1_3_FinalPkmnText
-	dw Rival_1_4_FinalPkmnText
-	dw Rival_1_5_FinalPkmnText
-	dw Rival_1_6_FinalPkmnText
-	dw Rival_2_1_FinalPkmnText
-	dw Rival_2_2_FinalPkmnText
-	dw Rival_2_3_FinalPkmnText
-	dw Rival_2_4_FinalPkmnText
-	dw Rival_2_5_FinalPkmnText
-	dw Rival_2_6_FinalPkmnText
-	dw Rival_3_1_FinalPkmnText
-	dw Rival_3_2_FinalPkmnText
-	dw Rival_3_3_FinalPkmnText
-	dw Rival_3_4_FinalPkmnText
-	dw Rival_3_5_FinalPkmnText
-	dw Rival_3_6_FinalPkmnText
-	dw Rival_4_1_FinalPkmnText
-	dw Rival_4_2_FinalPkmnText
-	dw Rival_4_3_FinalPkmnText
-	dw Rival_4_4_FinalPkmnText
-	dw Rival_4_5_FinalPkmnText
-	dw Rival_4_6_FinalPkmnText
+	dw -1
+	dw -1
+	dw -1
+	dw -1
+	dw -1
+	dw -1
+	dw Rival_2_FinalPkmnText
+	dw Rival_2_FinalPkmnText
+	dw Rival_2_FinalPkmnText
+	dw Rival_2_FinalPkmnText
+	dw Rival_2_FinalPkmnText
+	dw Rival_2_FinalPkmnText
+	dw Rival_3_FinalPkmnText
+	dw Rival_3_FinalPkmnText
+	dw Rival_3_FinalPkmnText
+	dw Rival_3_FinalPkmnText
+	dw Rival_3_FinalPkmnText
+	dw Rival_3_FinalPkmnText
+	dw Rival_4_FinalPkmnText
+	dw Rival_4_FinalPkmnText
+	dw Rival_4_FinalPkmnText
+	dw Rival_4_FinalPkmnText
+	dw Rival_4_FinalPkmnText
+	dw Rival_4_FinalPkmnText
 	
 .FinalText_Rival_S:
-	dw Rival_S_1_1_FinalPkmnText
-	dw Rival_S_1_2_FinalPkmnText
-	dw Rival_S_1_3_FinalPkmnText
-	dw Rival_S_1_4_FinalPkmnText
-	dw Rival_S_1_5_FinalPkmnText
-	dw Rival_S_1_6_FinalPkmnText
-	dw Rival_S_2_1_FinalPkmnText
-	dw Rival_S_2_2_FinalPkmnText
-	dw Rival_S_2_3_FinalPkmnText
-	dw Rival_S_2_4_FinalPkmnText
-	dw Rival_S_2_5_FinalPkmnText
-	dw Rival_S_2_6_FinalPkmnText
+	dw Rival_S_1_FinalPkmnText
+	dw Rival_S_1_FinalPkmnText
+	dw Rival_S_1_FinalPkmnText
+	dw Rival_S_1_FinalPkmnText
+	dw Rival_S_1_FinalPkmnText
+	dw Rival_S_1_FinalPkmnText
+	dw Rival_S_2_FinalPkmnText
+	dw Rival_S_2_FinalPkmnText
+	dw Rival_S_2_FinalPkmnText
+	dw Rival_S_2_FinalPkmnText
+	dw Rival_S_2_FinalPkmnText
+	dw Rival_S_2_FinalPkmnText
 
 .FinalText_Kage:
 	dw Kage_SunbeamFinalPkmnText
@@ -180,7 +180,120 @@ FinalTextClassList:
 	
 .FinalText_PoliceCaptain:
 	dw PoliceCaptain_FinalPkmnText
+	
+Rival_2_FinalPkmnText:
+	text "Come on!"
+	
+	para "What was that,"
+	line "SNUBBULL!?"
+	prompt
+	
+Rival_3_FinalPkmnText:
+	text "How the-?"
+	
+	para "Argh!<WAIT_S> Get it"
+	line "together!"
+	prompt
+	
+Rival_4_FinalPkmnText:
+	text "Maybe he's right"
+	line "about you…"
+	
+	para "Maybe you really"
+	line "ARE…"
+	prompt
+	
+Rival_S_1_FinalPkmnText:
+	text "Of course…"
+	
+	para "It's always the"
+	line "same with you!"
+	prompt
+	
+Rival_S_2_FinalPkmnText:
+	text "This is a waste"
+	line "of my time!"
+	prompt
+	
+Stanley_FirstBattleFinalPkmnText:
+Stanley_RematchFinalPkmnText:
+	text "Interesting…"
+	
+	para "But it's not"
+	line "over yet!"
+	done
+	
+Rodney_FirstBattleFinalPkmnText:
+Rodney_RematchFinalPkmnText:
+	text "GAH <WAIT_S>HA <WAIT_S>HA!"
+	
+	para "Here comes the"
+	line "tsunami!"
+	done
+	
+Wendy_FirstBattleFinalPkmnText:
+Wendy_RematchFinalPkmnText:
+	text "Woah, you aren't"
+	line "kidding around."
+	
+	para "I'd better get"
+	line "serious!"
+	done
 
+Charlie_FirstBattleFinalPkmnText:
+Charlie_RematchFinalPkmnText:
+	text "Keep it together"
+	line "now, kid."
+	
+	para "Don't let the"
+	line "heat get to you!"
+	done
+
+Polly_FirstBattleFinalPkmnText:
+	text "Uhh… <WAIT_M>Wait.<WAIT_M>"
+	line "What's going on?"
+	
+	para "What's this"
+	line "feeling?"
+	done
+	
+Polly_RematchFinalPkmnText:
+	text "Yes! <WAIT_M>Yes!"
+	
+	para "That feeling again!"
+	done
+	
+Leilani_FirstBattleFinalPkmnText:
+Leilani_RematchFinalPkmnText:
+	text "Settle down."
+	
+	para "You haven't got"
+	line "the best of GRAMMA"
+	cont "yet, dear."
+	done
+	
+Rocky_FirstBattleFinalPkmnText:
+Rocky_RematchFinalPkmnText:
+	text "Not bad!"
+	
+	para "You really are"
+	line "something, huh?"
+	done
+	
+Darcy_FirstBattleFinalPkmnText:
+	text "Come on, <PLAYER>!"
+	
+	para "It's time for"
+	line "both of use to"
+	cont "prove ourselves!"
+	done
+	
+Darcy_RematchFinalPkmnText:
+	text "It's no wonder"
+	line "GRANDPA deemed"
+	cont "you worthy!"
+	done
+	
 Kage_SunbeamFinalPkmnText:
 	text "You got guts, kid."
 	line "I'll give you that."
@@ -189,67 +302,65 @@ Kage_SunbeamFinalPkmnText:
 	line "URSARING, though!"
 	prompt
 	
-Stanley_FirstBattleFinalPkmnText:
-Stanley_RematchFinalPkmnText:
-Rodney_FirstBattleFinalPkmnText:
-Rodney_RematchFinalPkmnText:
-Wendy_FirstBattleFinalPkmnText:
-Wendy_RematchFinalPkmnText:
-Charlie_FirstBattleFinalPkmnText:
-Charlie_RematchFinalPkmnText:
-Polly_FirstBattleFinalPkmnText:
-Polly_RematchFinalPkmnText:
-Leilani_FirstBattleFinalPkmnText:
-Leilani_RematchFinalPkmnText:
-Rocky_FirstBattleFinalPkmnText:
-Rocky_RematchFinalPkmnText:
-Darcy_FirstBattleFinalPkmnText:
-Darcy_RematchFinalPkmnText:
-Rival_1_1_FinalPkmnText:
-Rival_1_2_FinalPkmnText:
-Rival_1_3_FinalPkmnText:
-Rival_1_4_FinalPkmnText:
-Rival_1_5_FinalPkmnText:
-Rival_1_6_FinalPkmnText:
-Rival_2_1_FinalPkmnText:
-Rival_2_2_FinalPkmnText:
-Rival_2_3_FinalPkmnText:
-Rival_2_4_FinalPkmnText:
-Rival_2_5_FinalPkmnText:
-Rival_2_6_FinalPkmnText:
-Rival_3_1_FinalPkmnText:
-Rival_3_2_FinalPkmnText:
-Rival_3_3_FinalPkmnText:
-Rival_3_4_FinalPkmnText:
-Rival_3_5_FinalPkmnText:
-Rival_3_6_FinalPkmnText:
-Rival_4_1_FinalPkmnText:
-Rival_4_2_FinalPkmnText:
-Rival_4_3_FinalPkmnText:
-Rival_4_4_FinalPkmnText:
-Rival_4_5_FinalPkmnText:
-Rival_4_6_FinalPkmnText:
-Rival_S_1_1_FinalPkmnText:
-Rival_S_1_2_FinalPkmnText:
-Rival_S_1_3_FinalPkmnText:
-Rival_S_1_4_FinalPkmnText:
-Rival_S_1_5_FinalPkmnText:
-Rival_S_1_6_FinalPkmnText:
-Rival_S_2_1_FinalPkmnText:
-Rival_S_2_2_FinalPkmnText:
-Rival_S_2_3_FinalPkmnText:
-Rival_S_2_4_FinalPkmnText:
-Rival_S_2_5_FinalPkmnText:
-Rival_S_2_6_FinalPkmnText:
 Kage_InnFinalPkmnText:
+	text "ENOUGH!"
+	
+	para "I will cut you"
+	line "down to size,"
+	cont "you brat!"
+	done
+	
 Locke_TrainFinalPkmnText:
+	text "Who do you think"
+	line "you are?"
+	
+	para "TEAM SNARE isn't"
+	line "to be trifled"
+	cont "with!"
+	done
+	
 Locke_MuseumFinalPkmnText:
+	text "Is this what"
+	line "I'm reduced to?"
+
+	para "Just buying a"
+	line "child some time?"
+	done
+	
 Frankie_FinalPkmnText:
+	text "GRAAAHHHH!"
+	
+	para "NIDOKIIIIINGS!"
+	done
+	
 MallCop_FinalPkmnText:
+	text "We got a 87-12"
+	line "here!"
+	
+	para "Code blue!"
+	line "Code purple!"
+	
+	para "Requesting"
+	line "backup!"
+	done
+	
 DojoMaster_FinalPkmnText:
+	text "…"
+	done
+
 Erika_FinalPkmnText:
 LedianRanger_FinalPkmnText:
+	text "Go! <WAIT_S>Go!<WAIT_S>"
+	line "LEDIAN RANGER!"
+	
+	para "Activate HYPER"
+	line "MECHA BATTLE MODE!"
+	done
+
 PoliceCaptain_FinalPkmnText:
-	text "FINAL #MON"
+	text "NO! <WAIT_S>NO! <WAIT_S>NO! <WAIT_S>NO! <WAIT_S>NO!"
+	
+	para "Respect my"
+	line "authority!"
 	prompt
 	

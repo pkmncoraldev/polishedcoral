@@ -1764,52 +1764,52 @@
 	db 29, WINGULL		;30%
 	db 29, TOUCANNON	;20%
 	db 29, TOUCANNON	;10%
-	db 29, SCYTHER		;5%
-	db 29, SCYTHER		;4%
-	db 29, SCYTHER		;1%
+	db 27, SCYTHER		;5%
+	db 27, SCYTHER		;4%
+	db 27, SCYTHER		;1%
 	; day
 	db 29, TRUMBEAK		;30%
 	db 29, WINGULL		;30%
 	db 29, TOUCANNON	;20%
 	db 29, TOUCANNON	;10%
-	db 29, SCYTHER		;5%
-	db 29, SCYTHER		;4%
-	db 29, SCYTHER		;1%
+	db 27, SCYTHER		;5%
+	db 27, SCYTHER		;4%
+	db 27, SCYTHER		;1%
 	; nite
 	db 29, TRUMBEAK		;30%
 	db 29, WINGULL		;30%
 	db 29, TOUCANNON	;20%
 	db 29, TOUCANNON	;10%
-	db 29, SCYTHER		;5%
-	db 29, SCYTHER		;4%
-	db 29, SCYTHER		;1%
+	db 27, SCYTHER		;5%
+	db 27, SCYTHER		;4%
+	db 27, SCYTHER		;1%
 	
 	map_id CONNECTING_CAVERN
 	db 5 percent, 5 percent, 5 percent ; encounter rates: morn/day/nite
 	; morn
-	db 31, NOIBAT		;30%
-	db 31, GOLBAT		;30%
-	db 31, ZUBAT		;20%
-	db 31, DRILBUR		;10%
-	db 31, ZUBAT		;5%
-	db 31, ZUBAT		;4%
-	db 31, ZUBAT		;1%
+	db 27, NOIBAT		;30%
+	db 25, GOLBAT		;30%
+	db 27, ZUBAT		;20%
+	db 27, DRILBUR		;10%
+	db 27, ZUBAT		;5%
+	db 27, ZUBAT		;4%
+	db 27, ZUBAT		;1%
 	; day
-	db 31, NOIBAT		;30%
-	db 31, GOLBAT		;30%
-	db 31, ZUBAT		;20%
-	db 31, DRILBUR		;10%
-	db 31, ZUBAT		;5%
-	db 31, ZUBAT		;4%
-	db 31, ZUBAT		;1%
+	db 27, NOIBAT		;30%
+	db 25, GOLBAT		;30%
+	db 27, ZUBAT		;20%
+	db 27, DRILBUR		;10%
+	db 27, ZUBAT		;5%
+	db 27, ZUBAT		;4%
+	db 27, ZUBAT		;1%
 	; nite
-	db 31, NOIBAT		;30%
-	db 31, GOLBAT		;30%
-	db 31, ZUBAT		;20%
-	db 31, DRILBUR		;10%
-	db 31, ZUBAT		;5%
-	db 31, ZUBAT		;4%
-	db 31, ZUBAT		;1%
+	db 27, NOIBAT		;30%
+	db 25, GOLBAT		;30%
+	db 27, ZUBAT		;20%
+	db 27, DRILBUR		;10%
+	db 27, ZUBAT		;5%
+	db 27, ZUBAT		;4%
+	db 27, ZUBAT		;1%
 	
 	map_id FAKE_ROUTE_1
 	db 12 percent, 12 percent, 12 percent ; encounter rates: morn/day/nite

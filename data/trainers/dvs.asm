@@ -67,8 +67,8 @@ TrainerClassDVsAndPersonality: ; 270d6
 	db   8, $88, $88, $88, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; pokefanm
 	db   8, $88, $88, $88, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM ; pokefanf
 	db  48, $99, $99, $99, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; officer
-	db  20, $BB, $BB, $BB, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; pokemaniac
-	db  20, $BB, $BB, $BB, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; super nerd
+	db  20, $55, $55, $55, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; pokemaniac
+	db  20, $88, $88, $88, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; super nerd
 	db  12, $55, $55, $55, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM ; lass
 	db  12, $55, $55, $55, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM ; beauty
 	db  12, $55, $55, $55, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; firebreather
@@ -83,10 +83,10 @@ TrainerClassDVsAndPersonality: ; 270d6
 	db  24, $77, $77, $77, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM ; swimmerf
 	db  24, $88, $88, $88, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; burglar
 	db  24, $DD, $DD, $DD, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; scientist
-	db  24, $DD, $DD, $DD, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; boarder
-	db  24, $DD, $DD, $DD, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM ; skier
-	db  48, $BB, $88, $88, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; blackbelt
-	db  24, $DD, $DD, $DD, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM ; teacher
+	db  24, $55, $55, $55, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; boarder
+	db  24, $55, $55, $55, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM ; skier
+	db  48, $88, $88, $88, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; blackbelt
+	db  24, $88, $88, $88, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM ; teacher
 	db  24, $88, $88, $88, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; guitarist
 	db  24, $88, $88, $88, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; biker
 	db  48, $88, $88, $88, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; cueball
@@ -98,19 +98,19 @@ TrainerClassDVsAndPersonality: ; 270d6
 	db 252, $DD, $DD, $DD, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; triobrob
 	db 252, $DD, $DD, $DD, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; triobroy
 	db  24, $99, $99, $99, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; disguiseman
-	db  40, $9B, $9B, $B9, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM ; bikinip
-	db  40, $BB, $BB, $BB, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM ; bikinir
-	db  40, $BB, $BB, $BB, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM ; bikiniy
-	db  24, $AA, $AA, $AA, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; delinquentm
-	db  24, $AA, $AA, $AA, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM ; delinquentf
-	db  24, $AA, $AA, $AA, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; bunearym
-	db  24, $AA, $AA, $AA, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM ; bunearyf
+	db  40, $85, $85, $85, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM ; bikinip
+	db  40, $88, $88, $88, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM ; bikinir
+	db  40, $88, $88, $88, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM ; bikiniy
+	db  24, $55, $55, $55, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; delinquentm
+	db  24, $55, $55, $55, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM ; delinquentf
+	db  24, $55, $55, $55, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; bunearym
+	db  24, $55, $55, $55, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM ; bunearyf
 	db  32, $88, $88, $88, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM ; frankie
 	db   0, $66, $66, $66, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; mall cop
-	db  24, $DD, $DD, $DD, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; skater
-	db  16, $88, $88, $88, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; spatrainer
-	db  16, $88, $88, $88, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM ; spatrainerf
-	db  16, $88, $88, $88, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM ; aromalady
+	db  24, $77, $77, $77, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; skater
+	db  16, $55, $55, $55, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; spatrainer
+	db  16, $55, $55, $55, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM ; spatrainerf
+	db  16, $55, $55, $55, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM ; aromalady
 	db  24, $88, $88, $88, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM ; tuber
 	db  48, $BB, $88, $88, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM ; battlegirl
 	db 100, $99, $99, $99, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; dojomaster
@@ -127,7 +127,7 @@ TrainerClassDVsAndPersonality: ; 270d6
 	db 100, $BB, $BB, $BB, ABILITY_2 | QUIRKY, MALE | PLAIN_FORM   ; policecaptain
 	db  24, $88, $88, $88, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM   ; museumguide
 	db  24, $88, $88, $88, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM   ; museumguide2
-	db  48, $BB, $BB, $BB, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; businessman
+	db  48, $88, $88, $88, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; businessman
 	db 252, PERFECT_DVS,   ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; towertycoon
 
 ; 2715c

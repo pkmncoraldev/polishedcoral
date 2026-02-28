@@ -405,7 +405,7 @@ EventideGymWendyTextWinRematch:
 	done
 	
 EventideGymWendyTextLoss:
-	text "Blown away!"
+	text "I'm blown away!"
 	done
 	
 EventideGymWendyTextAfterBattle:
@@ -454,8 +454,7 @@ EventideGymWendyTextTMSpeech:
 	cont "TRAINER like you."
 	
 	para "Now go spread your"
-	line "wings and soar on"
-	cont "the wind!"
+	line "wings!"
 	
 	para "Come back and beat"
 	line "all the TRAINERS"
@@ -477,8 +476,7 @@ EventideGymWendyTextLoop:
 	cont "TRAINER like you."
 	
 	para "Now go spread your"
-	line "wings and soar on"
-	cont "the wind!"
+	line "wings!"
 	
 	para "Come back and beat"
 	line "all the TRAINERS"

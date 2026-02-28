@@ -6,11 +6,11 @@ LusterSpamBuilding_3F_MapScriptHeader:
 
 	db 2 ; warp events
 	warp_event 24,  3, LUSTER_SPAM_BUILDING_ELEVATOR, 1
-	warp_event 35, 13, LUSTER_SPAM_BUILDING_RIGHT_ROOM, 5
+	warp_event  9,  7, LUSTER_SPAM_BUILDING_RIGHT_ROOM, 5
 
 	db 12 ; coord events
 	coord_event 21,  3, -1, LusterSpamBuilding_2FWrongRoom
-	coord_event  9,  7, -1, LusterSpamBuilding_2FWrongRoom
+	coord_event 35, 13, -1, LusterSpamBuilding_2FWrongRoom
 	coord_event 27,  7, -1, LusterSpamBuilding_2FWrongRoom
 	coord_event 31,  7, -1, LusterSpamBuilding_2FWrongRoom
 	coord_event 35,  7, -1, LusterSpamBuilding_2FWrongRoom
@@ -20,11 +20,11 @@ LusterSpamBuilding_3F_MapScriptHeader:
 	coord_event 17, 13, -1, LusterSpamBuilding_2FWrongRoom
 	coord_event 21, 13, -1, LusterSpamBuilding_2FWrongRoom
 	coord_event 27, 13, -1, LusterSpamBuilding_2FWrongRoom
-	coord_event 35, 13, -1, LusterSpamBuilding_2FRightRoom
+	coord_event  9,  7, -1, LusterSpamBuilding_2FRightRoom
 
 	db 16 ; bg events
 	signpost  3, 20, SIGNPOST_JUMPTEXT, LusterSpamBuilding_3FWrongSignText1
-	signpost  7,  8, SIGNPOST_JUMPTEXT, LusterSpamBuilding_3FWrongSignText2
+	signpost 13, 34, SIGNPOST_JUMPTEXT, LusterSpamBuilding_3FWrongSignText2
 	signpost  7, 26, SIGNPOST_JUMPTEXT, LusterSpamBuilding_3FWrongSignText3
 	signpost  7, 30, SIGNPOST_JUMPTEXT, LusterSpamBuilding_3FWrongSignText4
 	signpost  7, 34, SIGNPOST_JUMPTEXT, LusterSpamBuilding_3FWrongSignText5
@@ -34,7 +34,7 @@ LusterSpamBuilding_3F_MapScriptHeader:
 	signpost 13, 16, SIGNPOST_JUMPTEXT, LusterSpamBuilding_3FWrongSignText9
 	signpost 13, 20, SIGNPOST_JUMPTEXT, LusterSpamBuilding_3FWrongSignText10
 	signpost 13, 26, SIGNPOST_JUMPTEXT, LusterSpamBuilding_3FWrongSignText11
-	signpost 13, 34, SIGNPOST_JUMPTEXT, LusterSpamBuilding_3FRightSignText
+	signpost  7,  8, SIGNPOST_JUMPTEXT, LusterSpamBuilding_3FRightSignText
 	signpost  7,  3, SIGNPOST_JUMPTEXT, LusterSpamBuilding_3FMotivationalPoster
 	signpost  4,  2, SIGNPOST_JUMPTEXT, LusterSpamBuilding_3FComputer1
 	signpost  4,  4, SIGNPOST_JUMPTEXT, LusterSpamBuilding_3FComputer2
@@ -53,7 +53,7 @@ LusterSpamBuilding_3FCallBack:
 	iftrue .door
 	return
 .door
-	changeblock $22, $c, $1f
+	changeblock $8, $6, $1f
 	return
 	
 LusterSpamBuilding_3FWrongSignText1:

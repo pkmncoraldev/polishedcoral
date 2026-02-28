@@ -520,7 +520,9 @@ LusterSewersThroneRoomFrankieCutsceneText17:
 	done
 	
 LusterSewersThroneRoomFrankieCutsceneText18:
-	text "Grrr…"
+	text "Pant… <WAIT_S>pant…"
+	
+	para "Grrr…"
 	
 	para "No wonder those"
 	line "“NIDOKINGS” sent"
@@ -547,8 +549,7 @@ LusterSewersThroneRoomFrankieCutsceneText18:
 	para "But this ain't"
 	line "over, punk!"
 	
-	para "Not by a long"
-	line "shot!"
+	para "We'll be back!"
 	done
 	
 LusterSewersThroneRoomFrankieCutsceneText19:

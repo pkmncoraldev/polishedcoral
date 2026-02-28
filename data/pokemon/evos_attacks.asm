@@ -819,10 +819,9 @@ GeodudeEvosAttacks:
 	db 1, TACKLE_SCRATCH_POUND
 	db 1, DEFENSE_CURL_HARDEN_WITHDRAW
 	db 6, AGILITY_ROCK_POLISH
-	db 10, ROCK_THROW
-	db 12, MAGNITUDE
-	db 16, ROLLOUT
-	db 18, TAKE_DOWN
+	db 12, ROCK_THROW
+	db 16, MAGNITUDE
+	db 18, ROLLOUT
 	db 22, BULLDOZE
 	db 24, SELFDESTRUCT
 	db 28, ROCK_BLAST
@@ -841,7 +840,6 @@ GravelerEvosAttacks:
 	db 1, ROCK_THROW
 	db 1, MAGNITUDE
 	db 1, ROLLOUT
-	db 1, TAKE_DOWN
 	db 1, BULLDOZE
 	db 1, SELFDESTRUCT
 	db 30, ROCK_BLAST
@@ -860,7 +858,6 @@ GolemEvosAttacks:
 	db 1, ROCK_THROW
 	db 1, MAGNITUDE
 	db 1, ROLLOUT
-	db 1, TAKE_DOWN
 	db 1, BULLDOZE
 	db 1, SELFDESTRUCT
 	db 30, ROCK_BLAST
@@ -1031,7 +1028,6 @@ GrimerEvosAttacks:
 	db 9, MUD_SLAP
 	db 14, DISABLE
 	db 17, SLUDGE
-	db 22, BULLDOZE
 	db 25, MINIMIZE
 	db 30, KNOCK_OFF
 	db 33, SLUDGE_BOMB
@@ -1049,7 +1045,6 @@ MukEvosAttacks:
 	db 1, MUD_SLAP
 	db 1, DISABLE
 	db 1, SLUDGE
-	db 1, BULLDOZE
 	db 1, MINIMIZE
 	db 1, KNOCK_OFF
 	db 1, SLUDGE_BOMB
@@ -1506,6 +1501,7 @@ MagikarpEvosAttacks:
 
 GyaradosEvosAttacks:
 	db 0 ; no more evolutions
+	db 1, WATER_GUN
 	db 1, GUST
 	db 1, BITE
 	db 1, THRASH
@@ -3295,9 +3291,9 @@ NumelEvosAttacks:
 	db 15, FIRE_SPIN
 	db 19, AMNESIA
 	db 22, FLAME_BURST
-	db 26, EARTH_POWER
+	db 26, TAKE_DOWN
 	db 29, CURSE
-	db 33, TAKE_DOWN
+	db 33, EARTH_POWER
 	db 36, FLAMETHROWER
 	db 40, DOUBLE_EDGE
 	db 43, EARTHQUAKE
@@ -3313,9 +3309,9 @@ CameruptEvosAttacks:
 	db 1, FIRE_SPIN
 	db 1, AMNESIA
 	db 1, FLAME_BURST
-	db 1, EARTH_POWER
+	db 1, TAKE_DOWN
 	db 1, CURSE
-	db 35, TAKE_DOWN
+	db 35, EARTH_POWER
 	db 40, FLAMETHROWER
 	db 46, DOUBLE_EDGE
 	db 51, EARTHQUAKE
@@ -3484,9 +3480,11 @@ CherubiEvosAttacks:
 	db  1, SYNTHESIS_MOONLIGHT_MORNING_SUN
 	db  1, TACKLE_SCRATCH_POUND
 	db  7, WORK_UP_GROWTH
-	db 10, LEECH_SEED
+	db  9, LEECH_SEED
+	db 11, ABSORB
+	db 15, STUN_SPORE
 	db 19, BULLET_SEED
-	db 22, SUNNY_DAY
+	db 22, SWIFT
 	db 31, TAKE_DOWN
 	db 37, SOLAR_BEAM
 	db 40, SAFEGUARD
@@ -3498,9 +3496,12 @@ CherrimEvosAttacks:
 	db  1, SYNTHESIS_MOONLIGHT_MORNING_SUN
 	db  1, TACKLE_SCRATCH_POUND
 	db  7, WORK_UP_GROWTH
-	db 10, LEECH_SEED
+	db  9, LEECH_SEED
+	db 11, ABSORB
+	db 15, STUN_SPORE
 	db 19, BULLET_SEED
-	db 22, SUNNY_DAY
+	db 22, SWIFT
+	db 24, SUNNY_DAY
 	db 35, TAKE_DOWN
 	db 43, SOLAR_BEAM
 	db 48, SAFEGUARD
@@ -3511,6 +3512,7 @@ DrifloonEvosAttacks:
 	db EVOLVE_LEVEL, 28, DRIFBLIM
 	db 0 ; no more evolutions
 	db 1, TACKLE_SCRATCH_POUND
+	db 1, WILL_O_WISP
 	db 1, MINIMIZE
 	db 8, GUST
 	db 13, FOCUS_ENERGY
@@ -3527,6 +3529,7 @@ DrifloonEvosAttacks:
 DrifblimEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE_SCRATCH_POUND
+	db 1, WILL_O_WISP
 	db 1, MINIMIZE
 	db 8, GUST
 	db 13, FOCUS_ENERGY
@@ -3630,7 +3633,7 @@ CroagunkEvosAttacks:
 	db 17, FEINT_ATTACK
 	db 22, REVERSAL
 	db 24, SWAGGER
-	db 29, BULLDOZE
+	db 29, SLUDGE
 	db 31, SUCKER_PUNCH
 	db 36, VENOSHOCK
 	db 38, NASTY_PLOT
@@ -3648,7 +3651,7 @@ ToxicroakEvosAttacks:
 	db 1, FEINT_ATTACK
 	db 1, REVERSAL
 	db 1, SWAGGER
-	db 1, BULLDOZE
+	db 1, SLUDGE
 	db 1, SUCKER_PUNCH
 	db 1, VENOSHOCK
 	db 41, NASTY_PLOT

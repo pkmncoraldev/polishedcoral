@@ -8405,6 +8405,12 @@ BoostJumptable:
 	dbw WEATHER_BALL, DoWeatherBall
 	dbw -1, -1
 
+BattleCommand_conditionalboost_opp:
+	ld hl, BoostJumptable
+	ld a, BATTLE_VARS_MOVE_OPP
+	call GetBattleVar
+	jp BattleJumptable
+
 BattleCommand_conditionalboost:
 	ld hl, BoostJumptable
 	ld a, BATTLE_VARS_MOVE

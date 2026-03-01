@@ -2372,8 +2372,11 @@ AI_Smart_SunnyDay: ; 390f3
 ; Essentially force use of sunny day if cpu is holding CHLOROPHIAL
 	ld a, [wEnemyMonItem]
 	cp CHLOROPHIAL
-	jr z, .force
-
+	jr nz, .no_chlorophial
+	ld a, [wWeather]
+	cp WEATHER_SUN
+	jr nz, .force
+.no_chlorophial
 	push hl
 	ld hl, SunnyDayMoves
 	jr AI_Smart_WeatherMove
@@ -3056,7 +3059,7 @@ AIDamageCalc: ; 393e7
 	jr z, .yes
 	ret
 .yes
-	farjp BattleCommand_conditionalboost
+	farjp BattleCommand_conditionalboost_opp
 
 .ConstantDamageEffects:
 	db EFFECT_STATIC_DAMAGE

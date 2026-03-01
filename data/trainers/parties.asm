@@ -5264,9 +5264,9 @@ DelinquentmGroup:
 	db "MAO@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 38, PILOSWINE
-	db 39, CACNEA
-	db 38, GLIGAR
+	db 36, PILOSWINE
+	db 38, CACNEA
+	db 37, GLIGAR
 	db -1 ; end
 
 ; ================
@@ -6619,9 +6619,22 @@ BusinessmanGroup:
 
 	; BUSINESSMAN
 	db "WORKER@"
-	db TRAINERTYPE_NORMAL
+	db TRAINERTYPE_PERSONALITY
 	; party
-	db 1, BULBASAUR
+	db 33, SNEASEL, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM
+	db 33, MURKROW, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM
+	db 33, MEOWTH, ABILITY_1 | QUIRKY, MALE | ALOLAN_FORM
+
+	db -1 ; end
+
+; ================
+
+	; BUSINESSMAN
+	db "WORKER@"
+	db TRAINERTYPE_MOVES
+	; party
+	db 36, GALVANTULA
+		db DISABLE, PIN_MISSILE, SHOCK_WAVE, FURY_CUTTER
 	db -1 ; end
 
 ; ================
@@ -6630,7 +6643,8 @@ BusinessmanGroup:
 	db "WORKER@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 34, POLIWHIRL
+	db 33, SEADRA
 	db -1 ; end
 
 ; ================
@@ -6639,16 +6653,7 @@ BusinessmanGroup:
 	db "WORKER@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
-	db -1 ; end
-
-; ================
-
-	; BUSINESSMAN
-	db "WORKER@"
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
+	db 36, GLALIE
 	db -1 ; end
 
 ; ================

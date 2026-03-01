@@ -221,7 +221,7 @@ Stanley_RematchFinalPkmnText:
 	
 	para "But it's not"
 	line "over yet!"
-	done
+	prompt
 	
 Rodney_FirstBattleFinalPkmnText:
 Rodney_RematchFinalPkmnText:
@@ -229,7 +229,7 @@ Rodney_RematchFinalPkmnText:
 	
 	para "Here comes the"
 	line "tsunami!"
-	done
+	prompt
 	
 Wendy_FirstBattleFinalPkmnText:
 Wendy_RematchFinalPkmnText:
@@ -238,7 +238,7 @@ Wendy_RematchFinalPkmnText:
 	
 	para "I'd better get"
 	line "serious!"
-	done
+	prompt
 
 Charlie_FirstBattleFinalPkmnText:
 Charlie_RematchFinalPkmnText:
@@ -247,7 +247,7 @@ Charlie_RematchFinalPkmnText:
 	
 	para "Don't let the"
 	line "heat get to you!"
-	done
+	prompt
 
 Polly_FirstBattleFinalPkmnText:
 	text "Uhh… <WAIT_M>Wait.<WAIT_M>"
@@ -255,13 +255,13 @@ Polly_FirstBattleFinalPkmnText:
 	
 	para "What's this"
 	line "feeling?"
-	done
+	prompt
 	
 Polly_RematchFinalPkmnText:
 	text "Yes! <WAIT_M>Yes!"
 	
 	para "That feeling again!"
-	done
+	prompt
 	
 Leilani_FirstBattleFinalPkmnText:
 Leilani_RematchFinalPkmnText:
@@ -270,7 +270,7 @@ Leilani_RematchFinalPkmnText:
 	para "You haven't got"
 	line "the best of GRAMMA"
 	cont "yet, dear."
-	done
+	prompt
 	
 Rocky_FirstBattleFinalPkmnText:
 Rocky_RematchFinalPkmnText:
@@ -278,7 +278,7 @@ Rocky_RematchFinalPkmnText:
 	
 	para "You really are"
 	line "something, huh?"
-	done
+	prompt
 	
 Darcy_FirstBattleFinalPkmnText:
 	text "Come on, <PLAYER>!"
@@ -286,13 +286,13 @@ Darcy_FirstBattleFinalPkmnText:
 	para "It's time for"
 	line "both of use to"
 	cont "prove ourselves!"
-	done
+	prompt
 	
 Darcy_RematchFinalPkmnText:
 	text "It's no wonder"
 	line "GRANDPA deemed"
 	cont "you worthy!"
-	done
+	prompt
 	
 Kage_SunbeamFinalPkmnText:
 	text "You got guts, kid."
@@ -308,7 +308,7 @@ Kage_InnFinalPkmnText:
 	para "I will cut you"
 	line "down to size,"
 	cont "you brat!"
-	done
+	prompt
 	
 Locke_TrainFinalPkmnText:
 	text "Who do you think"
@@ -317,7 +317,7 @@ Locke_TrainFinalPkmnText:
 	para "TEAM SNARE isn't"
 	line "to be trifled"
 	cont "with!"
-	done
+	prompt
 	
 Locke_MuseumFinalPkmnText:
 	text "Is this what"
@@ -325,13 +325,13 @@ Locke_MuseumFinalPkmnText:
 
 	para "Just buying a"
 	line "child some time?"
-	done
+	prompt
 	
 Frankie_FinalPkmnText:
 	text "GRAAAHHHH!"
 	
 	para "NIDOKIIIIINGS!"
-	done
+	prompt
 	
 MallCop_FinalPkmnText:
 	text "We got a 87-12"
@@ -342,11 +342,11 @@ MallCop_FinalPkmnText:
 	
 	para "Requesting"
 	line "backup!"
-	done
+	prompt
 	
 DojoMaster_FinalPkmnText:
 	text "…"
-	done
+	prompt
 
 Erika_FinalPkmnText:
 LedianRanger_FinalPkmnText:
@@ -355,7 +355,7 @@ LedianRanger_FinalPkmnText:
 	
 	para "Activate HYPER"
 	line "MECHA BATTLE MODE!"
-	done
+	prompt
 
 PoliceCaptain_FinalPkmnText:
 	text "NO! <WAIT_S>NO! <WAIT_S>NO! <WAIT_S>NO! <WAIT_S>NO!"

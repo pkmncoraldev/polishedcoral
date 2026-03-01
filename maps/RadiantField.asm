@@ -11,10 +11,10 @@ RadiantField_MapScriptHeader:
 	db 0 ; coord events
 
 	db 5 ; bg events
-	signpost 13, 32, SIGNPOST_READ, RadiantTownshipSunflower
-	signpost 13, 33, SIGNPOST_READ, RadiantTownshipSunflower
-	signpost 13, 34, SIGNPOST_READ, RadiantTownshipSunflower
-	signpost 28, 17, SIGNPOST_READ, RadiantTownshipSunflower
+	signpost 13, 32, SIGNPOST_READ, RadiantFieldSunflower
+	signpost 13, 33, SIGNPOST_READ, RadiantFieldSunflower
+	signpost 13, 34, SIGNPOST_READ, RadiantFieldSunflower
+	signpost 28, 17, SIGNPOST_READ, RadiantFieldSunflower
 	signpost 27, 15, SIGNPOST_READ, RadiantFieldPicnic
 
 	db 11 ; object events
@@ -491,6 +491,13 @@ RadiantFieldPicnic:
 	
 RadiantFieldPicnicText:
 	text "A picnic basket."
+	done
+	
+RadiantFieldSunflower:
+	jumptext RadiantFieldSunflowerText
+
+RadiantFieldSunflowerText:
+	text "A huge sunflower!"
 	done
 	
 RadiantFieldTrainer1:

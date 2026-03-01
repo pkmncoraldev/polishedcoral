@@ -152,5 +152,5 @@ DesertTempleLowerLeftSwitchPressedAlreadyText:
 DesertTempleLowerLeftSetTimerAsm:
 	ld hl, wStatusFlags2
 	set 2, [hl] ; ENGINE_BUG_CONTEST_TIMER
-	ld a, 32 ;time
+	ld a, 40 ;time
 	farjp StartTempleTimer

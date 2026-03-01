@@ -427,6 +427,7 @@ RadioTowerRocketsScript:
 TempleTimerEndScript:
 	special FadeOutPalettes
 	killsfx
+	playmusic MUSIC_NONE
 	playsound SFX_THUNDER
 	waitsfx
 	opentext
@@ -434,8 +435,7 @@ TempleTimerEndScript:
 	waitbutton
 	closetext
 	waitsfx
-	special Special_FadeOutMusic
-	pause 5
+	pause 25
 	special Special_ForcePlayerStateNormal
 	clearflag ENGINE_BUG_CONTEST_TIMER
 	clearevent EVENT_TEMPLE_RUMBLING

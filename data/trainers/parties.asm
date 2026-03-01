@@ -3475,8 +3475,8 @@ BeautyGroup:
 	db "TRIXIE@"
 	db TRAINERTYPE_PERSONALITY
 	; party
-	db 36, MEOWTH, ABILITY_1 | HARDY, FEMALE | ALOLAN_FORM
-	db 36, PERSIAN, ABILITY_1 | HARDY, FEMALE | ALOLAN_FORM
+	db 41, MEOWTH, ABILITY_1 | HARDY, FEMALE | ALOLAN_FORM
+	db 38, PERSIAN, ABILITY_1 | HARDY, FEMALE | ALOLAN_FORM
 	db -1 ; end
 
 ; ================
@@ -4287,9 +4287,9 @@ BurglarGroup:
 	db "JULIAN@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 35, HOUNDOUR
-	db 36, HOUNDOUR
-	db 37, MAGMAR
+	db 39, HOUNDOUR
+	db 40, HOUNDOUR
+	db 38, MAGMAR
 	db -1 ; end
 
 ; ================
@@ -4635,8 +4635,8 @@ GuitaristGroup:
 	db "LARRY@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 41, NOIBAT
-	db 37, AMPHAROS
+	db 42, NOIBAT
+	db 38, AMPHAROS
 	db -1 ; end
 
 ; ================
@@ -4832,7 +4832,7 @@ CueballGroup:
 	db TRAINERTYPE_NORMAL
 	; party
 	db 41, MUNCHLAX
-	db 34, SNORLAX
+	db 38, SNORLAX
 	db -1 ; end
 
 ; ================

@@ -489,353 +489,353 @@
 	map_id ROUTE_23
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
-	db 35, SHROOMISH	;30%
-	db 35, PONYTA		;30%
-	db 35, GIRAFARIG	;20%
-	db 35, LITWICK		;10%
-	db 35, BRELOOM		;5%
-	db 35, BRELOOM		;4%
-	db 35, BRELOOM		;1%
+	db 39, SHROOMISH	;30%
+	db 39, PONYTA		;30%
+	db 39, GIRAFARIG	;20%
+	db 39, LITWICK		;10%
+	db 39, BRELOOM		;5%
+	db 39, BRELOOM		;4%
+	db 39, BRELOOM		;1%
 	; day
-	db 35, SHROOMISH	;30%
-	db 35, PONYTA		;30%
-	db 35, GIRAFARIG	;20%
-	db 35, LITWICK		;10%
-	db 35, BRELOOM		;5%
-	db 35, BRELOOM		;4%
-	db 35, BRELOOM		;1%
+	db 39, SHROOMISH	;30%
+	db 39, PONYTA		;30%
+	db 39, GIRAFARIG	;20%
+	db 39, LITWICK		;10%
+	db 39, BRELOOM		;5%
+	db 39, BRELOOM		;4%
+	db 39, BRELOOM		;1%
 	; nite
-	db 35, SHROOMISH	;30%
-	db 35, PONYTA		;30%
-	db 35, GIRAFARIG	;20%
-	db 35, LITWICK		;10%
-	db 35, BRELOOM		;5%
-	db 35, BRELOOM		;4%
-	db 35, BRELOOM		;1%
+	db 39, SHROOMISH	;30%
+	db 39, PONYTA		;30%
+	db 39, GIRAFARIG	;20%
+	db 39, LITWICK		;10%
+	db 39, BRELOOM		;5%
+	db 39, BRELOOM		;4%
+	db 39, BRELOOM		;1%
 	
 	map_id ROUTE_24_NORTH
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
-	db 35, SHROOMISH	;30%
-	db 35, LITWICK		;30%
-	db 35, GIRAFARIG	;20%
-	db 35, PONYTA		;10%
-	db 35, BRELOOM		;5%
-	db 35, BRELOOM		;4%
-	db 35, BRELOOM		;1%
+	db 39, SHROOMISH	;30%
+	db 39, LITWICK		;30%
+	db 39, GIRAFARIG	;20%
+	db 39, PONYTA		;10%
+	db 39, BRELOOM		;5%
+	db 39, BRELOOM		;4%
+	db 39, BRELOOM		;1%
 	; day
-	db 35, SHROOMISH	;30%
-	db 35, LITWICK		;30%
-	db 35, GIRAFARIG	;20%
-	db 35, PONYTA		;10%
-	db 35, BRELOOM		;5%
-	db 35, BRELOOM		;4%
-	db 35, BRELOOM		;1%
+	db 39, SHROOMISH	;30%
+	db 39, LITWICK		;30%
+	db 39, GIRAFARIG	;20%
+	db 39, PONYTA		;10%
+	db 39, BRELOOM		;5%
+	db 39, BRELOOM		;4%
+	db 39, BRELOOM		;1%
 	; nite
-	db 35, SHROOMISH	;30%
-	db 35, LITWICK		;30%
-	db 35, GIRAFARIG	;20%
-	db 35, PONYTA		;10%
-	db 35, BRELOOM		;5%
-	db 35, BRELOOM		;4%
-	db 35, BRELOOM		;1%
+	db 39, SHROOMISH	;30%
+	db 39, LITWICK		;30%
+	db 39, GIRAFARIG	;20%
+	db 39, PONYTA		;10%
+	db 39, BRELOOM		;5%
+	db 39, BRELOOM		;4%
+	db 39, BRELOOM		;1%
 	
 	map_id ROUTE_24_SOUTH
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
-	db 35, SHROOMISH	;30%
-	db 35, LITWICK		;30%
-	db 35, GIRAFARIG	;20%
-	db 35, PONYTA		;10%
-	db 35, BRELOOM		;5%
-	db 35, BRELOOM		;4%
-	db 35, BRELOOM		;1%
+	db 39, SHROOMISH	;30%
+	db 39, LITWICK		;30%
+	db 39, GIRAFARIG	;20%
+	db 39, PONYTA		;10%
+	db 39, BRELOOM		;5%
+	db 39, BRELOOM		;4%
+	db 39, BRELOOM		;1%
 	; day
-	db 35, SHROOMISH	;30%
-	db 35, LITWICK		;30%
-	db 35, GIRAFARIG	;20%
-	db 35, PONYTA		;10%
-	db 35, BRELOOM		;5%
-	db 35, BRELOOM		;4%
-	db 35, BRELOOM		;1%
+	db 39, SHROOMISH	;30%
+	db 39, LITWICK		;30%
+	db 39, GIRAFARIG	;20%
+	db 39, PONYTA		;10%
+	db 39, BRELOOM		;5%
+	db 39, BRELOOM		;4%
+	db 39, BRELOOM		;1%
 	; nite
-	db 35, SHROOMISH	;30%
-	db 35, LITWICK		;30%
-	db 35, GIRAFARIG	;20%
-	db 35, PONYTA		;10%
-	db 35, BRELOOM		;5%
-	db 35, BRELOOM		;4%
-	db 35, BRELOOM		;1%
+	db 39, SHROOMISH	;30%
+	db 39, LITWICK		;30%
+	db 39, GIRAFARIG	;20%
+	db 39, PONYTA		;10%
+	db 39, BRELOOM		;5%
+	db 39, BRELOOM		;4%
+	db 39, BRELOOM		;1%
 	
 	map_id ROUTE_25
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
-	db 37, SHROOMISH	;30%
-	db 37, PONYTA		;30%
-	db 37, GIRAFARIG	;20%
-	db 37, LITWICK		;10%
-	db 37, BRELOOM		;5%
-	db 37, BRELOOM		;4%
-	db 37, BRELOOM		;1%
+	db 41, SHROOMISH	;30%
+	db 41, PONYTA		;30%
+	db 41, GIRAFARIG	;20%
+	db 41, LITWICK		;10%
+	db 41, BRELOOM		;5%
+	db 41, BRELOOM		;4%
+	db 41, BRELOOM		;1%
 	; day
-	db 37, SHROOMISH	;30%
-	db 37, PONYTA		;30%
-	db 37, GIRAFARIG	;20%
-	db 37, LITWICK		;10%
-	db 37, BRELOOM		;5%
-	db 37, BRELOOM		;4%
-	db 37, BRELOOM		;1%
+	db 41, SHROOMISH	;30%
+	db 41, PONYTA		;30%
+	db 41, GIRAFARIG	;20%
+	db 41, LITWICK		;10%
+	db 41, BRELOOM		;5%
+	db 41, BRELOOM		;4%
+	db 41, BRELOOM		;1%
 	; nite
-	db 37, SHROOMISH	;30%
-	db 37, PONYTA		;30%
-	db 37, GIRAFARIG	;20%
-	db 37, LITWICK		;10%
-	db 37, BRELOOM		;5%
-	db 37, BRELOOM		;4%
-	db 37, BRELOOM		;1%
+	db 41, SHROOMISH	;30%
+	db 41, PONYTA		;30%
+	db 41, GIRAFARIG	;20%
+	db 41, LITWICK		;10%
+	db 41, BRELOOM		;5%
+	db 41, BRELOOM		;4%
+	db 41, BRELOOM		;1%
 	
 	map_id ROUTE_26
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
-	db 37, SHROOMISH	;30%
-	db 37, GIRAFARIG	;30%
-	db 37, BRELOOM		;20%
-	db 37, LITWICK		;10%
-	db 37, LITWICK		;5%
-	db 37, LITWICK		;4%
-	db 37, LITWICK		;1%
+	db 41, SHROOMISH	;30%
+	db 41, GIRAFARIG	;30%
+	db 41, BRELOOM		;20%
+	db 41, LITWICK		;10%
+	db 41, LITWICK		;5%
+	db 41, LITWICK		;4%
+	db 41, LITWICK		;1%
 	; day
-	db 37, SHROOMISH	;30%
-	db 37, GIRAFARIG	;30%
-	db 37, BRELOOM		;20%
-	db 37, LITWICK		;10%
-	db 37, LITWICK		;5%
-	db 37, LITWICK		;4%
-	db 37, LITWICK		;1%
+	db 41, SHROOMISH	;30%
+	db 41, GIRAFARIG	;30%
+	db 41, BRELOOM		;20%
+	db 41, LITWICK		;10%
+	db 41, LITWICK		;5%
+	db 41, LITWICK		;4%
+	db 41, LITWICK		;1%
 	; nite
-	db 37, SHROOMISH	;30%
-	db 37, GIRAFARIG	;30%
-	db 37, BRELOOM		;20%
-	db 37, LITWICK		;10%
-	db 37, LITWICK		;5%
-	db 37, LITWICK		;4%
-	db 37, LITWICK		;1%
+	db 41, SHROOMISH	;30%
+	db 41, GIRAFARIG	;30%
+	db 41, BRELOOM		;20%
+	db 41, LITWICK		;10%
+	db 41, LITWICK		;5%
+	db 41, LITWICK		;4%
+	db 41, LITWICK		;1%
 	
 	map_id ROUTE_23_WINDY ;Used on windy days
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
-	db 35, DRIFLOON		;30%
-	db 35, PONYTA		;30%
-	db 35, GIRAFARIG	;20%
-	db 35, SKARMORY		;10%
-	db 35, BRELOOM		;5%
-	db 35, BRELOOM		;4%
-	db 35, BRELOOM		;1%
+	db 39, DRIFLOON		;30%
+	db 39, PONYTA		;30%
+	db 39, GIRAFARIG	;20%
+	db 39, SKARMORY		;10%
+	db 39, BRELOOM		;5%
+	db 39, BRELOOM		;4%
+	db 39, BRELOOM		;1%
 	; day
-	db 35, DRIFLOON		;30%
-	db 35, PONYTA		;30%
-	db 35, GIRAFARIG	;20%
-	db 35, SKARMORY		;10%
-	db 35, BRELOOM		;5%
-	db 35, BRELOOM		;4%
-	db 35, BRELOOM		;1%
+	db 39, DRIFLOON		;30%
+	db 39, PONYTA		;30%
+	db 39, GIRAFARIG	;20%
+	db 39, SKARMORY		;10%
+	db 39, BRELOOM		;5%
+	db 39, BRELOOM		;4%
+	db 39, BRELOOM		;1%
 	; nite
-	db 35, DRIFLOON		;30%
-	db 35, PONYTA		;30%
-	db 35, GIRAFARIG	;20%
-	db 35, SKARMORY		;10%
-	db 35, BRELOOM		;5%
-	db 35, BRELOOM		;4%
-	db 35, BRELOOM		;1%
+	db 39, DRIFLOON		;30%
+	db 39, PONYTA		;30%
+	db 39, GIRAFARIG	;20%
+	db 39, SKARMORY		;10%
+	db 39, BRELOOM		;5%
+	db 39, BRELOOM		;4%
+	db 39, BRELOOM		;1%
 	
 	map_id ROUTE_24_NORTH_WINDY ;Used on windy days
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
-	db 35, DRIFLOON		;30%
-	db 35, SHROOMISH	;30%
-	db 35, GIRAFARIG	;20%
-	db 35, SKARMORY		;10%
-	db 35, BRELOOM		;5%
-	db 35, BRELOOM		;4%
-	db 35, BRELOOM		;1%
+	db 39, DRIFLOON		;30%
+	db 39, SHROOMISH	;30%
+	db 39, GIRAFARIG	;20%
+	db 39, SKARMORY		;10%
+	db 39, BRELOOM		;5%
+	db 39, BRELOOM		;4%
+	db 39, BRELOOM		;1%
 	; day
-	db 35, DRIFLOON		;30%
-	db 35, SHROOMISH	;30%
-	db 35, GIRAFARIG	;20%
-	db 35, SKARMORY		;10%
-	db 35, BRELOOM		;5%
-	db 35, BRELOOM		;4%
-	db 35, BRELOOM		;1%
+	db 39, DRIFLOON		;30%
+	db 39, SHROOMISH	;30%
+	db 39, GIRAFARIG	;20%
+	db 39, SKARMORY		;10%
+	db 39, BRELOOM		;5%
+	db 39, BRELOOM		;4%
+	db 39, BRELOOM		;1%
 	; nite
-	db 35, DRIFLOON		;30%
-	db 35, SHROOMISH	;30%
-	db 35, GIRAFARIG	;20%
-	db 35, SKARMORY		;10%
-	db 35, BRELOOM		;5%
-	db 35, BRELOOM		;4%
-	db 35, BRELOOM		;1%
+	db 39, DRIFLOON		;30%
+	db 39, SHROOMISH	;30%
+	db 39, GIRAFARIG	;20%
+	db 39, SKARMORY		;10%
+	db 39, BRELOOM		;5%
+	db 39, BRELOOM		;4%
+	db 39, BRELOOM		;1%
 	
 	map_id ROUTE_24_SOUTH_WINDY ;Used on windy days
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
-	db 35, DRIFLOON		;30%
-	db 35, SHROOMISH	;30%
-	db 35, GIRAFARIG	;20%
-	db 35, SKARMORY		;10%
-	db 35, BRELOOM		;5%
-	db 35, BRELOOM		;4%
-	db 35, BRELOOM		;1%
+	db 39, DRIFLOON		;30%
+	db 39, SHROOMISH	;30%
+	db 39, GIRAFARIG	;20%
+	db 39, SKARMORY		;10%
+	db 39, BRELOOM		;5%
+	db 39, BRELOOM		;4%
+	db 39, BRELOOM		;1%
 	; day
-	db 35, DRIFLOON		;30%
-	db 35, SHROOMISH	;30%
-	db 35, GIRAFARIG	;20%
-	db 35, SKARMORY		;10%
-	db 35, BRELOOM		;5%
-	db 35, BRELOOM		;4%
-	db 35, BRELOOM		;1%
+	db 39, DRIFLOON		;30%
+	db 39, SHROOMISH	;30%
+	db 39, GIRAFARIG	;20%
+	db 39, SKARMORY		;10%
+	db 39, BRELOOM		;5%
+	db 39, BRELOOM		;4%
+	db 39, BRELOOM		;1%
 	; nite
-	db 35, DRIFLOON		;30%
-	db 35, SHROOMISH	;30%
-	db 35, GIRAFARIG	;20%
-	db 35, SKARMORY		;10%
-	db 35, BRELOOM		;5%
-	db 35, BRELOOM		;4%
-	db 35, BRELOOM		;1%
+	db 39, DRIFLOON		;30%
+	db 39, SHROOMISH	;30%
+	db 39, GIRAFARIG	;20%
+	db 39, SKARMORY		;10%
+	db 39, BRELOOM		;5%
+	db 39, BRELOOM		;4%
+	db 39, BRELOOM		;1%
 	
 	map_id ROUTE_25_WINDY ;Used on windy days
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
-	db 37, DRIFLOON		;30%
-	db 37, PONYTA		;30%
-	db 37, GIRAFARIG	;20%
-	db 37, SKARMORY		;10%
-	db 37, BRELOOM		;5%
-	db 37, BRELOOM		;4%
-	db 37, BRELOOM		;1%
+	db 41, DRIFLOON		;30%
+	db 41, PONYTA		;30%
+	db 41, GIRAFARIG	;20%
+	db 41, SKARMORY		;10%
+	db 41, BRELOOM		;5%
+	db 41, BRELOOM		;4%
+	db 41, BRELOOM		;1%
 	; day
-	db 37, DRIFLOON		;30%
-	db 37, PONYTA		;30%
-	db 37, GIRAFARIG	;20%
-	db 37, SKARMORY		;10%
-	db 37, BRELOOM		;5%
-	db 37, BRELOOM		;4%
-	db 37, BRELOOM		;1%
+	db 41, DRIFLOON		;30%
+	db 41, PONYTA		;30%
+	db 41, GIRAFARIG	;20%
+	db 41, SKARMORY		;10%
+	db 41, BRELOOM		;5%
+	db 41, BRELOOM		;4%
+	db 41, BRELOOM		;1%
 	; nite
-	db 37, DRIFLOON		;30%
-	db 37, PONYTA		;30%
-	db 37, GIRAFARIG	;20%
-	db 37, SKARMORY		;10%
-	db 37, BRELOOM		;5%
-	db 37, BRELOOM		;4%
-	db 37, BRELOOM		;1%
+	db 41, DRIFLOON		;30%
+	db 41, PONYTA		;30%
+	db 41, GIRAFARIG	;20%
+	db 41, SKARMORY		;10%
+	db 41, BRELOOM		;5%
+	db 41, BRELOOM		;4%
+	db 41, BRELOOM		;1%
 	
 	map_id ROUTE_26_WINDY ;Used on windy days
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
-	db 37, DRIFLOON		;30%
-	db 37, GIRAFARIG	;30%
-	db 37, BRELOOM		;20%
-	db 37, SKARMORY		;10%
-	db 37, SKARMORY		;5%
-	db 37, SKARMORY		;4%
-	db 37, SKARMORY		;1%
+	db 41, DRIFLOON		;30%
+	db 41, GIRAFARIG	;30%
+	db 41, BRELOOM		;20%
+	db 41, SKARMORY		;10%
+	db 41, SKARMORY		;5%
+	db 41, SKARMORY		;4%
+	db 41, SKARMORY		;1%
 	; day
-	db 37, DRIFLOON		;30%
-	db 37, GIRAFARIG	;30%
-	db 37, BRELOOM		;20%
-	db 37, SKARMORY		;10%
-	db 37, SKARMORY		;5%
-	db 37, SKARMORY		;4%
-	db 37, SKARMORY		;1%
+	db 41, DRIFLOON		;30%
+	db 41, GIRAFARIG	;30%
+	db 41, BRELOOM		;20%
+	db 41, SKARMORY		;10%
+	db 41, SKARMORY		;5%
+	db 41, SKARMORY		;4%
+	db 41, SKARMORY		;1%
 	; nite
-	db 37, DRIFLOON		;30%
-	db 37, GIRAFARIG	;30%
-	db 37, BRELOOM		;20%
-	db 37, SKARMORY		;10%
-	db 37, SKARMORY		;5%
-	db 37, SKARMORY		;4%
-	db 37, SKARMORY		;1%
+	db 41, DRIFLOON		;30%
+	db 41, GIRAFARIG	;30%
+	db 41, BRELOOM		;20%
+	db 41, SKARMORY		;10%
+	db 41, SKARMORY		;5%
+	db 41, SKARMORY		;4%
+	db 41, SKARMORY		;1%
 	
 	map_id ROUTE_27
 	db 15 percent, 15 percent, 15 percent ; encounter rates: morn/day/nite
 	; morn
-	db 37, BUNEARY		;30%
-	db 37, DITTO		;30%
-	db 37, DITTO		;20%
-	db 37, PIDGEOTTO	;10%
-	db 37, PIDGEOTTO	;5%
-	db 37, PIDGEOTTO	;4%
-	db 37, PIDGEOTTO	;1%
+	db 41, BUNEARY		;30%
+	db 41, DITTO		;30%
+	db 41, DITTO		;20%
+	db 41, PIDGEOTTO	;10%
+	db 41, PIDGEOTTO	;5%
+	db 41, PIDGEOTTO	;4%
+	db 41, PIDGEOTTO	;1%
 	; day
-	db 37, BUNEARY		;30%
-	db 37, DITTO		;30%
-	db 37, DITTO		;20%
-	db 37, PIDGEOTTO	;10%
-	db 37, PIDGEOTTO	;5%
-	db 37, PIDGEOTTO	;4%
-	db 37, PIDGEOTTO	;1%
+	db 41, BUNEARY		;30%
+	db 41, DITTO		;30%
+	db 41, DITTO		;20%
+	db 41, PIDGEOTTO	;10%
+	db 41, PIDGEOTTO	;5%
+	db 41, PIDGEOTTO	;4%
+	db 41, PIDGEOTTO	;1%
 	; nite
-	db 37, BUNEARY		;30%
-	db 37, DITTO		;30%
-	db 37, DITTO		;20%
-	db 37, PIDGEOTTO	;10%
-	db 37, PIDGEOTTO	;5%
-	db 37, PIDGEOTTO	;4%
-	db 37, PIDGEOTTO	;1%
+	db 41, BUNEARY		;30%
+	db 41, DITTO		;30%
+	db 41, DITTO		;20%
+	db 41, PIDGEOTTO	;10%
+	db 41, PIDGEOTTO	;5%
+	db 41, PIDGEOTTO	;4%
+	db 41, PIDGEOTTO	;1%
 	
 	map_id ROUTE_28
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 38, PIDGEOTTO	;30%
-	db 38, PONYTA		;30%
-	db 38, PONYTA		;20%
-	db 38, RAPIDASH		;10%
-	db 38, TOGETIC		;5%
-	db 38, TOGETIC		;4%
-	db 38, TOGETIC		;1%
+	db 42, PIDGEOTTO	;30%
+	db 42, PONYTA		;30%
+	db 42, PONYTA		;20%
+	db 42, RAPIDASH		;10%
+	db 42, TOGETIC		;5%
+	db 42, TOGETIC		;4%
+	db 42, TOGETIC		;1%
 	; day
-	db 38, PIDGEOTTO	;30%
-	db 38, PONYTA		;30%
-	db 38, PONYTA		;20%
-	db 38, RAPIDASH		;10%
-	db 38, TOGETIC		;5%
-	db 38, TOGETIC		;4%
-	db 38, TOGETIC		;1%
+	db 42, PIDGEOTTO	;30%
+	db 42, PONYTA		;30%
+	db 42, PONYTA		;20%
+	db 42, RAPIDASH		;10%
+	db 42, TOGETIC		;5%
+	db 42, TOGETIC		;4%
+	db 42, TOGETIC		;1%
 	; nite
-	db 38, PIDGEOTTO	;30%
-	db 38, PONYTA		;30%
-	db 38, PONYTA		;20%
-	db 38, RAPIDASH		;10%
-	db 38, TOGETIC		;5%
-	db 38, TOGETIC		;4%
-	db 38, TOGETIC		;1%
+	db 42, PIDGEOTTO	;30%
+	db 42, PONYTA		;30%
+	db 42, PONYTA		;20%
+	db 42, RAPIDASH		;10%
+	db 42, TOGETIC		;5%
+	db 42, TOGETIC		;4%
+	db 42, TOGETIC		;1%
 	
 	map_id ROUTE_29
 	db 15 percent, 15 percent, 15 percent ; encounter rates: morn/day/nite
 	; morn
-	db 38, FLITTLE		;30%
-	db 38, PONYTA		;30%
-	db 38, PIDGEOTTO	;20%
-	db 38, RAPIDASH		;10%
-	db 38, PIDGEOTTO	;5%
-	db 38, ESPATHRA		;4%
-	db 38, ESPATHRA		;1%
+	db 42, FLITTLE		;30%
+	db 42, PONYTA		;30%
+	db 42, PIDGEOTTO	;20%
+	db 42, RAPIDASH		;10%
+	db 42, PIDGEOTTO	;5%
+	db 42, ESPATHRA		;4%
+	db 42, ESPATHRA		;1%
 	; day
-	db 38, FLITTLE		;30%
-	db 38, PONYTA		;30%
-	db 38, PIDGEOTTO	;20%
-	db 38, RAPIDASH		;10%
-	db 38, PIDGEOTTO	;5%
-	db 38, ESPATHRA		;4%
-	db 38, ESPATHRA		;1%
+	db 42, FLITTLE		;30%
+	db 42, PONYTA		;30%
+	db 42, PIDGEOTTO	;20%
+	db 42, RAPIDASH		;10%
+	db 42, PIDGEOTTO	;5%
+	db 42, ESPATHRA		;4%
+	db 42, ESPATHRA		;1%
 	; nite
-	db 38, FLITTLE		;30%
-	db 38, PONYTA		;30%
-	db 38, PIDGEOTTO	;20%
-	db 38, RAPIDASH		;10%
-	db 38, PIDGEOTTO	;5%
-	db 38, ESPATHRA		;4%
-	db 38, ESPATHRA		;1%
+	db 42, FLITTLE		;30%
+	db 42, PONYTA		;30%
+	db 42, PIDGEOTTO	;20%
+	db 42, RAPIDASH		;10%
+	db 42, PIDGEOTTO	;5%
+	db 42, ESPATHRA		;4%
+	db 42, ESPATHRA		;1%
 	
 	map_id CORAL_REEF
 	db 5 percent, 5 percent, 5 percent ; encounter rates: morn/day/nite
@@ -948,110 +948,110 @@
 	map_id KOMORE_COMMUNITY_CENTER
 	db 3 percent, 3 percent, 3 percent ; encounter rates: morn/day/nite
 	; morn
-	db 37, NOIBAT		;30%
-	db 37, RATICATE		;30%
-	db 37, LITWICK		;20%
-	db 37, RATICATE		;10%
-	db 37, LAMPENT		;5%
-	db 37, NOIBAT		;4%
-	db 37, MIMIKYU		;1%
+	db 40, NOIBAT		;30%
+	db 40, RATICATE		;30%
+	db 40, LITWICK		;20%
+	db 40, RATICATE		;10%
+	db 40, LAMPENT		;5%
+	db 40, NOIBAT		;4%
+	db 40, MIMIKYU		;1%
 	; day
-	db 37, NOIBAT		;30%
-	db 37, RATICATE		;30%
-	db 37, LITWICK		;20%
-	db 37, RATICATE		;10%
-	db 37, LAMPENT		;5%
-	db 37, NOIBAT		;4%
-	db 37, MIMIKYU		;1%
+	db 40, NOIBAT		;30%
+	db 40, RATICATE		;30%
+	db 40, LITWICK		;20%
+	db 40, RATICATE		;10%
+	db 40, LAMPENT		;5%
+	db 40, NOIBAT		;4%
+	db 40, MIMIKYU		;1%
 	; nite
-	db 37, NOIBAT		;30%
-	db 37, RATICATE		;30%
-	db 37, LITWICK		;20%
-	db 37, RATICATE		;10%
-	db 37, LAMPENT		;5%
-	db 37, NOIBAT		;4%
-	db 37, MIMIKYU		;1%
+	db 40, NOIBAT		;30%
+	db 40, RATICATE		;30%
+	db 40, LITWICK		;20%
+	db 40, RATICATE		;10%
+	db 40, LAMPENT		;5%
+	db 40, NOIBAT		;4%
+	db 40, MIMIKYU		;1%
 	
 	map_id KOMORE_COMMUNITY_CENTER_LEFT
 	db 3 percent, 3 percent, 3 percent ; encounter rates: morn/day/nite
 	; morn
-	db 37, NOIBAT		;30%
-	db 37, RATICATE		;30%
-	db 37, LITWICK		;20%
-	db 37, RATICATE		;10%
-	db 37, LAMPENT		;5%
-	db 37, NOIBAT		;4%
-	db 37, MIMIKYU		;1%
+	db 40, NOIBAT		;30%
+	db 38, RATICATE		;30%
+	db 40, LITWICK		;20%
+	db 40, RATICATE		;10%
+	db 40, LAMPENT		;5%
+	db 40, NOIBAT		;4%
+	db 40, MIMIKYU		;1%
 	; day
-	db 37, NOIBAT		;30%
-	db 37, RATICATE		;30%
-	db 37, LITWICK		;20%
-	db 37, RATICATE		;10%
-	db 37, LAMPENT		;5%
-	db 37, NOIBAT		;4%
-	db 37, MIMIKYU		;1%
+	db 40, NOIBAT		;30%
+	db 38, RATICATE		;30%
+	db 40, LITWICK		;20%
+	db 40, RATICATE		;10%
+	db 40, LAMPENT		;5%
+	db 40, NOIBAT		;4%
+	db 40, MIMIKYU		;1%
 	; nite
-	db 37, NOIBAT		;30%
-	db 37, RATICATE		;30%
-	db 37, LITWICK		;20%
-	db 37, RATICATE		;10%
-	db 37, LAMPENT		;5%
-	db 37, NOIBAT		;4%
-	db 37, MIMIKYU		;1%
+	db 40, NOIBAT		;30%
+	db 38, RATICATE		;30%
+	db 40, LITWICK		;20%
+	db 40, RATICATE		;10%
+	db 40, LAMPENT		;5%
+	db 40, NOIBAT		;4%
+	db 40, MIMIKYU		;1%
 	
 	map_id KOMORE_COMMUNITY_CENTER_MIDDLE
 	db 3 percent, 3 percent, 3 percent ; encounter rates: morn/day/nite
 	; morn
-	db 37, NOIBAT		;30%
-	db 37, RATICATE		;30%
-	db 37, LITWICK		;20%
-	db 37, RATICATE		;10%
-	db 37, LAMPENT		;5%
-	db 37, NOIBAT		;4%
-	db 37, MIMIKYU		;1%
+	db 40, NOIBAT		;30%
+	db 38, RATICATE		;30%
+	db 40, LITWICK		;20%
+	db 40, RATICATE		;10%
+	db 40, LAMPENT		;5%
+	db 40, NOIBAT		;4%
+	db 40, MIMIKYU		;1%
 	; day
-	db 37, NOIBAT		;30%
-	db 37, RATICATE		;30%
-	db 37, LITWICK		;20%
-	db 37, RATICATE		;10%
-	db 37, LAMPENT		;5%
-	db 37, NOIBAT		;4%
-	db 37, MIMIKYU		;1%
+	db 40, NOIBAT		;30%
+	db 38, RATICATE		;30%
+	db 40, LITWICK		;20%
+	db 40, RATICATE		;10%
+	db 40, LAMPENT		;5%
+	db 40, NOIBAT		;4%
+	db 40, MIMIKYU		;1%
 	; nite
-	db 37, NOIBAT		;30%
-	db 37, RATICATE		;30%
-	db 37, LITWICK		;20%
-	db 37, RATICATE		;10%
-	db 37, LAMPENT		;5%
-	db 37, NOIBAT		;4%
-	db 37, MIMIKYU		;1%
+	db 40, NOIBAT		;30%
+	db 38, RATICATE		;30%
+	db 40, LITWICK		;20%
+	db 40, RATICATE		;10%
+	db 40, LAMPENT		;5%
+	db 40, NOIBAT		;4%
+	db 40, MIMIKYU		;1%
 	
 	map_id KOMORE_COMMUNITY_CENTER_RIGHT
 	db 3 percent, 3 percent, 3 percent ; encounter rates: morn/day/nite
 	; morn
-	db 37, NOIBAT		;30%
-	db 37, RATICATE		;30%
-	db 37, LITWICK		;20%
-	db 37, RATICATE		;10%
-	db 37, LAMPENT		;5%
-	db 37, NOIBAT		;4%
-	db 37, MIMIKYU		;1%
+	db 40, NOIBAT		;30%
+	db 38, RATICATE		;30%
+	db 40, LITWICK		;20%
+	db 40, RATICATE		;10%
+	db 40, LAMPENT		;5%
+	db 40, NOIBAT		;4%
+	db 40, MIMIKYU		;1%
 	; day
-	db 37, NOIBAT		;30%
-	db 37, RATICATE		;30%
-	db 37, LITWICK		;20%
-	db 37, RATICATE		;10%
-	db 37, LAMPENT		;5%
-	db 37, NOIBAT		;4%
-	db 37, MIMIKYU		;1%
+	db 40, NOIBAT		;30%
+	db 38, RATICATE		;30%
+	db 40, LITWICK		;20%
+	db 40, RATICATE		;10%
+	db 40, LAMPENT		;5%
+	db 40, NOIBAT		;4%
+	db 40, MIMIKYU		;1%
 	; nite
-	db 37, NOIBAT		;30%
-	db 37, RATICATE		;30%
-	db 37, LITWICK		;20%
-	db 37, RATICATE		;10%
-	db 37, LAMPENT		;5%
-	db 37, NOIBAT		;4%
-	db 37, MIMIKYU		;1%
+	db 40, NOIBAT		;30%
+	db 38, RATICATE		;30%
+	db 40, LITWICK		;20%
+	db 40, RATICATE		;10%
+	db 40, LAMPENT		;5%
+	db 40, NOIBAT		;4%
+	db 40, MIMIKYU		;1%
 	
 	map_id INN_VENT
 	db 2 percent, 2 percent, 2 percent ; encounter rates: morn/day/nite
@@ -1083,83 +1083,83 @@
 	map_id GREEN_GROTTO_1F
 	db 5 percent, 5 percent, 5 percent ; encounter rates: morn/day/nite
 	; morn
-	db 39, NOIBAT		;30%
-	db 39, CRUSTLE		;30%
-	db 39, RATICATE		;20%
-	db 39, CLODSIRE		;10%
-	db 39, RATICATE		;5%
-	db 39, CLODSIRE		;4%
-	db 39, CLODSIRE		;1%
+	db 42, NOIBAT		;30%
+	db 42, CRUSTLE		;30%
+	db 42, RATICATE		;20%
+	db 42, CLODSIRE		;10%
+	db 42, RATICATE		;5%
+	db 42, CLODSIRE		;4%
+	db 42, CLODSIRE		;1%
 	; day
-	db 39, NOIBAT		;30%
-	db 39, CRUSTLE		;30%
-	db 39, RATICATE		;20%
-	db 39, CLODSIRE		;10%
-	db 39, RATICATE		;5%
-	db 39, CLODSIRE		;4%
-	db 39, CLODSIRE		;1%
+	db 42, NOIBAT		;30%
+	db 42, CRUSTLE		;30%
+	db 42, RATICATE		;20%
+	db 42, CLODSIRE		;10%
+	db 42, RATICATE		;5%
+	db 42, CLODSIRE		;4%
+	db 42, CLODSIRE		;1%
 	; nite
-	db 39, NOIBAT		;30%
-	db 39, CRUSTLE		;30%
-	db 39, RATICATE		;20%
-	db 39, CLODSIRE		;10%
-	db 39, RATICATE		;5%
-	db 39, CLODSIRE		;4%
-	db 39, CLODSIRE		;1%
+	db 42, NOIBAT		;30%
+	db 42, CRUSTLE		;30%
+	db 42, RATICATE		;20%
+	db 42, CLODSIRE		;10%
+	db 42, RATICATE		;5%
+	db 42, CLODSIRE		;4%
+	db 42, CLODSIRE		;1%
 	
 	map_id GREEN_GROTTO_B1F
 	db 5 percent, 5 percent, 5 percent ; encounter rates: morn/day/nite
 	; morn
-	db 39, NOIBAT		;30%
-	db 39, CRUSTLE		;30%
-	db 39, RATICATE		;20%
-	db 39, CLODSIRE		;10%
-	db 39, RATICATE		;5%
-	db 39, CLODSIRE		;4%
-	db 39, CLODSIRE		;1%
+	db 42, NOIBAT		;30%
+	db 42, CRUSTLE		;30%
+	db 42, RATICATE		;20%
+	db 42, CLODSIRE		;10%
+	db 42, RATICATE		;5%
+	db 42, CLODSIRE		;4%
+	db 42, CLODSIRE		;1%
 	; day
-	db 39, NOIBAT		;30%
-	db 39, CRUSTLE		;30%
-	db 39, RATICATE		;20%
-	db 39, CLODSIRE		;10%
-	db 39, RATICATE		;5%
-	db 39, CLODSIRE		;4%
-	db 39, CLODSIRE		;1%
+	db 42, NOIBAT		;30%
+	db 42, CRUSTLE		;30%
+	db 42, RATICATE		;20%
+	db 42, CLODSIRE		;10%
+	db 42, RATICATE		;5%
+	db 42, CLODSIRE		;4%
+	db 42, CLODSIRE		;1%
 	; nite
-	db 39, NOIBAT		;30%
-	db 39, CRUSTLE		;30%
-	db 39, RATICATE		;20%
-	db 39, CLODSIRE		;10%
-	db 39, RATICATE		;5%
-	db 39, CLODSIRE		;4%
-	db 39, CLODSIRE		;1%
+	db 42, NOIBAT		;30%
+	db 42, CRUSTLE		;30%
+	db 42, RATICATE		;20%
+	db 42, CLODSIRE		;10%
+	db 42, RATICATE		;5%
+	db 42, CLODSIRE		;4%
+	db 42, CLODSIRE		;1%
 	
 	map_id GREEN_GROTTO_2F
 	db 5 percent, 5 percent, 5 percent ; encounter rates: morn/day/nite
 	; morn
-	db 39, NOIBAT		;30%
-	db 39, CRUSTLE		;30%
-	db 39, RATICATE		;20%
-	db 39, CLODSIRE		;10%
-	db 39, HERACROSS	;5%
-	db 39, CLODSIRE		;4%
-	db 39, CLODSIRE		;1%
+	db 42, NOIBAT		;30%
+	db 42, CRUSTLE		;30%
+	db 42, RATICATE		;20%
+	db 42, CLODSIRE		;10%
+	db 42, HERACROSS	;5%
+	db 42, CLODSIRE		;4%
+	db 42, CLODSIRE		;1%
 	; day
-	db 39, NOIBAT		;30%
-	db 39, CRUSTLE		;30%
-	db 39, RATICATE		;20%
-	db 39, CLODSIRE		;10%
-	db 39, HERACROSS	;5%
-	db 39, CLODSIRE		;4%
-	db 39, CLODSIRE		;1%
+	db 42, NOIBAT		;30%
+	db 42, CRUSTLE		;30%
+	db 42, RATICATE		;20%
+	db 42, CLODSIRE		;10%
+	db 42, HERACROSS	;5%
+	db 42, CLODSIRE		;4%
+	db 42, CLODSIRE		;1%
 	; nite
-	db 39, NOIBAT		;30%
-	db 39, CRUSTLE		;30%
-	db 39, RATICATE		;20%
-	db 39, CLODSIRE		;10%
-	db 39, HERACROSS	;5%
-	db 39, CLODSIRE		;4%
-	db 39, CLODSIRE		;1%
+	db 42, NOIBAT		;30%
+	db 42, CRUSTLE		;30%
+	db 42, RATICATE		;20%
+	db 42, CLODSIRE		;10%
+	db 42, HERACROSS	;5%
+	db 42, CLODSIRE		;4%
+	db 42, CLODSIRE		;1%
 	
 	map_id BONE_CAVERN_B1F
 	db 4 percent, 4 percent, 4 percent ; encounter rates: morn/day/nite

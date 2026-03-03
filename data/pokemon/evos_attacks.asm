@@ -163,6 +163,7 @@ BlastoiseEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, FLASH_CANNON
 	db 1, ICY_WIND
+	db 1, ICE_FANG
 	db 1, TACKLE_SCRATCH_POUND
 	db 1, LEER_TAIL_WHIP
 	db 1, WATER_GUN

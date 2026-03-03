@@ -5,7 +5,7 @@
 	tilecoll WALL, WALL, ATM, BOOKSHELF ; 04
 	tilecoll WALL, WALL, FLOOR, FLOOR ; 05
 	tilecoll COUNTER, COUNTER, FLOOR, FLOOR ; 06
-	tilecoll WALL, PC, FLOOR, FLOOR ; 07
+	tilecoll COUNTER, PC, FLOOR, FLOOR ; 07
 	tilecoll WALL, FLOOR, WALL, FLOOR ; 08
 	tilecoll WALL, TOWN_MAP, FLOOR, FLOOR ; 09
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 0a

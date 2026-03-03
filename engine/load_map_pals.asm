@@ -44,7 +44,7 @@ LightUpPlayerPalTimeOfDay:
 	and 3
 	ld bc, 8 palettes
 	call AddNTimes
-	call LoadPlayerPalettewUnknOBPalsDe
+	farcall LoadPlayerPalettewUnknOBPalsDe
 	ld bc, 1 palettes
 	ld a, $5 ; BANK(UnknOBPals)
 	jp FarCopyWRAM

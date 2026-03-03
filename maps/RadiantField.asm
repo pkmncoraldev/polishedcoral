@@ -674,7 +674,7 @@ RadiantFieldViolet:
 .time_to_save
 	faceplayer
 	opentext TEXTBOX_VIOLET
-	writetext RadiantFieldVioletText2
+	writetext RadiantFieldVioletText1
 	farwritetext StdBlankText
 	pause 6
 	writetext RadiantFieldVioletText3

@@ -305,7 +305,7 @@ Kage_SunbeamFinalPkmnText:
 Kage_InnFinalPkmnText:
 	text "ENOUGH!"
 	
-	para "I will cut you"
+	para "I WILL cut you"
 	line "down to size,"
 	cont "you brat!"
 	prompt

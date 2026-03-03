@@ -52,7 +52,7 @@ RadiantHouseNPC2:
 RadiantHouseNPC2Text:
 	text "Her over there?"
 	
-	para "Well she's quite"
+	para "Well, she's quite"
 	line "the root fan."
 	
 	para "She's a bit of a"

@@ -299,7 +299,7 @@ Inn1FKageText2:
 	line "from SUNBEAM!"
 	
 	para "You ain't leavin'"
-	line "here in on piece!"
+	line "here in one piece!"
 	done
 	
 Inn1FKageText3:

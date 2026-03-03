@@ -500,7 +500,7 @@ LoadSpecialMapPalette: ; 494ac
 .shimmer
 	ld a, [wMapGroup]
 	cp GROUP_SHIMMER_CITY
-	jp nz, .do_nothing
+	jp nz, .check_shimmer_flowers
 	ld a, [wMapNumber]
 	cp MAP_SHIMMER_UNDER_BOARDWALK
 	jp nz, .do_nothing
@@ -511,7 +511,20 @@ LoadSpecialMapPalette: ; 494ac
 	call FarCopyWRAM
 	scf
 	ret
-	
+.check_shimmer_flowers
+	ld a, [wMapNumber]
+	cp MAP_ROUTE_20
+	jp nz, .do_nothing
+	ld hl, FlowerFieldPalette
+	ld de, wUnknBGPals + 4 palettes
+	ld a, [wTimeOfDayPal]
+	and 3
+	ld bc, 1 palettes
+	rst AddNTimes
+	ld a, $5
+	call FarCopyWRAM
+	scf
+	ret
 .nett
 	ld a, [wMapGroup]
 	cp GROUP_NETT_BUILDING_1F

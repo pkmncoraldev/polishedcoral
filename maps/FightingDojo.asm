@@ -776,12 +776,12 @@ FightingDojoMasterText1:
 	done
 	
 FightingDojoMasterText2:
-	text "There will be no"
-	line "time for rest"
+	text "There will be"
+	line "no time for rest"
 	cont "between battles."
 	
 	para "Will you rest and"
-	line "mediate first?"
+	line "meditate first?"
 	done
 	
 FightingDojoMasterText3:
@@ -848,7 +848,7 @@ FightingDojoMasterText9:
 	text "You have returned."
 	
 	para "Will you rest and"
-	line "mediate?"
+	line "meditate?"
 	done
 	
 FightingDojoMasterText10:

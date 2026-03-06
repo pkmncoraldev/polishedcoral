@@ -1192,6 +1192,8 @@ BattleConsumePP:
 	jr z, .heal
 	cp EFFECT_WISH
 	jr z, .heal
+	cp EFFECT_ROOST
+	jr z, .heal
 	cp EFFECT_HEALING_LIGHT
 	jr nz, .done_heal
 .heal

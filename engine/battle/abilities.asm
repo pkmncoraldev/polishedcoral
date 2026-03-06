@@ -1628,7 +1628,18 @@ HustleAbility:
 	jp ApplyPhysicalAttackDamageMod
 
 DefeatistAbility:
+; preserve the buffers for AI damage calc
+	ld a, [wBuffer2]
+	ld d, a
+	ld a, [wBuffer1]
+	ld e, a
+	push de
 	call CheckDefeatist
+	pop de
+	ld a, d
+	ld [wBuffer2], a
+	ld a, e
+	ld [wBuffer1], a
 	ret nz
 	ld a, $12
 	jp ApplyDamageMod

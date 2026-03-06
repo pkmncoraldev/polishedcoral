@@ -1155,13 +1155,9 @@ BattleConsumePP:
 	ld de, wBattleMonPP
 	ld hl, wPartyMon1PP
 	jr z, .set_party_pp
-	ld a, [wBattleMode]
-	dec a
 	ld a, [wCurOTMon]
 	ld bc, wCurEnemyMoveNum
 	ld de, wEnemyMonPP
-	ld hl, wWildMonPP
-	jr z, .pp_vars_ok
 	ld hl, wOTPartyMon1PP
 .set_party_pp
 	call GetPartyLocation

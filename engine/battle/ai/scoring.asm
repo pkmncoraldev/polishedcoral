@@ -193,6 +193,7 @@ AI_Types: ; 38635
 ; Encourage super-effective moves.
 ; Discourage not very effective moves unless
 ; all damaging moves are of the same type.
+; +skip this check for status moves except for a few
 
 	ld hl, wBuffer1 - 1
 	ld de, wEnemyMonMoves
@@ -210,9 +211,31 @@ AI_Types: ; 38635
 	call AIGetEnemyMove
 	ld a, [wEnemyMoveStructAnimation]
 	ld [wCurMove], a
-	cp TOXIC_SPIKES
-	ret z
+	push hl
+	push de
+	push bc
+	ld hl, .status_move_effected_by_types
+	ld de, 1
+	call IsInArray
 
+	pop bc
+	pop de
+	pop hl
+	jr c, .skip_status_check
+	
+	push hl
+	push de
+	push bc
+	ld a, BATTLE_VARS_MOVE_CATEGORY
+	call GetBattleVar
+	ld a, c
+	cp STATUS
+	pop bc
+	pop de
+	pop hl
+	jr z, .checkmove
+
+.skip_status_check
 	push hl
 	push bc
 	push de
@@ -284,9 +307,14 @@ AI_Types: ; 38635
 
 .immune
 	call AIDiscourageMove
-	jr .checkmove
-; 386a2
+	jp .checkmove
 
+.status_move_effected_by_types
+	db THUNDER_WAVE
+	db POISONPOWDER
+	db WILL_O_WISP
+	db TOXIC
+	db $ff
 
 
 AI_Offensive: ; 386a2

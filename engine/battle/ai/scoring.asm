@@ -301,9 +301,9 @@ AI_Types: ; 38635
 	pop de
 	pop hl
 	and a
-	jr z, .checkmove
+	jp z, .checkmove
 	inc [hl]
-	jr .checkmove
+	jp .checkmove
 
 .immune
 	call AIDiscourageMove

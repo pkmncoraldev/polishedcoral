@@ -1684,14 +1684,6 @@ BattleCommand_resettypematchup: ; 34833
 	ld [wTypeMatchup], a
 	ret
 
-BattleCommand_checktwaveability:
-	ld a, BATTLE_VARS_MOVE
-	call GetBattleVar
-	cp THUNDER_WAVE
-	ret nz
-	farcall CheckNullificationAbilities
-	ret
-
 INCLUDE "engine/battle/ai/switch.asm"
 
 INCLUDE "data/types/type_matchups.asm"
@@ -1826,6 +1818,8 @@ BattleCommand_bounceback:
 
 
 BattleCommand_checkhit:
+	call .ThunderWave
+
 	call .DreamEater
 	ld a, ATKFAIL_IMMUNE
 	jp z, .Miss_skipset
@@ -1995,6 +1989,40 @@ BattleCommand_checkhit:
 	call GetBattleVar
 	cp EFFECT_JUMP_KICK
 	call nz, ResetDamage
+	ret
+.Miss_skipset_wait:
+	ld b, a
+	push bc
+	call BattleCommand_movedelay
+	pop bc
+	ld a, b
+	jr .Miss_skipset
+
+.ThunderWave:
+	ld a, BATTLE_VARS_MOVE_EFFECT
+	call GetBattleVar
+	cp EFFECT_PARALYZE
+	ret nz
+
+	farcall CheckNullificationAbilities
+	ld a, [wAttackMissed]
+	and a
+	cp ATKFAIL_ABILITY
+	jr z, .ThunderWave_AbilityImmume
+
+	call BattleCheckTypeMatchup
+	ld a, [wTypeMatchup]
+	and a
+	ld a, ATKFAIL_IMMUNE
+	jr z, .Miss_skipset_wait
+	ret
+	
+.ThunderWave_AbilityImmume
+	ld b, a
+	push bc
+	call BattleCommand_movedelay
+	pop bc
+	ld a, b
 	ret
 
 .DreamEater:

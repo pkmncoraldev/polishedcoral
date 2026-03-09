@@ -969,8 +969,8 @@ ThunderWave:
 	doturn
 	pressure
 	checkpowder
-	checktwaveability
 	checkhit
+	failuretext
 	bounceback
 	checksafeguard
 	paralyze

@@ -200,7 +200,6 @@ BattleCommandPointers:
 	command taunt
 	command conversion2
 	command doubleunderwaterdamage
-	command checktwaveability
 	
 
 	enum_start -1, -1

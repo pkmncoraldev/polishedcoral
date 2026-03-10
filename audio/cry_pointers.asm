@@ -94,6 +94,7 @@ Cries:
 	dba Cry_Drifblim
 	dba Cry_Leafeon
 	dba Cry_Glaceon
+	dba Cry_PorygonZ
 	dba Cry_Froslass
 ; gen 5
 	dba Cry_Drilbur
@@ -101,6 +102,13 @@ Cries:
 	dba Cry_Venipede
 	dba Cry_Whirlipede
 	dba Cry_Scolipede
+	dba Cry_Scraggy
+	dba Cry_Scrafty
+	dba Cry_Litwick
+	dba Cry_Lampent
+	dba Cry_Chandelure
+	dba Cry_Mienfoo
+	dba Cry_Mienshao
 ; gen 6
 	dba Cry_Sylveon
 	dba Cry_Noibat

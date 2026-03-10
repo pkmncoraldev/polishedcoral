@@ -479,7 +479,7 @@ CryHeaders2::
 	mon_cry CRY_GLACEON,       56,   588 	; Glaceon
 	mon_cry CRY_BULBASAUR,   $080,  $081 	; Gliscor - PLACEHOLDER
 	mon_cry CRY_BULBASAUR,   $080,  $081 	; Mamoswine - PLACEHOLDER
-	mon_cry CRY_BULBASAUR,   $080,  $081 	; PorygonZ - PLACEHOLDER
+	mon_cry CRY_PORYGONZ,       0,   384 	; PorygonZ
 	mon_cry CRY_FROSLASS,      143,  384 	; Froslass
 	mon_cry CRY_DRILBUR,       255,  200	; Drilbur
 	mon_cry CRY_EXCADRILL,      88,  264	; Excadrill
@@ -491,8 +491,8 @@ CryHeaders2::
 	mon_cry CRY_BULBASAUR,   $080,  $081	; Maractus - PLACEHOLDER
 	mon_cry CRY_BULBASAUR,   $080,  $081 	; Dwebble - PLACEHOLDER
 	mon_cry CRY_BULBASAUR,   $080,  $081 	; Crustle - PLACEHOLDER
-	mon_cry CRY_BULBASAUR,   $080,  $081 	; Scraggy - PLACEHOLDER
-	mon_cry CRY_BULBASAUR,   $080,  $081 	; Scrafty - PLACEHOLDER
+	mon_cry CRY_SCRAGGY,      223,   192 	; Scraggy
+	mon_cry CRY_SCRAFTY,       97,   300 	; Scrafty
 	mon_cry CRY_BULBASAUR,   $080,  $081	; Tirtouga - PLACEHOLDER
 	mon_cry CRY_BULBASAUR,   $080,  $081 	; Carracosta - PLACEHOLDER
 	mon_cry CRY_BULBASAUR,   $080,  $081	; Archen - PLACEHOLDER
@@ -501,11 +501,11 @@ CryHeaders2::
 	mon_cry CRY_PSYDUCK,     $265,  $170	; Cinccino
 	mon_cry CRY_BULBASAUR,   $080,  $081 	; Joltik - PLACEHOLDER
 	mon_cry CRY_BULBASAUR,   $080,  $081 	; Galvantula - PLACEHOLDER
-	mon_cry CRY_WOOPER,     -$010,  $210 	; Litwick
-	mon_cry CRY_BULBASAUR,   $080,  $081 	; Lampent - PLACEHOLDER
-	mon_cry CRY_BULBASAUR,   $080,  $081 	; Chandelure - PLACEHOLDER
-	mon_cry CRY_BULBASAUR,   $080,  $081	; Mienfoo - PLACEHOLDER
-	mon_cry CRY_BULBASAUR,   $080,  $081	; Mienshao - PLACEHOLDER
+	mon_cry CRY_LITWICK,        0,   256 	; Litwick
+	mon_cry CRY_LAMPENT,        0,   384 	; Lampent
+	mon_cry CRY_CHANDELURE,   255,   384	; Chandelure
+	mon_cry CRY_MIENFOO,      237,   256	; Mienfoo
+	mon_cry CRY_MIENSHAO,     237,   256	; Mienshao
 	mon_cry CRY_BULBASAUR,   $080,  $081 	; Larvesta - PLACEHOLDER
 	mon_cry CRY_BULBASAUR,   $080,  $081 	; Volcarona - PLACEHOLDER
 	mon_cry CRY_SYLVEON,        0,   664 	; Sylveon

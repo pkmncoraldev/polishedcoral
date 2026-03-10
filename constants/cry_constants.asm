@@ -98,6 +98,7 @@
 	const CRY_DRIFBLIM
 	const CRY_LEAFEON
 	const CRY_GLACEON
+	const CRY_PORYGONZ
 	const CRY_FROSLASS
 ; gen 5
 	const CRY_DRILBUR
@@ -105,6 +106,13 @@
 	const CRY_VENIPEDE
 	const CRY_WHIRLIPEDE
 	const CRY_SCOLIPEDE
+	const CRY_SCRAGGY
+	const CRY_SCRAFTY
+	const CRY_LITWICK
+	const CRY_LAMPENT
+	const CRY_CHANDELURE
+	const CRY_MIENFOO
+	const CRY_MIENSHAO
 ; gen 6
 	const CRY_SYLVEON
 	const CRY_NOIBAT

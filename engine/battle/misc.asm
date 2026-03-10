@@ -82,3 +82,26 @@ DoWeatherModifiers: ; fbda4
 	srl a
 	ld [wTypeMatchup], a
 	ret
+	
+BackUpVBGMap2::
+	ldh a, [rSVBK]
+	push af
+	ld a, BANK(wDecompressScratch)
+	ldh [rSVBK], a
+	ld hl, wDecompressScratch
+	ld bc, $40 tiles ; VBGMap3 - VBGMap2
+	ld a, $2
+	call ByteFill
+	ldh a, [rVBK]
+	push af
+	ld a, $1
+	ldh [rVBK], a
+	ld de, wDecompressScratch
+	hlbgcoord 0, 0 ; VBGMap2
+	lb bc, BANK(BackUpVBGMap2), $40
+	call Request2bpp
+	pop af
+	ldh [rVBK], a
+	pop af
+	ldh [rSVBK], a
+	ret

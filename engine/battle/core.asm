@@ -849,8 +849,9 @@ GetMovePriority: ; 3c5c5
 	cp STATUS
 	jr nz, .no_priority
 	inc b
-	ld hl, PranksterText
-	call StdBattleTextBox
+	ld a, PRIORITY_ABILITY_TEXT_PRANKSTER
+	call .check_player
+	ld [wCalculatingEnemyStats], a
 	jr .no_priority
 .check_triage
 	cp TRIAGE
@@ -862,12 +863,23 @@ GetMovePriority: ; 3c5c5
 	call IsInArray
 	jr nc, .no_priority
 	inc b
-	ld hl, TriageText
-	call StdBattleTextBox
-	
+	ld a, PRIORITY_ABILITY_TEXT_TRIAGE
+	call .check_player
+	ld [wCalculatingEnemyStats], a
 .no_priority
 	ld a, b
 	pop bc
+	ret
+.check_player
+	push af
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .player
+	pop af
+	add $80
+	ret
+.player
+	pop af
 	ret
 
 
@@ -886,6 +898,19 @@ GetMoveEffect: ; 3c5ec
 	ret
 ; 3c5fe
 
+PriortyAbilityText:
+	ld hl, PranksterText
+	cp PRIORITY_ABILITY_TEXT_PRANKSTER
+	jr z, .prankster
+	cp PRIORITY_ABILITY_TEXT_TRIAGE
+	jr nz, .finish
+	ld hl, TriageText
+.prankster
+	call StdBattleTextBox
+.finish
+	xor a
+	ld [wCalculatingEnemyStats], a
+	ret
 
 Battle_EnemyFirst: ; 3c5fe
 	call LoadTileMapToTempTileMap
@@ -896,6 +921,9 @@ Battle_EnemyFirst: ; 3c5fe
 	ld [wEnemyGoesFirst], a
 	farcall AI_SwitchOrTryItem
 	jr c, .switch_item
+	ld a, [wCalculatingEnemyStats]
+	sub $80
+	call PriortyAbilityText
 	call EnemyTurn_EndOpponentProtectEndureDestinyBond
 	ld a, [wBattleEnded]
 	and a
@@ -930,6 +958,7 @@ Battle_EnemyFirst: ; 3c5fe
 	call HasUserFainted
 	jp z, HandlePlayerMonFaint
 	call RefreshBattleHuds
+	
 	xor a
 	ld [wBattlePlayerAction], a
 	ret
@@ -945,6 +974,8 @@ Battle_PlayerFirst: ; 3c664
 	ld a, 1
 	ld [wEnemyGoesFirst], a
 .enemy_used_move
+	ld a, [wCalculatingEnemyStats]
+	call PriortyAbilityText
 	call PlayerTurn_EndOpponentProtectEndureDestinyBond
 	pop bc
 	ld a, [wBattleEnded]
@@ -8967,7 +8998,7 @@ BattleIntro: ; 3f4dd
 	call DisableSpriteUpdates
 	farcall ClearBattleRAM
 	call InitEnemy
-	call BackUpVBGMap2
+	farcall BackUpVBGMap2
 	ld b, CGB_BATTLE_GRAYSCALE
 	call GetCGBLayout
 	ld hl, rLCDC
@@ -9012,30 +9043,6 @@ InitEnemy: ; 3f55e
 	jp nz, InitEnemyTrainer ; trainer
 	jp InitEnemyWildmon ; wild
 ; 3f568
-
-BackUpVBGMap2: ; 3f568
-	ldh a, [rSVBK]
-	push af
-	ld a, BANK(wDecompressScratch)
-	ldh [rSVBK], a
-	ld hl, wDecompressScratch
-	ld bc, $40 tiles ; VBGMap3 - VBGMap2
-	ld a, $2
-	call ByteFill
-	ldh a, [rVBK]
-	push af
-	ld a, $1
-	ldh [rVBK], a
-	ld de, wDecompressScratch
-	hlbgcoord 0, 0 ; VBGMap2
-	lb bc, BANK(BackUpVBGMap2), $40
-	call Request2bpp
-	pop af
-	ldh [rVBK], a
-	pop af
-	ldh [rSVBK], a
-	ret
-; 3f594
 
 InitEnemyTrainer: ; 3f594
 	ld [wTrainerClass], a

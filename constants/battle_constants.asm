@@ -320,3 +320,8 @@ DEF SCREENS_TOXIC_SPIKES EQU     %11000000
 	const WIN
 	const LOSE
 	const DRAW
+	
+; priority ability text
+	const_def 1
+	const PRIORITY_ABILITY_TEXT_PRANKSTER
+	const PRIORITY_ABILITY_TEXT_TRIAGE

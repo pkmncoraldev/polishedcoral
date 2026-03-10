@@ -939,7 +939,9 @@ ObscuraMuseum1FReceptionistTextNo:
 	
 ObscuraMuseum1FReceptionistTextNoMoney:
 	text "Oh, I'm sorry.<WAIT_S>"
-	line "You don't have enough!"
+	
+	para "You don't have"
+	line "enough money!"
 	
 	para "Come again!"
 	done

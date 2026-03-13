@@ -641,12 +641,10 @@ ObscuraGymClerk2:
 	db 1 ; default option
 
 .FinalQustionMenuData2:
-	db $80 ; flags
+	db $81 ; flags
 	db 2 ; items
 	db "ROCKY@"
 	db "ROCKFORD@"
-	db "12@"
-	db "4@"
 	
 ObscuraGymClerk2Text1:
 	text "If you want to see"
@@ -871,7 +869,7 @@ ObscuraGymQuizLady1:
 	db 1 ; default option
 
 .Q1Q1MenuData2:
-	db $80 ; flags
+	db $81 ; flags
 	db 4 ; items
 	db "3@"
 	db "16@"
@@ -886,7 +884,7 @@ ObscuraGymQuizLady1:
 	db 1 ; default option
 
 .Q1Q2MenuData2:
-	db $80 ; flags
+	db $81 ; flags
 	db 4 ; items
 	db "BLUE@"
 	db "RED@"
@@ -901,7 +899,7 @@ ObscuraGymQuizLady1:
 	db 1 ; default option
 
 .Q1Q3MenuData2:
-	db $80 ; flags
+	db $81 ; flags
 	db 4 ; items
 	db "PLANT@"
 	db "BOOKSHELF@"
@@ -1016,7 +1014,7 @@ ObscuraGymQuizLady2:
 	waitsfx
 	winlosstext ObscuraQuiz2WinText, 0
 	setlasttalked OBSCURA_GYM_QUIZ_LADY_2
-	loadtrainer MUSEUM_GUIDE, 1
+	loadtrainer MUSEUM_GUIDE, 3
 	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
 	startbattle
 	reloadmapafterbattle
@@ -1033,7 +1031,7 @@ ObscuraGymQuizLady2:
 	db 1 ; default option
 
 .Q2Q1MenuData2:
-	db $80 ; flags
+	db $81 ; flags
 	db 4 ; items
 	db "4@"
 	db "2@"
@@ -1048,7 +1046,7 @@ ObscuraGymQuizLady2:
 	db 1 ; default option
 
 .Q2Q2MenuData2:
-	db $80 ; flags
+	db $81 ; flags
 	db 4 ; items
 	db "LEMONADE@"
 	db "ROCK CANDY@"
@@ -1063,7 +1061,7 @@ ObscuraGymQuizLady2:
 	db 1 ; default option
 
 .Q2Q3MenuData2:
-	db $80 ; flags
+	db $81 ; flags
 	db 4 ; items
 	db "ROCKY@"
 	db "WOODY@"
@@ -1178,7 +1176,7 @@ ObscuraGymQuizLady3:
 	waitsfx
 	winlosstext ObscuraQuiz3WinText, 0
 	setlasttalked OBSCURA_GYM_QUIZ_LADY_3
-	loadtrainer MUSEUM_GUIDE, 1
+	loadtrainer MUSEUM_GUIDE, 5
 	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
 	startbattle
 	reloadmapafterbattle
@@ -1195,7 +1193,7 @@ ObscuraGymQuizLady3:
 	db 1 ; default option
 
 .Q3Q1MenuData2:
-	db $80 ; flags
+	db $81 ; flags
 	db 4 ; items
 	db "FOOTPRINT IN ROCK@"
 	db "DNA SAMPLE@"
@@ -1210,7 +1208,7 @@ ObscuraGymQuizLady3:
 	db 1 ; default option
 
 .Q3Q2MenuData2:
-	db $80 ; flags
+	db $81 ; flags
 	db 4 ; items
 	db "PRESERVED WOOD@"
 	db "WOOD-SHAPED STONE@"
@@ -1225,7 +1223,7 @@ ObscuraGymQuizLady3:
 	db 1 ; default option
 
 .Q3Q3MenuData2:
-	db $80 ; flags
+	db $81 ; flags
 	db 4 ; items
 	db "243 MILLION YEARS@"
 	db "621 MILLION YEARS@"
@@ -1340,7 +1338,7 @@ ObscuraGymQuizLady4:
 	waitsfx
 	winlosstext ObscuraQuiz4WinText, 0
 	setlasttalked OBSCURA_GYM_QUIZ_LADY_4
-	loadtrainer MUSEUM_GUIDE, 1
+	loadtrainer MUSEUM_GUIDE, 7
 	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
 	startbattle
 	reloadmapafterbattle
@@ -1357,7 +1355,7 @@ ObscuraGymQuizLady4:
 	db 1 ; default option
 
 .Q4Q1MenuData2:
-	db $80 ; flags
+	db $81 ; flags
 	db 4 ; items
 	db "FAST RUNNER@"
 	db "FIERCE HUNTER@"
@@ -1372,7 +1370,7 @@ ObscuraGymQuizLady4:
 	db 1 ; default option
 
 .Q4Q2MenuData2:
-	db $80 ; flags
+	db $81 ; flags
 	db 4 ; items
 	db "HUGE WINGS@"
 	db "STRONG JAW@"
@@ -1387,7 +1385,7 @@ ObscuraGymQuizLady4:
 	db 1 ; default option
 
 .Q4Q3MenuData2:
-	db $80 ; flags
+	db $81 ; flags
 	db 4 ; items
 	db "STRONG LEGS@"
 	db "LESS FUR@"
@@ -1988,10 +1986,10 @@ ObscuraGymTrainerRematch1:
 	winlosstext ObscuraQuiz1WinText, 0
 	checkcode VAR_BADGES
 	ifequal 8, .eightbadges
-	loadtrainer LASS, KATHY_7
+	loadtrainer MUSEUM_GUIDE, 1
 	jump .cont
 .eightbadges
-	loadtrainer LASS, KATHY_8
+	loadtrainer MUSEUM_GUIDE, 2
 .cont
 	startbattle
 	dontrestartmapmusic
@@ -2019,10 +2017,10 @@ ObscuraGymTrainerRematch2:
 	winlosstext ObscuraQuiz2WinText, 0
 	checkcode VAR_BADGES
 	ifequal 8, .eightbadges
-	loadtrainer LASS, KATHY_7
+	loadtrainer MUSEUM_GUIDE, 3
 	jump .cont
 .eightbadges
-	loadtrainer LASS, KATHY_8
+	loadtrainer MUSEUM_GUIDE, 4
 .cont
 	startbattle
 	dontrestartmapmusic
@@ -2050,10 +2048,10 @@ ObscuraGymTrainerRematch3:
 	winlosstext ObscuraQuiz3WinText, 0
 	checkcode VAR_BADGES
 	ifequal 8, .eightbadges
-	loadtrainer LASS, KATHY_7
+	loadtrainer MUSEUM_GUIDE, 5
 	jump .cont
 .eightbadges
-	loadtrainer LASS, KATHY_8
+	loadtrainer MUSEUM_GUIDE, 6
 .cont
 	startbattle
 	dontrestartmapmusic
@@ -2081,10 +2079,10 @@ ObscuraGymTrainerRematch4:
 	winlosstext ObscuraQuiz4WinText, 0
 	checkcode VAR_BADGES
 	ifequal 8, .eightbadges
-	loadtrainer LASS, KATHY_7
+	loadtrainer MUSEUM_GUIDE, 7
 	jump .cont
 .eightbadges
-	loadtrainer LASS, KATHY_8
+	loadtrainer MUSEUM_GUIDE, 8
 .cont
 	startbattle
 	dontrestartmapmusic
@@ -2112,10 +2110,10 @@ ObscuraGymTrainerRematch5:
 	winlosstext ObscuraGymClerk2WinText, 0
 	checkcode VAR_BADGES
 	ifequal 8, .eightbadges
-	loadtrainer LASS, KATHY_7
+	loadtrainer MUSEUM_GUIDE_2, 1
 	jump .cont
 .eightbadges
-	loadtrainer LASS, KATHY_8
+	loadtrainer MUSEUM_GUIDE_2, 2
 .cont
 	startbattle
 	dontrestartmapmusic

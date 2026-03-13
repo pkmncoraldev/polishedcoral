@@ -81,7 +81,7 @@ TrainerClassAttributes: ; 3959c
 ; Rocky
 	db MAX_POTION, 0 ; items
 	db 25 ; base reward
-	dw AI_BASIC + AI_SETUP + AI_TYPES + AI_OPPORTUNIST + AI_AGGRESSIVE + AI_CAUTIOUS + AI_STATUS + AI_RISKY
+	dw AI_BASIC + AI_SMART + AI_SETUP + AI_TYPES + AI_OPPORTUNIST + AI_AGGRESSIVE + AI_CAUTIOUS + AI_STATUS
 	dw CONTEXT_USE + SWITCH_SOMETIMES
 
 ; Darcy
@@ -573,13 +573,13 @@ TrainerClassAttributes: ; 3959c
 ; Museum Guide
 	db 0, 0 ; items
 	db 20 ; base reward
-	dw AI_BASIC + AI_OFFENSIVE + AI_CAUTIOUS + AI_STATUS
+	dw AI_BASIC + AI_OFFENSIVE + AI_CAUTIOUS + AI_STATUS + AI_TYPES
 	dw CONTEXT_USE + SWITCH_RARELY
 	
 ; Museum Guide 2
 	db 0, 0 ; items
 	db 20 ; base reward
-	dw AI_BASIC + AI_OFFENSIVE + AI_CAUTIOUS + AI_STATUS
+	dw AI_BASIC + AI_OFFENSIVE + AI_CAUTIOUS + AI_STATUS + AI_TYPES + AI_AGGRESSIVE
 	dw CONTEXT_USE + SWITCH_RARELY
 	
 ; Businessman

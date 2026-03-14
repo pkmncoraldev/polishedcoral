@@ -221,7 +221,7 @@ Route23Master1:
 	spriteface ROUTE_23_BLACKBELT, DOWN
 	playsound SFX_PAY_DAY
 	showemote EMOTE_SHOCK, ROUTE_23_BLACKBELT, 15
-	opentext
+	opentext TEXTBOX_DISCIPLE
 	writetext Route23BlackBeltText9
 	waitbutton
 	closetext
@@ -241,7 +241,7 @@ Route23Master1:
 	closetext
 	pause 10
 	applyonemovement ROUTE_23_BLACKBELT, turn_step_up
-	opentext
+	opentext TEXTBOX_DISCIPLE
 	writetext Route23BlackBeltText10
 	waitbutton
 	closetext
@@ -250,7 +250,7 @@ Route23Master1:
 	pause 10
 	special Special_FadeOutMusic
 	pause 40
-	opentext
+	opentext TEXTBOX_DISCIPLE
 rept 2
 	playsound SFX_WHIRLWIND
 	writetext Route23BlackBeltText11
@@ -263,7 +263,7 @@ endr
 	closetext
 	spriteface ROUTE_23_BLACKBELT, RIGHT
 	spriteface ROUTE_23_NPC_1, LEFT
-	opentext
+	opentext TEXTBOX_DISCIPLE
 	playsound SFX_WHIRLWIND
 	writetext Route23BlackBeltText11
 	pause 100
@@ -278,7 +278,7 @@ endr
 	callasm LoadMapPals
 	special FadeInPalettes
 	pause 10
-	opentext
+	opentext TEXTBOX_DISCIPLE
 	playsound SFX_POWDER
 	writetext Route23BlackBeltText12
 	pause 60
@@ -291,7 +291,7 @@ endr
 	closetext
 	pause 10
 	spriteface ROUTE_23_BLACKBELT, UP
-	opentext
+	opentext TEXTBOX_DISCIPLE
 	writetext Route23BlackBeltText13
 	waitbutton
 	closetext

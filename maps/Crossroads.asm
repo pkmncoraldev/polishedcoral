@@ -408,7 +408,11 @@ CrossroadsSnare2Text:
 	done
 	
 CrossroadsUnfortunateCustomer:
-	jumptextfaceplayer CrossroadsUnfortunateCustomerText
+	opentext TEXTBOX_OTHER_CORY
+	writetext CrossroadsUnfortunateCustomerText
+	waitbutton
+	closetext
+	end
 	
 CrossroadsUnfortunateCustomerText:
 	text "Someone took my"

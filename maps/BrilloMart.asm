@@ -210,10 +210,11 @@ BrilloMartDoor:
 	pause 5
 	checkevent EVENT_SAID_PASSWORD
 	iftrue .donepassword
-	opentext
+	opentext TEXTBOX_DOOR
 	writetext BrilloMartDoorText1
 	waitbutton
 	special FadeOutPalettes
+	changetextboxspeaker
 	callasm BrilloMartDoorAsm
 	callasm BrilloMartCheckPassword
 	iffalse .wrong

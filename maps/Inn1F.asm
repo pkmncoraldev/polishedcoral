@@ -1182,19 +1182,19 @@ Inn1FUnfortunateCustomer:
 	setevent EVENT_INN_1F_UNFORTUNATE_CUSTOMER
 	setevent EVENT_INN_1F_UNFORTUNATE_CUSTOMER_2
 	applyonemovement INN_1F_UNFORTUNATE_CUSTOMER, turn_step_left
-	opentext
+	opentext TEXTBOX_UNKNOWN
 	writetext Inn1FUnfortunateCustomerText1
 	waitbutton
 	closetext
 	pause 5
 	applyonemovement INN_1F_CLERK, turn_step_right
-	opentext
+	opentext TEXTBOX_CLERK
 	writetext Inn1FUnfortunateCustomerText2
 	waitbutton
 	closetext
 	pause 5
 	applyonemovement INN_1F_UNFORTUNATE_CUSTOMER, turn_step_left
-	opentext
+	opentext TEXTBOX_OTHER_CORY
 	writetext Inn1FUnfortunateCustomerText3
 	waitbutton
 	closetext
@@ -1205,7 +1205,7 @@ Inn1FUnfortunateCustomer:
 	jumptext Inn1FUnfortunateCustomerText4
 	
 Inn1FUnfortunateCustomerText1:
-	text "???: I told you,"
+	text "I told you,"
 	line "I paid before I"
 	cont "got here."
 	
@@ -1217,14 +1217,13 @@ Inn1FUnfortunateCustomerText2:
 	text "I understand, but"
 	line "I don't have any"
 	cont "more rooms under"
-	cont "that name."
+	cont "that name…"
 	
-	para "I'm sorry."
+	para "I'm sorry…"
 	done
 	
 Inn1FUnfortunateCustomerText3:
-	text "Other <PLAYER>:"
-	line "Well, what am I"
+	text "Well, what am I"
 	cont "meant to do now?"
 	
 	para "I don't have any"

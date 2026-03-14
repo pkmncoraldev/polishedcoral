@@ -29,7 +29,7 @@ TalkToAirportGuardScript:
 	
 TalkToBankCardGirlScript::
 	faceobject PLAYER, LAST_TALKED
-	opentext
+	opentext TEXTBOX_SKETCHY_LADY
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_7
 	iftrue .talking_again2
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_8
@@ -50,6 +50,7 @@ TalkToBankCardGirlScript::
 .cont2
 	yesorno
 	iffalse .no
+	changetextboxspeaker
 	checkevent EVENT_PLAYER_IS_CORA
 	iftrue .girl
 	checkevent EVENT_PLAYER_IS_PIPPI
@@ -68,7 +69,7 @@ TalkToBankCardGirlScript::
 	waitbutton
 	closetext
 	pause 15
-	opentext
+	opentext TEXTBOX_SKETCHY_LADY
 	writetext BankCardNPCText4
 	waitbutton
 	closetext
@@ -172,13 +173,15 @@ BankCardNPCText2_2:
 	done
 	
 BankCardNPCText3_boy:
-	text "<PLAYER> gave the"
-	line "odd lady his info…"
+	text "<PLAYER> gave his"
+	line "info to the sketchy"
+	cont "lady…"
 	done
 	
 BankCardNPCText3_girl:
-	text "<PLAYER> gave the"
-	line "odd lady her info…"
+	text "<PLAYER> gave her"
+	line "info to the sketchy"
+	cont "lady…"
 	done
 	
 BankCardNPCText4:
@@ -303,7 +306,7 @@ SeenByBankCardGirlScript:
 	applymovement2 wMovementBuffer
 	writepersonxy LAST_TALKED
 	faceobject PLAYER, LAST_TALKED
-	opentext
+	opentext TEXTBOX_SKETCHY_LADY
 	writetext BankCardNPCText1
 	yesorno
 	iffalse .no
@@ -311,6 +314,7 @@ SeenByBankCardGirlScript:
 	writetext BankCardNPCText2
 	yesorno
 	iffalse .no
+	changetextboxspeaker
 	checkevent EVENT_PLAYER_IS_CORA
 	iftrue .girl
 	checkevent EVENT_PLAYER_IS_PIPPI
@@ -329,7 +333,7 @@ SeenByBankCardGirlScript:
 	waitbutton
 	closetext
 	pause 15
-	opentext
+	opentext TEXTBOX_SKETCHY_LADY
 	writetext BankCardNPCText4
 	waitbutton
 	closetext

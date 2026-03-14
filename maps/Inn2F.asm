@@ -304,7 +304,7 @@ Inn2FMoveClerkAsm:
 Inn2F204Door:
 	checkevent EVENT_BEAT_INN_1F_TRAINER_2
 	iffalse Inn1FLockedDoor
-	opentext
+	opentext TEXTBOX_DOOR
 	writetext Inn2F204DoorText1
 	waitbutton
 	closetext
@@ -312,7 +312,7 @@ Inn2F204Door:
 	playsound SFX_WALL_OPEN
 	disappear INN_2F_DOOR_LOCK_1
 	pause 14
-	opentext
+	opentext TEXTBOX_DOOR
 	writetext Inn2F204DoorText2
 	waitbutton
 	closetext
@@ -320,7 +320,7 @@ Inn2F204Door:
 	end
 	
 Inn2F204DoorText1:
-	text "Door: Is that the"
+	text "Is that the"
 	line "maintenance guy?"
 	
 	para "Finally! <WAIT_S>It's been"
@@ -403,10 +403,11 @@ TrainerInn2F_2:
 Inn2F201LockedDoor:
 	checkevent EVENT_INN_SNARE_MUSIC
 	iffalse Inn1FLockedDoor
-	opentext
+	opentext TEXTBOX_DOOR
 	writetext Inn2F201LockedDoorText1
 	waitbutton
 	special FadeOutPalettes
+	changetextboxspeaker
 	callasm Inn2F201LockedDoorAsm
 	callasm Inn2F201LockedDoorCheckPassword
 	iffalse .wrong
@@ -415,7 +416,7 @@ Inn2F201LockedDoor:
 	waitbutton
 	closetext
 	pause 10
-	opentext
+	opentext TEXTBOX_DOOR
 	writetext Inn2F201LockedDoorText2
 	waitbutton
 	closetext
@@ -436,7 +437,7 @@ Inn2F201LockedDoor:
 	waitbutton
 	closetext
 	pause 10
-	opentext
+	opentext TEXTBOX_DOOR
 	writetext Inn2F201LockedDoorTextNothing2
 	waitbutton
 	closetext
@@ -447,7 +448,7 @@ Inn2F201LockedDoor:
 	waitbutton
 	closetext
 	pause 10
-	opentext
+	opentext TEXTBOX_DOOR
 	writetext Inn2F201LockedDoorTextWrong
 	waitbutton
 	closetext
@@ -507,7 +508,7 @@ Room201BackupPassword:
 	db "???@"
 	
 Inn2F201LockedDoorText1:
-	text "Door: Is someone"
+	text "Is someone"
 	line "there?"
 	
 	para "…"
@@ -517,8 +518,7 @@ Inn2F201LockedDoorText1:
 	done
 	
 Inn2F201LockedDoorText2:
-	text "Door: Alright you"
-	line "got it."
+	text "Alright."
 	
 	para "You must be with"
 	line "us."
@@ -534,8 +534,7 @@ Inn2F201LockedDoorTextPlayerSaid:
 	done
 	
 Inn2F201LockedDoorTextWrong:
-	text "Door: That ain't"
-	line "it!"
+	text "That ain't it!"
 	
 	para "We don't want room"
 	line "service, so scram!"
@@ -547,7 +546,7 @@ Inn2F201LockedDoorTextNothing:
 	done
 	
 Inn2F201LockedDoorTextNothing2:
-	text "Door: Must be my"
+	text "Must be my"
 	line "imagination…"
 	done
 	

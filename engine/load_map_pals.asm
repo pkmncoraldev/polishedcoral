@@ -1050,7 +1050,7 @@ LoadMapPals::
 .billboards2
 	ld a, [wYCoord]
 	cp $11
-	jr c, .billboards1_3
+	jr c, .checkbillboards1_3
 	ld a, [wXCoord]
 	cp $22
 	jr nc, .billboards1_4
@@ -1067,6 +1067,11 @@ LoadMapPals::
 .billboards1_2
 	ld hl, MapObjectPalsBillboard2
 	jr .billboards_end
+.checkbillboards1_3
+	ld a, [wXCoord]
+	cp $22
+	jr nc, .billboards1_3
+	ret
 .billboards1_3
 	ld hl, MapObjectPalsBillboard3
 	jr .billboards_end

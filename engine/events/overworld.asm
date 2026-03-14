@@ -776,7 +776,7 @@ AskSurfText: ; ca36
 AskLavaSurfScript: ; ca2c
 	opentext
 	checkflag ENGINE_AUTOSURF_ACTIVE
-	iftrue UsedSurfScript
+	iftrue UsedLavaSurfScript
 	writetext AskLavaSurfText
 	yesorno
 	iftrue UsedLavaSurfScript

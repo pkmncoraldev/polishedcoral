@@ -169,19 +169,21 @@ Route22Callback:
 .roadblock
 	checkevent EVENT_ROUTE_22_ROADBLOCK_GONE
 	iffalse .end
-	changeblock 74, 12, 193
-	changeblock 76, 12, 185
-	changeblock 78, 12, 194
+	changeblock 74, 10, 192
+	changeblock 76, 10, 28
+	changeblock 78, 10, 248
 	changeblock 108, 4, 11
 	changeblock 110, 4, 11
+	changeblock 122, 4, 11
 	changeblock 124, 4, 11
 	changeblock 128, 4, 11
 	changeblock 130, 4, 11
-	changeblock 136, 4, 11
+	changeblock 136, 4, 170
 	changeblock 108, 6, 32
 	changeblock 110, 6, 32
 	changeblock 112, 6, 78
 	changeblock 114, 6, 78
+	changeblock 122, 6, 32
 	changeblock 124, 6, 32
 	changeblock 126, 6, 32
 	changeblock 128, 6, 32
@@ -192,6 +194,7 @@ Route22Callback:
 	changeblock 110, 8, 28
 	changeblock 112, 8, 28
 	changeblock 114, 8, 28
+	changeblock 122, 8, 28
 	changeblock 124, 8, 28
 	changeblock 126, 8, 77
 	changeblock 134, 8, 28

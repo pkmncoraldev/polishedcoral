@@ -548,7 +548,8 @@ AutoSurfScript:
 ;	playsound SFX_READ_TEXT
 	copybytetovar wBuffer2
 	writevarcode VAR_MOVEMENT
-
+	loadvar wOnBike, 0
+	loadvar wOnSkateboard, 0
 	special ReplaceKrisSprite
 	special PlayMapMusic
 ; step into the water
@@ -898,6 +899,8 @@ FlyFunction: ; ca3b
 	special WarpToSpawnPoint
 ;	callasm DelayLoadingNewSprites
 	writecode VAR_MOVEMENT, PLAYER_NORMAL
+	loadvar wOnBike, 0
+	loadvar wOnSkateboard, 0
 	newloadmap MAPSETUP_FLY
 ;	callasm FlyToAnim
 	special WaitSFX

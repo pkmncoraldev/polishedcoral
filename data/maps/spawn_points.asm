@@ -14,7 +14,7 @@ SpawnPoints: ; 0x152ab
 	spawn SUNBEAM_ISLAND,			   17, 36
 	spawn EVENTIDE_VILLAGE,			   13, 18
 	spawn FLICKER_STATION,			   11, 30
-	spawn TWINKLE_TOWN,				   11, 48
+	spawn TWINKLE_TOWN,				   15, 48
 	spawn LUSTER_CITY_RESIDENTIAL,	   17, 26
 	spawn SHIMMER_CITY,                37, 18
 	spawn BRILLO_TOWN,				   22, 14
@@ -23,7 +23,7 @@ SpawnPoints: ; 0x152ab
 	spawn CROSSROADS,      		       30,  8
 	spawn KOMORE_VILLAGE, 			   31,  6
 	spawn BRIGHTBURG,	 			   19, 10
-	spawn OBSCURA_CITY,	 			   21, 40
+	spawn OBSCURA_CITY,	 			   31, 38
 	
 	spawn STARGLOW_CAVERN_DEPTHS,	   16, 15
 	spawn FAKE_PLAYERS_HOUSE_2F,	    1,  4

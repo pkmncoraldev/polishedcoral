@@ -877,7 +877,7 @@ ObscuraMuseum1FScold:
 	special FadeOutPalettes
 	special Special_StopRunning
 	waitsfx
-	warp2 DOWN, OBSCURA_CITY, $10, $0e
+	warp2 DOWN, OBSCURA_CITY, $16, $0e
 	end
 	
 ObscuraMuseum1FBuyTicket:

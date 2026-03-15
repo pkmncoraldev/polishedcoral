@@ -1955,7 +1955,7 @@ TMMenuDataHeader_Buy:
 ; 0x15e20
 
 .menudata2 ; 0x15e20
-	db $30 ; pointers
+	db $e1 ; pointers
 	db 5, 8 ; rows, columns
 	db 1 ; horizontal spacing
 	dbw 0, wCurMart

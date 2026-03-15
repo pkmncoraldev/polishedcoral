@@ -3,9 +3,7 @@ UpdateItemIconAndDescription::
 	jp UpdateItemIcon
 
 UpdateTMHMIconAndDescriptionAndOwnership::
-	farcall UpdateTMHMDescriptionAndOwnership
-	farcall LoadTMHMIconPalette
-	jp SetPalettes
+	farjp UpdateTMHMDescriptionAndOwnership
 	
 UpdateClothesIconAndDescriptionAndOwnership::
 	farcall UpdateClothesDescriptionAndOwnership

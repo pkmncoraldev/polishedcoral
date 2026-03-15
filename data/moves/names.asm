@@ -342,3 +342,4 @@ TMNames::
 	db "ROCK SMASH@"
 	db "WATERFALL@"
 	db "ROCK CLIMB@"
+	db "CANCEL@"

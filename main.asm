@@ -758,10 +758,22 @@ GetItemIconTiles::
 PlaceMenuTMHMName:
 	push de
 	ld a, [wMenuSelection]
-	ld [wNamedObjectIndexBuffer], a
-	farcall GetTMHMName
+	inc a
+	ld [wd265], a
+	push af
+	farcall GetTMIconDisc
+	pop af
+	ld [wCurSpecies], a
+	dec a
+	cp a, -1 ; special case for Cancel in Key Items pocket
+	ld de, ScrollingMenu_CancelString ; found in scrolling_menu.asm
+	jr z, .cancel
+	call GetTMName
+.cancel
 	pop hl
-	jp PlaceString
+	call PlaceString
+;	dec a
+	farjp Pack_Draw_Sprites
 
 PlaceMartClothesName:
 	push de

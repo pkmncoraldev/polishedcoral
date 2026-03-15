@@ -183,39 +183,21 @@ TMHM_DisplayPocketItems: ; 2c9e2 (b:49e2)
 	call TMHMPocket_GetCurrentLineCoord
 	push hl
 	ld a, [wd265]
+	push af
 	cp NUM_TMS + 1
 	jr nc, .HM
-;	ld de, wd265
-;	lb bc, PRINTNUM_LEADINGZEROS | 1, 2
-;	call PrintNum
-
-	call GetTMIconDisc
-	call GetTMIconLeft
-	call GetTMIconRight
 	jr .okay
 
 .HM:
-	push af
 	sub NUM_TMS
 	add 90
 	ld [wd265], a
 	ld [wPlaceBallsY], a
-;	ld [hl], "H"
-;	inc hl
-;	ld de, wd265
-;	lb bc, PRINTNUM_LEFTALIGN | 1, 2
-;	call PrintNum
-	
-	call GetTMIconDisc
-	call GetTMIconLeft
-	call GetTMIconRight
-	pop af
-	ld [wd265], a
 .okay
-	predef GetTMHMMove
-	ld a, [wd265]
-	ld [wPutativeTMHMMove], a
-	call GetMoveName
+	call GetTMIconDisc
+	pop af
+	ld [wCurSpecies], a
+	call GetTMName
 	pop hl
 	ld bc, 3
 	add hl, bc
@@ -244,8 +226,6 @@ TMHM_DisplayPocketItems: ; 2c9e2 (b:49e2)
 	ld [wd265], a
 	ld [wPlaceBallsY], a
 	call GetTMIconDisc
-	call GetTMIconLeft
-	call GetTMIconRight
 	farcall Pack_Draw_Sprites
 	pop de
 	ret
@@ -573,19 +553,24 @@ GetTMIconDisc:
 	jr .fifth
 .first
 	ld hl, VTiles0 tile $68
-	jp Get2bpp
+	call Get2bpp
+	jp GetTMIconLeft
 .second
 	ld hl, VTiles0 tile $6c
-	jp Get2bpp
+	call Get2bpp
+	jp GetTMIconLeft
 .third
 	ld hl, VTiles0 tile $70
-	jp Get2bpp
+	call Get2bpp
+	jp GetTMIconLeft
 .forth
 	ld hl, VTiles0 tile $74
-	jp Get2bpp
+	call Get2bpp
+	jp GetTMIconLeft
 .fifth
 	ld hl, VTiles0 tile $78
-	jp Get2bpp
+	call Get2bpp
+	jp GetTMIconLeft
 .clear
 	ld a, [wPlaceBallsX]
 	cp 0
@@ -621,7 +606,7 @@ GetTMIconDisc:
 	ld de, NoItemIcon
 	lb bc, BANK(NoItemIcon), 2
 	ld hl, VTiles0 tile $78
-	jp Get2bpp
+	call Get2bpp
 
 GetTMIconLeft:
 	ld a, [wd265]
@@ -655,19 +640,24 @@ GetTMIconLeft:
 	jr .fifth
 .first
 	ld hl, VTiles0 tile $6a
-	jp Get2bpp
+	call Get2bpp
+	jp GetTMIconRight
 .second
 	ld hl, VTiles0 tile $6e
-	jp Get2bpp
+	call Get2bpp
+	jp GetTMIconRight
 .third
 	ld hl, VTiles0 tile $72
-	jp Get2bpp
+	call Get2bpp
+	jp GetTMIconRight
 .forth
 	ld hl, VTiles0 tile $76
-	jp Get2bpp
+	call Get2bpp
+	jp GetTMIconRight
 .fifth
 	ld hl, VTiles0 tile $7a
-	jp Get2bpp
+	call Get2bpp
+	jp GetTMIconRight
 .clear
 	ld a, [wPlaceBallsX]
 	cp 0
@@ -704,7 +694,6 @@ GetTMIconLeft:
 	lb bc, BANK(NoItemIcon), 1
 	ld hl, VTiles0 tile $7a
 	call Get2bpp
-	ret
 	
 GetTMIconRight:
 	ld a, [wd265]

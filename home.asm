@@ -394,6 +394,7 @@ NamesPointers:: ; 33ab
 	dbw 0, wOTPartyMonOT
 	dba TrainerClassNames
 	dba DecoNames
+	dba TMNames
 ; 33c0
 
 GetName:: ; 33c3
@@ -613,7 +614,15 @@ GetMoveName:: ; 34f8
 	ld de, wStringBuffer1
 	pop hl
 	ret
-; 350c
+
+GetTMName::
+	push hl
+	ld a, TM_NAME
+	ld [wNamedObjectTypeBuffer], a
+	call GetName
+	ld de, wStringBuffer1
+	pop hl
+	ret
 
 GetTapeName:: ; 3468
 ; Get item name wNamedObjectIndexBuffer.

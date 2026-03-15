@@ -24,12 +24,9 @@ Route10Tent_MapScriptHeader:
 Route10TentNPC:
 	faceplayer
 	opentext
-	checkevent EVENT_CAN_GET_AMULET_COIN
-	iftrue .give_amulet_coin
 	checkevent EVENT_ICE_TEMPLE_GOT_TREASURE
 	iftrue .got_treasure
 	writetext Route10TentNPCText1
-	waitbutton
 	jump .end
 .got_treasure
 	checkevent EVENT_TALKED_TO_TENT_GUY_WITH_TREASURE
@@ -57,21 +54,16 @@ Route10TentNPC:
 	pause 10
 	faceplayer
 	opentext
-.give_amulet_coin
 	writetext Route10TentNPCText9
 	waitbutton
-	verbosegiveitem AMULET_COIN
-	iffalse .NoRoom
-	clearevent EVENT_CAN_GET_AMULET_COIN
+	verbosegivetmhm TM_ANCIENTPOWER
+	setevent EVENT_TM69
+	writetext Route10TentNPCText10
 	jump .end
 .have_talked
 	writetext Route10TentNPCText2
-	waitbutton
-	jump .end
-.NoRoom
-	writetext Route10TentNPCNoRoomText
-	setevent EVENT_CAN_GET_AMULET_COIN
 .end
+	waitbutton
 	closetext
 	spriteface ROUTE_10_TENT_NPC, RIGHT
 	end
@@ -214,18 +206,17 @@ Route10TentNPCText9:
 	para "For now, though,"
 	line "take this as a"
 	cont "thank you."
-	
-	para "It's said to bring"
-	line "great fortune!"
 	done
 	
-Route10TentNPCNoRoomText:
-	text "Oh!"
+Route10TentNPCText10:
+	text "It harnesses a"
+	line "#MON's latent"
+	cont "prehistoric power"
+	cont "to deal damage!"
 	
-	para "You seem to be"
-	line "carrying too much!"
-	
-	para "Come back later."
+	para "It also has a"
+	line "chance to boost"
+	cont "all of its stats!"
 	done
 	
 Route10TentWigglytuffText:

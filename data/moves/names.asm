@@ -294,7 +294,7 @@ TMNames::
 	db "SLUDGE BOMB@"
 	db "SANDSTORM@"
 	db "FIRE BLAST@"
-	db "SWIFT@"
+	db "POWER GEM@"
 	db "FAKE OUT@"
 	db "SUBSTITUTE@"
 	db "ZAP CANNON@"

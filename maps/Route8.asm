@@ -31,7 +31,7 @@ Route8_MapScriptHeader:
 	fruittree_event 16, 16, FRUITTREE_ROUTE_8_2, CHERI_BERRY
 	itemball_event 32, -2, RARE_CANDY, 1, EVENT_ROUTE_3_RARE_CANDY
 	itemball_event 53, 17, MAX_POTION, 1, EVENT_ROUTE_8_MAX_POTION
-	tmhmball_event 22, 24, TM_ANCIENTPOWER, EVENT_TM69
+	tmhmball_event 22, 24, TM_POWER_GEM, EVENT_TM39
 	tapeball_event 41,  6, MUSIC_STARGLOW_VALLEY, 1, EVENT_MUSIC_STARGLOW_VALLEY
 
 Route8Callback:

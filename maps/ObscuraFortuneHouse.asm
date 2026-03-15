@@ -682,7 +682,7 @@ TM18Text:
 TM40Text:
 TM46Text:
 TM56Text:
-TM59Text:
+TM57Text:
 TM63Text:
 	text "It's a given to"
 	line "you by a strong"
@@ -878,8 +878,12 @@ TM38Text:
 	prompt
 
 TM39Text:
-	text "TM39"
-	line "TODO"
+	text "It's on ROUTE 8,"
+	line "but you can't reach"
+	cont "it from ROUTE 8."
+	
+	para "What on earth does"
+	line "THAT mean?"
 	prompt
 
 TM42Text:
@@ -958,14 +962,6 @@ TM55Text:
 	line "around ROUTE 13."
 	prompt
 
-TM57Text:
-	text "It's in LUMINA"
-	line "TOWN."
-	
-	para "It's nearby an"
-	line "ELDER's house."
-	prompt
-
 TM58Text:
 	text "It's EAST of"
 	line "BRIGHTBURG."
@@ -973,6 +969,14 @@ TM58Text:
 	para "If the way is"
 	line "blocked, try a"
 	cont "different path."
+	prompt
+
+TM59Text:
+	text "It's in LUMINA"
+	line "TOWN."
+	
+	para "It's nearby an"
+	line "ELDER's house."
 	prompt
 
 TM60Text:
@@ -1038,12 +1042,11 @@ TM67Text:
 	prompt
 
 TM69Text:
-	text "It's on ROUTE 8,"
-	line "but you can't reach"
-	cont "it from ROUTE 8."
+	text "It's on ROUTE 10."
 	
-	para "What on earth does"
-	line "THAT mean?"
+	para "A man in a tent"
+	line "will give it to"
+	cont "as a reward."
 	prompt
 
 TM70Text:

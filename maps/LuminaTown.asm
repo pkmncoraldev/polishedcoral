@@ -33,7 +33,7 @@ LuminaTown_MapScriptHeader:
 	db 2 ; object events
 	
 	itemball_event  8,  8, DRAGON_FANG, 1, EVENT_LUMINA_TOWN_ITEMBALL
-	tmhmball_event 37,  4, TM_DRAGONBREATH, EVENT_TM57
+	tmhmball_event 37,  4, TM_DRAGON_PULSE, EVENT_TM59
 	
 	
 LuminaTownNPC1:

@@ -59,7 +59,7 @@ ENDM
 	add_tm SLUDGE_BOMB		; $23
 	add_tm SANDSTORM		; $24
 	add_tm FIRE_BLAST		; $25
-	add_tm SWIFT			; $26
+	add_tm POWER_GEM		; $26
 	add_tm FAKE_OUT			; $27
 	add_tm SUBSTITUTE		; $28
 	add_tm ZAP_CANNON		; $29

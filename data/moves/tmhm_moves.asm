@@ -37,7 +37,7 @@ TMHMMoves:
 	db SLUDGE_BOMB                         ; TM36
 	db SANDSTORM                           ; TM37
 	db FIRE_BLAST                          ; TM38
-	db SWIFT                               ; TM39
+	db POWER_GEM                           ; TM39
 	db FAKE_OUT                            ; TM40
 	db SUBSTITUTE                          ; TM41
 	db ZAP_CANNON                          ; TM42

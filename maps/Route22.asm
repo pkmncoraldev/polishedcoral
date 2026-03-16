@@ -349,6 +349,13 @@ Movement_Route22_Snare2:
 	
 Movement_Route22_Medic:
 	step_down
+	step_sleep 20
+	turn_step_right
+	step_sleep 15
+	turn_step_left
+	step_sleep 15
+	turn_step_right
+	step_sleep 15
 	step_right
 	step_end
 	
@@ -468,7 +475,7 @@ Route22MedicText1:
 	cont "blocking traffic?"
 	
 	para "Oh, you're taking"
-	line "care of them!"
+	line "care of them?"
 	
 	para "Thank you!"
 	done

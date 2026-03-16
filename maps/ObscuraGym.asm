@@ -856,7 +856,6 @@ ObscuraGymQuizLady1:
 	startbattle
 	reloadmapafterbattle
 	playmapmusic
-	opentext
 	scall ObscuraGymBattleDone
 	setevent EVENT_OBSCURA_QUIZ_1_FINISHED
 	end

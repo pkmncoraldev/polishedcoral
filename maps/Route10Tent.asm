@@ -22,6 +22,7 @@ Route10Tent_MapScriptHeader:
 	const ROUTE_10_TENT_WIGGLYTUFF
 	
 Route10TentNPC:
+	setevent EVENT_TALKED_TO_TENT_GUY_ONCE
 	faceplayer
 	opentext
 	checkevent EVENT_ICE_TEMPLE_GOT_TREASURE

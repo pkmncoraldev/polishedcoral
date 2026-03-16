@@ -200,3 +200,5 @@
 	tilecoll WATER, WATER, WATER, WATER ; c7
 	tilecoll UP_WALL, UP_WALL, FLOOR, WARP_CARPET_DOWN ; c8
 	tilecoll WALL, WALL, FLOOR, FLOOR ; c9
+	tilecoll WALL, FLOOR, WALL, ROCK_CLIMB ; ca
+	tilecoll FLOOR, WALL, FLOOR, FLOOR ; cb

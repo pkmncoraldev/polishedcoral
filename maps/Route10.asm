@@ -67,12 +67,13 @@ Route10_MapScriptHeader:
 	xy_trigger 2, 44, 37, 0, Route10StartSnowstorm, 0, 0
 	xy_trigger 3, 44, 37, 0, Route10StartSnowstorm, 0, 0
 
-	db 9 ; bg events
+	db 10 ; bg events
 	bg_event 30, 44, SIGNPOST_ITEM + REVIVE, EVENT_ROUTE_10_HIDDEN_ITEM_1
 	bg_event  8, 30, SIGNPOST_ITEM + PP_UP, EVENT_ROUTE_10_HIDDEN_ITEM_2
 	signpost 36,  9, SIGNPOST_READ, Route10Snowman1
 	signpost  9, 41, SIGNPOST_READ, Route10Snowman2
-	signpost 32, 16, SIGNPOST_READ, Route10Sign
+	signpost 32, 15, SIGNPOST_READ, Route10Sign
+	signpost 20, 51, SIGNPOST_READ, Route10Sign
 	signpost  3, 36, SIGNPOST_READ, TwinkleTownWood
 	signpost  2, 36, SIGNPOST_READ, TwinkleTownWood
 	signpost 31,  9, SIGNPOST_READ, TwinkleTownWood
@@ -729,6 +730,9 @@ Route10SignText:
 	
 	para "SOUTH: FLICKER"
 	line "PASS"
+	
+	para "EAST:"
+	line "CAMPGROUNDS"
 	done
 	
 Route10MoveRelearnerSign:

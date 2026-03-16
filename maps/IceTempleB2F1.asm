@@ -33,7 +33,7 @@ IceTempleB2F1_MapScriptHeader:
 	person_event SPRITE_BIG_MAMOSWINE,  3,  8, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, IceTempleMamoswine, EVENT_MAMOSWINE_TEAL
 	person_event SPRITE_BIG_MAMOSWINE,  4,  7, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, IceTempleMamoswine, EVENT_MAMOSWINE_TEAL
 	person_event SPRITE_BIG_MAMOSWINE,  4,  8, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, IceTempleMamoswine, EVENT_MAMOSWINE_TEAL
-	itemball_event  8,  2, CLAY_POT, 1, EVENT_ICE_TEMPLE_GOT_TREASURE
+	person_event SPRITE_BALL_CUT_FRUIT,  2, 8, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, IceTempleB2F1ClayPot, EVENT_ICE_TEMPLE_GOT_TREASURE
 	itemball_event  7,  2, ESCAPE_ROPE, 1, EVENT_ICE_TEMPLE_GOT_ESCAPE_ROPE
 	
 	
@@ -97,6 +97,39 @@ IceTempleB2F1CampfiresCallback:
 .OpenSesame4
 	changeblock $8, $4, $eb
 	jump .cont4
+	
+IceTempleB2F1ClayPot:
+	loadvar wCurItemBallQuantity, 1
+	loadvar wCurItemBallContents, CLAY_POT
+	farscall FindItemInBallScript
+	disappear 13
+	pause 5
+	opentext
+	checkevent EVENT_TALKED_TO_TENT_GUY_ONCE
+	iffalse .havent_talked
+	writetext IceTempleB2F1ClayPotText1
+	waitbutton
+	closetext
+	end
+.havent_talked
+	writetext IceTempleB2F1ClayPotText2
+	waitbutton
+	closetext
+	end
+	
+IceTempleB2F1ClayPotText1:
+	text "Maybe that guy"
+	line "in the tent would"
+	cont "know more about"
+	cont "this…"
+	done
+	
+IceTempleB2F1ClayPotText2:
+	text "Maybe someone"
+	line "nearby would"
+	cont "know more about"
+	cont "this…"
+	done
 	
 IceTempleMamoswine:
 	jumptext IceTempleMamoswineText1

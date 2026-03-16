@@ -29,11 +29,11 @@ Route10_MapScriptHeader:
 	xy_trigger 2, 33, 30, 0, Route10StartSnowstorm, 0, 0
 	xy_trigger 2, 34, 31, 0, Route10StartSnowstorm, 0, 0
 	xy_trigger 2, 36, 32, 0, Route10StartSnowstorm, 0, 0
-	xy_trigger 2, 37, 33, 0, Route10StartSnowstorm, 0, 0
-	xy_trigger 2, 38, 34, 0, Route10StartSnowstorm, 0, 0
-	xy_trigger 2, 39, 33, 0, Route10StartSnowstorm, 0, 0
-	xy_trigger 2, 40, 34, 0, Route10StartSnowstorm, 0, 0
-	xy_trigger 2, 41, 33, 0, Route10StartSnowstorm, 0, 0
+	xy_trigger 2, 37, 31, 0, Route10StartSnowstorm, 0, 0
+	xy_trigger 2, 38, 30, 0, Route10StartSnowstorm, 0, 0
+	xy_trigger 2, 39, 31, 0, Route10StartSnowstorm, 0, 0
+	xy_trigger 2, 40, 30, 0, Route10StartSnowstorm, 0, 0
+	xy_trigger 2, 41, 31, 0, Route10StartSnowstorm, 0, 0
 	xy_trigger 2, 42, 32, 0, Route10StartSnowstorm, 0, 0
 	xy_trigger 2, 43, 33, 0, Route10StartSnowstorm, 0, 0
 	xy_trigger 3, 30, 44, 0, Route10StartSnowstorm, 0, 0
@@ -62,10 +62,10 @@ Route10_MapScriptHeader:
 	xy_trigger 1, 23, 55, 0, Route10StartSnowstorm, 0, 0
 	xy_trigger 2, 22, 55, 0, Route10StartSnowstorm, 0, 0
 	xy_trigger 2, 23, 55, 0, Route10StartSnowstorm, 0, 0
-	xy_trigger 0, 47, 34, 0, Route10StartSnowstorm, 0, 0
-	xy_trigger 1, 47, 34, 0, Route10StartSnowstorm, 0, 0
-	xy_trigger 2, 47, 34, 0, Route10StartSnowstorm, 0, 0
-	xy_trigger 3, 47, 34, 0, Route10StartSnowstorm, 0, 0
+	xy_trigger 0, 44, 37, 0, Route10StartSnowstorm, 0, 0
+	xy_trigger 1, 44, 37, 0, Route10StartSnowstorm, 0, 0
+	xy_trigger 2, 44, 37, 0, Route10StartSnowstorm, 0, 0
+	xy_trigger 3, 44, 37, 0, Route10StartSnowstorm, 0, 0
 
 	db 9 ; bg events
 	bg_event 30, 44, SIGNPOST_ITEM + REVIVE, EVENT_ROUTE_10_HIDDEN_ITEM_1
@@ -91,7 +91,7 @@ Route10_MapScriptHeader:
 	person_event SPRITE_BOARDER, 22, 42, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_GENERICTRAINER, 4, TrainerRoute10_5, -1
 	person_event SPRITE_FIREBREATHER, 24, 50, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_GENERICTRAINER, 4, TrainerRoute10_6, -1
 	person_event SPRITE_BOARDER, 12, 33, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_GENERICTRAINER, 3, TrainerRoute10_7, -1
-	itemball_event 36, 44, MAX_ETHER, 1, EVENT_ROUTE_10_POKE_BALL_1
+	itemball_event 38, 42, MAX_ETHER, 1, EVENT_ROUTE_10_POKE_BALL_1
 	itemball_event 40, 26, BURN_HEAL, 1, EVENT_ROUTE_10_POKE_BALL_2
 
 	const_def 1 ; object constants

@@ -37,6 +37,7 @@ Route3StarglowCavernTopPatches:
 	iffalse .saidno2
 .return
 	closetext
+	special Special_ForcePlayerStateNormal
 	checkcode VAR_FACING
 	if_equal RIGHT, .cont
 	if_equal UP, .YouAreFacingUp
@@ -94,6 +95,7 @@ Route3StarglowCavernTopPatches:
 	jumptextfaceplayer Route3StarglowCavernTopPatchesDoneCaveText5
 
 .darkcavedone
+	special Special_ForcePlayerStateNormal
 	checkcode VAR_FACING
 	if_equal RIGHT, .YouAreFacingRight
 	if_equal LEFT, .YouAreFacingLeft

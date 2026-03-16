@@ -209,6 +209,7 @@ LusterSewersThroneRoomFrankieCutscene:
 	playsound SFX_PAY_DAY
 	showemote EMOTE_SHOCK, LUSTERSEWERSTHRONEROOM_FAKE_FRANKIE, 15
 	pause 7
+	special Special_ForcePlayerStateNormal
 	appear LUSTERSEWERSTHRONEROOM_CUTSCENE
 	spriteface LUSTERSEWERSTHRONEROOM_FAKE_FRANKIE, UP
 	applyonemovement PLAYER, hide_person

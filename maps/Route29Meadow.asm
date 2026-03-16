@@ -19,6 +19,7 @@ Route29Meadow_MapScriptHeader:
 	const ROUTE_29_MINA
 
 Route29Mina:
+	special Special_ForcePlayerStateNormal
 	checkcode VAR_FACING
 	if_equal DOWN, .YouAreFacingDown
 	jump .cont

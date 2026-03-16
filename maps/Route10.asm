@@ -122,6 +122,7 @@ Route10EaselText:
 	done
 	
 Route10Mina:
+	special Special_ForcePlayerStateNormal
 	opentext
 	writetext Route10MinaText1
 	yesorno

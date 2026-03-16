@@ -226,6 +226,7 @@ IceTempleCampfire5:
 	checkevent EVENT_ICE_TEMPLE_CAMPFIRE_6_UNLIT
 	iftrue .end
 	pause 5
+	special Special_ForcePlayerStateNormal
 	applyonemovement PLAYER, step_right
 	spriteface PLAYER, UP
 	jump IceTempleMamoswineCutscene
@@ -254,6 +255,8 @@ IceTempleCampfire6:
 	closetext
 	checkevent EVENT_ICE_TEMPLE_CAMPFIRE_5_UNLIT
 	iftrue .end
+	pause 5
+	special Special_ForcePlayerStateNormal
 	applyonemovement PLAYER, step_left
 	applyonemovement PLAYER, step_left
 	spriteface PLAYER, UP

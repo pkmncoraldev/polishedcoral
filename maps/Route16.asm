@@ -86,7 +86,7 @@ Route6SouthMinaText:
 	done
 	
 Route6SouthMinaScene:
-	special Special_StopRunning
+	special Special_ForcePlayerStateNormal
 	applyonemovement PLAYER, turn_step_down
 	spriteface PLAYER, DOWN
 	pause 20

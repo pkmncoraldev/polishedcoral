@@ -65,6 +65,7 @@ MtOnwaPanNPC:
 	closetext
 	spriteface MT_ONWA_NPC1, UP
 	spriteface MT_ONWA_NPC2, UP
+	special Special_ForcePlayerStateNormal
 	checkcode VAR_FACING
 	if_equal RIGHT, .cont
 	checkcode VAR_FACING

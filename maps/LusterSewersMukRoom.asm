@@ -49,6 +49,7 @@ LusterSewersMukRoomTrigger0:
 	iffalse .end
 	checkevent EVENT_LUSTER_SEWERS_GRIMER_4
 	iffalse .end
+	special Special_ForcePlayerStateNormal
 	callasm AsmCheckPlayerYCoord
 	ifequal 6, .top
 	callasm AsmCheckPlayerXCoord

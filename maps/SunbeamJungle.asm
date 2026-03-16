@@ -251,6 +251,7 @@ SunbeamJungleKageScript:
 	closetext
 	applymovement SUNBEAM_JUNGLE_KAGE, Movement_SunbeamJungleKage3
 	playsound SFX_BUMP
+	special Special_ForcePlayerStateNormal
 	applymovement PLAYER, Movement_SunbeamJunglePlayerPushed
 	applymovement SUNBEAM_JUNGLE_KAGE, Movement_SunbeamJungleKage4
 	opentext TEXTBOX_CAGE
@@ -283,10 +284,11 @@ SunbeamJungleKageScript:
 	playsound SFX_KINESIS
 	applymovement SUNBEAM_JUNGLE_KAGE, Movement_SunbeamJungleKage9
 	playsound SFX_KARATE_CHOP
-	disappear SUNBEAM_JUNGLE_KAGE
 	disappear SUNBEAM_JUNGLE_KAGE_WATER
 	moveperson SUNBEAM_JUNGLE_KAGE_WATER, $c, $21
 	appear SUNBEAM_JUNGLE_KAGE_WATER
+	applyonemovement SUNBEAM_JUNGLE_KAGE_WATER, remove_fixed_facing
+	disappear SUNBEAM_JUNGLE_KAGE
 	applymovement SUNBEAM_JUNGLE_KAGE_WATER, Movement_SunbeamJungleKage10
 	disappear SUNBEAM_JUNGLE_KAGE_WATER
 	applymovement SUNBEAM_JUNGLE_SNARE_BRIDGE, MovementSunbeamJungleSnareBridge3
@@ -299,10 +301,11 @@ SunbeamJungleKageScript:
 	playsound SFX_KINESIS
 	applyonemovement SUNBEAM_JUNGLE_SNARE_BRIDGE, jump_step_down
 	playsound SFX_KARATE_CHOP
-	disappear SUNBEAM_JUNGLE_SNARE_BRIDGE
 	disappear SUNBEAM_JUNGLE_SNARE_WATER
 	moveperson SUNBEAM_JUNGLE_SNARE_WATER, $c, $21
 	appear SUNBEAM_JUNGLE_SNARE_WATER
+	applyonemovement SUNBEAM_JUNGLE_SNARE_WATER, remove_fixed_facing
+	disappear SUNBEAM_JUNGLE_SNARE_BRIDGE
 	applymovement SUNBEAM_JUNGLE_SNARE_WATER, Movement_SunbeamJungleKage10
 	disappear SUNBEAM_JUNGLE_SNARE_WATER
 	disappear SUNBEAM_JUNGLE_SNARE_1

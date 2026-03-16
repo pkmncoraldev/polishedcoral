@@ -51,6 +51,7 @@ RadiantFieldCallback:
 	return
 	
 RadiantFieldMina:
+	special Special_ForcePlayerStateNormal
 	special Special_FadeOutMusic
 	wait 5
 	playmusic MUSIC_MINA

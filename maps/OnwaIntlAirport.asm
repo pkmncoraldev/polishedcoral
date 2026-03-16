@@ -172,7 +172,7 @@ OnwaIntlAirportSign:
 	jumptext OnwaIntlAirportSignText
 	
 OnwaIntlAirportWendy:
-	special Special_StopRunning
+	special Special_ForcePlayerStateNormal
 	disappear ONWA_INTL_AIRPORT_WENDY
 	moveperson ONWA_INTL_AIRPORT_WENDY, $1b, $02
 	moveperson ONWA_INTL_AIRPORT_PLAYER_CUTSCENE, $1b, $04

@@ -14,7 +14,7 @@ FlickerStation_MapScriptHeader:
 	warp_def 15, 23, 1, FLICKER_NAME_SPEECH_HOUSE
 	warp_def 29, 21, 1, FLICKER_TRAIN_STATION
 	warp_def 29, 22, 2, FLICKER_TRAIN_STATION
-	warp_def  7, 23, 1, FLICKER_PASS_1F
+	warp_def  7, 22, 1, FLICKER_PASS_1F
 	
 
 	db 4 ; coord events
@@ -29,7 +29,7 @@ FlickerStation_MapScriptHeader:
 	signpost 32, 12, SIGNPOST_READ, FlickerSign
 
 	db 12 ; object events
-	person_event SPRITE_OFFICER,  8, 23, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, FlickerStationCop, EVENT_GOT_BIKE
+	person_event SPRITE_OFFICER,  8, 22, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, FlickerStationCop, EVENT_GOT_BIKE
 	person_event SPRITE_FAT_GUY, 33, 24, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, FlickerStationNPC1, -1
 	person_event SPRITE_COOLTRAINER_F, 31, 13, SPRITEMOVEDATA_WANDER, 1, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, FlickerStationNPC2, -1
 	person_event SPRITE_CHILD, 18, 22, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, FlickerStationNPC3, -1

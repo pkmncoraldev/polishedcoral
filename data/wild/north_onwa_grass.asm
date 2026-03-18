@@ -352,33 +352,6 @@
 	db 10, PIKACHU		;4%
 	db 10, PIKACHU		;1%
 	
-	map_id HUNTERS_THICKET_MOSS_ROCK_ROOM
-	db 15 percent, 15 percent, 15 percent ; encounter rates: morn/day/nite
-	; morn
-	db 30, LEDIAN		;30%
-	db 30, SHROOMISH	;30%
-	db 30, JOLTIK		;20%
-	db 30, PIKACHU		;10%
-	db 30, PIKACHU		;5%
-	db 30, PIKACHU		;4%
-	db 30, PIKACHU		;1%
-	; day
-	db 30, LEDIAN		;30%
-	db 30, SHROOMISH	;30%
-	db 30, JOLTIK		;20%
-	db 30, PIKACHU		;10%
-	db 30, PIKACHU		;5%
-	db 30, PIKACHU		;4%
-	db 30, PIKACHU		;1%
-	; nite
-	db 30, LEDIAN		;30%
-	db 30, SHROOMISH	;30%
-	db 30, JOLTIK		;20%
-	db 30, PIKACHU		;10%
-	db 30, PIKACHU		;5%
-	db 30, PIKACHU		;4%
-	db 30, PIKACHU		;1%
-	
 	map_id ROUTE_5
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
@@ -1459,6 +1432,33 @@
 	db 21, JIGGLYPUFF	;5%
 	db 21, GOLBAT		;4%
 	db 21, GOLBAT		;1%
+	
+	map_id FLICKER_MOSS_ROCK_ROOM
+	db 15 percent, 15 percent, 15 percent ; encounter rates: morn/day/nite
+	; morn
+	db 23, LEDIAN		;30%
+	db 23, SHROOMISH	;30%
+	db 23, JOLTIK		;20%
+	db 23, GEODUDE		;10%
+	db 23, GEODUDE		;5%
+	db 23, GEODUDE		;4%
+	db 23, GEODUDE		;1%
+	; day
+	db 23, LEDIAN		;30%
+	db 23, SHROOMISH	;30%
+	db 23, JOLTIK		;20%
+	db 23, GEODUDE		;10%
+	db 23, GEODUDE		;5%
+	db 23, GEODUDE		;4%
+	db 23, GEODUDE		;1%
+	; nite
+	db 23, LEDIAN		;30%
+	db 23, SHROOMISH	;30%
+	db 23, JOLTIK		;20%
+	db 23, GEODUDE		;10%
+	db 23, GEODUDE		;5%
+	db 23, GEODUDE		;4%
+	db 23, GEODUDE		;1%
 	
 	map_id ROUTE_10 ; used on Route 10 during clear weather
 	db 7 percent, 7 percent, 7 percent ; encounter rates: morn/day/nite

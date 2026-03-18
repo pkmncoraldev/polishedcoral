@@ -252,8 +252,8 @@ StarglowGym_BlockData:
 HuntersThicket_BlockData:
 	INCBIN "maps/HuntersThicket.ablk.lz"
 	
-HuntersThicketMossRockRoom_BlockData:
-	INCBIN "maps/HuntersThicketMossRockRoom.ablk.lz"
+FlickerMossRockRoom_BlockData:
+	INCBIN "maps/FlickerMossRockRoom.ablk.lz"
 	
 SunbeamIsland_BlockData:
 SunbeamReserve_BlockData:

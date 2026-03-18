@@ -54,7 +54,7 @@ INCLUDE "maps/LusterSewersB2F.asm"
 INCLUDE "maps/LusterSewersValveRoom.asm"
 INCLUDE "maps/Route18.asm"
 INCLUDE "maps/HuntersThicket.asm"
-INCLUDE "maps/HuntersThicketMossRockRoom.asm"
+INCLUDE "maps/FlickerMossRockRoom.asm"
 
 
 SECTION "Dungeon Scripts2", ROMX

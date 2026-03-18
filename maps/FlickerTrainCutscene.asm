@@ -24,7 +24,7 @@ FlickerTrainCutscene_MapScriptHeader:
 	const FLICKER_TRAIN_CUTSCENE_NPC3
 	
 FlickerTrainCutsceneTrigger0:
-	applymovement PLAYER, Movement_FlickerTrainGraveyard3Girls2
+	applymovement PLAYER, Movement_FlickerTrainCutscene
 	playsound SFX_ENTER_DOOR
 	applyonemovement PLAYER, hide_person
 	waitsfx
@@ -116,6 +116,11 @@ FlickerTrainCutsceneArriveText:
 	line "step as you exit"
 	cont "the train."
 	done
+	
+Movement_FlickerTrainCutscene:
+	step_up
+	step_up
+	step_end
 	
 Movement_FlickerStationTrainLeaves:
 	slow_step_left

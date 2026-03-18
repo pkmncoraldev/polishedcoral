@@ -503,7 +503,7 @@ DEF MAP_NONE   EQU 0
 	
 	newgroup													 ; EVO LOCATIONS GROUP
 	map_const ICE_CAVE_ICE_ROCK_ROOM,					   5,  5 ; 1
-	map_const HUNTERS_THICKET_MOSS_ROCK_ROOM,              7,  7 ; 2
+	map_const FLICKER_MOSS_ROCK_ROOM,           		   5,  5 ; 2
 	map_const GLINT_GROVE_UNDERGROUND,					  23, 24 ; 3
 	map_const DRAGON_SHRINE_INTERIOR,                      8, 38 ; 4
 	

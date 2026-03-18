@@ -17,25 +17,20 @@ Route10_MapScriptHeader:
 	warp_def  3, 33, 2, TWINKLE_ROCK_HOUSE
 	warp_def 47, 27, 1, ICE_CAVE_ICE_ROCK_ROOM
 
-	db 48 ; coord events
+	db 43 ; coord events
 	xy_trigger 1, 30, 19, 0, Route10StartSnowstorm, 0, 0
 	xy_trigger 1, 31, 20, 0, Route10StartSnowstorm, 0, 0
 	xy_trigger 1, 32, 19, 0, Route10StartSnowstorm, 0, 0
 	xy_trigger 1, 33, 20, 0, Route10StartSnowstorm, 0, 0
 	xy_trigger 1, 34, 21, 0, Route10StartSnowstorm, 0, 0
 	xy_trigger 1, 35, 20, 0, Route10StartSnowstorm, 0, 0
-	xy_trigger 2, 31, 28, 0, Route10StartSnowstorm, 0, 0
-	xy_trigger 2, 32, 29, 0, Route10StartSnowstorm, 0, 0
-	xy_trigger 2, 33, 30, 0, Route10StartSnowstorm, 0, 0
-	xy_trigger 2, 34, 31, 0, Route10StartSnowstorm, 0, 0
-	xy_trigger 2, 36, 32, 0, Route10StartSnowstorm, 0, 0
-	xy_trigger 2, 37, 31, 0, Route10StartSnowstorm, 0, 0
-	xy_trigger 2, 38, 30, 0, Route10StartSnowstorm, 0, 0
-	xy_trigger 2, 39, 31, 0, Route10StartSnowstorm, 0, 0
-	xy_trigger 2, 40, 30, 0, Route10StartSnowstorm, 0, 0
-	xy_trigger 2, 41, 31, 0, Route10StartSnowstorm, 0, 0
-	xy_trigger 2, 42, 32, 0, Route10StartSnowstorm, 0, 0
 	xy_trigger 2, 43, 33, 0, Route10StartSnowstorm, 0, 0
+	xy_trigger 2, 38, 31, 0, Route10StartSnowstorm, 0, 0
+	xy_trigger 2, 39, 30, 0, Route10StartSnowstorm, 0, 0
+	xy_trigger 2, 40, 31, 0, Route10StartSnowstorm, 0, 0
+	xy_trigger 2, 41, 32, 0, Route10StartSnowstorm, 0, 0
+	xy_trigger 2, 42, 33, 0, Route10StartSnowstorm, 0, 0
+	xy_trigger 2, 43, 32, 0, Route10StartSnowstorm, 0, 0
 	xy_trigger 3, 30, 44, 0, Route10StartSnowstorm, 0, 0
 	xy_trigger 3, 16, 47, 0, Route10StartSnowstorm, 0, 0
 	xy_trigger 3, 26, 33, 0, Route10StartSnowstorm, 0, 0
@@ -88,7 +83,7 @@ Route10_MapScriptHeader:
 	person_event SPRITE_BOARDER, 34, 19, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_GENERICTRAINER, 4, TrainerRoute10_1, -1
 	person_event SPRITE_SKIER, 33, 27, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_GENERICTRAINER, 4, TrainerRoute10_2, -1
 	person_event SPRITE_BOARDER, 30, 34, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_GENERICTRAINER, 4, TrainerRoute10_3, -1
-	person_event SPRITE_SKIER, 39, 38, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_GENERICTRAINER, 4, TrainerRoute10_4, -1
+	person_event SPRITE_SKIER, 38, 37, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_GENERICTRAINER, 3, TrainerRoute10_4, -1
 	person_event SPRITE_BOARDER, 22, 42, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_GENERICTRAINER, 4, TrainerRoute10_5, -1
 	person_event SPRITE_FIREBREATHER, 24, 50, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_GENERICTRAINER, 4, TrainerRoute10_6, -1
 	person_event SPRITE_BOARDER, 12, 33, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_GENERICTRAINER, 3, TrainerRoute10_7, -1

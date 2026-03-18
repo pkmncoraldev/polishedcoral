@@ -35,7 +35,7 @@ StarglowValley_MapScriptHeader:
 	bg_event 35, 13, SIGNPOST_ITEM + GREAT_BALL, EVENT_STARGLOW_HIDDEN_GREAT_BALL
 ;	signpost 8, 14, SIGNPOST_READ, StarglowClue
 
-	db 18 ; object events
+	db 17 ; object events
 	person_event SPRITE_TWIN,  6,  5, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, StarglowLittleGirl, EVENT_STARGLOW_HELPED_LITTLEGIRL
 	person_event SPRITE_SNARE, 6, 23, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, StarglowSnare1, EVENT_BEAT_STARGLOW_SNARE_1
 	person_event SPRITE_SNARE_GIRL, 10, 31, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, StarglowSnare2, EVENT_BEAT_STARGLOW_SNARE_2
@@ -44,7 +44,6 @@ StarglowValley_MapScriptHeader:
 	person_event SPRITE_GRAMPS, 10, 6, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, StarglowGramps, -1
 	person_event SPRITE_YOUNGSTER, 14, 26, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, StarglowYoungster, -1
 	person_event SPRITE_LASS, 19, 29, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 1, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, StarglowLass, EVENT_PUNKS_LEAVE_STARGLOW
-	person_event SPRITE_FISHER, 16,  8, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, StarglowFisher1, EVENT_PUNKS_HAVENT_LEFT_STARGLOW
 	person_event SPRITE_FISHER, 9, 19, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, StarglowFisher2, EVENT_PUNKS_HAVENT_LEFT_STARGLOW
 	person_event SPRITE_FISHER, 24, 20, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, StarglowFisher3, EVENT_PUNKS_HAVENT_LEFT_STARGLOW
 	person_event SPRITE_SCHOOLBOY, 20, 31, SPRITEMOVEDATA_STANDING_DOWN, 2, 2, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, StarglowYoungster2, -1
@@ -66,7 +65,6 @@ StarglowValley_MapScriptHeader:
 	const STARGLOWGRAMPS
 	const STARGLOWYOUNGSTER
 	const STARGLOWLASS
-	const STARGLOWFISHER1
 	const STARGLOWFISHER2
 	const STARGLOWFISHER3
 	const STARGLOWYOUNGSTER2
@@ -143,23 +141,6 @@ StarglowValleyRodneyRematch:
 	
 ;FruitTreeScript_Starglow:
 ;	fruittree FRUITTREE_STARGLOW
-	
-StarglowFisher1:
-	faceplayer
-	opentext
-	checkevent EVENT_GOT_HM01_CUT
-	iftrue .gotcut
-	writetext StarglowFisher1Text1
-	buttonsound
-	verbosegivetmhm HM_CUT
-	setevent EVENT_GOT_HM01_CUT
-	setflag ENGINE_GOT_CUT
-.gotcut
-	writetext StarglowFisher1Text2
-	waitbutton
-	spriteface STARGLOWFISHER1, UP
-	closetext
-	end
 	
 StarglowFisher2:
 	faceplayer
@@ -448,7 +429,6 @@ StarglowSnare3:
 	playsound SFX_ENTER_DOOR
 	disappear STARGLOWRODNEY
 	disappear STARGLOWSNARE4
-	appear STARGLOWFISHER1
 	appear STARGLOWFISHER2
 	appear STARGLOWFISHER3
 	appear STARGLOWYOUNGSTER2
@@ -598,40 +578,6 @@ StarglowLittleGirl:
 	closetext
 	setevent EVENT_SAID_NO_TO_LITTLE_GIRL
 	end
-	
-StarglowFisher1Text1:
-	text "Sometimes, <WAIT_S>when"
-	line "fishing, <WAIT_S>my line"
-	cont "will get caught"
-	cont "on something in"
-	cont "the water."
-	
-	para "When that happens,"
-	line "I have my #MON"
-	cont "use CUT on the it."
-	
-	para "Here."
-	done
-	
-StarglowFisher1Text2:
-	text "That HM contains"
-	line "the move CUT."
-
-	para "You probably won't"
-	line "need to use it"
-	cont "while fishing,"
-	
-	para "but you could use"
-	line "it to CUT down"
-	cont "small trees in"
-	cont "your way."
-	
-	para "You need the BADGE"
-	line "from this town's"
-	cont "GYM LEADER to use"
-	cont "it outside of"
-	cont "battle, though."
-	done
 	
 StarglowFisher2Text:
 	text "I've fished in"

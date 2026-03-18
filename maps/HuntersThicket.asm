@@ -16,9 +16,9 @@ HuntersThicket_MapScriptHeader:
 	bg_event 29, 20, SIGNPOST_ITEM + SUN_STONE, EVENT_HUNTERS_THICKET_HIDDEN_SUN_STONE
 
 	db 19 ; object events
-	itemball_event  5, 20, CALCIUM, 1, EVENT_HUNTERS_THICKET_BALL_1
-	itemball_event 18, 29, REPEL, 1, EVENT_HUNTERS_THICKET_BALL_2
-	itemball_event 14, 21, X_SPEED, 1, EVENT_HUNTERS_THICKET_BALL_3
+	itemball_event 18, 29, REPEL, 1, EVENT_HUNTERS_THICKET_BALL_1
+	itemball_event 14, 21, X_SPEED, 1, EVENT_HUNTERS_THICKET_BALL_2
+	person_event SPRITE_BALL_CUT_FRUIT, 20,  5, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, HuntersThicketPokeballCut, EVENT_GOT_HM01_CUT
 	person_event SPRITE_COOLTRAINER_F, 29, 19, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_GENERICTRAINER, 4, TrainerHunters_1, -1
 	person_event SPRITE_BUG_CATCHER, 16, 23, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 2, TrainerHunters_2, -1
 	person_event SPRITE_PICNICKER, 19, 15, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 2, TrainerHunters_3, -1
@@ -88,6 +88,31 @@ HuntersThicketLoadDisguise:
 	ld a, [wHuntersDisguise]
 	ld [wScriptVar], a
 	ret
+	
+HuntersThicketPokeballCut:
+	disappear LAST_TALKED
+	opentext
+	writetext ReceivedCutText1
+	waitsfx
+	specialsound
+	waitbutton
+	writetext ReceivedCutText2
+	waitbutton
+	closetext
+	givetmhm HM_CUT
+	setevent EVENT_GOT_HM01_CUT
+	setflag ENGINE_GOT_CUT
+	end
+	
+ReceivedCutText1:
+	text "<PLAYER> found"
+	line "HM08 ROCK CLIMB!"
+	done
+	
+ReceivedCutText2:
+	text "<PLAYER> put HM08"
+	line "in the TM POCKET."
+	done
 
 HuntersThicketRanger:
 	waitsfx

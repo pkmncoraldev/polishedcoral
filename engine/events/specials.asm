@@ -692,6 +692,8 @@ Special_MinaGoodbye:
 	jr z, .four
 	cp 5
 	jr z, .five
+	cp 6
+	jr z, .six
 .zero
 	ld hl, MinaGoodbyeText0
 	jr .end
@@ -710,6 +712,8 @@ Special_MinaGoodbye:
 .five
 	ld hl, MinaGoodbyeText5
 	jr .end
+.six
+	ld hl, MinaGoodbyeText6
 .end
 	call PrintText
 	ld a, [wMinaEncounters]
@@ -741,21 +745,32 @@ MinaGoodbyeText2:
 	text "ALOLA,"
 	line "<PLAYER>."
 	
+	para "I mean, <WAIT_M>"
+	line "Goodbye!"
+	
+	para "I'll never get"
+	line "used to that!"
+	done
+	
+MinaGoodbyeText3:
+	text "ALOLA,"
+	line "<PLAYER>."
+	
 	para "Gah! <WAIT_M> I did it"
 	line "again!"
 	
 	para "Goodbye!"
 	done
 	
-MinaGoodbyeText3:
-	text "ALO- <WAIT_S>Ah!<WAIT_M> I caught"
+MinaGoodbyeText4:
+	text "ALOL- <WAIT_S>Ah!<WAIT_M> I caught"
 	line "myself that time!"
 	
 	para "Goodbye,"
 	line "<PLAYER>."
 	done
 	
-MinaGoodbyeText4:
+MinaGoodbyeText5:
 	text "Goodbye,"
 	line "<PLAYER>."
 	
@@ -763,7 +778,7 @@ MinaGoodbyeText4:
 	line "ALOLA this time!"
 	done
 	
-MinaGoodbyeText5:
+MinaGoodbyeText6:
 	text "ALOLA,"
 	line "<PLAYER>."
 	

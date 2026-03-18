@@ -245,8 +245,9 @@ EngineFlags: ; 80462
 	engine_flag wIsNearCampfire, 0  ; used to light up player on Route 10 East
 	
 	engine_flag wMinaFlags, 0 ; glint grove deep
-	engine_flag wMinaFlags, 1 ; route 6
-	engine_flag wMinaFlags, 2 ; route 11
-	engine_flag wMinaFlags, 3 ; radiant field
-	engine_flag wMinaFlags, 4 ; route 29
-	engine_flag wMinaFlags, 5 ; route 10
+	engine_flag wMinaFlags, 1 ; mt onwa
+	engine_flag wMinaFlags, 2 ; route 6
+	engine_flag wMinaFlags, 3 ; route 11
+	engine_flag wMinaFlags, 4 ; radiant field
+	engine_flag wMinaFlags, 5 ; route 29
+	engine_flag wMinaFlags, 6 ; route 10

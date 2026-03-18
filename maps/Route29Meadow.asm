@@ -197,7 +197,7 @@ Route29Mina:
 	waitsfx
 	winlosstext Route29MinaMinaWinText, 0
 	setlasttalked ROUTE_29_MINA
-	loadtrainer MINA, 2
+	loadtrainer MINA, 3
 	startbattle
 	dontrestartmapmusic
 	reloadmap

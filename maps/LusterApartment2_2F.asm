@@ -56,12 +56,22 @@ LusterApartment2_2FJournal:
 	waitbutton
 	farwritetext StdBlankText
 	pause 6
-	checkevent EVENT_DONE_ROUTE_6_MINA
-	iftrue .route_6
-	writetext LusterApartment2_2FJournalTextIsland
+	checkevent EVENT_DONE_MT_ONWA_MINA
+	iftrue .mt_onwa
+	writetext LusterApartment2_2FJournalTextCliff
+	jump .cont6
+.mt_onwa
+	writetext LusterApartment2_2FJournalTextCliffDone
+.cont6
+	waitbutton
+	farwritetext StdBlankText
+	pause 6
+	checkevent EVENT_DONE_ROUTE_10_MINA
+	iftrue .route_10
+	writetext LusterApartment2_2FJournalTextSnow
 	jump .cont1
-.route_6
-	writetext LusterApartment2_2FJournalTextIslandDone
+.route_10
+	writetext LusterApartment2_2FJournalTextSnowDone
 .cont1
 	waitbutton
 	farwritetext StdBlankText
@@ -96,32 +106,22 @@ LusterApartment2_2FJournal:
 	waitbutton
 	farwritetext StdBlankText
 	pause 6
-	checkevent EVENT_DONE_ROUTE_10_MINA
-	iftrue .route_10
-	writetext LusterApartment2_2FJournalTextSnow
+	checkevent EVENT_DONE_ROUTE_6_MINA
+	iftrue .route_6
+	writetext LusterApartment2_2FJournalTextIsland
 	jump .cont5
-.route_10
-	writetext LusterApartment2_2FJournalTextSnowDone
+.route_6
+	writetext LusterApartment2_2FJournalTextIslandDone
 .cont5
 	waitbutton
 	closetext
 	setevent EVENT_READ_MINAS_JOURNAL
-	checkevent EVENT_MINA_QUEST_ACTIVATED
-	iftrue .end
-	domaptrigger ROUTE_6_SOUTH, $1
-	clearevent EVENT_ROUTE_6_MINA_GONE
-	clearevent EVENT_ROUTE_11_MINA_GONE
-	clearevent EVENT_RADIANT_FIELD_MINA_GONE
-	clearevent EVENT_ROUTE_29_MINA_GONE
-	clearevent EVENT_ROUTE_10_MINA_GONE
 	setevent EVENT_UNIQUE_ENCOUNTER_MINA_JOURNAL
 	clearevent EVENT_UNIQUE_ENCOUNTER_MINA_ROUTE_6
 	clearevent EVENT_UNIQUE_ENCOUNTER_MINA_ROUTE_11
 	clearevent EVENT_UNIQUE_ENCOUNTER_MINA_RADIANT_FIELD
 	clearevent EVENT_UNIQUE_ENCOUNTER_MINA_ROUTE_29
 	clearevent EVENT_UNIQUE_ENCOUNTER_MINA_ROUTE_10
-	setevent EVENT_MINA_QUEST_ACTIVATED
-.end
 	end
 .no
 	writetext LusterApartment2_2FJournalNo
@@ -151,6 +151,18 @@ LusterApartment2_2FJournalText2:
 	
 	para "✓A pretty pink"
 	line "grove."
+	done
+	
+LusterApartment2_2FJournalTextCliff:
+	text "-A gorgeous view"
+	line "from a cliff on"
+	cont "a tall mountain."
+	done
+	
+LusterApartment2_2FJournalTextCliffDone:
+	text "✓A gorgeous view"
+	line "from a cliff on"
+	cont "a tall mountain."
 	done
 	
 LusterApartment2_2FJournalTextIsland:
@@ -187,12 +199,12 @@ LusterApartment2_2FJournalTextSunflowersDone:
 	
 LusterApartment2_2FJournalTextField:
 	text "-A quiet field far"
-	line "to the SOUTHEAST."
+	line "to the SOUTH."
 	done
 	
 LusterApartment2_2FJournalTextFieldDone:
 	text "✓A quiet field far"
-	line "to the SOUTHEAST."
+	line "to the SOUTH."
 	done
 	
 LusterApartment2_2FJournalTextSnow:

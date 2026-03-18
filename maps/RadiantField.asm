@@ -224,7 +224,7 @@ RadiantFieldMina:
 	waitsfx
 	winlosstext RadiantMinaWinText, 0
 	setlasttalked RADIANT_FIELD_MINA
-	loadtrainer MINA, 2
+	loadtrainer MINA, 3
 	startbattle
 	dontrestartmapmusic
 	reloadmap
@@ -270,7 +270,7 @@ RadiantFieldMina:
 	setevent EVENT_UNIQUE_ENCOUNTER_MINA_RADIANT_FIELD
 	setflag ENGINE_MINA_RADIANT_FIELD
 	special Special_FadeOutMusic
-	pause 5
+	pause 10
 	playmapmusic
 	end
 	

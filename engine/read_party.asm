@@ -434,45 +434,53 @@ GetNextTrainerDataByte:
 	ret
 	
 CheckMinaMons:
-	cp MINA_MON_ROUTE_6
+	cp MINA_MON_MT_ONWA
 	jp z, .mina_mon_1
-	cp MINA_MON_ROUTE_11
+	cp MINA_MON_ROUTE_6
 	jp z, .mina_mon_2
-	cp MINA_MON_RADIANT_FIELD
+	cp MINA_MON_ROUTE_11
 	jp z, .mina_mon_3
-	cp MINA_MON_ROUTE_29
+	cp MINA_MON_RADIANT_FIELD
 	jp z, .mina_mon_4
-	cp MINA_MON_ROUTE_10
+	cp MINA_MON_ROUTE_29
 	jp z, .mina_mon_5
+	cp MINA_MON_ROUTE_10
+	jp z, .mina_mon_6
 	ret
 .mina_mon_1
 	push hl
 	ld hl, wMinaFlags
-	bit 1, [hl] ; ENGINE_MINA_ROUTE_6
+	bit 1, [hl] ; ENGINE_MINA_MT_ONWA
 	jr nz, .do_mina_mon
 	jr .next_mina_mon
 .mina_mon_2
 	push hl
 	ld hl, wMinaFlags
-	bit 2, [hl] ; ENGINE_MINA_ROUTE_11
+	bit 2, [hl] ; ENGINE_MINA_ROUTE_6
 	jr nz, .do_mina_mon
 	jr .next_mina_mon
 .mina_mon_3
 	push hl
 	ld hl, wMinaFlags
-	bit 3, [hl] ; ENGINE_MINA_RADIANT_FIELD
+	bit 3, [hl] ; ENGINE_MINA_ROUTE_11
 	jr nz, .do_mina_mon
 	jr .next_mina_mon
 .mina_mon_4
 	push hl
 	ld hl, wMinaFlags
-	bit 4, [hl] ; ENGINE_MINA_ROUTE_29
+	bit 4, [hl] ; ENGINE_MINA_RADIANT_FIELD
 	jr nz, .do_mina_mon
 	jr .next_mina_mon
 .mina_mon_5
 	push hl
 	ld hl, wMinaFlags
-	bit 5, [hl] ; ENGINE_MINA_ROUTE_10
+	bit 5, [hl] ; ENGINE_MINA_ROUTE_29
+	jr nz, .do_mina_mon
+	jr .next_mina_mon
+.mina_mon_6
+	push hl
+	ld hl, wMinaFlags
+	bit 6, [hl] ; ENGINE_MINA_ROUTE_10
 	jr nz, .do_mina_mon
 	
 .next_mina_mon

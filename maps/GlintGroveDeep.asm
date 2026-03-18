@@ -131,15 +131,29 @@ GlintGroveDeepSmeargleScene:
 	dontrestartmapmusic
 	reloadmap
 	playmusic MUSIC_MINA
-	checkevent EVENT_GOT_HM03_SURF
-	iftrue .start_mina_quest
-.return
+	domaptrigger ROUTE_6_SOUTH, $1
+	clearevent EVENT_ROUTE_6_MINA_GONE
+	clearevent EVENT_ROUTE_11_MINA_GONE
+	clearevent EVENT_RADIANT_FIELD_MINA_GONE
+	clearevent EVENT_ROUTE_29_MINA_GONE
+	clearevent EVENT_ROUTE_10_MINA_GONE
+	clearevent EVENT_UNIQUE_ENCOUNTER_MINA_JOURNAL
+	setevent EVENT_UNIQUE_ENCOUNTER_MINA_GLINT_GROVE
+	setevent EVENT_MINA_QUEST_ACTIVATED
 	setevent EVENT_GLINT_DEEP_MINA_GONE
 	setevent EVENT_GLINT_SMEARGLES_GONE
 	setevent EVENT_DONE_GLINT_DEEP_MINA
+	clearevent EVENT_MINA_APARTMENT_EMPTY
 	setflag ENGINE_MINA_GLINT_GROVE_DEEP
 	opentext TEXTBOX_MINA
 	writetext GlintGroveDeepMinaText7
+	waitbutton
+	changetextboxspeaker
+	verbosegivetmhm HM_ROCK_SMASH
+	setevent EVENT_GOT_HM06_ROCK_SMASH
+	setflag ENGINE_GOT_ROCK_SMASH
+	changetextboxspeaker TEXTBOX_MINA
+	writetext GlintGroveDeepMinaText8
 	waitbutton
 	closetext
 	follow PLAYER, GLINTSECRET_MINA
@@ -165,24 +179,10 @@ GlintGroveDeepSmeargleScene:
 	disappear GLINTSECRET_MINA
 	waitsfx
 	dotrigger $4
-	clearevent EVENT_MINA_APARTMENT_EMPTY
-	clearevent EVENT_UNIQUE_ENCOUNTER_MINA_JOURNAL
-	setevent EVENT_UNIQUE_ENCOUNTER_MINA_GLINT_GROVE
 	special Special_FadeOutMusic
-	pause 5
+	pause 10
 	playmapmusic
 	end
-.start_mina_quest
-	domaptrigger ROUTE_6_SOUTH, $1
-	clearevent EVENT_ROUTE_6_MINA_GONE
-	clearevent EVENT_ROUTE_11_MINA_GONE
-	clearevent EVENT_RADIANT_FIELD_MINA_GONE
-	clearevent EVENT_ROUTE_29_MINA_GONE
-	clearevent EVENT_ROUTE_10_MINA_GONE
-	clearevent EVENT_UNIQUE_ENCOUNTER_MINA_JOURNAL
-	setevent EVENT_UNIQUE_ENCOUNTER_MINA_GLINT_GROVE
-	setevent EVENT_MINA_QUEST_ACTIVATED
-	jump .return
 	
 GlintGroveDeepMinaText:
 	text "She's totally"
@@ -262,8 +262,30 @@ GlintGroveDeepMinaText7:
 	line "found my spark if"
 	cont "it weren't for you."
 	
-	para "So, uhh…<WAIT_S>"
-	line "Thanks!"
+	para "So, uhh…<WAIT_M>"
+	line "Take this thanks!"
+	done
+	
+GlintGroveDeepMinaText8:
+	text "That's an HM."
+	
+	para "That's short for"
+	line "HIDDEN MACHINE."
+	
+	para "HMs teach your"
+	line "#MON new moves."
+	
+	para "You can also"
+	line "use HMs outside of"
+	cont "battle to reach"
+	cont "new areas."
+	
+	para "You need the GYM"
+	line "BADGE from GLINT"
+	cont "CITY to use it"
+	cont "outside of battle."
+	
+	para "…"
 	
 	para "Anyway, <WAIT_S>I better"
 	line "be going."

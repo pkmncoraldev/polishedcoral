@@ -446,7 +446,7 @@ ObscuraFortuneHouseTellerAsm:
 	jr z, .decos
 	cp NUM_TAPE_PLAYER_SONGS
 	jr z, .tape
-	cp 34 ;number of unique encounters + 1
+	cp 37 ;number of unique encounters + 1
 	jr z, .unique_encounters
 	
 .no_more
@@ -1706,6 +1706,7 @@ TellerUniqueEncounterText:
 	dw UniqueEncounterSpiritombBossText
 	dw UniqueEncounterMamoswineBossText
 	dw UniqueEncounterMinaJournalText
+	dw UniqueEncounterMinaMtOnwaText
 	dw UniqueEncounterMinaRoute6Text
 	dw UniqueEncounterMinaRoute11Text
 	dw UniqueEncounterMinaRadiantFieldText
@@ -1773,6 +1774,11 @@ UniqueEncounterMamoswineBossText:
 UniqueEncounterMinaJournalText:
 	text "MINA"
 	line "JOURNAL"
+	done
+	
+UniqueEncounterMinaMtOnwaText:
+	text "MINA"
+	line "MT ONWA"
 	done
 	
 UniqueEncounterMinaRoute6Text:

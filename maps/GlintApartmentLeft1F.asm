@@ -12,9 +12,10 @@ GlintApartmentLeft1F_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 2 ; object events
+	db 3 ; object events
 	person_event SPRITE_GRAMPS, 3, 4, SPRITEMOVEDATA_STANDING_LEFT, 0, 1, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, GlintApt11FNpc1, -1
 	person_event SPRITE_ELDER, 3, 1, SPRITEMOVEDATA_STANDING_RIGHT, 0, 1, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, GlintApt11FNpc2, -1
+	person_event SPRITE_SUPER_NERD, 4, 6, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, GlintApt11FNpc3, -1
 
 	const_def 1 ; object constants
 	const GLINT_APT11F_NPC1
@@ -32,23 +33,14 @@ GlintApt11FNpc1:
 GlintApt11FNpc2:
 	faceplayer
 	opentext
-	checkevent EVENT_GOT_HM06_ROCK_SMASH
-	iftrue .gotrocksmash
-	writetext GlintApt11FNpc2Text1
+	writetext GlintApt11FNpc2Text
 	waitbutton
-	verbosegivetmhm HM_ROCK_SMASH
-	setevent EVENT_GOT_HM06_ROCK_SMASH
-	setflag ENGINE_GOT_ROCK_SMASH
-	writetext GlintApt11FNpc2Text2
-	buttonsound
-	farwritetext StdBlankText
-	pause 6
-.gotrocksmash:
-	writetext GlintApt11FNpc2Text3
-	waitbutton
-	closetext
 	spriteface GLINT_APT11F_NPC2, RIGHT
+	closetext
 	end
+	
+GlintApt11FNpc3:
+	jumptextfaceplayer GlintApt11FNpc3Text
 	
 GlintApt11FNpc1Text:
 	text "Moves are more"
@@ -63,46 +55,25 @@ GlintApt11FNpc1Text:
 	cont "stronger if used"
 	cont "by a FIGHTING-type"
 	cont "#MON!"
+	
+	para "Nice bonus!"
 	done
 	
-GlintApt11FNpc2Text1:
-	text "Are you a #MON"
-	line "TRAINER?"
+GlintApt11FNpc2Text:
+	text "Have you heard of"
+	line "HIDDEN MACHINES?"
 	
-	para "Of course you are,"
-	line "just look at you!"
-	
-	para "I love to meet"
-	line "aspiring young"
-	cont "TRAINERS!"
-	
-	para "Take this as a"
-	line "gift from an old"
-	cont "TRAINER to a new"
-	cont "one."
-	done
-	
-GlintApt11FNpc2Text2:
-	text "That's an HM."
-	
-	para "That's short for"
-	line "HIDDEN MACHINE."
-	
-	para "HMs teach your"
-	line "#MON new moves."
-	
-	para "You can also"
-	line "use HMs outside of"
-	cont "battle to reach"
-	cont "new areas if you"
-	cont "have the right"
-	cont "GYM BADGE."
+	para "HMs can let your"
+	line "#MON use moves"
+	cont "to reach new areas"
+	cont "if you have the"
+	cont "right GYM BADGE."
 	
 	para "Your #MON"
 	line "doesn't even need"
 	cont "to learn the move"
 	cont "to use it outside"
-	cont "of battle."
+	cont "of battle!"
 	done
 	
 GlintApt11FNpc2Text3:
@@ -116,5 +87,16 @@ GlintApt11FNpc2Text3:
 	line "in handy against"
 	cont "NORMAL-type"
 	cont "#MON!"
+	done
+	
+GlintApt11FNpc3Text:
+	text "I saw a cute girl"
+	line "trying to smash"
+	cont "the rocks in the"
+	cont "grove earlier."
+	
+	para "She was running"
+	line "into some kind of"
+	cont "issue it seems."
 	done
 	

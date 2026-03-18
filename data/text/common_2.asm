@@ -438,7 +438,7 @@ UnknownText_0x1c08f0::
 
 UnknownText_0x1c0906::
 	text "Maybe a #MON"
-	line "can break this."
+	line "could break this."
 	done
 
 UnknownText_0x1c0924::

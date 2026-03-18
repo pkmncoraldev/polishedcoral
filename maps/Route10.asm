@@ -182,7 +182,13 @@ Route10Mina:
 	waitsfx
 	winlosstext Route10MinaMinaWinText, 0
 	setlasttalked 3
+	checkevent EVENT_REACHED_LUSTER_CITY
+	iftrue .got_to_luster
 	loadtrainer MINA, 2
+	jump .cont
+.got_to_luster
+	loadtrainer MINA, 3
+.cont
 	startbattle
 	dontrestartmapmusic
 	reloadmap
@@ -217,10 +223,10 @@ Route10Mina:
 	dotrigger $4
 	setevent EVENT_ROUTE_10_MINA_GONE
 	setevent EVENT_DONE_ROUTE_10_MINA
-	setevent EVENT_UNIQUE_ENCOUNTER_MINA_ROUTE_11
+	setevent EVENT_UNIQUE_ENCOUNTER_MINA_ROUTE_10
 	setflag ENGINE_MINA_ROUTE_10
 	special Special_FadeOutMusic
-	pause 5
+	pause 10
 	playmapmusic
 	end
 .no

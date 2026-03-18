@@ -252,7 +252,7 @@ Route6SouthMinaScene:
 	waitsfx
 	winlosstext Route6SouthMinaMinaWinText, 0
 	setlasttalked 4
-	loadtrainer MINA, 2
+	loadtrainer MINA, 3
 	startbattle
 	dontrestartmapmusic
 	reloadmap
@@ -287,7 +287,7 @@ Route6SouthMinaScene:
 	setevent EVENT_UNIQUE_ENCOUNTER_MINA_ROUTE_6
 	setflag ENGINE_MINA_ROUTE_6
 	special Special_FadeOutMusic
-	pause 5
+	pause 10
 	playmapmusic
 	end
 	

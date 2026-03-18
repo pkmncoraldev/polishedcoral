@@ -1,8 +1,7 @@
 MtOnwaCliff_MapScriptHeader:
 	db 0 ; scene scripts
 
-	db 1 ; callbacks
-	callback MAPCALLBACK_TILES, MtOnwaCliffCallback
+	db 0 ; callbacks
 
 	db 2 ; warp events
 	warp_def 21, 28, 2, MT_ONWA_2F
@@ -12,59 +11,38 @@ MtOnwaCliff_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 6 ; object events
+	db 7 ; object events
 	person_event SPRITE_ROCKER, 15, 30, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_GENERICTRAINER, 2, TrainerMtOnwaOutside_1, -1
 	person_event SPRITE_BIRD_KEEPER, 13, 10, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 3, TrainerMtOnwaOutside_2, -1
 	person_event SPRITE_COOLTRAINER_F, 29, 12, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_GENERICTRAINER, 4, TrainerMtOnwaOutside_3, -1
-	person_event SPRITE_YOUNGSTER, 8, 17, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, MtOnwaPanNPC, EVENT_MT_ONWA_NPC_1
-	person_event SPRITE_CUTE_GIRL, 8, 17, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, MtOnwaPanNPC, EVENT_MT_ONWA_NPC_2
-	person_event SPRITE_PLAYER_CUTSCENE, 8, 16, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, EVENT_PLAYER_CUTSCENE_SILVER
+	person_event SPRITE_MINA,  9, 17, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, MtOnwaMina, EVENT_MT_ONWA_MINA_GONE
+	person_event SPRITE_PAINTINGS,  8, 17, SPRITEMOVEDATA_TILE_DOWN_SOLID, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, MtOnwaEasel, EVENT_MT_ONWA_MINA_GONE
+	person_event SPRITE_LEAVES,  8, 17, SPRITEMOVEDATA_TILE_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, MtOnwaEasel, EVENT_MT_ONWA_MINA_GONE
+	person_event SPRITE_PLAYER_CUTSCENE,  9, 16, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, EVENT_PLAYER_CUTSCENE_SILVER
 
 	const_def 1 ; object constants
 	const MT_ONWA_TRAINER1
 	const MT_ONWA_TRAINER2
 	const MT_ONWA_TRAINER3
-	const MT_ONWA_NPC1
-	const MT_ONWA_NPC2
+	const MT_ONWA_MINA
+	const MT_ONWA_PAINTING
+	const MT_ONWA_EASEL
 	const MT_ONWA_CUTSCENE
 	
-MtOnwaCliffCallback:
-	checkevent EVENT_PLAYER_IS_CORA
-	iftrue .playerfemale
-	checkevent EVENT_PLAYER_IS_PIPPI
-	iftrue .playerfemale
-	checkevent EVENT_PLAYER_IS_LEAF
-	iftrue .playerfemale
-	checkevent EVENT_PLAYER_IS_KRIS
-	iftrue .playerfemale
-	disappear MT_ONWA_NPC1
-	disappear MT_ONWA_NPC2
-	appear MT_ONWA_NPC2
-	return
-.playerfemale
-	disappear MT_ONWA_NPC1
-	appear MT_ONWA_NPC1
-	disappear MT_ONWA_NPC2
-	return
+MtOnwaEasel:
+	jumptext MtOnwaEaselText
 	
-MtOnwaPanNPC:
+MtOnwaEaselText:
+	text "MINA's easel."
+	done
+	
+MtOnwaMina:
 	faceplayer
-	opentext
-	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_3
-	iftrue .ask_heal
-	writetext MtOnwaPanNPCTextYesorNo1
-	buttonsound
-	farwritetext StdBlankText
-	pause 6
-.ask_cutscene
-	writetext MtOnwaPanNPCTextYesorNo2
-	yesorno
-	iffalse .end
-	writetext MtOnwaPanNPCText1
+	opentext TEXTBOX_MINA
+	writetext MtOnwaMinaText1
 	waitbutton
 	closetext
-	spriteface MT_ONWA_NPC1, UP
-	spriteface MT_ONWA_NPC2, UP
+	spriteface MT_ONWA_MINA, UP
 	special Special_ForcePlayerStateNormal
 	checkcode VAR_FACING
 	if_equal RIGHT, .cont
@@ -77,8 +55,7 @@ MtOnwaPanNPC:
 .cont
 	spriteface PLAYER, UP
 	appear MT_ONWA_CUTSCENE
-	spriteface MT_ONWA_NPC1, UP
-	spriteface MT_ONWA_NPC2, UP
+	spriteface MT_ONWA_MINA, UP
 	pause 15
 	special Special_FadeOutMusic
 	pause 20
@@ -88,18 +65,18 @@ MtOnwaPanNPC:
 	pause 20
 	playmusic MUSIC_MOUNTAINTOP
 	pause 20
-	opentext
-	writetext MtOnwaPanNPCText2
+	opentext TEXTBOX_MINA
+	writetext MtOnwaMinaText2
 	waitbutton
 	closetext
 	pause 40
-	opentext
-	writetext MtOnwaPanNPCText5
+	opentext TEXTBOX_MINA
+	writetext MtOnwaMinaText3
 	waitbutton
 	closetext
 	pause 40
-	opentext
-	writetext MtOnwaPanNPCText6
+	opentext TEXTBOX_MINA
+	writetext MtOnwaMinaText4
 	waitbutton
 	closetext
 	waitbuttonsilent
@@ -110,46 +87,96 @@ MtOnwaPanNPC:
 	applyonemovement PLAYER, show_person
 	disappear MT_ONWA_CUTSCENE
 	pause 20
-	playmapmusic
-	spriteface MT_ONWA_NPC1, LEFT
-	spriteface MT_ONWA_NPC2, LEFT
+	playmusic MUSIC_MINA
+	spriteface MT_ONWA_MINA, LEFT
 	spriteface PLAYER, RIGHT
-	opentext
-	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_3
-	iftrue .no_heal2
-.ask_heal
-	checkevent EVENT_MT_ONWA_CLIFF_POTION
-	iftrue .no_heal
-	writetext MtOnwaPanNPCText7
-	verbosegiveitem REVIVE
-	iffalse .no_room
-	setevent EVENT_MT_ONWA_CLIFF_POTION
-.no_heal
-	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_3
-	iftrue .ask_cutscene
-.no_heal2
-	writetext MtOnwaPanNPCText3
+	opentext TEXTBOX_MINA
+	writetext MtOnwaMinaText5
 	waitbutton
 	closetext
-	spriteface MT_ONWA_NPC1, UP
-	spriteface MT_ONWA_NPC2, UP
-	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_3
-	end
-.no_room
-	writetext MtOnwaPanNPCText8
+	
+	follow MT_ONWA_MINA, PLAYER
+	applyonemovement MT_ONWA_MINA, step_right
+	stopfollow
+	spriteface MT_ONWA_MINA, LEFT
+	spriteface PLAYER, UP
+	pause 40
+	opentext TEXTBOX_MINA
+	writetext MtOnwaMinaText6
+	pause 10
+	spriteface MT_ONWA_MINA, DOWN
+	farwritetext StdBlankText
+	pause 6
+	writetext MtOnwaMinaText7
 	waitbutton
 	closetext
-	spriteface MT_ONWA_NPC1, UP
-	spriteface MT_ONWA_NPC2, UP
-	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_3
-	end
-.end
-	writetext MtOnwaPanNPCText4
+	pause 40
+	spriteface MT_ONWA_MINA, LEFT
+	spriteface PLAYER, RIGHT
+	pause 20
+	
+	opentext TEXTBOX_MINA
+	writetext MtOnwaMinaText8
 	waitbutton
 	closetext
-	spriteface MT_ONWA_NPC1, UP
-	spriteface MT_ONWA_NPC2, UP
-	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_3
+	special FadeOutPalettesBlack
+	special HealParty
+	special SaveMusic
+	playmusic MUSIC_HEAL
+	pause 60
+	special RestoreMusic
+	callasm LoadMapPals
+	special FadeInPalettes
+	opentext TEXTBOX_MINA
+	writetext MtOnwaMinaText9
+	waitbutton
+	closetext
+	waitsfx
+	
+	winlosstext MtOnwaMinaWinText, 0
+	setlasttalked MT_ONWA_MINA
+	checkevent EVENT_REACHED_LUSTER_CITY
+	iftrue .got_to_luster
+	loadtrainer MINA, 2
+	jump .cont2
+.got_to_luster
+	loadtrainer MINA, 3
+.cont2
+	startbattle
+	dontrestartmapmusic
+	reloadmap
+	playmusic MUSIC_MINA
+	
+	opentext TEXTBOX_MINA
+	writetext MtOnwaMinaText10
+	waitbutton
+	closetext
+	follow PLAYER, MT_ONWA_MINA
+	applyonemovement PLAYER, step_left
+	stopfollow
+	spriteface PLAYER, RIGHT
+	spriteface MT_ONWA_MINA, UP
+	playsound SFX_UNKNOWN_61
+	disappear MT_ONWA_PAINTING
+	pause 25
+	playsound SFX_SWITCH_POCKETS
+	disappear MT_ONWA_EASEL
+	pause 25
+	spriteface MT_ONWA_MINA, LEFT
+	pause 10
+	opentext TEXTBOX_MINA
+	special Special_MinaGoodbye
+	waitbutton
+	closetext
+	applymovement MT_ONWA_MINA, Movement_MtOnwaMinaLeave
+	disappear MT_ONWA_MINA
+	setevent EVENT_MT_ONWA_MINA_GONE
+	setevent EVENT_DONE_MT_ONWA_MINA
+	setevent EVENT_UNIQUE_ENCOUNTER_MINA_MT_ONWA
+	setflag ENGINE_MINA_MT_ONWA
+	special Special_FadeOutMusic
+	pause 10
+	playmapmusic
 	end
 	
 TrainerMtOnwaOutside_1:
@@ -219,63 +246,100 @@ TrainerMtOnwaOutside_3:
 	line "headed…"
 	done
 	
-MtOnwaPanNPCText1:
-	text "Great!"
+MtOnwaMinaText1:
+	text "Oh, hi <PLAYER>."
+	
+	para "It's MINA!<WAIT_M>"
+	line "Remember me?"
+	
+	para "Good to see you"
+	line "again."
+	
+	para "Check out this"
+	line "view with me for"
+	cont "a minute."
 	done
 	
-MtOnwaPanNPCText2:
-	text "We're so high up!"
+MtOnwaMinaText2:
+	text "We're so high up,"
+	line "huh?"
 	done
 	
-MtOnwaPanNPCText3:
-	text "Thanks for sharing"
-	line "the view with me!"
-	
-	para "Come back any"
-	line "time."
-	
-	para "I'll be here!"
-	done
-	
-MtOnwaPanNPCText4:
-	text "Oh well…"
-	
-	para "More view for me!"
-	done
-	
-MtOnwaPanNPCText5:
+MtOnwaMinaText3:
 	text "Everything looks"
 	line "so small from up"
 	cont "here."
 	done
 	
-MtOnwaPanNPCText6:	
-	text "It's a bit<WAIT_S>"
+MtOnwaMinaText4:	
+	text "It's a bit…<WAIT_M>"
 	line "romantic…"
 	done
+
+MtOnwaMinaText5:
+	text "I couldn't pass up"
+	line "the opportunity to"
+	cont "paint this view."
 	
-MtOnwaPanNPCText7:
-	text "Here's something"
-	line "to help you on"
-	cont "your way."
+	para "There's no better"
+	line "inspiration than"
+	cont "the beauty of"
+	cont "nature!"
+	
+	para "Here, <WAIT_S>take a look!"
 	done
 	
-MtOnwaPanNPCText8:
-	text "Oops."
+MtOnwaMinaText6:
+	text "Well?"
 	
-	para "You have no"
-	line "room."
+	para "What do you think?"
+
+	para "I call it:<WAIT_L>"
+	done
+
+MtOnwaMinaText7:
+	text "“Mountaintop"
+	line "Vista”."
+	done
+
+MtOnwaMinaText8:
+	text "While you're here,"
+	line "why don't we have"
+	cont "another battle?"
+	
+	para "But first, let me"
+	line "heal your #MON."
+	done
+
+MtOnwaMinaText9:
+	text "Ok!"
+	
+	para "Let's do it!"
 	done
 	
-MtOnwaPanNPCTextYesorNo1:
-	text "The view from here"
-	line "is amazing!"
+MtOnwaMinaText10:
+	text "Alright, you win!"
+	
+	para "That was fun, but"
+	line "I should be going."
+	
+	para "I've got places to"
+	line "be and paintings"
+	cont "to paint!"
 	done
 	
-MtOnwaPanNPCTextYesorNo2:
-	text "Want to look with"
-	line "me for a while?"
+MtOnwaMinaWinText:
+	text "Haha!"
+	line "Good job!"
 	done
+	
+Movement_MtOnwaMinaLeave:
+	step_right
+	step_right
+	step_right
+	step_right
+	step_right
+	step_end
 	
 Movement_MtOnwaWalk1:
 	step_left

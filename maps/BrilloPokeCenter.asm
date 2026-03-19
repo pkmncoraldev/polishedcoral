@@ -129,6 +129,6 @@ BrilloPokeCenterNPC3Text:
 	para "I know all of"
 	line "their songs!"
 	
-	para "They only have the"
-	line "one song…"
+	para "…<WAIT_L>They only have"
+	line "the one song…"
 	done

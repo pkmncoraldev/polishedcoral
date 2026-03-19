@@ -267,12 +267,18 @@ BrilloNPC3:
 	jumptextfaceplayer BrilloNPC3Text
 	
 BrilloNPC3Text:
-	text "Sand in my shoes.<WAIT_S>"
-	line "Sand in my eyes."
+	text "The cops around"
+	line "here talk a big"
+	cont "game,"
 	
-	para "Sand up my nose!"
+	para "but I'll bet if a"
+	line "tough TRAINER beat"
+	cont "'em in battle,"
+	cont "they'd back off."
 	
-	para "I'm sick of it!"
+	para "If I were you, I"
+	line "wouldn't cooperate"
+	cont "with them…"
 	done
 	
 BrilloSinger:
@@ -886,8 +892,8 @@ BrilloTownPoliceSignText:
 	text "PUEBLO BRILLO"
 	line "POLICE STATION"
 	
-	para "“Ut Vexare"
-	line "et Impedire”"
+	para "“Ut Impedire"
+	line "et Vexare.”"
 	done
 	
 BrilloGraffitiCopText:

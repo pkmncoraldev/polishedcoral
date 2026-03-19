@@ -145,7 +145,7 @@ BrilloPoliceStationCaptain:
 	clearevent EVENT_CAN_TALK_TO_POLICE_CAPTAIN
 	end
 .investigating
-	checkevent EVENT_BEEN_IN_GAME_CORNER
+	checkitem COIN_CASE
 	iftrue .finish_investigation
 	faceplayer
 	opentext TEXTBOX_CAPTAIN
@@ -162,16 +162,23 @@ BrilloPoliceStationCaptain:
 	spriteface BRILLO_POLICE_STATION_COP_1, LEFT
 	opentext TEXTBOX_CAPTAIN
 	writetext BrilloPoliceStationCaptainText7
-	yesorno
-	iffalse .said_no
-.ask_again
-	writetext BrilloPoliceStationCaptainText9
+.return
+	waitbutton
+	special FadeOutPalettes
+	changetextboxspeaker
+	special Special_ChooseItem
+	pause 5
+	iffalse .nothing
+	callasm Route11_2CheckBoneAsm
+	if_not_equal COIN_CASE, .wont_work
+	writetext BrilloPoliceStationAskGiveCoinCupText
 	yesorno
 	iffalse .refused
 	changetextboxspeaker
 	writetext BrilloPoliceStationCaptainText10
 	playsound SFX_LEVEL_UP
 	waitsfx
+	takeitem COIN_CASE
 	waitbutton
 	changetextboxspeaker TEXTBOX_CAPTAIN
 	writetext BrilloPoliceStationCaptainText11
@@ -201,6 +208,7 @@ BrilloPoliceStationCaptain:
 	warp2 DOWN, BRILLO_TOWN, 35, 13
 	end
 .refused
+	changetextboxspeaker TEXTBOX_CAPTAIN
 	writetext BrilloPoliceStationCaptainText14
 	yesorno
 	iffalse .ask_again
@@ -216,8 +224,19 @@ BrilloPoliceStationCaptain:
 	applyonemovement PLAYER, step_up
 	warpcheck
 	end
-.said_no
+.ask_again
+	writetext BrilloPoliceStationCaptainText9
+	jump .return
+.wont_work
+	changetextboxspeaker TEXTBOX_CAPTAIN
 	writetext BrilloPoliceStationCaptainText8
+	waitbutton
+	closetext
+	spriteface BRILLO_POLICE_STATION_CAPTAIN, UP
+	end
+.nothing
+	changetextboxspeaker TEXTBOX_CAPTAIN
+	writetext BrilloPoliceStationCaptainTextNothing
 	waitbutton
 	closetext
 	spriteface BRILLO_POLICE_STATION_CAPTAIN, UP
@@ -459,7 +478,7 @@ BrilloPoliceStationCaptainText5:
 	
 	para "Now get out of my"
 	line "face unless you've"
-	cont "got some info for"
+	cont "got something for"
 	cont "me!"
 	done
 	
@@ -491,6 +510,10 @@ BrilloPoliceStationCaptainText6:
 	cont "running their"
 	cont "little operation,"
 	
+	para "and bring me some-"
+	line "thing physical as"
+	cont "proof,"
+	
 	para "I'll get my boys"
 	line "to let you pass."
 	
@@ -503,37 +526,58 @@ BrilloPoliceStationCaptainText6:
 	done
 	
 BrilloPoliceStationCaptainText7:
-	text "You got an update?"
+	text "You got something"
+	line "to show me?"
+	
+	para "Some physical"
+	line "evidence?"
 	done
 	
 BrilloPoliceStationCaptainText8:
-	text "What're you hiding"
-	line "from me, kid?"
+	text "What is this"
+	line "supposed to be?"
+	
+	para "I need physical"
+	line "evidence of their"
+	cont "illegal gambling."
+	
+	para "Quit wasting my"
+	line "time!"
+	done
+
+BrilloPoliceStationCaptainTextNothing:
+	text "I need physical"
+	line "evidence of their"
+	cont "illegal gambling."
+	
+	para "Quit wasting my"
+	line "time!"
 	done
 
 BrilloPoliceStationCaptainText9:
-	text "Great!"
+	text "Ok then!"
 	
-	para "Now spit it out!"
+	para "You got something"
+	line "to show me?"
 	
-	para "If you tell me,"
-	line "we'll go shut them"
-	cont "down permanently."
-	
-	para "That place'll be"
-	line "gone for good!"
-	
-	para "So, we gonna do"
-	line "this?"
+	para "Some physical"
+	line "evidence?"
 	done
 	
 BrilloPoliceStationCaptainText10:
-	text "<PLAYER> explained"
-	line "everything."
+	text "<PLAYER> handed over"
+	line "COIN CUP."
 	done
 	
 BrilloPoliceStationCaptainText11:
-	text "The #MART!<WAIT_S>"
+	text "Now we're talking!"
+	
+	para "Where'd you get"
+	line "this?"
+	
+	para "…"
+	
+	para "The #MART!<WAIT_S>"
 	line "Of course!"
 	
 	para "A secret room in"
@@ -669,6 +713,18 @@ BrilloPoliceStationCop4Text2:
 	para "The day is saved"
 	line "again all thanks"
 	cont "to us!"
+	done
+	
+BrilloPoliceStationAskGiveCoinCupText:
+	text "If you give up"
+	line "your COIN CUP,"
+	
+	para "you won't be able"
+	line "to play at the"
+	cont "MARACTUS ROOM."
+	
+	para "Give the CAPTAIN"
+	line "your COIN CUP?"
 	done
 	
 Movement_BrilloPoliceStationCaptain:

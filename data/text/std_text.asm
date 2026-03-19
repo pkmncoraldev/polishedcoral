@@ -329,7 +329,21 @@ CoinVendor_WelcomeText:
 	done
 
 CoinVendor_WelcomeText2:
-	text "I threw in"
+	text "If you lose that"
+	line "COIN CUP, that's"
+	cont "it."
+	
+	para "You can't play"
+	line "here no more!"
+	
+	para "Don't go droppin'"
+	line "it or givin' it"
+	cont "away, ya hear?"
+	
+	para "Good.<WAIT_M>"
+	line "Now,"
+	
+	para "I threw in"
 	line "50 COINs on the"
 	cont "house."
 	
@@ -338,12 +352,12 @@ CoinVendor_WelcomeText2:
 	cont "front to exhange"
 	cont "'em for prizes."
 	
-	para "Now, stop asking"
-	line "questions."
-	
 	para "Come talk to me"
 	line "if you wanna buy"
 	cont "more COINs."
+	
+	para "Now, stop asking"
+	line "questions."
 	done
 
 CoinVendor_IntroText:

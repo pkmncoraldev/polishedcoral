@@ -1889,15 +1889,15 @@ Special_ChooseItem::
 	ret z
 
 	ld a, [wCurrPocket]
-	cp KEY_ITEM - 1
-	jr z, .next
+;	cp KEY_ITEM - 1
+;	jr z, .next
 	cp TM_HM - 1
 	jr z, .next
 
-	call CheckTossableItem
-	ld a, [wItemAttributeParamBuffer]
-	and a
-	jr nz, .next
+;	call CheckTossableItem
+;	ld a, [wItemAttributeParamBuffer]
+;	and a
+;	jr nz, .next
 
 	ld a, TRUE
 	ld [wScriptVar], a

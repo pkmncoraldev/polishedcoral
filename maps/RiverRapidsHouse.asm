@@ -48,16 +48,18 @@ RiverRapidsHouseNewRecord:
 	setevent EVENT_DAILY_PLAYER_RIVER_RAPID_GAME
 	setlasttalked 1
 	faceplayer
-	opentext
+	opentext TEXTBOX_LAKE
 	writetext RiverRapidsHouseLadyText10
 	checktmhm TM_ENERGY_BALL
 	iffalse .givetm
 	waitbutton
+	changetextboxspeaker
 	callasm RiverRapidsHouseGetItem
 	verbosegiveitem ITEM_FROM_MEM, 1
 	jump .cont
 .givetm
 	buttonsound
+	changetextboxspeaker TEXTBOX_LAKE
 	farwritetext StdBlankText
 	pause 6
 	writetext RiverRapidsHouseLadyText12
@@ -65,6 +67,7 @@ RiverRapidsHouseNewRecord:
 	verbosegivetmhm TM_ENERGY_BALL
 	setevent EVENT_TM53
 .cont
+	changetextboxspeaker TEXTBOX_LAKE
 	writetext RiverRapidsHouseLadyText11
 	waitbutton
 	closetext
@@ -76,11 +79,13 @@ RiverRapidsHousePass:
 	setevent EVENT_DAILY_PLAYER_RIVER_RAPID_GAME
 	setlasttalked 1
 	faceplayer
-	opentext
+	opentext TEXTBOX_LAKE
 	writetext RiverRapidsHouseLadyText9
 	waitbutton
+	changetextboxspeaker
 	callasm RiverRapidsHouseGetItem
 	verbosegiveitem ITEM_FROM_MEM, 1
+	changetextboxspeaker TEXTBOX_LAKE
 	writetext RiverRapidsHouseLadyText11
 	waitbutton
 	closetext
@@ -91,7 +96,7 @@ RiverRapidsHousePass:
 RiverRapidsHouseFail:
 	setlasttalked 1
 	faceplayer
-	opentext
+	opentext TEXTBOX_LAKE
 	writetext RiverRapidsHouseLadyText8
 	waitbutton
 	closetext

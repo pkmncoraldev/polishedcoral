@@ -422,14 +422,21 @@ RanchRideRaceGuy:
 	jump .trytostartracecont2
 .donefortoday
 	writetext RanchRideRaceTextDoneForToday
-	jump .trytostartracecont2
+	yesorno
+	iffalse .pickednoranchrace
+	writetext RanchRideRaceTextAskRules
+	yesorno
+	iftrue .trytostartracecont3
+	jump .trytostartracecont4
 .justfailed
 	writetext RanchRideRaceText10
 .trytostartracecont2
 	yesorno
 	iffalse .pickednoranchrace
+.trytostartracecont3
 	writetext RanchRideRaceText3
 	waitbutton
+.trytostartracecont4
 	closetext
 	checkcode VAR_FACING
 	if_equal LEFT, .YouAreFacingLeft
@@ -451,6 +458,10 @@ RanchRideRaceGuy:
 	dotrigger $1
 	spriteface PLAYER, UP
 	spriteface RANCHRACENPC1, RIGHT
+	special Special_FadeOutMusic
+	pause 15
+	playsound SFX_DEX_FANFARE_170_199
+	waitsfx
 	playmusic MUSIC_NONE
 	opentext
 	farwritetext TextCountdown3
@@ -578,8 +589,9 @@ RanchRideRaceTimeTextThirdTime:
 RanchRideRaceText5:
 	text "That's a shame."
 	
-	para "You should try"
-	line "again."
+	para "You should give"
+	line "it another go"
+	cont "sometime!"
 	done
 	
 RanchRideRaceText6:
@@ -765,6 +777,12 @@ RanchRideRaceTextDoneForToday:
 	para "I can't give you"
 	line "another prize for"
 	cont "today, though…"
+	done
+	
+RanchRideRaceTextAskRules:
+	text "Do you need to"
+	line "hear the rules"
+	cont "again?"
 	done
 	
 Movement_RanchRideMovement1:

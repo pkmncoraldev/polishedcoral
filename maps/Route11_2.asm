@@ -382,7 +382,7 @@ Route11_2FloatingBall:
 	end
 	
 Route11_2FloatingBallSetItemAsm:
-	ld a, LUCKY_EGG
+	ld a, AMULET_COIN
 	ld [wCurItemBallContents], a
 	ld a, 1
 	ld [wCurItemBallQuantity], a

@@ -79,19 +79,13 @@ LusterSpamBuilding_1F_NPC2:
 	end
 	
 LusterSpamBuilding_1F_NPC1Text1:
-	text "How can I help"
-	line "you?"
-	
-	para "If you don't have"
+	text "If you don't have"
 	line "business here,"
 	cont "be on your way."
 	done
 	
 LusterSpamBuilding_1F_NPC1Text2:
-	text "How can I help"
-	line "you?"
-	
-	para "If you don't have"
+	text "If you don't have"
 	line "business here,"
 	cont "be on your way."
 	

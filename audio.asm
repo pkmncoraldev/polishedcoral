@@ -39,6 +39,7 @@ INCLUDE "audio/music/postcredits.asm"
 INCLUDE "audio/music/sprucelab.asm"
 INCLUDE "audio/music/clefairydance.asm"
 INCLUDE "audio/music/crystalball.asm"
+INCLUDE "audio/music/spambuilding.asm"
 
 
 SECTION "Music 2", ROMX

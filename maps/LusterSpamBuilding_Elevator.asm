@@ -23,6 +23,7 @@ LusterSpamBuildingElevatorButton:
 	playsound SFX_ELEVATOR
 	earthquake 60
 	waitsfx
+	playmapmusic
 .Done
 	end
 

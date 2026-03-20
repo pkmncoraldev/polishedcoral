@@ -77,7 +77,14 @@ ShimmerCafeNPC4:
 	special Special_ChooseItem
 	iffalse .no
 	callasm CheckItemHotDog
+	iftrue .hot_dog
+	callasm CheckItemFood
 	iffalse .not_interested
+	writetext ShimmerCafeNPC4TextWrong2
+	waitbutton
+	closetext
+	end
+.hot_dog
 	takeitem DUBIOUS_DOG
 	writetext ShimmerCafeNPC4Text4
 	waitbutton
@@ -98,7 +105,6 @@ ShimmerCafeNPC4:
 	applymovement PLAYER, Movement_ShimmerCafe1
 	applymovement 4, Movement_ShimmerCafe2
 	disappear 4
-	playsound SFX_EXIT_BUILDING
 	setevent EVENT_SHIMMER_BOAT_GUY_AT_WORK
 	end
 .not_interested
@@ -137,7 +143,6 @@ Movement_ShimmerCafe2:
 	step_down
 	step_down
 	step_down
-	step_right
 	step_down
 	step_end
 	
@@ -246,11 +251,25 @@ ShimmerCafeNPC4Text6:
 	done
 	
 ShimmerCafeNPC4TextWrong:
+	text "What do you want"
+	line "me to do with"
+	cont "this?"
+	
+	para "This isn't even"
+	line "food!"
+	done
+	
+ShimmerCafeNPC4TextWrong2:
 	text "Nah…<WAIT_S> Try"
 	line "something else."
 	
 	para "Maybe something"
 	line "a bit weirder!"
+	
+	para "I was smelling"
+	line "something kinda"
+	cont "funky outside"
+	cont "earlier…"
 	done
 	
 ShimmerCafeNPC4TextNo:

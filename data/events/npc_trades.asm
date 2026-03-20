@@ -42,6 +42,6 @@ NPCTrades:
 	db "BEV@@@@@", $00
 ; TRADE_WITH_BILL_FOR_FLITTLE in Route 11 Gate
 	db 8, DROWZEE, FLITTLE,      "CLEO@@@@@@@"
-	db $DD, $DD, $DD, HIDDEN_ABILITY | MODEST,   FEMALE,   POKE_BALL,    ABILITY_CAP
+	db $DD, $DD, $DD, ABILITY_2 | MODEST,   FEMALE,   POKE_BALL,    ABILITY_CAP
 	dw 39821
 	db "BILL@@@@", $00

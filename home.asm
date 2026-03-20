@@ -66,7 +66,14 @@ EnableSpriteUpdates:: ; 2ee4
 	set 0, a
 	ld [wVramState], a
 	ret
-; 2ef6
+
+EnableSpriteUpdates2::
+	ld a, $1
+	ld [wSpriteUpdatesEnabled], a
+	ld a, [wVramState]
+	set 0, a
+	ld [wVramState], a
+	ret
 
 INCLUDE "home/string.asm"
 

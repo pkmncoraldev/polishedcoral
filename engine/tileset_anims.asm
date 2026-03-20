@@ -550,24 +550,24 @@ TilesetGreenCaveAnim::
 
 TilesetStarglowCavernAnim::
 	dw VTiles2 tile $14, WriteTileToBuffer
-	dw NULL,  FlickeringCaveEntrancePalette
+	dw NULL,  WaitTileAnimation
 	dw wTileAnimBuffer, ScrollTileRightLeft
-	dw NULL,  FlickeringCaveEntrancePalette
+	dw NULL,  WaitTileAnimation
 	dw VTiles2 tile $14, WriteTileFromBuffer
-	dw NULL,  FlickeringCaveEntrancePalette
+	dw NULL,  WaitTileAnimation
 	dw CaveWaterFrames, AnimateWaterfallTiles2
 	dw NULL,  TileAnimationPaletteStarglow
-	dw NULL,  FlickeringCaveEntrancePalette
+	dw NULL,  WaitTileAnimation
 	dw VTiles2 tile $40, WriteTileToBuffer
-	dw NULL,  FlickeringCaveEntrancePalette
+	dw NULL,  WaitTileAnimation
 	dw wTileAnimBuffer, ScrollTileDown
-	dw NULL,  FlickeringCaveEntrancePalette
+	dw NULL,  WaitTileAnimation
 	dw wTileAnimBuffer, ScrollTileDown
-	dw NULL,  FlickeringCaveEntrancePalette
+	dw NULL,  WaitTileAnimation
 	dw wTileAnimBuffer, ScrollTileDown
-	dw NULL,  FlickeringCaveEntrancePalette
+	dw NULL,  WaitTileAnimation
 	dw VTiles2 tile $40, WriteTileFromBuffer
-	dw NULL,  FlickeringCaveEntrancePalette
+	dw NULL,  WaitTileAnimation
 	dw NULL,  DoneTileAnimation
 
 TilesetHauntedAnim::
@@ -1826,48 +1826,6 @@ TileAnimationPalette: ; fc6d7
 	ldh [rSVBK], a
 	ret
 ; fc71e
-
-
-FlickeringCaveEntrancePalette: ; fc71e
-; No palette changes on DMG.
-	ldh a, [hCGB]
-	and a
-	ret z
-; We don't want to mess with non-standard palettes.
-	ldh a, [rBGP]
-	cp %11100100
-	ret nz
-; We only want to be here if we're in a dark cave.
-	ld a, [wTimeOfDayPalset]
-	cp $ff ; 3,3,3,3
-	ret nz
-
-	ldh a, [rSVBK]
-	push af
-	ld a, 5 ; wra5: gfx
-	ldh [rSVBK], a
-; Ready for BGPD input...
-	ld a, %10100000 ; auto-increment, index $20 (pal 4 color 0)
-	ldh [rBGPI], a
-	ldh a, [hVBlankCounter]
-	and %00000010
-	jr nz, .bit1set
-	ld hl, wUnknBGPals + $20 ; pal 4 color 0
-	jr .okay
-
-.bit1set
-	ld hl, wUnknBGPals + $22 ; pal 4 color 2
-
-.okay
-	ld a, [hli]
-	ldh [rBGPD], a
-	ld a, [hli]
-	ldh [rBGPD], a
-
-	pop af
-	ldh [rSVBK], a
-	ret
-; fc750
 
 FlickeringTVPalette: ; fc71e
 ; No palette changes on DMG.

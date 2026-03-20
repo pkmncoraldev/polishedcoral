@@ -380,7 +380,7 @@ StartMenu_Option: ; 1291c
 
 	call FadeToMenu
 	farcall OptionsMenu
-	call EnableSpriteUpdates
+	call EnableSpriteUpdates2
 	ld a, 6
 	ret
 ; 12928
@@ -391,7 +391,7 @@ StartMenu_Status: ; 12928
 
 	call FadeToMenu
 	farcall TrainerCard
-	call EnableSpriteUpdates
+	call EnableSpriteUpdates2
 	call CloseSubmenu
 	
 	ld de, EVENT_SPOOKHOUSE_DARK
@@ -414,7 +414,7 @@ StartMenu_Pokedex: ; 12937
 
 	call FadeToMenu
 	farcall Pokedex
-	call EnableSpriteUpdates
+	call EnableSpriteUpdates2
 	call CloseSubmenu
 
 	ld de, EVENT_SPOOKHOUSE_DARK
@@ -434,7 +434,7 @@ StartMenu_Pokegear: ; 1294c
 	call FadeToMenu
 	farcall InitPokegearPalettes
 	farcall PokeGear
-	call EnableSpriteUpdates
+	call EnableSpriteUpdates2
 	call CloseSubmenu
 	
 	ld de, EVENT_SPOOKHOUSE_DARK
@@ -459,7 +459,7 @@ StartMenu_Pack: ; 1295b
 	ld a, [wcf66]
 	and a
 	jr nz, .used_item
-	call EnableSpriteUpdates
+	call EnableSpriteUpdates2
 	call CloseSubmenu
 	
 	ld de, EVENT_SPOOKHOUSE_DARK
@@ -473,7 +473,7 @@ StartMenu_Pack: ; 1295b
 	ret
 
 .used_item
-	call EnableSpriteUpdates
+	call EnableSpriteUpdates2
 	call ExitAllMenus
 	ld a, 4
 	ret
@@ -521,7 +521,7 @@ StartMenu_Pokemon: ; 12976
 	jr z, .quit
 
 .return
-	call EnableSpriteUpdates
+	call EnableSpriteUpdates2
 	call CloseSubmenu
 	
 	ld de, EVENT_SPOOKHOUSE_DARK

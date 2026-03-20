@@ -254,8 +254,9 @@ LuminaEldersHouseSceneElderText1:
 	cont "young as you!"
 	
 	para "You know, the last"
-	line "champion grew up"
-	cont "in this very town."
+	line "CHAMPION, ANDRE,"
+	cont "grew up in this"
+	cont "very town."
 	done
 	
 LuminaEldersHouseSceneElderText2:

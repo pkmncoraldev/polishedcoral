@@ -65,7 +65,7 @@ GlintApt21FNpc3Text:
 	line "from him in years,"
 	cont "though…"
 	
-	para "How cool and"
+	para "He's so cool and"
 	line "mysterious!"
 	done
 	

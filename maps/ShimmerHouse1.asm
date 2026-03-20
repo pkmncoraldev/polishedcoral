@@ -45,14 +45,16 @@ ShimmerHouse1NPC2Text:
 	cont "LEAGUE TOURNAMENT"
 	cont "kinda disappeared."
 	
+	para "ANDRE was his"
+	line "name."
+	
 	para "He apparently had"
 	line "a wife and a kid"
-	cont "around your age."
+	cont "around your age,"
 	
-	para "He abandoned them"
-	line "to go train in"
-	cont "the mountians or"
-	cont "or something…"
+	para "but he abandoned"
+	line "them to go train"
+	cont "in solitude…"
 	
 	para "His poor family!"
 	done

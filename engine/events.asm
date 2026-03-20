@@ -503,7 +503,7 @@ CheckTimeEvents: ; 9693a
 	jr nz, .skip_park
 	ld a, [wRanchRaceSeconds]
 	cp 60 ; time limit
-	jr z, .skatepark_times_up
+	jp z, .skatepark_times_up
 .skip_park
 	cp TILESET_RANCH
 	jr nz, .skip_ranch
@@ -511,10 +511,16 @@ CheckTimeEvents: ; 9693a
 	jr nz, .trialofmind
 	eventflagcheck EVENT_TEST_OF_BODY_ACTIVE
 	jr nz, .trialofbody
+	eventflagcheck EVENT_DODRIO_RANCH_SECOND_TRACK
+	jr nz, .ranch2
 	ld a, [wRanchRaceSeconds]
 	cp 45 ; time limit
 	jr nc, .ranch_times_up
-	
+	jr .skip_ranch
+.ranch2
+	ld a, [wRanchRaceSeconds]
+	cp 55 ; time limit
+	jr nc, .ranch_times_up
 .skip_ranch
 	ld hl, wStatusFlags2
 	bit 2, [hl] ; ENGINE_BUG_CONTEST_TIMER

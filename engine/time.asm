@@ -166,6 +166,18 @@ ResetDailyEventFlags:
 	eventflagreset EVENT_BOUGHT_MOO_MOO_MILK_TODAY
 	eventflagreset EVENT_ROCK_CANDY_SOLD_OUT
 	eventflagreset EVENT_DAILY_PLAYER_RIVER_RAPID_GAME
+	call CheckRanchSecondRace
+	ret
+	
+CheckRanchSecondRace:
+	eventflagcheck EVENT_FINISHED_RANCH_RACE_ONCE
+	ret z
+	eventflagcheck EVENT_ROUTE_11_BRIDGE_BUILT
+	ret z
+	eventflagcheck EVENT_DODRIO_RANCH_SECOND_TRACK
+	ret nz
+	eventflagset EVENT_EXPLAIN_SECOND_RANCH_RACE
+	eventflagset EVENT_DODRIO_RANCH_SECOND_TRACK
 	ret
 
 Special_SampleKenjiBreakCountdown: ; 11485

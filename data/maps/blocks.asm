@@ -1051,3 +1051,6 @@ SunbeamJunglePlumeCave_BlockData:
 ObscuraFortuneHouse_BlockData:
 	INCBIN "maps/ObscuraFortuneHouse.ablk.lz"
 	
+DodrioRanchRaceTrack2_BlockData:
+	INCBIN "maps/DodrioRanchRaceTrack2.ablk.lz"
+	

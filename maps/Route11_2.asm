@@ -169,20 +169,33 @@ Route11_2NPC3Text:
 	done
 	
 Route11_2NPC4:
+	checktmhm HM_FLY
+	iffalse .no_fly
 	jumptextfaceplayer Route11_2NPC4Text
+.no_fly
+	jumptextfaceplayer Route11_2NPC4Text2
 	
 Route11_2NPC4Text:
-	text "I've heard crazy"
-	line "things have been"
-	cont "happening at the"
-	cont "nearby ranch."
+	text "I've heard that"
+	line "ranch nearby set"
+	cont "up a new time"
+	cont "trial track."
 	
-	para "Weird sounds,"
-	line "#MON going"
-	cont "missing overnight."
+	para "They're offering a"
+	line "brand new prize"
+	cont "for competing!"
+	done
+
+Route11_2NPC4Text2:
+	text "The nearby DODRIO"
+	line "RANCH has a track"
+	cont "set up for time"
+	cont "trials."
 	
-	para "Could it be…<WAIT_M>"
-	line "g-<WAIT_S>g-<WAIT_S>g-<WAIT_S>ghosts?"
+	para "If you win, you"
+	line "can get an HM that"
+	cont "lets your #MON"
+	cont "FLY!"
 	done
 
 Route11_2NPC5:

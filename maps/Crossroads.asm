@@ -386,6 +386,12 @@ CrossroadsCutscene2:
 	setevent EVENT_CROSSROADS_CUTSCENE_DONE
 	setevent EVENT_ROUTE_11_BRIDGE_BUILT
 	clearevent EVENT_ROUTE_11_BRIDGE_NOT_BUILT
+	checktmhm HM_FLY
+	iffalse .end
+	setevent EVENT_EXPLAIN_SECOND_RANCH_RACE
+	setevent EVENT_DODRIO_RANCH_SECOND_TRACK
+	clearflag ENGINE_DONE_RANCH_RACE_TODAY
+.end
 	playnewmapmusic
 	dotrigger $1
 	end

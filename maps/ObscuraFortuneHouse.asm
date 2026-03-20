@@ -827,8 +827,15 @@ TM31Text:
 	prompt
 
 TM32Text:
-	text "TM32"
-	line "TODO"
+	text "It's on a ranch."
+	
+	para "I see you on a"
+	line "racetrack on the"
+	line "back of a bird."
+	
+	para "You revisit and"
+	line "are met with a"
+	cont "2nd challenge."
 	prompt
 
 TM34Text:

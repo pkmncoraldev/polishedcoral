@@ -10,46 +10,21 @@ DodrioRanchRaceTrack_MapScriptHeader:
 
 	db 0 ; warp events
 
-	db 39 ; coord events
+	db 14 ; coord events
 	xy_trigger 1, 11, 31, 0, RanchRideRaceCheckpoint1, 0, 0
 	xy_trigger 1, 10, 31, 0, RanchRideRaceCheckpoint1, 0, 0
-	xy_trigger 1, 12, 40, 0, RanchRideRaceCheckpoint2, 0, 0
-	xy_trigger 1, 13, 40, 0, RanchRideRaceCheckpoint2, 0, 0
-	xy_trigger 1, 24, 31, 0, RanchRideRaceCheckpoint3, 0, 0
-	xy_trigger 1, 25, 31, 0, RanchRideRaceCheckpoint3, 0, 0
+	xy_trigger 1, 19, 42, 0, RanchRideRaceCheckpoint2, 0, 0
+	xy_trigger 1, 19, 43, 0, RanchRideRaceCheckpoint2, 0, 0
+	xy_trigger 1, 20, 42, 0, RanchRideRaceCheckpoint2, 0, 0
+	xy_trigger 1, 20, 43, 0, RanchRideRaceCheckpoint2, 0, 0
+	xy_trigger 1, 24, 32, 0, RanchRideRaceCheckpoint3, 0, 0
+	xy_trigger 1, 25, 32, 0, RanchRideRaceCheckpoint3, 0, 0
+	xy_trigger 1, 26, 32, 0, RanchRideRaceCheckpoint3, 0, 0
+	xy_trigger 1, 27, 32, 0, RanchRideRaceCheckpoint3, 0, 0
 	xy_trigger 1, 17, 28, 0, RanchRideRaceFinishLine, 0, 0
 	xy_trigger 1, 17, 29, 0, RanchRideRaceFinishLine, 0, 0
 	xy_trigger 1, 18, 29, 0, RanchRideRaceBackwards, 0, 0
 	xy_trigger 1, 18, 28, 0, RanchRideRaceBackwards, 0, 0
-	xy_trigger 1, 12, 27, 0, RanchRideRaceOffTrack, 0, 0
-	xy_trigger 1, 14, 27, 0, RanchRideRaceOffTrack, 0, 0
-	xy_trigger 1, 15, 27, 0, RanchRideRaceOffTrack, 0, 0
-	xy_trigger 1, 16, 27, 0, RanchRideRaceOffTrack, 0, 0
-	xy_trigger 1, 18, 27, 0, RanchRideRaceOffTrack, 0, 0
-	xy_trigger 1, 19, 27, 0, RanchRideRaceOffTrack, 0, 0
-	xy_trigger 1, 20, 27, 0, RanchRideRaceOffTrack, 0, 0
-	xy_trigger 1, 21, 27, 0, RanchRideRaceOffTrack, 0, 0
-	xy_trigger 1, 23, 27, 0, RanchRideRaceOffTrack, 0, 0
-	xy_trigger 1, 24, 27, 0, RanchRideRaceOffTrack, 0, 0
-	xy_trigger 1, 11, 27, 0, RanchRideRaceOffTrack, 0, 0
-	xy_trigger 1, 23, 41, 0, RanchRideRaceOffTrack, 0, 0
-	xy_trigger 1, 23, 40, 0, RanchRideRaceOffTrack, 0, 0
-	xy_trigger 1, 22, 41, 0, RanchRideRaceOffTrack, 0, 0
-	xy_trigger 1, 24, 37, 0, RanchRideRaceOffTrack, 0, 0
-	xy_trigger 1, 25, 36, 0, RanchRideRaceOffTrack, 0, 0
-	xy_trigger 1, 25, 37, 0, RanchRideRaceOffTrack, 0, 0
-	xy_trigger 1, 22, 40, 0, RanchRideRaceOffTrack, 0, 0
-	xy_trigger 1, 24, 36, 0, RanchRideRaceOffTrack, 0, 0
-	xy_trigger 1, 26, 28, 0, RanchRideRaceOffTrack, 0, 0
-	xy_trigger 1, 26, 29, 0, RanchRideRaceOffTrack, 0, 0
-	xy_trigger 1, 26, 30, 0, RanchRideRaceOffTrack, 0, 0
-	xy_trigger 1, 26, 31, 0, RanchRideRaceOffTrack, 0, 0
-	xy_trigger 1, 26, 32, 0, RanchRideRaceOffTrack, 0, 0
-	xy_trigger 1, 26, 33, 0, RanchRideRaceOffTrack, 0, 0
-	xy_trigger 1, 26, 34, 0, RanchRideRaceOffTrack, 0, 0
-	xy_trigger 1, 26, 35, 0, RanchRideRaceOffTrack, 0, 0
-	xy_trigger 1, 10, 27, 0, RanchRideRaceOffTrack, 0, 0
-	xy_trigger 1, 25, 27, 0, RanchRideRaceOffTrack, 0, 0
 
 	db 6 ; bg events
 	signpost 18, 13, SIGNPOST_READ, RanchRideRaceLogs
@@ -89,6 +64,10 @@ DodrioRanchRaceTrackTrigger0:
 	end
 	
 DodrioRanchRaceTrackTrigger1:
+	callasm DodrioRanchRaceTrackOffTrackAsm
+	ifnotequal 1, .end
+	priorityjump RanchRideRaceOffTrack
+.end
 	end
 	
 DodrioRanchRaceTrackTrigger2:
@@ -110,9 +89,25 @@ DodrioRanchRaceTrackTrigger3:
 	dotrigger $0
 	end
 	
+DodrioRanchRaceTrackOffTrackAsm:
+	ld a, [wPlayerStandingTile]
+	cp COLL_FLOOR
+	jr nz, .no
+	ld a, 1
+	ld [wScriptVar], a
+	ret
+.no
+	xor a
+	ld [wScriptVar], a
+	ret
+	
 DodrioRanchRaceTrackMakeBrown:
 	writebyte (1 << 7) | (PAL_OW_BROWN << 4)
 	special Special_SetPlayerPalette
+	checkevent EVENT_DODRIO_RANCH_SECOND_TRACK
+	iffalse .endcallback
+	changemap DodrioRanchRaceTrack2_BlockData
+.endcallback
 	return
 	
 RanchRideScarecrow:
@@ -220,6 +215,11 @@ RanchRideRaceFinishLine:
 	iftrue .noprize
 	checkevent EVENT_FINISHED_RANCH_RACE_ONCE
 	iffalse .firsttime
+	checkevent EVENT_DODRIO_RANCH_SECOND_TRACK
+	iffalse .skip_2nd_track
+	checkevent EVENT_FINISHED_RANCH_RACE_SECOND_TRACK_ONCE
+	iffalse .firsttime_secondtrack
+.skip_2nd_track
 	checkevent EVENT_FINISHED_RANCH_RACE_TWICE
 	iffalse .secondtime
 	writetext RanchRideRaceTimeTextThirdTime
@@ -256,6 +256,18 @@ RanchRideRaceFinishLine:
 	writetext RanchRideRaceText8
 	waitbutton
 	closetext
+	setflag ENGINE_DONE_RANCH_RACE_TODAY
+	callasm DodrioRanchRaceTrackResetTimerAsm
+	end
+.firsttime_secondtrack
+	writetext RanchRideRaceTimeTextFirstTime
+	buttonsound
+	verbosegivetmhm TM_DOUBLE_TEAM
+	setevent EVENT_TM32
+	writetext RanchRideRaceText16
+	waitbutton
+	closetext
+	setevent EVENT_FINISHED_RANCH_RACE_SECOND_TRACK_ONCE
 	setflag ENGINE_DONE_RANCH_RACE_TODAY
 	callasm DodrioRanchRaceTrackResetTimerAsm
 	end
@@ -414,11 +426,21 @@ RanchRideRaceGuy:
 	closetext
 	end
 .trytostartrace
+	checkevent EVENT_EXPLAIN_SECOND_RANCH_RACE
+	iftrue .explain_second_race
 	checkflag ENGINE_DONE_RANCH_RACE_TODAY
 	iftrue .donefortoday
 	checkevent EVENT_JUST_FAILED_RANCH_RACE
 	iftrue .justfailed
+	checkevent EVENT_FINISHED_RANCH_RACE_ONCE
+	iftrue .done_once
 	writetext RanchRideRaceText1
+	jump .trytostartracecont2
+.explain_second_race
+	writetext RanchRideRaceText13
+	jump .trytostartracecont2
+.done_once
+	writetext RanchRideRaceText12
 	jump .trytostartracecont2
 .donefortoday
 	writetext RanchRideRaceTextDoneForToday
@@ -458,6 +480,17 @@ RanchRideRaceGuy:
 	dotrigger $1
 	spriteface PLAYER, UP
 	spriteface RANCHRACENPC1, RIGHT
+	opentext
+	checkevent EVENT_DODRIO_RANCH_SECOND_TRACK
+	iftrue .second_track_time
+	writetext RanchRideRaceText14
+	jump .done_telling_time
+.second_track_time
+	clearevent EVENT_EXPLAIN_SECOND_RANCH_RACE
+	writetext RanchRideRaceText15
+.done_telling_time
+	waitbutton
+	closetext
 	special Special_FadeOutMusic
 	pause 15
 	playsound SFX_DEX_FANFARE_170_199
@@ -532,8 +565,7 @@ RanchRideRaceText3:
 	text "Great!"
 	
 	para "You must do 3 laps"
-	line "on the track in"
-	cont "45 seconds."
+	line "on the track."
 	
 	para "Remember to press"
 	line "the A BUTTON to"
@@ -643,6 +675,50 @@ RanchRideRaceText11:
 	cont "outside of battle."
 	
 	para "Come back tomorrow"
+	line "for a chance at"
+	cont "another prize!"
+	done
+	
+RanchRideRaceText12:
+	text "Hey hey!"
+	
+	para "It's you again!"
+	
+	para "Want to test your"
+	line "riding skills with"
+	cont "with a TIME TRIAL?"
+	
+	para "You could even win"
+	line "a prize!"
+	done
+	
+RanchRideRaceText13:
+	text "Hey hey!"
+	
+	para "It's you again!"
+	
+	para "We've got a harder"
+	line "course set up."
+	
+	para "You wanna give it"
+	line "a shot?"
+	
+	para "You could win a"
+	line "new prize!"
+	done
+	
+RanchRideRaceText14:
+	text "You have"
+	line "45 seconds."
+	done
+	
+RanchRideRaceText15:
+	text "You have"
+	line "55 seconds."
+	done
+	
+RanchRideRaceText16:
+	text "Come back tomorrow"
 	line "for a chance at"
 	cont "another prize!"
 	done

@@ -1432,7 +1432,7 @@ JohtoBadgePalettes:
 ; darcy face
 	RGB 31, 31, 31
 	RGB 28, 20, 09
-	RGB 11, 11, 00
+	RGB 18, 08, 00
 	RGB 00, 00, 00
 
 

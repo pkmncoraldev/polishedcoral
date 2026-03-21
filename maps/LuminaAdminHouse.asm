@@ -9,10 +9,50 @@ LuminaAdminHouse_MapScriptHeader:
 
 	db 0 ; coord events
 
-	db 0 ; bg events
+	db 17 ; bg events
+	signpost  6,  7, SIGNPOST_JUMPTEXT, LuminaAdminHouseBoxesText
+	signpost  6,  1, SIGNPOST_JUMPTEXT, LuminaAdminHouseBoxesText
+	signpost  6,  0, SIGNPOST_JUMPTEXT, LuminaAdminHouseBoxesText
+	signpost  3,  1, SIGNPOST_JUMPTEXT, LuminaAdminHouseBoxesText
+	signpost  3,  0, SIGNPOST_JUMPTEXT, LuminaAdminHouseBoxesText
+	signpost  2,  0, SIGNPOST_JUMPTEXT, LuminaAdminHouseBoxesText
+	signpost  1,  1, SIGNPOST_JUMPTEXT, LuminaAdminHouseShelfText
+	signpost  5,  5, SIGNPOST_JUMPTEXT, LuminaAdminHouseShelfText
+	signpost  5,  4, SIGNPOST_JUMPTEXT, LuminaAdminHouseShelfText
+	signpost  4,  5, SIGNPOST_JUMPTEXT, LuminaAdminHouseShelfText
+	signpost  4,  4, SIGNPOST_JUMPTEXT, LuminaAdminHouseShelfText
+	signpost  4,  1, SIGNPOST_JUMPTEXT, LuminaAdminHouseShelfText
+	signpost  5,  1, SIGNPOST_JUMPTEXT, LuminaAdminHouseShelfText
+	signpost  1,  3, SIGNPOST_JUMPTEXT, LuminaAdminHouseComputerText
+	signpost  1,  2, SIGNPOST_JUMPTEXT, LuminaAdminHouseComputerText
+	signpost  1,  6, SIGNPOST_JUMPTEXT, LuminaAdminHouseMachineText
+	signpost  1,  7, SIGNPOST_JUMPTEXT, LuminaAdminHouseMachineText
 
 	db 1 ; object events
 	object_event  6,  6, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, LuminaAdminHouseAlan, -1
+	
+LuminaAdminHouseBoxesText:
+	text "Boxes of wires"
+	line "and computer"
+	cont "components."
+	done
+	
+LuminaAdminHouseShelfText:
+	text "Keyboards, mice,"
+	line "computer parts."
+	done
+	
+LuminaAdminHouseComputerText:
+	text "#MON STORAGE"
+	line "SYSTEM"
+	
+	para "STATUS: ONLINE"
+	done
+	
+LuminaAdminHouseMachineText:
+	text "Complex machinery.<WAIT_S>"
+	line "Better not touch…"
+	done
 	
 LuminaAdminHouseAlan:
 	faceplayer

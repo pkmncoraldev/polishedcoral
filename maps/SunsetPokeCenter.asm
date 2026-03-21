@@ -60,9 +60,11 @@ SunsetPokeCenterFireGuyText:
 	done
 
 SunsetPokeCenterFairyGirlText:
-	text "Have you heard of"
-	line "FAIRY #MON?"
+	text "This PC says it's"
+	line "“ALAN's PC.”"
 	
-	para "They're great <WAIT_S>and"
-	line "all so adorable!"
+	para "But…<WAIT_M> who's ALAN?"
+	
+	para "Is he the system"
+	line "administrator?"
 	done

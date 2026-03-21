@@ -16,7 +16,7 @@ GlintPokeCenter_MapScriptHeader:
 	pc_chansey_event  6, 1
 	person_event SPRITE_FISHING_GURU, 5, 6, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, GlintPokeCenterNpc1, -1
 	person_event SPRITE_POKEFAN_M, 4, 2, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, GlintPokeCenterNpc2, -1
-	person_event SPRITE_SCHOOLBOY,  2,  8, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, GlintPokeCenterNpc3, -1
+	person_event SPRITE_POKEMANIAC,  2,  8, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, GlintPokeCenterNpc3, -1
 	person_event SPRITE_GRANNY,  6,  9, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, GlintPokeCenterTeaLady, -1
 
 	const_def 1 ; object constants
@@ -214,13 +214,10 @@ GlintPokeCenterNpc2Text:
 	done
 
 GlintPokeCenterNpc3Text:
-	text "You can store you"
+	text "You can store"
 	line "#MON in the PCs"
 	cont "at every #MON"
 	cont "CENTER."
-	
-	para "Each box can store"
-	line "up to 20 #MON."
 	
 	para "If you catch a"
 	line "#MON that fills"

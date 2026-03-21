@@ -486,6 +486,7 @@ SECTION "Lumina Scripts", ROMX
 INCLUDE "maps/LuminaTown.asm"
 INCLUDE "maps/LuminaGym.asm"
 INCLUDE "maps/LuminaHouse1.asm"
+INCLUDE "maps/LuminaRussHouse.asm"
 INCLUDE "maps/LuminaAdminHouse.asm"
 INCLUDE "maps/LuminaHealerHouse.asm"
 INCLUDE "maps/LuminaEldersHouse.asm"

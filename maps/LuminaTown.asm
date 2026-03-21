@@ -3,11 +3,12 @@ LuminaTown_MapScriptHeader:
 
 	db 0 ; callbacks
 
-	db 4 ; warp events
+	db 5 ; warp events
 	warp_def 17, 25, 1, LUMINA_HEALER_HOUSE
-	warp_def 12, 12, 1, LUMINA_HOUSE_1
-	warp_def  8, 28, 1, LUMINA_ADMIN_HOUSE
+	warp_def  6, 22, 1, LUMINA_HOUSE_1
+	warp_def 12, 12, 1, LUMINA_ADMIN_HOUSE
 	warp_def  7, 44, 1, LUMINA_ELDERS_HOUSE
+	warp_def  8, 28, 1, LUMINA_RUSS_HOUSE
 
 	db 0 ; coord events
 

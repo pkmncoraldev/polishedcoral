@@ -1020,6 +1020,7 @@ LuminaGym_BlockData:
 	INCBIN "maps/LuminaGym.ablk.lz"
 	
 LuminaHouse1_BlockData:
+LuminaRussHouse_BlockData:
 LuminaEldersHouse_BlockData:
 	INCBIN "maps/LuminaHouse.ablk.lz"
 	

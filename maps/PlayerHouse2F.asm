@@ -29,7 +29,7 @@ PlayerHouse2F_MapScriptHeader:
 	warp_event  9, 18, KOMORE_VILLAGE, 6
 	warp_event 11, 18, BRIGHTBURG, 1
 	warp_event 13, 18, OBSCURA_CITY, 1
-	warp_event 15, 18, UNDERWATER_TEMPLE_2, 1
+	warp_event 15, 18, UNDERWATER_TEMPLE_2, 9
 	warp_event 17, 18, ROUTE_11_2, 2
 	warp_event 19, 18, LUMINA_TOWN, 1
 

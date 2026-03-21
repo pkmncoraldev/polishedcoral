@@ -9,7 +9,7 @@ LuminaHealerHouse_MapScriptHeader:
 
 	db 0 ; coord events
 
-	db 14 ; bg events
+	db 15 ; bg events
 	signpost  3,  2, SIGNPOST_JUMPTEXT, LuminaHealerHouseFireplaceText
 	signpost  3,  3, SIGNPOST_JUMPTEXT, LuminaHealerHouseFireplaceText
 	signpost  3,  0, SIGNPOST_JUMPTEXT, LuminaHealerHouseWoodText
@@ -24,6 +24,7 @@ LuminaHealerHouse_MapScriptHeader:
 	signpost  9,  2, SIGNPOST_JUMPTEXT, LuminaHealerHouseBarrelsText
 	signpost  9,  8, SIGNPOST_JUMPTEXT, LuminaHealerHouseBarrelsText
 	signpost  9,  9, SIGNPOST_JUMPTEXT, LuminaHealerHouseBarrelsText
+	signpost  7,  9, SIGNPOST_JUMPTEXT, LuminaHealerHouseBarrelsText
 
 	db 5 ; object events
 	person_event SPRITE_COOL_DUDE,  5,  5, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, LuminaHealerHouseHealer, -1

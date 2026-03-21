@@ -827,7 +827,7 @@ ENDM
 	map_attributes RiverRapidsHouse, RIVER_RAPIDS_HOUSE, 0, 0
 	map_attributes LusterSpamBuilding_RightRoom, LUSTER_SPAM_BUILDING_RIGHT_ROOM, $0, 0
 	map_attributes LuminaHouse1, LUMINA_HOUSE_1, $0, 0
-	map_attributes LuminaHouse2, LUMINA_HOUSE_2, $0, 0
+	map_attributes LuminaAdminHouse, LUMINA_ADMIN_HOUSE, $0, 0
 	map_attributes LuminaHealerHouse, LUMINA_HEALER_HOUSE, $0, 0
 	map_attributes LuminaEldersHouse, LUMINA_ELDERS_HOUSE, $0, 0
 	map_attributes FakePlayersHouse1F, FAKE_PLAYERS_HOUSE_1F, $0, 0

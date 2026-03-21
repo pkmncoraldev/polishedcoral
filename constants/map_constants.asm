@@ -498,7 +498,7 @@ DEF MAP_NONE   EQU 0
 	map_const LUMINA_TOWN,								  26, 14 ; 1
 	map_const LUMINA_GYM,								  16,  9 ; 2
 	map_const LUMINA_HOUSE_1,							   4,  4 ; 3
-	map_const LUMINA_HOUSE_2,							   4,  4 ; 4
+	map_const LUMINA_ADMIN_HOUSE,						   4,  4 ; 4
 	map_const LUMINA_ELDERS_HOUSE,						   4,  4 ; 5
 	
 	newgroup													 ; EVO LOCATIONS GROUP

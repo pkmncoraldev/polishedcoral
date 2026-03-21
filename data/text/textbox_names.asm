@@ -76,6 +76,7 @@ TextBoxSpeakers:
 	dw TextBoxOtherCory
 	dw TextBoxDoor
 	dw TextBoxDisciple
+	dw TextBoxAlan
 	
 TextBoxUnknown:			db "『???@"
 TextBoxMom:				db "『MOM@"
@@ -153,6 +154,7 @@ TextBoxSketchyLady:		db "『SKETCHY LADY@"
 TextBoxOtherCory:		db "『OTHER <PLAYER>@"
 TextBoxDoor:			db "『DOOR@"
 TextBoxDisciple:		db "『DISCIPLE@"
+TextBoxAlan:			db "『ALAN@"
 
 	
 ChangeTextboxName::

@@ -98,6 +98,7 @@ LuminaGymDarcy:
 	writetext LuminaGymDarcyTextLoop
 	waitbutton
 	closetext
+	spriteface 1, DOWN
 	end
 .shrine_done
 	writetext LuminaGymDarcyTextLoop2
@@ -136,6 +137,7 @@ LuminaGymElder:
 	writetext LuminaGymElderText2
 	waitbutton
 	closetext
+	spriteface 3, UP
 	end
 .do_scene
 	checkcode VAR_FACING
@@ -271,9 +273,8 @@ LuminaGymElderText3:
 	
 	para "The youth have"
 	line "grown tired of our"
-	cont "sacred traditions."
-	
-	para "Such a shame."
+	cont "sacred traditions,"
+	cont "it seems."
 	
 	para "Perhaps it is just"
 	line "a product of our"

@@ -12,12 +12,12 @@ ObscuraMuseumEmployeeRoom_MapScriptHeader:
 	db 0 ; coord events
 
 	db 14 ; bg events
-	signpost  1,  2, SIGNPOST_UP, ObscuraMuseumBooks
-	signpost  1,  3, SIGNPOST_UP, ObscuraMuseumBooks
-	signpost  1,  4, SIGNPOST_UP, ObscuraMuseumBooks
-	signpost  1,  5, SIGNPOST_UP, ObscuraMuseumBooks
-	signpost  1, 10, SIGNPOST_UP, ObscuraMuseumBooks
-	signpost  1, 11, SIGNPOST_UP, ObscuraMuseumBooks
+	signpost  1,  2, SIGNPOST_UP, ObscuraMuseumEmployeeRoomBooks
+	signpost  1,  3, SIGNPOST_UP, ObscuraMuseumEmployeeRoomBooks
+	signpost  1,  4, SIGNPOST_UP, ObscuraMuseumEmployeeRoomBooks
+	signpost  1,  5, SIGNPOST_UP, ObscuraMuseumEmployeeRoomBooks
+	signpost  1, 10, SIGNPOST_UP, ObscuraMuseumEmployeeRoomBooks
+	signpost  1, 11, SIGNPOST_UP, ObscuraMuseumEmployeeRoomBooks
 	signpost  4,  3, SIGNPOST_UP, ObscuraMuseumComputer1
 	signpost  4,  9, SIGNPOST_UP, ObscuraMuseumComputer2
 	signpost  8,  3, SIGNPOST_UP, ObscuraMuseumComputer3
@@ -41,6 +41,15 @@ ObscuraMuseumEmployeeRoom_MapScriptHeader:
 	const_def 1 ; object constants
 	const OBSCURA_MUSEUM_EMPLOYEE_ROOM_SNARE
 	const OBSCURA_MUSEUM_EMPLOYEE_ROOM_ABIE
+
+ObscuraMuseumEmployeeRoomBooks:
+	jumptext ObscuraMuseumEmployeeRoomBooksText
+	
+ObscuraMuseumEmployeeRoomBooksText:
+	text "It's stuffed full"
+	line "of dense journals"
+	cont "and textbooks."
+	done
 
 ObscuraMuseumEmployeeRoomAbiegail:
 	checkevent EVENT_GOT_MASTERBALL

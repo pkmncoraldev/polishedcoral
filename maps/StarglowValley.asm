@@ -419,7 +419,7 @@ StarglowSnare3:
 	opentext TEXTBOX_UNKNOWN
 	writetext StarglowRodneyText4
 	buttonsound
-	opentext TEXTBOX_RODNEY
+	changetextboxspeaker TEXTBOX_RODNEY
 	farwritetext StdBlankText
 	pause 6
 	writetext StarglowRodneyText5
@@ -881,10 +881,10 @@ StarglowRodneyText3:
 	done
 
 StarglowRodneyText4:
-	text "???: Now that"
-	line "THAT business is"
-	cont "done, I should"
-	cont "introduce myself."
+	text "Now that THAT"
+	line "business is done,"
+	cont "I should introduce"
+	cont "myself."
 	
 	para "I'm RODNEY."
 	done

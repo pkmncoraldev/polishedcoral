@@ -230,9 +230,9 @@ GlintGroveEastMinaText4:
 	cont "he's too thirsty"
 	cont "at the moment."
 	
-	para "If I had something"
-	line "yummy to drink,"
-	cont "I'd be all set!"
+	para "If I had some"
+	line "tasty BLOSSOM TEA,"
+	cont "I'd all set!"
 	
 	para "Sigh…"
 	done

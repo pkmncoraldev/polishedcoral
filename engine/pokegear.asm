@@ -2314,14 +2314,14 @@ _TownMap: ; 9191c
 	push de
 
 .next
-	hlcoord 2, 1
-	ld bc, 16
+	hlcoord 1, 1
+	ld bc, 18
 	ld a, " "
 	call ByteFill
 	ld a, [wTownMapCursorLandmark]
 	ld e, a
 	farcall GetLandmarkName
-	hlcoord 2, 1
+	hlcoord 1, 1
 	ld de, wStringBuffer1
 	call PlaceString
 	ld a, [wTownMapCursorObjectPointer]
@@ -2367,13 +2367,13 @@ _TownMap: ; 9191c
 	ld [hl], $17
 	
 
-	hlcoord 18, 1
-	ld [hl], "<UPDN>"
+;	hlcoord 0, 1
+;	ld [hl], "<UPDN>"
 	
 	ld a, [wTownMapCursorLandmark]
 	ld e, a
 	farcall GetLandmarkName
-	hlcoord 2, 1
+	hlcoord 1, 1
 	ld de, wStringBuffer1
 	jp PlaceString
 

@@ -440,17 +440,15 @@ BrilloMart:
 	db -1
 	
 CoinsMart:
-	db 16 ; # items
+	db 14 ; # items
 	dbw ABILITY_CAP,  2000
 	dbw THICK_CLUB,  1500
 	dbw LUCKY_PUNCH,  500
-	dbw MACHO_BRACE, 500
 	dbw TOXIC_ORB, 1000
 	dbw FLAME_ORB, 1000
 	dbw CHOICE_BAND, 1000
 	dbw CHOICE_SCARF, 1000
 	dbw CHOICE_SPECS, 1000
-	dbw RARE_CANDY,  750
 	dbw HP_UP,  200
 	dbw PROTEIN,  200
 	dbw IRON,  200

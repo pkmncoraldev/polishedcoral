@@ -57,6 +57,23 @@ TrainCabin2Callback:
 	warpmod 1, EAST_TRAIN_CABOOSE
 	return
 	
+TrainCabin2PlayedFluteForOldMan::
+	special SaveMusic
+	special Special_FadeOutMusic
+	pause 20
+	writetext TrainCabin2TextUseFlute
+	playsound SFX_POKEFLUTE
+	waitsfx
+	special RestoreMusic
+	closetext
+	wait 10
+	jumptext TrainCabin2NPC5Text3
+	
+TrainCabin2TextUseFlute:
+	text "<PLAYER> played the"
+	line "# FLUTE."
+	done
+	
 TrainCabin2NPC1:
 	opentext
 	checkflag ENGINE_PUNKS_ON_TRAIN
@@ -529,6 +546,18 @@ TrainCabin2NPC5Text2:
 	
 	para "He's still sleeping"
 	line "soundly…"
+	done
+	
+TrainCabin2NPC5Text3:
+	text "…"
+	
+	para "…"
+	
+	para "He's really knocked"
+	line "out…"
+	
+	para "Should someone"
+	line "check on him?"
 	done
 
 TrainCabin2OfficerText:

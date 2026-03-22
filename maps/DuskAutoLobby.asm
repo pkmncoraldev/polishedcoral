@@ -30,6 +30,24 @@ DuskAutoLobbyCallback:
 .end
 	return
 	
+DuskAutoLobbyPlayedFluteForGuy::
+	special SaveMusic
+	special Special_FadeOutMusic
+	pause 20
+	writetext DuskAutoLobbyTextUseFlute
+	playsound SFX_POKEFLUTE
+	waitsfx
+	special RestoreMusic
+	closetext
+	wait 10
+	setevent EVENT_TALKED_TO_SLEEPING_GUY_DUSK_AUTO_2
+	jumptext DuskAutoLobbyNPC3Text3
+	
+DuskAutoLobbyTextUseFlute:
+	text "<PLAYER> played the"
+	line "# FLUTE."
+	done
+	
 DuskAutoLobbyNPC1:
 	faceplayer
 	opentext
@@ -62,7 +80,6 @@ DuskAutoLobbyNPC3:
 	setevent EVENT_TALKED_TO_SLEEPING_GUY_DUSK_AUTO_1
 	jumptext DuskAutoLobbyNPC3Text1
 .talked1
-	setevent EVENT_TALKED_TO_SLEEPING_GUY_DUSK_AUTO_2
 	jumptext DuskAutoLobbyNPC3Text2
 .talked2
 	jumptext DuskAutoLobbyNPC3Text3

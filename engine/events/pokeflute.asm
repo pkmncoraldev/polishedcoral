@@ -84,6 +84,8 @@ _PokeFlute: ; 50730
 	if_equal 2, .sudowoodo_script
 	if_equal 3, .sunbeam_sleepy_snare_script
 	if_equal 4, .sunbeam_sleeping_beauty_script
+	if_equal 5, .train_old_man_script
+	if_equal 6, .auto_lobby_guy_script
 .snorlax_script
 	checkcode VAR_MAPNUMBER
 	if_equal MAP_ROUTE_30, .route30
@@ -103,6 +105,10 @@ _PokeFlute: ; 50730
 	iffalse .NothingHappenedScript
 .beauty
 	farjump SunbeamPlayedFluteForSleepingBeauty
+.train_old_man_script
+	farjump TrainCabin2PlayedFluteForOldMan
+.auto_lobby_guy_script
+	farjump DuskAutoLobbyPlayedFluteForGuy
 
 .NothingHappenedScript:
 	special SaveMusic
@@ -130,6 +136,10 @@ _PokeFlute: ; 50730
 	ld a, [wMapGroup]
 	cp GROUP_SUNBEAM_ISLAND
 	jr z, .sunbeamgroup
+	cp GROUP_TRAIN_CABIN_2
+	jr z, .traingroup
+	cp GROUP_DUSK_AUTO_LOBBY
+	jr z, .autolobbygroup
 	
 	callba GetFacingObjectSprite
 	ld a, d
@@ -168,12 +178,43 @@ _PokeFlute: ; 50730
 .sunbeam_sleepy_snare
 	ld a, 3
 	ld [wScriptVar], a
-	ret	
+	ret
 
 .sunbeam_sleeping_beauty
 	ld a, 4
 	ld [wScriptVar], a
-	ret	
+	ret
+	
+.traingroup
+	callba GetFacingObjectSprite
+	ld a, d
+	cp SPRITE_SITTING_GENTLEMAN
+	jr nz, .nope
+	ld a, [wMapNumber]
+	cp MAP_TRAIN_CABIN_2
+	jr z, .train_old_man
+	jr .nope
+	
+.train_old_man
+	ld a, 5
+	ld [wScriptVar], a
+	ret
+	
+.autolobbygroup
+	callba GetFacingObjectSprite
+	ld a, d
+	cp SPRITE_SUPER_NERD
+	jr nz, .nope
+	
+	ld a, [wMapNumber]
+	cp MAP_DUSK_AUTO_LOBBY
+	jr z, .auto_lobby_guy
+	jr .nope
+	
+.auto_lobby_guy
+	ld a, 6
+	ld [wScriptVar], a
+	ret
 	
 .CatchyTune: ; 0xf56c
 	; Now, that's a catchy tune!

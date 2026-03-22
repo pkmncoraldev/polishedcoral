@@ -267,6 +267,16 @@ Pokedex_UpdateMainScreen: ; 401ae (10:41ae)
 	ret
 
 .select
+	call Pokedex_BlackOutBG
+	ld a, DEXSTATE_OPTION_SCR
+	ld [wJumptableIndex], a
+	xor a
+	ldh [hSCX], a
+	ld a, $a7
+	ldh [hWX], a
+	jp DelayFrame
+
+.start
 	ld de, SFX_PUSH_BUTTON
 	call PlaySFX
 	ld a, [wCurPartySpecies]
@@ -284,16 +294,6 @@ Pokedex_UpdateMainScreen: ; 401ae (10:41ae)
 	call Pokedex_GetCGBLayout
 	pop af
 	ld [wCurPartySpecies], a
-	jp DelayFrame
-
-.start
-	call Pokedex_BlackOutBG
-	ld a, DEXSTATE_SEARCH_SCR
-	ld [wJumptableIndex], a
-	xor a
-	ldh [hSCX], a
-	ld a, $a7
-	ldh [hWX], a
 	jp DelayFrame
 
 .b
@@ -491,15 +491,8 @@ Pokedex_InitOptionScreen: ; 4039d (10:439d)
 	call Pokedex_GetCGBLayout
 	jp Pokedex_IncrementDexPointer
 
-Pokedex_UpdateOptionScreen: ; 403be (10:43be)
-	ld a, [wUnlockedUnownMode]
-	and a
-	jr nz, .okay
-	ld de, .NoUnownModeArrowCursorData
-	jr .okay2
-.okay
+Pokedex_UpdateOptionScreen:
 	ld de, .ArrowCursorData
-.okay2
 	call Pokedex_MoveArrowCursor
 	call c, Pokedex_DisplayModeDescription
 	ld hl, hJoyPressed
@@ -523,24 +516,16 @@ Pokedex_UpdateOptionScreen: ; 403be (10:43be)
 	ld [wJumptableIndex], a
 	ret
 
-.NoUnownModeArrowCursorData: ; 403f3
+.ArrowCursorData:
 	db D_UP | D_DOWN, 3
 	dwcoord 2,  4
 	dwcoord 2,  6
 	dwcoord 2,  8
 
-.ArrowCursorData: ; 403fb
-	db D_UP | D_DOWN, 4
-	dwcoord 2,  4
-	dwcoord 2,  6
-	dwcoord 2,  8
-	dwcoord 2, 10
-
 .MenuActionJumptable: ; 40405 (10:4405)
 	dw .MenuAction_NewMode
 	dw .MenuAction_OldMode
 	dw .MenuAction_ABCMode
-	dw .MenuAction_UnownMode
 
 .MenuAction_NewMode: ; 4040d (10:440d)
 	ld b, DEXMODE_NEW
@@ -1080,10 +1065,10 @@ String_OWN: ; 407e6
 	db "O","W","N", $ff
 String_SELECT_COLOR: ; 407ea
 ;	db $3b, $48, $49, $4a, $44, $45, $46, $47 ; SELECT > COLOR
-	db $3b, $41, $42, $43, $44, $45, $46, $47
+	db $32, $3b, $41, $42, $43, $44, $45, $46, $47
 String_START_SEARCH: ; 407f2
 ;	db $3c, $3b, $41, $42, $43, $4b, $4c, $4d, $4e, $3c, $ff ; START > SEARCH
-	db $48, $3b, $49, $4a, $4b, $4c, $4d, $4e, $5d, $5e, $ff
+	db $5d, $5e, $3b, $49, $4a, $4b, $4c, $4d, $4e, $48, $ff
 
 Pokedex_DrawDexEntryScreenBG: ; 407fd
 	call Pokedex_FillBackgroundColor2
@@ -1195,25 +1180,16 @@ Pokedex_DrawOptionScreenBG: ; 4087c (10:487c)
 	call Pokedex_PlaceString
 	hlcoord 3, 4
 	ld de, .Modes
-	call PlaceString
-	ld a, [wUnlockedUnownMode]
-	and a
-	ret z
-	hlcoord 3, 10
-	ld de, .UnownMode
 	jp PlaceString
 
 .Title: ; 408b2
-	db $3b, " ","O","p","t","i","o","n"," ", $3c, $ff
+	db $3b, " ","S","O","R","T","I","N","G"," ", $3c, $ff
 
-.Modes: ; 408bd
-	db   "Johto Mode"
-	next "National Mode"
-	next "A to Z Mode"
+.Modes:
+	db   "ONWA DEX"
+	next "NATIONAL DEX"
+	next "ALPHABETICAL"
 	db "@"
-
-.UnownMode: ; 408e5
-	db "Unown Mode@"
 
 Pokedex_DrawSearchScreenBG: ; 408f0 (10:48f0)
 	call Pokedex_FillBackgroundColor2
@@ -1596,7 +1572,7 @@ Pokedex_PrintListing: ; 40b0f (10:4b0f)
 ; Prints one entry in the list of Pokémon on the main Pokédex screen.
 	and a
 	ret z
-	call Pokedex_PrintNumberIfOldMode
+;	call Pokedex_PrintNumberIfOldMode
 	call Pokedex_PlaceDefaultStringIfNotSeen
 	ret c
 	call Pokedex_PlaceCaughtSymbolIfCaught
@@ -1605,18 +1581,18 @@ Pokedex_PrintListing: ; 40b0f (10:4b0f)
 	pop hl
 	jp PlaceString
 
-Pokedex_PrintNumberIfOldMode: ; 40b6a (10:4b6a)
-	ld a, [wCurrentDexMode]
-	cp DEXMODE_OLD
-	ret nz
-	push hl
-	ld de, -SCREEN_WIDTH
-	add hl, de
-	ld de, wd265
-	lb bc, PRINTNUM_LEADINGZEROS | 1, 3
-	call PrintNum
-	pop hl
-	ret
+; Pokedex_PrintNumberIfOldMode:
+	; ld a, [wCurrentDexMode]
+	; cp DEXMODE_OLD
+	; ret nz
+	; push hl
+	; ld de, -SCREEN_WIDTH
+	; add hl, de
+	; ld de, wd265
+	; lb bc, PRINTNUM_LEADINGZEROS | 1, 3
+	; call PrintNum
+	; pop hl
+	; ret
 
 Pokedex_PlaceCaughtSymbolIfCaught: ; 40b82 (10:4b82)
 	call Pokedex_CheckCaught
@@ -1707,8 +1683,8 @@ Pokedex_OrderMonsByMode: ; 40bdc
 
 .Jumptable: ; 40bf0 (10:4bf0)
 	dw .NewMode
-	dw .NewMode
-	dw .NewMode
+	dw .OldMode
+	dw Pokedex_ABCMode
 
 
 .NewMode: ; 40bf6 (10:4bf6)
@@ -1808,7 +1784,6 @@ Pokedex_DisplayModeDescription: ; 40e5b
 	dw .NewMode
 	dw .OldMode
 	dw .ABCMode
-	dw .UnownMode
 
 .NewMode: ; 40e85
 	db   "<PK><MN> are listed in"
@@ -1821,10 +1796,6 @@ Pokedex_DisplayModeDescription: ; 40e5b
 .ABCMode: ; 40ec6
 	db   "<PK><MN> are listed"
 	next "alphabetically.@"
-
-.UnownMode: ; 40ee4
-	db   "Unown are listed"
-	next "in order caught.@"
 
 Pokedex_DisplayChangingModesMessage: ; 40f08 (10:4f08)
 	xor a

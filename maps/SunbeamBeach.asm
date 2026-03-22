@@ -15,7 +15,7 @@ SunbeamBeach_MapScriptHeader:
 	signpost 29, 15, SIGNPOST_ITEM + BOTTLE_CAP, EVENT_SUNBEAM_BEACH_HIDDEN_BOTTLE_CAP_3
 
 	db 16 ; object events
-	person_event SPRITE_CANDLE, 33, 10, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, 19, 4, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, SunbeamIslandSunbatherNite, -1
+	person_event SPRITE_CANDLE, 33, 10, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, SunbeamIslandSunbatherNite, EVENT_SUNBATHER_BURNT
 	person_event SPRITE_SUNBATHER, 33, 10, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, SunbeamIslandSunbather, -1
 	person_event SPRITE_TRUNKS, 18, 12, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, SunbeamBeachTrunks1, -1
 	person_event SPRITE_TRUNKS, 37, 14, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, SunbeamBeachTrunks2, -1
@@ -33,7 +33,9 @@ SunbeamBeach_MapScriptHeader:
 	hiddentape_event 10, 29, MUSIC_SUNBEAM_ISLAND, 1, EVENT_MUSIC_SUNBEAM_ISLAND
 
 SunbeamIslandSunbather:
+	clearevent EVENT_SUNBATHER_BURNT
 	jumptext SunbeamIslandSunbatherText
+	
 SunbeamIslandSunbatherNite:
 	jumptext SunbeamIslandSunbatherText2
 	
@@ -138,9 +140,6 @@ SunbeamIslandSunbatherText3:
 	
 SunbeamIslandSunbatherText4:
 	text "Huh?"
-	
-	para "Why's it so dark"
-	line "out?"
 	
 	para "Ow! <WAIT_S>Ow!"
 	

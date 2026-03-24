@@ -1167,7 +1167,9 @@ wRiverRapidsRecordCentiseconds:: ds 1
 wRiverRapidsRecordSeconds:: ds 1
 wRiverRapidsRecordMinutes:: ds 1
 
-	ds 44 ; unused
+wObscuraFortunePsychicTmCount:: ds 1
+
+	ds 43 ; unused
 	
 wSkateparkCurTrick:: ds 1
 wSkateparkComboTimer:: ds 1

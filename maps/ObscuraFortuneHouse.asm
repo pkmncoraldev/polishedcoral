@@ -464,7 +464,24 @@ ObscuraFortuneHouseTellerAsm:
 	ld c, 12
 	call DelayFrames
 	ld hl, TellerTMText
+	ld a, [wObscuraFortunePsychicTmCount]
+	inc a
+	cp 3
+	jr z, .give_psychic
+	cp 69
+	jr nc, .skip
+	ld [wObscuraFortunePsychicTmCount], a
+.skip
+	ld a, [wCurTMHM]
+	cp $16	;psychic tm hint
+	jr z, .give_psychic
 	jr .finish
+.give_psychic
+	ld a, 69
+	ld [wObscuraFortunePsychicTmCount], a
+	ld a, BANK(GivePsychicTMScript)
+	ld hl, GivePsychicTMScript
+	jp CallScript
 	
 .tape
 	ld hl, Music_Text
@@ -499,6 +516,16 @@ ObscuraFortuneHouseTellerAsm:
 	call DelayFrames
 	ld hl, TellerEndText
 	jp PrintText
+	
+GivePsychicTMScript:
+	writetext TM29Text
+	verbosegivetmhm TM_PSYCHIC
+	farwritetext StdBlankText
+	pause 6
+	writetext TellerEndText
+	waitbutton
+	closetext
+	end
 
 NoMoreFortunesText:
 	text "Hmm…"
@@ -801,8 +828,11 @@ TM28Text:
 	prompt
 
 TM29Text:
-	text "TM29"
-	line "TODO"
+	text "It's… <WAIT_M>Why, it's in"
+	line "this very room!"
+	
+	para "In fact, it's in"
+	line "your hand already!"
 	prompt
 
 TM30Text:

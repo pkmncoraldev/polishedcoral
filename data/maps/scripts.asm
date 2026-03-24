@@ -519,6 +519,8 @@ INCLUDE "maps/LusterApartment6_1F.asm"
 INCLUDE "maps/LusterApartment6_2F.asm"
 INCLUDE "maps/Route11House.asm"
 INCLUDE "maps/Route11Gate.asm"
+
+SECTION "Misc Map Scripts 4", ROMX
 INCLUDE "maps/ObscuraFortuneHouse.asm"
 
 SECTION "Aureole Scripts", ROMX

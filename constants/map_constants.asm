@@ -470,6 +470,9 @@ DEF MAP_NONE   EQU 0
 	map_const OBSCURA_MUSEUM_PHOTO,						   4,  2 ; 7
 	map_const OBSCURA_POKECENTER,						   6,  4 ; 8
 	map_const OBSCURA_MART,								   6,  4 ; 9
+	map_const OBSCURA_MACHO_BRACE_HOUSE,				   4,  4 ; 10
+	map_const OBSCURA_GYM_SPEECH_HOUSE,					   4,  4 ; 11
+	map_const OBSCURA_MUSICIAN_HOUSE,					   4,  4 ; 1
 	
 	newgroup													 ; 25
 	map_const AUREOLE_TOWN,								  20, 23 ; 1

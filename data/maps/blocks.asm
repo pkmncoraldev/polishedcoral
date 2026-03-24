@@ -88,6 +88,7 @@ Route3FriendshipHouse_BlockData:
 DuskHouse1_BlockData:
 BrightHouse3_BlockData:
 Route11House_BlockData:
+ObscuraGymSpeechHouse_BlockData:
 	INCBIN "maps/NormalHouse1.ablk.lz"
 	
 SunsetGengarHouse_BlockData:
@@ -98,6 +99,7 @@ SunbeamOldCouplesHouse_BlockData:
 SunbeamTradeHouse_BlockData:
 FlickerNameSpeechHouse_BlockData:
 BrightHouse1_BlockData:
+ObscuraMachoBraceHouse_BlockData:
 	INCBIN "maps/NormalHouse2.ablk.lz"
 	
 SunsetLegendsHouse_BlockData:
@@ -109,6 +111,7 @@ ShimmerHouse2_BlockData:
 DuskHouse3_BlockData:
 BrightHouse2_BlockData:
 RadiantHouse_BlockData:
+ObscuraMusicianHouse_BlockData:
 	INCBIN "maps/NormalHouse3.ablk.lz"
 	
 DuskHouse2_BlockData:

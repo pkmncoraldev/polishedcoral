@@ -366,8 +366,9 @@ ObscuraFortuneHouseTellerTextNoMoney:
 	para "You ain't got the"
 	line "funds…"
 	
-	para "This ain't a charity,"
-	line "ya know!"
+	para "This ain't a"
+	line "charity, ya know!"
+	done
 	
 ObscuraFortuneHouseTellerBallText:
 	text "A shiny"
@@ -1664,8 +1665,16 @@ Music_ErikaText:
 	prompt
 	
 Music_ObscuraText:
-	text "OBSCURA CITY"
-	line "TODO"
+	text "It's in this very"
+	line "city."
+	
+	para "You should be"
+	line "able to see it"
+	cont "very close by."
+		
+	para "You might have to"
+	line "jump a fence to"
+	cont "reach."
 	prompt
 	
 Music_LuminaText:

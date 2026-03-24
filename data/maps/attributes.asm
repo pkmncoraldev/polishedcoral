@@ -467,14 +467,14 @@ ENDM
 	
 	map_attributes Route29, ROUTE_29, $d4, NORTH | WEST | EAST
 	connection north, Route29Meadow, ROUTE_29_MEADOW, 4
-	connection west, ObscuraCity, OBSCURA_CITY, -10
+	connection west, ObscuraCity, OBSCURA_CITY, -9
 	connection east, Route28, ROUTE_28, -30
 	
 	map_attributes Route29Meadow, ROUTE_29_MEADOW, $fb, SOUTH
 	connection south, Route29, ROUTE_29, -4
 	
 	map_attributes ObscuraCity, OBSCURA_CITY, $02, EAST
-	connection east, Route29, ROUTE_29, 10
+	connection east, Route29, ROUTE_29, 9
 	
 	map_attributes AureoleTown, AUREOLE_TOWN, $d4, 0
 	
@@ -838,3 +838,6 @@ ENDM
 	map_attributes DragonShrineInterior, DRAGON_SHRINE_INTERIOR, $0, 0
 	map_attributes HuntersThicket, HUNTERS_THICKET, $d4, 0
 	map_attributes FlickerMossRockRoom, FLICKER_MOSS_ROCK_ROOM, $09, 0
+	map_attributes ObscuraMachoBraceHouse, OBSCURA_MACHO_BRACE_HOUSE, $0, 0
+	map_attributes ObscuraGymSpeechHouse, OBSCURA_GYM_SPEECH_HOUSE, $0, 0
+	map_attributes ObscuraMusicianHouse, OBSCURA_MUSICIAN_HOUSE, $0, 0

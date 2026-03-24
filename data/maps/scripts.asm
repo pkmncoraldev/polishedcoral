@@ -475,6 +475,9 @@ SECTION "Obscura Scripts", ROMX
 INCLUDE "maps/ObscuraCity.asm"
 INCLUDE "maps/ObscuraGate.asm"
 INCLUDE "maps/FightingDojo.asm"
+INCLUDE "maps/ObscuraMachoBraceHouse.asm"
+INCLUDE "maps/ObscuraGymSpeechHouse.asm"
+INCLUDE "maps/ObscuraMusicianHouse.asm"
 
 SECTION "Obscura Museum Scripts", ROMX
 INCLUDE "maps/ObscuraMuseum1F.asm"

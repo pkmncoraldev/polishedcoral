@@ -23,7 +23,7 @@ SpawnPoints: ; 0x152ab
 	spawn CROSSROADS,      		       30,  8
 	spawn KOMORE_VILLAGE, 			   31,  6
 	spawn BRIGHTBURG,	 			   19, 10
-	spawn OBSCURA_CITY,	 			   31, 38
+	spawn OBSCURA_CITY,	 			   31, 36
 	
 	spawn STARGLOW_CAVERN_DEPTHS,	   16, 15
 	spawn FAKE_PLAYERS_HOUSE_2F,	    1,  4

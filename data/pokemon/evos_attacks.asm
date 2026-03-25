@@ -3482,7 +3482,6 @@ CherubiEvosAttacks:
 	db  1, TACKLE_SCRATCH_POUND
 	db  7, WORK_UP_GROWTH
 	db  9, LEECH_SEED
-	db 11, ABSORB
 	db 15, STUN_SPORE
 	db 19, BULLET_SEED
 	db 22, SWIFT
@@ -3498,7 +3497,6 @@ CherrimEvosAttacks:
 	db  1, TACKLE_SCRATCH_POUND
 	db  7, WORK_UP_GROWTH
 	db  9, LEECH_SEED
-	db 11, ABSORB
 	db 15, STUN_SPORE
 	db 19, BULLET_SEED
 	db 22, SWIFT

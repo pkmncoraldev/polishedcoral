@@ -376,7 +376,7 @@ ObscuraFortuneHouseTellerBallText:
 	done
 	
 ObscuraFortuneHouseTellerSetupTMsAsm:
-	ld a, 58 ;number of tracked TMHMs + 1
+	ld a, 63 ;number of tracked TMHMs + 1
 	ld hl, TM_FLAGS_START
 	jr ObscuraFortuneHouseTellerAsm
 	
@@ -441,7 +441,7 @@ ObscuraFortuneHouseTellerAsm:
 	pop hl
 	jr nz, .loop2
 	ld a, [wCurBattleMon]
-	cp 58 ;number of tracked TMHMs + 1
+	cp 63 ;number of tracked TMHMs + 1
 	jr z, .tms
 	cp 4 ;number of tracked decos + 1
 	jr z, .decos
@@ -628,6 +628,11 @@ TellerTMText:
 ;	dw TM68Text
 	dw TM69Text
 	dw TM70Text
+	dw TM71Text
+	dw TM72Text
+	dw TM73Text
+	dw TM74Text
+	dw TM75Text
 	
 TM_Text:
 	text "I see a TM…"
@@ -1088,6 +1093,31 @@ TM69Text:
 	prompt
 
 TM70Text:
+	text "TM70"
+	line "TODO"
+	prompt
+	
+TM71Text:
+	text "TM71"
+	line "TODO"
+	prompt
+	
+TM72Text:
+	text "TM72"
+	line "TODO"
+	prompt
+	
+TM73Text:
+	text "TM73"
+	line "TODO"
+	prompt
+	
+TM74Text:
+	text "TM74"
+	line "TODO"
+	prompt
+	
+TM75Text:
 	text "There's a shady"
 	line "character atop"
 	cont "STARGLOW CAVERN."

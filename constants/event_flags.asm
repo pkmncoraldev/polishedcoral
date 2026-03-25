@@ -1610,6 +1610,11 @@ DEF TM_FLAGS_START EQU const_value - 1
 ;	const EVENT_TM68
 	const EVENT_TM69
 	const EVENT_TM70
+	const EVENT_TM71
+	const EVENT_TM72
+	const EVENT_TM73
+	const EVENT_TM74
+	const EVENT_TM75
 	const EVENT_HM01
 	const EVENT_HM02
 	const EVENT_HM03

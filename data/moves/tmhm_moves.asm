@@ -61,22 +61,22 @@ TMHMMoves:
 	db DRAGON_CLAW                         ; TM60
 	db WILL_O_WISP                         ; TM61
 	db ACROBATICS	                       ; TM62
-	db TOXIC_SPIKES                        ; TM63
+	db STONE_EDGE	                       ; TM63
 	db SELFDESTRUCT                        ; TM64
 	db FLAME_CHARGE                        ; TM65
-	db X_SCISSOR                          ; TM66
+	db X_SCISSOR                 	       ; TM66
 	db RAPID_SPIN                          ; TM67
 	db GIGA_IMPACT                         ; TM68
 	db ANCIENTPOWER                        ; TM69
-	db SAND_ATTACK_SMOKESCREEN_FLASH       ; TM70
-	db STONE_EDGE                          ; TM71
-	db THUNDER_FANG                        ; TM72
-	db THUNDER_WAVE                        ; TM73
-	db LUMINA_CRASH                           ; TM74
-	db SWORDS_DANCE                        ; TM75
-	db LEECH_LIFE
-	db POISON_JAB
-	db FOCUS_BLAST
+	db BULLET_SEED					       ; TM70
+	db SIGNAL_BEAM                         ; TM71
+	db SUCKER_PUNCH                        ; TM72
+	db FLASH_CANNON                        ; TM73
+	db HEX		                           ; TM74
+	db SAND_ATTACK_SMOKESCREEN_FLASH       ; TM75
+	db NO_MOVE
+	db NO_MOVE
+	db NO_MOVE
 	
 	db CUT                                 ; HM01
 	db FLY                                 ; HM02
@@ -87,30 +87,30 @@ TMHMMoves:
 	db WATERFALL                           ; HM07
 	db ROCK_CLIMB                          ; HM08
 	
-	db AQUA_TAIL                           ; MT01
-	db BODY_SLAM                           ; MT02
-	db SHOCK_WAVE                          ; MT03
-	db DEFENSE_CURL_HARDEN_WITHDRAW        ; MT04
-	db DOUBLE_EDGE                         ; MT05
-	db DREAM_EATER                         ; MT06
-	db EARTH_POWER                         ; MT07
-	db FIRE_PUNCH                          ; MT08
-	db HEADBUTT                            ; MT09
-	db HYPER_VOICE                         ; MT10
-	db ICE_PUNCH                           ; MT11
-	db ICY_WIND                            ; MT12
-	db MIRROR_MOVE                         ; MT13
-	db KNOCK_OFF                           ; MT14
-	db PAY_DAY                             ; MT15
-	db ROLLOUT                             ; MT16
-	db GUNK_SHOT                           ; MT17
-	db SEISMIC_TOSS                        ; MT18
-	db COTTON_GUARD                        ; MT19
-	db SNORE                               ; MT20
-	db SUCKER_PUNCH                        ; MT21
-	db SWAGGER                             ; MT22
-	db THUNDERPUNCH                        ; MT23
-	db ICE_FANG                            ; MT24
-	db BRICK_BREAK                         ; MT25
-	db ZEN_HEADBUTT                        ; MT26
+	db NO_MOVE                             ; MT01
+	db NO_MOVE                             ; MT02
+	db NO_MOVE                             ; MT03
+	db NO_MOVE                             ; MT04
+	db NO_MOVE                             ; MT05
+	db NO_MOVE                             ; MT06
+	db NO_MOVE                             ; MT07
+	db NO_MOVE                             ; MT08
+	db NO_MOVE                             ; MT09
+	db NO_MOVE                             ; MT10
+	db NO_MOVE                             ; MT11
+	db NO_MOVE                             ; MT12
+	db NO_MOVE                             ; MT13
+	db NO_MOVE                             ; MT14
+	db NO_MOVE                             ; MT15
+	db NO_MOVE                             ; MT16
+	db NO_MOVE                             ; MT17
+	db NO_MOVE                             ; MT18
+	db NO_MOVE                             ; MT19
+	db NO_MOVE                             ; MT20
+	db NO_MOVE                             ; MT21
+	db NO_MOVE                             ; MT22
+	db NO_MOVE                             ; MT23
+	db NO_MOVE                             ; MT24
+	db NO_MOVE                             ; MT25
+	db NO_MOVE                             ; MT26
 	db 0 ; end

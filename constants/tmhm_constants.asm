@@ -83,19 +83,19 @@ ENDM
 	add_tm DRAGON_CLAW		; $3b
 	add_tm WILL_O_WISP		; $3c
 	add_tm ACROBATICS		; $3d
-	add_tm TOXIC_SPIKES		; $3e
+	add_tm STONE_EDGE		; $3e
 	add_tm SELFDESTRUCT		; $3f
 	add_tm FLAME_CHARGE		; $40
 	add_tm X_SCISSOR		; $41
 	add_tm RAPID_SPIN		; $42
 	add_tm GIGA_IMPACT		; $43
 	add_tm ANCIENTPOWER		; $44
-	add_tm SAND_ATTACK_SMOKESCREEN_FLASH			; $45
-	add_tm STONE_EDGE		; $46
-	add_tm FIRE_FANG		; $47
-	add_tm THUNDER_WAVE		; $48
-	add_tm LUMINA_CRASH		; $49
-	add_tm SWORDS_DANCE		; $4a
+	add_tm BULLET_SEED		; $45
+	add_tm SIGNAL_BEAM		; $46
+	add_tm SUCKER_PUNCH		; $47
+	add_tm FLASH_CANNON		; $48
+	add_tm HEX				; $49
+	add_tm SAND_ATTACK_SMOKESCREEN_FLASH		; $4a
 	add_tm LEECH_LIFE		; $4b
 	add_tm POISON_JAB		; $4c
 	add_tm FOCUS_BLAST		; $4d

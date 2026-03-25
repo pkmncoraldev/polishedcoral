@@ -13,7 +13,7 @@ Route3StarglowCavernTop_MapScriptHeader:
 	db 0 ; bg events
 
 	db 1 ; object events
-	person_event SPRITE_GENERAL_VARIABLE_1, 14,  9, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, Route3StarglowCavernTopPatches, EVENT_TM70
+	person_event SPRITE_GENERAL_VARIABLE_1, 14,  9, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, Route3StarglowCavernTopPatches, EVENT_TM75
 	
 	const_def 1 ; object constants
 	const ROUTE_3_TOP_PATCHES
@@ -136,7 +136,7 @@ Route3StarglowCavernTopPatches:
 	waitbutton
 	blackoutmod GLINT_CITY
 	verbosegivetmhm TM_SAND_ATTACK_SMOKESCREEN_FLASH
-	setevent EVENT_TM70
+	setevent EVENT_TM75
 	setevent EVENT_UNIQUE_ENCOUNTER_PATCHES
 	writetext Route3StarglowCavernTopPatchesDoneCaveText3
 	yesorno

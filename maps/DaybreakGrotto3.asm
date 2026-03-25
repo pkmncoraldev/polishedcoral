@@ -22,7 +22,7 @@ DaybreakGrotto3_MapScriptHeader:
 
 	
 DaybreakGrotto3NPC:
-	checkevent EVENT_TM70
+	checkevent EVENT_TM75
 	iftrue .haveflash
 	checkevent EVENT_SNARKY_GIRL_2
 	iftrue .snarky

@@ -293,7 +293,9 @@ CounterclockwiseSpinAction:
 	ld [hl], a
 	ret
 
-.Directions
+.Directions	;COLL_CURRENT sometimes makes increments hl by 8. duplicating this table twice is the easiest fix. dont worry about it
+	db OW_DOWN, OW_RIGHT, OW_UP, OW_LEFT
+	db OW_DOWN, OW_RIGHT, OW_UP, OW_LEFT
 	db OW_DOWN, OW_RIGHT, OW_UP, OW_LEFT
 
 SetFacingBounce: ; 4590

@@ -659,6 +659,7 @@ TM02Text:
 	prompt
 
 TM03Text:
+TM74Text:
 	text "There's a girl in"
 	line "LUSTER CITY."
 	
@@ -885,8 +886,14 @@ TM34Text:
 	prompt
 
 TM35Text:
-	text "TM35"
-	line "TODO"
+	text "It's on ROUTE 24."
+	
+	para "Head NORTH and"
+	line "climb a great"
+	cont "waterfall."
+	
+	para "You'll find it"
+	line "there."
 	prompt
 
 TM36Text:
@@ -921,12 +928,8 @@ TM38Text:
 	prompt
 
 TM39Text:
-	text "It's on ROUTE 8,"
-	line "but you can't reach"
-	cont "it from ROUTE 8."
-	
-	para "What on earth does"
-	line "THAT mean?"
+	text "TM39"
+	line "TODO"
 	prompt
 
 TM42Text:
@@ -1093,8 +1096,14 @@ TM69Text:
 	prompt
 
 TM70Text:
-	text "TM70"
-	line "TODO"
+	text "It's on ROUTE 3."
+	
+	para "Head SOUTH from"
+	line "where you exited"
+	cont "STARGLOW CAVERN."
+	
+	para "Cross a bridge,"
+	line "and it's yours."
 	prompt
 	
 TM71Text:
@@ -1103,17 +1112,16 @@ TM71Text:
 	prompt
 	
 TM72Text:
-	text "TM72"
-	line "TODO"
+	text "It's on ROUTE 8,"
+	line "but you can't reach"
+	cont "it from ROUTE 8."
+	
+	para "What on earth does"
+	line "THAT mean?"
 	prompt
 	
 TM73Text:
 	text "TM73"
-	line "TODO"
-	prompt
-	
-TM74Text:
-	text "TM74"
 	line "TODO"
 	prompt
 	

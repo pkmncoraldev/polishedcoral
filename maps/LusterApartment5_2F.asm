@@ -40,8 +40,10 @@ LusterApartment5_2F_BookText:
 	
 LusterApartment5_2F_NPC1:
 	faceplayer
-	checktmhm TM_CURSE
+	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_6
 	iftrue .got_tm
+	checktmhm TM_CURSE
+	iftrue .got_curse
 	opentext
 	writetext LusterApartment5_2F_NPC1Text1
 	waitbutton
@@ -50,6 +52,19 @@ LusterApartment5_2F_NPC1:
 	waitbutton
 	closetext
 	setevent EVENT_TM03
+	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_6
+	end
+.got_curse
+	checktmhm TM_HEX
+	iftrue .got_tm
+	opentext
+	writetext LusterApartment5_2F_NPC1Text4
+	waitbutton
+	verbosegivetmhm TM_HEX
+	writetext LusterApartment5_2F_NPC1Text5
+	waitbutton
+	closetext
+	setevent EVENT_TM74
 	end
 .got_tm
 	jumptextfaceplayer LusterApartment5_2F_NPC1Text3
@@ -104,6 +119,37 @@ LusterApartment5_2F_NPC1Text2:
 LusterApartment5_2F_NPC1Text3:
 	text "Begone, creature"
 	line "of light!"
+	
+	para "Leave us to our"
+	line "dark communion!"
+	done
+	
+LusterApartment5_2F_NPC1Text4:
+	text "The acursed"
+	line "outsider returns…"
+	
+	para "The vibe is truly"
+	line "ruined!"
+	
+	para "A HEX!"
+	
+	para "I cast a HEX upon"
+	line "you, outsider!"
+	done
+	
+LusterApartment5_2F_NPC1Text5:
+	text "HEX does more"
+	line "damage if the foe"
+	cont "is afflicted."
+	
+	para "Burn, poison,"
+	line "paralysis…"
+	
+	para "It matters not"
+	line "which."
+	
+	para "Now, begone"
+	line "creature of light!"
 	
 	para "Leave us to our"
 	line "dark communion!"

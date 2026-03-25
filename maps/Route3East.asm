@@ -13,8 +13,8 @@ Route3East_MapScriptHeader:
 	signpost 14,  7, SIGNPOST_READ, Route3East_sign
 	bg_event  6, 21, SIGNPOST_ITEM + REVIVE, EVENT_ROUTE_3_HIDDEN_ITEM
 
-	db 10 ; object events
-	person_event SPRITE_FISHER, 29, 11, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 0, TrainerRouteEast3_1, -1
+	db 11 ; object events
+	person_event SPRITE_FISHER, 29, 13, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 0, TrainerRouteEast3_1, -1
 	person_event SPRITE_CAMPER, 23, 27, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 3, TrainerRouteEast3_2, -1
 	person_event SPRITE_PICNICKER, 14, 29, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 4, TrainerRouteEast3_3, -1
 	person_event SPRITE_LASS, 27, 32, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_GENERICTRAINER, 3, TrainerRouteEast3_4, -1
@@ -24,6 +24,7 @@ Route3East_MapScriptHeader:
 	itemball_event 18, 23, PARALYZEHEAL, 1, EVENT_ROUTE_3_PARALYZEHEAL
 	fruittree_event 35, 14, FRUITTREE_ROUTE_3_2, LEPPA_BERRY
 	tmhmball_event 10,  5, TM_X_SCISSOR, EVENT_TM66
+	tmhmball_event 12, 35, TM_BULLET_SEED, EVENT_TM70
 	
 	const_def 1 ; object constants
 	const ROUTE3EAST_TRAINER1

@@ -133,7 +133,7 @@ ENDM
 	map_attributes Route3StarglowCavernTop, ROUTE_3_STARGLOW_CAVERN_TOP, $71, SOUTH
 	connection south, Route3, ROUTE_3, -10
 	
-	map_attributes Route3East, ROUTE_3_EAST, $71, SOUTH | WEST
+	map_attributes Route3East, ROUTE_3_EAST, $d4, SOUTH | WEST
 	connection south, StarglowValley, STARGLOW_VALLEY, 10
 	connection west, Route3, ROUTE_3, 3
 	

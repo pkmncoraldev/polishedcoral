@@ -19,7 +19,7 @@ Route24North_MapScriptHeader:
 	person_event SPRITE_BEAUTY, 27, 29, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 5, Route24NorthTrainer1, -1
 	person_event SPRITE_BIRD_KEEPER, 25, 12, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 2, Route24NorthTrainer2, -1
 	itemball_event 30, 25, BLACK_BELT, 1, EVENT_ROUTE_24_POKE_BALL
-	itemball_event 27,  4, WISE_GLASSES, 1, EVENT_ROUTE_24_POKE_BALL2
+	tmhmball_event 27, 4, TM_FLAMETHROWER, EVENT_TM35
 
 
 	const_def 1 ; object constants

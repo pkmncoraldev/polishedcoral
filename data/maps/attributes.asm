@@ -494,7 +494,7 @@ ENDM
 	map_attributes UnderwaterTempleOutside, UNDERWATER_TEMPLE_OUTSIDE, $7d, WEST
 	connection west, CoralReef, CORAL_REEF, 4
 	
-	map_attributes Route30, ROUTE_30, $fb, NORTH
+	map_attributes Route30, ROUTE_30, $71, NORTH
 	connection north, RiverRapidsEntrance, RIVER_RAPIDS_ENTRANCE, 6
 	
 	map_attributes RiverRapidsEntrance, RIVER_RAPIDS_ENTRANCE, $71, SOUTH

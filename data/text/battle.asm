@@ -1460,7 +1460,7 @@ ProtectedItselfText: ; 0x81665
 ProtectingItselfText: ; 0x8167a
 	text "<TARGET> is"
 	line "PROTECTING itself!"
-	done
+	prompt
 ; 0x81691
 
 SpikesText:

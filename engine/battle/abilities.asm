@@ -870,6 +870,46 @@ AfflictStatusAbility:
 	farcall BattleCommand_poison
 	jp EnableAnimations
 
+CheckSoundproof::
+	ld a, BATTLE_VARS_ABILITY_OPP
+	call GetBattleVar
+	cp SOUNDPROOF
+	jr nz, .no
+	ld a, BATTLE_VARS_MOVE
+	call GetBattleVar
+	push af
+	cp SING_HYPNOSIS
+	jr nz, .not_sing
+	farcall CheckSingThing
+	cp 1
+	jr z, .not_sing
+	pop af
+	jr .yes
+	
+.not_sing
+	pop af
+	push af
+	cp ROAR_WHIRLWIND
+	jr nz, .not_roar
+	farcall CheckRoarThing
+	cp 1
+	jr z, .not_roar
+	pop af
+	jr .yes
+	
+.not_roar
+	pop af
+	ld hl, SoundMoves
+	ld de, 1
+	call IsInArray
+	jr nc, .no
+.yes
+	ld a, 1
+	ret
+.no
+	xor a
+	ret
+
 CheckNullificationAbilities:
 ; Doesn't deal with the active effect of this, but just checking if they apply vs
 ; an opponent's used attack (not Overcoat vs powder which is checked with Grass)

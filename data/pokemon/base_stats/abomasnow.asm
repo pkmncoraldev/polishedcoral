@@ -10,7 +10,7 @@
 	dn 7, 7 ; frontpic dimensions
 	db SNOW_WARNING ; ability 1
 	db SNOW_WARNING ; ability 2
-	db SNOW_WARNING ; hidden ability
+	db SOUNDPROOF ; hidden ability
 	db SLOW ; growth rate
 	dn MONSTER, PLANT ; egg groups
 

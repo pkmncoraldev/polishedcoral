@@ -1611,6 +1611,7 @@ Roar:
 	usedmovetext
 	doturn
 	pressure
+	checkhit
 	bounceback
 	forceswitch
 	endmove

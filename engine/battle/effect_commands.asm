@@ -1818,6 +1818,11 @@ BattleCommand_bounceback:
 
 
 BattleCommand_checkhit:
+	farcall CheckSoundproof
+	and a
+	ld a, ATKFAIL_ABILITY
+	jp nz, .Miss_skipset
+
 	call .ThunderWave
 
 	call .DreamEater
@@ -2692,8 +2697,7 @@ BattleCommand_checkfaint:
 
 ; 350e4
 
-
-GetFailureResultText: ; 350e4
+GetFailureResultText:
 	ld hl, DoesntAffectText
 	ld a, [wTypeModifier]
 	and a
@@ -4969,6 +4973,8 @@ BattleCommand_sleeptarget:
 	ld hl, ButItFailedText
 	jr nz, .failed
 	ld a, [wAttackMissed]
+	cp ATKFAIL_ABILITY
+	jr z, .ability_ok
 	and a
 	ld hl, AttackMissedText
 	jr nz, .failed
@@ -5018,6 +5024,7 @@ BattleCommand_sleeptarget:
 	jp StdBattleTextBox
 
 .ability_ok
+	call BattleCommand_movedelay
 	farcall ShowEnemyAbilityActivation
 	call AnimateFailedMove
 	jp PrintDoesntAffect
@@ -5848,6 +5855,10 @@ BattleCommand_statdown: ; 362e3
 .no_relevant_ability
 	call CheckMist
 	jp nz, .Mist
+	
+	ld a, [wAttackMissed]
+	cp ATKFAIL_ABILITY
+	jp z, .soundproof
 
 	ld hl, wEnemyStatLevels
 	ldh a, [hBattleTurn]
@@ -5924,6 +5935,11 @@ BattleCommand_statdown: ; 362e3
 	ld [wFailedMessage], a
 	ld a, 1
 	ld [wAttackMissed], a
+	ret
+	
+.soundproof
+	ld a, 5
+	ld [wFailedMessage], a
 	ret
 
 ; 36391
@@ -6110,8 +6126,10 @@ BattleCommand_statdownfailtext: ; 3646a
 	dec a
 	ld hl, UnknownText_Ability_StatDown_Failed
 	jp z, StdBattleTextBox
+	dec a
 	ld hl, WontDropAnymoreText
-	jp StdBattleTextBox
+	jp z, StdBattleTextBox
+	jp GetFailureResultText
 
 ; 3648f
 

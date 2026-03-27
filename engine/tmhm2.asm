@@ -536,9 +536,14 @@ Text_ReminderNotCompatible: ; 0x2c8ce
 	db "@"
 
 GetTMIconDisc:
+	ld a, [wCurrPocket]
+	inc a
+	cp TM_HM
+	jr z, .skip
 	ld a, [wMenuSelection]
 	cp a, -1
 	jr z, .clear
+.skip
 	ld a, [wd265]
 	cp a, -1
 	jr z, .clear
@@ -612,9 +617,14 @@ GetTMIconDisc:
 	call Get2bpp
 
 GetTMIconLeft:
+	ld a, [wCurrPocket]
+	inc a
+	cp TM_HM
+	jr z, .skip
 	ld a, [wMenuSelection]
 	cp a, -1
 	jr z, .clear
+ .skip
 	ld a, [wd265]
 	cp a, -1
 	jr z, .clear
@@ -700,9 +710,14 @@ GetTMIconLeft:
 	call Get2bpp
 	
 GetTMIconRight:
+	ld a, [wCurrPocket]
+	inc a
+	cp TM_HM
+	jr z, .skip
 	ld a, [wMenuSelection]
 	cp a, -1
 	jr z, .clear
+.skip
 	ld a, [wd265]
 	cp a, -1
 	jr z, .clear

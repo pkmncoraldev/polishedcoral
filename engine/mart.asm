@@ -232,7 +232,13 @@ TMMart:
 	call LoadStandardMenuDataHeader
 	ld hl, Text_TMMart_HowMayIHelpYou
 	call MartTextBox
+	ld a, [wCurrPocket]
+	push af
+	xor a
+	ld [wCurrPocket], a
 	call BuyTMMenu
+	pop af
+	ld [wCurrPocket], a
 	ld hl, Text_Mart_ComeAgain
 	jp MartTextBox
 

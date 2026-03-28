@@ -45,8 +45,8 @@ Landmarks: ; 0x1ca8c3
 	landmark  60, 124, Route15Name
 	landmark  84, 112, Route16Name
 	
-	landmark -16, -16, OldManorName
-	landmark -16, -16, FrozenRuinsName
+	landmark 120,  88, OldManorName
+	landmark 136,  32, FrozenRuinsName
 	landmark  24,  40, LusterStationName
 	landmark  24,  40, ResidentialName
 	landmark  24,  40, ShoppingName
@@ -56,7 +56,7 @@ Landmarks: ; 0x1ca8c3
 	landmark -16, -16, Route1_2Name
 	landmark  84,  44, StarglowDepthsName
 	landmark -16, -16, UnkownPassageName
-	landmark -16, -16, ConnectingCavernName
+	landmark  60, 132, ConnectingCavernName
 	
 	landmark  36,  44, ShimmerName
 	landmark  44,  52, Route19Name

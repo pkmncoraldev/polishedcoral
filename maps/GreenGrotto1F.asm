@@ -5,31 +5,32 @@ GreenGrotto1F_MapScriptHeader:
 	callback MAPCALLBACK_CMDQUEUE, GreenGrotto1FRocksCallback
 
 	db 9 ; warp events
-	warp_event 29, 27, ROUTE_28, 4
+	warp_event 29, 29, ROUTE_28, 4
 	warp_event  3, 19, ROUTE_29, 1
 	warp_event 11, 13, GREEN_GROTTO_B1F, 1
 	warp_event 19, 21, GREEN_GROTTO_B1F, 2
 	warp_event 39, 12, GREEN_GROTTO_B1F, 3
 	warp_event 16, 11, GREEN_GROTTO_B1F, 4
 	warp_event 34,  7, GREEN_GROTTO_B1F, 5
-	warp_event 42, 21, GREEN_GROTTO_B1F, 6
-	warp_event 31, 24, ROUTE_1, 1
+	warp_event 42, 23, GREEN_GROTTO_B1F, 6
+	warp_event 31, 26, ROUTE_1, 1
 
 	db 0 ; coord events
 
 	db 0 ; bg events
 
-	db 10 ; object events
+	db 11 ; object events
 	strengthboulder_event  9, 21, EVENT_GREEN_GROTTO_BOULDER_1
 	strengthboulder_event 15,  5, EVENT_GREEN_GROTTO_BOULDER_2
 	strengthboulder_event 40,  5, EVENT_GREEN_GROTTO_BOULDER_3
 	strengthboulder_event 33, 13, EVENT_GREEN_GROTTO_BOULDER_4
-	strengthboulder_event 38, 21, EVENT_GREEN_GROTTO_BOULDER_5
+	strengthboulder_event 40, 23, EVENT_GREEN_GROTTO_BOULDER_5
 	person_event SPRITE_HIKER,  7, 16, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_GENERICTRAINER, 1, TrainerGreenGrotto1F_1, -1
 	person_event SPRITE_TEACHER,  8, 26, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 2, TrainerGreenGrotto1F_2, -1
 	person_event SPRITE_SCIENTIST,  7, 43, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_GENERICTRAINER, 1, TrainerGreenGrotto1F_3, -1
 	person_event SPRITE_DELINQUENT_M, 16, 40, SPRITEMOVEDATA_SPINCOUNTERCLOCKWISE, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 4, TrainerGreenGrotto1F_4, -1
 	itemball_event 27, 18, DUSK_BALL, 1, EVENT_GREEN_GROTTO_1F_POKEBALL
+	person_event SPRITE_HIKER, 19, 35, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, TrainerGreenGrotto1FNPC1, -1
 	
 	
 	const_def 1 ; object constants
@@ -90,6 +91,26 @@ GreenGrotto1FRocksCallback:
 	waitbutton
 	closetext
 	end
+	
+TrainerGreenGrotto1FNPC1:
+	jumptextfaceplayer TrainerGreenGrotto1FNPC1Text
+	
+TrainerGreenGrotto1FNPC1Text:
+	text "Woah there!<WAIT_S>"
+	line "Careful!"
+	
+	para "If you fall down"
+	line "the hole up ahead,"
+	cont "you won't be able"
+	cont "to get back up."
+	
+	para "It might be a bit"
+	line "before you can"
+	cont "make it back here."
+	
+	para "Don't jump down"
+	line "until you're ready."
+	done
 	
 TrainerGreenGrotto1F_1:
 	generictrainer HIKER, PHILLIP, EVENT_BEAT_GREEN_GROTTO_1F_TRAINER_1, .SeenText, .BeatenText

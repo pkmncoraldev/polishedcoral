@@ -5,8 +5,8 @@ IceTempleB1F1_MapScriptHeader:
 	callback MAPCALLBACK_TILES, IceTempleB1F1TorchesCallback
 
 	db 8 ; warp events
-	warp_def 21, 20, 2, ICE_CAVE_B3F
-	warp_def 21, 21, 3, ICE_CAVE_B3F
+	warp_def 21, 20, 2, ICE_CAVE_B4F
+	warp_def 21, 21, 3, ICE_CAVE_B4F
 	warp_def  1,  2, 1, ICE_TEMPLE_B1F_2
 	warp_def  1,  3, 2, ICE_TEMPLE_B1F_2
 	warp_def  1, 20, 3, ICE_TEMPLE_B1F_2

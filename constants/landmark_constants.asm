@@ -8,67 +8,68 @@
 
 	const SPECIAL_MAP		 ; 00
 
-	const SUNSET_BAY		 ; 01
-	const SUNSET_CAPE		 ; 02
-	const ROUTE_1			 ; 04
-	const DAYBREAK_VILLAGE	 ; 05
-	const ROUTE_2			 ; 06
-	const MT_ONWA   		 ; 07
-	const GLINT_CITY		 ; 08
-	const GLINT_GROVE		 ; 09
-	const ROUTE_3			 ; 0a
-	const STARGLOW_CAVERN	 ; 0b
-	const STARGLOW_VALLEY	 ; 0c
-	const ROUTE_4			 ; 0d
-	const HUNTERS_THICKET	 ; 0e
-	const ROUTE_5			 ; 0f
-	const ROUTE_6			 ; 10
-	const ROUTE_7			 ; 11
-	const LAKE_ONWA			 ; 12
-	const SUNBEAM_ISLAND	 ; 14
-	const SUNBEAM_JUNGLE	 ; 15
-	const ROUTE_8			 ; 16
-	const EVENTIDE_FOREST	 ; 17
-	const EVENTIDE_VILLAGE	 ; 18
-	const ROUTE_9			 ; 19
-	const ROUTE_11			 ; 23
-	const DODRIO_RANCH		 ; 1a
-	const FLICKER_STATION	 ; 1b
-	const FLICKER_PASS		 ; 1c
-	const ROUTE_10			 ; 1d
-	const TWINKLE_TOWN		 ; 1e
-	const FROZEN_RUINS		 ; 1f
-	const LUSTER_CITY		 ; 20
-	const LUSTER_SEWERS		 ; 21
-	const ROUTE_12			 ; 22
+	const SUNSET_BAY
+	const SUNSET_CAPE
+	const ROUTE_1
+	const DAYBREAK_VILLAGE
+	const ROUTE_2
+	const MT_ONWA
+	const GLINT_CITY
+	const GLINT_GROVE
+	const ROUTE_3
+	const STARGLOW_CAVERN
+	const STARGLOW_VALLEY
+	const ROUTE_4
+	const HUNTERS_THICKET
+	const ROUTE_5
+	const ROUTE_6
+	const ROUTE_7
+	const LAKE_ONWA
+	const SUNBEAM_ISLAND
+	const SUNBEAM_JUNGLE
+	const ROUTE_8
+	const EVENTIDE_FOREST
+	const EVENTIDE_VILLAGE
+	const ROUTE_9
+	const ROUTE_11
+	const DODRIO_RANCH
+	const FLICKER_STATION
+	const FLICKER_PASS
+	const ROUTE_10
+	const TWINKLE_TOWN
+	const ICICLE_CAVERN
+	const LUSTER_CITY
+	const LUSTER_SEWERS
+	const ROUTE_12
 	const SKATEPARK
-	const AIRPORT			 ; 24
-	const ROUTE_13	 ; 25
-	const ROUTE_14			 ; 26
-	const ROUTE_15			 ; 27
-	const ROUTE_16			 ; 2f
-	const OLD_MANOR			 ; 28
-	const LUSTER_STATION	 		; 29
-	const RESIDENTIAL_DISTRICT		; 2a
-	const SHOPPING_DISTRICT			; 2b
-	const BUSINESS_DISTRICT			; 2c
-	const FAKE_SUNSET_BAY				; 
-	const FAKE_SUNSET_CAPE				; 
-	const FAKE_ROUTE_1				; 2d
-	const STARGLOW_DEPTHS			; 2e
+	const AIRPORT
+	const ROUTE_13
+	const ROUTE_14
+	const ROUTE_15
+	const ROUTE_16
+	const OLD_MANOR
+	const FROZEN_RUINS
+	const LUSTER_STATION
+	const RESIDENTIAL_DISTRICT
+	const SHOPPING_DISTRICT
+	const BUSINESS_DISTRICT
+	const FAKE_SUNSET_BAY
+	const FAKE_SUNSET_CAPE
+	const FAKE_ROUTE_1
+	const STARGLOW_DEPTHS
 	const UNKNOWN_PASSAGE
 	const CONNECTING_CAVERN
 
 DEF SOUTH_ONWA_LANDMARK EQU const_value
 
-	const SHIMMER_CITY		 ; 30
-	const ROUTE_19			 ; 35
-	const SEASIDE_CAVE		 ; 3a
-	const ROUTE_20			 ; 36
-	const RADIANT_TOWNSHIP	 ; 37
-	const ROUTE_21			 ; 38
-	const DUSK_TURNPIKE		 ; 39
-	const ROUTE_22			 ; 3b
+	const SHIMMER_CITY
+	const ROUTE_19
+	const SEASIDE_CAVE
+	const ROUTE_20
+	const RADIANT_TOWNSHIP
+	const ROUTE_21
+	const DUSK_TURNPIKE
+	const ROUTE_22
 	const CROSSROADS
 	const ROUTE_23
 	const KOMORE_VILLAGE
@@ -88,10 +89,10 @@ DEF SOUTH_ONWA_LANDMARK EQU const_value
 	const LUMINA_TOWN
 	const AUREOLE_TOWN
 	
-	const BRILLO_TOWN		 ; 31
-	const ROUTE_17			 ; 32
-	const ROUTE_18			 ; 33
-	const DESERT_WASTELAND	 ; 34
+	const BRILLO_TOWN
+	const ROUTE_17
+	const ROUTE_18
+	const DESERT_WASTELAND
 
 DEF SHAMOUTI_LANDMARK EQU const_value
 

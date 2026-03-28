@@ -3,13 +3,13 @@ IceCaveB3F_MapScriptHeader:
 
 	db 0 ; callbacks
 
-	db 3 ; warp events
-	warp_def 23, 25, 3, ICE_CAVE_B2F
-	warp_def  9, 12, 1, ICE_TEMPLE_B1F_1
-	warp_def  9, 13, 2, ICE_TEMPLE_B1F_1
+	db 2 ; warp events
+	warp_def 13, 25, 3, ICE_CAVE_B2F
+	warp_def  3, 25, 1, ICE_CAVE_B4F
 
 	db 0 ; coord events
 
 	db 0 ; bg events
 
-	db 0 ; object events
+	db 1 ; object events
+	itemball_event 10, 13, ULTRA_BALL, 1, EVENT_ICE_CAVE_ULTRA_BALL

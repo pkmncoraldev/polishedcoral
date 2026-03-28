@@ -245,6 +245,7 @@ MomPhoneScript: ; 0xbceaa
 
 SprucePhoneScript: ; 0xbd081
 	checkcode VAR_SPECIALPHONECALL
+	if_equal SPECIALCALL_SPRUCEICETEMPLECALL, .icetemple
 	if_equal SPECIALCALL_GAVEANCIENTBALL, .ancientball
 	if_equal SPECIALCALL_SPRUCECALLABOUTBIRD, .bird
 	if_equal SPECIALCALL_COMETOISLAND, .cometoisland
@@ -304,6 +305,10 @@ SprucePhoneScript: ; 0xbd081
 	setevent EVENT_SPRUCE_CAN_RECALL_ABOUT_ANCIENTBALL
 	specialphonecall SPECIALCALL_NONE
 	farwritetext SprucePhoneAncientBallText
+	end
+.icetemple
+	specialphonecall SPECIALCALL_NONE
+	farwritetext SprucePhoneIceTempleText
 	end
 .bird
 	setevent EVENT_FIRST_BIRD_ACTIVE

@@ -1595,6 +1595,33 @@
 	db 25, ZUBAT		;4%
 	db 25, ZUBAT		;1%
 	
+	map_id ICE_CAVE_B4F
+	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	; morn
+	db 24, GOLBAT		;30%
+	db 25, SNEASEL		;30%
+	db 25, SWINUB		;20%
+	db 25, MEDITITE		;10%
+	db 25, ZUBAT		;5%
+	db 25, ZUBAT		;4%
+	db 25, ZUBAT		;1%
+	; day
+	db 24, GOLBAT		;30%
+	db 25, SNEASEL		;30%
+	db 25, SWINUB		;20%
+	db 25, MEDITITE		;10%
+	db 25, ZUBAT		;5%
+	db 25, ZUBAT		;4%
+	db 25, ZUBAT		;1%
+	; nite
+	db 24, GOLBAT		;30%
+	db 25, SNEASEL		;30%
+	db 25, SWINUB		;20%
+	db 25, MEDITITE		;10%
+	db 25, ZUBAT		;5%
+	db 25, ZUBAT		;4%
+	db 25, ZUBAT		;1%
+	
 	map_id ICE_CAVE_ICE_ROCK_ROOM
 	db 15 percent, 15 percent, 15 percent ; encounter rates: morn/day/nite
 	; morn

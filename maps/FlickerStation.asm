@@ -81,6 +81,16 @@ FlickerStationFlypointCallback:
 	return
 	
 FlickerStationCallback:
+	checkevent EVENT_BEAT_WENDY
+	iffalse .skip
+	checkevent EVENT_BEAT_CHARLIE
+	iffalse .skip
+	checkevent EVENT_GOT_HM08_ROCK_CLIMB
+	iffalse .skip
+	checkevent EVENT_FLICKER_SNARE_SCENE_DONE
+	iftrue .skip
+	dotrigger $1
+.skip
 	checkevent EVENT_BEAT_TRAINGRAVEYARD_TRAINER_2
 	iffalse .end
 	setevent EVENT_FLICKER_STATION_GIRL_STEP_ASIDE
@@ -198,6 +208,7 @@ FlickerStationSnare:
 	closetext
 	disappear FLICKER_STATION_DUMMY
 	variablesprite SPRITE_DISGUISEMAN, SPRITE_BALL_CUT_FRUIT
+	setevent EVENT_FLICKER_SNARE_SCENE_DONE
 	end	
 	
 FlickerStationFallOverAsm:

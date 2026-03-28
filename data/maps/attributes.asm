@@ -564,6 +564,7 @@ ENDM
 	map_attributes IceCaveB1F, ICE_CAVE_B1F, $54, 0
 	map_attributes IceCaveB2F, ICE_CAVE_B2F, $54, 0
 	map_attributes IceCaveB3F, ICE_CAVE_B3F, $54, 0
+	map_attributes IceCaveB4F, ICE_CAVE_B4F, $54, 0
 	map_attributes IceTempleB1F1, ICE_TEMPLE_B1F_1, 0, 0
 	map_attributes IceTempleB1F2, ICE_TEMPLE_B1F_2, 0, 0
 	map_attributes IceTempleB1F3, ICE_TEMPLE_B1F_3, 0, 0

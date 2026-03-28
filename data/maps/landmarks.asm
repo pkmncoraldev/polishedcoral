@@ -34,7 +34,7 @@ Landmarks: ; 0x1ca8c3
 	landmark 132,  68, FlickerPassName
 	landmark 136,  48, Route10Name
 	landmark 132,  36, TwinkleTownName
-	landmark 140,  36, FrozenRuinsName
+	landmark 140,  36, IcicleCavernName
 	landmark  24,  40, LusterCityName
 	landmark  20,  36, LusterSewersName
 	landmark  20,  64, Route12Name
@@ -46,6 +46,7 @@ Landmarks: ; 0x1ca8c3
 	landmark  84, 112, Route16Name
 	
 	landmark -16, -16, OldManorName
+	landmark -16, -16, FrozenRuinsName
 	landmark  24,  40, LusterStationName
 	landmark  24,  40, ResidentialName
 	landmark  24,  40, ShoppingName
@@ -123,6 +124,7 @@ FlickerStationName:	   db "FLICKER¯STATION@"
 FlickerPassName:	   db "FLICKER¯PASS@"
 Route10Name:		   db "ROUTE 10@"
 TwinkleTownName: 	   db "TWINKLE¯TOWN@"
+IcicleCavernName:	   db "ICICLE¯CAVERN@"
 FrozenRuinsName: 	   db "FROZEN¯RUINS@"
 LusterCityName:		   db "LUSTER¯CITY@"
 LusterSewersName:	   db "LUSTER¯SEWERS@"

@@ -66,12 +66,12 @@
 	tilecoll WATER, WATER, WATER, WATER ; 41
 	tilecoll FLOOR, FLOOR, STAIRS, WALL ; 42
 	tilecoll FLOOR, LADDER, WALL, WALL ; 43
-	tilecoll WALL, WALL, WATER, WATER ; 44
-	tilecoll WATER, WATER, WALL, WALL ; 45
-	tilecoll WATER, WALL, WATER, WALL ; 46
+	tilecoll ICE, ICE, ICE, WALL ; 44
+	tilecoll ICE, WALL, ICE, ICE ; 45
+	tilecoll ICE, ICE, WALL, WALL ; 46
 	tilecoll WALL, WATER, WALL, WATER ; 47
-	tilecoll WALL, WATER, WATER, WATER ; 48
-	tilecoll WATER, WATER, WALL, WATER ; 49
+	tilecoll ICE, ICE, WALL, ICE ; 48
+	tilecoll ICE, WALL, ICE, ICE ; 49
 	tilecoll WATER, WALL, WATER, WATER ; 4a
 	tilecoll WALL, WATER, WALL, WALL ; 4b
 	tilecoll FLOOR, FLOOR, WALL, WALL ; 4c

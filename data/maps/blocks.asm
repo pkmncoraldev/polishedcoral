@@ -1060,3 +1060,6 @@ ObscuraFortuneHouse_BlockData:
 DodrioRanchRaceTrack2_BlockData:
 	INCBIN "maps/DodrioRanchRaceTrack2.ablk.lz"
 	
+IceCaveB4F_BlockData:
+	INCBIN "maps/IceCaveB4F.ablk.lz"
+	

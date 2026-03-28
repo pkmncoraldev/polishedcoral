@@ -284,6 +284,41 @@ SprucePhoneAncientBallText:
 	cont "soon as possible!"
 	prompt
 	
+SprucePhoneIceTempleText:
+	text "Hello, <PLAYER>."
+	
+	para "How's your journey?"
+	
+	para "You must be near"
+	line "ROUTE 10 by now,"
+	cont "am I correct?"
+	
+	para "A colleague of"
+	line "mine told me he"
+	cont "has a researcher"
+	cont "stationed there."
+	
+	para "He's apparently"
+	line "looking for traces"
+	cont "of ancient ruins."
+	
+	para "I thought you'd be"
+	line "interested in"
+	cont "meeting him."
+	
+	para "He's set up camp"
+	line "on EAST ROUTE 10."
+	
+	para "Do at least stop"
+	line "by and speak to"
+	cont "him, won't you?"
+	
+	para "Anyway, I must"
+	line "be going now."
+	
+	para "Take care."
+	prompt
+	
 SpruceVoicemailText:
 	text "You have reached"
 	line "the laboratory of"

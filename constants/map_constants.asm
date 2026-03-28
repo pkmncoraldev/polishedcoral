@@ -48,17 +48,18 @@ DEF MAP_NONE   EQU 0
 	map_const LUSTER_SEWERS_MUK_ROOM,				  	   6,  6 ; 26
 	map_const ICE_CAVE_B1F,								  15,  7 ; 27
 	map_const ICE_CAVE_B2F,								  15, 16 ; 28
-	map_const ICE_CAVE_B3F,								  16, 16 ; 29
-	map_const ICE_TEMPLE_B1F_1,							  14, 11 ; 30
-	map_const ICE_TEMPLE_B1F_2,							  14, 10 ; 31
-	map_const ICE_TEMPLE_B1F_3,							   4,  4 ; 32
-	map_const ICE_TEMPLE_B2F_1,							   8,  6 ; 33
-	map_const ICE_TEMPLE_B2F_2,							  13,  7 ; 34
-	map_const CONNECTING_CAVERN_ENTRANCE,				  10,  6 ; 35
-	map_const ROUTE_6_UNDERWATER_CAVE,					   6,  8 ; 36
-	map_const GREEN_GROTTO_1F,							  23, 16 ; 37
-	map_const GREEN_GROTTO_B1F,							  20, 13 ; 38
-	map_const GREEN_GROTTO_2F,							  20, 13 ; 39
+	map_const ICE_CAVE_B3F,								  15, 14 ; 29
+	map_const ICE_CAVE_B4F,								  16, 16 ; 30
+	map_const ICE_TEMPLE_B1F_1,							  14, 11 ; 31
+	map_const ICE_TEMPLE_B1F_2,							  14, 10 ; 32
+	map_const ICE_TEMPLE_B1F_3,							   4,  4 ; 33
+	map_const ICE_TEMPLE_B2F_1,							   8,  6 ; 34
+	map_const ICE_TEMPLE_B2F_2,							  13,  7 ; 35
+	map_const CONNECTING_CAVERN_ENTRANCE,				  10,  6 ; 36
+	map_const ROUTE_6_UNDERWATER_CAVE,					   6,  8 ; 37
+	map_const GREEN_GROTTO_1F,							  23, 16 ; 38
+	map_const GREEN_GROTTO_B1F,							  20, 13 ; 39
+	map_const GREEN_GROTTO_2F,							  20, 13 ; 40
 
 	newgroup                                                     ;  2
 

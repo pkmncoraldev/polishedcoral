@@ -9,10 +9,11 @@ SpecialPhoneCallList:
 ; entries correspond to SPECIALCALL_* constants
 	specialcall SpecialCallOnlyWhenOutside, PHONE_SPRUCE,  SprucePhoneScript    ; SPECIALCALL_POKERUS
 	specialcall SpecialCallOnlyWhenOutside, PHONE_SPRUCE,  SprucePhoneScript    ; SPECIALCALL_COMETOISLAND
-	specialcall SpecialCallWhereverYouAre, PHONE_MOM,	   MomPhoneScript       ; SPECIALCALL_MOMCOMEGETTRAINERCARD
-	specialcall SpecialCallWhereverYouAre, PHONE_AUTO,	   AutoPhoneScript      ; SPECIALCALL_COMEGETUPGRADEDBIKE
-	specialcall SpecialCallWhereverYouAre, PHONE_MOM,	   MomPhoneScript       ; SPECIALCALL_MOMCALLABOUTTEAMSNARE
-	specialcall SpecialCallWhereverYouAre, PHONE_SPRUCE,   SprucePhoneScript    ; SPECIALCALL_SPRUCECALLABOUTBIRD
+	specialcall SpecialCallWhereverYouAre,	PHONE_MOM,	   MomPhoneScript       ; SPECIALCALL_MOMCOMEGETTRAINERCARD
+	specialcall SpecialCallWhereverYouAre,	PHONE_AUTO,	   AutoPhoneScript      ; SPECIALCALL_COMEGETUPGRADEDBIKE
+	specialcall SpecialCallWhereverYouAre,	PHONE_MOM,	   MomPhoneScript       ; SPECIALCALL_MOMCALLABOUTTEAMSNARE
+	specialcall SpecialCallWhereverYouAre, 	PHONE_SPRUCE,  SprucePhoneScript    ; SPECIALCALL_SPRUCECALLABOUTBIRD
 	specialcall SpecialCallOnlyWhenOutside, PHONE_SPRUCE,  SprucePhoneScript    ; SPECIALCALL_GAVEANCIENTBALL
-	specialcall SpecialCallWhereverYouAre, PHONE_UNKNOWN,   SpamCallPhoneScript    ; SPECIALCALL_SPAMCALL
+	specialcall SpecialCallWhereverYouAre, 	PHONE_UNKNOWN, SpamCallPhoneScript  ; SPECIALCALL_SPAMCALL
 	specialcall SpecialCallOnlyWhenOutside, PHONE_MOM,	   MomPhoneScript       ; SPECIALCALL_MOMCALLABOUTBANKCARD
+	specialcall SpecialCallOnlyWhenOutside, PHONE_SPRUCE,  SprucePhoneScript    ; SPECIALCALL_SPRUCEICETEMPLECALL

@@ -22,12 +22,20 @@ Route10Tent_MapScriptHeader:
 	const ROUTE_10_TENT_WIGGLYTUFF
 	
 Route10TentNPC:
-	setevent EVENT_TALKED_TO_TENT_GUY_ONCE
 	faceplayer
 	opentext
 	checkevent EVENT_ICE_TEMPLE_GOT_TREASURE
 	iftrue .got_treasure
+	checkevent EVENT_TALKED_TO_TENT_GUY_ONCE
+	iftrue .talked_once_no_treasure
+	setevent EVENT_TALKED_TO_TENT_GUY_ONCE
 	writetext Route10TentNPCText1
+	waitbutton
+	verbosegivetmhm HM_ROCK_CLIMB
+	setevent EVENT_GOT_HM08_ROCK_CLIMB
+	setflag ENGINE_GOT_ROCK_CLIMB
+.talked_once_no_treasure
+	writetext Route10TentNPCText11
 	jump .end
 .got_treasure
 	checkevent EVENT_TALKED_TO_TENT_GUY_WITH_TREASURE
@@ -97,9 +105,27 @@ Route10TentNPCText1:
 	line "luck finding it,"
 	cont "however."
 	
+	para "If you want to"
+	line "take a look around"
+	cont "yourself,"
+	
+	para "try using this."
+	done
+	
+Route10TentNPCText11:
+	text "With that HM, your"
+	line "#MON can climb"
+	cont "rocky walls."
+	
+	para "You need the BADGE"
+	line "from TWINKLE TOWN"
+	cont "to use it outside"
+	cont "of battle."
+	
 	para "Make sure you let"
 	line "me know if you get"
-	cont "any leads!"
+	cont "any leads on the"
+	cont "treasure!"
 	done
 	
 Route10TentNPCText2:

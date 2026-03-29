@@ -3817,7 +3817,7 @@ ListMoves: ; 50d6f
 	cp SYNTHESIS_MOONLIGHT_MORNING_SUN
 	jr nz, .not_synthesis
 	farcall GetSynthesisName
-	jr .cont
+	jp .cont
 .not_synthesis
 	cp MEAN_LOOK_BLOCK_SPIDER_WEB
 	jr nz, .not_mean_look
@@ -3839,6 +3839,11 @@ ListMoves: ; 50d6f
 	farcall GetRoarName
 	jr .cont
 .not_roar
+	cp HEAL_BELL_AROMA
+	jr nz, .not_heal_bell
+	farcall GetHealBellName
+	jr .cont
+.not_heal_bell
 	cp SAND_ATTACK_SMOKESCREEN_FLASH
 	jr nz, .not_sand_attack
 	farcall GetSandAttackName

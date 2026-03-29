@@ -519,7 +519,6 @@ SoundMoves::
 	db SCREECH
 	db SUPERSONIC
 	db SNORE
-	db HEAL_BELL
 	db -1
 
 SubstituteBypassMoves::

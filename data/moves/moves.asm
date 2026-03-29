@@ -224,7 +224,7 @@ Moves:: ; 41afb
 	move MEAN_LOOK_BLOCK_SPIDER_WEB,    EFFECT_MEAN_LOOK,      0, NORMAL,    100,  5,   0, STATUS
 	move ATTRACT,                  EFFECT_ATTRACT,             0, NORMAL,    100, 15,   0, STATUS
 	move SNORE,                    EFFECT_SNORE,              50, NORMAL,    100, 15,   0, SPECIAL
-	move HEAL_BELL,                EFFECT_HEAL_BELL,           0, NORMAL,    100,  5,   0, STATUS
+	move HEAL_BELL_AROMA,          EFFECT_HEAL_BELL,           0, NORMAL,    100,  5,   0, STATUS
 	move RETURN,                   EFFECT_RETURN,              1, NORMAL,    100, 20,   0, PHYSICAL
 	move QUIVER_DANCE,             EFFECT_QUIVER_DANCE,        0, BUG,       100, 20, 100, STATUS
 	move BUG_BUZZ,                 EFFECT_SP_DEF_DOWN_HIT,    90, BUG,       100, 10,   0, SPECIAL

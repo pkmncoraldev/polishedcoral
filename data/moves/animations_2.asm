@@ -1027,7 +1027,32 @@ BattleAnim_Moonblast:
 	anim_wait 32
 	anim_ret
 
-BattleAnim_Aromatherapy: ;---------- TO BE ADDED
+BattleAnim_HealBell:
+	anim_jumpif $1, BattleAnim_Aromatherapy
+	anim_2gfx ANIM_GFX_MISC, ANIM_GFX_NOISE
+	anim_obj ANIM_OBJ_HEAL_BELL, 72, 56, $0
+	anim_wait 32
+.loop
+	anim_sound 0, 0, SFX_HEAL_BELL
+	anim_obj ANIM_OBJ_HEAL_BELL_NOTE, 72, 52, $0
+	anim_wait 8
+	anim_sound 0, 0, SFX_HEAL_BELL
+	anim_obj ANIM_OBJ_HEAL_BELL_NOTE, 72, 52, $1
+	anim_wait 8
+	anim_sound 0, 0, SFX_HEAL_BELL
+	anim_obj ANIM_OBJ_HEAL_BELL_NOTE, 72, 52, $2
+	anim_wait 8
+	anim_sound 0, 0, SFX_HEAL_BELL
+	anim_obj ANIM_OBJ_HEAL_BELL_NOTE, 72, 52, $0
+	anim_wait 8
+	anim_sound 0, 0, SFX_HEAL_BELL
+	anim_obj ANIM_OBJ_HEAL_BELL_NOTE, 72, 52, $2
+	anim_wait 8
+	anim_loop 4, .loop
+	anim_wait 64
+	anim_ret
+
+BattleAnim_Aromatherapy:
 	anim_3gfx ANIM_GFX_FLOWER, ANIM_GFX_SPEED, ANIM_GFX_SHINE
 	anim_sound 0, 1, SFX_GAME_FREAK_LOGO_GS
 	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_REFRESH
@@ -1057,26 +1082,37 @@ BattleAnim_Aromatherapy: ;---------- TO BE ADDED
 	anim_obj ANIM_OBJ_GLIMMER, 56, 104, $0
 	anim_wait 21
 	anim_ret
-
-BattleAnim_GrassWhistle: ;---------- TO BE ADDED
-	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_GREEN
-	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_GRASSWHISTLE
-	anim_2gfx ANIM_GFX_NOISE, ANIM_GFX_PLANT
-	anim_sound 16, 2, SFX_GRASS_WHISTLE
-.loop
-	anim_obj ANIM_OBJ_GRASS_WHISTLE_LEAF, 64, 92, $3e
-	anim_obj ANIM_OBJ_SING, 64, 92, $0
+	
+BattleAnim_CometPunch:
+	anim_1gfx ANIM_GFX_HIT
+	anim_sound 0, 1, SFX_COMET_PUNCH
+	anim_jumpif2 $1, .alternate
+	anim_obj ANIM_OBJ_PUNCH, 144, 48, $0
+	anim_wait 6
+	anim_obj ANIM_OBJ_HIT_YFIX, 144, 48, $0
 	anim_wait 8
-	anim_obj ANIM_OBJ_SING, 64, 92, $1
-	anim_wait 8
-	anim_obj ANIM_OBJ_GRASS_WHISTLE_LEAF, 64, 92, $1
-	anim_obj ANIM_OBJ_SING, 64, 92, $2
-	anim_wait 8
-	anim_obj ANIM_OBJ_SING, 64, 92, $1
-	anim_wait 8
-	anim_loop 4, .loop
-	anim_wait 64
 	anim_ret
+
+.alternate
+	anim_obj ANIM_OBJ_PUNCH, 120, 64, $0
+	anim_wait 6
+	anim_obj ANIM_OBJ_HIT_YFIX, 120, 64, $0
+	anim_wait 8
+	anim_ret
+
+BattleAnim_Conversion2:
+	anim_1gfx ANIM_GFX_EXPLOSION
+	anim_sound 63, 3, SFX_SHARPEN
+	anim_obj ANIM_OBJ_CONVERSION2, 132, 44, $0
+	anim_obj ANIM_OBJ_CONVERSION2, 132, 44, $8
+	anim_obj ANIM_OBJ_CONVERSION2, 132, 44, $10
+	anim_obj ANIM_OBJ_CONVERSION2, 132, 44, $18
+	anim_obj ANIM_OBJ_CONVERSION2, 132, 44, $20
+	anim_obj ANIM_OBJ_CONVERSION2, 132, 44, $28
+	anim_obj ANIM_OBJ_CONVERSION2, 132, 44, $30
+	anim_obj ANIM_OBJ_CONVERSION2, 132, 44, $38
+	anim_wait 128
+	anim_wait 48
 	anim_ret
 
 BattleAnim_BanefulBunker: ;---------- TO BE ADDED

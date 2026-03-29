@@ -214,7 +214,7 @@
 	const MEAN_LOOK_BLOCK_SPIDER_WEB    		; $d4
 	const ATTRACT      ; $d5
 	const SNORE		   ; $d6
-	const HEAL_BELL    ; $d7 - COMBINE
+	const HEAL_BELL_AROMA    ; $d7
 	const RETURN       ; $d8
 	const QUIVER_DANCE ; $d9
 	const BUG_BUZZ     ; $da

@@ -213,7 +213,7 @@ MoveNames::
 	db "ERROR!@" ; MEAN_LOOK
 	db "ATTRACT@"
 	db "SNORE@"
-	db "HEAL BELL@"
+	db "ERROR!@" ; HEAL_BELL
 	db "RETURN@"
 	db "QUIVER DANCE@"
 	db "BUG BUZZ@"

@@ -1055,6 +1055,11 @@ BellChimedText: ; 0x811a0
 	prompt
 ; 0x811b1
 
+AromatherapyText:
+	text "A soothing scent"
+	line "fills the area!"
+	prompt
+
 FellAsleepText: ; 0x811b1
 	text "<TARGET>"
 	line "fell asleep!"

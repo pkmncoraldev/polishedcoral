@@ -699,6 +699,48 @@ GetMoveNameRoar:: ; 34f8
 	ld a, 1
 	jp GetMoveNameDone2
 	
+GetHealBellName::
+	ldh a, [hROMBank]
+	push af
+	push hl
+	push bc
+	push de
+
+	call CheckAromatherapyUsers
+	jr nc, .not_aromatherapy
+	ld hl, HealBellNames
+	ld a, 0
+	call GetNthString
+	ld de, wStringBuffer1
+	ld bc, ITEM_NAME_LENGTH
+	rst CopyBytes
+	jp GetMoveNameDone
+.not_aromatherapy
+	ld hl, HealBellNames
+	ld a, 1
+	call GetNthString
+	ld de, wStringBuffer1
+	ld bc, ITEM_NAME_LENGTH
+	rst CopyBytes
+	jp GetMoveNameDone
+	
+GetMoveNameHealBell:: ; 34f8
+	ldh a, [hROMBank]
+	push af
+	push hl
+	push bc
+
+	call CheckAromatherapyUsers
+	jr nc, .not_aromatherapy
+	ld hl, HealBellNames
+	ld a, 0
+	jp GetMoveNameDone2
+	
+.not_aromatherapy
+	ld hl, HealBellNames
+	ld a, 1
+	jp GetMoveNameDone2
+	
 GetSandAttackName::
 	ldh a, [hROMBank]
 	push af
@@ -1081,8 +1123,18 @@ GetSingName::
 	rst CopyBytes
 	jp GetMoveNameDone
 .not_hypnosis
+	call CheckGrassWhistleUsers
+	jr nc, .not_grasswhistle
 	ld hl, SingNames
 	ld a, 1
+	call GetNthString
+	ld de, wStringBuffer1
+	ld bc, ITEM_NAME_LENGTH
+	rst CopyBytes
+	jp GetMoveNameDone
+.not_grasswhistle
+	ld hl, SingNames
+	ld a, 2
 	call GetNthString
 	ld de, wStringBuffer1
 	ld bc, ITEM_NAME_LENGTH
@@ -1103,8 +1155,15 @@ GetMoveNameSing:: ; 34f8
 	jp GetMoveNameDone2
 	
 .not_hypnosis
+	call CheckGrassWhistleUsers
+	jr nc, .not_grasswhistle
 	ld hl, SingNames
 	ld a, 1
+	jp GetMoveNameDone2
+	
+.not_grasswhistle
+	ld hl, SingNames
+	ld a, 2
 	jp GetMoveNameDone2
 
 GetMoveNameDone:
@@ -1344,6 +1403,15 @@ CheckWhirlwindUsers2::
 	call IsInArray
 	ret
 	
+CheckAromatherapyUsers::
+	ld a, [wCurPartySpecies]
+	call CheckDitto
+CheckAromatherapyUsers2::
+	ld hl, AromatherapyUsers
+	ld de, 1
+	call IsInArray
+	ret
+	
 CheckFlashUsers::
 	ld a, [wCurPartySpecies]
 	call CheckDitto
@@ -1460,6 +1528,15 @@ CheckHypnosisUsers2::
 	call IsInArray
 	ret
 	
+CheckGrassWhistleUsers::
+	ld a, [wCurPartySpecies]
+	call CheckDitto
+CheckGrassWhistleUsers2::
+	ld hl, GrassWhistleUsers
+	ld de, 1
+	call IsInArray
+	ret
+	
 CheckMultiMoveSlot::
 	ld a, [wCurMove]
 CheckMultiMoveSlot2::
@@ -1495,6 +1572,8 @@ GetMultiMoveSlotName2::
 	jr z, .scary_face
 	cp ROAR_WHIRLWIND
 	jr z, .roar
+	cp HEAL_BELL_AROMA
+	jr z, .heal_bell
 	cp SAND_ATTACK_SMOKESCREEN_FLASH
 	jr z, .sand_attack
 	cp SOFTBOILED_MILK_DRINK_RECOVER
@@ -1545,6 +1624,9 @@ GetMultiMoveSlotName2::
 	jr .end
 .roar
 	call GetMoveNameRoar
+	jr .end
+.heal_bell
+	call GetMoveNameHealBell
 	jr .end
 .sand_attack
 	call GetMoveNameSandAttack
@@ -2019,6 +2101,31 @@ CheckRoarThing::
 .not_whirlwind
 	ret
 	
+CheckHealBellThing::
+	ld a, [wMirrorMoveUsed]
+	and a
+	jr z, .skip
+	ldh a, [hBattleTurn]
+	and a
+	ld a, [wEnemyMonSpecies]
+	jr z, .got_user_species
+	ld a, [wBattleMonSpecies]
+	jr .got_user_species
+	
+.skip
+	ldh a, [hBattleTurn]
+	and a
+	ld a, [wBattleMonSpecies]
+	jr z, .got_user_species
+	ld a, [wEnemyMonSpecies]
+.got_user_species
+	farcall CheckAromatherapyUsers2
+	jr nc, .not_aromatherapy
+	ld a, $1
+	ret
+.not_aromatherapy
+	ret
+	
 CheckSandAttackThing::
 	ld a, [wMirrorMoveUsed]
 	and a
@@ -2326,7 +2433,45 @@ CheckSingThing::
 	ld a, $1
 	ret
 .not_hypnosis
+	ld a, [wMirrorMoveUsed]
+	and a
+	jr z, .skip2
+	ldh a, [hBattleTurn]
+	and a
+	ld a, [wEnemyMonSpecies]
+	jr z, .got_user_species2
+	ld a, [wBattleMonSpecies]
+	jr .got_user_species2
+	
+.skip2
+	ldh a, [hBattleTurn]
+	and a
+	ld a, [wBattleMonSpecies]
+	jr z, .got_user_species2
+	ld a, [wEnemyMonSpecies]
+.got_user_species2
+	farcall CheckGrassWhistleUsers2
+	jr nc, .not_grasswhistle
+	ld a, $2
 	ret
+.not_grasswhistle
+	ret
+	
+HandleHealBellAnimation::
+	farcall CheckHealBellThing
+	ld [wKickCounter], a
+	cp 1
+	jr z, .aroma
+	farcall AnimateCurrentMove
+
+	ld hl, BellChimedText
+	farjp StdBattleTextBox
+	
+.aroma
+	farcall AnimateCurrentMove
+
+	ld hl, AromatherapyText
+	farjp StdBattleTextBox
 
 PoundUsers:
 	db CLEFAIRY
@@ -2778,9 +2923,15 @@ GrowthUsers:
 	db CHERRIM
 	db -1
 	
-HealBellUsers:
-	db MILTANK
-	db CORSOLA
+AromatherapyUsers:
+	db ODDISH
+	db GLOOM
+	db VILEPLUME
+	db BELLOSSOM
+	db CHIKORITA
+	db BAYLEEF
+	db MEGANIUM
+;	db COMFEY
 	db -1
 	
 TransformUsers:
@@ -2839,6 +2990,26 @@ HypnosisUsers:
 	db SPIRITOMB
 	db DROWZEE
 	db HYPNO
+	db -1
+	
+GrassWhistleUsers:
+	db BULBASAUR
+	db IVYSAUR
+	db VENUSAUR
+	db CHIKORITA
+	db BAYLEEF
+	db MEGANIUM
+	db SUNKERN
+	db SUNFLORA
+	db CACNEA
+	db CACTURNE
+	db CHERUBI
+	db CHERRIM
+	db SNOVER
+	db ABOMASNOW
+	db LEAFEON
+	db COTTONEE
+	db WHIMSICOTT
 	db -1
 	
 TackleNames:
@@ -2912,6 +3083,11 @@ RoarNames:
 	db "ROAR@"
 	db -1
 	
+HealBellNames:
+	db "AROMATHERAPY@"
+	db "HEAL BELL@"
+	db -1
+	
 SandAttackNames:
 	db "FLASH@"
 	db "SMOKESCREEN@"
@@ -2950,6 +3126,7 @@ TransformNames:
 	
 SingNames:
 	db "HYPNOSIS@"
+	db "GRASSWHISTLE@"
 	db "SING@"
 	db -1
 	
@@ -2973,6 +3150,7 @@ MultiSlotMoves:
 	db WORK_UP_GROWTH
 	db TRANSFORM_SKETCH_MIMIC_SPLASH_METRO
 	db SING_HYPNOSIS
+	db HEAL_BELL_AROMA
 	db -1
 	
 MultiSlotMoveTypesNoWeatherBall::
@@ -3014,6 +3192,8 @@ MultiSlotMoveTypes::
 	jp z, .agility
 	cp SING_HYPNOSIS
 	jp z, .sing
+	cp HEAL_BELL_AROMA
+	jp z, .healbell
 	pop af
 	jp MultiSlotMoveTypesFinish
 .defense_curl
@@ -3142,6 +3322,21 @@ MultiSlotMoveTypes::
 	ld a, PSYCHIC
 	jp MultiSlotMoveTypesFinish
 .not_hypnosis
+	call CheckGrassWhistleUsers
+	jr nc, .not_grasswhistle
+	ld a, GRASS
+	jp MultiSlotMoveTypesFinish
+.not_grasswhistle
+	ld a, NORMAL
+	jp MultiSlotMoveTypesFinish
+	
+.healbell
+	pop af
+	call CheckAromatherapyUsers
+	jr nc, .not_aromatherapy
+	ld a, GRASS
+	jp MultiSlotMoveTypesFinish
+.not_aromatherapy
 	ld a, NORMAL
 	jp MultiSlotMoveTypesFinish
 	

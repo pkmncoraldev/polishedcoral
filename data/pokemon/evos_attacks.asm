@@ -531,7 +531,7 @@ OddishEvosAttacks:
 	db 27, SYNTHESIS_MOONLIGHT_MORNING_SUN
 	db 31, GIGA_DRAIN
 	db 35, TOXIC
-	db 39, HEAL_BELL
+	db 39, HEAL_BELL_AROMA
 	db 43, MOONBLAST
 	db 47, PETAL_DANCE
 	db 0 ; no more level-up moves
@@ -551,7 +551,7 @@ GloomEvosAttacks:
 	db 29, SYNTHESIS_MOONLIGHT_MORNING_SUN
 	db 34, GIGA_DRAIN
 	db 39, TOXIC
-	db 44, HEAL_BELL
+	db 44, HEAL_BELL_AROMA
 	db 49, MOONBLAST
 	db 54, PETAL_DANCE
 	db 0 ; no more level-up moves
@@ -565,7 +565,7 @@ VileplumeEvosAttacks:
 	db 1, SYNTHESIS_MOONLIGHT_MORNING_SUN
 	db 1, GIGA_DRAIN
 	db 1, TOXIC
-	db 1, HEAL_BELL
+	db 1, HEAL_BELL_AROMA
 	db 1, MOONBLAST
 	db 1, MEGA_DRAIN
 	db 1, POISONPOWDER
@@ -1329,7 +1329,7 @@ ChanseyEvosAttacks:
 	db  1, TACKLE_SCRATCH_POUND
 	db  1, GROWL
 	db  5, LEER_TAIL_WHIP
-	db  9, HEAL_BELL
+	db  9, HEAL_BELL_AROMA
 	db 13, SOFTBOILED_MILK_DRINK_RECOVER
 	db 17, MULTI_MOVE_FURY_COMET_BARRAGE_SLAP_CANNON
 	db 23, MINIMIZE
@@ -1797,7 +1797,7 @@ ChikoritaEvosAttacks:
 	db 26, STUN_SPORE
 	db 30, BODY_SLAM
 	db 36, SAFEGUARD
-	db 39, HEAL_BELL
+	db 39, HEAL_BELL_AROMA
 	db 42, SOLAR_BEAM
 	db 0 ; no more level-up moves
 
@@ -1816,7 +1816,7 @@ BayleefEvosAttacks:
 	db 30, STUN_SPORE
 	db 40, BODY_SLAM
 	db 45, SAFEGUARD
-	db 49, HEAL_BELL
+	db 49, HEAL_BELL_AROMA
 	db 54, SOLAR_BEAM
 	db 0 ; no more level-up moves
 
@@ -1837,7 +1837,7 @@ MeganiumEvosAttacks:
 	db 35, PETAL_DANCE
 	db 42, BODY_SLAM
 	db 49, SAFEGUARD
-	db 54, HEAL_BELL
+	db 54, HEAL_BELL_AROMA
 	db 60, SOLAR_BEAM
 	db  0 ; no more level-up moves
 
@@ -2212,7 +2212,7 @@ BellossomEvosAttacks:
 	db 1, SYNTHESIS_MOONLIGHT_MORNING_SUN
 	db 1, GIGA_DRAIN
 	db 1, TOXIC
-	db 1, HEAL_BELL
+	db 1, HEAL_BELL_AROMA
 	db 1, MOONBLAST
 	db 1, MEGA_DRAIN
 	db 1, SUNNY_DAY
@@ -2964,7 +2964,7 @@ MiltankEvosAttacks:
 	db 5, DEFENSE_CURL_HARDEN_WITHDRAW
 	db 8, STOMP
 	db 11, MUD_SLAP
-	db 15, HEAL_BELL
+	db 15, HEAL_BELL_AROMA
 	db 19, ROLLOUT
 	db 23, HEADBUTT
 	db 28, ZEN_HEADBUTT
@@ -2982,7 +2982,7 @@ BlisseyEvosAttacks:
 	db  1, TACKLE_SCRATCH_POUND
 	db  1, GROWL
 	db  5, LEER_TAIL_WHIP
-	db  6, HEAL_BELL
+	db  6, HEAL_BELL_AROMA
 	db 10, SOFTBOILED_MILK_DRINK_RECOVER
 	db 13, MULTI_MOVE_FURY_COMET_BARRAGE_SLAP_CANNON
 	db 18, MINIMIZE
@@ -3370,7 +3370,7 @@ SwabluEvosAttacks:
 	db 19, DRAGONBREATH
 	db 22, HAZE
 	db 25, TAKE_DOWN
-	db 28, HEAL_BELL
+	db 28, HEAL_BELL_AROMA
 	db 31, MIRROR_MOVE
 	db 34, COTTON_GUARD
 	db 37, DRAGON_PULSE
@@ -3391,7 +3391,7 @@ AltariaEvosAttacks:
 	db 1, DRAGONBREATH
 	db 1, HAZE
 	db 1, TAKE_DOWN
-	db 1, HEAL_BELL
+	db 1, HEAL_BELL_AROMA
 	db 1, MIRROR_MOVE
 	db 1, COTTON_GUARD
 	db 40, DRAGON_PULSE
@@ -4611,7 +4611,7 @@ ComfeyEvosAttacks:
 	db 31, SAFEGUARD
 	db 34, ENERGY_BALL
 	db 40, PETAL_DANCE
-	db 43, HEAL_BELL
+	db 43, HEAL_BELL_AROMA
 	db 49, PLAY_ROUGH
 	db 0 ; no more level-up moves
 	

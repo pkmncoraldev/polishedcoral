@@ -4777,10 +4777,8 @@ BattleCommand_healbell: ; 35cc9
 	add hl, bc
 	dec d
 	jr nz, .loop
-	call AnimateCurrentMove
-
-	ld hl, BellChimedText
-	jp StdBattleTextBox
+	
+	farjp HandleHealBellAnimation
 
 
 FarPlayBattleAnimation: ; 35d00

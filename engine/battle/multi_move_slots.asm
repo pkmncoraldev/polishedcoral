@@ -2931,7 +2931,7 @@ AromatherapyUsers:
 	db CHIKORITA
 	db BAYLEEF
 	db MEGANIUM
-;	db COMFEY
+	db COMFEY
 	db -1
 	
 TransformUsers:

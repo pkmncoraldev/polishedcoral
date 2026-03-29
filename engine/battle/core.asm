@@ -908,7 +908,9 @@ PriortyAbilityText:
 	jr nz, .finish
 	ld hl, TriageText
 .prankster
+	call SwitchTurn
 	call StdBattleTextBox
+	call SwitchTurn
 .finish
 	xor a
 	ld [wCalculatingEnemyStats], a

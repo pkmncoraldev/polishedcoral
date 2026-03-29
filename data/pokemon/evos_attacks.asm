@@ -558,6 +558,7 @@ GloomEvosAttacks:
 
 VileplumeEvosAttacks:
 	db 0 ; no more evolutions
+	db 1, PETAL_BLIZZARD
 	db 1, ABSORB
 	db 1, ACID
 	db 1, SLEEP_POWDER
@@ -2201,7 +2202,7 @@ AmpharosEvosAttacks:
 
 BellossomEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, ENERGY_BALL
+	db 1, PETAL_BLIZZARD
 	db 1, ABSORB
 	db 1, WORK_UP_GROWTH
 	db 1, ACID

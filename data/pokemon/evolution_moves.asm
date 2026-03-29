@@ -116,7 +116,7 @@ EvolutionMoves::
 	db NO_MOVE                              ; MAREEP
 	db NO_MOVE                              ; FLAFFY
 	db THUNDERPUNCH                         ; AMPHAROS
-	db ENERGY_BALL                          ; BELLOSSOM
+	db NO_MOVE      		                ; BELLOSSOM
 	db NO_MOVE                              ; MARILL
 	db NO_MOVE                              ; AZUMARILL
 	db NO_MOVE                              ; SUDOWOODO

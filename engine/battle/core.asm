@@ -858,9 +858,11 @@ GetMovePriority: ; 3c5c5
 	jr nz, .no_priority
 	ld a, BATTLE_VARS_MOVE
 	call GetBattleVar
+	push bc
 	ld de, 1
 	ld hl, TriageMoves
 	call IsInArray
+	pop bc
 	jr nc, .no_priority
 	inc b
 	ld a, PRIORITY_ABILITY_TEXT_TRIAGE

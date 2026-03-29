@@ -66,7 +66,8 @@ LuminaGymDarcy:
 	waitsfx
 	setflag ENGINE_EIGHTHBADGE
 	changetextboxspeaker TEXTBOX_ELDER
-	writetext LuminaGymElderTextAfterBattle
+	writetext LuminaGymElderText2
+	playsound SFX_2ND_PLACE
 	waitbutton
 	closetext
 	applyonemovement 3, slow_step_right
@@ -235,13 +236,23 @@ LuminaGymElderText1:
 	done
 	
 LuminaGymElderText2:
-	text "You've done well."
+	text "That BADGE is my"
+	line "blessing to enter"
+	cont "the DRAGON SHRINE."
 	
-	para "You now have my"
-	line "permission to"
-	cont "enter the shrine."
+	para "It also allows"
+	line "your #MON to"
+	cont "use WATERFALL"
+	cont "outside of battle."
 	
-	para "Go now. <WAIT_M>Quickly."
+	para "I believe that"
+	line "brings your BADGE"
+	cont "total to eight."
+	
+	para "You now officially"
+	line "qualify for the"
+	cont "#MON LEAGUE"
+	cont "TOURNAMENT!"
 	done
 	
 LuminaGymElderText3:
@@ -291,9 +302,10 @@ LuminaGymElderText4:
 LuminaGymElderText5:
 	text "Regardless,"
 	
-	para "in their absence,"
-	line "I have been forced"
-	cont "to continue to act"
+	para "though I am long"
+	line "past my prime, I"
+	cont "have been forced"
+	cont "to continue acting"
 	cont "as the village's"
 	cont "champion."
 	
@@ -335,18 +347,7 @@ LuminaGymElderText9:
 	line "you the titles of"
 	cont "village champion"
 	cont "and GYM LEADER."
-	done
-	
-LuminaGymElderTextAfterBattle:
-	text "That BADGE is my"
-	line "blessing to enter"
-	cont "the DRAGON SHRINE."
-	
-	para "It also allows"
-	line "your #MON to"
-	cont "use WATERFALL"
-	cont "outside of battle."
-	done
+	done	
 	
 LuminaGymDarcySceneText1:
 	text "GRANDPA!"
@@ -415,10 +416,9 @@ Text_ReceivedEighthBadge:
 	done
 	
 LuminaGymDarcyTextAfterBattle:
-	text "Great!"
-	
-	para "Now you can stop"
-	line "that TEAM SNARE"
+	text "More importantly,"
+	line "now you can stop"
+	cont "that TEAM SNARE"
 	cont "troublemaker!"
 	
 	para "Before you go, I"

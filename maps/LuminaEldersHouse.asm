@@ -103,7 +103,7 @@ LuminaEldersHouseScene:
 	waitbutton
 	closetext
 	pause 5
-	applyonemovement 2, turn_step_left
+	applymovement 2, Movement_LuminaEldersHouse3
 	opentext TEXTBOX_DARCY
 	writetext LuminaEldersHouseSceneDarcyText4
 	waitbutton
@@ -249,14 +249,21 @@ LuminaEldersHouseSceneElderText1:
 	cont "the #MON LEAGUE"
 	cont "TOURNAMENT?"
 	
-	para "What an ambitious"
-	line "goal for one as"
-	cont "young as you!"
+	para "That's coming up"
+	line "very soon, isn't"
+	cont "it?"
+	
+	para "Have five years"
+	line "really passed"
+	cont "already?"
+	
+	para "My how the time"
+	line "flies…"
 	
 	para "You know, the last"
 	line "CHAMPION, ANDRE,"
 	cont "grew up in this"
-	cont "very town."
+	cont "very town and-"
 	done
 	
 LuminaEldersHouseSceneElderText2:
@@ -264,7 +271,7 @@ LuminaEldersHouseSceneElderText2:
 	line "child."
 	
 	para "All things in due"
-	line "time."
+	line "time…"
 	
 	para "Besides, you know"
 	line "the rules:"
@@ -329,8 +336,8 @@ LuminaEldersHouseSceneElderText3:
 LuminaEldersHouseSceneElderText4:
 	text "We'll convene at"
 	line "the CLIFFSIDE"
-	cont "BATTLEGROUND"
-	cont "NORTH of town."
+	cont "BATTLEGROUND to"
+	cont "the NORTH of town."
 	
 	para "I'll explain the"
 	line "rest there."
@@ -365,6 +372,12 @@ Movement_LuminaEldersHouse2:
 	step_left
 	step_left
 	step_down
+	step_end
+	
+Movement_LuminaEldersHouse3:
+	turn_step_left
+	turn_step_left
+	turn_step_left
 	step_end
 	
 LuminaEldersHouseElder:

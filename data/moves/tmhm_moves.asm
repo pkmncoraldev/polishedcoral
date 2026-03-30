@@ -74,9 +74,9 @@ TMHMMoves:
 	db FLASH_CANNON                        ; TM73
 	db HEX		                           ; TM74
 	db SAND_ATTACK_SMOKESCREEN_FLASH       ; TM75
-	db NO_MOVE
-	db NO_MOVE
-	db NO_MOVE
+	db LEECH_LIFE
+	db POISON_JAB
+	db FOCUS_BLAST
 	
 	db CUT                                 ; HM01
 	db FLY                                 ; HM02

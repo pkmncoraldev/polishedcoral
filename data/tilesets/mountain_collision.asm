@@ -173,3 +173,13 @@
 	tilecoll WALL, WALL, WALL, FLOOR ; ac
 	tilecoll WALL, FLOOR, WALL, FLOOR ; ad
 	tilecoll WALL, WALL, FLOOR, FLOOR ; ae
+	tilecoll WALL, WALL, DOOR, WALL ; af
+	tilecoll STAIRS, STAIRS, STAIRS, STAIRS ; b0
+	tilecoll WALL, WALL, DOWN_WALL, DOWN_WALL ; b1
+	tilecoll WALL, WALL, DOWN_WALL, DOWN_WALL ; b2
+	tilecoll WALL, WALL, DOWN_WALL, DOWN_WALL ; b3
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; b4
+	tilecoll WALL, WALL, WALL, WALL ; b5
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; b6
+	tilecoll WALL, WALL, WALL, WALL ; b7
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; b8

@@ -60,6 +60,9 @@ DEF MAP_NONE   EQU 0
 	map_const GREEN_GROTTO_1F,							  23, 16 ; 38
 	map_const GREEN_GROTTO_B1F,							  20, 13 ; 39
 	map_const GREEN_GROTTO_2F,							  20, 13 ; 40
+	map_const AUREOLE_MOUNTAIN_1F,						  19, 25 ; 41
+	map_const AUREOLE_MOUNTAIN_2F,						  17, 11 ; 42
+	map_const AUREOLE_MOUNTAIN_3F,						  16, 11 ; 43
 
 	newgroup                                                     ;  2
 
@@ -505,6 +508,7 @@ DEF MAP_NONE   EQU 0
 	map_const LUMINA_RUSS_HOUSE,						   4,  4 ; 4
 	map_const LUMINA_ADMIN_HOUSE,						   4,  4 ; 5
 	map_const LUMINA_ELDERS_HOUSE,						   4,  4 ; 6
+	map_const AUREOLE_MOUNTAIN_OUTSIDE,					  22, 29 ; 7
 	
 	newgroup													 ; EVO LOCATIONS GROUP
 	map_const ICE_CAVE_ICE_ROCK_ROOM,					   5,  5 ; 1

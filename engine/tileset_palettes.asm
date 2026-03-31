@@ -615,6 +615,8 @@ LoadSpecialMapPalette: ; 494ac
 	cp GROUP_MT_ONWA_CLIFF
 	jr z, .cliff
 	ld a, [wMapNumber]
+	cp MAP_AUREOLE_MOUNTAIN_OUTSIDE
+	ret z
 	cp MAP_LUMINA_GYM
 	jr z, .lumina_gym
 	ld hl, LuminaPalette

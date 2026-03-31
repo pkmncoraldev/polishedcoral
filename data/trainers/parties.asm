@@ -2417,6 +2417,24 @@ HikerGroup:
 	db -1 ; end
 
 ; ================
+
+	; HIKER
+	db "CRAIG@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; HIKER
+	db "BRUCE@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
 ; ================================
 
 
@@ -3153,6 +3171,24 @@ PokemaniacGroup:
 	db -1 ; end
 
 ; ================
+
+	; POKEMANIAC
+	db "BENNY@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; POKEMANIAC
+	db "MILO@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
 ; ================================
 
 
@@ -3222,6 +3258,15 @@ SuperNerdGroup:
 	; party
 	db 31, CROAGUNK
 	db 30, PORYGON
+	db -1 ; end
+
+; ================
+
+	; SUPER_NERD
+	db "ADAM@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
 	db -1 ; end
 
 ; ================
@@ -3911,6 +3956,24 @@ PsychicGroup:
 	db 38, DROWZEE
 	db 39, DROWZEE
 	db 40, HYPNO
+	db -1 ; end
+
+; ================
+
+	; PSYCHIC_T
+	db "JACQUES@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; PSYCHIC_T
+	db "RHETT@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
 	db -1 ; end
 
 ; ================
@@ -4982,6 +5045,15 @@ CooltrainerMGroup:
 	db -1 ; end
 
 ; ================
+
+	; COOLTRAINERM
+	db "LUCAS@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
 ; ================================
 
 
@@ -5072,6 +5144,24 @@ CooltrainerFGroup:
 		db HYPER_VOICE, ANCIENTPOWER, SAFEGUARD, AIR_SLASH
 	db 47, RAPIDASH
 		db AGILITY_ROCK_POLISH, FLAME_BURST, TAKE_DOWN, FIRE_SPIN
+	db -1 ; end
+
+; ================
+
+	; COOLTRAINERF
+	db "BROOKE@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; COOLTRAINERF
+	db "MAE@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
 	db -1 ; end
 
 ; ================
@@ -5223,6 +5313,16 @@ DisguiseGroup:
 	db -1 ; end
 
 ; ================
+
+	; DISGUISE
+	db "DISGUISE@" ;AUREOLE MOUNTAIN
+	db TRAINERTYPE_MOVES
+	; party
+	db 1, BULBASAUR
+		db 0, 0, 0, 0
+	db -1 ; end
+
+; ================
 ; ================================
 
 
@@ -5319,6 +5419,15 @@ DelinquentmGroup:
 		db SUCKER_PUNCH, SCREECH, 0, 0
 	db 47, RATICATE
 		db CRUNCH, SCREECH, TAKE_DOWN, REVERSAL
+	db -1 ; end
+
+; ================
+
+	; DELINQUENT_M
+	db "QUINCY@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
 	db -1 ; end
 
 ; ================

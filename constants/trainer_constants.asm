@@ -237,6 +237,8 @@ DEF PLAYER_F EQU __enum__
 	const KEITH
 	const PHILLIP
 	const BRAD
+	const CRAIG
+	const BRUCE
 	
 
 	trainerclass GRUNTM
@@ -324,6 +326,8 @@ DEF PLAYER_F EQU __enum__
 	const NOAH
 	const TRENT
 	const JACK
+	const BENNY
+	const MILO
 
 
 	trainerclass SUPER_NERD
@@ -333,6 +337,7 @@ DEF PLAYER_F EQU __enum__
 	const GREG
 	const MARIO
 	const TREV
+	const ADAM
 
 
 	trainerclass LASS
@@ -416,6 +421,8 @@ DEF PLAYER_F EQU __enum__
 	const NELSON
 	const DAVID
 	const LINUS
+	const JACQUES
+	const RHETT
 
 
 	trainerclass COUPLE
@@ -557,6 +564,7 @@ DEF PLAYER_F EQU __enum__
 	const TRIPP
 	const TREY
 	const KEN
+	const LUCAS
 
 
 	trainerclass COOLTRAINERF
@@ -568,6 +576,8 @@ DEF PLAYER_F EQU __enum__
 	const JANE
 	const LOIS
 	const TAMMY
+	const BROOKE
+	const MAE
 
 
 	trainerclass PROF_SPRUCE
@@ -595,6 +605,7 @@ DEF PLAYER_F EQU __enum__
 	const MASTER_3
 	const MASTER_4
 	const MASTER_5
+	const MASTER_6
 
 	
 	trainerclass BIKINIBR
@@ -611,6 +622,7 @@ DEF PLAYER_F EQU __enum__
 	const IGGY
 	const MAO
 	const BEAU
+	const QUINCY
 
 
 	trainerclass DELINQUENT_F

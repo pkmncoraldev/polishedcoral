@@ -391,7 +391,7 @@ ObscuraFortuneHouseTellerSetupDecosAsm:
 	jr ObscuraFortuneHouseTellerAsm
 	
 ObscuraFortuneHouseTellerSetupUniqueEncountersAsm:
-	ld a, 34 ;number of unique encounters + 1
+	ld a, 38 ;number of unique encounters + 1
 	ld hl, UNIQUE_ENCOUNTER_FLAGS_START
 ; fallthru
 ObscuraFortuneHouseTellerAsm:
@@ -447,7 +447,7 @@ ObscuraFortuneHouseTellerAsm:
 	jr z, .decos
 	cp NUM_TAPE_PLAYER_SONGS
 	jr z, .tape
-	cp 37 ;number of unique encounters + 1
+	cp 38 ;number of unique encounters + 1
 	jr z, .unique_encounters
 	
 .no_more
@@ -1816,6 +1816,7 @@ TellerUniqueEncounterText:
 	dw UniqueEncounterNoivernBossText
 	dw UniqueEncounterMarowakBossText
 	dw UniqueEncounterVileplumeBossText
+	dw UniqueEncounterDisguiseMasterAureoleMountainText
 	
 UniqueEncounterTeacherText:
 	text "TEACHER"
@@ -1971,4 +1972,9 @@ UniqueEncounterMarowakBossText:
 	
 UniqueEncounterVileplumeBossText:
 	text "VILEPLUME BOSS"
+	done
+	
+UniqueEncounterDisguiseMasterAureoleMountainText:
+	text "DISGUISE MASTER"
+	line "AUREOLE MOUNTAIN"
 	done

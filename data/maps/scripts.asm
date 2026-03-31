@@ -38,9 +38,6 @@ INCLUDE "maps/ObscuraMart.asm"
 
 SECTION "Dungeon Scripts", ROMX
 
-INCLUDE "maps/DaybreakGrotto1.asm"
-INCLUDE "maps/DaybreakGrotto2.asm"
-INCLUDE "maps/DaybreakGrotto3.asm"
 INCLUDE "maps/StarglowCavern1F.asm"
 INCLUDE "maps/StarglowCavern2F.asm"
 INCLUDE "maps/StarglowCavern3F.asm"
@@ -55,6 +52,7 @@ INCLUDE "maps/LusterSewersValveRoom.asm"
 INCLUDE "maps/Route18.asm"
 INCLUDE "maps/HuntersThicket.asm"
 INCLUDE "maps/FlickerMossRockRoom.asm"
+INCLUDE "maps/AureoleMountain2F.asm"
 
 
 SECTION "Dungeon Scripts2", ROMX
@@ -86,6 +84,9 @@ INCLUDE "maps/StarglowCavernDepths.asm"
 
 SECTION "Dungeon Scripts3", ROMX
 
+INCLUDE "maps/DaybreakGrotto1.asm"
+INCLUDE "maps/DaybreakGrotto2.asm"
+INCLUDE "maps/DaybreakGrotto3.asm"
 INCLUDE "maps/LusterSewersThroneRoom.asm"
 INCLUDE "maps/LusterSewersMukRoom.asm"
 INCLUDE "maps/Route6UnderwaterCave.asm"
@@ -97,6 +98,9 @@ INCLUDE "maps/GlintGroveUnderground.asm"
 INCLUDE "maps/BoneCavernB1F.asm"
 INCLUDE "maps/BoneCavernB2F.asm"
 INCLUDE "maps/BoneCavernMarowakRoom.asm"
+INCLUDE "maps/AureoleMountain1F.asm"
+INCLUDE "maps/AureoleMountain3F.asm"
+INCLUDE "maps/AureoleMountainOutside.asm"
 
 
 SECTION "Routes Scripts", ROMX

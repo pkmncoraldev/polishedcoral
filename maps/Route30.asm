@@ -3,9 +3,10 @@ Route30_MapScriptHeader:
 
 	db 0 ; callbacks
 
-	db 2 ; warp events
+	db 3 ; warp events
 	warp_def 32,  4, 3, BRIGHTBURG_GATE
 	warp_def 33,  4, 4, BRIGHTBURG_GATE
+	warp_def  5, 30, 1, AUREOLE_MOUNTAIN_1F
 
 	db 0 ; coord events
 

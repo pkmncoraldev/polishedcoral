@@ -162,4 +162,6 @@ MapTriggers::
 	scene_var ROUTE_32,								  wAlways0Trigger
 	scene_var LUMINA_ELDERS_HOUSE,					  wLuminaGymTrigger
 	scene_var LUMINA_GYM,							  wLuminaGymTrigger
+	scene_var AUREOLE_MOUNTAIN_OUTSIDE,				  wAureoleMountainOutside
+	scene_var AUREOLE_MOUNTAIN_2F,					  wAlways0Trigger
 	db -1

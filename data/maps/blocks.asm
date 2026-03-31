@@ -1063,3 +1063,15 @@ DodrioRanchRaceTrack2_BlockData:
 IceCaveB4F_BlockData:
 	INCBIN "maps/IceCaveB4F.ablk.lz"
 	
+AureoleMountain1F_BlockData:
+	INCBIN "maps/AureoleMountain1F.ablk.lz"
+	
+AureoleMountain2F_BlockData:
+	INCBIN "maps/AureoleMountain2F.ablk.lz"
+	
+AureoleMountain3F_BlockData:
+	INCBIN "maps/AureoleMountain3F.ablk.lz"
+	
+AureoleMountainOutside_BlockData:
+	INCBIN "maps/AureoleMountainOutside.ablk.lz"
+	

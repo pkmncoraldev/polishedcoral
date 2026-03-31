@@ -478,8 +478,12 @@ ENDM
 	
 	map_attributes AureoleTown, AUREOLE_TOWN, $d4, 0
 	
-	map_attributes LuminaTown, LUMINA_TOWN, $71, NORTH
+	map_attributes LuminaTown, LUMINA_TOWN, $71, NORTH | SOUTH
 	connection north, LuminaGym, LUMINA_GYM, 5
+	connection south, AureoleMountainOutside, AUREOLE_MOUNTAIN_OUTSIDE, 4
+	
+	map_attributes AureoleMountainOutside, AUREOLE_MOUNTAIN_OUTSIDE, $71, NORTH
+	connection north, LuminaTown, LUMINA_TOWN, -4
 	
 	map_attributes LuminaGym, LUMINA_GYM, $71, SOUTH
 	connection south, LuminaTown, LUMINA_TOWN, -5
@@ -842,3 +846,6 @@ ENDM
 	map_attributes ObscuraMachoBraceHouse, OBSCURA_MACHO_BRACE_HOUSE, $0, 0
 	map_attributes ObscuraGymSpeechHouse, OBSCURA_GYM_SPEECH_HOUSE, $0, 0
 	map_attributes ObscuraMusicianHouse, OBSCURA_MUSICIAN_HOUSE, $0, 0
+	map_attributes AureoleMountain1F, AUREOLE_MOUNTAIN_1F, $9, 0
+	map_attributes AureoleMountain2F, AUREOLE_MOUNTAIN_2F, $9, 0
+	map_attributes AureoleMountain3F, AUREOLE_MOUNTAIN_3F, $9, 0

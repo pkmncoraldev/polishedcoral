@@ -120,6 +120,7 @@ AureoleMountain2FDisguiseman:
 	writetext StarglowCavern_DisguiseMan1Text4
 	waitbutton
 	closetext
+	variablesprite SPRITE_DISGUISEMAN, SPRITE_BALL_CUT_FRUIT
 	setevent EVENT_BEAT_AUREOLE_MOUNTAIN_2F_DISGUISEMAN
 	setevent EVENT_UNIQUE_ENCOUNTER_DISGUISE_MASTER_AUREOLE_MOUNTAIN
 	end

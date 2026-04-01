@@ -1888,17 +1888,28 @@ Special_ChooseItem::
 	and a
 	ret z
 
+	ld a, [wMapGroup]
+	cp GROUP_BRILLO_POLICE_STATION
+	jr nz, .not_police
+	
+	ld a, [wMapNumber]
+	cp MAP_BRILLO_POLICE_STATION
+	jr z, .true
+
+.not_police
 	ld a, [wCurrPocket]
-;	cp KEY_ITEM - 1
-;	jr z, .next
 	cp TM_HM - 1
 	jr z, .next
+	
+	cp KEY_ITEM - 1
+	jr z, .next
+	
+	call CheckTossableItem
+	ld a, [wItemAttributeParamBuffer]
+	and a
+	jr nz, .next
 
-;	call CheckTossableItem
-;	ld a, [wItemAttributeParamBuffer]
-;	and a
-;	jr nz, .next
-
+.true
 	ld a, TRUE
 	ld [wScriptVar], a
 	ret

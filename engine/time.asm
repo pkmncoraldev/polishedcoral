@@ -113,6 +113,7 @@ CheckDailyResetTimer:: ; 11452
 	ld a, [wDailyFlags2]
 	ld [wSlots], a
 	xor a
+	ld [wMurkrowWell], a
 	ld hl, wDailyFlags
 	ld [hli], a ; wDailyFlags
 	ld [hli], a ; wDailyFlags2

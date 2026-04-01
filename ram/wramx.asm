@@ -409,7 +409,8 @@ wTreeAnimationFrame:: ds 1
 
 wGiveMonForceAbility:: ds 1
 wSkipAskNickname:: ds 1
-	ds 60 ; unused
+wMurkrowWell:: ds 1
+	ds 59 ; unused
 
 wOverworldMapAnchor:: ds 2
 wMetatileStandingY:: ds 1

@@ -1352,8 +1352,9 @@ PlayerRoomSfxTest:
 	ldh [hInMenu], a
 	ret
 .A
-	farcall CheckSFX
-	jr nc, .playsound
+	jr .playsound
+;	farcall CheckSFX
+;	jr nc, .playsound
 	ld de, MUSIC_NONE
 	call PlayMusic
 	jr .loop

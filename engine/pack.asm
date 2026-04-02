@@ -46,6 +46,7 @@ Pack: ; 10000
 	dw .KeyItemsPocketMenu ; 12
 	dw Pack_QuitNoScript   ; 13
 	dw Pack_QuitRunScript  ; 14
+	dw Pack_QuitCloseMenu  ; 15
 
 .InitGFX: ; 10046 (4:4046)
 	call Pack_InitColors
@@ -600,6 +601,9 @@ UseItem: ; 10311
 ; 10364 (4:4364)
 
 TossMenu: ; 10364
+	call CheckMurkrowWell
+	and a
+	jr nz, .well
 	ld hl, Text_ThrowAwayHowMany
 	call Pack_PrintTextNoScroll
 	farcall SelectQuantityToToss
@@ -621,7 +625,59 @@ TossMenu: ; 10364
 	call Pack_GetItemName
 	ld hl, Text_ThrewAway
 	jp Pack_PrintTextNoScroll
-; 1039d
+	
+.well
+	ld a, 2
+	ld [wAureoleMountainOutside], a
+	ld a, $f ; Pack_QuitCloseMenu
+	ld [wJumptableIndex], a
+	ret
+
+CheckMurkrowWell:
+	ld a, [wMapGroup]
+	cp GROUP_AUREOLE_MOUNTAIN_OUTSIDE
+	jr nz, .no
+	ld a, [wMapNumber]
+	cp MAP_AUREOLE_MOUNTAIN_OUTSIDE
+	jr nz, .no
+	ld a, [wPlayerDirection]
+	cp $4	;up
+	jr z, .up
+	cp $8	;left
+	jr z, .left
+	cp $c	;right
+	jr z, .right
+	jr .no
+.up
+	ld a, [wXCoord]
+	cp $19
+	jr nz, .no
+	ld a, [wYCoord]
+	cp $21
+	jr z, .yes
+	jr .no
+.left
+	ld a, [wXCoord]
+	cp $1a
+	jr nz, .no
+	ld a, [wYCoord]
+	cp $20
+	jr z, .yes
+	jr .no
+.right
+	ld a, [wXCoord]
+	cp $18
+	jr nz, .no
+	ld a, [wYCoord]
+	cp $20
+	jr nz, .no
+.yes
+	ld a, 1
+	ret
+.no
+	xor a
+	ret
+
 
 RegisterItem: ; 103c2
 	farcall CheckSelectableItem
@@ -1450,6 +1506,14 @@ Pack_QuitRunScript: ; 1087e (4:487e)
 	ld hl, wJumptableIndex
 	set 7, [hl]
 	ld a, TRUE
+	ld [wcf66], a
+	call ClearSprites
+	ret
+	
+Pack_QuitCloseMenu:
+	ld hl, wJumptableIndex
+	set 7, [hl]
+	ld a, 69
 	ld [wcf66], a
 	call ClearSprites
 	ret

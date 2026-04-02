@@ -1,5 +1,8 @@
 AureoleMountainOutside_MapScriptHeader:
-	db 0 ; scene scripts
+	db 3 ; scene scripts
+	scene_script AureoleMountainOutsideTrigger0
+	scene_script AureoleMountainOutsideTrigger1
+	scene_script AureoleMountainOutsideTrigger2
 
 	db 0 ; callbacks
 
@@ -25,24 +28,31 @@ AureoleMountainOutside_MapScriptHeader:
 	object_event 25, 32, SPRITE_SPARKLE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_ALWAYS_SET
 
 
+AureoleMountainOutsideTrigger0:
+AureoleMountainOutsideTrigger1:
+	end
+	
+AureoleMountainOutsideTrigger2:
+	priorityjump AureoleMountainOutsideWellEvent
+	end
+
 AureoleMountainOutsideWell:
+	jumptext AureoleMountainOutsideWellText1
+
+AureoleMountainOutsideWellEvent:
+	dotrigger $0
 	opentext
+	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_6
+	iftrue .done_for_today
 	callasm Movement_AureoleMountainOutsideCheckMurkrowAsm
-	if_equal 2, .done_for_today
-	writetext AureoleMountainOutsideWellText1
-	yesorno
-	iffalse .no
-	special FadeOutPalettes
-	special Special_ChooseItem
-	pause 5
-	iffalse .no
+	if_equal 3, .done_for_today
 	callasm AureoleMountainOutsideWellAsm1
-	takeitem ITEM_FROM_MEM
-	callasm AureoleMountainOutsideWellAsm2
 	writetext AureoleMountainOutsideWellText2
 	playsound SFX_KINESIS
-	waitsfx
+	pause 20
 	closetext
+	takeitem ITEM_FROM_MEM
+	waitsfx
 	callasm AureoleMountainOutsideWellPaletteAsm
 	special FadeInPalettes
 	pause 25
@@ -51,7 +61,7 @@ AureoleMountainOutsideWell:
 	pause 40
 	cry MURKROW
 	waitsfx
-	pause 20
+	pause 45
 	playsound SFX_FORESIGHT
 	appear 2
 	pause 2
@@ -67,30 +77,46 @@ AureoleMountainOutsideWell:
 	waitsfx
 	callasm LoadMapPals
 	special FadeInPalettes
-	pause 30
+	pause 15
 	playsound SFX_CHANGE_DEX_MODE
 	appear 1
 	priority 1, HIGH_PRIORITY
 	applymovement 1, Movement_AureoleMountainOutsideWell
 	pause 5
+	checkcode VAR_FACING
+	if_equal LEFT, .YouAreFacingLeft
+	if_equal RIGHT, .YouAreFacingRight
+	jump .done_move
+.YouAreFacingLeft
+	applymovement PLAYER, Movement_AureoleMountainOutsideWellPlayerLeft
+	jump .done_move
+.YouAreFacingRight
+	applymovement PLAYER, Movement_AureoleMountainOutsideWellPlayerRight
+.done_move
 	applyonemovement PLAYER, turn_step_down
 	applyonemovement PLAYER, remove_fixed_facing
 	pause 10
 	disappear 1
 	opentext
+	callasm AureoleMountainOutsideWellAsm2
 	verbosegiveitem ITEM_FROM_MEM
 	closetext
 	callasm Movement_AureoleMountainOutsideCheckMurkrowAsm
-	if_not_equal 2, .end
+	if_not_equal 3, .end
 	pause 10
 	cry MURKROW
 	waitsfx
 	pause 20
 	playsound SFX_UNKNOWN_63
+	waitsfx
+	applyonemovement PLAYER, turn_step_up
 	playsound SFX_FLY
 	appear 3
 	applymovement 3, Movement_AureoleMountainOutsideWellFly
 	disappear 3
+	pause 5
+	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_6
+	jumptext AureoleMountainOutsideWellText4
 .end
 	end
 .no
@@ -133,6 +159,16 @@ Movement_AureoleMountainOutsideWell:
 	remove_fixed_facing
 	step_end
 	
+Movement_AureoleMountainOutsideWellPlayerLeft:
+	step_down
+	step_left
+	step_end
+	
+Movement_AureoleMountainOutsideWellPlayerRight:
+	step_down
+	step_right
+	step_end
+	
 Movement_AureoleMountainOutsideWellFly:
 	fix_facing
 	fast_step_up
@@ -145,21 +181,24 @@ Movement_AureoleMountainOutsideWellFly:
 AureoleMountainOutsideWellText1:
 	text "An old, dried-out"
 	line "well."
-	
-	para "Throw something"
-	line "inside?"
 	done
 	
 AureoleMountainOutsideWellText2:
-	text "<PLAYER> threw in"
+	text "<PLAYER> tossed down"
 	line "the @"
 	text_from_ram wStringBuffer1
 	text "."
 	done
 	
 AureoleMountainOutsideWellText3:
-	text "An old, dried-out"
-	line "well."
+	text "Better not throw"
+	line "anything else in"
+	cont "for now."
+	done
+	
+AureoleMountainOutsideWellText4:
+	text "A #MON flew"
+	line "away!"
 	done
 	
 AureoleMountainOutsideWellTextNo:
@@ -169,15 +208,12 @@ AureoleMountainOutsideWellTextNo:
 AureoleMountainOutsideWellAsm1:
 	ld a, [wCurItem]
 	ld [wScriptVar], a
-	ret
-	
-AureoleMountainOutsideWellAsm2:
-	ld a, [wCurItem]
-	push af
 	ld [wNamedObjectIndexBuffer], a
 	call GetItemName
 	call CopyName1
-	pop af
+	ret
+	
+AureoleMountainOutsideWellAsm2:
 	ld a, [wCurItem]
 	dec a
 	ld e, a

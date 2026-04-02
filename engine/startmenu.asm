@@ -457,6 +457,8 @@ StartMenu_Pack: ; 1295b
 	call FadeToMenu
 	farcall Pack
 	ld a, [wcf66]
+	cp 69
+	jr z, .just_close
 	and a
 	jr nz, .used_item
 	call EnableSpriteUpdates2
@@ -477,8 +479,11 @@ StartMenu_Pack: ; 1295b
 	call ExitAllMenus
 	ld a, 4
 	ret
-; 12976
 
+.just_close
+	call EnableSpriteUpdates2
+	call ExitAllMenus
+	ret
 
 StartMenu_Pokemon: ; 12976
 

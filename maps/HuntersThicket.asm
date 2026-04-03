@@ -106,11 +106,11 @@ HuntersThicketPokeballCut:
 	
 ReceivedCutText1:
 	text "<PLAYER> found"
-	line "HM08 ROCK CLIMB!"
+	line "HM01 CUT!"
 	done
 	
 ReceivedCutText2:
-	text "<PLAYER> put HM08"
+	text "<PLAYER> put HM01"
 	line "in the TM POCKET."
 	done
 

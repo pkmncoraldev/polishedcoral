@@ -256,8 +256,7 @@ LuminaGymElderText2:
 	done
 	
 LuminaGymElderText3:
-	text "Good of you to"
-	line "come. <WAIT_S>Let's begin."
+	text "Let us begin."
 	
 	para "To gain access to"
 	line "the DRAGON SHRINE,"
@@ -277,10 +276,9 @@ LuminaGymElderText3:
 	para "In recent years,"
 	line "our strongest"
 	cont "TRAINERS have all"
-	cont "decided to leave"
-	cont "town and seek out"
-	cont "glory elsewhere"
-	cont "in the world."
+	cont "moved on and"
+	cont "mostly given up"
+	cont "#MON training."
 	
 	para "The youth have"
 	line "grown tired of our"

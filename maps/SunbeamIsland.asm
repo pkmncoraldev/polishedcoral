@@ -807,8 +807,8 @@ SunbeamSnareFallAsleepText:
 	line "soothing…"
 
 	para "I think I'll… <WAIT_M>just…<WAIT_M>"
-	line "close my… <WAIT_L>eyes for"
-	cont "a sec…"
+	line "close my…"
+	cont "eyes for a sec…"
 
 	para "…"
 

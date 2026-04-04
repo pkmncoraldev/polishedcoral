@@ -37,11 +37,15 @@ StarglowHouse3NPC1Text:
 StarglowHouse3NPC2Text:
 	text "My grandpa thinks"
 	line "he's the toughest"
-	cont "TRAINER around."
+	cont "TRAINER around,"
+	
+	para "but he hasn't"
+	line "really trained his"
+	cont "#MON in years."
 	
 	para "Between you and"
 	line "me, <WAIT_S>he's nothing"
-	cont "special."
+	cont "special nowadays."
 	
 	para "I just don't have"
 	line "the heart to tell"

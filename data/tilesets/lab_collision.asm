@@ -32,8 +32,8 @@
 	tilecoll WALL, FLOOR, FLOOR, FLOOR ; 1f
 	tilecoll WINDOW, WINDOW, FLOOR, FLOOR ; 20
 	tilecoll FLOOR, FLOOR, WALL, WALL ; 21
-	tilecoll WALL, WALL, BOOKSHELF, WALL ; 22
-	tilecoll WALL, WALL, WALL, BOOKSHELF ; 23
+	tilecoll WALL, FLOOR, BOOKSHELF, FLOOR ; 22
+	tilecoll FLOOR, WALL, FLOOR, BOOKSHELF ; 23
 	tilecoll WALL, DOOR, FLOOR, FLOOR ; 24
 	tilecoll WINDOW, WALL, FLOOR, BOOKSHELF ; 25
 	tilecoll WALL, WALL, FLOOR, FLOOR ; 26
@@ -91,9 +91,9 @@
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 5a
 	tilecoll WALL, WALL, WALL, WALL ; 5b
 	tilecoll WALL, WALL, WALL, WALL ; 5c
-	tilecoll WALL, WALL, WALL, WALL ; 5d
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 5d
 	tilecoll WALL, WALL, WALL, WALL ; 5e
-	tilecoll WALL, WALL, WALL, WALL ; 5f
+	tilecoll WALL, WALL, FLOOR, FLOOR ; 5f
 	tilecoll WALL, WALL, WALL, WALL ; 60
 	tilecoll WALL, WALL, WALL, WALL ; 61
 	tilecoll WALL, WALL, WALL, WALL ; 62

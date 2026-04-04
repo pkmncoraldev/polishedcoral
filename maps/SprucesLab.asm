@@ -5,8 +5,8 @@ SprucesLab_MapScriptHeader:
 	callback MAPCALLBACK_TILES, SpruceLabUnlockDoor
 
 	db 3 ; warp events
-	warp_def 7, 4, 6, SUNBEAM_ISLAND
-	warp_def 7, 5, 6, SUNBEAM_ISLAND
+	warp_def  9,  4, 6, SUNBEAM_ISLAND
+	warp_def  9,  5, 6, SUNBEAM_ISLAND
 	warp_def 0, 5, 1, SUNBEAM_RESERVE
 
 	db 1 ; coord events
@@ -15,9 +15,9 @@ SprucesLab_MapScriptHeader:
 	db 6 ; bg events
 	signpost 0, 5, SIGNPOST_READ, SpruceLabDoor
 	signpost 0, 4, SIGNPOST_READ, SpruceLabOpenWindow
-	signpost  5,  1, SIGNPOST_DOWN, SpruceLabPC
+	signpost  1,  2, SIGNPOST_READ, SpruceLabPC
 	signpost 3, 9, SIGNPOST_READ, SpruceLabTrashcan
-	signpost  1,  2, SIGNPOST_READ, SpruceLabHealMachine
+	signpost  2,  0, SIGNPOST_READ, SpruceLabLockedDoor
 	bg_event  9,  3, SIGNPOST_ITEM + TAPE_PLAYER, EVENT_MUSIC_SPRUCE
 
 	db 7 ; object events
@@ -26,7 +26,7 @@ SprucesLab_MapScriptHeader:
 	person_event SPRITE_SPRUCE,  5,  8, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, SpruceLabSpruce, EVENT_SPRUCELAB_SPRUCE3_GONE
 	person_event SPRITE_SNES, 5, 9, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, SpruceLabMunchlaxSleep, EVENT_SPRUCELAB_MUNCH1_GONE
 	object_event 9, 5, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, MUNCHLAX, -1, -1, PAL_NPC_BLUE, PERSONTYPE_SCRIPT, 0, SpruceLabMunchlax, EVENT_SPRUCELAB_MUNCH2_GONE
-	object_event 0, 4, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, MUNCHLAX, -1, -1, PAL_NPC_BLUE, PERSONTYPE_SCRIPT, 0, SpruceLabMunchlax, EVENT_SPRUCELAB_MUNCH3_GONE
+	object_event  0,  5, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, MUNCHLAX, -1, -1, PAL_NPC_BLUE, PERSONTYPE_SCRIPT, 0, SpruceLabMunchlax, EVENT_SPRUCELAB_MUNCH3_GONE
 	hiddentape_event 9, 3, MUSIC_SPRUCE, 1, EVENT_MUSIC_SPRUCE
 
 	const_def 1 ; object constants
@@ -39,50 +39,13 @@ SprucesLab_MapScriptHeader:
 
 SpruceLabUnlockDoor:
 	checkevent EVENT_TALKED_TO_SPRUCE
-	iftrue .UnlockThatBitch
-	return
-.UnlockThatBitch
+	iffalse .end
 	changeblock $4, $0, $24
+.end
 	return
 	
-SpruceLabHealMachine:
-	opentext
-;	checkevent EVENT_TALKED_TO_SPRUCE
-;	iffalse .whats_this
-	checkcode VAR_PARTYCOUNT
-	if_equal 0, .no_pokemon
-	writetext SpruceLabHealingMachineText
-	yesorno
-	iffalse .no
-	closetext
-	pause 10
-	turnobject PLAYER, LEFT
-	pause 10
-	special HealParty
-	special SaveMusic
-	playmusic MUSIC_NONE
-	writebyte 1 ; Machine is at a Pokemon Center
-	special HealMachineAnim
-	pause 30
-	special RestoreMusic
-	turnobject PLAYER, DOWN
-	pause 10
-	end
-.no
-	farwritetext BetterNotText
-	waitbutton
-	closetext
-	end
-.no_pokemon
-	playsound SFX_CHOOSE_PC_OPTION
-	farwritetext UnknownText_0x1c1328
-	closetext
-	end
-.whats_this
-	writetext SpruceLabHealingMachineText2
-	waitbutton
-	closetext
-	end
+SpruceLabLockedDoor:
+	jumptext SpruceLabLockedDoorText
 	
 SpruceLabSpruce:
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
@@ -128,10 +91,10 @@ SpruceLabSpruce:
 	warpcheck
 	end
 .alreadytalked
-	checkevent EVENT_SAVED_SUNBEAM
-	iftrue .sunbeam_done
+	checkevent EVENT_SNARE_ASLEEP
+	iftrue .snare_asleep
 	jumptextfaceplayer TEXTBOX_SPRUCE, SpruceLabSpruceText18
-.sunbeam_done
+.snare_asleep
 	jumptextfaceplayer TEXTBOX_SPRUCE, SpruceLabSpruceText8
 .trymasterballagain
 	faceplayer
@@ -180,6 +143,7 @@ SpruceLabComeBackInside:
 	pause 14
 	playsound SFX_ENTER_DOOR
 	appear SPRUCELAB_SPRUCE2
+	priority SPRUCELAB_SPRUCE2, HIGH_PRIORITY
 	spriteface PLAYER, UP
 	pause 7
 	applymovement SPRUCELAB_SPRUCE2, Movement_SpruceLabSpruce5
@@ -326,14 +290,8 @@ SpruceLabPC:
 SpruceLabTrashcan:
 	jumptext SpruceLabTrashcanText
 	
-SpruceLabHealingMachineText:
-	text "Would you like to"
-	line "heal your #MON?"
-	done
-	
-SpruceLabHealingMachineText2:
-	text "I wonder what this"
-	line "does?"
+SpruceLabLockedDoorText:
+	text "It's locked."
 	done
 	
 SpruceLabSpruceText1:
@@ -354,16 +312,15 @@ SpruceLabSpruceText1:
 	done
 	
 SpruceLabSpruceText2:
-	text "We'll start outside"
-	line "with the #MON"
-	cont "reserve."
+	text "We'll start"
+	line "outside."
 	
 	para "After you."
 	done
 	
 SpruceLabSpruceText3:
-	text "Well, that's about"
-	line "it."
+	text "Well, that's it for"
+	line "the reserve."
 	
 	para "…<WAIT_L>Oh!"
 	
@@ -406,10 +363,6 @@ SpruceLabSpruceText6:
 	cont "sound actually"
 	cont "makes them MORE"
 	cont "sleepy!"
-	
-	para "It truly is a"
-	line "mysterious instru-"
-	cont "ment!"
 	done
 	
 SpruceLabSpruceText7:
@@ -420,30 +373,34 @@ SpruceLabSpruceText7:
 	line "#FLUTE to you,"
 	cont "<PLAYER>!"
 	
-	para "After all, <WAIT_S>it was"
-	line "I who set your"
-	cont "journey across"
-	cont "ONWA into motion,"
-	cont "was it not?"
-	
-	para "Surely it would"
-	line "fall to me to"
-	cont "assist you in any"
-	cont "way I can."
-	
 	para "Use it with care."
 	done
 	
 SpruceLabSpruceText8:
-	text "Thank you so much"
-	line "for stopping by."
+	text "I suppose you're"
+	line "heading onward to"
+	cont "EVENTIDE VILLAGE."
+	
+	para "Past EVENTIDE to"
+	line "the NORTH is snowy"
+	cont "ROUTE 10."
+	
+	para "My colleague has a"
+	line "researcher there"
+	cont "looking for traces"
+	cont "of ancient ruins."
+	
+	para "You should stop"
+	line "by and speak to"
+	cont "him, yes?"
+	
+	para "Don't forget, now."
+	
+	para "Thank you for"
+	line "visiting!"
 	
 	para "Do call me if you"
 	line "need anything."
-	
-	para "Good luck on the"
-	line "rest of your"
-	cont "adventure."
 	done
 	
 SpruceLabSpruceText9:
@@ -470,7 +427,7 @@ SpruceLabSpruceText11:
 	
 	para "A SNORLAX is"
 	line "sleeping and"
-	cont "blocking the path"
+	cont "blocking the way"
 	cont "near STARGLOW"
 	cont "VALLEY?"
 	
@@ -634,10 +591,6 @@ SpruceLabSpruceText18:
 	cont "sound actually"
 	cont "makes them MORE"
 	cont "sleepy!"
-	
-	para "It truly is a"
-	line "mysterious instru-"
-	cont "ment!"
 	done
 	
 SpruceLabPokeFluteText1:
@@ -684,11 +637,9 @@ SpruceLabOpenWindowText:
 	done
 	
 SpruceLabPCText:
-	text "OBSERVATIONS ON"
-	line "#MON HABITATS"
-
-	para "…It says on the"
-	line "screen…"
+	text "There's an e-mail"
+	line "on screen from a"
+	cont "“PROF. HILL.”"
 	done
 	
 SpruceLabTrashcanText:

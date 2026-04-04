@@ -37,9 +37,9 @@ SunsetPokeCenterFairyGirl:
 SunsetPokeCenterSunsetPokeCenterYounginText:
 	text "I want to be a"
 	line "#MON trainer,"
-	
-	para "but I'm not old"
-	line "enough yet."
+	cont "but my mom says"
+	cont "we don't need a"
+	cont "#MON."
 	
 	para "I come here to"
 	line "see as many"
@@ -60,7 +60,7 @@ SunsetPokeCenterFireGuyText:
 	done
 
 SunsetPokeCenterFairyGirlText:
-	text "This PC says it's"
+	text "The PC says it's"
 	line "“ALAN's PC.”"
 	
 	para "But…<WAIT_M> who's ALAN?"

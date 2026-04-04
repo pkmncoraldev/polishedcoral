@@ -1425,17 +1425,24 @@ _SpruceText1::
 	prompt
 
 _SpruceText2::
-	text "#MON are magni-"
+	text "This world is full"
+	line "of what we call"
+	cont "#MON."
+	
+	para "#MON are magni-"
 	line "ficent creatures."
 	
-	para "Some #MON like"
-	line "battling, and"
+	para "Some people battle"
+	line "and train #MON,"
 	
-	para "others prefer to"
-	line "be companions, "
+	para "but recently, more"
+	line "often they are"
+	cont "kept purely as"
+	cont "companions,"
 	
 	para "like my friend,"
-	line "MUNCHLAX, here.@"
+	line "MUNCHLAX, here."
+	done
 
 _SpruceText3::
 	text_waitbutton

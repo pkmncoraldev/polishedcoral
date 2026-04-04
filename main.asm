@@ -5512,6 +5512,11 @@ ProfSpruceSpeech: ; 0x5f99
 
 	ld hl, SpruceText2
 	call PrintText
+	ld a, MUNCHLAX
+	call PlayCry
+	call WaitSFX
+	ld c, 25
+	call DelayFrames
 	ld hl, SpruceText4
 	call PrintText
 	ld c, 15
@@ -6007,16 +6012,6 @@ FakeProfSpruceSpeech::
 	xor a
 	ld [wInputFlags], a
 	ret
-
-
-	ld hl, SpruceText2
-	call PrintText
-	ld hl, SpruceText4
-	call PrintText
-	ld c, 15
-	call FadeToWhite
-	call ClearTileMap
-	ret
 	
 SpruceText1: ; 0x6045
 	text_jump _SpruceText1
@@ -6024,12 +6019,7 @@ SpruceText1: ; 0x6045
 
 SpruceText2: ; 0x604a
 	text_jump _SpruceText2
-	start_asm
-	ld a, MUNCHLAX
-	call PlayCry
-	call WaitSFX
-	ld hl, SpruceText3
-	ret
+	db "@"
 
 SpruceText3: ; 0x605b
 	text_jump _SpruceText3

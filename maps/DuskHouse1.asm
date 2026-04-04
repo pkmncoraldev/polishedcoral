@@ -11,24 +11,40 @@ DuskHouse1_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 1 ; object events
-	person_event SPRITE_REDS_MOM,  4,  2, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, DuskHouse1NPC, -1
+	db 2 ; object events
+	person_event SPRITE_REDS_MOM,  4,  2, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, DuskHouse1NPC1, -1
+	person_event SPRITE_COOL_DUDE,  6,  6, SPRITEMOVEDATA_WANDER, 1, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, DuskHouse1NPC2, -1
 
 
-DuskHouse1NPC:
-	jumptextfaceplayer DuskHouse1NPCText
+DuskHouse1NPC1:
+	jumptextfaceplayer DuskHouse1NPC1Text
 	
-DuskHouse1NPCText:
-	text "If you like wheels"
-	line "we've got you set!"
+DuskHouse1NPC2:
+	jumptextfaceplayer DuskHouse1NPC2Text
 	
-	para "Between the bikes"
-	line "over at MOOMOO's,"
-	cont "the AUTO SHOP,"
-	cont "and the HIGHWAY,"
+DuskHouse1NPC1Text:
+	text "Do you know of"
+	line "NETT CORP.?"
 	
-	para "DUSK TURNPIKE is"
-	line "the place to be!"
+	para "No one knows what"
+	line "happened it's"
+	cont "founder."
+	
+	para "He gave up the"
+	line "entire company to"
+	cont "his son one day,"
+	cont "and disappeared."
+	
+	para "I wonder if he's"
+	line "living a new life"
+	cont "somewhere…"
+	done
+	
+DuskHouse1NPC2Text:
+	text "What would compel"
+	line "someone to give up"
+	cont "so much money and"
+	cont "power?"
 	done
 	
 	

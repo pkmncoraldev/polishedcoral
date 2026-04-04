@@ -301,9 +301,8 @@ NettBuildingOfficeNettText2:
 	
 	para "The people of the"
 	line "ONWA REGION have"
-	cont "always lived in"
-	cont "relative peace"
-	cont "and security."
+	cont "lived in relative"
+	cont "peace and safety."
 	
 	para "Of course there"
 	line "has always been"
@@ -313,10 +312,22 @@ NettBuildingOfficeNettText2:
 	line "speaking, people"
 	cont "have felt safe."
 	
+	para "Safe enough that"
+	line "many have stopped"
+	cont "training their"
+	cont "#MON,"
+	
+	para "instead keeping"
+	line "them only as"
+	cont "companions."
+	
 	para "Recently, however,"
 	line "things feel like"
 	cont "they've begun to"
 	cont "shift."
+	
+	para "Do you feel it,"
+	line "too?"
 	
 	para "Reports of thugs"
 	line "stealing #MON,"
@@ -326,7 +337,8 @@ NettBuildingOfficeNettText2:
 	line "to fear for their"
 	cont "safety."
 	
-	para "TEAM SNARE…"
+	para "All because of"
+	line "this TEAM SNARE…"
 	
 	para "…"
 	
@@ -340,12 +352,18 @@ NettBuildingOfficeNettText2:
 	cont "#MON above all"
 	cont "else."
 	
+	para "POTIONS,"
+	line "#BALLS."
+	
+	para "Tools that every"
+	line "#MON TRAINER"
+	cont "needs."
+	
 	para "He sought to make"
-	line "things that would"
+	line "these things in"
+	cont "the hope that they"
 	cont "help foster that"
 	cont "relationship."
-	
-	para "…"
 	
 	para "Since he passed"
 	line "the torch to me,"

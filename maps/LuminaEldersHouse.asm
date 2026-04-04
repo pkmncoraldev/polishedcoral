@@ -327,7 +327,7 @@ LuminaEldersHouseSceneElderText3:
 	line "ate that you must"
 	cont "earn my blessing."
 	
-	para "How fortuante it"
+	para "How fortunate it"
 	line "is, then, that you"
 	cont "needed my BADGE"
 	cont "anyway."

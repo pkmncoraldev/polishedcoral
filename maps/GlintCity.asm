@@ -220,7 +220,7 @@ GlintNPC6:
 	
 GlintNPC7:
 	opentext
-	writetext GlintNPC7Text2
+	writetext GlintNPC7Text
 	waitbutton
 	closetext
 	end
@@ -344,25 +344,14 @@ GlintNPC6TextNoRoom:
 	done
 	
 GlintNPC7Text:
-	text "Back when I was"
-	line "young,"
+	text "I may not look"
+	line "it, but I was a"
+	cont "serious TRAINER"
+	cont "when I was young."
 	
-	para "the boys would"
-	line "flock to me for my"
-	cont "looks."
-	
-	para "Nowadays the only"
-	line "ones flocking to"
-	cont "me are the bird"
-	cont "#MON."
-	
-	para "Sigh…"
-	done
-	
-GlintNPC7Text2:
-	text "She's happily"
-	line "feeding the"
-	cont "PIKIPEK."
+	para "Nowadays, I mostly"
+	line "prefer to just"
+	cont "feed the PIKIPEK."
 	done
 	
 GlintDoggoText:

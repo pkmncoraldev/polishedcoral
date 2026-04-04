@@ -20,20 +20,19 @@ ShimmerHouse1NPC1:
 	
 ShimmerHouse1NPC1Text:
 	text "The #MON LEAGUE"
-	line "TOURNAMENT is"
-	cont "coming up!"
+	line "TOURNAMENT used"
+	cont "to be held every"
+	cont "single year!"
 	
-	para "It only comes once"
-	line "every 5 years."
+	para "Recently, fewer"
+	line "people are taking"
+	cont "#MON training"
+	cont "as seriously,"
 	
-	para "Whoever wins is"
-	line "recognized as the"
-	cont "best TRAINER in"
-	cont "the ONWA REGION!"
-	
-	para "I wonder if the"
-	line "current CHAMPION"
-	cont "will show up."
+	para "and they've had"
+	line "to instead start"
+	cont "holding it once"
+	cont "every five years."
 	done
 	
 ShimmerHouse1NPC2:

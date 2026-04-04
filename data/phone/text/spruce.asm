@@ -61,7 +61,7 @@ SprucePhoneComeToIslandText:
 	line "be in EVENTIDE"
 	cont "VILLAGE nearby."
 	
-	para "Before that why"
+	para "Before that, why"
 	line "don't you stop by"
 	cont "my LAB on SUNBEAM"
 	cont "ISLAND?"
@@ -293,18 +293,10 @@ SprucePhoneIceTempleText:
 	line "ROUTE 10 by now,"
 	cont "am I correct?"
 	
-	para "A colleague of"
-	line "mine told me he"
-	cont "has a researcher"
-	cont "stationed there."
-	
-	para "He's apparently"
-	line "looking for traces"
-	cont "of ancient ruins."
-	
-	para "I thought you'd be"
-	line "interested in"
-	cont "meeting him."
+	para "Did you ever meet"
+	line "with my colleague's"
+	cont "researcher that I"
+	cont "told you about?"
 	
 	para "He's set up camp"
 	line "on EAST ROUTE 10."

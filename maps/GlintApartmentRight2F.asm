@@ -61,7 +61,7 @@ GlintApt22FNpc1Text:
 	para "Maybe I can move"
 	line "there and get a"
 	cont "job at the NETT"
-	cont "BUILDING."
+	cont "CORP. BUILDING."
 	done
 	
 GlintApt22FNpc2Text1:

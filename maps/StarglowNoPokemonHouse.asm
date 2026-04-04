@@ -29,8 +29,12 @@ StarglowHouse2NPC:
 
 StarglowHouse2NPCText:
 	text "Those guys were"
-	line "TEAM SNARE, weren't"
-	cont "they?"
+	line "with TEAM SNARE,"
+	cont "weren't they?"
+	
+	para "And they were"
+	line "trying to steal my"
+	cont "#MON?"
 	
 	para "Joke's on them!"
 	

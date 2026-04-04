@@ -652,18 +652,13 @@ LighthouseAbner:
 	iftrue .beentoisland
 	checkevent EVENT_SPRUCE_CALLED_COME_TO_ISLAND
 	iftrue .second_visit
-	checkevent EVENT_MOM_SPEECH_LOOP
-	iftrue LighthouseAbnerPostPokeGear
 	jumptextfaceplayer LighthouseAbnerText
 .second_visit
 	jumptextfaceplayer TEXTBOX_ABNER, LighthouseAbner2ndVisitText
 .beentoisland
 	jumptextfaceplayer TEXTBOX_ABNER, LighthouseAbnerBeenToHouseText
 .elevator_unlocked
-	jumptextfaceplayer TEXTBOX_ABNER, LighthouseAbnerElevatorUnlockedText
-	
-LighthouseRival:
-	end
+	jumptextfaceplayer TEXTBOX_ABNER, LighthouseAbnerText
 	
 LighthouseKid1:
 	faceplayer
@@ -684,9 +679,6 @@ LighthouseKid2:
 	spriteface LIGHTHOUSE_KID2_2, LEFT
 	closetext
 	end
-	
-LighthouseAbnerPostPokeGear:
-	jumptextfaceplayer TEXTBOX_ABNER, LighthouseAbnerTextPostPokeGear
 	
 Movement_EnterLighthouse:
 	step_up
@@ -924,21 +916,21 @@ LighthouseAbnerText10:
 	done
 	
 LighthouseAbnerText:
-	text "Did you visit"
-	line "your MOM yet?"
+	text "These days, less"
+	line "people consider"
+	cont "themselves actual"
+	cont "#MON TRAINERS."
 	
-	para "No?<WAIT_M>"
-	line "Then go talk"
-	cont "to her!"
+	para "And those that do"
+	line "aren't that serious"
+	cont "about it, treating"
+	cont "it like a hobby."
+	
+	para "That's why I'm"
+	line "ecstatic that you"
+	cont "kids are taking"
+	cont "the GYM CHALLENGE!"
 	done
-	
-LighthouseAbnerTextPostPokeGear:
-	text "Nice #GEAR,"
-	line "<PLAYER>."
-	
-	para "Good luck on"
-	line "your journey!"
-	done	
 
 LighthouseRivalText1:
 	text "Your #MON"

@@ -91,7 +91,7 @@ GlintApt11FNpc2Text3:
 	
 GlintApt11FNpc3Text:
 	text "I saw a cute girl"
-	line "trying to smash"
+	line "trying to smash up"
 	cont "the rocks in the"
 	cont "grove earlier."
 	

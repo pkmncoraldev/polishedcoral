@@ -173,15 +173,15 @@ BankCardNPCText2_2:
 	done
 	
 BankCardNPCText3_boy:
-	text "<PLAYER> gave his"
-	line "info to the sketchy"
-	cont "lady…"
+	text "<PLAYER> gave"
+	line "his info to the"
+	cont "sketchy lady…"
 	done
 	
 BankCardNPCText3_girl:
-	text "<PLAYER> gave her"
-	line "info to the sketchy"
-	cont "lady…"
+	text "<PLAYER> gave"
+	line "her info to the"
+	cont "sketchy lady…"
 	done
 	
 BankCardNPCText4:

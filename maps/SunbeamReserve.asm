@@ -217,12 +217,13 @@ SunbeamReserveElectabuzzText:
 	done
 	
 SunbeamReserveSpruceText1:
-	text "My research"
-	line "involves #MON"
-	cont "conservation."
+	text "While I was once"
+	line "a prominent #-"
+	cont "MON researcher,"
 	
-	para "As such, I run a"
-	line "#MON reserve."
+	para "in my old age I"
+	cont "instead run this"
+	cont "#MON reserve."
 	done
 	
 SunbeamReserveSpruceText2:

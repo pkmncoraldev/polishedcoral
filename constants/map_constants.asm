@@ -160,7 +160,7 @@ DEF MAP_NONE   EQU 0
 	map_const SUNBEAM_OLD_COUPLES_HOUSE,               	   4,  4 ;  9
 	map_const SUNBEAM_SOFT_SAND_HOUSE,               	   4,  4 ; 10
 	map_const SUNBEAM_TRADE_HOUSE,						   4,  4 ; 11
-	map_const SPRUCES_LAB, 								   5,  4 ; 12
+	map_const SPRUCES_LAB, 								   5,  5 ; 12
 	map_const SUNBEAM_RESERVE,                            18, 11 ; 13
 	map_const SUNBEAM_JUNGLE,  			             	  16, 25 ; 14
 	map_const SUNBEAM_JUNGLE_CAVE,  			          10, 10 ; 15

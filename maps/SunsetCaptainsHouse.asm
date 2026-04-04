@@ -60,8 +60,8 @@ SunsetCaptainsHouseTrigger0Event:
 	jump .cont
 	
 SunsetCaptain:
-	checkevent EVENT_CAPTAIN_GIVES_RIDES_TO_ISLAND
-	iftrue SunsetCaptainRidetoIsland
+;	checkevent EVENT_CAPTAIN_GIVES_RIDES_TO_ISLAND
+;	iftrue SunsetCaptainRidetoIsland
 	checkevent EVENT_CAN_GET_FIRST_RIDE_TO_ISLAND
 	iftrue SunsetCaptainFirstRidetoIsland
 	checkevent EVENT_GOT_A_POKEMON_FROM_SPRUCE
@@ -77,7 +77,7 @@ SunsetCaptain2:
 	jumptextfaceplayer SunsetCaptainText3
 	
 SunsetCaptainFirstRidetoIsland:
-	setevent EVENT_CAPTAIN_GIVES_RIDES_TO_ISLAND
+;	setevent EVENT_CAPTAIN_GIVES_RIDES_TO_ISLAND
 	setevent EVENT_PLAYER_HOUSE_MOM_2
 	clearevent EVENT_PLAYER_HOUSE_MOM_1
 	faceplayer
@@ -100,6 +100,7 @@ CaptainGoToIsland:
 	end
 .yes
 	setevent EVENT_FIRST_TRIP_TO_ISLAND
+	blackoutmod SUNBEAM_ISLAND
 	clearevent EVENT_CAN_GET_FIRST_RIDE_TO_ISLAND
 	clearevent EVENT_CALLED_SPRUCE_CANT_GET_ON_ISLAND
 	clearevent EVENT_CAN_CALL_SPRUCE_ABOUT_ISLAND

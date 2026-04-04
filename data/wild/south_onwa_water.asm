@@ -1,7 +1,7 @@
 ; S. Onwa Pokémon in water
 
 	map_id SHIMMER_CITY
-	db 6 percent ; encounter rate
+	db 4 percent ; encounter rate
 	db 31, WINGULL		;30%
 	db 31, WINGULL		;30%
 	db 31, HORSEA		;20%
@@ -11,7 +11,7 @@
 	db 31, MAREANIE		;1%
 
 	map_id SHIMMER_HARBOR
-	db 6 percent ; encounter rate
+	db 4 percent ; encounter rate
 	db 31, WINGULL		;30%
 	db 31, WINGULL		;30%
 	db 31, HORSEA		;20%
@@ -21,7 +21,7 @@
 	db 31, MAREANIE		;1%
 	
 	map_id SHIMMER_UNDER_BOARDWALK
-	db 9 percent ; encounter rate
+	db 7 percent ; encounter rate
 	db 31, MAREANIE		;30%
 	db 31, MAREANIE		;30%
 	db 31, CORSOLA		;20%

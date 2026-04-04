@@ -81,7 +81,7 @@
 	db 27, AZUMARILL	;1%
 
 	map_id ROUTE_3
-	db 6 percent ; encounter rate
+	db 4 percent ; encounter rate
 	db 27, POLIWHIRL	;30%
 	db 27, CARVANHA		;30%
 	db 27, FLOATZEL		;20%
@@ -111,7 +111,7 @@
 	db 27, AZUMARILL	;1%
 	
 	map_id ROUTE_3_EAST
-	db 6 percent ; encounter rate
+	db 4 percent ; encounter rate
 	db 27, POLIWHIRL	;30%
 	db 27, CARVANHA		;30%
 	db 27, FLOATZEL		;20%
@@ -121,7 +121,7 @@
 	db 27, FLOATZEL		;1%
 	
 	map_id STARGLOW_VALLEY
-	db 6 percent ; encounter rate
+	db 4 percent ; encounter rate
 	db 27, POLIWHIRL	;30%
 	db 27, CARVANHA		;30%
 	db 27, FLOATZEL		;20%
@@ -131,7 +131,7 @@
 	db 27, FLOATZEL		;1%
 	
 	map_id ROUTE_4
-	db 6 percent ; encounter rate
+	db 4 percent ; encounter rate
 	db 27, POLIWHIRL	;30%
 	db 27, CARVANHA		;30%
 	db 27, FLOATZEL		;20%
@@ -151,7 +151,7 @@
 	db 27, FLOATZEL		;1%
 	
 	map_id ROUTE_6
-	db 6 percent ; encounter rate
+	db 4 percent ; encounter rate
 	db 27, WINGULL		;30%
 	db 27, WINGULL		;30%
 	db 27, HORSEA		;20%
@@ -161,7 +161,7 @@
 	db 27, MAREANIE		;1%
 	
 	map_id ROUTE_6_SOUTH
-	db 6 percent ; encounter rate
+	db 4 percent ; encounter rate
 	db 27, WINGULL		;30%
 	db 27, WINGULL		;30%
 	db 27, HORSEA		;20%
@@ -171,7 +171,7 @@
 	db 27, MAREANIE		;1%
 	
 	map_id LAKE_ONWA
-	db 8 percent ; encounter rate
+	db 6 percent ; encounter rate
 	db 27, MARILL		;30%
 	db 27, CARVANHA		;30%
 	db 27, FLOATZEL		;20%
@@ -181,7 +181,7 @@
 	db 27, FLOATZEL		;1%
 	
 	map_id MT_ONWA_B1F
-	db 5 percent ; encounter rate
+	db 4 percent ; encounter rate
 	db 16, SLUGMA		;30%
 	db 16, SLUGMA		;30%
 	db 16, SLUGMA		;20%
@@ -191,7 +191,7 @@
 	db 16, NUMEL		;1%
 	
 	map_id MT_ONWA_B2F
-	db 5 percent ; encounter rate
+	db 4 percent ; encounter rate
 	db 16, SLUGMA		;30%
 	db 16, SLUGMA		;30%
 	db 16, SLUGMA		;20%
@@ -201,7 +201,7 @@
 	db 16, NUMEL		;1%
 	
 	map_id MT_ONWA_B3F
-	db 5 percent ; encounter rate
+	db 4 percent ; encounter rate
 	db 16, SLUGMA		;30%
 	db 16, SLUGMA		;30%
 	db 16, SLUGMA		;20%
@@ -211,7 +211,7 @@
 	db 16, NUMEL		;1%
 	
 	map_id SUNBEAM_ISLAND
-	db 6 percent ; encounter rate
+	db 4 percent ; encounter rate
 	db 27, WINGULL		;30%
 	db 27, WINGULL		;30%
 	db 27, MAREANIE		;20%
@@ -221,7 +221,7 @@
 	db 27, CORSOLA		;1%
 	
 	map_id SUNBEAM_BEACH
-	db 6 percent ; encounter rate
+	db 4 percent ; encounter rate
 	db 27, WINGULL		;30%
 	db 27, WINGULL		;30%
 	db 27, MAREANIE		;20%
@@ -231,7 +231,7 @@
 	db 27, CORSOLA		;1%
 	
 	map_id SUNBEAM_RESERVE
-	db 6 percent ; encounter rate
+	db 8 percent ; encounter rate
 	db 27, SLOWPOKE		;30%
 	db 27, SLOWPOKE		;30%
 	db 27, SLOWPOKE		;20%
@@ -241,7 +241,7 @@
 	db 27, SLOWPOKE		;1%
 	
 	map_id SUNBEAM_JUNGLE
-	db 6 percent ; encounter rate
+	db 4 percent ; encounter rate
 	db 27, CARVANHA		;30%
 	db 27, AZUMARILL	;30%
 	db 27, CARVANHA		;20%
@@ -251,7 +251,7 @@
 	db 27, AZUMARILL	;1%
 	
 	map_id SUNBEAM_JUNGLE_DEEP
-	db 6 percent ; encounter rate
+	db 4 percent ; encounter rate
 	db 27, CARVANHA		;30%
 	db 27, AZUMARILL	;30%
 	db 27, CARVANHA		;20%
@@ -261,7 +261,7 @@
 	db 27, AZUMARILL	;1%
 
 	map_id ROUTE_8
-	db 6 percent ; encounter rate
+	db 4 percent ; encounter rate
 	db 27, POLIWHIRL	;30%
 	db 27, CARVANHA		;30%
 	db 27, FLOATZEL		;20%
@@ -271,7 +271,7 @@
 	db 27, FLOATZEL		;1%
 
 	map_id LUSTER_SEWERS_B1F
-	db 6 percent ; encounter rate
+	db 4 percent ; encounter rate
 	db 27, GRIMER		;30%
 	db 27, GRIMER		;30%
 	db 27, GRIMER		;20%
@@ -281,7 +281,7 @@
 	db 27, GRIMER		;1%
 	
 	map_id LUSTER_SEWERS_B2F
-	db 8 percent ; encounter rate
+	db 6 percent ; encounter rate
 	db 27, GRIMER		;30%
 	db 27, GRIMER		;30%
 	db 27, GRIMER		;20%
@@ -311,7 +311,7 @@
 	db 28, AZUMARILL	;1%
 
 	map_id ROUTE_13
-	db 6 percent ; encounter rate
+	db 4 percent ; encounter rate
 	db 27, WINGULL		;30%
 	db 27, WINGULL		;30%
 	db 27, HORSEA		;20%
@@ -321,7 +321,7 @@
 	db 27, MAREANIE		;1%
 
 	map_id ROUTE_14
-	db 6 percent ; encounter rate
+	db 4 percent ; encounter rate
 	db 27, WINGULL		;30%
 	db 27, WINGULL		;30%
 	db 27, HORSEA		;20%
@@ -331,7 +331,7 @@
 	db 27, MAREANIE		;1%
 
 	map_id ROUTE_15
-	db 6 percent ; encounter rate
+	db 4 percent ; encounter rate
 	db 27, WINGULL		;30%
 	db 27, WINGULL		;30%
 	db 27, HORSEA		;20%
@@ -351,7 +351,7 @@
 	db 27, LAPRAS		;1%
 
 	map_id CONNECTING_CAVERN
-	db 6 percent ; encounter rate
+	db 4 percent ; encounter rate
 	db 27, SLOWPOKE		;30%
 	db 27, MAREANIE		;30%
 	db 27, HORSEA		;20%

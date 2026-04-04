@@ -37,7 +37,7 @@ Moves:: ; 41afb
 	move FLARE_BLITZ,              EFFECT_FLARE_BLITZ,       120, FIRE,      100, 15,  10, PHYSICAL
 	move STONE_EDGE,               EFFECT_NORMAL_HIT,        100, ROCK,       80,  5,   0, PHYSICAL
 	move FOCUS_BLAST,              EFFECT_SP_DEF_DOWN_HIT,   120, FIGHTING,   70,  5,  10, SPECIAL
-	move BULLET_SEED,              EFFECT_MULTI_HIT,          25, GRASS,     100, 30,   0, PHYSICAL
+	move BULLET_SEED,              EFFECT_MULTI_HIT,          20, GRASS,     100, 30,   0, PHYSICAL
 	move HEADBUTT,                 EFFECT_FLINCH_HIT,         70, NORMAL,    100, 15,  30, PHYSICAL
 	move HORN_ATTACK,              EFFECT_NORMAL_HIT,         65, NORMAL,    100, 25,   0, PHYSICAL
 	move FIRE_FANG,                EFFECT_FIRE_FANG,          65, FIRE,       95, 15,  10, PHYSICAL

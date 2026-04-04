@@ -41,6 +41,7 @@ LakeOnwa_MapScriptHeader:
 	object_event 42, 31, SPRITE_SAILBOAT, SPRITEMOVEDATA_SAILBOAT_TOP, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, LakeBoat, -1
 	object_event 41, 32, SPRITE_SAILBOAT, SPRITEMOVEDATA_TILE_DOWN_SOLID, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, LakeBoat, -1
 	object_event 42, 32, SPRITE_SAILBOAT, SPRITEMOVEDATA_TILE_UP_SOLID, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, LakeBoat, -1
+	person_event SPRITE_WEIRD_TREE, 23, 58, SPRITEMOVEDATA_SUDOWOODO, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, LakeSudowoodo, EVENT_FOUGHT_SUDOWOODO_LAKE
 	person_event SPRITE_COOL_DUDE, 32, 48, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, LakeNpc1, -1
 	person_event SPRITE_FISHER, 26, 12, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, LakeNpc2, -1
 	person_event SPRITE_CUTE_GIRL, 12, 27, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, LakeNpc3, -1
@@ -48,7 +49,6 @@ LakeOnwa_MapScriptHeader:
 	tapeball_event 41, 16, MUSIC_ROUTE_4, 1, EVENT_MUSIC_ROUTE_4
 	itemball_event 28,  6, REVIVE, 1, EVENT_LAKE_ONWA_POKE_BALL2
 	person_event SPRITE_HIKER,  7, 63, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_GENERICTRAINER, 3, TrainerLake, -1
-	person_event SPRITE_WEIRD_TREE, 23, 58, SPRITEMOVEDATA_SUDOWOODO, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, LakeSudowoodo, EVENT_FOUGHT_SUDOWOODO
 	smashrock_event 26, 10
 	smashrock_event 28,  9
 	smashrock_event 29,  8
@@ -62,6 +62,7 @@ LakeOnwa_MapScriptHeader:
 	const LAKEBOATT2
 	const LAKEBOATB1
 	const LAKEBOATB2
+	const LAKESUDOWOODO
 	const LAKENPC1
 	const LAKENPC2
 	const LAKENPC3
@@ -69,7 +70,6 @@ LakeOnwa_MapScriptHeader:
 	const LAKEPOKEBALL
 	const LAKEPOKEBALL2
 	const LAKETRAINER
-	const LAKESUDOWOODO
 	const LAKEROCK1
 	const LAKEROCK2
 	const LAKEROCK3
@@ -543,7 +543,10 @@ LakePlayedFluteForSudowoodo::
 	closetext
 	waitsfx
 	loadwildmon SUDOWOODO, 25
+	checkevent EVENT_FOUGHT_SUDOWOODO_2
+	iffalse .cont
 	writecode VAR_BATTLETYPE, BATTLETYPE_LEGENDARY
+.cont
 	startbattle
 	if_equal $1, .lose
 	if_equal $2, DidntBeatLakeSudowoodo
@@ -553,13 +556,25 @@ LakePlayedFluteForSudowoodo::
 	writetext LakeSudowoodoTextSudowoodoGone
 	waitbutton
 	closetext
-	setevent EVENT_FOUGHT_SUDOWOODO
 	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
-	setevent EVENT_UNIQUE_ENCOUNTER_SUDOWOODO_BOSS
+	scall HandleSudowoodoFlags
 	end
 .lose
-	clearevent EVENT_FOUGHT_SUDOWOODO
 	reloadmapafterbattle
+	end
+
+HandleSudowoodoFlags:
+	checkevent EVENT_FOUGHT_SUDOWOODO_1
+	iftrue .done_one
+	setevent EVENT_FOUGHT_SUDOWOODO_1
+	end
+.done_one
+	checkevent EVENT_FOUGHT_SUDOWOODO_2
+	iftrue .done_two
+	setevent EVENT_FOUGHT_SUDOWOODO_2
+	end
+.done_two
+	setevent EVENT_UNIQUE_ENCOUNTER_SUDOWOODO_BOSS
 	end
 
 LakeDontUseFlute:
@@ -576,8 +591,16 @@ LakeNoFlute:
 	end
 
 DidntBeatLakeSudowoodo:
+	scall HandleSudowoodoFlags
 	reloadmapafterbattle
-	applymovement LAKESUDOWOODO, WeirdTreeMovement_Flee
+	playsound SFX_SANDSTORM
+	applymovement LAKESUDOWOODO, SudowoodoShakeMovement
+	playsound SFX_JUMP_OVER_LEDGE
+	applyonemovement LAKESUDOWOODO, jump_step_up
+	playsound SFX_JUMP_OVER_LEDGE
+	applyonemovement LAKESUDOWOODO, jump_step_up
+	playsound SFX_JUMP_OVER_LEDGE
+	applyonemovement LAKESUDOWOODO, jump_step_up
 	disappear LAKESUDOWOODO
 	end
 
@@ -872,8 +895,8 @@ SudowoodoShakeMovement:
 	step_end
 
 WeirdTreeMovement_Flee:
-	fast_jump_step_up
-	fast_jump_step_up
+	jump_step_up
+	jump_step_up
 	step_end
 	
 Movement_Lake_Rival_1:

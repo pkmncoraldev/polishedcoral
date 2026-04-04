@@ -21,6 +21,14 @@ SunbeamBoatHouseSnare:
 	
 SunbeamBoatHouseNPC:
 	opentext
+	checkevent EVENT_RODE_SUNBEAM_BOAT_AFTER_SNARE
+	iftrue .not_first_ride
+	writetext SunbeamBoatHouseNPCText1
+	special PlaceMoneyTopRight
+	yesorno
+	iffalse .end
+	jump .LakeR_2
+.not_first_ride
 	writetext SunbeamBoatHouseNPCText2
 	special PlaceMoneyTopRight
 	yesorno
@@ -106,6 +114,7 @@ SunbeamBoatHouseNPC:
 	writetext SunbeamBoatHouseNPCText6
 	yesorno
 	iffalse .return
+.LakeR_2
 	checkmoney $0, 500
 	if_equal $2, .nomoneyLakeR
 	playsound SFX_TRANSACTION
@@ -113,6 +122,7 @@ SunbeamBoatHouseNPC:
 	special PlaceMoneyTopRight
 	writetext SunbeamBoatHouseNPCText7
 .LakeRCont
+	setevent EVENT_RODE_SUNBEAM_BOAT_AFTER_SNARE
 	setevent EVENT_TAKEN_LAKE_BOAT_ONCE
 	clearevent EVENT_LAKE_BOAT_LEFT
 	setevent EVENT_JUST_TOOK_BOAT
@@ -267,9 +277,16 @@ SunbeamBoatHouseBrilloMenuData:
 	end
 	
 SunbeamBoatHouseSnareText:
-	text "We're closed!"
+	text "Welcome to the"
+	line "SUNBEAM ISLAND"
+	cont "BOAT HOUSE."
 	
-	para "Don't come back!"
+	para "I can ferry you"
+	line "to LAKE ONWA "
+	cont "for ¥500."
+	
+	para "Would you like a"
+	line "ride?"
 	done
 	
 SunbeamBoatHouseNPCText1:

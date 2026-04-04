@@ -108,14 +108,12 @@ SECTION "Routes Scripts", ROMX
 INCLUDE "maps/Route1.asm"
 INCLUDE "maps/Route1Gate.asm"
 INCLUDE "maps/Route2.asm"
-INCLUDE "maps/Route3.asm"
 INCLUDE "maps/Route3East.asm"
 INCLUDE "maps/Route3FriendshipHouse.asm"
 INCLUDE "maps/Route5.asm"
 INCLUDE "maps/Route5Deep.asm"
 INCLUDE "maps/Route6.asm"
 INCLUDE "maps/Route7.asm"
-INCLUDE "maps/Route8.asm"
 INCLUDE "maps/Route8Gate.asm"
 INCLUDE "maps/Route8EncounterHouse.asm"
 INCLUDE "maps/Route14.asm"
@@ -206,6 +204,8 @@ INCLUDE "maps/LakeOnwaBoatHouseRight.asm"
 INCLUDE "maps/LakeOnwaBoatHouseLeft.asm"
 INCLUDE "maps/LakeOnwaNameRaterHouse.asm"
 INCLUDE "maps/LakeOnwaItemHouse.asm"
+INCLUDE "maps/Route3.asm"
+INCLUDE "maps/Route8.asm"
 
 
 SECTION "Sunbeam Island Scripts", ROMX

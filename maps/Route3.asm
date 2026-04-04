@@ -17,15 +17,16 @@ Route3_MapScriptHeader:
 	signpost 9, 0, SIGNPOST_READ, Route3_sign2
 	signpost 18, 34, SIGNPOST_READ, Route3_sign3
 
-	db 15 ; object events
+	db 17 ; object events
 	person_event SPRITE_YOUNGSTER, 8, 10, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 2, TrainerRoute3West_1, -1
 	person_event SPRITE_COOLTRAINER_M, 16, 30, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_GENERICTRAINER, 2, TrainerRoute3West_2, -1
 	person_event SPRITE_PONYTAIL, 13, 36, SPRITEMOVEDATA_WANDER, 0, 1, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, TrainerRoute3WestNpc, -1
 	person_event SPRITE_PATCHES,  8, 38, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, TrainerRoute3WestPatches, EVENT_GOT_HM08_ROCK_CLIMB
 	itemball_event 46, 30, RARE_CANDY, 1, EVENT_ROUTE_3_RARE_CANDY
-	cuttree_event 24, 11, EVENT_ROUTE_3_CUT_TREE_1
-	cuttree_event 23, 26, EVENT_ROUTE_3_CUT_TREE_2
-	cuttree_event 18, 31, EVENT_ROUTE_3_CUT_TREE_3
+	person_event SPRITE_WEIRD_TREE, 11, 25, SPRITEMOVEDATA_SUDOWOODO, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, LakeSudowoodo, EVENT_FOUGHT_SUDOWOODO_ROUTE_3
+	cuttree_event -5, -5, EVENT_ROUTE_3_CUT_TREE_1
+	cuttree_event -5, -5, EVENT_ROUTE_3_CUT_TREE_2
+	cuttree_event -5, -5, EVENT_ROUTE_3_CUT_TREE_3
 	smashrock_event 43, 13
 	smashrock_event 44, 12
 	smashrock_event 46,  9
@@ -33,6 +34,7 @@ Route3_MapScriptHeader:
 	smashrock_event 47, 15
 	smashrock_event 47, 12
 	fruittree_event 17, 12, FRUITTREE_ROUTE_3_1, CHERI_BERRY
+	person_event SPRITE_WEIRD_TREE, 33, 18, SPRITEMOVEDATA_SUDOWOODO, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, LakeSudowoodo, EVENT_FOUGHT_SUDOWOODO_ROUTE_8
 
 	const_def 1 ; object constants
 	const ROUTE3WEST_TRAINER1
@@ -40,6 +42,7 @@ Route3_MapScriptHeader:
 	const ROUTE3WEST_NPC
 	const ROUTE3WEST_PATCHES
 	const ROUTEWEST_POKEBALL
+	const ROUTEWEST_SUDOWOODO
 	const ROUTEWEST_CUT_TREE1
 	const ROUTEWEST_CUT_TREE2
 	const ROUTEWEST_CUT_TREE3

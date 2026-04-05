@@ -277,6 +277,12 @@ SunbeamBoatHouseBrilloMenuData:
 	end
 	
 SunbeamBoatHouseSnareText:
+	text "We're closed!"
+	
+	para "Don't come back!"
+	done
+	
+SunbeamBoatHouseNPCText1:
 	text "Welcome to the"
 	line "SUNBEAM ISLAND"
 	cont "BOAT HOUSE."
@@ -287,13 +293,6 @@ SunbeamBoatHouseSnareText:
 	
 	para "Would you like a"
 	line "ride?"
-	done
-	
-SunbeamBoatHouseNPCText1:
-	text "Sorry, kid."
-	
-	para "No boats are"
-	line "running for now."
 	done
 	
 SunbeamBoatHouseNPCText2:

@@ -115,7 +115,7 @@ Route23SetUpLeaves:
 Route23Secret:
 	dw EVENT_GOT_ROUTE_23_SECRET
 	opentext
-	loadvar wScriptVar, MIRACLETONIC
+	loadvar wScriptVar, CHERISH_BALL
 	itemtotext $0, $0
 	writetext .found_text
 	giveitem ITEM_FROM_MEM

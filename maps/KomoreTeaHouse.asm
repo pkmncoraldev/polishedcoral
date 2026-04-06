@@ -9,8 +9,7 @@ KomoreTeaHouse_MapScriptHeader:
 
 	db 0 ; coord events
 
-	db 1 ; bg events
-	signpost  1,  1, SIGNPOST_JUMPTEXT, KomoreTeaHouseTonicHintsText
+	db 0 ; bg events
 
 	db 1 ; object events
 	person_event SPRITE_ELDER,  4, 5, SPRITEMOVEDATA_SPINRANDOM_SLOW, 1, 1, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, KomoreTeaHouseMaster, -1
@@ -169,31 +168,6 @@ CheckItemTeaMaster:
 	ld a, 2
 	ld [wScriptVar], a
 	ret
-	
-KomoreTeaHouseTonicHintsText:
-	text "Tonic of miracles."
-	
-	para "They cannot be"
-	line "detected by"
-	cont "machines."
-	
-	para "It might be too"
-	line "late for some."
-	
-	para "Green spot in the"
-	line "sand."
-	
-	para "Beneath the lady"
-	line "near the leaves."
-	
-	para "Dark hallway in a"
-	line "dry shrine."
-	
-	para "Tear of the"
-	line "smiling woods."
-	
-	para "Good luck."
-	done
 	
 KomoreTeaHouseMasterTextGiveGold:
 	text "<PLAYER> handed"

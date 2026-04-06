@@ -32,7 +32,7 @@ DesertTemple1_MapScriptHeader:
 	coord_event 12,  3, 2, DesertTemple1Door2
 	coord_event 13,  3, 2, DesertTemple1Door2
 
-	db 16 ; bg events
+	db 17 ; bg events
 	signpost 31,  5, SIGNPOST_READ, DesertTemple1Switch1
 	signpost 25, 21, SIGNPOST_READ, DesertTemple1Switch2
 	signpost 24, 15, SIGNPOST_READ, DesertTemple1Torch1
@@ -49,10 +49,10 @@ DesertTemple1_MapScriptHeader:
 	signpost  5,  7, SIGNPOST_IFSET, DesertTemple1Collapse3
 	signpost  4, 18, SIGNPOST_IFSET, DesertTemple1Collapse4
 	signpost  5, 18, SIGNPOST_IFSET, DesertTemple1Collapse4
+	signpost  7,  1, SIGNPOST_IFNOTSET, DesertTemple1Secret
 
-	db 1 ; object events
-	person_event SPRITE_BALL_CUT_FRUIT,  7, 1, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, DesertTemple1Tonic, EVENT_GOT_DESERT_TEMPLE_SECRET
-	
+	db 0 ; object events
+		
 	
 	const_def 1 ; object constants
 	const DESERT_TEMPLE_TONIC
@@ -129,15 +129,27 @@ DesertTemple1Trigger2:
 .skip
 	end
 
-DesertTemple1Tonic:
-	loadvar wCurItemBallQuantity, 1
-	loadvar wCurItemBallContents, MIRACLETONIC
-	farscall FindItemInBallScript
-	iffalse .end
-	disappear DESERT_TEMPLE_TONIC
+DesertTemple1Secret:
+	dw EVENT_GOT_DESERT_TEMPLE_SECRET
+	opentext
+	loadvar wScriptVar, CHERISH_BALL
+	itemtotext $0, $0
+	writetext .found_text
+	giveitem ITEM_FROM_MEM
+	iffalse .bag_full
+	setevent EVENT_GOT_DESERT_TEMPLE_SECRET
+	specialsound
+	itemnotify
+	endtext
 	special Special_IncSecretCounter
-.end
-	end
+.bag_full
+	buttonsound
+	pocketisfull
+	endtext
+.found_text
+	; found @ !
+	text_jump UnknownText_0x1c0a1c
+	db "@"
 
 DesertTemple1ClearTimerAsm:
 	ld a, [wXCoord]

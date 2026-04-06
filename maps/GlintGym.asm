@@ -898,18 +898,7 @@ GlintGymBook7:
 	jumptext GlintGymBookText7
 	
 GlintGymBook8:
-;	checkevent EVENT_GOT_CLUE_1
-;	iftrue .gotclue
-;	opentext
-;	writetext GlintGymBookText8
-;	buttonsound
-;	verbosegiveitem CLUE_1
-;	closetext
-;	setevent EVENT_GOT_CLUE_1
-;	end
-	
-;.gotclue
-	jumptext GlintGymBookText8_2
+	jumptext GlintGymBookText8
 	
 GlintGymBook9:
 	jumptext GlintGymBookText9
@@ -921,19 +910,7 @@ GlintGymBook11:
 	jumptext GlintGymBookText11
 	
 GlintGymBook12:
-	opentext
-	writetext GlintGymBookText12_1
-	yesorno
-	iffalse .no
-	writetext GlintGymBookText12_2
-	waitbutton
-	closetext
-	end
-.no
-	farwritetext BetterNotText
-	waitbutton
-	closetext
-	end
+	jumptext GlintGymBookText12
 	
 GlintGymBook13:
 	jumptext GlintGymBookText13
@@ -1042,13 +1019,6 @@ GlintGymBookText7:
 	done
 	
 GlintGymBookText8:
-	text "What's this?"
-	
-	para "A dusty scrap of"
-	line "paper."
-	done
-	
-GlintGymBookText8_2:
 	text "An empty"
 	line "bookshelf…"
 	done
@@ -1080,111 +1050,26 @@ GlintGymBookText11:
 	cont "passages."
 	done
 	
-GlintGymBookText12_1:
-	text "A book titled"
-	line "“VEILSTONE'S"
-	cont "MYTH”."
+GlintGymBookText12:
+	text "Crimson orbs."
 	
-	para "It looks long."
+	para "They cannot be"
+	line "detected by"
+	cont "machines."
 	
-	para "Read it?"
-	done
+	para "It might be too"
+	line "late for some."
 	
-GlintGymBookText12_2:
-	text "A young man,"
-	line "callow and foolish"
-	cont "in innocence, came"
-	cont "to own a sword."
+	para "Tear of the"
+	line "smiling woods."
 	
-	para "With it, he smote"
-	line "#MON, which"
-	cont "gave sustenance,"
-	cont "with carefree"
-	cont "abandon."
+	para "Dark hallway in a"
+	line "dry shrine."
 	
-	para "Those not taken as"
-	line "food, he discarded"
-	cont "with no after-"
-	cont "thought."
+	para "Beneath the lady"
+	line "near the leaves."
 	
-	para "The following"
-	line "year, no #MON"
-	cont "appeared."
-	
-	para "Larders grew bare."
-	
-	para "The young man,"
-	line "seeking the miss-"
-	cont "ing #MON,"
-	cont "journyed afar."
-	
-	para "Long did he"
-	line "search."
-	
-	para "And far and wide,"
-	line "too, until one he"
-	cont "did find."
-	
-	para "Asked he, “Why"
-	line "do you hide?”"
-	
-	para "To which the #-"
-	line "MON replied…"
-	
-	para "“If you bear your"
-	line "sword to bring"
-	cont "harm upon us,"
-	
-	para "claws and fangs,"
-	line "we will exact a"
-	cont "toll."
-	
-	para "From your kind we"
-	line "will take our"
-	cont "toll,"
-	
-	para "for it must"
-	line "be done."
-	
-	para "Done it must be"
-	line "to guard ourselves"
-	cont "and for it,"
-	cont "I apologize."
-	
-	para "To the skies, the"
-	line "young man shouted"
-	cont "his dismay."
-	
-	para "“In having found"
-	line "this sword, I have"
-	cont "lost so much."
-	
-	para "Gorged with power,"
-	line "I grew blind to"
-	cont "#MON being"
-	cont "alive."
-	
-	para "I will never fall"
-	line "savage again."
-	
-	para "This sword I"
-	line "denounce and"
-	cont "forsake."
-	
-	para "I plead for for-"
-	line "giveness, for I "
-	cont "was but a fool.”"
-	
-	para "So saying this,"
-	line "the young man"
-	cont "hurled the sword"
-	cont "to the ground,"
-	cont "snapping it."
-	
-	para "Seeing this, the"
-	line "#MON disappear-"
-	cont "red to a place"
-	cont "beyond seeing…"
+	para "Good luck."
 	done
 	
 GlintGymBookText13:

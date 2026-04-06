@@ -22,12 +22,13 @@ EventideForest_MapScriptHeader:
 	xy_trigger 1,  9, 33, 0, ForestGhostGirlTrigger2, 0, 0
 	xy_trigger 0,  7, 52, 0, ForestGhostGirlTrigger, 0, 0
 
-	db 3 ; bg events
+	db 4 ; bg events
 	signpost  6,  8, SIGNPOST_READ, EventideForestSign
 	signpost 67, 37, SIGNPOST_READ, EventideForestSign2
 	bg_event 37, 17, SIGNPOST_ITEM + DUSK_STONE, EVENT_EVENTIDE_FOREST_HIDDEN_DUSK_STONE
+	signpost 61,  9, SIGNPOST_IFNOTSET, EventideForestSecret
 
-	db 15 ; object events
+	db 14 ; object events
 	person_event SPRITE_TWIN, 11, 31, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_FOREST_GHOST_GIRL_GONE
 	person_event SPRITE_TWIN,  5, 34, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_FOREST_GHOST_GIRL_GONE2
 	person_event SPRITE_YOUNGSTER, 12,  8, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 2, TrainerEventide_1, -1
@@ -42,8 +43,7 @@ EventideForest_MapScriptHeader:
 	fruittree_event 27, 14, FRUITTREE_EVENTIDE_FOREST, PECHA_BERRY
 	cuttree_event 33, 22, EVENT_EVENTIDE_FOREST_CUT_TREE_1
 	cuttree_event 33, 16, EVENT_EVENTIDE_FOREST_CUT_TREE_2
-	person_event SPRITE_BALL_CUT_FRUIT, 61,  9, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, EventideForestTonic, EVENT_GOT_EVENTIDE_FOREST_SECRET
-
+	
 	const_def 1 ; object constants
 	const FORESTGHOSTGIRL
 	const FORESTGHOSTGIRL2
@@ -57,15 +57,27 @@ EventideForestTrigger1:
 EventideForestTrigger2:
 	end
 	
-EventideForestTonic:
-	loadvar wCurItemBallQuantity, 1
-	loadvar wCurItemBallContents, MIRACLETONIC
-	farscall FindItemInBallScript
-	iffalse .end
-	disappear 14
+EventideForestSecret:
+	dw EVENT_GOT_EVENTIDE_FOREST_SECRET
+	opentext
+	loadvar wScriptVar, CHERISH_BALL
+	itemtotext $0, $0
+	writetext .found_text
+	giveitem ITEM_FROM_MEM
+	iffalse .bag_full
+	setevent EVENT_GOT_EVENTIDE_FOREST_SECRET
+	specialsound
+	itemnotify
+	endtext
 	special Special_IncSecretCounter
-.end
-	end
+.bag_full
+	buttonsound
+	pocketisfull
+	endtext
+.found_text
+	; found @ !
+	text_jump UnknownText_0x1c0a1c
+	db "@"
 	
 EventideForestSign:
 	jumptext EventideForestSignText

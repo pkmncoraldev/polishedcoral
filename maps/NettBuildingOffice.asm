@@ -1,7 +1,8 @@
 NettBuildingOffice_MapScriptHeader:
-	db 2 ; scene scripts
+	db 3 ; scene scripts
 	scene_script NettBuildingOfficeTrigger0
 	scene_script NettBuildingOfficeTrigger1
+	scene_script NettBuildingOfficeTrigger2
 
 	db 1 ; callbacks
 	callback MAPCALLBACK_TILES, NettBuildingOfficeCallback
@@ -11,8 +12,8 @@ NettBuildingOffice_MapScriptHeader:
 	warp_event  6,  9, NETT_BUILDING_2F, 4
 
 	db 2 ; coord events
-	coord_event  5,  8, 0, NettBuildingOfficeNettCutsceneL
-	coord_event  6,  8, 0, NettBuildingOfficeNettCutsceneR
+	coord_event  5,  8, 2, NettBuildingOfficeNettCutsceneL
+	coord_event  6,  8, 2, NettBuildingOfficeNettCutsceneR
 
 	db 11 ; bg events
 	signpost  4,  6, SIGNPOST_READ, NettBuildingOfficeNewton
@@ -39,9 +40,8 @@ NettBuildingOffice_MapScriptHeader:
 	
 	
 NettBuildingOfficeTrigger0:
-	end
-	
 NettBuildingOfficeTrigger1:
+NettBuildingOfficeTrigger2:
 	end
 	
 NettBuildingOfficeCallback:
@@ -151,7 +151,7 @@ NettBuildingOfficeNettCutscene:
 	setevent EVENT_NETT_OFFICE_CUTSCENE_DONE
 	setevent EVENT_MOM_CALLED_ABOUT_TEAM_SNARE
 	callasm NettBuildingOfficeSetUpSpruceBirdCall
-	dotrigger $1
+	dotrigger $2
 	end
 	
 NettBuildingOfficeSetUpSpruceBirdCall:

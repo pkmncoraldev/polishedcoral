@@ -468,16 +468,20 @@ LusterStationNettText2:
 	para "I forgot to"
 	line "introduce myself."
 	
-	para "I'm MR. NETT,"
+	para "My name is ELI.<WAIT_S>"
+	line "ELI NETT."
 	
-	para "PRESIDENT and CEO"
-	line "of NETT CORP."
+	para "I'm PRESIDENT and"
+	line "CEO of NETT CORP."
+	
+	para "It's wonderful to"
+	line "meet you."
 	done
 	
 LusterStationNettText3:
 	text "Remember to stop"
-	line "by and tell them I"
-	cont "sent you."
+	line "by and tell them"
+	cont "ELI sent you."
 	done
 	
 Movement_LusterTrainArrives2:

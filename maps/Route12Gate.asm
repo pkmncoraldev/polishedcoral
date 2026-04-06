@@ -66,7 +66,8 @@ Route12GateNettOfficerText:
 	
 	para "You shouldn't keep"
 	line "someone important"
-	cont "like him waiting."
+	cont "like ELI NETT"
+	cont "waiting."
 	
 	para "The NETT BUILDING"
 	line "is in the BUSINESS"

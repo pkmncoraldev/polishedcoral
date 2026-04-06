@@ -455,8 +455,12 @@ Luster3NPC5Text:
 	line "building in the"
 	cont "ONWA REGION!"
 	
-	para "I wonder what they"
-	line "do inside."
+	para "I hear the CEO"
+	line "is a super rich"
+	cont "philanthropist."
+	
+	para "Sigh…<WAIT_S>"
+	line "What a man!"
 	done
 	
 Luster3NPC6:
@@ -499,15 +503,17 @@ Luster3NPC8:
 	jumptextfaceplayer Luster3NPC8Text
 	
 Luster3NPC8Text:
-	text "This is the NETT"
-	line "CORP. building."
+	text "Are you here to"
+	line "visit NETT CORP.?"
 	
-	para "The CEO of NETT"
-	line "CORP. is MR. NETT."
+	para "Apparently profits"
+	line "have been down"
+	cont "since the current"
+	cont "CEO took over."
 	
-	para "He's a super rich"
-	line "tech genius and"
-	cont "philanthropist."
+	para "You'd never know it"
+	line "just from looking"
+	cont "at the building!"
 	done
 	
 Luster3NPC9:

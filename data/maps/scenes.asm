@@ -164,4 +164,5 @@ MapTriggers::
 	scene_var LUMINA_GYM,							  wLuminaGymTrigger
 	scene_var AUREOLE_MOUNTAIN_OUTSIDE,				  wAureoleMountainOutside
 	scene_var AUREOLE_MOUNTAIN_2F,					  wAlways0Trigger
+	scene_var NETT_BUILDING_2F,						  wNettBuildingOfficeTrigger
 	db -1

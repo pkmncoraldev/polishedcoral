@@ -118,8 +118,6 @@ NettBuilding1F_NPC_1_Text:
 	
 	para "This presentation"
 	line "needs to go well…"
-	
-	para "Mumble… <WAIT_S>mumble…"
 	done
 	
 NettBuilding1F_NPC_2_Text:
@@ -128,8 +126,6 @@ NettBuilding1F_NPC_2_Text:
 	para "This contract will"
 	line "make or break our"
 	cont "careers…"
-	
-	para "Mumble… <WAIT_S>mumble…"
 	done
 	
 NettBuilding1F_NPC_3_Text:

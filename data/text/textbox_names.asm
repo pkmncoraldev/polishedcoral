@@ -29,7 +29,7 @@ TextBoxSpeakers:
 	dw TextBoxPA
 	dw TextBoxConductor
 	dw TextBoxReporter
-	dw TextBoxNett
+	dw TextBoxEli
 	dw TextBoxRocky
 	dw TextBoxRockford
 	dw TextBoxLocke
@@ -107,7 +107,7 @@ TextBoxFrankie:			db "『FRANKIE@"
 TextBoxPA:				db "『PA@"
 TextBoxConductor:		db "『CONDUCTOR@"
 TextBoxReporter:		db "『REPORTER@"
-TextBoxNett:			db "『ELI@"
+TextBoxEli:				db "『ELI@"
 TextBoxRocky:			db "『ROCKY@"
 TextBoxRockford:		db "『ROCKFORD@"
 TextBoxLocke:			db "『LOCKE@"

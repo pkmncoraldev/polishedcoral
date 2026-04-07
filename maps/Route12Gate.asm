@@ -61,13 +61,12 @@ Route12GateNettOfficerText:
 	text "You're <PLAYER>,"
 	line "right?"
 	
-	para "MR. NETT wanted"
+	para "MR. ELI wanted"
 	line "to see you."
 	
 	para "You shouldn't keep"
 	line "someone important"
-	cont "like ELI NETT"
-	cont "waiting."
+	cont "like him waiting."
 	
 	para "The NETT BUILDING"
 	line "is in the BUSINESS"

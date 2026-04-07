@@ -12,8 +12,8 @@ NettBuildingOffice_MapScriptHeader:
 	warp_event  6,  9, NETT_BUILDING_2F, 4
 
 	db 2 ; coord events
-	coord_event  5,  8, 2, NettBuildingOfficeNettCutsceneL
-	coord_event  6,  8, 2, NettBuildingOfficeNettCutsceneR
+	coord_event  5,  8, 1, NettBuildingOfficeNettCutsceneL
+	coord_event  6,  8, 1, NettBuildingOfficeNettCutsceneR
 
 	db 11 ; bg events
 	signpost  4,  6, SIGNPOST_READ, NettBuildingOfficeNewton
@@ -66,7 +66,7 @@ NettBuildingOfficeNettCutsceneR:
 	spriteface PLAYER, UP
 NettBuildingOfficeNettCutscene:
 	pause 10
-	opentext TEXTBOX_NETT
+	opentext TEXTBOX_ELI
 	writetext NettBuildingOfficeNettText1
 	waitbutton
 	closetext
@@ -85,20 +85,29 @@ NettBuildingOfficeNettCutscene:
 	pause 20
 	applyonemovement NETT_OFFICE_NETT, slow_step_up
 	pause 20
-	opentext TEXTBOX_NETT
+	opentext TEXTBOX_ELI
 	writetext NettBuildingOfficeNettText2
 	waitbutton
 	closetext
+	pause 20
+	applyonemovement NETT_OFFICE_NETT, turn_step_down
+	closetext
+	pause 20
+	opentext TEXTBOX_ELI
+	writetext NettBuildingOfficeNettText11
+	waitbutton
+	closetext
 	pause 10
-	spriteface NETT_OFFICE_NETT, RIGHT
+	applyonemovement NETT_OFFICE_NETT, turn_step_right
+	closetext
 	pause 10
-	opentext TEXTBOX_NETT
+	opentext TEXTBOX_ELI
 	writetext NettBuildingOfficeNettText3
 	waitbutton
 	closetext
 	pause 20
 	applyonemovement NETT_OFFICE_NETT, slow_step_down
-	opentext TEXTBOX_NETT
+	opentext TEXTBOX_ELI
 	writetext NettBuildingOfficeNettText4
 	waitbutton
 	closetext
@@ -110,7 +119,7 @@ NettBuildingOfficeNettCutscene:
 	changeblock $6, $4, $36
 	callasm GenericFinishBridge
 	pause 40
-	opentext TEXTBOX_NETT
+	opentext TEXTBOX_ELI
 	writetext NettBuildingOfficeNettText5
 	waitbutton
 	closetext
@@ -136,7 +145,7 @@ NettBuildingOfficeNettCutscene:
 	applyonemovement PLAYER, show_person
 	pause 10
 	disappear NETT_OFFICE_PLAYER_CUTSCENE
-	opentext TEXTBOX_NETT
+	opentext TEXTBOX_ELI
 	writetext NettBuildingOfficeNettText6
 	buttonsound
 	farwritetext StdBlankText
@@ -241,7 +250,7 @@ NettBuildingOfficeNewton:
 	spriteface NETT_OFFICE_NETT, RIGHT
 	changeblock $4, $2, $ae
 	callasm GenericFinishBridge
-	opentext TEXTBOX_NETT
+	opentext TEXTBOX_ELI
 	writetext NettBuildingOfficeNewtonText3
 	waitbutton
 	closetext
@@ -257,7 +266,7 @@ NettBuildingOfficeNett:
 	if_equal RIGHT, .youarefacingright
 	if_equal DOWN, .youarefacingdown
 .cont
-	opentext TEXTBOX_NETT
+	opentext TEXTBOX_ELI
 	writetext NettBuildingOfficeNettText9
 	waitbutton
 	closetext
@@ -276,7 +285,7 @@ NettBuildingOfficeNett:
 	callasm GenericFinishBridge
 	jump .cont
 .youarefacingdown
-	opentext TEXTBOX_NETT
+	opentext TEXTBOX_ELI
 	writetext NettBuildingOfficeNettText10
 	waitbutton
 	closetext
@@ -300,9 +309,9 @@ NettBuildingOfficeNettText2:
 	para "…"
 	
 	para "The people of the"
-	line "ONWA REGION have"
-	cont "lived in relative"
-	cont "peace and safety."
+	line "ONWA REGION live"
+	cont "in relative peace"
+	cont "and security."
 	
 	para "Of course there"
 	line "has always been"
@@ -338,11 +347,11 @@ NettBuildingOfficeNettText2:
 	cont "safety."
 	
 	para "All because of"
-	line "this TEAM SNARE…"
+	line "this… <WAIT_M>TEAM SNARE…"
+	done
 	
-	para "…"
-	
-	para "My father founded"
+NettBuildingOfficeNettText11:
+	text "My father founded"
 	line "NETT CORP. with a"
 	cont "noble goal."
 	
@@ -515,27 +524,6 @@ NettBuildingOfficeBookshelfText:
 	text "None of the books"
 	line "will budge."
 	done
-	
-Movement_NettBuildingOfficeNett1:
-	step_right
-	step_right
-	step_down
-	step_down
-	step_down
-	step_left
-	step_left
-	step_end
-	
-Movement_NettBuildingOfficeNett2:
-	step_right
-	step_right
-	step_up
-	step_up
-	step_up
-	step_left
-	step_left
-	slow_step_left
-	step_end
 	
 Movement_NettBuildingOfficePlayerCutscene1:
 	step_up

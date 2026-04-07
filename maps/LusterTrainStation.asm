@@ -185,7 +185,7 @@ LusterTrainStationArrive:
 	opentext TEXTBOX_UNKNOWN
 	writetext LusterStationNettText2
 	buttonsound
-	changetextboxspeaker TEXTBOX_NETT
+	changetextboxspeaker TEXTBOX_ELI
 	farwritetext StdBlankText
 	pause 6
 	writetext LusterStationNettText3
@@ -468,8 +468,7 @@ LusterStationNettText2:
 	para "I forgot to"
 	line "introduce myself."
 	
-	para "My name is ELI.<WAIT_S>"
-	line "ELI NETT."
+	para "My name is ELI."
 	
 	para "I'm PRESIDENT and"
 	line "CEO of NETT CORP."
@@ -480,8 +479,8 @@ LusterStationNettText2:
 	
 LusterStationNettText3:
 	text "Remember to stop"
-	line "by and tell them"
-	cont "ELI sent you."
+	line "by and tell them I"
+	cont "sent you."
 	done
 	
 Movement_LusterTrainArrives2:

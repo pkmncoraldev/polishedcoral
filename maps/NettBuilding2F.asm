@@ -89,14 +89,12 @@ NettBuilding2FStopText:
 	done
 	
 NettBuilding2F_NPC_2_Text1:
-	text "ELI?"
-	
-	para "Ah, you must be"
+	text "Ah, you must be"
 	line "<PLAYER>."
 	
 	para "You indeed have an"
 	line "appointment with"
-	cont "MR. NETT."
+	cont "MR. ELI."
 	
 	para "Go on in."
 	done
@@ -111,5 +109,5 @@ NettBuilding2F_Sign1Text:
 	done
 	
 NettBuilding2F_Sign2Text:
-	text "ELI NETT'S OFFICE"
+	text "ELI'S OFFICE"
 	done

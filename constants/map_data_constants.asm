@@ -81,6 +81,7 @@ DEF const_value = -1
 	const SPAWN_KOMORE
 	const SPAWN_BRIGHT
 	const SPAWN_OBSCURA
+	const SPAWN_LUMINA
 	
 	const SPAWN_STARGLOW_CAVERN_DEPTHS
 	const SPAWN_FAKE_SUNSET

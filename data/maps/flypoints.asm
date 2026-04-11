@@ -27,6 +27,7 @@ DEF SOUTH_ONWA_FLYPOINT EQU const_value
 	flypoint KOMORE,			KOMORE_VILLAGE
 	flypoint BRIGHT,			BRIGHTBURG
 	flypoint OBSCURA,			OBSCURA_CITY
+	flypoint LUMINA,			LUMINA_TOWN
 	
 	flypoint LASTFLYPOINT,		SHIMMER_CITY
 	db -1

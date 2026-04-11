@@ -1,7 +1,8 @@
 LuminaTown_MapScriptHeader:
 	db 0 ; scene scripts
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_NEWMAP, LuminaTownFlyPoint
 
 	db 5 ; warp events
 	warp_def 17, 25, 1, LUMINA_HEALER_HOUSE
@@ -36,6 +37,10 @@ LuminaTown_MapScriptHeader:
 	itemball_event  8,  8, DRAGON_FANG, 1, EVENT_LUMINA_TOWN_ITEMBALL
 	tmhmball_event 37,  4, TM_DRAGON_PULSE, EVENT_TM59
 	
+	
+LuminaTownFlyPoint:
+	setflag ENGINE_FLYPOINT_L
+	return
 	
 LuminaTownNPC1:
 	checkevent EVENT_LUMINA_TOWN_UNDER_ATTACK

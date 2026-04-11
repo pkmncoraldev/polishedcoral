@@ -57,26 +57,31 @@ GreenGrotto1FRocksCallback:
 	db -1 ; end
 
 .Boulder_1:
+	special Special_StopRunning
 	playsound SFX_KINESIS
 	disappear GREEN_GROTTO_BOULDER_1
 	sjump .FinishBoulder
 	
 .Boulder_2:
+	special Special_StopRunning
 	playsound SFX_KINESIS
 	disappear GREEN_GROTTO_BOULDER_2
 	sjump .FinishBoulder
 	
 .Boulder_3:
+	special Special_StopRunning
 	playsound SFX_KINESIS
 	disappear GREEN_GROTTO_BOULDER_3
 	sjump .FinishBoulder
 	
 .Boulder_4:
+	special Special_StopRunning
 	playsound SFX_KINESIS
 	disappear GREEN_GROTTO_BOULDER_4
 	sjump .FinishBoulder
 	
 .Boulder_5:
+	special Special_StopRunning
 	playsound SFX_KINESIS
 	disappear GREEN_GROTTO_BOULDER_5
 	sjump .FinishBoulder

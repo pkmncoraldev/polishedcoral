@@ -104,6 +104,7 @@ AureoleMountain4FCallback:
 	db -1 ; end
 	
 .Boulder_1
+	special Special_StopRunning
 	refreshscreen
 	disappear 11
 	moveperson 11, 23, 35
@@ -124,6 +125,7 @@ AureoleMountain4FCallback:
 	jumptext RockDestroyedText
 	
 .Boulder_2
+	special Special_StopRunning
 	refreshscreen
 	disappear 12
 	moveperson 12, 25, 33
@@ -144,6 +146,7 @@ AureoleMountain4FCallback:
 	jumptext RockDestroyedText
 	
 .Boulder_3
+	special Special_StopRunning
 	refreshscreen
 	disappear 13
 	moveperson 13, 13, 35

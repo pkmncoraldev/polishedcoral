@@ -498,6 +498,7 @@ Route28RocksCallback:
 	db -1 ; end
 
 .Boulder_1_T:
+	special Special_StopRunning
 	changeblock 20, 16, 59
 	disappear ROUTE_28_BOULDER_DUMMY
 	setevent EVENT_ROUTE_28_BOULDER_TOP
@@ -511,6 +512,7 @@ Route28RocksCallback:
 	end
 	
 .Boulder_2_T:
+	special Special_StopRunning
 	changeblock 20, 16, 59
 	disappear ROUTE_28_BOULDER_DUMMY
 	setevent EVENT_ROUTE_28_BOULDER_TOP
@@ -524,6 +526,7 @@ Route28RocksCallback:
 	end
 	
 .Boulder_1_B:
+	special Special_StopRunning
 	changeblock 20, 16, 59
 	disappear ROUTE_28_BOULDER_DUMMY
 	setevent EVENT_ROUTE_28_BOULDER_BOTTOM
@@ -537,6 +540,7 @@ Route28RocksCallback:
 	end
 	
 .Boulder_2_B:
+	special Special_StopRunning
 	changeblock 20, 16, 59
 	disappear ROUTE_28_BOULDER_DUMMY
 	setevent EVENT_ROUTE_28_BOULDER_BOTTOM

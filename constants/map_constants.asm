@@ -63,6 +63,7 @@ DEF MAP_NONE   EQU 0
 	map_const AUREOLE_MOUNTAIN_1F,						  19, 25 ; 41
 	map_const AUREOLE_MOUNTAIN_2F,						  17, 11 ; 42
 	map_const AUREOLE_MOUNTAIN_3F,						  16, 11 ; 43
+	map_const AUREOLE_MOUNTAIN_5F,						  15, 17 ; 44
 
 	newgroup                                                     ;  2
 
@@ -406,14 +407,15 @@ DEF MAP_NONE   EQU 0
 	map_const DUSK_AUTO_GARAGE,							   4,  4 ; 10
 	map_const ROUTE_22_TUNNEL,							  20, 12 ; 11
 	map_const SEASIDE_CAVE_1F,							  12, 19 ; 12
-	map_const DUSK_HOUSE_2,     	             		   4,  4 ; 
-	map_const SEASIDE_CAVE_B1F,							  13, 21 ; 13
-	map_const SEASIDE_CAVE_B2F,							   8, 10 ; 14
-	map_const BAR_BACK_ALLEY,							  10,  6 ; 15
-	map_const BAR_INSIDE,								   8,  5 ; 16
-	map_const CROSSROADS,								  22, 12 ; 17
-	map_const ROUTE_22,									  77,  8 ; 18
-	map_const ROUTE_22_2,								  36, 20 ; 19
+	map_const DUSK_HOUSE_2,     	             		   4,  4 ; 13
+	map_const SEASIDE_CAVE_B1F,							  13, 21 ; 14
+	map_const SEASIDE_CAVE_B2F,							   8, 10 ; 15
+	map_const BAR_BACK_ALLEY,							  10,  6 ; 16
+	map_const BAR_INSIDE,								   8,  5 ; 17
+	map_const CROSSROADS,								  22, 12 ; 18
+	map_const ROUTE_22,									  77,  8 ; 19
+	map_const ROUTE_22_2,								  36, 20 ; 20
+	map_const AUREOLE_MOUNTAIN_4F,						  20, 22 ; 21
 	
 	newgroup													 ; 21
 	

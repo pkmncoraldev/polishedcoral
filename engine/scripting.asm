@@ -277,6 +277,8 @@ ScriptCommandTable:
 	dw Script_warp_stealth
 	dw Script_changeaction
 	dw Script_billboard_move
+	dw Script_checkspritex
+	dw Script_checkspritey
 
 StartScript:
 	ld hl, wScriptFlags
@@ -1240,6 +1242,43 @@ Script_variablesprite2:
 	pop de
 	ld [hl], a
 	farjp ReloadSpriteIndex
+
+Script_checkspritex:
+	call GetScriptByte
+	ldh [hMapObjectIndexBuffer], a
+	call GetMapObject
+	ld l, c
+	ld h, b
+	ld a, [hl]
+	push af
+	call GetObjectStruct
+	pop af
+	dec a
+	ld bc, OBJECT_STRUCT_LENGTH
+	ld hl, wObject1StandingMapX
+	rst AddNTimes
+	ld a, [hl]
+	ld [wScriptVar], a
+	ret
+	
+Script_checkspritey:
+	call GetScriptByte
+	ldh [hMapObjectIndexBuffer], a
+	call GetMapObject
+	ld l, c
+	ld h, b
+	ld a, [hl]
+	push af
+	call GetObjectStruct
+	pop af
+	dec a
+	ld bc, OBJECT_STRUCT_LENGTH
+	ld hl, wObject1StandingMapY
+	rst AddNTimes
+	ld a, [hl]
+	sub 4
+	ld [wScriptVar], a
+	ret
 
 Script_priority:
 ; parameters:

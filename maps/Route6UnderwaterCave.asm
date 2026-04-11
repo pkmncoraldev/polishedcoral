@@ -4,17 +4,17 @@ Route6UnderwaterCave_MapScriptHeader:
 	db 0 ; callbacks
 
 	db 4 ; warp events
-	warp_event  5, 12, ROUTE_6_UNDERWATER, 75
-	warp_event  6, 12, ROUTE_6_UNDERWATER, 76
-	warp_event  5, 13, ROUTE_6_UNDERWATER, 77
-	warp_event  6, 13, ROUTE_6_UNDERWATER, 78
+	warp_event  4, 12, ROUTE_6_UNDERWATER, 75
+	warp_event  5, 12, ROUTE_6_UNDERWATER, 76
+	warp_event  4, 13, ROUTE_6_UNDERWATER, 77
+	warp_event  5, 13, ROUTE_6_UNDERWATER, 78
 
 	db 0 ; coord events
 
 	db 0 ; bg events
 
 	db 1 ; object events
-	object_event  6,  3, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, LAPRAS, -1, -1, (1 << 3) | PAL_NPC_BLUE, PERSONTYPE_SCRIPT, 0, Route6UnderwaterCaveLapras, EVENT_ROUTE_6_UNDERWATER_CAVE_LAPRAS_GONE
+	object_event  5,  3, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, LAPRAS, -1, -1, (1 << 3) | PAL_NPC_BLUE, PERSONTYPE_SCRIPT, 0, Route6UnderwaterCaveLapras, EVENT_ROUTE_6_UNDERWATER_CAVE_LAPRAS_GONE
 
 	const_def 1 ; object constants
 	const ROUTE_6_UNDERWATER_CAVE_LAPRAS

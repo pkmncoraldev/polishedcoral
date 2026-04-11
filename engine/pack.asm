@@ -627,7 +627,7 @@ TossMenu: ; 10364
 	jp Pack_PrintTextNoScroll
 	
 .well
-	ld a, 2
+	ld a, 3
 	ld [wAureoleMountainOutside], a
 	ld a, $f ; Pack_QuitCloseMenu
 	ld [wJumptableIndex], a

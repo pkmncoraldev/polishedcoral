@@ -14,4 +14,4 @@ AureoleMountain3F_MapScriptHeader:
 	bg_event 13, 10, SIGNPOST_ITEM + FULL_HEAL, EVENT_AUREOLE_MOUNTAIN_3F_HIDDEN_ITEM_2
 
 	db 1 ; object events
-	itemball_event 11,  4, EXPERT_BELT, 1, EVENT_AUREOLE_MOUNTAIN_3F_ITEM
+	itemball_event 11,  4, KINGS_ROCK, 1, EVENT_AUREOLE_MOUNTAIN_3F_ITEM

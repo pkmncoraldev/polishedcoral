@@ -1,15 +1,17 @@
 AureoleMountainOutside_MapScriptHeader:
-	db 3 ; scene scripts
+	db 4 ; scene scripts
 	scene_script AureoleMountainOutsideTrigger0
 	scene_script AureoleMountainOutsideTrigger1
 	scene_script AureoleMountainOutsideTrigger2
+	scene_script AureoleMountainOutsideTrigger3
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_TILES, AureoleMountainOutsideChangeBlocks
 
 	db 3 ; warp events
 	warp_def 49, 10, 10, AUREOLE_MOUNTAIN_1F
-	warp_def 43, 36, 3, AUREOLE_MOUNTAIN_OUTSIDE
-	warp_def 23, 30, 2, AUREOLE_MOUNTAIN_OUTSIDE
+	warp_def 43, 36, 1, AUREOLE_MOUNTAIN_4F
+	warp_def 23, 30, 4, AUREOLE_MOUNTAIN_5F
 
 	db 4 ; coord events
 	coord_event  4, 38, 0, AureoleMountainOutsideBridgeUp
@@ -30,11 +32,22 @@ AureoleMountainOutside_MapScriptHeader:
 
 AureoleMountainOutsideTrigger0:
 AureoleMountainOutsideTrigger1:
+AureoleMountainOutsideTrigger2:
 	end
 	
-AureoleMountainOutsideTrigger2:
+AureoleMountainOutsideTrigger3:
 	priorityjump AureoleMountainOutsideWellEvent
 	end
+
+AureoleMountainOutsideChangeBlocks:
+	checkscene
+	ifequal $1, .changeblocks
+	return
+.changeblocks
+	changeblock $16, $28, $b1
+	changeblock $18, $28, $b2
+	changeblock $1a, $28, $b3
+	return
 
 AureoleMountainOutsideWell:
 	jumptext AureoleMountainOutsideWellText1

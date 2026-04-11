@@ -239,6 +239,7 @@ DEF PLAYER_F EQU __enum__
 	const BRAD
 	const CRAIG
 	const BRUCE
+	const JOE
 	
 
 	trainerclass GRUNTM

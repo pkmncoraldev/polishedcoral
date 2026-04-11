@@ -849,3 +849,5 @@ ENDM
 	map_attributes AureoleMountain1F, AUREOLE_MOUNTAIN_1F, $9, 0
 	map_attributes AureoleMountain2F, AUREOLE_MOUNTAIN_2F, $9, 0
 	map_attributes AureoleMountain3F, AUREOLE_MOUNTAIN_3F, $9, 0
+	map_attributes AureoleMountain4F, AUREOLE_MOUNTAIN_4F, $9, 0
+	map_attributes AureoleMountain5F, AUREOLE_MOUNTAIN_5F, $9, 0

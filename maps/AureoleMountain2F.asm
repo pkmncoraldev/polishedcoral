@@ -15,12 +15,12 @@ AureoleMountain2F_MapScriptHeader:
 	db 0 ; bg events
 
 	db 6 ; object events
-	object_event 14,  7, SPRITE_DISGUISEMAN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_BEAT_AUREOLE_MOUNTAIN_2F_DISGUISEMAN_BLUE
+	object_event 14,  7, SPRITE_DISGUISEMAN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_AUREOLE_MOUNTAIN_2F_DISGUISEMAN_BLUE
 	object_event 14,  7, SPRITE_DISGUISEMAN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, AureoleMountain2FDisguiseman, EVENT_BEAT_AUREOLE_MOUNTAIN_2F_DISGUISEMAN
 	person_event SPRITE_PSYCHIC, 12,  5, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 3, AureoleMountain2F_Trainer_1, -1
 	person_event SPRITE_COOLTRAINER_F,  2, 25, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_GENERICTRAINER, 3, AureoleMountain2F_Trainer_2, -1
 	person_event SPRITE_HIKER, 19, 26, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_GENERICTRAINER, 3, AureoleMountain2F_Trainer_3, -1
-	person_event SPRITE_SUPER_NERD, 10, 21, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_GENERICTRAINER, 2, AureoleMountain2F_Trainer_4, -1
+	person_event SPRITE_PSYCHIC, 10, 21, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 2, AureoleMountain2F_Trainer_4, -1
 
 	
 AureoleMountain2FTrigger0:
@@ -36,7 +36,7 @@ AureoleMountain2FCoordAsm:
 	ret	
 	
 AureoleMountain2F_Trainer_1:
-	generictrainer PSYCHIC_T, RHETT, EVENT_BEAT_AUREOLE_MOUNTAIN_2F_TRAINER_1, .SeenText, .BeatenText
+	generictrainer PSYCHIC_T, JACQUES, EVENT_BEAT_AUREOLE_MOUNTAIN_2F_TRAINER_1, .SeenText, .BeatenText
 
 	text "NORMAL TEXT"
 	done
@@ -78,7 +78,7 @@ AureoleMountain2F_Trainer_3:
 	done
 	
 AureoleMountain2F_Trainer_4:
-	generictrainer HIKER, BRUCE, EVENT_BEAT_AUREOLE_MOUNTAIN_2F_TRAINER_4, .SeenText, .BeatenText
+	generictrainer PSYCHIC_T, RHETT, EVENT_BEAT_AUREOLE_MOUNTAIN_2F_TRAINER_4, .SeenText, .BeatenText
 
 	text "NORMAL TEXT"
 	done

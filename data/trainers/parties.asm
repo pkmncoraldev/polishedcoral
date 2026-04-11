@@ -2435,6 +2435,15 @@ HikerGroup:
 	db -1 ; end
 
 ; ================
+
+	; HIKER
+	db "JOE@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
 ; ================================
 
 

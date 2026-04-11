@@ -100,6 +100,8 @@ INCLUDE "maps/BoneCavernB2F.asm"
 INCLUDE "maps/BoneCavernMarowakRoom.asm"
 INCLUDE "maps/AureoleMountain1F.asm"
 INCLUDE "maps/AureoleMountain3F.asm"
+INCLUDE "maps/AureoleMountain4F.asm"
+INCLUDE "maps/AureoleMountain5F.asm"
 INCLUDE "maps/AureoleMountainOutside.asm"
 
 

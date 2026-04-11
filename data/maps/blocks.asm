@@ -1072,6 +1072,12 @@ AureoleMountain2F_BlockData:
 AureoleMountain3F_BlockData:
 	INCBIN "maps/AureoleMountain3F.ablk.lz"
 	
+AureoleMountain4F_BlockData:
+	INCBIN "maps/AureoleMountain4F.ablk.lz"
+	
+AureoleMountain5F_BlockData:
+	INCBIN "maps/AureoleMountain5F.ablk.lz"
+	
 AureoleMountainOutside_BlockData:
 	INCBIN "maps/AureoleMountainOutside.ablk.lz"
 	

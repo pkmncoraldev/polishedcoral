@@ -1398,6 +1398,18 @@ macro billboard_move
 	db \4 ; spritex
 	endm
 	
+	enum checkspritex_command
+macro checkspritex
+	db checkspritex_command
+	db \1 ; person
+	endm
+	
+	enum checkspritey_command
+macro checkspritey
+	db checkspritey_command
+	db \1 ; person
+	endm
+	
 macro thisasm
 	callasm .asm\@
 	end

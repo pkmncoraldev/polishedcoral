@@ -111,6 +111,7 @@ ObscuraFortuneHouseTeller:
 	scall ObscuraFortuneHouseTellerCutscene
 	callasm ObscuraFortuneHouseTellerSetupTMsAsm
 	if_equal $69, .no_more
+	if_equal $70, .no_more2
 	waitbutton
 	closetext
 	end
@@ -155,6 +156,18 @@ ObscuraFortuneHouseTeller:
 	end
 .no_more
 	writetext NoMoreFortunesText
+	special PlaceMoneyTopRight
+	callasm BGMapAnchorTopLeft
+	pause 5
+	playsound SFX_TRANSACTION
+	givemoney $0, 1500
+	special PlaceMoneyTopRight
+	pause 15
+	refreshscreen $0
+	pause 5
+	end
+.no_more2
+	writetext NoMoreFortunesRightNowText
 	special PlaceMoneyTopRight
 	callasm BGMapAnchorTopLeft
 	pause 5
@@ -456,6 +469,11 @@ ObscuraFortuneHouseTellerAsm:
 	ld [wScriptVar], a
 	ret
 	
+.no_more2
+	ld a, $70
+	ld [wScriptVar], a
+	ret
+	
 .tms
 	ld hl, TM_Text
 	call PrintText
@@ -475,6 +493,11 @@ ObscuraFortuneHouseTellerAsm:
 	ld a, [wCurTMHM]
 	cp $16	;psychic tm hint
 	jr z, .give_psychic
+	push hl
+	call ObscuraFortuneHouseCheckLuminaTMs
+	pop hl
+	cp -1
+	jr z, .no_more2
 	jr .finish
 .give_psychic
 	ld a, 69
@@ -517,6 +540,26 @@ ObscuraFortuneHouseTellerAsm:
 	ld hl, TellerEndText
 	jp PrintText
 	
+ObscuraFortuneHouseCheckLuminaTMs:
+	cp $1f ;POWER GEM
+	jr z, .check
+	cp $2c ;DARK PULSE
+	jr z, .check
+	cp $2d ;ENDURE
+	jr z, .check
+	cp $2e ;DRAGON PULSE
+	jr z, .check
+	cp $39 ;SIGNAL BEAM
+	jr z, .check
+.can_give_hint
+	xor a
+	ret
+.check
+	eventflagcheck EVENT_REACHED_LUMINA
+	jr nz, .can_give_hint
+	ld a, -1
+	ret
+	
 GivePsychicTMScript:
 	writetext TM29Text
 	verbosegivetmhm TM_PSYCHIC
@@ -536,6 +579,19 @@ NoMoreFortunesText:
 	para "I guess I can't"
 	line "help you with that"
 	cont "anymore…"
+	
+	para "Here, I'll give"
+	line "you your money"
+	cont "back."
+	done
+	
+NoMoreFortunesRightNowText:
+	text "However, I can't"
+	line "see it clearly…"
+	
+	para "You might need to"
+	line "make some more"
+	cont "progress first."
 	
 	para "Here, I'll give"
 	line "you your money"
@@ -868,7 +924,7 @@ TM32Text:
 	
 	para "I see you on a"
 	line "racetrack on the"
-	line "back of a bird."
+	cont "back of a bird."
 	
 	para "You revisit and"
 	line "are met with a"
@@ -877,7 +933,7 @@ TM32Text:
 
 TM34Text:
 	text "It's in the grass"
-	line "in the hear of"
+	line "in the heart of"
 	cont "the jungle."
 	
 	para "It's past a"
@@ -1107,8 +1163,15 @@ TM70Text:
 	prompt
 	
 TM71Text:
-	text "TM71"
-	line "TODO"
+	text "It's in the"
+	line "AUREOLE MOUNTAIN."
+	
+	para "It's under a"
+	line "bridge."
+	
+	para "It's in front of"
+	line "your face, but you"
+	cont "cannot see it."
 	prompt
 	
 TM72Text:

@@ -39,7 +39,8 @@ LuminaTown_MapScriptHeader:
 	
 	
 LuminaTownFlyPoint:
-	setflag ENGINE_FLYPOINT_L
+	setflag ENGINE_FLYPOINT_LUMINA
+	setevent EVENT_REACHED_LUMINA
 	return
 	
 LuminaTownNPC1:

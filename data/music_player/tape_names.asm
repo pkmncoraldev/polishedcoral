@@ -66,5 +66,6 @@ TapeNames::
 	db "“BATTLE!<LNBRK><LNBRK>RIVAL 2”@"
 	db "“RADIANT TOWN”@"
 	db "“OBSCURA CITY”@"
+	db "“AUREOLE MOUNTAIN”@"
 	db "“LUMINA TOWN”@"
 	db "“DRAGON SHRINE”@"

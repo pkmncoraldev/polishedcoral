@@ -6,8 +6,8 @@ LuminaTown_MapScriptHeader:
 
 	db 5 ; warp events
 	warp_def 17, 25, 1, LUMINA_HEALER_HOUSE
-	warp_def  6, 22, 1, LUMINA_HOUSE_1
-	warp_def 12, 12, 1, LUMINA_ADMIN_HOUSE
+	warp_def 12, 12, 1, LUMINA_HOUSE_1
+	warp_def  6, 22, 1, LUMINA_ADMIN_HOUSE
 	warp_def  7, 44, 1, LUMINA_ELDERS_HOUSE
 	warp_def  8, 28, 1, LUMINA_RUSS_HOUSE
 
@@ -34,7 +34,7 @@ LuminaTown_MapScriptHeader:
 
 	db 2 ; object events
 	
-	itemball_event  8,  8, DRAGON_FANG, 1, EVENT_LUMINA_TOWN_ITEMBALL
+	itemball_event 12,  8, DRAGON_FANG, 1, EVENT_LUMINA_TOWN_ITEMBALL
 	tmhmball_event 37,  4, TM_DRAGON_PULSE, EVENT_TM59
 	
 	

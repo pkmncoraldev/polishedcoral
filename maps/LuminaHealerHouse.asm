@@ -1,7 +1,8 @@
 LuminaHealerHouse_MapScriptHeader:
 	db 0 ; scene scripts
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_TILES, LuminaHealerHouseCallback
 
 	db 2 ; warp events
 	warp_def  9,  5, 1, LUMINA_TOWN
@@ -32,6 +33,11 @@ LuminaHealerHouse_MapScriptHeader:
 	person_event SPRITE_GENTLEMAN,  3,  7, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, LuminaHealerHouseRuss, EVENT_RUSS_GONE
 	person_event SPRITE_POKEFAN_M,  6,  7, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, LuminaHealerHouseNPC1, -1
 	person_event SPRITE_SAILOR,  4,  9, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, LuminaHealerHouseBartender, -1
+	
+	
+LuminaHealerHouseCallback:
+	blackoutmod LUMINA_TOWN
+	return
 	
 LuminaHealerHouseFireplaceText:
 	text "Ah…<WAIT_S>"

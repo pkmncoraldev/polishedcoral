@@ -29,8 +29,11 @@ Music_AureoleMoutain_Ch1_loop:
 	dutycycle $0
 	intensity $2e
 	note C#, 8
+	intensity $e8
 	note D_, 6
+	intensity $e7
 	note C#, 8
+	intensity $2e
 	note D_, 8
 	
 	intensity $b5
@@ -160,8 +163,11 @@ Music_AureoleMoutain_Ch2_loop:
 	dutycycle $0
 	intensity $2e
 	note A_, 8
+	intensity $e8
 	note B_, 6
+	intensity $e7
 	note A_, 8
+	intensity $2e
 	note B_, 8
 	
 	dutycycle $1

@@ -1253,25 +1253,25 @@ TellerTapeText:
 	dw Music_MinibossBattleText
 	dw Music_Route12Text
 	dw Music_WaterRouteText
+	dw Music_DarknessText
 	dw Music_ShimmerCityText
 	dw Music_BrilloTownText
 	dw Music_OasisText
-	dw Music_SnareLeaderBattleText
 	dw Music_GentlemanEncounterText
 	dw Music_BarText
-	dw Music_DarknessText
+	dw Music_ErikaText
+	dw Music_RivalBattle2Text
 	dw Music_AutumnText
 	dw Music_DojoText
-	dw Music_UnderwaterText
 	dw Music_Route28Text
-	dw Music_MinasThemeText
-	dw Music_RBYWildBattleText
-	dw Music_RivalBattle2Text
-	dw Music_ErikaText
+	dw Music_MinasThemeText	
 	dw Music_ObscuraText
+	dw Music_UnderwaterText
+	dw Music_AureoleMountainText
 	dw Music_LuminaText
 	dw Music_DragonShrine
-	dw Music_Unused
+	dw Music_SnareLeaderBattleText
+	dw Music_RBYWildBattleText
 	dw Music_Unused
 	dw Music_Unused
 	dw Music_Unused
@@ -1679,6 +1679,15 @@ Music_WaterRouteText:
 	line "LIGHTHOUSE."
 	prompt
 	
+Music_DarknessText:
+ 	text "It's in the"
+	line "CONNECTING CAVERN."
+	
+	para "You can get there"
+	line "from under the"
+	cont "LIGHTHOUSE."
+	prompt
+	
 Music_ShimmerCityText:
  	text "It's in SHIMMER"
 	line "CITY."
@@ -1708,12 +1717,6 @@ Music_OasisText:
 	line "the flags."
 	prompt
 	
-Music_SnareLeaderBattleText:
- 	text "SNARE LEADER"
-	line "BATTLE"
-	cont "TODO"
-	prompt
-	
 Music_GentlemanEncounterText:
  	text "It's on ROUTE 11."
 	
@@ -1733,13 +1736,17 @@ Music_BarText:
 	line "I can hear music…"
 	prompt
 	
-Music_DarknessText:
- 	text "It's in the"
-	line "CONNECTING CAVERN."
+Music_ErikaText:
+ 	text "It's in RADIANT"
+	line "TOWN."
 	
-	para "You can get there"
-	line "from under the"
-	cont "LIGHTHOUSE."
+	para "It's inside of"
+	line "a radio."
+	prompt
+	
+Music_RivalBattle2Text:
+ 	text "RIVAL BATTLE 2"
+	line "TODO"
 	prompt
 	
 Music_AutumnText:
@@ -1755,16 +1762,6 @@ Music_DojoText:
 	line "TODO"
 	prompt
 	
-Music_UnderwaterText:
- 	text "It's on ROUTE 15."
-	
-	para "Head EAST."
-	
-	para "It's on a rock"
-	line "you can't reach"
-	cont "easily."
-	prompt
-	
 Music_Route28Text:
  	text "It's on ROUTE 29."
 	
@@ -1775,24 +1772,6 @@ Music_Route28Text:
 Music_MinasThemeText:
  	text "MINAS THEME"
 	line "TODO"
-	prompt
-	
-Music_RBYWildBattleText:
- 	text "LEGENDARY BIRDS"
-	line "TODO"
-	prompt
-	
-Music_RivalBattle2Text:
- 	text "RIVAL BATTLE 2"
-	line "TODO"
-	prompt
-	
-Music_ErikaText:
- 	text "It's in RADIANT"
-	line "TOWN."
-	
-	para "It's inside of"
-	line "a radio."
 	prompt
 	
 Music_ObscuraText:
@@ -1808,6 +1787,21 @@ Music_ObscuraText:
 	cont "reach."
 	prompt
 	
+Music_UnderwaterText:
+ 	text "It's on ROUTE 15."
+	
+	para "Head EAST."
+	
+	para "It's on a rock"
+	line "you can't reach"
+	cont "easily."
+	prompt
+	
+Music_AureoleMountainText:
+	text "AUREOLE MOUNTAIN"
+	line "TODO"
+	prompt
+	
 Music_LuminaText:
 	text "LUMINA TOWN"
 	line "TODO"
@@ -1815,6 +1809,17 @@ Music_LuminaText:
 	
 Music_DragonShrine:
 	text "DRAGON SHRINE"
+	line "TODO"
+	prompt
+	
+Music_SnareLeaderBattleText:
+ 	text "SNARE LEADER"
+	line "BATTLE"
+	cont "TODO"
+	prompt
+	
+Music_RBYWildBattleText:
+ 	text "LEGENDARY BIRDS"
 	line "TODO"
 	prompt
 	

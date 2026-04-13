@@ -51,25 +51,25 @@ Music:
 	dba Music_MinibossBattle
 	dba Music_Route12
 	dba Music_WaterRoute
+	dba Music_Darkness
 	dba Music_ShimmerCity
 	dba Music_BrilloTown
 	dba Music_Oasis
-	dba Music_SnareLeaderBattle
 	dba Music_GentlemanEncounter
 	dba Music_Bar
-	dba Music_Darkness
+	dba Music_Erika
+	dba Music_RivalBattle2
 	dba Music_Autumn
 	dba Music_Dojo
-	dba Music_Underwater
 	dba Music_Route28
 	dba Music_MinasTheme
-	dba Music_RBYWildBattle
-	dba Music_RivalBattle2
-	dba Music_Erika
 	dba Music_Obscura
+	dba Music_Underwater
 	dba Music_AureoleMoutain
 	dba Music_LuminaTown
 	dba Music_DragonShrine
+	dba Music_SnareLeaderBattle
+	dba Music_RBYWildBattle
 	
 	dba Music_SpamBuilding
 	dba Music_CrystalBall

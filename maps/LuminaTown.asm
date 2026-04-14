@@ -13,16 +13,12 @@ LuminaTown_MapScriptHeader:
 
 	db 0 ; coord events
 
-	db 17 ; bg events
+	db 13 ; bg events
 	signpost 20, 17, SIGNPOST_JUMPTEXT, LuminaTownSignText
-	signpost  0,  0, SIGNPOST_JUMPTEXT, LuminaTownHealerSignText
 	signpost 16, 37, SIGNPOST_JUMPTEXT, LuminaTownElderHouseSignText
 	signpost  7, 14, SIGNPOST_JUMPTEXT, LuminaTownSmallStatueText
 	signpost  7, 17, SIGNPOST_JUMPTEXT, LuminaTownSmallStatueText
-	signpost 13, 37, SIGNPOST_JUMPTEXT, LuminaTownSmallStatueText
-	signpost  3, 35, SIGNPOST_JUMPTEXT, LuminaTownSmallStatueText
-	signpost 15, 45, SIGNPOST_JUMPTEXT, LuminaTownSmallStatueText
-	signpost 13, 47, SIGNPOST_JUMPTEXT, LuminaTownSmallStatueText
+	signpost  9, 42, SIGNPOST_JUMPTEXT, LuminaTownSmallStatueText
 	signpost 14, 17, SIGNPOST_READ, LuminaTownBigStatue
 	signpost 14, 18, SIGNPOST_READ, LuminaTownBigStatue
 	signpost 15, 17, SIGNPOST_READ, LuminaTownBigStatue
@@ -34,8 +30,8 @@ LuminaTown_MapScriptHeader:
 
 	db 2 ; object events
 	
-	itemball_event 12,  8, DRAGON_FANG, 1, EVENT_LUMINA_TOWN_ITEMBALL
-	tmhmball_event 37,  4, TM_DRAGON_PULSE, EVENT_TM59
+	itemball_event 12,  9, DRAGON_FANG, 1, EVENT_LUMINA_TOWN_ITEMBALL
+	tmhmball_event 35,  4, TM_DRAGON_PULSE, EVENT_TM59
 	
 	
 LuminaTownFlyPoint:

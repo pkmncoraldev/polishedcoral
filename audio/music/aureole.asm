@@ -194,12 +194,14 @@ Music_AureoleMoutain_Ch2_loop:
 	dutycycle $0
 	intensity $2e
 	note F#, 8
+	vibrato $00, $15
 	intensity $e6
 	note F#, 6
 	
 	;dark cave reference
 	octave 3
 	dutycycle $0
+	vibrato $12, $15
 	intensity $b5
 	octave 2
 	note F#, 2
@@ -350,9 +352,9 @@ Music_AureoleMoutain_Ch4:
 	callchannel Music_AureoleMoutain_Drums1
 	callchannel Music_AureoleMoutain_Drums1
 	callchannel Music_AureoleMoutain_Drums1
-	callchannel Music_AureoleMoutain_Drums2
-	callchannel Music_AureoleMoutain_Drums2
-	callchannel Music_AureoleMoutain_Drums2
+	callchannel Music_AureoleMoutain_Drums1
+	callchannel Music_AureoleMoutain_Drums1
+	note D_, 14
 	
 	;drums kick in
 	note A#, 1
@@ -581,17 +583,6 @@ Music_AureoleMoutain_Ch4_loop:
 	
 Music_AureoleMoutain_Drums1:
 	note D_, 1
-	note __, 5
-	note D_, 1
-	note D_, 1
-	note D_, 1
-	note __, 3
-	note B_, 1
-	note __, 1
-	endchannel
-	
-Music_AureoleMoutain_Drums2:
-	note D_, 1
 	note __, 3
 	note D_, 1
 	note __, 1
@@ -599,7 +590,15 @@ Music_AureoleMoutain_Drums2:
 	note D_, 1
 	note D_, 1
 	note __, 3
-	note B_, 1
+	notetype $3
+	note D_, 1
+	note D_, 1
+	note D_, 1
+	note D_, 1
+	note D_, 1
+	note D_, 1
+	note D_, 1
 	note __, 1
+	notetype $c
 	endchannel
 	

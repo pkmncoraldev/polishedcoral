@@ -493,7 +493,8 @@ DEF MAP_NONE   EQU 0
 	map_const INN_ELEVATOR,								   2,  2 ; 4
 	map_const INN_VENT,									  18, 10 ; 5
 	map_const ROUTE_23_GATE,                          	   4,  4 ; 6
-	map_const ROUTE_32,									  22, 29 ; 8
+	map_const ROUTE_31,									  29, 13 ; 7
+	map_const ROUTE_32,									  22, 31 ; 8
 	
 	newgroup													 ; 27 BY ITSELF FOR FLASHY BATTLE TRANSITION PALETTE
 	map_const BONE_CAVERN_B1F,							  19, 15 ; 1
@@ -501,7 +502,7 @@ DEF MAP_NONE   EQU 0
 	map_const BONE_CAVERN_MAROWAK_ROOM, 				  13,  8 ; 3
 	
 	newgroup													 ; 28 BY ITSELF FOR TOWN MAP STUFF
-	map_const ROUTE_11_2,								  14, 33 ; 1
+	map_const ROUTE_11_2,								  14, 38 ; 1
 	
 	newgroup													 ; 29
 	map_const LUMINA_TOWN,								  26, 14 ; 1

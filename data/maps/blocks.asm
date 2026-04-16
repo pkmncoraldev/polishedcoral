@@ -986,6 +986,9 @@ GreenGrotto2F_BlockData:
 Route28OttosTent_BlockData:
 	INCBIN "maps/Route28OttosTent.ablk.lz"
 	
+Route31_BlockData:
+	INCBIN "maps/Route31.ablk.lz"
+	
 Route32_BlockData:
 	INCBIN "maps/Route32.ablk.lz"
 	

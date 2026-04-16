@@ -79,6 +79,7 @@ Landmarks: ; 0x1ca8c3
 	landmark 104, 116, Route29Name
 	landmark  92, 116, ObscuraCityName
 	landmark 140,  96, Route30Name
+	landmark -16, -16, Route31Name
 	landmark 108,  36, Route32Name
 	landmark 100,  36, Route11Name
 	landmark -16, -16, BoneCavernName
@@ -165,6 +166,7 @@ Route29Name:		   db "ROUTE 29@"
 GreenGrottoName:	   db "GREEN¯GROTTO@"
 ObscuraCityName:	   db "OBSCURA¯CITY@"
 Route30Name:		   db "ROUTE 30@"
+Route31Name:		   db "ROUTE 31@"
 Route32Name:		   db "ROUTE 32@"
 BoneCavernName:	   	   db "BONE CAVERNS@"
 LuminaTownName:	   	   db "LUMINA TOWN@"

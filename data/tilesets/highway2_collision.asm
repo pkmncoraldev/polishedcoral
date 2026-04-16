@@ -166,7 +166,7 @@
 	tilecoll WALL, WALL, WALL, WALL ; a5
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; a6
 	tilecoll SKATE, SKATE, SKATE, SKATE ; a7
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; a8
+	tilecoll WALL, WALL, WALL, WALL ; a8
 	tilecoll WALL, WALL, SKATE, SKATE ; a9
 	tilecoll WALL, WALL, SKATE, SKATE ; aa
 	tilecoll SKATE, SKATE, SKATE, SKATE ; ab

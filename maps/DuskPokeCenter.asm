@@ -54,12 +54,16 @@ DuskPokeCenterNPC1Text:
 	cont "via the ocean."
 	
 	para "There's also"
-	line "ROUTE 23 down the"
+	line "ROUTE 32 down the"
 	cont "highway."
 	
 	para "But apparently"
 	line "there's a third"
-	cont "way…"
+	cont "way."
+	
+	para "An underground"
+	line "cavern near"
+	cont "SUNSET BAY!"
 	done
 	
 DuskPokeCenterNPC2Text:

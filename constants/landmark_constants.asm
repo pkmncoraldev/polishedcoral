@@ -83,6 +83,7 @@ DEF SOUTH_ONWA_LANDMARK EQU const_value
 	const ROUTE_29
 	const OBSCURA_CITY
 	const ROUTE_30
+	const ROUTE_31
 	const ROUTE_32
 	const ROUTE_11_SOUTH
 	const BONE_CAVERN

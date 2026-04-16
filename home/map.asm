@@ -1957,7 +1957,7 @@ GetWorldMapLocation:: ; 0x2caf
 	cp GROUP_ROUTE_11_2
 	jr nz, .skip
 	ld a, [wYCoord]
-	cp $25
+	cp $2b
 	jp c, .skip2
 	ld a, ROUTE_11_SOUTH
 	jr .end

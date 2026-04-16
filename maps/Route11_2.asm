@@ -9,33 +9,33 @@ Route11_2_MapScriptHeader:
 
 	db 2 ; warp events
 	warp_def  3, 19, 3, ROUTE_11_GATE
-	warp_def 55, 15, 1, ROUTE_11_HOUSE
+	warp_def 65, 15, 1, ROUTE_11_HOUSE
 
 	db 1 ; coord events
-	coord_event 21, 54, 0, Route11_2SnubbullJump
+	coord_event 21, 64, 0, Route11_2SnubbullJump
 
 	db 6 ; bg events
-	signpost 56, 19, SIGNPOST_JUMPTEXT, Route11_2DogSign
-	signpost 51, 22, SIGNPOST_JUMPTEXT, Route11_2DogHouse
-	signpost 53, 19, SIGNPOST_JUMPTEXT, Route11_2Tire
-	signpost 51,  7, SIGNPOST_JUMPTEXT, Route11_2BridgeSign
+	signpost 66, 19, SIGNPOST_JUMPTEXT, Route11_2DogSign
+	signpost 61, 22, SIGNPOST_JUMPTEXT, Route11_2DogHouse
+	signpost 62, 19, SIGNPOST_JUMPTEXT, Route11_2Tire
+	signpost 61,  7, SIGNPOST_JUMPTEXT, Route11_2BridgeSign
 	signpost 23, 13, SIGNPOST_JUMPTEXT, Route11_2BridgeSign2
-	signpost 37, 12, SIGNPOST_JUMPTEXT, Route11_2BorderSign
+	signpost 43, 12, SIGNPOST_JUMPTEXT, Route11_2BorderSign
 
 	db 20 ; object events
-	object_event 21, 52, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, SNUBBULL, -1, -1, PAL_NPC_PINK, PERSONTYPE_SCRIPT, 0, Route11_2Snubbull, -1
-	person_event SPRITE_ARTIFACTS, 52, 21, SPRITEMOVEDATA_TILE_DOWN_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_ROUTE_11_2_BONE
+	object_event 21, 62, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, SNUBBULL, -1, -1, PAL_NPC_PINK, PERSONTYPE_SCRIPT, 0, Route11_2Snubbull, -1
+	person_event SPRITE_ARTIFACTS, 62, 21, SPRITEMOVEDATA_TILE_DOWN_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_ROUTE_11_2_BONE
 	person_event SPRITE_BAGGAGE, -5, -5, SPRITEMOVEDATA_TILE_DOWN_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_ALWAYS_SET
-	person_event SPRITE_POKEFAN_F, 41, 12, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, Route11_2EggLady, -1
-	person_event SPRITE_FLOATING_BALL, 41, 14, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, Route11_2FloatingBall, EVENT_ROUTE_11_2_FLOATING_BALL
-	person_event SPRITE_SCHOOLGIRL, 38,  8, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, Route11_2Kid1, -1
-	person_event SPRITE_CHILD, 36,  8, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, Route11_2Kid2, -1
-	person_event SPRITE_POKEFAN_M, 37,  8, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, Route11_2NPC1, -1
+	person_event SPRITE_POKEFAN_F, 52, 12, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, Route11_2EggLady, -1
+	person_event SPRITE_FLOATING_BALL, 52, 14, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, Route11_2FloatingBall, EVENT_ROUTE_11_2_FLOATING_BALL
+	person_event SPRITE_SCHOOLGIRL, 44,  8, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, Route11_2Kid1, -1
+	person_event SPRITE_CHILD, 42,  8, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, Route11_2Kid2, -1
+	person_event SPRITE_POKEFAN_M, 43,  8, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, Route11_2NPC1, -1
 	person_event SPRITE_REDS_MOM, 29,  8, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, Route11_2NPC2, -1
 	person_event SPRITE_CUTE_GIRL, 31,  8, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, Route11_2NPC3, -1
-	person_event SPRITE_SUPER_NERD, 54,  8, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, Route11_2NPC4, -1
+	person_event SPRITE_SUPER_NERD, 64,  8, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, Route11_2NPC4, -1
 	person_event SPRITE_PONYTAIL, 34, 12, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, Route11_2NPC5, -1
-	person_event SPRITE_ROCKER, 45,  8, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, Route11_2NPC6, -1
+	person_event SPRITE_ROCKER, 51,  8, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, Route11_2NPC6, -1
 	person_event SPRITE_BEAUTY, 23, 10, SPRITEMOVEDATA_WANDER, 1, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, Route11_2NPC7, -1
 	person_event SPRITE_COOLTRAINER_M,  9, 20, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_GENERICTRAINER, 4, TrainerRoute11_1_2, -1
 	person_event SPRITE_COOLTRAINER_F, 18, 18, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_GENERICTRAINER, 4, TrainerRoute11_2_2, -1
@@ -94,7 +94,7 @@ Route11_2Callback:
 	
 Route11CheckRegion:
 	ld a, [wYCoord]
-	cp $25
+	cp $2b
 	jp c, .north
 	ld a, 1
 	ld [wScriptVar], a
@@ -307,7 +307,7 @@ Route11_2EggLady:
 	closetext
 	pause 15
 	variablesprite SPRITE_BAGGAGE, SPRITE_BALL_CUT_FRUIT
-	moveperson ROUTE_11_2_BALL, 12, 41
+	moveperson ROUTE_11_2_BALL, 12, 52
 	applymovement ROUTE_11_2_EGG_LADY, Movement_Route11_2_Slip
 	opentext
 	writetext Route11_2EggLadyText2
@@ -504,11 +504,11 @@ Route11_2SnubbullJump:
 	waitbutton
 	closetext
 	dotrigger $1
-	moveperson ROUTE_11_2_BONE, 21, 54
+	moveperson ROUTE_11_2_BONE, 21, 64
 	appear ROUTE_11_2_BONE
 	playsound SFX_THROW_BALL
 	applymovement ROUTE_11_2_BONE, Movement_Route11_2_Throw_Bone
-	moveperson ROUTE_11_2_BONE, 21, 52
+	moveperson ROUTE_11_2_BONE, 21, 62
 	end
 .wont_work
 	writetext Route11_2WrongText

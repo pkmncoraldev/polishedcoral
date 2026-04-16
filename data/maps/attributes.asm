@@ -300,7 +300,7 @@ ENDM
 	map_attributes Route11, ROUTE_11, $30, 0
 	
 	map_attributes Route11_2, ROUTE_11_2, $35, EAST
-	connection east, Route32, ROUTE_32, 25
+	connection east, Route32, ROUTE_32, 30
 	
 	map_attributes OnwaIntlAirport, ONWA_INTL_AIRPORT, $c4, NORTH
 	connection north, AirportRunway, AIRPORT_RUNWAY, 0
@@ -422,10 +422,11 @@ ENDM
 	
 	map_attributes BarInside, BAR_INSIDE, $00, 0
 	
-	map_attributes Crossroads, CROSSROADS, $30, NORTH | SOUTH | WEST
+	map_attributes Crossroads, CROSSROADS, $30, NORTH | SOUTH | WEST | EAST
 	connection north, Route32, ROUTE_32, 0
 	connection south, Route23, ROUTE_23, 8
 	connection west, Route22, ROUTE_22, -1
+	connection east, Route31, ROUTE_31, -3
 	
 	map_attributes Route23, ROUTE_23, $c6, NORTH | SOUTH | WEST | EAST
 	connection north, Crossroads, CROSSROADS, -8
@@ -504,9 +505,12 @@ ENDM
 	map_attributes RiverRapidsEntrance, RIVER_RAPIDS_ENTRANCE, $71, SOUTH
 	connection south, Route30, ROUTE_30, -6
 	
-	map_attributes Route32, ROUTE_32, $02, SOUTH | WEST
+	map_attributes Route31, ROUTE_31, $71, WEST
+	connection west, Crossroads, CROSSROADS, 3
+	
+	map_attributes Route32, ROUTE_32, $71, SOUTH | WEST
 	connection south, Crossroads, CROSSROADS, 0
-	connection west, Route11_2, ROUTE_11_2, -25
+	connection west, Route11_2, ROUTE_11_2, -30
 	
 	map_attributes LusterSpamBuilding_2F, LUSTER_SPAM_BUILDING_2F, 0, NORTH | SOUTH | WEST | EAST
 	connection north, LusterSpamBuilding_2F, LUSTER_SPAM_BUILDING_2F, 0

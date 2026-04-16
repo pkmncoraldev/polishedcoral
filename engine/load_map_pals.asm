@@ -541,6 +541,8 @@ LoadMapPals::
 	ld a, [wMapNumber]
 	cp MAP_ROUTE_32
 	jr z, .route_32
+	cp MAP_ROUTE_31
+	jr z, .route_31
 	cp MAP_ROUTE_11_2
 	jp nz, .highway
 	ld a, [wYCoord]
@@ -557,7 +559,15 @@ LoadMapPals::
 	jp FarCopyWRAM
 .route_32
 	ld a, [wYCoord]
-	cp $21
+	cp $29
+	jp c, .park
+	jp .rocks
+.route_31
+	ld a, [wYCoord]
+	cp $b
+	jp nc, .park
+	ld a, [wXCoord]
+	cp $15
 	jp c, .park
 	jp .rocks
 	

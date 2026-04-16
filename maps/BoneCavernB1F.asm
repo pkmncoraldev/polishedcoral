@@ -5,7 +5,7 @@ BoneCavernB1F_MapScriptHeader:
 	callback MAPCALLBACK_TILES, BoneCavernB1FCallback
 
 	db 8 ; warp events
-	warp_def  9,  3, 1, ROUTE_32
+	warp_def  9,  3, 1, ROUTE_31
 	warp_def  3,  5, 3, BONE_CAVERN_B1F
 	warp_def 26,  9, 2, BONE_CAVERN_B1F
 	warp_def  5, 15, 1, BONE_CAVERN_B2F
@@ -33,7 +33,7 @@ BoneCavernB1F_MapScriptHeader:
 	smashrock_event 25, 15
 	strengthboulder2_event 21, 10, -1
 	strengthboulder2_event 11, 17, -1
-	person_event SPRITE_HIKER, 21, 19, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, BoneCavernB1FNPC, -1
+	person_event SPRITE_HIKER,  6,  4, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, BoneCavernB1FNPC, -1
 	person_event SPRITE_POKEMANIAC, 20, 30, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_GENERICTRAINER, 3, BoneCavernB1FTrainer1, -1
 	person_event SPRITE_BLACK_BELT,  7, 29, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_GENERICTRAINER, 3, BoneCavernB1FTrainer2, -1
 	itemball_event  7, 18, DUSK_STONE, 1, EVENT_BONE_CAVERN_B1F_ITEM_1
@@ -62,8 +62,9 @@ BoneCavernB1FNPC:
 	jumptextfaceplayer BoneCavernB1FNPCText
 	
 BoneCavernB1FNPCText:
-	text "Those huge bones"
-	line "coming from the"
+	text "Up ahead are"
+	line "some huge bones"
+	cont "coming from the"
 	cont "ground…"
 	
 	para "Some of them look"
@@ -170,9 +171,12 @@ BoneCavernB1FBone4:
 BoneCavernBoneText1:
 	text "A pillar of bone"
 	line "stretches up from"
-	cont "the floor below."
+	cont "the floor below,"
+	cont "blocking the way."
 	
-	para "It blocks the way."
+	para "Maybe you could"
+	line "clear the it from"
+	cont "down below."
 	done
 	
 BoneCavernBoneText2:

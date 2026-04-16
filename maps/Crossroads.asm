@@ -435,15 +435,16 @@ CrossroadsSign:
 	jumptext CrossroadsSignText
 	
 CrossroadsSignText:
-	text "NORTH: ROUTE 11"
+	text "NORTH: ROUTE 11 &"
 	line "EVENTIDE VILLAGE"
 	
-	para "SOUTH: ROUTE 23"
+	para "SOUTH: ROUTE 23 &"
 	line "KOMORE VILLAGE"
 	
-	para "EAST: UNFINISHED"
+	para "EAST: ROUTE 31 &"
+	line "BONE CAVERNS"
 	
-	para "WEST: ROUTE 22"
+	para "WEST: ROUTE 22 &"
 	line "DUSK TURNPIKE"
 	done
 	

@@ -16,7 +16,7 @@ Route32_MapScriptHeader:
 	db 9 ; object events
 	smashrock_event 37, 52
 	smashrock_event 38, 53
-	hiddentape_event 37, 51, MUSIC_MINIBOSS_BATTLE, 2, EVENT_MUSIC_MINIBOSS_BATTLE
+	tapeball_event 41, 53, MUSIC_MINIBOSS_BATTLE, 2, EVENT_MUSIC_MINIBOSS_BATTLE
 	fruittree_event 20,  8, FRUITTREE_ROUTE_32, PERSIM_BERRY
 	person_event SPRITE_TEACHER, 11,  9, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 4, TrainerRoute32_1, -1
 	person_event SPRITE_GRANNY, 53, 27, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 5, TrainerRoute32_2, -1

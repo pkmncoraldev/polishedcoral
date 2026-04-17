@@ -67,7 +67,7 @@ Route31Trainer2:
 
 	text "My colleage went"
 	line "ahead to the"
-	cont "BONE CAVERN."
+	cont "BONE CAVERNS."
 	
 	para "I stuck back"
 	line "because, well…"
@@ -80,7 +80,7 @@ Route31Trainer2:
 	text "My colleague and I"
 	line "were tasked with"
 	cont "with researching"
-	cont "the BONE CAVERN."
+	cont "the BONE CAVERNS."
 	
 	para "He ran ahead"
 	line "without me!"

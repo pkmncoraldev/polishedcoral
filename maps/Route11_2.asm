@@ -234,7 +234,7 @@ Route11_2NPC6Text:
 	text "There's a spot in"
 	line "AUREOLE MOUNTAIN"
 	cont "to the SOUTH known"
-	cont "as “BONE CAVERN”."
+	cont "as “BONE CAVERNS”."
 	
 	para "Why do you think"
 	line "they call it that?"

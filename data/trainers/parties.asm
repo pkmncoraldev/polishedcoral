@@ -2996,6 +2996,15 @@ PokefanFGroup:
 	db -1 ; end
 
 ; ================
+
+	; POKEFANF
+	db "BERTHA@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
 ; ================================
 
 
@@ -4058,6 +4067,15 @@ GentlemanGroup:
 	db -1 ; end
 
 ; ================
+
+	; GENTLEMAN
+	db "EUGENE@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
 ; ================================
 
 
@@ -4461,6 +4479,15 @@ ScientistGroup:
 	; party
 	db 50, EXEGGUTOR, ABILITY_1 | HARDY, MALE | PLAIN_FORM
 	db 49, LAPRAS, ABILITY_1 | HARDY, FEMALE
+	db -1 ; end
+
+; ================
+
+	; SCIENTIST
+	db "MARTY@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
 	db -1 ; end
 
 ; ================

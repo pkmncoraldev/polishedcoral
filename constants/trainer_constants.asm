@@ -305,6 +305,7 @@ DEF PLAYER_F EQU __enum__
 	const NICHOLE
 	const URSALA
 	const YVONNE
+	const BERTHA
 
 
 	trainerclass OFFICER
@@ -436,6 +437,7 @@ DEF PLAYER_F EQU __enum__
 	const ELWARD
 	const VICTOR
 	const REGINALD
+	const EUGENE
 
 
 	trainerclass LADY
@@ -489,6 +491,7 @@ DEF PLAYER_F EQU __enum__
 	const SAL
 	const HERBERT
 	const MARTIN
+	const MARTY
 
 
 	trainerclass BOARDER

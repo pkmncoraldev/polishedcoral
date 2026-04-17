@@ -1379,8 +1379,13 @@ Music_YoungsterEncounterText:
 	prompt
 	
 Music_TrainerBattleText:
- 	text "TRAINER BATTLE"
-	line "TODO"
+ 	text "It's on a rocky"
+	line "route."
+	
+	para "You can see it"
+	line "from the grass"
+	cont "near a boney"
+	cont "cave."
 	prompt
 	
 Music_TrainerVictoryText:
@@ -1547,8 +1552,12 @@ Music_SpruceLabText:
 	prompt
 	
 Music_SnareThemeText:
- 	text "SNARE THEME"
-	line "TODO"
+ 	text "It's in a hotel"
+	line "room."
+	
+	para "The door's locked,"
+	line "but there is"
+	cont "another way in."
 	prompt
 	
 Music_SnareAdminBattleText:

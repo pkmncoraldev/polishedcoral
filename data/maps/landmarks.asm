@@ -61,10 +61,10 @@ Landmarks: ; 0x1ca8c3
 	landmark  36,  44, ShimmerName
 	landmark  44,  52, Route19Name
 	landmark  52,  44, SeasideCaveName
-	landmark  52,  76, Route20Name
-	landmark  60,  84, RadiantName
-	landmark  68,  76, Route21Name
-	landmark  68,  60, DuskTurnpikeName
+	landmark  52,  68, Route20Name
+	landmark  60,  76, RadiantName
+	landmark  68,  68, Route21Name
+	landmark  68,  52, DuskTurnpikeName
 	landmark  88,  52, Route22Name
 	landmark 108,  52, CrossroadsName
 	landmark 108,  72, Route23Name
@@ -79,12 +79,12 @@ Landmarks: ; 0x1ca8c3
 	landmark 104, 116, Route29Name
 	landmark  92, 116, ObscuraCityName
 	landmark 140,  96, Route30Name
-	landmark -16, -16, Route31Name
+	landmark 120,  52, Route31Name
 	landmark 108,  36, Route32Name
 	landmark 100,  36, Route11Name
-	landmark -16, -16, BoneCavernName
-	landmark -16, -16, LuminaTownName
-	landmark -16, -16, AureoleTownName
+	landmark 124,  44, BoneCavernName
+	landmark 140,  68, AureoleMountainName
+	landmark 140,  52, LuminaTownName
 	
 	landmark  20, 124, BrilloTownName
 	landmark  32, 124, Route17Name
@@ -169,8 +169,8 @@ Route30Name:		   db "ROUTE 30@"
 Route31Name:		   db "ROUTE 31@"
 Route32Name:		   db "ROUTE 32@"
 BoneCavernName:	   	   db "BONE CAVERNS@"
+AureoleMountainName:   db "AUREOLE¯MOUNTAIN@"
 LuminaTownName:	   	   db "LUMINA TOWN@"
-AureoleTownName:	   db "AUREOLE¯TOWN@"
 
 LusterStationName:	   db "LUSTER¯CITY@"
 ResidentialName:	   db "HOUSING¯DISTRICT@"

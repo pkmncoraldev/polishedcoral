@@ -87,8 +87,8 @@ DEF SOUTH_ONWA_LANDMARK EQU const_value
 	const ROUTE_32
 	const ROUTE_11_SOUTH
 	const BONE_CAVERN
+	const AUREOLE_MOUNTAIN
 	const LUMINA_TOWN
-	const AUREOLE_TOWN
 	
 	const BRILLO_TOWN
 	const ROUTE_17

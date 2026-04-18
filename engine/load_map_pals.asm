@@ -161,8 +161,8 @@ LoadMapPals::
 	jp z, .shimmer
 	cp GROUP_RADIANT_TOWNSHIP
 	jp z, .sunflowers
-	cp GROUP_ROUTE_29
-	jp z, .route_29
+	cp GROUP_ROUTE_31
+	jp z, .route_31
 .got_pals_cont
 	ld a, [wTileset]
 	cp TILESET_LAVA_CAVE
@@ -231,9 +231,9 @@ LoadMapPals::
 	cp MAP_GLINT_GROVE_DEEP
 	jp z, .coffee
 	jp .normal
-.route_29
+.route_31
 	ld a, [wMapNumber]
-	cp MAP_ROUTE_29_MEADOW
+	cp MAP_ROUTE_31_MEADOW
 	jp z, .sailboat
 	jp .normal
 .grove
@@ -539,10 +539,10 @@ LoadMapPals::
 	jp FarCopyWRAM
 .highway2
 	ld a, [wMapNumber]
-	cp MAP_ROUTE_32
-	jr z, .route_32
-	cp MAP_ROUTE_31
-	jr z, .route_31
+	cp MAP_ROUTE_23
+	jr z, .route_23
+	cp MAP_ROUTE_24
+	jr z, .route_24
 	cp MAP_ROUTE_11_2
 	jp nz, .highway
 	ld a, [wYCoord]
@@ -557,12 +557,12 @@ LoadMapPals::
 	call AddNTimes
 	call LoadSingleOBPalLinePal7
 	jp FarCopyWRAM
-.route_32
+.route_23
 	ld a, [wYCoord]
 	cp $29
 	jp c, .park
 	jp .rocks
-.route_31
+.route_24
 	ld a, [wYCoord]
 	cp $b
 	jp nc, .park
@@ -797,7 +797,7 @@ LoadMapPals::
 	jp FarCopyWRAM
 .autumn
 	ld a, [wMapNumber]
-	cp MAP_ROUTE_27
+	cp MAP_ROUTE_29
 	jr z, .park
 	ld a, [wTimeOfDayPal]
 	and 3

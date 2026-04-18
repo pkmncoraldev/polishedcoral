@@ -96,7 +96,7 @@ LusterApartment2_2FJournal:
 	waitbutton
 	farwritetext StdBlankText
 	pause 6
-	checkevent EVENT_DONE_ROUTE_29_MINA
+	checkevent EVENT_DONE_ROUTE_31_MINA
 	iftrue .route_29
 	writetext LusterApartment2_2FJournalTextField
 	jump .cont4
@@ -120,7 +120,7 @@ LusterApartment2_2FJournal:
 	clearevent EVENT_UNIQUE_ENCOUNTER_MINA_ROUTE_6
 	clearevent EVENT_UNIQUE_ENCOUNTER_MINA_ROUTE_11
 	clearevent EVENT_UNIQUE_ENCOUNTER_MINA_RADIANT_FIELD
-	clearevent EVENT_UNIQUE_ENCOUNTER_MINA_ROUTE_29
+	clearevent EVENT_UNIQUE_ENCOUNTER_MINA_ROUTE_31
 	clearevent EVENT_UNIQUE_ENCOUNTER_MINA_ROUTE_10
 	end
 .no

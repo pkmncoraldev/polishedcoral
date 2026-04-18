@@ -7,8 +7,8 @@ FightingDojo_MapScriptHeader:
 	db 0 ; callbacks
 
 	db 2 ; warp events
-	warp_event  3,  9, ROUTE_23, 2
-	warp_event  4,  9, ROUTE_23, 2
+	warp_event  3,  9, ROUTE_25, 2
+	warp_event  4,  9, ROUTE_25, 2
 
 	db 0 ; coord events
 
@@ -315,7 +315,7 @@ FightingDojoMaster:
 	pause 2
 	disappear FIGHTING_DOJO_MASTER
 	pause 10
-	domaptrigger ROUTE_23, $2
+	domaptrigger ROUTE_25, $2
 	end
 .no
 	writetext FightingDojoMasterTextNo

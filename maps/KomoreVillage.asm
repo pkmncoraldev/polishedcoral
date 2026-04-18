@@ -45,7 +45,7 @@ KomoreVillageCallback:
 	iffalse .skip
 	changeblock $1c, $14, $bb
 .skip
-	jump Route23Callback2
+	jump Route25Callback2
 	
 KomoreVillageNPC1:
 	jumptextfaceplayer KomoreVillageNPC1Text

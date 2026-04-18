@@ -60,7 +60,7 @@
 	db 31, MAREANIE		;4%
 	db 31, MAREANIE		;1%
 	
-	map_id ROUTE_23
+	map_id ROUTE_25
 	db 10 percent ; encounter rate
 	db 36, POLIWHIRL	;30%
 	db 36, QUAGSIRE		;30%
@@ -80,7 +80,7 @@
 	db 36, MARILL		;4%
 	db 36, MARILL		;1%
 
-	map_id ROUTE_24_NORTH
+	map_id ROUTE_26_NORTH
 	db 8 percent ; encounter rate
 	db 36, POLIWHIRL	;30%
 	db 36, QUAGSIRE		;30%

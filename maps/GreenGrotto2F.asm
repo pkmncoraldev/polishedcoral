@@ -4,8 +4,8 @@ GreenGrotto2F_MapScriptHeader:
 	db 0 ; callbacks
 
 	db 3 ; warp events
-	warp_def 23,  7, 2, ROUTE_29
-	warp_def  7, 27, 3, ROUTE_29
+	warp_def 23,  7, 2, ROUTE_31
+	warp_def  7, 27, 3, ROUTE_31
 	warp_def 13, 34, 9, GREEN_GROTTO_1F
 
 	db 0 ; coord events

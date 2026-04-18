@@ -123,9 +123,9 @@ MapTriggers::
 	scene_var RADIANT_TOWNSHIP,						  wRadiantTownshipTrigger
 	scene_var CROSSROADS,							  wCrossroadsTrigger
 	scene_var ROUTE_14_15_UNDERWATER,				  wRoute14_15UnderwaterTrigger
-	scene_var ROUTE_23,								  wRoute23Trigger
+	scene_var ROUTE_25,								  wRoute25Trigger
 	scene_var KOMORE_COMMUNITY_CENTER,				  wKomoreCommunityCenterTrigger
-	scene_var ROUTE_24_SOUTH,						  wRoute24Trigger
+	scene_var ROUTE_26_SOUTH,						  wRoute26Trigger
 	scene_var BRIGHTBURG,							  wBrightburgTrigger
 	scene_var BRIGHT_POKECENTER,					  wBrightburgTrigger
 	scene_var BRIGHT_MART,							  wBrightburgTrigger
@@ -134,11 +134,11 @@ MapTriggers::
 	scene_var BRIGHT_HOUSE_3,						  wBrightburgTrigger
 	scene_var BRIGHTBURG_GATE,						  wBrightburgTrigger
 	scene_var KOMORE_HOUSE_1,						  wAlways0Trigger
-	scene_var ROUTE_27,								  wRoute27Trigger
+	scene_var ROUTE_29,								  wRoute29Trigger
 	scene_var BAR_INSIDE,							  wBarInsideTrigger
 	scene_var ROUTE_22,								  wRoute22Trigger
 	scene_var ROUTE_6_SOUTH,						  wRoute6SouthTrigger
-	scene_var ROUTE_28,								  wRoute28Trigger
+	scene_var ROUTE_30,								  wRoute30Trigger
 	scene_var OBSCURA_CITY,							  wObscuraCityTrigger
 	scene_var INN_1F,								  wInn1FTrigger
 	scene_var INN_2F,								  wAlways0Trigger
@@ -159,8 +159,8 @@ MapTriggers::
 	scene_var RIVER_RAPIDS,							  wAlways0Trigger
 	scene_var RIVER_RAPIDS_HOUSE,					  wAlways0Trigger
 	scene_var ROUTE_22_2,							  wRoute22_2Trigger
-	scene_var ROUTE_31,								  wAlways0Trigger
-	scene_var ROUTE_32,								  wAlways0Trigger
+	scene_var ROUTE_23,								  wAlways0Trigger
+	scene_var ROUTE_24,								  wAlways0Trigger
 	scene_var LUMINA_ELDERS_HOUSE,					  wLuminaGymTrigger
 	scene_var LUMINA_GYM,							  wLuminaGymTrigger
 	scene_var AUREOLE_MOUNTAIN_OUTSIDE,				  wAureoleMountainOutside

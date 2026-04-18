@@ -8,8 +8,8 @@ BrightburgGate_MapScriptHeader:
 	db 4 ; warp events
 	warp_def 4, 0, 6, BRIGHTBURG
 	warp_def 5, 0, 7, BRIGHTBURG
-	warp_def 4, 9, 1, ROUTE_30
-	warp_def 5, 9, 2, ROUTE_30
+	warp_def 4, 9, 1, ROUTE_32
+	warp_def 5, 9, 2, ROUTE_32
 
 	db 0 ; coord events
 

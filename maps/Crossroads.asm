@@ -12,8 +12,8 @@ Crossroads_MapScriptHeader:
 	warp_event 30,  7, INN_1F, 1
 	warp_event 31,  7, INN_1F, 2
 	warp_event 28,  6, INN_1F, 18
-	warp_event 23, 21, ROUTE_23_GATE, 1
-	warp_event 24, 21, ROUTE_23_GATE, 2
+	warp_event 23, 21, ROUTE_25_GATE, 1
+	warp_event 24, 21, ROUTE_25_GATE, 2
 
 	db 4 ; coord events
 	coord_event 20,  9, 0, CrossroadsCutsceneStart1
@@ -435,13 +435,13 @@ CrossroadsSign:
 	jumptext CrossroadsSignText
 	
 CrossroadsSignText:
-	text "NORTH: ROUTE 11 &"
+	text "NORTH: ROUTE 23 &"
 	line "EVENTIDE VILLAGE"
 	
-	para "SOUTH: ROUTE 23 &"
+	para "SOUTH: ROUTE 25 &"
 	line "KOMORE VILLAGE"
 	
-	para "EAST: ROUTE 31 &"
+	para "EAST: ROUTE 24 &"
 	line "BONE CAVERNS"
 	
 	para "WEST: ROUTE 22 &"

@@ -1,34 +1,34 @@
-Route24North_MapScriptHeader:
+Route26North_MapScriptHeader:
 	db 0 ; scene scripts
 
 	db 1 ; callbacks
-	callback MAPCALLBACK_TILES, Route23Callback2
+	callback MAPCALLBACK_TILES, Route25Callback2
 
 	db 0 ; warp events
 
 	db 0 ; coord events
 
 	db 2 ; bg events
-	signpost 24, 12, SIGNPOST_ITEM + GOLD_LEAF, EVENT_ROUTE_24_HIDDEN_GOLD_LEAF
-	signpost 29, 37, SIGNPOST_ITEM + SILVER_LEAF, EVENT_ROUTE_24_HIDDEN_SILVER_LEAF_2
+	signpost 24, 12, SIGNPOST_ITEM + GOLD_LEAF, EVENT_ROUTE_26_HIDDEN_GOLD_LEAF
+	signpost 29, 37, SIGNPOST_ITEM + SILVER_LEAF, EVENT_ROUTE_26_HIDDEN_SILVER_LEAF_2
 
 	db 8 ; object events
 	object_event -5, -5, SPRITE_LEAVES, SPRITEMOVEDATA_BAGGAGE, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, -1, EVENT_HIDE_OW_OBJECTS_TEAL
 	object_event -5, -5, SPRITE_LEAVES, SPRITEMOVEDATA_BAGGAGE, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, -1, EVENT_HIDE_OW_OBJECTS_PINK
-	person_event SPRITE_BLACK_BELT, 20, 31, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, Route24NorthNPC, -1
-	person_event SPRITE_BEAUTY, 27, 29, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 5, Route24NorthTrainer1, -1
-	person_event SPRITE_BIRD_KEEPER, 25, 12, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 2, Route24NorthTrainer2, -1
-	itemball_event 30, 25, BLACK_BELT, 1, EVENT_ROUTE_24_POKE_BALL
+	person_event SPRITE_BLACK_BELT, 20, 31, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, Route26NorthNPC, -1
+	person_event SPRITE_BEAUTY, 27, 29, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 5, Route26NorthTrainer1, -1
+	person_event SPRITE_BIRD_KEEPER, 25, 12, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 2, Route26NorthTrainer2, -1
+	itemball_event 30, 25, BLACK_BELT, 1, EVENT_ROUTE_26_POKE_BALL
 	tmhmball_event 27, 4, TM_FLAMETHROWER, EVENT_TM35
 
 
 	const_def 1 ; object constants
-	const ROUTE_24_NORTH_LEAF_1
-	const ROUTE_24_NORTH_LEAF_2
-	const ROUTE_24_NORTH_NPC
+	const ROUTE_26_NORTH_LEAF_1
+	const ROUTE_26_NORTH_LEAF_2
+	const ROUTE_26_NORTH_NPC
 
-Route24NorthTrainer1:
-	generictrainer BEAUTY, MANDY, EVENT_BEAT_ROUTE_24_NORTH_TRAINER_1, .SeenText, .BeatenText
+Route26NorthTrainer1:
+	generictrainer BEAUTY, MANDY, EVENT_BEAT_ROUTE_26_NORTH_TRAINER_1, .SeenText, .BeatenText
 
 	text "Some people are a"
 	line "summer."
@@ -56,8 +56,8 @@ Route24NorthTrainer1:
 	text "Pop! <WAIT_S>Pop! <WAIT_S>Pop!"
 	done
 
-Route24NorthTrainer2:
-	generictrainer BIRD_KEEPER, SIDNEY, EVENT_BEAT_ROUTE_24_NORTH_TRAINER_2, .SeenText, .BeatenText
+Route26NorthTrainer2:
+	generictrainer BIRD_KEEPER, SIDNEY, EVENT_BEAT_ROUTE_26_NORTH_TRAINER_2, .SeenText, .BeatenText
 
 	text "You can find some"
 	line "pretty fierce bird"
@@ -78,16 +78,16 @@ Route24NorthTrainer2:
 	line "SKARMORY!"
 	done
 
-Route24NorthNPC:
+Route26NorthNPC:
 	faceplayer
 	opentext
-	writetext Route24NorthNPCText
+	writetext Route26NorthNPCText
 	waitbutton
 	closetext
-	spriteface ROUTE_24_NORTH_NPC, UP
+	spriteface ROUTE_26_NORTH_NPC, UP
 	end
 
-Route24NorthNPCText:
+Route26NorthNPCText:
 	text "I came here to do"
 	line "waterfall training"
 	cont "under the falls"
@@ -101,7 +101,7 @@ Route24NorthNPCText:
 	line "can't swim!"
 	done
 
-Route24NorthWindy_MapScriptHeader:
+Route26NorthWindy_MapScriptHeader:
 	db 0 ; scene scripts
 
 	db 0 ; callbacks

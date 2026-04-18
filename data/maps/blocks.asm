@@ -52,8 +52,8 @@ Route1Gate_BlockData:
 Route8Gate_BlockData:
 Route12Gate_BlockData:
 AirportGate_BlockData:
-Route23Gate_BlockData:
 Route25Gate_BlockData:
+Route29Gate_BlockData:
 Route21Gate_BlockData:
 Route11Gate_BlockData:
 	INCBIN "maps/NorthSouthGate.ablk.lz"
@@ -841,9 +841,9 @@ Route13_BlockData:
 Crossroads_BlockData:
 	INCBIN "maps/Crossroads.ablk.lz"
 	
-Route23_BlockData:
-Route23Windy_BlockData:
-	INCBIN "maps/Route23.ablk.lz"
+Route25_BlockData:
+Route25Windy_BlockData:
+	INCBIN "maps/Route25.ablk.lz"
 	
 FightingDojo_BlockData:
 	INCBIN "maps/FightingDojo.ablk.lz"
@@ -854,33 +854,33 @@ KomoreVillage_BlockData:
 Brightburg_BlockData:
 	INCBIN "maps/Brightburg.ablk.lz"
 	
-Route24North_BlockData:
-Route24NorthWindy_BlockData:
-	INCBIN "maps/Route24North.ablk.lz"
+Route26North_BlockData:
+Route26NorthWindy_BlockData:
+	INCBIN "maps/Route26North.ablk.lz"
 	
-Route24South_BlockData:
-Route24SouthWindy_BlockData:
-	INCBIN "maps/Route24South.ablk.lz"
-	
-Route25_BlockData:
-Route25Windy_BlockData:
-	INCBIN "maps/Route25.ablk.lz"
-	
-Route26_BlockData:
-Route26Windy_BlockData:
-	INCBIN "maps/Route26.ablk.lz"
+Route26South_BlockData:
+Route26SouthWindy_BlockData:
+	INCBIN "maps/Route26South.ablk.lz"
 	
 Route27_BlockData:
+Route27Windy_BlockData:
 	INCBIN "maps/Route27.ablk.lz"
 	
 Route28_BlockData:
+Route28Windy_BlockData:
 	INCBIN "maps/Route28.ablk.lz"
 	
 Route29_BlockData:
 	INCBIN "maps/Route29.ablk.lz"
 	
-Route29Meadow_BlockData:
-	INCBIN "maps/Route29Meadow.ablk.lz"
+Route30_BlockData:
+	INCBIN "maps/Route30.ablk.lz"
+	
+Route31_BlockData:
+	INCBIN "maps/Route31.ablk.lz"
+	
+Route31Meadow_BlockData:
+	INCBIN "maps/Route31Meadow.ablk.lz"
 	
 Route14_15Underwater_BlockData:
 	INCBIN "maps/Route14_15Underwater.ablk.lz"
@@ -932,8 +932,8 @@ MtOnwaB1F_BlockData:
 Route22_BlockData:
 	INCBIN "maps/Route22.ablk.lz"
 
-Route30_BlockData:
-	INCBIN "maps/Route30.ablk.lz"
+Route32_BlockData:
+	INCBIN "maps/Route32.ablk.lz"
 
 Inn1F_BlockData:
 	INCBIN "maps/Inn1F.ablk.lz"
@@ -983,14 +983,14 @@ GlintGroveUnderground_BlockData:
 GreenGrotto2F_BlockData:
 	INCBIN "maps/GreenGrotto2F.ablk.lz"
 	
-Route28OttosTent_BlockData:
-	INCBIN "maps/Route28OttosTent.ablk.lz"
+Route30OttosTent_BlockData:
+	INCBIN "maps/Route30OttosTent.ablk.lz"
 	
-Route31_BlockData:
-	INCBIN "maps/Route31.ablk.lz"
+Route24_BlockData:
+	INCBIN "maps/Route24.ablk.lz"
 	
-Route32_BlockData:
-	INCBIN "maps/Route32.ablk.lz"
+Route23_BlockData:
+	INCBIN "maps/Route23.ablk.lz"
 	
 RiverRapidsEntrance_BlockData:
 	INCBIN "maps/RiverRapidsEntrance.ablk.lz"

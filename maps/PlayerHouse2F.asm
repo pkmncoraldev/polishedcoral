@@ -360,7 +360,7 @@ PlayerHouseDebugPoster:
 	clearevent EVENT_ROUTE_6_MINA_GONE
 	clearevent EVENT_ROUTE_11_MINA_GONE
 	clearevent EVENT_RADIANT_FIELD_MINA_GONE
-	clearevent EVENT_ROUTE_29_MINA_GONE
+	clearevent EVENT_ROUTE_31_MINA_GONE
 	clearevent EVENT_ROUTE_10_MINA_GONE
 	setevent EVENT_MINA_QUEST_ACTIVATED
 	jump .return

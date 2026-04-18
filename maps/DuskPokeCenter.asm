@@ -54,7 +54,7 @@ DuskPokeCenterNPC1Text:
 	cont "via the ocean."
 	
 	para "There's also"
-	line "ROUTE 32 down the"
+	line "ROUTE 23 down the"
 	cont "highway."
 	
 	para "But apparently"

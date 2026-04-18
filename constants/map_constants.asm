@@ -114,8 +114,8 @@ DEF MAP_NONE   EQU 0
 	map_const ROUTE_8_GARDEN,                             31, 20 ; 16
 	map_const ROUTE_8_GATE,                                4,  4 ; 17
 	map_const ROUTE_3_STARGLOW_CAVERN_TOP,				  10, 13 ; 18
-	map_const ROUTE_28,									  20, 38 ; 19
-	map_const ROUTE_28_OTTOS_TENT,                     	   2,  3 ; 20
+	map_const ROUTE_30,									  20, 38 ; 19
+	map_const ROUTE_30_OTTOS_TENT,                     	   2,  3 ; 20
 
 	newgroup                                                     ;  5
 
@@ -430,12 +430,12 @@ DEF MAP_NONE   EQU 0
 	
 	newgroup													 ; 22
 	
-	map_const ROUTE_23,									  21, 30 ; 1
-	map_const ROUTE_23_WINDY,							   1,  1 ; 2
-	map_const ROUTE_24_NORTH,							  21, 17 ; 3
-	map_const ROUTE_24_NORTH_WINDY,						   1,  1 ; 4
-	map_const ROUTE_24_SOUTH,							  20, 12 ; 5
-	map_const ROUTE_24_SOUTH_WINDY,						   1,  1 ; 6
+	map_const ROUTE_25,									  21, 30 ; 1
+	map_const ROUTE_25_WINDY,							   1,  1 ; 2
+	map_const ROUTE_26_NORTH,							  21, 17 ; 3
+	map_const ROUTE_26_NORTH_WINDY,						   1,  1 ; 4
+	map_const ROUTE_26_SOUTH,							  20, 12 ; 5
+	map_const ROUTE_26_SOUTH_WINDY,						   1,  1 ; 6
 	map_const KOMORE_VILLAGE,							  18, 13 ; 7
 	map_const KOMORE_COMMUNITY_CENTER,					   5,  4 ; 8
 	map_const KOMORE_COMMUNITY_CENTER_LEFT,				   3,  4 ; 9
@@ -448,11 +448,11 @@ DEF MAP_NONE   EQU 0
 	map_const KOMORE_POKECENTER,                      	   6,  4 ; 16
 	map_const KOMORE_MART,                             	   6,  4 ; 17
 	map_const FIGHTING_DOJO,                           	   4,  5 ; 18
-	map_const ROUTE_25,									  23, 10 ; 19
-	map_const ROUTE_25_WINDY,							   1,  1 ; 20
-	map_const ROUTE_26,									  20, 17 ; 21
-	map_const ROUTE_26_WINDY,							   1,  1 ; 22
-	map_const ROUTE_27,									  28, 19 ; 23
+	map_const ROUTE_27,									  23, 10 ; 19
+	map_const ROUTE_27_WINDY,							   1,  1 ; 20
+	map_const ROUTE_28,									  20, 17 ; 21
+	map_const ROUTE_28_WINDY,							   1,  1 ; 22
+	map_const ROUTE_29,									  28, 19 ; 23
 	
 	newgroup													 ; 23					Only Nett Specs Maps in this group
 	
@@ -462,7 +462,7 @@ DEF MAP_NONE   EQU 0
 	map_const BRIGHT_HOUSE_1,     	             		   4,  4 ; 4
 	map_const BRIGHT_HOUSE_2,     	             		   4,  4 ; 5
 	map_const BRIGHT_HOUSE_3,     	             		   4,  4 ; 6
-	map_const ROUTE_25_GATE,                          	   4,  4 ; 7
+	map_const ROUTE_29_GATE,                          	   4,  4 ; 7
 	map_const BRIGHTBURG_GATE,							   5,  4 ; 8
 	
 	newgroup													 ; 24
@@ -482,9 +482,9 @@ DEF MAP_NONE   EQU 0
 	
 	newgroup													 ; 25
 	map_const AUREOLE_TOWN,								  20, 23 ; 1
-	map_const ROUTE_29,									  38, 12 ; 2
-	map_const ROUTE_29_MEADOW,							  18, 10 ; 3
-	map_const ROUTE_30,									  21, 21 ; 4
+	map_const ROUTE_31,									  38, 12 ; 2
+	map_const ROUTE_31_MEADOW,							  18, 10 ; 3
+	map_const ROUTE_32,									  21, 21 ; 4
 	
 	newgroup													 ; 26
 	map_const INN_1F,									  13, 12 ; 1
@@ -492,9 +492,9 @@ DEF MAP_NONE   EQU 0
 	map_const INN_3F,									  16,  7 ; 3
 	map_const INN_ELEVATOR,								   2,  2 ; 4
 	map_const INN_VENT,									  18, 10 ; 5
-	map_const ROUTE_23_GATE,                          	   4,  4 ; 6
-	map_const ROUTE_31,									  29, 13 ; 7
-	map_const ROUTE_32,									  22, 31 ; 8
+	map_const ROUTE_25_GATE,                          	   4,  4 ; 6
+	map_const ROUTE_24,									  29, 13 ; 7
+	map_const ROUTE_23,									  22, 31 ; 8
 	
 	newgroup													 ; 27 BY ITSELF FOR FLASHY BATTLE TRANSITION PALETTE
 	map_const BONE_CAVERN_B1F,							  19, 15 ; 1

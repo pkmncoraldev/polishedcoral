@@ -72,21 +72,21 @@ DEF SOUTH_ONWA_LANDMARK EQU const_value
 	const ROUTE_22
 	const CROSSROADS
 	const ROUTE_23
-	const KOMORE_VILLAGE
+	const ROUTE_11_SOUTH
 	const ROUTE_24
+	const BONE_CAVERN	
 	const ROUTE_25
+	const KOMORE_VILLAGE
 	const ROUTE_26
 	const ROUTE_27
-	const BRIGHTBURG
 	const ROUTE_28
-	const GREEN_GROTTO
 	const ROUTE_29
-	const OBSCURA_CITY
+	const BRIGHTBURG
 	const ROUTE_30
+	const GREEN_GROTTO
 	const ROUTE_31
+	const OBSCURA_CITY
 	const ROUTE_32
-	const ROUTE_11_SOUTH
-	const BONE_CAVERN
 	const AUREOLE_MOUNTAIN
 	const LUMINA_TOWN
 	

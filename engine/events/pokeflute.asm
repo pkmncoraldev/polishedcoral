@@ -88,10 +88,10 @@ _PokeFlute: ; 50730
 	if_equal 6, .auto_lobby_guy_script
 .snorlax_script
 	checkcode VAR_MAPNUMBER
-	if_equal MAP_ROUTE_30, .route30
+	if_equal MAP_ROUTE_32, .route32
 	farjump Route4PlayedFluteForSnorlax
-.route30
-	farjump Route30PlayedFluteForSnorlax
+.route32
+	farjump Route32PlayedFluteForSnorlax
 .sudowoodo_script
 	farjump LakePlayedFluteForSudowoodo
 .sunbeam_sleepy_snare_script

@@ -67,22 +67,22 @@ Landmarks: ; 0x1ca8c3
 	landmark  68,  52, DuskTurnpikeName
 	landmark  88,  52, Route22Name
 	landmark 108,  52, CrossroadsName
-	landmark 108,  72, Route23Name
-	landmark 108,  92, KomoreVillageName
-	landmark  92,  84, Route24Name
-	landmark 124,  72, Route25Name
-	landmark 116,  88, Route26Name
-	landmark 124,  88, Route27Name
-	landmark 124, 100, BrightburgName
-	landmark 124, 112, Route28Name
-	landmark 116, 116, GreenGrottoName
-	landmark 104, 116, Route29Name
-	landmark  92, 116, ObscuraCityName
-	landmark 140,  96, Route30Name
-	landmark 120,  52, Route31Name
-	landmark 108,  36, Route32Name
+	landmark 120,  52, Route23Name
 	landmark 100,  36, Route11Name
+	landmark 108,  36, Route24Name
 	landmark 124,  44, BoneCavernName
+	landmark 108,  72, Route25Name
+	landmark 108,  92, KomoreVillageName
+	landmark  92,  84, Route26Name
+	landmark 124,  72, Route27Name
+	landmark 116,  88, Route28Name
+	landmark 124,  88, Route29Name
+	landmark 124, 100, BrightburgName
+	landmark 124, 112, Route30Name
+	landmark 116, 116, GreenGrottoName
+	landmark 104, 116, Route31Name
+	landmark  92, 116, ObscuraCityName
+	landmark 140,  96, Route32Name
 	landmark 140,  68, AureoleMountainName
 	landmark 140,  52, LuminaTownName
 	

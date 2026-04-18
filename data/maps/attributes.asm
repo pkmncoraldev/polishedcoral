@@ -300,7 +300,7 @@ ENDM
 	map_attributes Route11, ROUTE_11, $30, 0
 	
 	map_attributes Route11_2, ROUTE_11_2, $35, EAST
-	connection east, Route32, ROUTE_32, 30
+	connection east, Route23, ROUTE_23, 30
 	
 	map_attributes OnwaIntlAirport, ONWA_INTL_AIRPORT, $c4, NORTH
 	connection north, AirportRunway, AIRPORT_RUNWAY, 0
@@ -423,59 +423,59 @@ ENDM
 	map_attributes BarInside, BAR_INSIDE, $00, 0
 	
 	map_attributes Crossroads, CROSSROADS, $30, NORTH | SOUTH | WEST | EAST
-	connection north, Route32, ROUTE_32, 0
-	connection south, Route23, ROUTE_23, 8
+	connection north, Route23, ROUTE_23, 0
+	connection south, Route25, ROUTE_25, 8
 	connection west, Route22, ROUTE_22, -1
-	connection east, Route31, ROUTE_31, -3
+	connection east, Route24, ROUTE_24, -3
 	
-	map_attributes Route23, ROUTE_23, $c6, NORTH | SOUTH | WEST | EAST
+	map_attributes Route25, ROUTE_25, $c6, NORTH | SOUTH | WEST | EAST
 	connection north, Crossroads, CROSSROADS, -8
 	connection south, KomoreVillage, KOMORE_VILLAGE, -1
-	connection west, Route24North, ROUTE_24_NORTH, 9
-	connection east, Route25, ROUTE_25, 13
+	connection west, Route26North, ROUTE_26_NORTH, 9
+	connection east, Route27, ROUTE_27, 13
 	
-	map_attributes Route24North, ROUTE_24_NORTH, $c6, SOUTH | EAST
-	connection south, Route24South, ROUTE_24_SOUTH, 0
-	connection east, Route23, ROUTE_23, -9
+	map_attributes Route26North, ROUTE_26_NORTH, $c6, SOUTH | EAST
+	connection south, Route26South, ROUTE_26_SOUTH, 0
+	connection east, Route25, ROUTE_25, -9
 	
-	map_attributes Route24South, ROUTE_24_SOUTH, $c6, NORTH | EAST
-	connection north, Route24North, ROUTE_24_NORTH, 0
+	map_attributes Route26South, ROUTE_26_SOUTH, $c6, NORTH | EAST
+	connection north, Route26North, ROUTE_26_NORTH, 0
 	connection east, KomoreVillage, KOMORE_VILLAGE, 4
 	
 	map_attributes KomoreVillage, KOMORE_VILLAGE, $c6, NORTH | WEST | EAST
-	connection north, Route23, ROUTE_23, 1
-	connection west, Route24South, ROUTE_24_SOUTH, -4
-	connection east, Route26, ROUTE_26, -5
+	connection north, Route25, ROUTE_25, 1
+	connection west, Route26South, ROUTE_26_SOUTH, -4
+	connection east, Route28, ROUTE_28, -5
 	
-	map_attributes Route25, ROUTE_25, $c6, SOUTH | WEST
-	connection south, Route27, ROUTE_27, 16
-	connection west, Route23, ROUTE_23, -13
+	map_attributes Route27, ROUTE_27, $c6, SOUTH | WEST
+	connection south, Route29, ROUTE_29, 16
+	connection west, Route25, ROUTE_25, -13
 	
-	map_attributes Route26, ROUTE_26, $34, WEST | EAST
+	map_attributes Route28, ROUTE_28, $34, WEST | EAST
 	connection west, KomoreVillage, KOMORE_VILLAGE, 5
-	connection east, Route27, ROUTE_27, -2
+	connection east, Route29, ROUTE_29, -2
 	
-	map_attributes Route27, ROUTE_27, $34, NORTH | WEST
-	connection north, Route25, ROUTE_25, -16
-	connection west, Route26, ROUTE_26, 2
+	map_attributes Route29, ROUTE_29, $34, NORTH | WEST
+	connection north, Route27, ROUTE_27, -16
+	connection west, Route28, ROUTE_28, 2
 	
 	map_attributes Brightburg, BRIGHTBURG, $fb, SOUTH
-	connection south, Route28, ROUTE_28, -7
+	connection south, Route30, ROUTE_30, -7
 	
-	map_attributes Route28, ROUTE_28, $a1, NORTH | WEST
+	map_attributes Route30, ROUTE_30, $a1, NORTH | WEST
 	connection north, Brightburg, BRIGHTBURG, 7
-	connection west, Route29, ROUTE_29, 30
+	connection west, Route31, ROUTE_31, 30
 	
-	map_attributes Route29, ROUTE_29, $d4, NORTH | WEST | EAST
-	connection north, Route29Meadow, ROUTE_29_MEADOW, 4
+	map_attributes Route31, ROUTE_31, $d4, NORTH | WEST | EAST
+	connection north, Route31Meadow, ROUTE_31_MEADOW, 4
 	connection west, ObscuraCity, OBSCURA_CITY, -9
-	connection east, Route28, ROUTE_28, -30
+	connection east, Route30, ROUTE_30, -30
 	
-	map_attributes Route29Meadow, ROUTE_29_MEADOW, $fb, SOUTH
-	connection south, Route29, ROUTE_29, -4
+	map_attributes Route31Meadow, ROUTE_31_MEADOW, $fb, SOUTH
+	connection south, Route31, ROUTE_31, -4
 	
 	map_attributes ObscuraCity, OBSCURA_CITY, $02, EAST
-	connection east, Route29, ROUTE_29, 9
+	connection east, Route31, ROUTE_31, 9
 	
 	map_attributes AureoleTown, AUREOLE_TOWN, $d4, 0
 	
@@ -499,16 +499,16 @@ ENDM
 	map_attributes UnderwaterTempleOutside, UNDERWATER_TEMPLE_OUTSIDE, $7d, WEST
 	connection west, CoralReef, CORAL_REEF, 4
 	
-	map_attributes Route30, ROUTE_30, $71, NORTH
+	map_attributes Route32, ROUTE_32, $71, NORTH
 	connection north, RiverRapidsEntrance, RIVER_RAPIDS_ENTRANCE, 6
 	
 	map_attributes RiverRapidsEntrance, RIVER_RAPIDS_ENTRANCE, $71, SOUTH
-	connection south, Route30, ROUTE_30, -6
+	connection south, Route32, ROUTE_32, -6
 	
-	map_attributes Route31, ROUTE_31, $71, WEST
+	map_attributes Route24, ROUTE_24, $71, WEST
 	connection west, Crossroads, CROSSROADS, 3
 	
-	map_attributes Route32, ROUTE_32, $71, SOUTH | WEST
+	map_attributes Route23, ROUTE_23, $71, SOUTH | WEST
 	connection south, Crossroads, CROSSROADS, 0
 	connection west, Route11_2, ROUTE_11_2, -30
 	
@@ -800,17 +800,17 @@ ENDM
 	map_attributes EventideVillageGate, EVENTIDE_VILLAGE_GATE, $0, 0
 	map_attributes Route12Gate, ROUTE_12_GATE, $0, 0
 	map_attributes AirportGate, AIRPORT_GATE, $0, 0
-	map_attributes Route23Windy, ROUTE_23_WINDY, $0, 0
-	map_attributes Route24NorthWindy, ROUTE_24_NORTH_WINDY, $0, 0
-	map_attributes Route24SouthWindy, ROUTE_24_SOUTH_WINDY, $0, 0
 	map_attributes Route25Windy, ROUTE_25_WINDY, $0, 0
-	map_attributes Route26Windy, ROUTE_26_WINDY, $0, 0
+	map_attributes Route26NorthWindy, ROUTE_26_NORTH_WINDY, $0, 0
+	map_attributes Route26SouthWindy, ROUTE_26_SOUTH_WINDY, $0, 0
+	map_attributes Route27Windy, ROUTE_27_WINDY, $0, 0
+	map_attributes Route28Windy, ROUTE_28_WINDY, $0, 0
 	map_attributes BrightPokeCenter, BRIGHT_POKECENTER, $0, 0
 	map_attributes BrightMart, BRIGHT_MART, $0, 0
 	map_attributes BrightHouse1, BRIGHT_HOUSE_1, $0, 0
 	map_attributes BrightHouse2, BRIGHT_HOUSE_2, $0, 0
 	map_attributes BrightHouse3, BRIGHT_HOUSE_3, $0, 0
-	map_attributes Route25Gate, ROUTE_25_GATE, $0, 0
+	map_attributes Route29Gate, ROUTE_29_GATE, $0, 0
 	map_attributes BrightburgGate, BRIGHTBURG_GATE, $0, 0
 	map_attributes ObscuraGate, OBSCURA_GATE, $0, 0
 	map_attributes GreenGrotto2F, GREEN_GROTTO_2F, $9, 0
@@ -821,14 +821,14 @@ ENDM
 	map_attributes Inn3F, INN_3F, $0, 0
 	map_attributes InnElevator, INN_ELEVATOR, $0, 0
 	map_attributes InnVent, INN_VENT, $0, 0
-	map_attributes Route23Gate, ROUTE_23_GATE, $0, 0
+	map_attributes Route25Gate, ROUTE_25_GATE, $0, 0
 	map_attributes ObscuraMuseum1F, OBSCURA_MUSEUM_1F, $0, 0
 	map_attributes ObscuraMuseum2F, OBSCURA_MUSEUM_2F, $0, 0
 	map_attributes ObscuraMuseum3F, OBSCURA_MUSEUM_3F, $0, 0
 	map_attributes ObscuraMuseumEmployeeRoom, OBSCURA_MUSEUM_EMPLOYEE_ROOM, $0, 0
 	map_attributes ObscuraGym, OBSCURA_GYM, $0, 0
 	map_attributes ObscuraMuseumPhoto, OBSCURA_MUSEUM_PHOTO, $0, 0
-	map_attributes Route28OttosTent, ROUTE_28_OTTOS_TENT, $0, 0
+	map_attributes Route30OttosTent, ROUTE_30_OTTOS_TENT, $0, 0
 	map_attributes ObscuraFortuneHouse, OBSCURA_FORTUNE_HOUSE, $0, 0
 	map_attributes ObscuraPokeCenter, OBSCURA_POKECENTER, $0, 0
 	map_attributes ObscuraMart, OBSCURA_MART, $0, 0

@@ -5,7 +5,7 @@ BoneCavernB1F_MapScriptHeader:
 	callback MAPCALLBACK_TILES, BoneCavernB1FCallback
 
 	db 8 ; warp events
-	warp_def  9,  3, 1, ROUTE_31
+	warp_def  9,  3, 1, ROUTE_24
 	warp_def  3,  5, 3, BONE_CAVERN_B1F
 	warp_def 26,  9, 2, BONE_CAVERN_B1F
 	warp_def  5, 15, 1, BONE_CAVERN_B2F

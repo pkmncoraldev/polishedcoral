@@ -1971,8 +1971,8 @@ GetWorldMapLocation:: ; 0x2caf
 	ld a, AIRPORT
 	jr nz, .end
 	
-	eventflagcheck EVENT_ON_ROUTE_27
-	ld a, ROUTE_27
+	eventflagcheck EVENT_ON_ROUTE_29
+	ld a, ROUTE_29
 	jr nz, .end
 	
 	eventflagcheck EVENT_IN_RESIDENTIAL_DISTRICT

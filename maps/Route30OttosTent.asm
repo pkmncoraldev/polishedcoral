@@ -1,21 +1,21 @@
-Route28OttosTent_MapScriptHeader:
+Route30OttosTent_MapScriptHeader:
 	db 0 ; scene scripts
 
 	db 0 ; callbacks
 
 	db 2 ; warp events
-	warp_def 5, 2, 3, ROUTE_28
-	warp_def 5, 1, 3, ROUTE_28
+	warp_def 5, 2, 3, ROUTE_30
+	warp_def 5, 1, 3, ROUTE_30
 
 	db 0 ; coord events
 
 	db 0 ; bg events
 
 	db 2 ; object events
-	person_event SPRITE_OTTO,  3,  2, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, Route28OttosTentOtto, -1
-	object_event  1,  3, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, TOGEPI, -1, -1, PAL_NPC_RED, PERSONTYPE_SCRIPT, 0, Route28OttosTentTogepi, -1
+	person_event SPRITE_OTTO,  3,  2, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, Route30OttosTentOtto, -1
+	object_event  1,  3, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, TOGEPI, -1, -1, PAL_NPC_RED, PERSONTYPE_SCRIPT, 0, Route30OttosTentTogepi, -1
 	
-Route28OttosTentOtto:
+Route30OttosTentOtto:
 	faceplayer
 	checkevent EVENT_OTTO_TALKS_ABOUT_RIVAL
 	iftrue .talk_about_rival
@@ -29,46 +29,46 @@ Route28OttosTentOtto:
 	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_6
 	checkevent EVENT_TALKED_TO_OTTO
 	iftrue .normal
-	writetext Route28OttosTentOttoText3
+	writetext Route30OttosTentOttoText3
 	jump .cont
 .just_shopped
 	clearevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_8
-	writetext Route28OttosTentOttoText10
+	writetext Route30OttosTentOttoText10
 	jump .cont
 .just_slept
 	clearevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_7
-	writetext Route28OttosTentOttoText9
+	writetext Route30OttosTentOttoText9
 	jump .cont
 .normal
-	writetext Route28OttosTentOttoText1
+	writetext Route30OttosTentOttoText1
 	jump .cont
 .talk_about_rival
 	opentext TEXTBOX_UNKNOWN
-	writetext Route28OttosTentOttoText5
+	writetext Route30OttosTentOttoText5
 	buttonsound
 	changetextboxspeaker TEXTBOX_OTTO
 	farwritetext StdBlankText
 	pause 6
-	writetext Route28OttosTentOttoText12
+	writetext Route30OttosTentOttoText12
 .cont
 	buttonsound
 	farwritetext StdBlankText
 	pause 6
 .skip_intro
-	writetext Route28OttosTentOttoText4
-	loadmenu .Route28OttosTentOttoMenuData
+	writetext Route30OttosTentOttoText4
+	loadmenu .Route30OttosTentOttoMenuData
 	verticalmenu
 	if_equal $1, .rest
 	if_equal $2, .shop
 	if_equal $3, .advice
 	closewindow
-	writetext Route28OttosTentOttoText7
+	writetext Route30OttosTentOttoText7
 	waitbutton
 	closetext
 	jump .end
 .rest
 	closewindow
-	writetext Route28OttosTentOttoText8
+	writetext Route30OttosTentOttoText8
 	waitbutton
 	closetext
 	special FadeOutPalettesBlack
@@ -78,13 +78,13 @@ Route28OttosTentOtto:
 	checkcode VAR_FACING
 	ifequal UP, .YouAreFacingUp
 	ifequal LEFT, .YouAreFacingLeft
-	applymovement PLAYER, Movement_Route28OttosTent3
+	applymovement PLAYER, Movement_Route30OttosTent3
 	jump .rest_cont
 .YouAreFacingUp
-	applymovement PLAYER, Movement_Route28OttosTent1
+	applymovement PLAYER, Movement_Route30OttosTent1
 	jump .rest_cont
 .YouAreFacingLeft
-	applymovement PLAYER, Movement_Route28OttosTent2
+	applymovement PLAYER, Movement_Route30OttosTent2
 .rest_cont
 	applyonemovement PLAYER, remove_fixed_facing
 	pause 55
@@ -95,18 +95,18 @@ Route28OttosTentOtto:
 	jump .end
 .shop
 	closewindow
-	writetext Route28OttosTentOttoText6
+	writetext Route30OttosTentOttoText6
 	waitbutton
 	callasm OttoAsm
 	changetextboxspeaker TEXTBOX_OTTO
-	writetext Route28OttosTentOttoText2
+	writetext Route30OttosTentOttoText2
 	waitbutton
 	closetext
 	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_8
 	jump .end
 .advice
 	closewindow
-	writetext Route28OttosTentOttoText11
+	writetext Route30OttosTentOttoText11
 	waitbutton
 	closetext
 	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_6
@@ -115,15 +115,15 @@ Route28OttosTentOtto:
 	clearevent EVENT_OTTO_TALKS_ABOUT_RIVAL
 	end
 	
-.Route28OttosTentOttoMenuData
+.Route30OttosTentOttoMenuData
 	db $40 ; flags
 	db 00, 00 ; start coords
 	db 09, 12 ; end coords
-	dw .MenuData2Route28OttosTentOtto
+	dw .MenuData2Route30OttosTentOtto
 	db 1 ; default option
 ; 0x48e04
 
-.MenuData2Route28OttosTentOtto:
+.MenuData2Route30OttosTentOtto:
 	db $80 ; flags
 	db 4 ; items
 	db "REST@"
@@ -131,20 +131,20 @@ Route28OttosTentOtto:
 	db "ADVICE@"
 	db "BYE@"
 
-Route28OttosTentOttoText1:
+Route30OttosTentOttoText1:
 	text "Hey, hey!"
 	
 	para "Good to see ya,"
 	line "again!"
 	done
 
-Route28OttosTentOttoText2:
+Route30OttosTentOttoText2:
 	text "You don't have"
 	line "any allergies,"
 	cont "right?"
 	done
 	
-Route28OttosTentOttoText3:
+Route30OttosTentOttoText3:
 	text "Hey, maaan!"
 	line "The name's OTTO!"
 	
@@ -169,12 +169,12 @@ Route28OttosTentOttoText3:
 	cont "traveler."
 	done
 
-Route28OttosTentOttoText4:
+Route30OttosTentOttoText4:
 	text "So, whatcha need,"
 	line "man?"
 	done
 	
-Route28OttosTentOttoText5:
+Route30OttosTentOttoText5:
 	text "Woah, hey!"
 	
 	para "I don't want no"
@@ -202,7 +202,7 @@ Route28OttosTentOttoText5:
 	line "OTTO."
 	done
 	
-Route28OttosTentOttoText12:
+Route30OttosTentOttoText12:
 	text "My travels bring"
 	line "me all over the"
 	cont "place, man."
@@ -222,29 +222,29 @@ Route28OttosTentOttoText12:
 	cont "traveler."
 	done
 	
-Route28OttosTentOttoText6:
+Route30OttosTentOttoText6:
 	text "Lookin' for some"
 	line "holistics, man?"
 	done
 	
-Route28OttosTentOttoText7:
+Route30OttosTentOttoText7:
 	text "Don't be a"
 	line "stranger, man."
 	done
 	
-Route28OttosTentOttoText8:
+Route30OttosTentOttoText8:
 	text "No worries."
 	
 	para "Soy sleeping bag,"
 	line "yo sleeping bag!"
 	done
 	
-Route28OttosTentOttoText9:
+Route30OttosTentOttoText9:
 	text "Man, you were out"
 	line "like light!"
 	done
 	
-Route28OttosTentOttoText10:
+Route30OttosTentOttoText10:
 	text "Need anything"
 	line "else?"
 	
@@ -253,7 +253,7 @@ Route28OttosTentOttoText10:
 	cont "you know?"
 	done
 	
-Route28OttosTentOttoText11:
+Route30OttosTentOttoText11:
 	text "You want my"
 	line "advice, dude?"
 	
@@ -295,27 +295,27 @@ OttoAsm:
 	farcall OpenMartDialog
 	ret
 
-Route28OttosTentTogepi:
+Route30OttosTentTogepi:
 	opentext  TEXTBOX_POKEMON, TOGEPI
-	writetext Route28OttosTentTogepiText
+	writetext Route30OttosTentTogepiText
 	cry TOGEPI
 	waitbutton
 	closetext
 	end
 
-Route28OttosTentTogepiText:
+Route30OttosTentTogepiText:
 	text "Prrrrri!"
 	done
 	
-Movement_Route28OttosTent1:
+Movement_Route30OttosTent1:
 	big_step_right
 	big_step_up
-Movement_Route28OttosTent2:
+Movement_Route30OttosTent2:
 	big_step_up
 	turn_step_down
 	step_end
 	
-Movement_Route28OttosTent3:
+Movement_Route30OttosTent3:
 	big_step_right
 	turn_step_down
 	step_end

@@ -486,90 +486,90 @@
 	db 21, DWEBBLE		;4%
 	db 21, DWEBBLE		;1%
 	
-	map_id ROUTE_23
-	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
-	; morn
-	db 39, SHROOMISH	;30%
-	db 39, PONYTA		;30%
-	db 39, GIRAFARIG	;20%
-	db 39, LITWICK		;10%
-	db 39, BRELOOM		;5%
-	db 39, BRELOOM		;4%
-	db 39, BRELOOM		;1%
-	; day
-	db 39, SHROOMISH	;30%
-	db 39, PONYTA		;30%
-	db 39, GIRAFARIG	;20%
-	db 39, LITWICK		;10%
-	db 39, BRELOOM		;5%
-	db 39, BRELOOM		;4%
-	db 39, BRELOOM		;1%
-	; nite
-	db 39, SHROOMISH	;30%
-	db 39, PONYTA		;30%
-	db 39, GIRAFARIG	;20%
-	db 39, LITWICK		;10%
-	db 39, BRELOOM		;5%
-	db 39, BRELOOM		;4%
-	db 39, BRELOOM		;1%
-	
-	map_id ROUTE_24_NORTH
-	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
-	; morn
-	db 39, SHROOMISH	;30%
-	db 39, LITWICK		;30%
-	db 39, GIRAFARIG	;20%
-	db 39, PONYTA		;10%
-	db 39, BRELOOM		;5%
-	db 39, BRELOOM		;4%
-	db 39, BRELOOM		;1%
-	; day
-	db 39, SHROOMISH	;30%
-	db 39, LITWICK		;30%
-	db 39, GIRAFARIG	;20%
-	db 39, PONYTA		;10%
-	db 39, BRELOOM		;5%
-	db 39, BRELOOM		;4%
-	db 39, BRELOOM		;1%
-	; nite
-	db 39, SHROOMISH	;30%
-	db 39, LITWICK		;30%
-	db 39, GIRAFARIG	;20%
-	db 39, PONYTA		;10%
-	db 39, BRELOOM		;5%
-	db 39, BRELOOM		;4%
-	db 39, BRELOOM		;1%
-	
-	map_id ROUTE_24_SOUTH
-	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
-	; morn
-	db 39, SHROOMISH	;30%
-	db 39, LITWICK		;30%
-	db 39, GIRAFARIG	;20%
-	db 39, PONYTA		;10%
-	db 39, BRELOOM		;5%
-	db 39, BRELOOM		;4%
-	db 39, BRELOOM		;1%
-	; day
-	db 39, SHROOMISH	;30%
-	db 39, LITWICK		;30%
-	db 39, GIRAFARIG	;20%
-	db 39, PONYTA		;10%
-	db 39, BRELOOM		;5%
-	db 39, BRELOOM		;4%
-	db 39, BRELOOM		;1%
-	; nite
-	db 39, SHROOMISH	;30%
-	db 39, LITWICK		;30%
-	db 39, GIRAFARIG	;20%
-	db 39, PONYTA		;10%
-	db 39, BRELOOM		;5%
-	db 39, BRELOOM		;4%
-	db 39, BRELOOM		;1%
-	
 	map_id ROUTE_25
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
+	db 39, SHROOMISH	;30%
+	db 39, PONYTA		;30%
+	db 39, GIRAFARIG	;20%
+	db 39, LITWICK		;10%
+	db 39, BRELOOM		;5%
+	db 39, BRELOOM		;4%
+	db 39, BRELOOM		;1%
+	; day
+	db 39, SHROOMISH	;30%
+	db 39, PONYTA		;30%
+	db 39, GIRAFARIG	;20%
+	db 39, LITWICK		;10%
+	db 39, BRELOOM		;5%
+	db 39, BRELOOM		;4%
+	db 39, BRELOOM		;1%
+	; nite
+	db 39, SHROOMISH	;30%
+	db 39, PONYTA		;30%
+	db 39, GIRAFARIG	;20%
+	db 39, LITWICK		;10%
+	db 39, BRELOOM		;5%
+	db 39, BRELOOM		;4%
+	db 39, BRELOOM		;1%
+	
+	map_id ROUTE_26_NORTH
+	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	; morn
+	db 39, SHROOMISH	;30%
+	db 39, LITWICK		;30%
+	db 39, GIRAFARIG	;20%
+	db 39, PONYTA		;10%
+	db 39, BRELOOM		;5%
+	db 39, BRELOOM		;4%
+	db 39, BRELOOM		;1%
+	; day
+	db 39, SHROOMISH	;30%
+	db 39, LITWICK		;30%
+	db 39, GIRAFARIG	;20%
+	db 39, PONYTA		;10%
+	db 39, BRELOOM		;5%
+	db 39, BRELOOM		;4%
+	db 39, BRELOOM		;1%
+	; nite
+	db 39, SHROOMISH	;30%
+	db 39, LITWICK		;30%
+	db 39, GIRAFARIG	;20%
+	db 39, PONYTA		;10%
+	db 39, BRELOOM		;5%
+	db 39, BRELOOM		;4%
+	db 39, BRELOOM		;1%
+	
+	map_id ROUTE_26_SOUTH
+	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	; morn
+	db 39, SHROOMISH	;30%
+	db 39, LITWICK		;30%
+	db 39, GIRAFARIG	;20%
+	db 39, PONYTA		;10%
+	db 39, BRELOOM		;5%
+	db 39, BRELOOM		;4%
+	db 39, BRELOOM		;1%
+	; day
+	db 39, SHROOMISH	;30%
+	db 39, LITWICK		;30%
+	db 39, GIRAFARIG	;20%
+	db 39, PONYTA		;10%
+	db 39, BRELOOM		;5%
+	db 39, BRELOOM		;4%
+	db 39, BRELOOM		;1%
+	; nite
+	db 39, SHROOMISH	;30%
+	db 39, LITWICK		;30%
+	db 39, GIRAFARIG	;20%
+	db 39, PONYTA		;10%
+	db 39, BRELOOM		;5%
+	db 39, BRELOOM		;4%
+	db 39, BRELOOM		;1%
+	
+	map_id ROUTE_27
+	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	; morn
 	db 41, SHROOMISH	;30%
 	db 41, PONYTA		;30%
 	db 41, GIRAFARIG	;20%
@@ -594,7 +594,7 @@
 	db 41, BRELOOM		;4%
 	db 41, BRELOOM		;1%
 	
-	map_id ROUTE_26
+	map_id ROUTE_28
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
 	db 41, SHROOMISH	;30%
@@ -620,91 +620,91 @@
 	db 41, LITWICK		;5%
 	db 41, LITWICK		;4%
 	db 41, LITWICK		;1%
-	
-	map_id ROUTE_23_WINDY ;Used on windy days
-	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
-	; morn
-	db 39, DRIFLOON		;30%
-	db 39, PONYTA		;30%
-	db 39, GIRAFARIG	;20%
-	db 39, SKARMORY		;10%
-	db 39, BRELOOM		;5%
-	db 39, BRELOOM		;4%
-	db 39, BRELOOM		;1%
-	; day
-	db 39, DRIFLOON		;30%
-	db 39, PONYTA		;30%
-	db 39, GIRAFARIG	;20%
-	db 39, SKARMORY		;10%
-	db 39, BRELOOM		;5%
-	db 39, BRELOOM		;4%
-	db 39, BRELOOM		;1%
-	; nite
-	db 39, DRIFLOON		;30%
-	db 39, PONYTA		;30%
-	db 39, GIRAFARIG	;20%
-	db 39, SKARMORY		;10%
-	db 39, BRELOOM		;5%
-	db 39, BRELOOM		;4%
-	db 39, BRELOOM		;1%
-	
-	map_id ROUTE_24_NORTH_WINDY ;Used on windy days
-	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
-	; morn
-	db 39, DRIFLOON		;30%
-	db 39, SHROOMISH	;30%
-	db 39, GIRAFARIG	;20%
-	db 39, SKARMORY		;10%
-	db 39, BRELOOM		;5%
-	db 39, BRELOOM		;4%
-	db 39, BRELOOM		;1%
-	; day
-	db 39, DRIFLOON		;30%
-	db 39, SHROOMISH	;30%
-	db 39, GIRAFARIG	;20%
-	db 39, SKARMORY		;10%
-	db 39, BRELOOM		;5%
-	db 39, BRELOOM		;4%
-	db 39, BRELOOM		;1%
-	; nite
-	db 39, DRIFLOON		;30%
-	db 39, SHROOMISH	;30%
-	db 39, GIRAFARIG	;20%
-	db 39, SKARMORY		;10%
-	db 39, BRELOOM		;5%
-	db 39, BRELOOM		;4%
-	db 39, BRELOOM		;1%
-	
-	map_id ROUTE_24_SOUTH_WINDY ;Used on windy days
-	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
-	; morn
-	db 39, DRIFLOON		;30%
-	db 39, SHROOMISH	;30%
-	db 39, GIRAFARIG	;20%
-	db 39, SKARMORY		;10%
-	db 39, BRELOOM		;5%
-	db 39, BRELOOM		;4%
-	db 39, BRELOOM		;1%
-	; day
-	db 39, DRIFLOON		;30%
-	db 39, SHROOMISH	;30%
-	db 39, GIRAFARIG	;20%
-	db 39, SKARMORY		;10%
-	db 39, BRELOOM		;5%
-	db 39, BRELOOM		;4%
-	db 39, BRELOOM		;1%
-	; nite
-	db 39, DRIFLOON		;30%
-	db 39, SHROOMISH	;30%
-	db 39, GIRAFARIG	;20%
-	db 39, SKARMORY		;10%
-	db 39, BRELOOM		;5%
-	db 39, BRELOOM		;4%
-	db 39, BRELOOM		;1%
 	
 	map_id ROUTE_25_WINDY ;Used on windy days
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
+	db 39, DRIFLOON		;30%
+	db 39, PONYTA		;30%
+	db 39, GIRAFARIG	;20%
+	db 39, SKARMORY		;10%
+	db 39, BRELOOM		;5%
+	db 39, BRELOOM		;4%
+	db 39, BRELOOM		;1%
+	; day
+	db 39, DRIFLOON		;30%
+	db 39, PONYTA		;30%
+	db 39, GIRAFARIG	;20%
+	db 39, SKARMORY		;10%
+	db 39, BRELOOM		;5%
+	db 39, BRELOOM		;4%
+	db 39, BRELOOM		;1%
+	; nite
+	db 39, DRIFLOON		;30%
+	db 39, PONYTA		;30%
+	db 39, GIRAFARIG	;20%
+	db 39, SKARMORY		;10%
+	db 39, BRELOOM		;5%
+	db 39, BRELOOM		;4%
+	db 39, BRELOOM		;1%
+	
+	map_id ROUTE_26_NORTH_WINDY ;Used on windy days
+	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	; morn
+	db 39, DRIFLOON		;30%
+	db 39, SHROOMISH	;30%
+	db 39, GIRAFARIG	;20%
+	db 39, SKARMORY		;10%
+	db 39, BRELOOM		;5%
+	db 39, BRELOOM		;4%
+	db 39, BRELOOM		;1%
+	; day
+	db 39, DRIFLOON		;30%
+	db 39, SHROOMISH	;30%
+	db 39, GIRAFARIG	;20%
+	db 39, SKARMORY		;10%
+	db 39, BRELOOM		;5%
+	db 39, BRELOOM		;4%
+	db 39, BRELOOM		;1%
+	; nite
+	db 39, DRIFLOON		;30%
+	db 39, SHROOMISH	;30%
+	db 39, GIRAFARIG	;20%
+	db 39, SKARMORY		;10%
+	db 39, BRELOOM		;5%
+	db 39, BRELOOM		;4%
+	db 39, BRELOOM		;1%
+	
+	map_id ROUTE_26_SOUTH_WINDY ;Used on windy days
+	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	; morn
+	db 39, DRIFLOON		;30%
+	db 39, SHROOMISH	;30%
+	db 39, GIRAFARIG	;20%
+	db 39, SKARMORY		;10%
+	db 39, BRELOOM		;5%
+	db 39, BRELOOM		;4%
+	db 39, BRELOOM		;1%
+	; day
+	db 39, DRIFLOON		;30%
+	db 39, SHROOMISH	;30%
+	db 39, GIRAFARIG	;20%
+	db 39, SKARMORY		;10%
+	db 39, BRELOOM		;5%
+	db 39, BRELOOM		;4%
+	db 39, BRELOOM		;1%
+	; nite
+	db 39, DRIFLOON		;30%
+	db 39, SHROOMISH	;30%
+	db 39, GIRAFARIG	;20%
+	db 39, SKARMORY		;10%
+	db 39, BRELOOM		;5%
+	db 39, BRELOOM		;4%
+	db 39, BRELOOM		;1%
+	
+	map_id ROUTE_27_WINDY ;Used on windy days
+	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	; morn
 	db 41, DRIFLOON		;30%
 	db 41, PONYTA		;30%
 	db 41, GIRAFARIG	;20%
@@ -729,7 +729,7 @@
 	db 41, BRELOOM		;4%
 	db 41, BRELOOM		;1%
 	
-	map_id ROUTE_26_WINDY ;Used on windy days
+	map_id ROUTE_28_WINDY ;Used on windy days
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
 	db 41, DRIFLOON		;30%
@@ -756,7 +756,7 @@
 	db 41, SKARMORY		;4%
 	db 41, SKARMORY		;1%
 	
-	map_id ROUTE_27
+	map_id ROUTE_29
 	db 15 percent, 15 percent, 15 percent ; encounter rates: morn/day/nite
 	; morn
 	db 41, BUNEARY		;30%
@@ -783,7 +783,7 @@
 	db 41, PIDGEOTTO	;4%
 	db 41, PIDGEOTTO	;1%
 	
-	map_id ROUTE_28
+	map_id ROUTE_30
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	db 42, PIDGEOTTO	;30%
@@ -810,7 +810,7 @@
 	db 42, TOGETIC		;4%
 	db 42, TOGETIC		;1%
 	
-	map_id ROUTE_29
+	map_id ROUTE_31
 	db 15 percent, 15 percent, 15 percent ; encounter rates: morn/day/nite
 	; morn
 	db 42, FLITTLE		;30%

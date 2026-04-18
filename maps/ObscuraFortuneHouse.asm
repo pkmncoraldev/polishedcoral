@@ -942,7 +942,7 @@ TM34Text:
 	prompt
 
 TM35Text:
-	text "It's on ROUTE 24."
+	text "It's on ROUTE 26."
 	
 	para "Head NORTH and"
 	line "climb a great"
@@ -1024,7 +1024,7 @@ TM47Text:
 
 TM48Text:
 	text "There's a pusher"
-	line "fan on ROUTE 32."
+	line "fan on ROUTE 26."
 	
 	para "Show him how it's"
 	line "done, and he'll"
@@ -1046,7 +1046,7 @@ TM53Text:
 	cont "her game."
 	
 	para "Check the water"
-	line "around ROUTE 30."
+	line "around ROUTE 32."
 	prompt
 
 TM54Text:
@@ -1083,7 +1083,7 @@ TM59Text:
 
 TM60Text:
 	text "It's high up a"
-	line "hill on ROUTE 29."
+	line "hill on ROUTE 31."
 	
 	para "Try looking for"
 	line "spots to climb."
@@ -1106,7 +1106,7 @@ TM62Text:
 	prompt
 
 TM64Text:
-	text "Go to ROUTE 28."
+	text "Go to ROUTE 30."
 	
 	para "It's there you'll"
 	line "prove your pushing"
@@ -1759,7 +1759,7 @@ Music_RivalBattle2Text:
 	prompt
 	
 Music_AutumnText:
- 	text "It's on ROUTE 27."
+ 	text "It's on ROUTE 29."
 	
 	para "Try getting into"
 	line "the construction"
@@ -1772,7 +1772,7 @@ Music_DojoText:
 	prompt
 	
 Music_Route28Text:
- 	text "It's on ROUTE 29."
+ 	text "It's on ROUTE 31."
 	
 	para "Look SOUTH after"
 	line "leaving town."
@@ -1960,7 +1960,7 @@ UniqueEncounterMinaRadiantFieldText:
 	
 UniqueEncounterMinaRoute29Text:
 	text "MINA"
-	line "ROUTE 29"
+	line "ROUTE 31"
 	done
 	
 UniqueEncounterMinaRoute10Text:

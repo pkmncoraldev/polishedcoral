@@ -1,112 +1,188 @@
 Route31_MapScriptHeader:
-	db 1 ; scene scripts
-	scene_script Route31Trigger0
+	db 0 ; scene scripts
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_TILES, Route31Callback
 
-	db 1 ; warp events
-	warp_def  3, 49, 1, BONE_CAVERN_B1F
+	db 3 ; warp events
+	warp_def  7, 66, 2, GREEN_GROTTO_1F
+	warp_def 11, 54, 1, GREEN_GROTTO_2F
+	warp_def  3, 58, 2, GREEN_GROTTO_2F
 
 	db 0 ; coord events
 
-	db 0 ; bg events
+	db 2 ; bg events
+	signpost 12, 68, SIGNPOST_JUMPTEXT, Route31SignText
+	signpost  4, 47, SIGNPOST_ITEM + MAX_ELIXIR, EVENT_ROUTE_31_HIDDEN_ITEM
 
-	db 13 ; object events
-	strengthboulder_event 48, 12, -1
-	strengthboulder_event 28,  4, -1
-	strengthboulder_event 29,  5, -1
-	strengthboulder_event 53, 13, -1
-	person_event SPRITE_YOUNGSTER,  4, 31, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, Route32StrengthMan, -1
-	smashrock_event 28,  5
-	smashrock_event 29,  4
-	smashrock_event 49,  5
-	smashrock_event 48,  4
-	person_event SPRITE_GENTLEMAN,  9, 12, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 1, Route31Trainer1, -1
-	person_event SPRITE_SCIENTIST, 16, 30, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 3, Route31Trainer2, -1
-	person_event SPRITE_POKEFAN_F, 14, 47, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_GENERICTRAINER, 3, Route31Trainer3, -1
-	tapeball_event 44, 19, MUSIC_TRAINER_BATTLE, 2, EVENT_MUSIC_TRAINER_BATTLE
+	db 9 ; object events
+	person_event SPRITE_POKEFAN_M, 13, 43, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_GENERICTRAINER, 3, Route31Trainer1, -1
+	person_event SPRITE_BIRD_KEEPER, 14,  9, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 5, Route31Trainer2, -1
+	person_event SPRITE_BUG_CATCHER, 12, 18, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 3, Route31Trainer3, -1
+	person_event SPRITE_COOLTRAINER_F, 15, 69, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_GENERICTRAINER, 4, Route31Trainer4, -1
+	person_event SPRITE_COOLTRAINER_M, 19, 55, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_GENERICTRAINER, 2, Route31Trainer5, -1
+	person_event SPRITE_BIRD_KEEPER, 14, 29, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 5, Route31Trainer6, -1
+	fruittree_event 39,  4, FRUITTREE_ROUTE_31, LUM_BERRY
+	tmhmball_event 57,  6, TM_DRAGON_CLAW, EVENT_TM60
+	tapeball_event 11, 21, MUSIC_ROUTE_30, 1, EVENT_MUSIC_ROUTE_30
 	
 	
-Route31Trigger0:
-	special Special_UpdatePalsInstant
-	end
-
+Route31Callback:
+	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_MINA_GROUND
+	variablesprite SPRITE_ICESKATER_VARIABLE, SPRITE_VALVE_1
+	return
+	
+Route31SignText:
+	text "ROUTE 31"
+	
+	para "NORTHEAST:"
+	line "BRIGHTBURG"
+	
+	para "WEST:"
+	line "OBSCURA CITY"
+	done
+	
 Route31Trainer1:
-	generictrainer GENTLEMAN, EUGENE, EVENT_BEAT_ROUTE_31_TRAINER_1, .SeenText, .BeatenText
+	generictrainer POKEFANM, JASON, EVENT_BEAT_ROUTE_31_TRAINER_1, .SeenText, .BeatenText
 
-	text "Be it days, weeks,"
-	line "years, or decades"
-	cont "from now,"
+	text "What does it truly"
+	line "mean to be a real"
+	cont "#FAN?"
 	
-	para "eventually we'll"
-	line "all turn to bones."
-	
-	para "Even you and your"
-	line "#MON!"
+	para "Is it enough to"
+	line "just be a fan of"
+	cont "#MON?"
 	done
 
 .SeenText:
-	text "All things must"
-	line "come to an end."
-	
-	para "Even life itself"
-	line "must eventually"
-	cont "come to an end."
+	text "I call myself a"
+	line "#FAN, but what"
+	cont "does that mean?"
 	done
 
 .BeatenText:
-	text "All things must"
-	line "come to an end."
-	
-	para "Even #MON"
-	line "battles."
+	text "Not a fan of"
+	line "that…"
 	done
 	
 Route31Trainer2:
-	generictrainer SCIENTIST, MARTY, EVENT_BEAT_ROUTE_31_TRAINER_2, .SeenText, .BeatenText
+	generictrainer BIRD_KEEPER, MITCH, EVENT_BEAT_ROUTE_31_TRAINER_2, .SeenText, .BeatenText
 
-	text "My colleage went"
-	line "ahead to the"
-	cont "BONE CAVERNS."
-	
-	para "I stuck back"
-	line "because, well…"
-	
-	para "I'm scared of"
-	line "the bones!"
+	text "My ESPATHRA may"
+	line "be a bird, but it's"
+	cont "no FLYING-type!"
 	done
 
 .SeenText:
-	text "My colleague and I"
-	line "were tasked with"
-	cont "with researching"
-	cont "the BONE CAVERNS."
+	text "Contrary to"
+	line "popular belief,"
 	
-	para "He ran ahead"
-	line "without me!"
+	para "not all bird"
+	line "#MON are"
+	cont "FLYING-type!"
 	done
 
 .BeatenText:
-	text "YOU WIN"
+	text "Shoot!"
 	done
 	
 Route31Trainer3:
-	generictrainer POKEFANF, BERTHA, EVENT_BEAT_ROUTE_31_TRAINER_3, .SeenText, .BeatenText
+	generictrainer BUG_CATCHER, AJ, EVENT_BEAT_ROUTE_31_TRAINER_3, .SeenText, .BeatenText
 
-	text "I wonder if that"
-	line "little #MON I"
-	cont "saw lost its mama…"
+	text "ROCKY is the GYM"
+	line "LEADER of OBSCURA"
+	cont "CITY."
+	
+	para "And I'm his number"
+	line "one fan!"
 	done
 
 .SeenText:
-	text "I saw a little"
-	line "#MON crying in"
-	cont "the grass."
+	text "Are you on your"
+	line "way to see ROCKY?"
 	
-	para "How sad…"
+	para "He's the OBSCURA"
+	line "CITY GYM LEADER!"
 	done
 
 .BeatenText:
-	text "You beat me!"
-	line "How sad…"
+	text "ROCKY!"
 	done
+	
+Route31Trainer4:
+	generictrainer COOLTRAINERF, TAMMY, EVENT_BEAT_ROUTE_31_TRAINER_4, .SeenText, .BeatenText
+
+	text "Alright, alright."
+	line "You got me."
+	
+	para "I'll cut the"
+	line "helpless damsal"
+	cont "act."
+	done
+
+.SeenText:
+	text "You must be tired."
+	
+	para "Hehe!<WAIT_S>"
+	line "My next victim!"
+	done
+
+.BeatenText:
+	text "Eeeek!<WAIT_S>"
+	line "Help me!"
+	done
+	
+Route31Trainer5:
+	generictrainer COOLTRAINERM, KEN, EVENT_BEAT_ROUTE_31_TRAINER_5, .SeenText, .BeatenText
+
+	text "Are you the type"
+	line "to be bored by a"
+	cont "museum,"
+	
+	para "or do you find"
+	line "them interesting?"
+	done
+
+.SeenText:
+	text "OBSCURA CITY"
+	line "has quite the"
+	cont "impressive museum."
+	
+	para "Have you been?"
+	done
+
+.BeatenText:
+	text "Impressive."
+	done
+	
+Route31Trainer6:
+	generictrainer BIRD_KEEPER, KEVIN, EVENT_BEAT_ROUTE_31_TRAINER_6, .SeenText, .BeatenText
+
+	text "A few frilly"
+	line "FLITTLE flutter"
+	cont "freely."
+	
+	para "A few frilly"
+	line "FLITTLE flutter"
+	cont "freely."
+	
+	para "A few frilly"
+	line "flitter- BAH!"
+	
+	para "I can't do it!"
+	done
+
+.SeenText:
+	text "A few frilly"
+	line "FLITTLE flutter"
+	cont "freely."
+	
+	para "Try saying that"
+	line "five times fast!"
+	done
+
+.BeatenText:
+	text "I'm all twisted"
+	line "up!"
+	done
+	

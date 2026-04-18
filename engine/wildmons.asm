@@ -536,18 +536,18 @@ _GrassWildmonLookup: ; 2a205
 	jr z, .normal
 	
 	ld a, [wMapGroup]
-	cp GROUP_ROUTE_23
+	cp GROUP_ROUTE_25
 	jr nz, .normal
 	ld a, [wMapNumber]
-	cp MAP_ROUTE_23
-	jr z, .windy
-	cp MAP_ROUTE_24_NORTH
-	jr z, .windy
-	cp MAP_ROUTE_24_SOUTH
-	jr z, .windy
 	cp MAP_ROUTE_25
 	jr z, .windy
-	cp MAP_ROUTE_26
+	cp MAP_ROUTE_26_NORTH
+	jr z, .windy
+	cp MAP_ROUTE_26_SOUTH
+	jr z, .windy
+	cp MAP_ROUTE_27
+	jr z, .windy
+	cp MAP_ROUTE_28
 	jr nz, .normal
 .windy
 	call _GetGrassWildmonPointer

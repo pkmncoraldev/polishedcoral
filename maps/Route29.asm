@@ -4,185 +4,268 @@ Route29_MapScriptHeader:
 	db 1 ; callbacks
 	callback MAPCALLBACK_TILES, Route29Callback
 
-	db 3 ; warp events
-	warp_def  7, 66, 2, GREEN_GROTTO_1F
-	warp_def 11, 54, 1, GREEN_GROTTO_2F
-	warp_def  3, 58, 2, GREEN_GROTTO_2F
+	db 2 ; warp events
+	warp_event 41, 33, ROUTE_29_GATE, 1
+	warp_event 42, 33, ROUTE_29_GATE, 2
 
-	db 0 ; coord events
+	db 4 ; coord events
+	xy_trigger 0, 12,  6, 0, Route29MapSignThing, 0, 0
+	xy_trigger 0, 12,  7, 0, Route29MapSignThing, 0, 0
+	xy_trigger 1, 11,  6, 0, Route25MapSignThing, 0, 0
+	xy_trigger 1, 11,  7, 0, Route25MapSignThing, 0, 0
 
-	db 2 ; bg events
-	signpost 12, 68, SIGNPOST_JUMPTEXT, Route29SignText
-	signpost  4, 47, SIGNPOST_ITEM + MAX_ELIXIR, EVENT_ROUTE_29_HIDDEN_ITEM
+	db 19 ; bg events
+	signpost 12, 10, SIGNPOST_READ, Route29Sign
+	signpost 17, 20, SIGNPOST_READ, Route29Beams
+	signpost 17, 21, SIGNPOST_READ, Route29Beams
+	signpost 22, 19, SIGNPOST_READ, Route29Beams
+	signpost 23, 32, SIGNPOST_READ, Route29Beams
+	signpost 23, 33, SIGNPOST_READ, Route29Beams
+	signpost 28, 33, SIGNPOST_READ, Route29Beams
+	signpost 28, 35, SIGNPOST_READ, Route29Beams
+	signpost 19, 48, SIGNPOST_READ, Route29Beams
+	signpost 19, 49, SIGNPOST_READ, Route29Beams
+	signpost 24, 47, SIGNPOST_READ, Route29Beams
+	signpost 24, 49, SIGNPOST_READ, Route29Beams
+	signpost 18, 17, SIGNPOST_READ, Route29Pipes
+	signpost 19, 17, SIGNPOST_READ, Route29Pipes
+	signpost 22, 45, SIGNPOST_READ, Route29Pipes
+	signpost 23, 45, SIGNPOST_READ, Route29Pipes
+	signpost 30, 43, SIGNPOST_READ, Route29BrightburgSign
+	signpost  8, -1, SIGNPOST_IFNOTSET, Route29Tree
+	signpost  9, -1, SIGNPOST_IFNOTSET, Route29Tree
 
-	db 9 ; object events
-	person_event SPRITE_POKEFAN_M, 13, 43, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_GENERICTRAINER, 3, Route29Trainer1, -1
-	person_event SPRITE_BIRD_KEEPER, 14,  9, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 5, Route29Trainer2, -1
-	person_event SPRITE_BUG_CATCHER, 12, 18, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 3, Route29Trainer3, -1
-	person_event SPRITE_COOLTRAINER_F, 15, 69, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_GENERICTRAINER, 4, Route29Trainer4, -1
-	person_event SPRITE_COOLTRAINER_M, 19, 55, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_GENERICTRAINER, 2, Route29Trainer5, -1
-	person_event SPRITE_BIRD_KEEPER, 14, 29, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 5, Route29Trainer6, -1
-	fruittree_event 39,  4, FRUITTREE_ROUTE_29, LUM_BERRY
-	tmhmball_event 57,  6, TM_DRAGON_CLAW, EVENT_TM60
-	tapeball_event 11, 21, MUSIC_ROUTE_28, 1, EVENT_MUSIC_ROUTE_28
-	
-	
+	db 15 ; object events
+	person_event SPRITE_COOLTRAINER_M,  9,  9, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_GENERICTRAINER, 5, TrainerRoute29_1, -1
+	person_event SPRITE_SKATER, 22, 26, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 2, TrainerRoute29_2, -1
+	person_event SPRITE_OFFICER, 23, 41, SPRITEMOVEDATA_SPINCOUNTERCLOCKWISE, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 2, TrainerRoute29_3, -1
+	person_event SPRITE_TWIN, 20, 35, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_GENERICTRAINER, 1, TrainerRoute29_4, -1
+	person_event SPRITE_TWIN, 20, 36, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_GENERICTRAINER, 1, TrainerRoute29_5, -1
+	person_event SPRITE_POKEMANIAC, 26, 21, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, Route29NPC1, -1
+	itemball_event 20, 22, WISE_GLASSES, 1, EVENT_ROUTE_29_POKE_BALL_1
+	tapeball_event 50, 19, MUSIC_AUTUMN, 1, EVENT_MUSIC_AUTUMN
+	person_event SPRITE_LEILANI_CHAIR_2, 23, 17, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, BrightCondosSign, -1
+	person_event SPRITE_LEILANI_CHAIR_2, 22, 31, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, BrightCondosSign, -1
+	person_event SPRITE_LEILANI_CHAIR_2, 25, 45, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, BrightCondosSign, -1
+	person_event SPRITE_MISC_CONE, 18, 13, SPRITEMOVEDATA_TILE_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
+	person_event SPRITE_MISC_CONE, 26, 27, SPRITEMOVEDATA_TILE_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
+	person_event SPRITE_MISC_CONE, 24, 39, SPRITEMOVEDATA_TILE_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
+	person_event SPRITE_MISC_CONE, 26, 47, SPRITEMOVEDATA_TILE_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
+
+
 Route29Callback:
-	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_MINA_GROUND
-	variablesprite SPRITE_ICESKATER_VARIABLE, SPRITE_VALVE_1
+	checkevent EVENT_ROUTE_28_TREE
+	iffalse .skip
+	changeblock -$02, $08, $bb
+.skip
+	checkevent EVENT_SET_ROUTE_29
+	iftrue .set
+	clearevent EVENT_ON_ROUTE_29
 	return
+.set
+	setevent EVENT_ON_ROUTE_29
+	return
+
+Route25MapSignThing::
+	clearevent EVENT_ON_ROUTE_29
+	clearevent EVENT_SET_ROUTE_29
+	loadvar wEnteredMapFromContinue, 0
+	callasm ReturnFromMapSetupScript
+	dotrigger $0
+	end
+
+Route29MapSignThing::
+	setevent EVENT_ON_ROUTE_29
+	setevent EVENT_SET_ROUTE_29
+	loadvar wEnteredMapFromContinue, 0
+	callasm ReturnFromMapSetupScript
+	dotrigger $1
+	end
+
+Route29Tree:
+	dw EVENT_ROUTE_28_TREE
+	strengthtree
+	iffalse .end
+	changeblock -$02, $08, $bb
+	callasm GenericFinishBridge
+	pause 40
+	callasm LoadMapPals
+	special FadeInPalettes
+	pause 10
+	setevent EVENT_ROUTE_28_TREE
+.end
+	end
+
+Route29NPC1:
+	jumptextfaceplayer Route29NPC1Text
+	
+Route29NPC1Text:
+	text "There's a little"
+	line "town ahead called"
+	cont "BRIGHTBURG."
+	
+	para "They were planning"
+	line "an urban expansion"
+	cont "project, but it"
+	cont "was cancelled."
+	
+	para "No one in town"
+	line "will tell me why…"
+	done
+
+TrainerRoute29_1:
+	generictrainer COOLTRAINERM, TREY, EVENT_BEAT_ROUTE_29_TRAINER_1, .SeenText, .BeatenText
+
+	text "I guess you got"
+	line "me beat, huh?"
+	done
+
+.SeenText:
+	text "You look tough."
+	
+	para "Not as much as me,"
+	line "though."
+	
+	para "Let me show you!"
+	done
+
+.BeatenText:
+	text "Wait, what?"
+	done
+	
+TrainerRoute29_2:
+	generictrainer SKATER, BOB, EVENT_BEAT_ROUTE_29_TRAINER_2, .SeenText, .BeatenText
+
+	text "I wonder why they"
+	line "abandoned this"
+	cont "place anyway…"
+	done
+
+.SeenText:
+	text "An abandoned"
+	line "construction site"
+	cont "is a great place"
+	cont "to skate!"
+	done
+
+.BeatenText:
+	text "You got me."
+	done
+	
+TrainerRoute29_3:
+	generictrainer OFFICER, JOHNSON, EVENT_BEAT_ROUTE_29_TRAINER_3, .SeenText, .BeatenText
+
+	text "My job is to keep"
+	line "hooligans like you"
+	cont "from loitering,"
+	cont "so move along!"
+	done
+
+.SeenText:
+	text "Are you"
+	line "trespassing?"
+	
+	para "Are you causing"
+	line "trouble?"
+	done
+
+.BeatenText:
+	text "Carry on then."
+	done
+	
+TrainerRoute29_4:
+	generictrainer TWINS, LIZLES, EVENT_BEAT_ROUTE_29_TRAINER_4, .SeenText, .BeatenText
+
+	text "I love playing"
+	line "#MON battle!"
+	
+	para "Too bad LES is"
+	line "such a spoilsport."
+	done
+
+.SeenText:
+	text "LIZ: Yippee!"
+	line "Battle time, LES!"
+	
+	para "LES: Whatever…"
+	done
+
+.BeatenText:
+	text "LIZ: That was"
+	line "fun!"
+	
+	para "LES: Whatever…"
+	done
+	
+TrainerRoute29_5:
+	generictrainer TWINS, LESLIZ, EVENT_BEAT_ROUTE_29_TRAINER_4, .SeenText, .BeatenText
+
+	text "Whatever…"
+	done
+
+.SeenText:
+	text "LES: Whatever…"
+	
+	para "LIZ: Yippee!"
+	line "Battle time, LES!"
+	done
+
+.BeatenText:
+	text "LES: Whatever…"
+	
+	para "LIZ: That was"
+	line "fun!"
+	done
+
+Route29Beams:
+	jumptext Route29BeamsText
+	
+Route29BeamsText:
+	text "A stack of steel"
+	line "support beams."
+	done
+	
+Route29Pipes:
+	jumptext Route29PipesText
+	
+Route29PipesText:
+	text "Copper pipes."
+	done
+
+Route29Sign:
+	jumptext Route29SignText
 	
 Route29SignText:
 	text "ROUTE 29"
 	
-	para "NORTHEAST:"
-	line "BRIGHTBURG"
+	para "NORTH:"
+	line "ROUTE 27"
 	
 	para "WEST:"
-	line "OBSCURA CITY"
-	done
+	line "ROUTE 28"
 	
-Route29Trainer1:
-	generictrainer POKEFANM, JASON, EVENT_BEAT_ROUTE_29_TRAINER_1, .SeenText, .BeatenText
-
-	text "What does it truly"
-	line "mean to be a real"
-	cont "#FAN?"
-	
-	para "Is it enough to"
-	line "just be a fan of"
-	cont "#MON?"
+	para "SOUTHEAST:"
+	line "BRIGHTBURG"
 	done
 
-.SeenText:
-	text "I call myself a"
-	line "#FAN, but what"
-	cont "does that mean?"
+Route29BrightburgSign:
+	jumptext Route29BrightburgSignText
+
+Route29BrightburgSignText:
+	text "ROUTE 29"
+	
+	para "SOUTH:"
+	line "BRIGHTBURG"
 	done
 
-.BeatenText:
-	text "Not a fan of"
-	line "that…"
-	done
+BrightCondosSign:
+	jumptext BrightCondosSignText
 	
-Route29Trainer2:
-	generictrainer BIRD_KEEPER, MITCH, EVENT_BEAT_ROUTE_29_TRAINER_2, .SeenText, .BeatenText
-
-	text "My ESPATHRA may"
-	line "be a bird, but it's"
-	cont "no FLYING-type!"
-	done
-
-.SeenText:
-	text "Contrary to"
-	line "popular belief,"
+BrightCondosSignText:
+	text "Coming soon:"
+	line "BRIGHTBURG CONDOS"
 	
-	para "not all bird"
-	line "#MON are"
-	cont "FLYING-type!"
-	done
-
-.BeatenText:
-	text "Shoot!"
-	done
-	
-Route29Trainer3:
-	generictrainer BUG_CATCHER, AJ, EVENT_BEAT_ROUTE_29_TRAINER_3, .SeenText, .BeatenText
-
-	text "ROCKY is the GYM"
-	line "LEADER of OBSCURA"
-	cont "CITY."
-	
-	para "And I'm his number"
-	line "one fan!"
-	done
-
-.SeenText:
-	text "Are you on your"
-	line "way to see ROCKY?"
-	
-	para "He's the OBSCURA"
-	line "CITY GYM LEADER!"
-	done
-
-.BeatenText:
-	text "ROCKY!"
-	done
-	
-Route29Trainer4:
-	generictrainer COOLTRAINERF, TAMMY, EVENT_BEAT_ROUTE_29_TRAINER_4, .SeenText, .BeatenText
-
-	text "Alright, alright."
-	line "You got me."
-	
-	para "I'll cut the"
-	line "helpless damsal"
-	cont "act."
-	done
-
-.SeenText:
-	text "You must be tired."
-	
-	para "Hehe!<WAIT_S>"
-	line "My next victim!"
-	done
-
-.BeatenText:
-	text "Eeeek!<WAIT_S>"
-	line "Help me!"
-	done
-	
-Route29Trainer5:
-	generictrainer COOLTRAINERM, KEN, EVENT_BEAT_ROUTE_29_TRAINER_5, .SeenText, .BeatenText
-
-	text "Are you the type"
-	line "to be bored by a"
-	cont "museum,"
-	
-	para "or do you find"
-	line "them interesting?"
-	done
-
-.SeenText:
-	text "OBSCURA CITY"
-	line "has quite the"
-	cont "impressive museum."
-	
-	para "Have you been?"
-	done
-
-.BeatenText:
-	text "Impressive."
-	done
-	
-Route29Trainer6:
-	generictrainer BIRD_KEEPER, KEVIN, EVENT_BEAT_ROUTE_29_TRAINER_6, .SeenText, .BeatenText
-
-	text "A few frilly"
-	line "FLITTLE flutter"
-	cont "freely."
-	
-	para "A few frilly"
-	line "FLITTLE flutter"
-	cont "freely."
-	
-	para "A few frilly"
-	line "flitter- BAH!"
-	
-	para "I can't do it!"
-	done
-
-.SeenText:
-	text "A few frilly"
-	line "FLITTLE flutter"
-	cont "freely."
-	
-	para "Try saying that"
-	line "five times fast!"
-	done
-
-.BeatenText:
-	text "I'm all twisted"
-	line "up!"
+	para "A big red “X”"
+	line "covers the sign."
 	done
 	

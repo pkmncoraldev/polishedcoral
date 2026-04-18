@@ -30,7 +30,7 @@ ObscuraPokeCenterNPC1Text:
 	
 	para "First we have to"
 	line "make our way to"
-	cont "ROUTE 30."
+	cont "ROUTE 32."
 	done
 	
 ObscuraPokeCenterNPC2:

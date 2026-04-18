@@ -66,6 +66,10 @@ RiverRapidsHouseNewRecord:
 	buttonsound
 	verbosegivetmhm TM_ENERGY_BALL
 	setevent EVENT_TM53
+	changetextboxspeaker TEXTBOX_LAKE
+	writetext RiverRapidsHouseLadyText13
+	farwritetext StdBlankText
+	pause 6
 .cont
 	changetextboxspeaker TEXTBOX_LAKE
 	writetext RiverRapidsHouseLadyText11
@@ -400,17 +404,30 @@ RiverRapidsHouseLadyText10:
 	done
 	
 RiverRapidsHouseLadyText11:
-	text  "You can always try"
-	line "again if you like,"
+	text "Let me know if"
+	line "you want to play"
+	cont "my game again,"
+	cont "little BREEZE."
 	
-	para "but I only have"
-	line "one treasure a day"
-	cont "to give."
+	para "But know I only"
+	line "have one treasure"
+	cont "a day to give."
 	done
 	
 RiverRapidsHouseLadyText12:
 	text "It's a TM that"
 	line "draws from the"
 	cont "power of nature."
+	done
+	
+RiverRapidsHouseLadyText13:
+	text "ENERGY BALL does"
+	line "great damage with"
+	cont "no downsides!"
+	
+	para "It even has a"
+	line "small chance to"
+	cont "lower the foe's"
+	cont "SPECIAL DEFENSE!"
 	done
 	

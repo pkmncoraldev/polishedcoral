@@ -241,7 +241,7 @@ Route30OttosTentOttoText8:
 	
 Route30OttosTentOttoText9:
 	text "Man, you were out"
-	line "like light!"
+	line "like a light!"
 	done
 	
 Route30OttosTentOttoText10:

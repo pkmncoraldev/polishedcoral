@@ -126,9 +126,8 @@ IceTempleB2F1ClayPotText1:
 	
 IceTempleB2F1ClayPotText2:
 	text "Maybe someone"
-	line "nearby would"
-	cont "know more about"
-	cont "this…"
+	line "nearby would know"
+	cont "more about this…"
 	done
 	
 IceTempleMamoswine:

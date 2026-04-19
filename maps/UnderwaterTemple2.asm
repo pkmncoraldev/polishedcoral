@@ -29,7 +29,7 @@ UnderwaterTemple2_MapScriptHeader:
 	person_event SPRITE_BIG_CURSOLA,  8, 25, SPRITEMOVEDATA_CURSOLA, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_UNDERWATER_TEMPLE_2_CURSOLA
 	itemball_event 21, 29, CORAL_SHARD, 1, EVENT_UNDERWATER_TEMPLE_2_POKEBALL
 	itemball_event  4, 22, CORAL_SHARD, 1, EVENT_UNDERWATER_TEMPLE_2_POKEBALL2
-	itemball_event 25,  5, ANCIENT_BALL, 1, EVENT_UNDERWATER_TEMPLE_2_ARTIFACT
+	person_event SPRITE_BALL_CUT_FRUIT,  5, 25, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, UnderwaterTemple2AncientBall, EVENT_UNDERWATER_TEMPLE_2_ARTIFACT
 	strengthboulder_event  4, 24, -1
 	strengthboulder_event  5, 24, -1
 	smashrock_event 18, 24
@@ -52,6 +52,25 @@ UnderwaterTemple2Callback:
 	loadvar wTimeOfDayPalFlags, $40 | 0
 	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_CURSOLA
 	return
+	
+	
+UnderwaterTemple2AncientBall:
+	loadvar wCurItemBallQuantity, 1
+	loadvar wCurItemBallContents, ANCIENT_BALL
+	farscall FindItemInBallScript
+	disappear 6
+	pause 5
+	opentext
+	writetext UnderwaterTemple2AncientBallText
+	waitbutton
+	closetext
+	end
+	
+UnderwaterTemple2AncientBallText:
+	text "Take it back to"
+	line "DR. ABIEGAIL in"
+	cont "OBSCURA CITY!"
+	done
 
 UnderwaterTemple2Cursola:
 	loadvar wOWSpriteAnimationTimer, 0

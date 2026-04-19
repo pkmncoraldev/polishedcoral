@@ -135,7 +135,7 @@ DesertTemple2Pokeball:
 	waitsfx
 	playsound SFX_METRONOME
 	special FadeOutPalettes
-	callasm DesertTemple2ForceDayPal
+	loadvar wTimeOfDayPal, 1
 	callasm LoadMapPals
 	special FadeInPalettes
 	opentext
@@ -177,30 +177,28 @@ endr
 	setevent EVENT_UNIQUE_ENCOUNTER_VOLCARONA_BOSS
 	end
 .NormalBall
-	callasm DesertTemple2SetItemAsm
-	farscall FindKeyItemInBallScript
-	iffalse .end
-	setevent EVENT_DESERT_TEMPLE_2_POKE_BALL
-.end
+	loadvar wCurItemBallQuantity, 1
+	loadvar wCurItemBallContents, BLACK_PEARL
+	farscall FindItemInBallScript
+	disappear 6
+	pause 5
+	opentext
+	writetext DesertTempleBlackPearlText
+	waitbutton
+	closetext
 	end
-	
-DesertTemple2ForceDayPal:
-	ld a, 1
-	ld [wTimeOfDayPal], a
-	ret
-	
-DesertTemple2SetItemAsm:
-	ld a, BLACK_PEARL
-	ld [wCurItemBallContents], a
-	ld a, 1
-	ld [wCurItemBallQuantity], a
-	ret
 	
 DesertTemple2FallOverAsm:
 	ld a, PLAYER_FALLING
 	ld [wPlayerState], a
 	call ReplaceKrisSprite
 	ret
+	
+DesertTempleBlackPearlText:
+	text "You should take it"
+	line "back to PROF. HILL"
+	cont "in SHIMMER CITY!"
+	done
 	
 DesertTemple2BrilliantLightText:
 	text "The room flooded"

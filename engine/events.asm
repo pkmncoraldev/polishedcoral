@@ -1888,6 +1888,8 @@ CanUseSweetScent:: ; 97cfd
 	bit 5, [hl]
 	jr nz, .no
 	ld a, [wPermission]
+	cp GATE
+	jr z, .ice_check
 	cp CAVE
 	jr z, .ice_check
 	cp CAVE_FOREST

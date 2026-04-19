@@ -4,34 +4,36 @@ LuminaTown_MapScriptHeader:
 	db 1 ; callbacks
 	callback MAPCALLBACK_NEWMAP, LuminaTownFlyPoint
 
-	db 5 ; warp events
-	warp_def 17, 25, 1, LUMINA_HEALER_HOUSE
-	warp_def 12, 12, 1, LUMINA_HOUSE_1
-	warp_def  6, 22, 1, LUMINA_ADMIN_HOUSE
-	warp_def  7, 44, 1, LUMINA_ELDERS_HOUSE
-	warp_def  8, 28, 1, LUMINA_RUSS_HOUSE
+	db 7 ; warp events
+	warp_def 17, 27, 1, LUMINA_HEALER_HOUSE
+	warp_def 12, 14, 1, LUMINA_HOUSE_1
+	warp_def  6, 24, 1, LUMINA_ADMIN_HOUSE
+	warp_def  7, 46, 1, LUMINA_ELDERS_HOUSE
+	warp_def  8, 30, 1, LUMINA_RUSS_HOUSE
+	warp_def 13,  6, 1, LUMINA_TOWN_CAVE
+	warp_def  9,  5, 2, LUMINA_TOWN_CAVE
 
 	db 0 ; coord events
 
 	db 13 ; bg events
-	signpost 20, 17, SIGNPOST_JUMPTEXT, LuminaTownSignText
-	signpost 16, 37, SIGNPOST_JUMPTEXT, LuminaTownElderHouseSignText
-	signpost  7, 14, SIGNPOST_JUMPTEXT, LuminaTownSmallStatueText
-	signpost  7, 17, SIGNPOST_JUMPTEXT, LuminaTownSmallStatueText
-	signpost  9, 42, SIGNPOST_JUMPTEXT, LuminaTownSmallStatueText
-	signpost 14, 17, SIGNPOST_READ, LuminaTownBigStatue
-	signpost 14, 18, SIGNPOST_READ, LuminaTownBigStatue
-	signpost 15, 17, SIGNPOST_READ, LuminaTownBigStatue
-	signpost 15, 18, SIGNPOST_READ, LuminaTownBigStatue
-	signpost 16, 17, SIGNPOST_READ, LuminaTownBigStatue
-	signpost 16, 18, SIGNPOST_READ, LuminaTownBigStatue
-	signpost 16, 23, SIGNPOST_JUMPTEXT, LuminaTownBarrelsText
-	signpost 17, 23, SIGNPOST_JUMPTEXT, LuminaTownBarrelsText
+	signpost 20, 19, SIGNPOST_JUMPTEXT, LuminaTownSignText
+	signpost 16, 39, SIGNPOST_JUMPTEXT, LuminaTownElderHouseSignText
+	signpost  7, 16, SIGNPOST_JUMPTEXT, LuminaTownSmallStatueText
+	signpost  7, 19, SIGNPOST_JUMPTEXT, LuminaTownSmallStatueText
+	signpost  9, 44, SIGNPOST_JUMPTEXT, LuminaTownSmallStatueText
+	signpost 14, 19, SIGNPOST_READ, LuminaTownBigStatue
+	signpost 14, 20, SIGNPOST_READ, LuminaTownBigStatue
+	signpost 15, 19, SIGNPOST_READ, LuminaTownBigStatue
+	signpost 15, 20, SIGNPOST_READ, LuminaTownBigStatue
+	signpost 16, 19, SIGNPOST_READ, LuminaTownBigStatue
+	signpost 16, 20, SIGNPOST_READ, LuminaTownBigStatue
+	signpost 16, 25, SIGNPOST_JUMPTEXT, LuminaTownBarrelsText
+	signpost 17, 25, SIGNPOST_JUMPTEXT, LuminaTownBarrelsText
 
 	db 2 ; object events
 	
-	itemball_event 12,  9, DRAGON_FANG, 1, EVENT_LUMINA_TOWN_ITEMBALL
-	tmhmball_event 35,  4, TM_DRAGON_PULSE, EVENT_TM59
+	itemball_event 14,  9, DRAGON_FANG, 1, EVENT_LUMINA_TOWN_ITEMBALL
+	tmhmball_event 37,  4, TM_DRAGON_PULSE, EVENT_TM59
 	
 	
 LuminaTownFlyPoint:

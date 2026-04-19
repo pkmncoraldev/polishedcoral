@@ -505,13 +505,14 @@ DEF MAP_NONE   EQU 0
 	map_const ROUTE_11_2,								  14, 38 ; 1
 	
 	newgroup													 ; 29
-	map_const LUMINA_TOWN,								  26, 14 ; 1
+	map_const LUMINA_TOWN,								  27, 14 ; 1
 	map_const LUMINA_GYM,								  16,  9 ; 2
 	map_const LUMINA_HOUSE_1,							   4,  4 ; 3
 	map_const LUMINA_RUSS_HOUSE,						   4,  4 ; 4
 	map_const LUMINA_ADMIN_HOUSE,						   4,  4 ; 5
 	map_const LUMINA_ELDERS_HOUSE,						   4,  4 ; 6
 	map_const AUREOLE_MOUNTAIN_OUTSIDE,					  22, 29 ; 7
+	map_const LUMINA_TOWN_CAVE,							  14, 18 ; 8
 	
 	newgroup													 ; EVO LOCATIONS GROUP
 	map_const ICE_CAVE_ICE_ROCK_ROOM,					   5,  5 ; 1

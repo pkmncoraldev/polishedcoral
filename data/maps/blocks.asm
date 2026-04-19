@@ -1036,6 +1036,9 @@ LuminaAdminHouse_BlockData:
 LuminaHealerHouse_BlockData:
 	INCBIN "maps/LuminaHealerHouse.ablk.lz"
 	
+LuminaTownCave_BlockData:
+	INCBIN "maps/LuminaTownCave.ablk.lz"
+	
 FakeSunsetBay_BlockData:
 	INCBIN "maps/FakeSunsetBay.ablk.lz"
 	

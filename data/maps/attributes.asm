@@ -480,14 +480,14 @@ ENDM
 	map_attributes AureoleTown, AUREOLE_TOWN, $d4, 0
 	
 	map_attributes LuminaTown, LUMINA_TOWN, $71, NORTH | SOUTH
-	connection north, LuminaGym, LUMINA_GYM, 5
-	connection south, AureoleMountainOutside, AUREOLE_MOUNTAIN_OUTSIDE, 4
+	connection north, LuminaGym, LUMINA_GYM, 6
+	connection south, AureoleMountainOutside, AUREOLE_MOUNTAIN_OUTSIDE, 5
 	
 	map_attributes AureoleMountainOutside, AUREOLE_MOUNTAIN_OUTSIDE, $71, NORTH
-	connection north, LuminaTown, LUMINA_TOWN, -4
+	connection north, LuminaTown, LUMINA_TOWN, -5
 	
 	map_attributes LuminaGym, LUMINA_GYM, $71, SOUTH
-	connection south, LuminaTown, LUMINA_TOWN, -5
+	connection south, LuminaTown, LUMINA_TOWN, -6
 	
 	map_attributes Route6Underwater, ROUTE_6_UNDERWATER, $09, SOUTH
 	connection south, CoralReef, CORAL_REEF, -23
@@ -855,3 +855,4 @@ ENDM
 	map_attributes AureoleMountain3F, AUREOLE_MOUNTAIN_3F, $9, 0
 	map_attributes AureoleMountain4F, AUREOLE_MOUNTAIN_4F, $9, 0
 	map_attributes AureoleMountain5F, AUREOLE_MOUNTAIN_5F, $9, 0
+	map_attributes LuminaTownCave, LUMINA_TOWN_CAVE, $9, 0

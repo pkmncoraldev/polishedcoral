@@ -8,10 +8,11 @@ AureoleMountainOutside_MapScriptHeader:
 	db 1 ; callbacks
 	callback MAPCALLBACK_TILES, AureoleMountainOutsideChangeBlocks
 
-	db 3 ; warp events
+	db 4 ; warp events
 	warp_def 49, 10, 10, AUREOLE_MOUNTAIN_1F
 	warp_def 43, 36, 1, AUREOLE_MOUNTAIN_4F
 	warp_def 23, 30, 4, AUREOLE_MOUNTAIN_5F
+	warp_def 33, 20, 3, LUMINA_TOWN_CAVE
 
 	db 4 ; coord events
 	coord_event  4, 38, 0, AureoleMountainOutsideBridgeUp

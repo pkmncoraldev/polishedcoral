@@ -1143,7 +1143,11 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 
 .ExitWater:
 	call .GetOutOfWater
+	ld a, [wMusicID2]
+	cp MUSIC_WATER_ROUTE
+	jr nz, .skip_exit_music
 	call PlayMapMusic
+.skip_exit_music
 	ld a, STEP_SLOW
 	call .DoStep
 	ld a, 6

@@ -551,11 +551,20 @@ AutoSurfScript:
 	loadvar wOnBike, 0
 	loadvar wOnSkateboard, 0
 	special ReplaceKrisSprite
+	callasm CheckIfSurfMusic
+	if_not_equal MUSIC_WATER_ROUTE, .skip
 	special PlayMapMusic
+.skip
 ; step into the water
 	special Special_SurfStartStep ; (slow_step_x, step_end)
 	applymovement PLAYER, wMovementBuffer ; PLAYER, MovementBuffer
 	end
+	
+CheckIfSurfMusic:
+	farcall GetMapMusic
+	ld a, e
+	ld [wScriptVar], a
+	ret
 
 DebugSurfScript:
 	opentext

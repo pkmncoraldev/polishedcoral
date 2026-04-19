@@ -43,9 +43,17 @@ UnderwaterTemple2_MapScriptHeader:
 
 UnderwaterTemple2Trigger0:
 	readmem wOWSpriteAnimationTimer
+	if_equal 7, .sfx1
+	if_equal 100, .sfx2
 	if_not_equal 140, .end
 	priorityjump UnderwaterTemple2Cursola2
 .end
+	end
+.sfx1
+	playsound SFX_DITTO_POP_UP
+	end
+.sfx2
+	playsound SFX_TRAIN_ARRIVED
 	end
 
 UnderwaterTemple2Callback:
@@ -104,6 +112,7 @@ UnderwaterTemple2Cursola:
 	
 UnderwaterTemple2Cursola2:
 	pause 40
+	waitsfx
 	opentext TEXTBOX_POKEMON, CURSOLA
 	writetext UnderwaterTemple2CursolaText3
 	special Special_EnableInput

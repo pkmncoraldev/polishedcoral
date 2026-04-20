@@ -11,7 +11,7 @@ Route17_MapScriptHeader:
 	db 1 ; bg events
 	signpost 14,  8, SIGNPOST_ITEM + HYPER_POTION, EVENT_ROUTE_17_HIDDEN_ITEM
 
-	db 7 ; object events
+	db 9 ; object events
 	person_event SPRITE_OFFICER,  1, 38, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, Route17Cops, EVENT_ROUTE_17_COPS_GONE
 	person_event SPRITE_OFFICER,  1, 39, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, Route17Cops, EVENT_ROUTE_17_COPS_GONE
 	person_event SPRITE_OFFICER, 26, 12, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 3, TrainerRoute17_1, -1
@@ -19,6 +19,8 @@ Route17_MapScriptHeader:
 	person_event SPRITE_OFFICER,  8, 39, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 3, TrainerRoute17_3, -1
 	person_event SPRITE_BEAUTY,  6, 24, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 4, TrainerRoute17_4, -1
 	tmhmball_event  4,  8, TM_DIG, EVENT_TM28
+	smashrock_outside_event 14, 23
+	smashrock_outside_event 15, 24
 
 
 Route17Callback:

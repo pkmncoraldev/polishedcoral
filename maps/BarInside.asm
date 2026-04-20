@@ -12,7 +12,8 @@ BarInside_MapScriptHeader:
 
 	db 0 ; coord events
 
-	db 0 ; bg events
+	db 1 ; bg events
+	signpost  1,  9, SIGNPOST_READ, BarInsideJukebox
 
 	db 15 ; object events
 	person_event SPRITE_SPA_WORKER,  6,  5, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_BAR_FIGHT_DONE

@@ -411,9 +411,16 @@ RadiantOrphanage1FLeilani:
 .candy
 	writetext RadiantOrphanage1FLeilaniText6
 	waitbutton
+	readmem wUnknownRC
+	if_equal 99, .full
 	verbosegiveitem RARE_CANDY
 	closetext
 	setevent EVENT_LEILANI_CANDY
+	end
+.full
+	writetext RadiantOrphanage1FLeilaniText7
+	waitbutton
+	closetext
 	end
 	
 RadiantOrphanage1FLeilanisRoomSign:
@@ -556,6 +563,22 @@ RadiantOrphanage1FLeilaniText6:
 	
 	para "Have a piece of"
 	line "candy!"
+	done
+	
+RadiantOrphanage1FLeilaniText7:
+	text "Wow, sweetie!"
+	
+	para "You sure do have"
+	line "a lot of candy"
+	cont "already!"
+	
+	para "You're not being"
+	line "a little cheater,"
+	cont "are you?"
+	
+	para "Well either way,"
+	line "I can't give you"
+	cont "more right now."
 	done
 	
 RadiantOrphanage1FGirlsText:

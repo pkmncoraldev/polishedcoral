@@ -67,16 +67,7 @@ PorygonEncounter2::
 	call LoadTileMapToTempTileMap	
 	ld hl, RevealedItselfText
 	call StdBattleTextBox
-	
-	ld de, MUSIC_WILD_BOSS_BATTLE
-	call PlayMusic
-	call StartBattleFlash
-	ld c, 2
-	call DelayFrames
-	call StartBattleFlash
-	ld c, 2
-	call DelayFrames
-	call StartBattleFlash
+
 	ld c, 90
 	jp DelayFrames
 

@@ -3723,6 +3723,8 @@ Function_SetEnemyPkmnAndSendOutAnimation: ; 3d7c7
 .return
 	ld a, $13
 	ld [wKickCounter], a
+	xor a
+	ld [wOpportunistActivated], a
 	ld de, TRANSFORM_SKETCH_MIMIC_SPLASH_METRO
 	call ForcePlayBattleAnim
 	
@@ -3738,10 +3740,14 @@ Function_SetEnemyPkmnAndSendOutAnimation: ; 3d7c7
 .porygon
 	ld de, MUSIC_NONE
 	call PlayMusic
+	ld a, 1
+	ld [wOpportunistActivated], a
 	ld a, $0
 	ld [wKickCounter], a
 	ld de, SHARPEN_HOWL_MEDITATE
 	call ForcePlayBattleAnim
+	ld de, MUSIC_WILD_BOSS_BATTLE
+	call PlayMusic
 	jr .return
 .cont
 	call BattleCheckEnemyShininess
@@ -9964,20 +9970,6 @@ AutomaticSandstormInDesert:
 	ld hl, SandstormText
 	call StdBattleTextBox
 	jp EmptyBattleTextBox
-
-BoostGiovannisArmoredMewtwo:
-	ret
-;	ld a, [wOtherTrainerClass]
-;	cp GIOVANNI
-;	ret nz
-;	ld a, [wOtherTrainerID]
-;	cp GIOVANNI1
-;	ret nz
-;	ld a, 1
-;	ldh [hBattleTurn], a
-;	ld de, ANIM_SHARPEN
-;	call Call_PlayBattleAnim
-;	farjp BattleCommand_allstatsup
 
 _PorygonEncounter:
 	farcall PorygonEncounter

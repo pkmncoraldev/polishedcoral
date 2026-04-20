@@ -228,7 +228,9 @@ BattleAnimClearHud: ; cc1a1
 ; cc1bb
 
 BattleAnimRestoreHuds: ; cc1bb
-
+	ld a, [wOpportunistActivated]
+	and a
+	ret nz
 	call DelayFrame
 	call WaitTop
 
@@ -246,7 +248,6 @@ BattleAnimRestoreHuds: ; cc1bb
 	ldh [hBGMapMode], a
 	call Delay2
 	jp WaitTop
-; cc1e2
 
 BattleAnimRequestPals: ; cc1e2
 

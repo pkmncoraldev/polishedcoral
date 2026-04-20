@@ -192,7 +192,7 @@ DuskTurnpikeCallback:
 	clearflag ENGINE_NEAR_CAMPFIRE
 	dotrigger $0
 	loadvar wTimeOfDayPalFlags, $40 | 0
-	callasm CheckJukeboxSong
+	callasm CheckJukeboxSong2
 	iffalse .skip_music
 	loadvar wJukeboxSong, 0
 	callasm RestoreDuskTurnpikeMusic

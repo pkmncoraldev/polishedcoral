@@ -883,6 +883,7 @@ BarInsideJukeboxTextLeader:
 CheckJukeboxSong:
 	xor a
 	ld [wTapePlayerActive], a
+CheckJukeboxSong2:
 	ld a, [wJukeboxSong]
 	ld [wScriptVar], a
 	ret

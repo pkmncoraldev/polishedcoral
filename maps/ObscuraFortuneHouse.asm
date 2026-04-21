@@ -1389,8 +1389,15 @@ Music_TrainerBattleText:
 	prompt
 	
 Music_TrainerVictoryText:
- 	text "TRAINER VICTORY"
-	line "TODO"
+ 	text "It's in the"
+	line "AUREOLE MOUNTAIN."
+	
+	para "It's before the"
+	line "outdoor area."
+	
+	para "You go up and up,"
+	line "and then down and"
+	cont "down!"
 	prompt
 	
 Music_DayBreakGrottoText:

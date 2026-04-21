@@ -608,7 +608,7 @@ Route30StrengthMan:
 .left
 	applyonemovement PLAYER, turn_step_left
 .cont
-	playmusic MUSIC_ROUTE_30
+	playmapmusic
 	opentext TEXTBOX_PUSHER
 	writetext Route30StrengthManText7
 	waitbutton

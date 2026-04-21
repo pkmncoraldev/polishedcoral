@@ -234,7 +234,7 @@ SunflowerScript:
 	
 CheckSunflowerOrHerbs:
 	ld a, [wMapGroup]
-	cp GROUP_ROUTE_28
+	cp GROUP_ROUTE_30
 	jr z, .herbs
 	ld a, 0
 	ld [wScriptVar], a

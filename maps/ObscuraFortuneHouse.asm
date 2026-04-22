@@ -1774,8 +1774,11 @@ Music_AutumnText:
 	prompt
 	
 Music_DojoText:
- 	text "DOJO"
-	line "TODO"
+ 	text "The MASTER…"
+	
+	para "You must return to"
+	line "his dojo for more"
+	cont "training…"
 	prompt
 	
 Music_Route28Text:

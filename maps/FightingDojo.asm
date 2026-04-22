@@ -91,25 +91,21 @@ FightingDojoTrigger2:
 	opentext TEXTBOX_MASTER
 	writetext FightingDojoMasterTestofBodyPassedText
 	waitbutton
+	changetextboxspeaker
 	verbosegivetmhm TM_BULK_UP
 	setevent EVENT_TM08
+	changetextboxspeaker TEXTBOX_MASTER
 	writetext FightingDojoMasterTestofBodyPassedText2
 	buttonsound
 	farwritetext StdBlankText
 	pause 6
 	checkevent EVENT_FINISHED_TRIAL_OF_MIND
-	iftrue .finished
+	iftrue FightingDojoMaster.finished
 	writetext FightingDojoMasterOneMoreTestText
 	waitbutton
 	closetext
 	dotrigger $0
 	end
-.finished
-	writetext FightingDojoMasterTestsDoneText
-	waitbutton
-	closetext
-	dotrigger $0
-	end	
 	
 FightingDojoZeroOutCounters:
 	loadvar wRanchRaceFrames, 0
@@ -364,7 +360,7 @@ FightingDojoMaster:
 	end
 .testofmind
 	checkevent EVENT_FINISHED_TRIAL_OF_MIND
-	iftrue TrialOfMindTimesUp.finished
+	iftrue .finished
 	writetext FightingDojoMasterTestofMindText
 	yesorno
 	iffalse .said_no
@@ -405,7 +401,7 @@ FightingDojoMaster:
 	end
 .testofbody
 	checkevent EVENT_FINISHED_TRIAL_OF_BODY
-	iftrue TrialOfMindTimesUp.finished
+	iftrue .finished
 	writetext FightingDojoMasterTestofBodyText
 	yesorno
 	iffalse .said_no
@@ -464,6 +460,40 @@ FightingDojoMaster:
 	waitbutton
 	closetext
 	end
+.finished
+	checkevent EVENT_MUSIC_DOJO
+	iftrue .got_tape
+	writetext FightingDojoMasterTestsTapeText1
+	waitbutton
+	callasm GiveFightingDojoTapeAsm
+	iffalse .no_player
+	changetextboxspeaker
+	writetext FightingDojoMasterTestsTapeText3
+	playsound SFX_ITEM
+	pause 60
+	writetext FightingDojoMasterTestsTapeText4
+	buttonsound
+	writetext FightingDojoMasterTestsTapeText5
+	waitbutton
+	changetextboxspeaker TEXTBOX_MASTER
+	writetext FightingDojoMasterTestsTapeText2
+	waitbutton
+	closetext
+	setevent EVENT_MUSIC_DOJO
+	dotrigger $0
+	end
+.no_player
+	writetext FightingDojoMasterTestsTapeText6
+	waitbutton
+	closetext
+	dotrigger $0
+	end
+.got_tape
+	writetext FightingDojoMasterTestsDoneText
+	waitbutton
+	closetext
+	dotrigger $0
+	end
 	
 .MenuData:
 	db $40 ; flags
@@ -499,23 +529,39 @@ TrialOfMindTimesUp::
 	opentext TEXTBOX_MASTER
 	writetext FightingDojoMasterTestofMindPassedText
 	waitbutton
+	changetextboxspeaker
 	verbosegivetmhm TM_CALM_MIND
 	setevent EVENT_TM04
+	changetextboxspeaker TEXTBOX_MASTER
 	writetext FightingDojoMasterTestofMindPassedText2
 	buttonsound
 	farwritetext StdBlankText
 	pause 6
 	checkevent EVENT_FINISHED_TRIAL_OF_BODY
-	iftrue .finished
+	iftrue FightingDojoMaster.finished
 	writetext FightingDojoMasterOneMoreTestText
 	waitbutton
 	closetext
 	end
-.finished
-	writetext FightingDojoMasterTestsDoneText
-	waitbutton
-	closetext
-	end
+	
+GiveFightingDojoTapeAsm:
+	ld de, EVENT_GOT_TAPE_PLAYER
+	farcall CheckEventFlag
+	jr z, .no_player
+	ld a, MUSIC_DOJO
+	ld c, a
+	ld hl, wUnlockedSongs
+	ld b, SET_FLAG
+	ld d, 0
+	predef FlagPredef
+	ld a, $1
+	ld [wScriptVar], a
+	ret
+	
+.no_player
+	xor a
+	ld [wScriptVar], a
+	ret
 	
 TrialOfBodyTimesUp::
 	callasm TestOfMindAsm2
@@ -1000,6 +1046,50 @@ FightingDojoMasterTestsDoneText:
 	line "world and continue"
 	cont "your training as"
 	cont "your own master."
+	done
+	
+FightingDojoMasterTestsTapeText1:
+	text "Both trials are"
+	line "complete."
+	
+	para "Your training"
+	line "here is done."
+	
+	para "You will have"
+	line "this…"
+	done
+	
+FightingDojoMasterTestsTapeText2:
+	text "Go out into the"
+	line "world and continue"
+	cont "your training as"
+	cont "your own master."
+	done
+	
+FightingDojoMasterTestsTapeText3:
+	text "<PLAYER> recieved"
+	line "AUDIO CASSETTE 61!"
+	done
+	
+FightingDojoMasterTestsTapeText4:
+	text "“FIGHTING DOJO"
+	line "(G/S BURNED TOWER”"
+	cont "is written on the"
+	cont "label."
+	done
+	
+FightingDojoMasterTestsTapeText5:
+	text "<PLAYER> put the"
+	line "cassette in the"
+	cont "TAPE PLAYER."
+	done
+	
+FightingDojoMasterTestsTapeText6:
+	text "…<WAIT_L>You have no"
+	line "TAPE PLAYER…"
+	
+	para "Return when you"
+	line "have one…"
 	done
 	
 FightingDojoMasterTestOverText:

@@ -12,4 +12,5 @@ LuminaTownCave_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 0 ; object events
+	db 1 ; object events
+	tmhmball_event  2, 17, TM_POWER_GEM, EVENT_TM39

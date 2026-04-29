@@ -984,8 +984,13 @@ TM38Text:
 	prompt
 
 TM39Text:
-	text "TM39"
-	line "TODO"
+	text "It seems to be in"
+	line "LUMINA TOWN, but…"
+	
+	para "Hmm…"
+	
+	para "Wherever it is,"
+	line "it's dark and wet!"
 	prompt
 
 TM42Text:

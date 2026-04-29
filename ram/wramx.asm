@@ -410,7 +410,9 @@ wTreeAnimationFrame:: ds 1
 wGiveMonForceAbility:: ds 1
 wSkipAskNickname:: ds 1
 wMurkrowWell:: ds 1
-	ds 59 ; unused
+wLightning:: ds 1
+wLightningCooldown:: ds 1
+	ds 57 ; unused
 
 wOverworldMapAnchor:: ds 2
 wMetatileStandingY:: ds 1

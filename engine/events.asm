@@ -115,6 +115,7 @@ HandleMap:
 	jr nz, .no_trial_of_body
 	call NextOverworldFrame
 .no_trial_of_body
+	call HandleLightning
 	call HandleMapBackground
 	call CheckPlayerState
 	xor a
@@ -165,6 +166,59 @@ HandleMapObjects: ; 967d1
 	farcall _HandlePlayerStep
 	jp _CheckObjectEnteringVisibleRange
 ; 967e1
+
+HandleLightning:
+	eventflagcheck EVENT_LIGHTNING_ACTIVE
+	ret z
+	ld a, [wLightning]
+	and a
+	jr nz, .lightning_active
+	
+	ld a, [wLightningCooldown]
+	cp -1
+	jr z, .skip
+	dec a
+	ld [wLightningCooldown], a
+	and a
+	jr z, .lightning
+	
+.skip
+	call Random
+	cp 1 percent
+	ret nc
+	call Random
+	cp 50 percent
+	jr c, .lightning
+	ret
+	
+.lightning
+	ld a, 1
+	ld [wLightning], a
+	
+	ld a, $40 | 1
+	ld [wTimeOfDayPalFlags], a
+	ld de, SFX_THUNDER
+	call PlaySFX
+	farcall Special_UpdatePalsInstant
+	ld a, -1
+	ld [wLightningCooldown], a
+;25% chance to skip cooldown
+	call Random
+	cp 75 percent
+	ret nc
+	ld a, 50
+	call RandomRange
+	add 200
+	ld [wLightningCooldown], a
+	ret
+	
+.lightning_active
+	ld a, [wLightning]
+	dec a
+	ld [wLightning], a
+	ld a, $40 | 0
+	ld [wTimeOfDayPalFlags], a
+	ret
 
 HandleMapBackground:
 	farcall _UpdateSprites

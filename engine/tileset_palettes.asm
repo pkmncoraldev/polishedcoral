@@ -157,6 +157,8 @@ LoadSpecialMapPalette: ; 494ac
 	jp z, .autumn
 	cp TILESET_GREEN_CAVE
 	jp z, .green_cave
+	cp TILESET_SPOOKY
+	jp z, .lightning
 	cp TILESET_SOUTH_BUILDINGS
 	jp z, .south_buildings
 	call DiveSpotMapPals
@@ -164,6 +166,26 @@ LoadSpecialMapPalette: ; 494ac
 	ld hl, DiveSpotsPalette
 	call LoadTimeofDayBGPal6
 	jp .do_nothing
+.lightning
+	ld a, [wTimeOfDayPalFlags]
+	and $3F
+	cp 1
+	jp z, .color1
+	
+.color0
+	ld a, 2
+	ld [wTimeOfDayPal], a
+	ld hl, GameCornerPalette
+	jp LoadSevenTimeOfDayBGPalettes
+
+
+.color1
+	ld a, 1
+	ld [wTimeOfDayPal], a
+	ld hl, GameCornerPalette
+	jp LoadSevenTimeOfDayBGPalettes
+
+	
 .green_cave
 	ld a, [wCurrentLandmark]
 	cp GLINT_GROVE
@@ -1286,3 +1308,14 @@ INCLUDE "maps/palettes/bgpals/traingraveyardwindows.pal"
 
 LuminaPalette::
 INCLUDE "maps/palettes/bgpals/lumina.pal"
+
+LightningPalette:
+	RGB 00, 00, 00
+	RGB 00, 00, 00
+	RGB 00, 00, 00
+	RGB 00, 00, 00
+	
+	RGB 30, 30, 11
+	RGB 30, 30, 11
+	RGB 30, 30, 11
+	RGB 30, 30, 11

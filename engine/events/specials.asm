@@ -508,7 +508,7 @@ Special_MakePlayerInvisible:
 	call ReplaceKrisSprite
 	ret
 	
-Special_UpdatePalsInstant:
+Special_UpdatePalsInstant::
 	ld hl, wUnknBGPals palette 7
 
 ; save wram bank

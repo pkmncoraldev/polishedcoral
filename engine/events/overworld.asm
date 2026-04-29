@@ -3228,6 +3228,7 @@ CutFlowerStatus:
 
 HandleEventsFly:
 HandleEventsEscapeRope:
+	clearevent EVENT_LIGHTNING_ACTIVE
 	clearevent EVENT_SNOWSTORM_HAPPENING
 	clearevent EVENT_SANDSTORM_HAPPENING
 	clearevent EVENT_AIRPORT_FENCE

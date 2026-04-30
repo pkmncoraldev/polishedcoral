@@ -13,17 +13,13 @@ StarglowGym_MapScriptHeader:
 	signpost 14,  3, SIGNPOST_READ, StarglowGymShip
 	bg_event  4, 11, SIGNPOST_ITEM + TAPE_PLAYER, EVENT_MUSIC_GYM_VICTORY
 
-	db 11 ; object events
+	db 7 ; object events
 	person_event SPRITE_RODNEY, 1, 4, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, StarglowGymRodneyScript, -1
 	person_event SPRITE_GYM_GUY, 20, 6, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, StarglowGymGuyScript, -1
-	person_event SPRITE_FISHER, 13, 4, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 1, TrainerStarglowGym_1, EVENT_BEAT_RODNEY
-	person_event SPRITE_FISHER, 7, 0, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 1, TrainerStarglowGym_2, EVENT_BEAT_RODNEY
-	person_event SPRITE_FISHER, 11, 7, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 1, TrainerStarglowGym_3, EVENT_BEAT_RODNEY
-	person_event SPRITE_FISHER, 6, 5, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 3, TrainerStarglowGym_4, EVENT_BEAT_RODNEY
-	person_event SPRITE_FISHER, 13, 4, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, StarglowGymTrainer1Rematch, EVENT_HAVENT_BEAT_RODNEY
-	person_event SPRITE_FISHER, 7, 0, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, StarglowGymTrainer2Rematch, EVENT_HAVENT_BEAT_RODNEY
-	person_event SPRITE_FISHER, 11, 7, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, StarglowGymTrainer3Rematch, EVENT_HAVENT_BEAT_RODNEY
-	person_event SPRITE_FISHER, 6, 5, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, StarglowGymTrainer4Rematch, EVENT_HAVENT_BEAT_RODNEY
+	person_event SPRITE_FISHER, 13, 4, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 1, TrainerStarglowGym_1, -1
+	person_event SPRITE_FISHER, 7, 0, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 1, TrainerStarglowGym_2, -1
+	person_event SPRITE_FISHER, 11, 7, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 1, TrainerStarglowGym_3, -1
+	person_event SPRITE_FISHER, 6, 5, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 3, TrainerStarglowGym_4, -1
 	hiddentape_event 4, 11, MUSIC_GYM_VICTORY, 2, EVENT_MUSIC_GYM_VICTORY
 
 StarglowGymRodneyScript:
@@ -69,14 +65,6 @@ StarglowGymRodneyScript:
 	end
 
 .GotTMFromRodney:
-	checkevent EVENT_BEAT_STARGLOW_GYM_TRAINER_1_REMATCH
-	iffalse RodneyTextLoop
-	checkevent EVENT_BEAT_STARGLOW_GYM_TRAINER_2_REMATCH
-	iffalse RodneyTextLoop
-	checkevent EVENT_BEAT_STARGLOW_GYM_TRAINER_3_REMATCH
-	iffalse RodneyTextLoop
-	checkevent EVENT_BEAT_STARGLOW_GYM_TRAINER_4_REMATCH
-	iftrue StarglowGymRodneyRematch
 RodneyTextLoop:
 	writetext StarglowGymRodneyTextLoop
 	waitbutton
@@ -167,7 +155,7 @@ StarglowGymShipText:
 	done
 	
 TrainerStarglowGym_1:
-	generictrainer FISHER, GERALD_2, EVENT_BEAT_STARGLOW_GYM_TRAINER_1, .SeenText, .BeatenText
+	generictrainer FISHER, GERALD, EVENT_BEAT_STARGLOW_GYM_TRAINER_1, .SeenText, .BeatenText
 
 	text "You're going"
 	line "places, kid!"
@@ -189,7 +177,7 @@ TrainerStarglowGym_1:
 	done
 	
 TrainerStarglowGym_2:
-	generictrainer FISHER, WALTER_2, EVENT_BEAT_STARGLOW_GYM_TRAINER_2, .SeenText, .BeatenText
+	generictrainer FISHER, WALTER, EVENT_BEAT_STARGLOW_GYM_TRAINER_2, .SeenText, .BeatenText
 
 	text "RODNEY's #MON"
 	line "are a lot tougher"
@@ -211,7 +199,7 @@ TrainerStarglowGym_2:
 	done
 	
 TrainerStarglowGym_3:
-	generictrainer FISHER, BORRIS_2, EVENT_BEAT_STARGLOW_GYM_TRAINER_3, .SeenText, .BeatenText
+	generictrainer FISHER, BORRIS, EVENT_BEAT_STARGLOW_GYM_TRAINER_3, .SeenText, .BeatenText
 
 	text "As well as train-"
 	line "ing, I also get my"
@@ -234,7 +222,7 @@ TrainerStarglowGym_3:
 	done
 	
 TrainerStarglowGym_4:
-	generictrainer FISHER, CLINT_2, EVENT_BEAT_STARGLOW_GYM_TRAINER_4, .SeenText, .BeatenText
+	generictrainer FISHER, CLINT, EVENT_BEAT_STARGLOW_GYM_TRAINER_4, .SeenText, .BeatenText
 
 	text "Go on."
 	
@@ -252,277 +240,6 @@ TrainerStarglowGym_4:
 
 .BeatenText:
 	text "Well, that's that."
-	done
-	
-StarglowGymTrainer1Rematch:
-	faceplayer
-	opentext
-	checkevent EVENT_BEAT_STARGLOW_GYM_TRAINER_1_REMATCH
-	iftrue .FightDone
-	playmusic MUSIC_HIKER_ENCOUNTER
-	writetext StarglowGymTrainer1RematchSeenText
-	waitbutton
-	closetext
-	waitsfx
-	winlosstext StarglowGymTrainer1RematchBeatenText, 0
-	checkcode VAR_BADGES
-	ifequal 8, .eightbadges
-	ifequal 7, .sevenbadges
-	ifequal 6, .sixbadges
-	ifequal 5, .fivebadges
-	ifequal 4, .fourbadges
-	ifequal 3, .threebadges
-	loadtrainer FISHER, GERALD_2
-	jump .cont
-.threebadges
-	loadtrainer FISHER, GERALD_3
-	jump .cont
-.fourbadges
-	loadtrainer FISHER, GERALD_4
-	jump .cont
-.fivebadges
-	loadtrainer FISHER, GERALD_5
-	jump .cont
-.sixbadges
-	loadtrainer FISHER, GERALD_6
-	jump .cont
-.sevenbadges
-	loadtrainer FISHER, GERALD_7
-	jump .cont
-.eightbadges
-	loadtrainer FISHER, GERALD_8
-.cont
-	startbattle
-	dontrestartmapmusic
-	reloadmapafterbattle
-	playmapmusic
-	setevent EVENT_BEAT_STARGLOW_GYM_TRAINER_1_REMATCH
-	end
-.FightDone
-	writetext StarglowGymTrainer1RematchRegularText
-	waitbutton
-	closetext
-	end
-
-StarglowGymTrainer1RematchRegularText:
-	text "You're going"
-	line "places, kid!"
-	done
-
-StarglowGymTrainer1RematchSeenText:
-	text "You're back for"
-	line "more?"
-	
-	para "Here we go again!"
-	done
-
-StarglowGymTrainer1RematchBeatenText:
-	text "Just like I said!"
-	done
-	
-StarglowGymTrainer2Rematch:
-	faceplayer
-	opentext
-	checkevent EVENT_BEAT_STARGLOW_GYM_TRAINER_2_REMATCH
-	iftrue .FightDone
-	playmusic MUSIC_HIKER_ENCOUNTER
-	writetext StarglowGymTrainer2RematchSeenText
-	waitbutton
-	closetext
-	waitsfx
-	winlosstext StarglowGymTrainer2RematchBeatenText, 0
-	checkcode VAR_BADGES
-	ifequal 8, .eightbadges
-	ifequal 7, .sevenbadges
-	ifequal 6, .sixbadges
-	ifequal 5, .fivebadges
-	ifequal 4, .fourbadges
-	ifequal 3, .threebadges
-	loadtrainer FISHER, WALTER_2
-	jump .cont
-.threebadges
-	loadtrainer FISHER, WALTER_3
-	jump .cont
-.fourbadges
-	loadtrainer FISHER, WALTER_4
-	jump .cont
-.fivebadges
-	loadtrainer FISHER, WALTER_5
-	jump .cont
-.sixbadges
-	loadtrainer FISHER, WALTER_6
-	jump .cont
-.sevenbadges
-	loadtrainer FISHER, WALTER_7
-	jump .cont
-.eightbadges
-	loadtrainer FISHER, WALTER_8
-.cont
-	startbattle
-	dontrestartmapmusic
-	reloadmapafterbattle
-	playmapmusic
-	setevent EVENT_BEAT_STARGLOW_GYM_TRAINER_2_REMATCH
-	end
-.FightDone
-	writetext StarglowGymTrainer2RematchRegularText
-	waitbutton
-	closetext
-	end
-
-StarglowGymTrainer2RematchRegularText:
-	text "RODNEY's #MON"
-	line "are getting"
-	cont "stronger, too."
-	done
-
-StarglowGymTrainer2RematchSeenText:
-	text "WATER-types are"
-	line "very common,"
-	
-	para "but I won't give"
-	line "up on mine!"
-	done
-
-StarglowGymTrainer2RematchBeatenText:
-	text "You're getting"
-	line "stronger!"
-	done
-	
-StarglowGymTrainer3Rematch:
-	faceplayer
-	opentext
-	checkevent EVENT_BEAT_STARGLOW_GYM_TRAINER_3_REMATCH
-	iftrue .FightDone
-	playmusic MUSIC_HIKER_ENCOUNTER
-	writetext StarglowGymTrainer3RematchSeenText
-	waitbutton
-	closetext
-	waitsfx
-	winlosstext StarglowGymTrainer3RematchBeatenText, 0
-	checkcode VAR_BADGES
-	ifequal 8, .eightbadges
-	ifequal 7, .sevenbadges
-	ifequal 6, .sixbadges
-	ifequal 5, .fivebadges
-	ifequal 4, .fourbadges
-	ifequal 3, .threebadges
-	loadtrainer FISHER, BORRIS_2
-	jump .cont
-.threebadges
-	loadtrainer FISHER, BORRIS_3
-	jump .cont
-.fourbadges
-	loadtrainer FISHER, BORRIS_4
-	jump .cont
-.fivebadges
-	loadtrainer FISHER, BORRIS_5
-	jump .cont
-.sixbadges
-	loadtrainer FISHER, BORRIS_6
-	jump .cont
-.sevenbadges
-	loadtrainer FISHER, BORRIS_7
-	jump .cont
-.eightbadges
-	loadtrainer FISHER, BORRIS_8
-.cont
-	startbattle
-	dontrestartmapmusic
-	reloadmapafterbattle
-	playmapmusic
-	setevent EVENT_BEAT_STARGLOW_GYM_TRAINER_3_REMATCH
-	end
-.FightDone
-	writetext StarglowGymTrainer3RematchRegularText
-	waitbutton
-	closetext
-	end
-
-StarglowGymTrainer3RematchRegularText:
-	text "Guess you're here"
-	line "for the training!"
-	done
-
-StarglowGymTrainer3RematchSeenText:
-	text "Did you come back"
-	line "for more training,"
-	
-	para "or just fishing"
-	line "supplies?"
-	done
-
-StarglowGymTrainer3RematchBeatenText:
-	text "Oof…"
-	done
-	
-StarglowGymTrainer4Rematch:
-	faceplayer
-	opentext
-	checkevent EVENT_BEAT_STARGLOW_GYM_TRAINER_4_REMATCH
-	iftrue .FightDone
-	playmusic MUSIC_HIKER_ENCOUNTER
-	writetext StarglowGymTrainer4RematchSeenText
-	waitbutton
-	closetext
-	waitsfx
-	winlosstext StarglowGymTrainer4RematchBeatenText, 0
-	checkcode VAR_BADGES
-	ifequal 8, .eightbadges
-	ifequal 7, .sevenbadges
-	ifequal 6, .sixbadges
-	ifequal 5, .fivebadges
-	ifequal 4, .fourbadges
-	ifequal 3, .threebadges
-	loadtrainer FISHER, CLINT_2
-	jump .cont
-.threebadges
-	loadtrainer FISHER, CLINT_3
-	jump .cont
-.fourbadges
-	loadtrainer FISHER, CLINT_4
-	jump .cont
-.fivebadges
-	loadtrainer FISHER, CLINT_5
-	jump .cont
-.sixbadges
-	loadtrainer FISHER, CLINT_6
-	jump .cont
-.sevenbadges
-	loadtrainer FISHER, CLINT_7
-	jump .cont
-.eightbadges
-	loadtrainer FISHER, CLINT_8
-.cont
-	startbattle
-	dontrestartmapmusic
-	reloadmapafterbattle
-	playmapmusic
-	setevent EVENT_BEAT_STARGLOW_GYM_TRAINER_4_REMATCH
-	end
-.FightDone
-	writetext StarglowGymTrainer4RematchRegularText
-	waitbutton
-	closetext
-	end
-
-StarglowGymTrainer4RematchRegularText:
-	text "Go on."
-	
-	para "I won't try to stop"
-	line "you again."
-	done
-
-StarglowGymTrainer4RematchSeenText:
-	text "You have to beat"
-	line "everyone to get"
-	cont "another shot at"
-	cont "the GYM LEADER!"
-	done
-
-StarglowGymTrainer4RematchBeatenText:
-	text "Well, that's still"
-	line "that."
 	done
 	
 StarglowGymRodneyTextBeforeBattle:

@@ -20,18 +20,13 @@ EventideGym_MapScriptHeader:
 	bg_event 45,  8, SIGNPOST_UP, EventideGymBlueSwitchScript
 	bg_event 25,  4, SIGNPOST_UP, EventideGymYellowSwitchScript
 
-	db 12 ; object events
+	db 7 ; object events
 	person_event SPRITE_WENDY,  2, 25, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, EventideGymWendy, -1
-	person_event SPRITE_BIRD_KEEPER,  8, 23, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 3, EventideGymTrainer1, EVENT_BEAT_WENDY
-	person_event SPRITE_BIRD_KEEPER, 16, 36, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 1, EventideGymTrainer2, EVENT_BEAT_WENDY
-	person_event SPRITE_BIRD_KEEPER,  9, 42, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 1, EventideGymTrainer3, EVENT_BEAT_WENDY
-	person_event SPRITE_BIRD_KEEPER,  4,  3, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 2, EventideGymTrainer4, EVENT_BEAT_WENDY
-	person_event SPRITE_BIRD_KEEPER, 15, 10, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 2, EventideGymTrainer5, EVENT_BEAT_WENDY
-	person_event SPRITE_BIRD_KEEPER,  8, 23, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 3, EventideGymTrainer1Rematch, EVENT_HAVENT_BEAT_WENDY
-	person_event SPRITE_BIRD_KEEPER, 16, 36, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 1, EventideGymTrainer2Rematch, EVENT_HAVENT_BEAT_WENDY
-	person_event SPRITE_BIRD_KEEPER,  9, 42, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 1, EventideGymTrainer3Rematch, EVENT_HAVENT_BEAT_WENDY
-	person_event SPRITE_BIRD_KEEPER,  4,  3, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 2, EventideGymTrainer4Rematch, EVENT_HAVENT_BEAT_WENDY
-	person_event SPRITE_BIRD_KEEPER, 15, 10, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 2, EventideGymTrainer5Rematch, EVENT_HAVENT_BEAT_WENDY
+	person_event SPRITE_BIRD_KEEPER,  8, 23, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 3, EventideGymTrainer1, -1
+	person_event SPRITE_BIRD_KEEPER, 16, 36, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 1, EventideGymTrainer2, -1
+	person_event SPRITE_BIRD_KEEPER,  9, 42, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 1, EventideGymTrainer3, -1
+	person_event SPRITE_BIRD_KEEPER,  4,  3, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 2, EventideGymTrainer4, -1
+	person_event SPRITE_BIRD_KEEPER, 15, 10, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 2, EventideGymTrainer5, -1
 	person_event SPRITE_GYM_GUY, 14, 26, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, EventideGymGuyScript, -1
 
 	
@@ -275,16 +270,6 @@ EventideGymWendy:
 	end
 
 .GotTMFromWendy:
-	checkevent EVENT_BEAT_EVENTIDE_GYM_TRAINER_1_REMATCH
-	iffalse WendyTextLoop
-	checkevent EVENT_BEAT_EVENTIDE_GYM_TRAINER_2_REMATCH
-	iffalse WendyTextLoop
-	checkevent EVENT_BEAT_EVENTIDE_GYM_TRAINER_3_REMATCH
-	iffalse WendyTextLoop
-	checkevent EVENT_BEAT_EVENTIDE_GYM_TRAINER_4_REMATCH
-	iffalse WendyTextLoop
-	checkevent EVENT_BEAT_EVENTIDE_GYM_TRAINER_5_REMATCH
-	iftrue EventideGymWendyRematch
 WendyTextLoop:
 	writetext EventideGymWendyTextLoop
 	waitbutton
@@ -502,7 +487,7 @@ EventideGymWendyTextNoRematch:
 	done
 	
 EventideGymTrainer1:
-	generictrainer BIRD_KEEPER, RICKY_3, EVENT_BEAT_EVENTIDE_GYM_TRAINER_1, .SeenText, .BeatenText
+	generictrainer BIRD_KEEPER, RICKY, EVENT_BEAT_EVENTIDE_GYM_TRAINER_1, .SeenText, .BeatenText
 
 	text "Oh yeah!"
 	
@@ -528,7 +513,7 @@ EventideGymTrainer1:
 	done
 	
 EventideGymTrainer2:
-	generictrainer BIRD_KEEPER, VERN_3, EVENT_BEAT_EVENTIDE_GYM_TRAINER_2, .SeenText, .BeatenText
+	generictrainer BIRD_KEEPER, VERN, EVENT_BEAT_EVENTIDE_GYM_TRAINER_2, .SeenText, .BeatenText
 
 	text "You got this, kid!"
 	done
@@ -545,7 +530,7 @@ EventideGymTrainer2:
 	done
 	
 EventideGymTrainer3:
-	generictrainer BIRD_KEEPER, ROY_3, EVENT_BEAT_EVENTIDE_GYM_TRAINER_3, .SeenText, .BeatenText
+	generictrainer BIRD_KEEPER, ROY, EVENT_BEAT_EVENTIDE_GYM_TRAINER_3, .SeenText, .BeatenText
 
 	text "No matter which"
 	line "color the switch"
@@ -567,7 +552,7 @@ EventideGymTrainer3:
 	done
 	
 EventideGymTrainer4:
-	generictrainer BIRD_KEEPER, CHANCE_3, EVENT_BEAT_EVENTIDE_GYM_TRAINER_4, .SeenText, .BeatenText
+	generictrainer BIRD_KEEPER, CHANCE, EVENT_BEAT_EVENTIDE_GYM_TRAINER_4, .SeenText, .BeatenText
 
 	text "Gotta head back"
 	line "the way you came!"
@@ -587,7 +572,7 @@ EventideGymTrainer4:
 	done
 	
 EventideGymTrainer5:
-	generictrainer BIRD_KEEPER, CALEB_3, EVENT_BEAT_EVENTIDE_GYM_TRAINER_5, .SeenText, .BeatenText
+	generictrainer BIRD_KEEPER, CALEB, EVENT_BEAT_EVENTIDE_GYM_TRAINER_5, .SeenText, .BeatenText
 
 	text "Hit that switch"
 	line "and finish this!"
@@ -605,329 +590,6 @@ EventideGymTrainer5:
 	done
 
 .BeatenText:
-	text "So close!"
-	done
-	
-EventideGymTrainer1Rematch:
-	faceplayer
-	opentext
-	checkevent EVENT_BEAT_EVENTIDE_GYM_TRAINER_1_REMATCH
-	iftrue .FightDone
-	playmusic MUSIC_HARDCORE_ENCOUNTER
-	writetext EventideGymTrainer1RematchSeenText
-	waitbutton
-	closetext
-	waitsfx
-	winlosstext EventideGymTrainer1RematchBeatenText, 0
-	checkcode VAR_BADGES
-	ifequal 8, .eightbadges
-	ifequal 7, .sevenbadges
-	ifequal 6, .sixbadges
-	ifequal 5, .fivebadges
-	ifequal 4, .fourbadges
-	loadtrainer BIRD_KEEPER, RICKY_3
-	jump .cont
-.fourbadges
-	loadtrainer BIRD_KEEPER, RICKY_4
-	jump .cont
-.fivebadges
-	loadtrainer BIRD_KEEPER, RICKY_5
-	jump .cont
-.sixbadges
-	loadtrainer BIRD_KEEPER, RICKY_6
-	jump .cont
-.sevenbadges
-	loadtrainer BIRD_KEEPER, RICKY_7
-	jump .cont
-.eightbadges
-	loadtrainer BIRD_KEEPER, RICKY_8
-.cont
-	startbattle
-	dontrestartmapmusic
-	reloadmapafterbattle
-	playmapmusic
-	setevent EVENT_BEAT_EVENTIDE_GYM_TRAINER_1_REMATCH
-	end
-.FightDone
-	writetext EventideGymTrainer1RematchRegularText
-	waitbutton
-	closetext
-	end
-
-EventideGymTrainer1RematchRegularText:
-	text "Oh yeah!"
-	
-	para "You're willing to"
-	line "put in the work!"
-	done
-
-EventideGymTrainer1RematchSeenText:
-	text "Back for more"
-	line "from the GYM"
-	cont "LEADER?"
-	
-	para "You've still gotta"
-	line "put in the work"
-	cont "to get to her!"
-	done
-
-EventideGymTrainer1RematchBeatenText:
-	text "Well you showed me!"
-	done
-	
-EventideGymTrainer2Rematch:
-	faceplayer
-	opentext
-	checkevent EVENT_BEAT_EVENTIDE_GYM_TRAINER_2_REMATCH
-	iftrue .FightDone
-	playmusic MUSIC_HARDCORE_ENCOUNTER
-	writetext EventideGymTrainer2RematchSeenText
-	waitbutton
-	closetext
-	waitsfx
-	winlosstext EventideGymTrainer2RematchBeatenText, 0
-	checkcode VAR_BADGES
-	ifequal 8, .eightbadges
-	ifequal 7, .sevenbadges
-	ifequal 6, .sixbadges
-	ifequal 5, .fivebadges
-	ifequal 4, .fourbadges
-	loadtrainer BIRD_KEEPER, VERN_3
-	jump .cont
-.fourbadges
-	loadtrainer BIRD_KEEPER, VERN_4
-	jump .cont
-.fivebadges
-	loadtrainer BIRD_KEEPER, VERN_5
-	jump .cont
-.sixbadges
-	loadtrainer BIRD_KEEPER, VERN_6
-	jump .cont
-.sevenbadges
-	loadtrainer BIRD_KEEPER, VERN_7
-	jump .cont
-.eightbadges
-	loadtrainer BIRD_KEEPER, VERN_8
-.cont
-	startbattle
-	dontrestartmapmusic
-	reloadmapafterbattle
-	playmapmusic
-	setevent EVENT_BEAT_EVENTIDE_GYM_TRAINER_2_REMATCH
-	end
-.FightDone
-	writetext EventideGymTrainer2RematchRegularText
-	waitbutton
-	closetext
-	end
-
-EventideGymTrainer2RematchRegularText:
-	text "You got this, kid!"
-	done
-
-EventideGymTrainer2RematchSeenText:
-	text "I hope you're"
-	line "ready for another"
-	cont "high-flying"
-	cont "defeat!"
-	done
-
-EventideGymTrainer2RematchBeatenText:
-	text "Darn it!"
-	done
-	
-EventideGymTrainer3Rematch:
-	faceplayer
-	opentext
-	checkevent EVENT_BEAT_EVENTIDE_GYM_TRAINER_3_REMATCH
-	iftrue .FightDone
-	playmusic MUSIC_HARDCORE_ENCOUNTER
-	writetext EventideGymTrainer3RematchSeenText
-	waitbutton
-	closetext
-	waitsfx
-	winlosstext EventideGymTrainer3RematchBeatenText, 0
-	checkcode VAR_BADGES
-	ifequal 8, .eightbadges
-	ifequal 7, .sevenbadges
-	ifequal 6, .sixbadges
-	ifequal 5, .fivebadges
-	ifequal 4, .fourbadges
-	loadtrainer BIRD_KEEPER, ROY_3
-	jump .cont
-.fourbadges
-	loadtrainer BIRD_KEEPER, ROY_4
-	jump .cont
-.fivebadges
-	loadtrainer BIRD_KEEPER, ROY_5
-	jump .cont
-.sixbadges
-	loadtrainer BIRD_KEEPER, ROY_6
-	jump .cont
-.sevenbadges
-	loadtrainer BIRD_KEEPER, ROY_7
-	jump .cont
-.eightbadges
-	loadtrainer BIRD_KEEPER, ROY_8
-.cont
-	startbattle
-	dontrestartmapmusic
-	reloadmapafterbattle
-	playmapmusic
-	setevent EVENT_BEAT_EVENTIDE_GYM_TRAINER_3_REMATCH
-	end
-.FightDone
-	writetext EventideGymTrainer3RematchRegularText
-	waitbutton
-	closetext
-	end
-
-EventideGymTrainer3RematchRegularText:
-	text "No matter which"
-	line "color the switch"
-	cont "you press is,"
-
-	para "the gray conveyors"
-	line "will change too!"
-	done
-
-EventideGymTrainer3RematchSeenText:
-	text "Remember how the"
-	line "conveyor belts"
-	cont "work?"
-	done
-
-EventideGymTrainer3RematchBeatenText:
-	text "It's quite"
-	line "simple."
-	done
-	
-EventideGymTrainer4Rematch:
-	faceplayer
-	opentext
-	checkevent EVENT_BEAT_EVENTIDE_GYM_TRAINER_4_REMATCH
-	iftrue .FightDone
-	playmusic MUSIC_HARDCORE_ENCOUNTER
-	writetext EventideGymTrainer4RematchSeenText
-	waitbutton
-	closetext
-	waitsfx
-	winlosstext EventideGymTrainer4RematchBeatenText, 0
-	checkcode VAR_BADGES
-	ifequal 8, .eightbadges
-	ifequal 7, .sevenbadges
-	ifequal 6, .sixbadges
-	ifequal 5, .fivebadges
-	ifequal 4, .fourbadges
-	loadtrainer BIRD_KEEPER, CHANCE_3
-	jump .cont
-.fourbadges
-	loadtrainer BIRD_KEEPER, CHANCE_4
-	jump .cont
-.fivebadges
-	loadtrainer BIRD_KEEPER, CHANCE_5
-	jump .cont
-.sixbadges
-	loadtrainer BIRD_KEEPER, CHANCE_6
-	jump .cont
-.sevenbadges
-	loadtrainer BIRD_KEEPER, CHANCE_7
-	jump .cont
-.eightbadges
-	loadtrainer BIRD_KEEPER, CHANCE_8
-.cont
-	startbattle
-	dontrestartmapmusic
-	reloadmapafterbattle
-	playmapmusic
-	setevent EVENT_BEAT_EVENTIDE_GYM_TRAINER_4_REMATCH
-	end
-.FightDone
-	writetext EventideGymTrainer4RematchRegularText
-	waitbutton
-	closetext
-	end
-
-EventideGymTrainer4RematchRegularText:
-	text "Gotta head back"
-	line "the way you came!"
-	done
-
-EventideGymTrainer4RematchSeenText:
-	text "You want a"
-	line "rematch?"
-	
-	para "You must!"
-	
-	para "There's nothing"
-	line "else this way."
-	done
-
-EventideGymTrainer4RematchBeatenText:
-	text "Nothing but a"
-	line "win that is!"
-	done
-	
-EventideGymTrainer5Rematch:
-	faceplayer
-	opentext
-	checkevent EVENT_BEAT_EVENTIDE_GYM_TRAINER_5_REMATCH
-	iftrue .FightDone
-	playmusic MUSIC_HARDCORE_ENCOUNTER
-	writetext EventideGymTrainer5RematchSeenText
-	waitbutton
-	closetext
-	waitsfx
-	winlosstext EventideGymTrainer5RematchBeatenText, 0
-	checkcode VAR_BADGES
-	ifequal 8, .eightbadges
-	ifequal 7, .sevenbadges
-	ifequal 6, .sixbadges
-	ifequal 5, .fivebadges
-	ifequal 4, .fourbadges
-	loadtrainer BIRD_KEEPER, CALEB_3
-	jump .cont
-.fourbadges
-	loadtrainer BIRD_KEEPER, CALEB_4
-	jump .cont
-.fivebadges
-	loadtrainer BIRD_KEEPER, CALEB_5
-	jump .cont
-.sixbadges
-	loadtrainer BIRD_KEEPER, CALEB_6
-	jump .cont
-.sevenbadges
-	loadtrainer BIRD_KEEPER, CALEB_7
-	jump .cont
-.eightbadges
-	loadtrainer BIRD_KEEPER, CALEB_8
-.cont
-	startbattle
-	dontrestartmapmusic
-	reloadmapafterbattle
-	playmapmusic
-	setevent EVENT_BEAT_EVENTIDE_GYM_TRAINER_5_REMATCH
-	end
-.FightDone
-	writetext EventideGymTrainer5RematchRegularText
-	waitbutton
-	closetext
-	end
-
-EventideGymTrainer5RematchRegularText:
-	text "Hit that switch"
-	line "and finish this!"
-	done
-
-EventideGymTrainer5RematchSeenText:
-	text "You're almost"
-	line "to that last"
-	cont "switch again."
-	
-	para "Let's do this!"
-	done
-
-EventideGymTrainer5RematchBeatenText:
 	text "So close!"
 	done
 

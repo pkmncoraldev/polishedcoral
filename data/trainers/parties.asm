@@ -1530,7 +1530,7 @@ FisherGroup:
 ; ================
 
 	; FISHER
-	db "GERALD@"	;2 BADGES
+	db "GERALD@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 15, POLIWAG
@@ -1540,63 +1540,7 @@ FisherGroup:
 ; ================
 
 	; FISHER
-	db "GERALD@"	;3 BADGES
-	db TRAINERTYPE_NORMAL
-	; party
-	db 25, POLIWAG
-	db 24, MARILL
-	db -1 ; end
-
-; ================
-
-	; FISHER
-	db "GERALD@"	;4 BADGES
-	db TRAINERTYPE_NORMAL
-	; party
-	db 30, POLIWAG
-	db 29, MARILL
-	db -1 ; end
-
-; ================
-
-	; FISHER
-	db "GERALD@"	;5 BADGES
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
-	db -1 ; end
-
-; ================
-
-	; FISHER
-	db "GERALD@"	;6 BADGES
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
-	db -1 ; end
-
-; ================
-
-	; FISHER
-	db "GERALD@"	;7 BADGES
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
-	db -1 ; end
-
-; ================
-
-	; FISHER
-	db "GERALD@"	;8 BADGES
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
-	db -1 ; end
-
-; ================
-
-	; FISHER
-	db "WALTER@"	;2 BADGES
+	db "WALTER@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 14, CHINCHOU
@@ -1607,65 +1551,7 @@ FisherGroup:
 ; ================
 
 	; FISHER
-	db "WALTER@"	;3 BADGES
-	db TRAINERTYPE_NORMAL
-	; party
-	db 24, CHINCHOU
-	db 25, SQUIRTLE
-	db 25, TOTODILE
-	db -1 ; end
-
-; ================
-
-	; FISHER
-	db "WALTER@"	;4 BADGES
-	db TRAINERTYPE_NORMAL
-	; party
-	db 29, CHINCHOU
-	db 30, SQUIRTLE
-	db 30, TOTODILE
-	db -1 ; end
-
-; ================
-
-	; FISHER
-	db "WALTER@"	;5 BADGES
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
-	db -1 ; end
-
-; ================
-
-	; FISHER
-	db "WALTER@"	;6 BADGES
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
-	db -1 ; end
-
-; ================
-
-	; FISHER
-	db "WALTER@"	;7 BADGES
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
-	db -1 ; end
-
-; ================
-
-	; FISHER
-	db "WALTER@"	;8 BADGES
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
-	db -1 ; end
-
-; ================
-
-	; FISHER
-	db "BORRIS@"	;2 BADGES
+	db "BORRIS@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 16, WARTORTLE
@@ -1674,121 +1560,11 @@ FisherGroup:
 ; ================
 
 	; FISHER
-	db "BORRIS@"	;3 BADGES
-	db TRAINERTYPE_NORMAL
-	; party
-	db 25, WARTORTLE
-	db -1 ; end
-
-; ================
-
-	; FISHER
-	db "BORRIS@"	;4 BADGES
-	db TRAINERTYPE_NORMAL
-	; party
-	db 31, WARTORTLE
-	db -1 ; end
-
-; ================
-
-	; FISHER
-	db "BORRIS@"	;5 BADGES
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
-	db -1 ; end
-
-; ================
-
-	; FISHER
-	db "BORRIS@"	;6 BADGES
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
-	db -1 ; end
-
-; ================
-
-	; FISHER
-	db "BORRIS@"	;7 BADGES
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
-	db -1 ; end
-
-; ================
-
-	; FISHER
-	db "BORRIS@"	;8 BADGES
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
-	db -1 ; end
-
-; ================
-
-	; FISHER
-	db "CLINT@"	;2 BADGES
+	db "CLINT@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 14, BUIZEL
 	db 14, WOOPER
-	db -1 ; end
-
-; ================
-
-	; FISHER
-	db "CLINT@"	;3 BADGES
-	db TRAINERTYPE_NORMAL
-	; party
-	db 24, BUIZEL
-	db 25, WOOPER
-	db -1 ; end
-
-; ================
-
-	; FISHER
-	db "CLINT@"	;4 BADGES
-	db TRAINERTYPE_NORMAL
-	; party
-	db 24, BUIZEL
-	db 25, WOOPER
-	db -1 ; end
-
-; ================
-
-	; FISHER
-	db "CLINT@"	;5 BADGES
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
-	db -1 ; end
-
-; ================
-
-	; FISHER
-	db "CLINT@"	;6 BADGES
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
-	db -1 ; end
-
-; ================
-
-	; FISHER
-	db "CLINT@"	;7 BADGES
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
-	db -1 ; end
-
-; ================
-
-	; FISHER
-	db "CLINT@"	;8 BADGES
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
 	db -1 ; end
 
 ; ================
@@ -1945,7 +1721,7 @@ BirdKeeperGroup:
 ; ================
 
 	; BIRD_KEEPER
-	db "RICKY@"	;3 BADGES
+	db "RICKY@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 28, PIDGEOTTO
@@ -1956,54 +1732,7 @@ BirdKeeperGroup:
 ; ================
 
 	; BIRD_KEEPER
-	db "RICKY@"	;4 BADGES
-	db TRAINERTYPE_NORMAL
-	; party
-	db 28, PIDGEOTTO
-	db 30, DODUO
-	db 29, TRUMBEAK
-	db -1 ; end
-
-; ================
-
-	; BIRD_KEEPER
-	db "RICKY@"	;5 BADGES
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
-	db -1 ; end
-
-; ================
-
-	; BIRD_KEEPER
-	db "RICKY@"	;6 BADGES
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
-	db -1 ; end
-
-; ================
-
-	; BIRD_KEEPER
-	db "RICKY@"	;7 BADGES
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
-	db -1 ; end
-
-; ================
-
-	; BIRD_KEEPER
-	db "RICKY@"	;8 BADGES
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
-	db -1 ; end
-
-; ================
-
-	; BIRD_KEEPER
-	db "VERN@"	;3 BADGES
+	db "VERN@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 30, NATU
@@ -2013,53 +1742,7 @@ BirdKeeperGroup:
 ; ================
 
 	; BIRD_KEEPER
-	db "VERN@"	;4 BADGES
-	db TRAINERTYPE_NORMAL
-	; party
-	db 30, NATU
-	db 30, SWABLU
-	db -1 ; end
-
-; ================
-
-	; BIRD_KEEPER
-	db "VERN@"	;5 BADGES
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
-	db -1 ; end
-
-; ================
-
-	; BIRD_KEEPER
-	db "VERN@"	;6 BADGES
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
-	db -1 ; end
-
-; ================
-
-	; BIRD_KEEPER
-	db "VERN@"	;7 BADGES
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
-	db -1 ; end
-
-; ================
-
-	; BIRD_KEEPER
-	db "VERN@"	;8 BADGES
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
-	db -1 ; end
-
-; ================
-
-	; BIRD_KEEPER
-	db "ROY@"	;3 BADGES
+	db "ROY@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 29, WINGULL
@@ -2070,54 +1753,7 @@ BirdKeeperGroup:
 ; ================
 
 	; BIRD_KEEPER
-	db "ROY@"	;4 BADGES
-	db TRAINERTYPE_NORMAL
-	; party
-	db 29, WINGULL
-	db 29, WINGULL
-	db 29, TRUMBEAK
-	db -1 ; end
-
-; ================
-
-	; BIRD_KEEPER
-	db "ROY@"	;5 BADGES
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
-	db -1 ; end
-
-; ================
-
-	; BIRD_KEEPER
-	db "ROY@"	;6 BADGES
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
-	db -1 ; end
-
-; ================
-
-	; BIRD_KEEPER
-	db "ROY@"	;7 BADGES
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
-	db -1 ; end
-
-; ================
-
-	; BIRD_KEEPER
-	db "ROY@"	;8 BADGES
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
-	db -1 ; end
-
-; ================
-
-	; BIRD_KEEPER
-	db "CHANCE@"	;3 BADGES
+	db "CHANCE@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 31, PELIPPER
@@ -2126,104 +1762,12 @@ BirdKeeperGroup:
 ; ================
 
 	; BIRD_KEEPER
-	db "CHANCE@"	;4 BADGES
-	db TRAINERTYPE_NORMAL
-	; party
-	db 33, PELIPPER
-	db -1 ; end
-
-; ================
-
-	; BIRD_KEEPER
-	db "CHANCE@"	;5 BADGES
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
-	db -1 ; end
-
-; ================
-
-	; BIRD_KEEPER
-	db "CHANCE@"	;6 BADGES
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
-	db -1 ; end
-
-; ================
-
-	; BIRD_KEEPER
-	db "CHANCE@"	;7 BADGES
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
-	db -1 ; end
-
-; ================
-
-	; BIRD_KEEPER
-	db "CHANCE@"	;8 BADGES
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
-	db -1 ; end
-
-; ================
-
-	; BIRD_KEEPER
-	db "CALEB@"	;3 BADGES
+	db "CALEB@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 29, NATU
 	db 29, NATU
 	db 29, PIDGEOTTO
-	db -1 ; end
-
-; ================
-
-	; BIRD_KEEPER
-	db "CALEB@"	;4 BADGES
-	db TRAINERTYPE_NORMAL
-	; party
-	db 29, NATU
-	db 29, NATU
-	db 29, PIDGEOTTO
-	db -1 ; end
-
-; ================
-
-	; BIRD_KEEPER
-	db "CALEB@"	;5 BADGES
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
-	db -1 ; end
-
-; ================
-
-	; BIRD_KEEPER
-	db "CALEB@"	;6 BADGES
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
-	db -1 ; end
-
-; ================
-
-	; BIRD_KEEPER
-	db "CALEB@"	;7 BADGES
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
-	db -1 ; end
-
-; ================
-
-	; BIRD_KEEPER
-	db "CALEB@"	;8 BADGES
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
 	db -1 ; end
 
 ; ================
@@ -3357,7 +2901,7 @@ LassGroup:
 ; ================
 
 	; LASS
-	db "KATHY@"		;5 BADGES
+	db "KATHY@"
 	db TRAINERTYPE_PERSONALITY
 	; party
 	db 34, WOOPER, ABILITY_2 | QUIRKY, FEMALE | PALDEAN_FORM
@@ -3368,64 +2912,10 @@ LassGroup:
 ; ================
 
 	; LASS
-	db "KATHY@"		;6 BADGES
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
-	db -1 ; end
-
-; ================
-
-	; LASS
-	db "KATHY@"		;7 BADGES
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
-	db -1 ; end
-
-; ================
-
-	; LASS
-	db "KATHY@"		;8 BADGES
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
-	db -1 ; end
-
-; ================
-
-	; LASS
-	db "HARLEY@"		;5 BADGES
+	db "HARLEY@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 31, NIDOQUEEN
-	db -1 ; end
-
-; ================
-
-	; LASS
-	db "HARLEY@"		;6 BADGES
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
-	db -1 ; end
-
-; ================
-
-	; LASS
-	db "HARLEY@"		;7 BADGES
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
-	db -1 ; end
-
-; ================
-
-	; LASS
-	db "HARLEY@"		;8 BADGES
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
 	db -1 ; end
 
 ; ================
@@ -3470,7 +2960,7 @@ BeautyGroup:
 ; ================
 
 	; BEAUTY
-	db "CLAIRE@"		;5 BADGES
+	db "CLAIRE@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 33, IVYSAUR
@@ -3481,66 +2971,12 @@ BeautyGroup:
 ; ================
 
 	; BEAUTY
-	db "CLAIRE@"		;6 BADGES
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
-	db -1 ; end
-
-; ================
-
-	; BEAUTY
-	db "CLAIRE@"		;7 BADGES
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
-	db -1 ; end
-
-; ================
-
-	; BEAUTY
-	db "CLAIRE@"		;8 BADGES
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
-	db -1 ; end
-
-; ================
-
-	; BEAUTY
-	db "SAM@"		;5 BADGES
+	db "SAM@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 32, KOFFING
 	db 33, KOFFING
 	db 33, WHIRLIPEDE
-	db -1 ; end
-
-; ================
-
-	; BEAUTY
-	db "SAM@"		;6 BADGES
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
-	db -1 ; end
-
-; ================
-
-	; BEAUTY
-	db "SAM@"		;7 BADGES
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
-	db -1 ; end
-
-; ================
-
-	; BEAUTY
-	db "SAM@"		;8 BADGES
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
 	db -1 ; end
 
 ; ================
@@ -3757,7 +3193,7 @@ SchoolboyGroup:
 ; ================
 
 	; SCHOOLBOY
-	db "TIMMY@"	;1 BADGE
+	db "TIMMY@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 9, PIDGEY
@@ -3767,143 +3203,11 @@ SchoolboyGroup:
 ; ================
 
 	; SCHOOLBOY
-	db "TIMMY@"	;2 BADGES
-	db TRAINERTYPE_NORMAL
-	; party
-	db 17, PIDGEY
-	db 16, RATTATA
-	db -1 ; end
-
-; ================
-
-	; SCHOOLBOY
-	db "TIMMY@"	;3 BADGES
-	db TRAINERTYPE_NORMAL
-	; party
-	db 25, PIDGEOTTO
-	db 24, RATICATE
-	db -1 ; end
-
-; ================
-
-	; SCHOOLBOY
-	db "TIMMY@"	;4 BADGES
-	db TRAINERTYPE_NORMAL
-	; party
-	db 30, PIDGEOTTO
-	db 29, RATICATE
-	db -1 ; end
-
-; ================
-
-	; SCHOOLBOY
-	db "TIMMY@"	;5 BADGES
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
-	db -1 ; end
-
-; ================
-
-	; SCHOOLBOY
-	db "TIMMY@"	;6 BADGES
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
-	db -1 ; end
-
-; ================
-
-	; SCHOOLBOY
-	db "TIMMY@"	;7 BADGES
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
-	db -1 ; end
-
-; ================
-
-	; SCHOOLBOY
-	db "TIMMY@"	;8 BADGES
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
-	db -1 ; end
-
-; ================
-
-	; SCHOOLBOY
-	db "DAMIAN@"	;1 BADGE
+	db "DAMIAN@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 9, PIKIPEK
 	db 8, RATTATA
-	db -1 ; end
-
-; ================
-
-	; SCHOOLBOY
-	db "DAMIAN@"	;2 BADGES
-	db TRAINERTYPE_NORMAL
-	; party
-	db 17, PIKIPEK
-	db 16, RATTATA
-	db -1 ; end
-
-; ================
-
-	; SCHOOLBOY
-	db "DAMIAN@"	;3 BADGES
-	db TRAINERTYPE_NORMAL
-	; party
-	db 25, TRUMBEAK
-	db 24, RATICATE
-	db -1 ; end
-
-; ================
-
-	; SCHOOLBOY
-	db "DAMIAN@"	;4 BADGES
-	db TRAINERTYPE_NORMAL
-	; party
-	db 30, TRUMBEAK
-	db 29, RATICATE
-	db -1 ; end
-
-; ================
-
-	; SCHOOLBOY
-	db "DAMIAN@"	;5 BADGES
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
-	db -1 ; end
-
-; ================
-
-	; SCHOOLBOY
-	db "DAMIAN@"	;6 BADGES
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
-	db -1 ; end
-
-; ================
-
-	; SCHOOLBOY
-	db "DAMIAN@"	;7 BADGES
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
-	db -1 ; end
-
-; ================
-
-	; SCHOOLBOY
-	db "DAMIAN@"	;8 BADGES
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
 	db -1 ; end
 
 ; ================
@@ -5505,7 +4809,7 @@ DelinquentfGroup:
 ; ================
 
 	; DELINQUENT_F
-	db "TERI@"		;5 BADGES
+	db "TERI@"
 	db TRAINERTYPE_PERSONALITY
 	; party
 	db 33, GRIMER, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM
@@ -5515,66 +4819,12 @@ DelinquentfGroup:
 ; ================
 
 	; DELINQUENT_F
-	db "TERI@"		;6 BADGES
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
-	db -1 ; end
-
-; ================
-
-	; DELINQUENT_F
-	db "TERI@"		;7 BADGES
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
-	db -1 ; end
-
-; ================
-
-	; DELINQUENT_F
-	db "TERI@"		;8 BADGES
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
-	db -1 ; end
-
-; ================
-
-	; DELINQUENT_F
-	db "MEGAN@"		;5 BADGES
+	db "MEGAN@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 32, GOLBAT
 	db 32, KOFFING
 	db 33, CROAGUNK
-	db -1 ; end
-
-; ================
-
-	; DELINQUENT_F
-	db "MEGAN@"		;6 BADGES
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
-	db -1 ; end
-
-; ================
-
-	; DELINQUENT_F
-	db "MEGAN@"		;7 BADGES
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
-	db -1 ; end
-
-; ================
-
-	; DELINQUENT_F
-	db "MEGAN@"		;8 BADGES
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
 	db -1 ; end
 
 ; ================
@@ -5756,7 +5006,7 @@ SpaTrainerGroup:
 ; ================
 
 	; SPA_TRAINER
-	db "DENNIS@"	;3 BADGES
+	db "DENNIS@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 27, CHARMELEON
@@ -5766,53 +5016,7 @@ SpaTrainerGroup:
 ; ================
 
 	; SPA_TRAINER
-	db "DENNIS@"	;4 BADGES
-	db TRAINERTYPE_NORMAL
-	; party
-	db 27, CHARMELEON
-	db 27, NUMEL
-	db -1 ; end
-
-; ================
-
-	; SPA_TRAINER
-	db "DENNIS@"	;5 BADGES
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
-	db -1 ; end
-
-; ================
-
-	; SPA_TRAINER
-	db "DENNIS@"	;6 BADGES
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
-	db -1 ; end
-
-; ================
-
-	; SPA_TRAINER
-	db "DENNIS@"	;7 BADGES
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
-	db -1 ; end
-
-; ================
-
-	; SPA_TRAINER
-	db "DENNIS@"	;8 BADGES
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
-	db -1 ; end
-
-; ================
-
-	; SPA_TRAINER
-	db "SHAYMUS@"	;3 BADGES
+	db "SHAYMUS@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 28, SLUGMA
@@ -5822,53 +5026,7 @@ SpaTrainerGroup:
 ; ================
 
 	; SPA_TRAINER
-	db "SHAYMUS@"	;4 BADGES
-	db TRAINERTYPE_NORMAL
-	; party
-	db 28, SLUGMA
-	db 27, NUMEL
-	db -1 ; end
-
-; ================
-
-	; SPA_TRAINER
-	db "SHAYMUS@"	;5 BADGES
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
-	db -1 ; end
-
-; ================
-
-	; SPA_TRAINER
-	db "SHAYMUS@"	;6 BADGES
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
-	db -1 ; end
-
-; ================
-
-	; SPA_TRAINER
-	db "SHAYMUS@"	;7 BADGES
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
-	db -1 ; end
-
-; ================
-
-	; SPA_TRAINER
-	db "SHAYMUS@"	;8 BADGES
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
-	db -1 ; end
-
-; ================
-
-	; SPA_TRAINER
-	db "CHUCK@"	;3 BADGES
+	db "CHUCK@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 26, NUMEL
@@ -5879,54 +5037,7 @@ SpaTrainerGroup:
 ; ================
 
 	; SPA_TRAINER
-	db "CHUCK@"	;4 BADGES
-	db TRAINERTYPE_NORMAL
-	; party
-	db 26, NUMEL
-	db 28, GROWLITHE
-	db 27, MACHOP
-	db -1 ; end
-
-; ================
-
-	; SPA_TRAINER
-	db "CHUCK@"	;5 BADGES
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
-	db -1 ; end
-
-; ================
-
-	; SPA_TRAINER
-	db "CHUCK@"	;6 BADGES
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
-	db -1 ; end
-
-; ================
-
-	; SPA_TRAINER
-	db "CHUCK@"	;7 BADGES
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
-	db -1 ; end
-
-; ================
-
-	; SPA_TRAINER
-	db "CHUCK@"	;8 BADGES
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
-	db -1 ; end
-
-; ================
-
-	; SPA_TRAINER
-	db "SEYMOUR@"	;3 BADGES
+	db "SEYMOUR@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 29, MAGBY
@@ -5937,104 +5048,11 @@ SpaTrainerGroup:
 ; ================
 
 	; SPA_TRAINER
-	db "SEYMOUR@"	;4 BADGES
-	db TRAINERTYPE_NORMAL
-	; party
-	db 29, MAGBY
-	db 27, MEDITITE
-	db 26, QUILAVA
-	db -1 ; end
-
-; ================
-
-	; SPA_TRAINER
-	db "SEYMOUR@"	;5 BADGES
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
-	db -1 ; end
-
-; ================
-
-	; SPA_TRAINER
-	db "SEYMOUR@"	;6 BADGES
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
-	db -1 ; end
-
-; ================
-
-	; SPA_TRAINER
-	db "SEYMOUR@"	;7 BADGES
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
-	db -1 ; end
-
-; ================
-
-	; SPA_TRAINER
-	db "SEYMOUR@"	;8 BADGES
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
-	db -1 ; end
-
-; ================
-
-	; SPA_TRAINER
-	db "MAC@"	;3 BADGES
+	db "MAC@"
 	db TRAINERTYPE_PERSONALITY
 	; party
 	db 27, QUILAVA, ABILITY_1 | HARDY, MALE | PLAIN_FORM
 	db 28, MAROWAK, ABILITY_1 | HARDY, MALE | PLAIN_FORM
-	db -1 ; end
-
-; ================
-
-	; SPA_TRAINER
-	db "MAC@"	;4 BADGES
-	db TRAINERTYPE_PERSONALITY
-	; party
-	db 27, QUILAVA, ABILITY_1 | HARDY, MALE | PLAIN_FORM
-	db 28, MAROWAK, ABILITY_1 | HARDY, MALE | PLAIN_FORM
-	db -1 ; end
-
-; ================
-
-	; SPA_TRAINER
-	db "MAC@"	;5 BADGES
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
-	db -1 ; end
-
-; ================
-
-	; SPA_TRAINER
-	db "MAC@"	;6 BADGES
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
-	db -1 ; end
-
-; ================
-
-	; SPA_TRAINER
-	db "MAC@"	;7 BADGES
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
-	db -1 ; end
-
-; ================
-
-	; SPA_TRAINER
-	db "MAC@"	;8 BADGES
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
 	db -1 ; end
 
 ; ================
@@ -6046,7 +5064,7 @@ SpaTrainerFGroup:
 ; ================
 
 	; SPA_TRAINER_F
-	db "LAURA@"	;3 BADGES
+	db "LAURA@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 29, HOUNDOUR
@@ -6057,106 +5075,12 @@ SpaTrainerFGroup:
 ; ================
 
 	; SPA_TRAINER_F
-	db "LAURA@"	;4 BADGES
-	db TRAINERTYPE_NORMAL
-	; party
-	db 29, HOUNDOUR
-	db 30, BUIZEL
-	db 30, MAGBY
-	db -1 ; end
-
-; ================
-
-	; SPA_TRAINER_F
-	db "LAURA@"	;5 BADGES
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
-	db -1 ; end
-
-; ================
-
-	; SPA_TRAINER_F
-	db "LAURA@"	;6 BADGES
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
-	db -1 ; end
-
-; ================
-
-	; SPA_TRAINER_F
-	db "LAURA@"	;7 BADGES
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
-	db -1 ; end
-
-; ================
-
-	; SPA_TRAINER_F
-	db "LAURA@"	;8 BADGES
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
-	db -1 ; end
-
-; ================
-
-	; SPA_TRAINER_F
-	db "BETTY@"	;3 BADGES
+	db "BETTY@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 26, NUMEL
 	db 29, SLUGMA
 	db 30, BUIZEL
-	db -1 ; end
-
-; ================
-
-	; SPA_TRAINER_F
-	db "BETTY@"	;4 BADGES
-	db TRAINERTYPE_NORMAL
-	; party
-	db 26, NUMEL
-	db 29, SLUGMA
-	db 30, BUIZEL
-	db -1 ; end
-
-; ================
-
-	; SPA_TRAINER_F
-	db "BETTY@"	;5 BADGES
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
-	db -1 ; end
-
-; ================
-
-	; SPA_TRAINER_F
-	db "BETTY@"	;6 BADGES
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
-	db -1 ; end
-
-; ================
-
-	; SPA_TRAINER_F
-	db "BETTY@"	;7 BADGES
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
-	db -1 ; end
-
-; ================
-
-	; SPA_TRAINER_F
-	db "BETTY@"	;8 BADGES
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
 	db -1 ; end
 
 ; ================
@@ -6379,25 +5303,7 @@ RoseGroup:
 ; ================
 
 	; ROSE
-	db "ROSE@" ;6 BADGES
-	db TRAINERTYPE_NORMAL
-	; party
-	db 40, CHERUBI
-	db -1 ; end
-
-; ================
-
-	; ROSE
-	db "ROSE@" ;7 BADGES
-	db TRAINERTYPE_NORMAL
-	; party
-	db 40, CHERUBI
-	db -1 ; end
-
-; ================
-
-	; ROSE
-	db "ROSE@" ;8 BADGES
+	db "ROSE@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 40, CHERUBI
@@ -6411,25 +5317,7 @@ LilyGroup:
 ; ================
 
 	; LILY
-	db "LILY@" ;6 BADGES
-	db TRAINERTYPE_NORMAL
-	; party
-	db 43, EXEGGCUTE
-	db -1 ; end
-
-; ================
-
-	; LILY
-	db "LILY@" ;7 BADGES
-	db TRAINERTYPE_NORMAL
-	; party
-	db 43, EXEGGCUTE
-	db -1 ; end
-
-; ================
-
-	; LILY
-	db "LILY@" ;8 BADGES
+	db "LILY@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 43, EXEGGCUTE
@@ -6443,25 +5331,7 @@ IrisGroup:
 ; ================
 
 	; IRIS
-	db "IRIS@" ;6 BADGES
-	db TRAINERTYPE_NORMAL
-	; party
-	db 43, ODDISH
-	db -1 ; end
-
-; ================
-
-	; IRIS
-	db "IRIS@" ;7 BADGES
-	db TRAINERTYPE_NORMAL
-	; party
-	db 43, ODDISH
-	db -1 ; end
-
-; ================
-
-	; IRIS
-	db "IRIS@" ;8 BADGES
+	db "IRIS@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 43, ODDISH
@@ -6475,25 +5345,7 @@ PoppyGroup:
 ; ================
 
 	; POPPY
-	db "POPPY@" ;6 BADGES
-	db TRAINERTYPE_NORMAL
-	; party
-	db 43, CACNEA
-	db -1 ; end
-
-; ================
-
-	; POPPY
-	db "POPPY@" ;7 BADGES
-	db TRAINERTYPE_NORMAL
-	; party
-	db 43, CACNEA
-	db -1 ; end
-
-; ================
-
-	; POPPY
-	db "POPPY@" ;8 BADGES
+	db "POPPY@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 43, CACNEA
@@ -6507,25 +5359,7 @@ FeliciaGroup:
 ; ================
 
 	; FELICIA
-	db "FELICIA@" ;6 BADGES
-	db TRAINERTYPE_NORMAL
-	; party
-	db 43, BULBASAUR
-	db -1 ; end
-
-; ================
-
-	; FELICIA
-	db "FELICIA@" ;7 BADGES
-	db TRAINERTYPE_NORMAL
-	; party
-	db 43, BULBASAUR
-	db -1 ; end
-
-; ================
-
-	; FELICIA
-	db "FELICIA@" ;8 BADGES
+	db "FELICIA@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 43, BULBASAUR
@@ -6539,25 +5373,7 @@ VioletGroup:
 ; ================
 
 	; VIOLET
-	db "VIOLET@" ;6 BADGES
-	db TRAINERTYPE_NORMAL
-	; party
-	db 43, PHANTUMP
-	db -1 ; end
-
-; ================
-
-	; VIOLET
-	db "VIOLET@" ;7 BADGES
-	db TRAINERTYPE_NORMAL
-	; party
-	db 43, PHANTUMP
-	db -1 ; end
-
-; ================
-
-	; VIOLET
-	db "VIOLET@" ;8 BADGES
+	db "VIOLET@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 43, PHANTUMP
@@ -6571,25 +5387,7 @@ CloverGroup:
 ; ================
 
 	; CLOVER
-	db "CLOVER@" ;6 BADGES
-	db TRAINERTYPE_NORMAL
-	; party
-	db 43, CHIKORITA
-	db -1 ; end
-
-; ================
-
-	; CLOVER
-	db "CLOVER@" ;7 BADGES
-	db TRAINERTYPE_NORMAL
-	; party
-	db 43, CHIKORITA
-	db -1 ; end
-
-; ================
-
-	; CLOVER
-	db "CLOVER@" ;8 BADGES
+	db "CLOVER@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 43, CHIKORITA
@@ -6716,7 +5514,7 @@ MuseumGuideGroup:
 ; ================
 
 	; MUSEUM_GUIDE
-	db "GUIDE@" ;7 BADGES
+	db "GUIDE@"
 	db TRAINERTYPE_MOVES
 	; party
 	db 52, LARVITAR
@@ -6730,16 +5528,7 @@ MuseumGuideGroup:
 ; ================
 
 	; MUSEUM_GUIDE
-	db "GUIDE@" ;8 BADGES
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
-	db -1 ; end
-
-; ================
-
-	; MUSEUM_GUIDE
-	db "GUIDE@" ;7 BADGES
+	db "GUIDE@"
 	db TRAINERTYPE_MOVES
 	; party
 	db 50, LAIRON
@@ -6751,16 +5540,7 @@ MuseumGuideGroup:
 ; ================
 
 	; MUSEUM_GUIDE
-	db "GUIDE@" ;8 BADGES
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
-	db -1 ; end
-
-; ================
-
-	; MUSEUM_GUIDE
-	db "GUIDE@" ;7 BADGES
+	db "GUIDE@"
 	db TRAINERTYPE_NORMAL
 	; party
 	db 50, ONIX
@@ -6770,31 +5550,13 @@ MuseumGuideGroup:
 ; ================
 
 	; MUSEUM_GUIDE
-	db "GUIDE@" ;8 BADGES
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
-	db -1 ; end
-
-; ================
-
-	; MUSEUM_GUIDE
-	db "GUIDE@" ;7 BADGES
+	db "GUIDE@"
 	db TRAINERTYPE_MOVES
 	; party
 	db 49, CRUSTLE
 		db FLAIL, SHELL_SMASH, X_SCISSOR, ROCK_BLAST
 	db 50, GRAVELER
 		db EARTHQUAKE, STONE_EDGE, DOUBLE_EDGE, DEFENSE_CURL_HARDEN_WITHDRAW
-	db -1 ; end
-
-; ================
-
-	; MUSEUM_GUIDE
-	db "GUIDE@" ;8 BADGES
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
 	db -1 ; end
 
 ; ================
@@ -6805,22 +5567,13 @@ MuseumGuide2Group:
 ; ================
 
 	; MUSEUM_GUIDE_2
-	db "GUIDE@" ;7 BADGES
+	db "GUIDE@"
 	db TRAINERTYPE_PERSONALITY | TRAINERTYPE_MOVES
 	; party
 	db 51, CORSOLA, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM
 		db BUBBLE_BEAM, ROCK_BLAST, 0, 0
 	db 51, MAGCARGO, ABILITY_1 | QUIRKY, MALE
 		db SOFTBOILED_MILK_DRINK_RECOVER, BODY_SLAM, FLAME_BURST, 0
-	db -1 ; end
-
-; ================
-
-	; MUSEUM_GUIDE_2
-	db "GUIDE@" ;8 BADGES
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
 	db -1 ; end
 
 ; ================

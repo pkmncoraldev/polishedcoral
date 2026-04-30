@@ -12,19 +12,14 @@ ObscuraGym_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 13 ; object events
+	db 8 ; object events
 	person_event SPRITE_ROCKY,  2, 15, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, ObscuraGymRocky, -1
 	person_event SPRITE_RECEPTIONIST, 17, 15, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ObscuraGymClerk1, -1
-	person_event SPRITE_RECEPTIONIST,  8, 13, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, ObscuraGymClerk2, EVENT_BEAT_ROCKY
-	person_event SPRITE_RECEPTIONIST,  6,  4, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ObscuraGymQuizLady1, EVENT_BEAT_ROCKY
-	person_event SPRITE_RECEPTIONIST,  6, 25, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ObscuraGymQuizLady2, EVENT_BEAT_ROCKY
-	person_event SPRITE_RECEPTIONIST, 15,  2, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ObscuraGymQuizLady3, EVENT_BEAT_ROCKY
-	person_event SPRITE_RECEPTIONIST, 15, 27, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ObscuraGymQuizLady4, EVENT_BEAT_ROCKY
-	person_event SPRITE_RECEPTIONIST,  8, 13, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, ObscuraGymTrainerRematch5, EVENT_HAVENT_BEAT_ROCKY
-	person_event SPRITE_RECEPTIONIST,  6,  4, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ObscuraGymTrainerRematch1, EVENT_HAVENT_BEAT_ROCKY
-	person_event SPRITE_RECEPTIONIST,  6, 25, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ObscuraGymTrainerRematch2, EVENT_HAVENT_BEAT_ROCKY
-	person_event SPRITE_RECEPTIONIST, 15,  2, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ObscuraGymTrainerRematch3, EVENT_HAVENT_BEAT_ROCKY
-	person_event SPRITE_RECEPTIONIST, 15, 27, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ObscuraGymTrainerRematch4, EVENT_HAVENT_BEAT_ROCKY
+	person_event SPRITE_RECEPTIONIST,  8, 13, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, ObscuraGymClerk2, -1
+	person_event SPRITE_RECEPTIONIST,  6,  4, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ObscuraGymQuizLady1, -1
+	person_event SPRITE_RECEPTIONIST,  6, 25, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ObscuraGymQuizLady2, -1
+	person_event SPRITE_RECEPTIONIST, 15,  2, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ObscuraGymQuizLady3, -1
+	person_event SPRITE_RECEPTIONIST, 15, 27, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ObscuraGymQuizLady4, -1
 	object_event 19, 21, SPRITE_GYM_GUY, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, ObscuraGymGuy, -1
 
 	
@@ -150,16 +145,6 @@ ObscuraGymRocky:
 .GotTMFromRocky:
 	checkevent EVENT_LUMINA_TOWN_UNDER_ATTACK
 	iftrue RockyTextLoop.underattack
-	checkevent EVENT_BEAT_OBSCURA_GYM_TRAINER_1_REMATCH
-	iffalse RockyTextLoop
-	checkevent EVENT_BEAT_OBSCURA_GYM_TRAINER_2_REMATCH
-	iffalse RockyTextLoop
-	checkevent EVENT_BEAT_OBSCURA_GYM_TRAINER_3_REMATCH
-	iffalse RockyTextLoop
-	checkevent EVENT_BEAT_OBSCURA_GYM_TRAINER_4_REMATCH
-	iffalse RockyTextLoop
-	checkevent EVENT_BEAT_OBSCURA_GYM_TRAINER_5_REMATCH
-	iftrue ObscuraGymRockyRematch
 RockyTextLoop:
 	writetext ObscuraGymRockyTextLoop
 	waitbutton
@@ -472,7 +457,7 @@ ObscuraGymClerk1:
 	closetext
 	end
 .enjoy
-	writetext ObscuraGymTrainer1RematchRegularText
+	writetext ObscuraGymEnjoyText
 	waitbutton
 	closetext
 	end
@@ -791,7 +776,7 @@ ObscuraGymClerk2WinText:
 	done
 	
 ObscuraGymQuizLadyGymDone:
-	jumptextfaceplayer ObscuraGymTrainer1RematchRegularText
+	jumptextfaceplayer ObscuraGymEnjoyText
 	
 ObscuraGymQuizLady1:
 	checkevent EVENT_BEAT_ROCKY
@@ -2022,179 +2007,9 @@ ObscuraGymFirstQuestionText:
 	para "First question:"
 	done
 	
-ObscuraGymTrainerRematch1:
-	faceplayer
-	opentext
-	checkevent EVENT_BEAT_OBSCURA_GYM_TRAINER_1_REMATCH
-	iftrue .FightDone
-	writetext ObscuraGymTrainer1RematchSeenText
-	yesorno
-	iffalse .no
-	closetext
-	waitsfx
-	winlosstext ObscuraQuiz1WinText, 0
-	checkcode VAR_BADGES
-	ifequal 8, .eightbadges
-	loadtrainer MUSEUM_GUIDE, 1
-	jump .cont
-.eightbadges
-	loadtrainer MUSEUM_GUIDE, 2
-.cont
-	startbattle
-	dontrestartmapmusic
-	reloadmapafterbattle
-	playmapmusic
-	setevent EVENT_BEAT_OBSCURA_GYM_TRAINER_1_REMATCH
-	end
-.FightDone
-	writetext ObscuraGymTrainer1RematchRegularText
-	waitbutton
-.no
-	closetext
-	end
-	
-ObscuraGymTrainerRematch2:
-	faceplayer
-	opentext
-	checkevent EVENT_BEAT_OBSCURA_GYM_TRAINER_2_REMATCH
-	iftrue .FightDone
-	writetext ObscuraGymTrainer1RematchSeenText
-	yesorno
-	iffalse .no
-	closetext
-	waitsfx
-	winlosstext ObscuraQuiz2WinText, 0
-	checkcode VAR_BADGES
-	ifequal 8, .eightbadges
-	loadtrainer MUSEUM_GUIDE, 3
-	jump .cont
-.eightbadges
-	loadtrainer MUSEUM_GUIDE, 4
-.cont
-	startbattle
-	dontrestartmapmusic
-	reloadmapafterbattle
-	playmapmusic
-	setevent EVENT_BEAT_OBSCURA_GYM_TRAINER_2_REMATCH
-	end
-.FightDone
-	writetext ObscuraGymTrainer1RematchRegularText
-	waitbutton
-.no
-	closetext
-	end
-	
-ObscuraGymTrainerRematch3:
-	faceplayer
-	opentext
-	checkevent EVENT_BEAT_OBSCURA_GYM_TRAINER_3_REMATCH
-	iftrue .FightDone
-	writetext ObscuraGymTrainer1RematchSeenText
-	yesorno
-	iffalse .no
-	closetext
-	waitsfx
-	winlosstext ObscuraQuiz3WinText, 0
-	checkcode VAR_BADGES
-	ifequal 8, .eightbadges
-	loadtrainer MUSEUM_GUIDE, 5
-	jump .cont
-.eightbadges
-	loadtrainer MUSEUM_GUIDE, 6
-.cont
-	startbattle
-	dontrestartmapmusic
-	reloadmapafterbattle
-	playmapmusic
-	setevent EVENT_BEAT_OBSCURA_GYM_TRAINER_3_REMATCH
-	end
-.FightDone
-	writetext ObscuraGymTrainer1RematchRegularText
-	waitbutton
-.no
-	closetext
-	end
-	
-ObscuraGymTrainerRematch4:
-	faceplayer
-	opentext
-	checkevent EVENT_BEAT_OBSCURA_GYM_TRAINER_4_REMATCH
-	iftrue .FightDone
-	writetext ObscuraGymTrainer1RematchSeenText
-	yesorno
-	iffalse .no
-	closetext
-	waitsfx
-	winlosstext ObscuraQuiz4WinText, 0
-	checkcode VAR_BADGES
-	ifequal 8, .eightbadges
-	loadtrainer MUSEUM_GUIDE, 7
-	jump .cont
-.eightbadges
-	loadtrainer MUSEUM_GUIDE, 8
-.cont
-	startbattle
-	dontrestartmapmusic
-	reloadmapafterbattle
-	playmapmusic
-	setevent EVENT_BEAT_OBSCURA_GYM_TRAINER_4_REMATCH
-	end
-.FightDone
-	writetext ObscuraGymTrainer1RematchRegularText
-	waitbutton
-.no
-	closetext
-	end
-	
-ObscuraGymTrainerRematch5:
-	faceplayer
-	opentext
-	checkevent EVENT_BEAT_OBSCURA_GYM_TRAINER_5_REMATCH
-	iftrue .FightDone
-	writetext ObscuraGymTrainer5RematchSeenText
-	yesorno
-	iffalse .no
-	closetext
-	waitsfx
-	winlosstext ObscuraGymClerk2WinText, 0
-	checkcode VAR_BADGES
-	ifequal 8, .eightbadges
-	loadtrainer MUSEUM_GUIDE_2, 1
-	jump .cont
-.eightbadges
-	loadtrainer MUSEUM_GUIDE_2, 2
-.cont
-	startbattle
-	dontrestartmapmusic
-	reloadmapafterbattle
-	playmapmusic
-	setevent EVENT_BEAT_OBSCURA_GYM_TRAINER_5_REMATCH
-	end
-.FightDone
-	writetext ObscuraGymClerk2Text5
-	waitbutton
-.no
-	closetext
-	end
-	
-ObscuraGymTrainer1RematchSeenText:
-	text "No quiz this time."
-	line "Only a battle!"
-	
-	para "You ready?"
-	done
-	
-ObscuraGymTrainer1RematchRegularText:
+ObscuraGymEnjoyText:
 	text "Enjoy the rest of"
 	line "your MUSEUM visit."
-	done
-
-ObscuraGymTrainer5RematchSeenText:
-	text "Back for a rematch"
-	line "with ROCKY?"
-	
-	para "Ready for battle"
-	line "time once again?"
 	done
 	
 ObscuraGymGuy:

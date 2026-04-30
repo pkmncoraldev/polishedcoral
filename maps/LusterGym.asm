@@ -14,21 +14,15 @@ LusterGym_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 14 ; object events
+	db 8 ; object events
 	person_event SPRITE_GYM_GUY, 19, 14, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, LusterGymGuy, -1
 	person_event SPRITE_POLLY,  6,  8, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, LusterGymPolly, -1
-	person_event SPRITE_LASS, 18,  8, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_GENERICTRAINER, 2, LusterGymTrainer1, EVENT_BEAT_POLLY
-	person_event SPRITE_DELINQUENT_F, 12,  0, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 1, LusterGymTrainer2, EVENT_BEAT_POLLY
-	person_event SPRITE_LASS, 13,  5, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_GENERICTRAINER, 2, LusterGymTrainer3, EVENT_BEAT_POLLY
-	person_event SPRITE_BEAUTY, 14,  9, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 1, LusterGymTrainer4, EVENT_BEAT_POLLY
-	person_event SPRITE_BEAUTY,  7,  4, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 1, LusterGymTrainer5, EVENT_BEAT_POLLY
-	person_event SPRITE_DELINQUENT_F,  8, 12, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 1, LusterGymTrainer6, EVENT_BEAT_POLLY
-	person_event SPRITE_LASS, 18,  8, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, LusterGymTrainer1Rematch, EVENT_HAVENT_BEAT_POLLY
-	person_event SPRITE_DELINQUENT_F, 12,  0, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, LusterGymTrainer2Rematch, EVENT_HAVENT_BEAT_POLLY
-	person_event SPRITE_LASS, 13,  5, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, LusterGymTrainer3Rematch, EVENT_HAVENT_BEAT_POLLY
-	person_event SPRITE_BEAUTY, 14,  9, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, LusterGymTrainer4Rematch, EVENT_HAVENT_BEAT_POLLY
-	person_event SPRITE_BEAUTY,  7,  4, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, LusterGymTrainer5Rematch, EVENT_HAVENT_BEAT_POLLY
-	person_event SPRITE_DELINQUENT_F,  8, 12, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, LusterGymTrainer6Rematch, EVENT_HAVENT_BEAT_POLLY
+	person_event SPRITE_LASS, 18,  8, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_GENERICTRAINER, 2, LusterGymTrainer1, -1
+	person_event SPRITE_DELINQUENT_F, 12,  0, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 1, LusterGymTrainer2, -1
+	person_event SPRITE_LASS, 13,  5, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_GENERICTRAINER, 2, LusterGymTrainer3, -1
+	person_event SPRITE_BEAUTY, 14,  9, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 1, LusterGymTrainer4, -1
+	person_event SPRITE_BEAUTY,  7,  4, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 1, LusterGymTrainer5, -1
+	person_event SPRITE_DELINQUENT_F,  8, 12, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 1, LusterGymTrainer6, -1
 
 	const_def 1 ; object constants
 	const LUSTER_GYM_GUY
@@ -129,18 +123,6 @@ LusterGymPolly:
 	end
 
 .GotTMFromPolly:
-	checkevent EVENT_BEAT_LUSTER_GYM_TRAINER_1_REMATCH
-	iffalse PollyTextLoop
-	checkevent EVENT_BEAT_LUSTER_GYM_TRAINER_2_REMATCH
-	iffalse PollyTextLoop
-	checkevent EVENT_BEAT_LUSTER_GYM_TRAINER_3_REMATCH
-	iffalse PollyTextLoop
-	checkevent EVENT_BEAT_LUSTER_GYM_TRAINER_4_REMATCH
-	iffalse PollyTextLoop
-	checkevent EVENT_BEAT_LUSTER_GYM_TRAINER_5_REMATCH
-	iffalse PollyTextLoop
-	checkevent EVENT_BEAT_LUSTER_GYM_TRAINER_6_REMATCH
-	iftrue LusterGymPollyRematch
 PollyTextLoop:
 	writetext LusterGymPollyTextLoop
 	waitbutton
@@ -328,7 +310,7 @@ Text_ReceivedFifthBadge:
 	done
 	
 LusterGymTrainer1:
-	generictrainer LASS, KATHY_5, EVENT_BEAT_LUSTER_GYM_TRAINER_1, .SeenText, .BeatenText
+	generictrainer LASS, KATHY, EVENT_BEAT_LUSTER_GYM_TRAINER_1, .SeenText, .BeatenText
 
 	text "POLLY is only"
 	line "around when she"
@@ -357,7 +339,7 @@ LusterGymTrainer1:
 	done
 	
 LusterGymTrainer2:
-	generictrainer DELINQUENT_F, TERI_5, EVENT_BEAT_LUSTER_GYM_TRAINER_2, .SeenText, .BeatenText
+	generictrainer DELINQUENT_F, TERI, EVENT_BEAT_LUSTER_GYM_TRAINER_2, .SeenText, .BeatenText
 
 	text "To train POISON-"
 	line "types, you've gotta"
@@ -381,7 +363,7 @@ LusterGymTrainer2:
 	done
 	
 LusterGymTrainer3:
-	generictrainer LASS, HARLEY_5, EVENT_BEAT_LUSTER_GYM_TRAINER_3, .SeenText, .BeatenText
+	generictrainer LASS, HARLEY, EVENT_BEAT_LUSTER_GYM_TRAINER_3, .SeenText, .BeatenText
 
 	text "How is POLLY so"
 	line "good at something"
@@ -407,7 +389,7 @@ LusterGymTrainer3:
 	done
 	
 LusterGymTrainer4:
-	generictrainer BEAUTY, CLAIRE_5, EVENT_BEAT_LUSTER_GYM_TRAINER_4, .SeenText, .BeatenText
+	generictrainer BEAUTY, CLAIRE, EVENT_BEAT_LUSTER_GYM_TRAINER_4, .SeenText, .BeatenText
 
 	text "Apparently the"
 	line "planters are in"
@@ -429,7 +411,7 @@ LusterGymTrainer4:
 	done
 	
 LusterGymTrainer5:
-	generictrainer BEAUTY, SAM_5, EVENT_BEAT_LUSTER_GYM_TRAINER_5, .SeenText, .BeatenText
+	generictrainer BEAUTY, SAM, EVENT_BEAT_LUSTER_GYM_TRAINER_5, .SeenText, .BeatenText
 
 	text "AAAEEEIII!"
 	
@@ -457,7 +439,7 @@ LusterGymTrainer5:
 	done
 	
 LusterGymTrainer6:
-	generictrainer DELINQUENT_F, MEGAN_5, EVENT_BEAT_LUSTER_GYM_TRAINER_6, .SeenText, .BeatenText
+	generictrainer DELINQUENT_F, MEGAN, EVENT_BEAT_LUSTER_GYM_TRAINER_6, .SeenText, .BeatenText
 
 	text "Whatever…"
 	
@@ -474,359 +456,6 @@ LusterGymTrainer6:
 	done
 
 .BeatenText:
-	text "Eh…"
-	done
-	
-LusterGymTrainer1Rematch:
-	faceplayer
-	opentext
-	checkevent EVENT_BEAT_LUSTER_GYM_TRAINER_1_REMATCH
-	iftrue .FightDone
-	playmusic MUSIC_LASS_ENCOUNTER
-	writetext LusterGymTrainer1RematchSeenText
-	waitbutton
-	closetext
-	waitsfx
-	winlosstext LusterGymTrainer1RematchBeatenText, 0
-	checkcode VAR_BADGES
-	ifequal 8, .eightbadges
-	ifequal 7, .sevenbadges
-	ifequal 6, .sixbadges
-	loadtrainer LASS, KATHY_5
-	jump .cont
-.sixbadges
-	loadtrainer LASS, KATHY_6
-	jump .cont
-.sevenbadges
-	loadtrainer LASS, KATHY_7
-	jump .cont
-.eightbadges
-	loadtrainer LASS, KATHY_8
-.cont
-	startbattle
-	dontrestartmapmusic
-	reloadmapafterbattle
-	playmapmusic
-	setevent EVENT_BEAT_LUSTER_GYM_TRAINER_1_REMATCH
-	end
-.FightDone
-	writetext LusterGymTrainer1RematchRegularText
-	waitbutton
-	closetext
-	end
-
-LusterGymTrainer1RematchRegularText:
-	text "POLLY has been"
-	line "around a lot more"
-	cont "lately!"
-	
-	para "I wonder if she's"
-	line "starting to like"
-	cont "being GYM LEADER."
-	done
-
-LusterGymTrainer1RematchSeenText:
-	text "Oh, <WAIT_S>it's you."
-	
-	para "You here to battle"
-	line "POLLY again?"
-	done
-
-LusterGymTrainer1RematchBeatenText:
-	text "Yep, <WAIT_S>you're not"
-	line "bad!"
-	done
-	
-LusterGymTrainer2Rematch:
-	faceplayer
-	opentext
-	checkevent EVENT_BEAT_LUSTER_GYM_TRAINER_2_REMATCH
-	iftrue .FightDone
-	playmusic MUSIC_POKEMANIAC_ENCOUNTER
-	writetext LusterGymTrainer2RematchSeenText
-	waitbutton
-	closetext
-	waitsfx
-	winlosstext LusterGymTrainer2RematchBeatenText, 0
-	checkcode VAR_BADGES
-	ifequal 8, .eightbadges
-	ifequal 7, .sevenbadges
-	ifequal 6, .sixbadges
-	loadtrainer DELINQUENT_F, TERI_5
-	jump .cont
-.sixbadges
-	loadtrainer DELINQUENT_F, TERI_6
-	jump .cont
-.sevenbadges
-	loadtrainer DELINQUENT_F, TERI_7
-	jump .cont
-.eightbadges
-	loadtrainer DELINQUENT_F, TERI_8
-.cont
-	startbattle
-	dontrestartmapmusic
-	reloadmapafterbattle
-	playmapmusic
-	setevent EVENT_BEAT_LUSTER_GYM_TRAINER_2_REMATCH
-	end
-.FightDone
-	writetext LusterGymTrainer2RematchRegularText
-	waitbutton
-	closetext
-	end
-
-LusterGymTrainer2RematchRegularText:
-	text "To train POISON-"
-	line "types, you've gotta"
-	cont "be rotten to the"
-	cont "core."
-	
-	para "Like me!"
-	done
-
-LusterGymTrainer2RematchSeenText:
-	text "What is it with"
-	line "all these goody-"
-	cont "goodies training"
-	cont "POISON-types?"
-
-LusterGymTrainer2RematchBeatenText:
-	text "Yuck!"
-	done
-	
-LusterGymTrainer3Rematch:
-	faceplayer
-	opentext
-	checkevent EVENT_BEAT_LUSTER_GYM_TRAINER_3_REMATCH
-	iftrue .FightDone
-	playmusic MUSIC_LASS_ENCOUNTER
-	writetext LusterGymTrainer3RematchSeenText
-	waitbutton
-	closetext
-	waitsfx
-	winlosstext LusterGymTrainer3RematchBeatenText, 0
-	checkcode VAR_BADGES
-	ifequal 8, .eightbadges
-	ifequal 7, .sevenbadges
-	ifequal 6, .sixbadges
-	loadtrainer LASS, HARLEY_5
-	jump .cont
-.sixbadges
-	loadtrainer LASS, HARLEY_6
-	jump .cont
-.sevenbadges
-	loadtrainer LASS, HARLEY_7
-	jump .cont
-.eightbadges
-	loadtrainer LASS, HARLEY_8
-.cont
-	startbattle
-	dontrestartmapmusic
-	reloadmapafterbattle
-	playmapmusic
-	setevent EVENT_BEAT_LUSTER_GYM_TRAINER_3_REMATCH
-	end
-.FightDone
-	writetext LusterGymTrainer3RematchRegularText
-	waitbutton
-	closetext
-	end
-
-LusterGymTrainer3RematchRegularText:
-	text "How is POLLY so"
-	line "good at something"
-	cont "she doesn't even"
-	cont "practice?"
-	
-	para "It's so"
-	line "frustrating!"
-	done
-
-LusterGymTrainer3RematchSeenText:
-	text "One day I'll"
-	line "finally beat POLLY."
-	
-	para "But first I'll try"
-	line "against you again!"
-	done
-
-LusterGymTrainer3RematchBeatenText:
-	text "I still can't"
-	line "beat you either?"
-	done
-	
-LusterGymTrainer4Rematch:
-	faceplayer
-	opentext
-	checkevent EVENT_BEAT_LUSTER_GYM_TRAINER_4_REMATCH
-	iftrue .FightDone
-	playmusic MUSIC_GENTLEMAN_ENCOUNTER
-	writetext LusterGymTrainer4RematchSeenText
-	waitbutton
-	closetext
-	waitsfx
-	winlosstext LusterGymTrainer4RematchBeatenText, 0
-	checkcode VAR_BADGES
-	ifequal 8, .eightbadges
-	ifequal 7, .sevenbadges
-	ifequal 6, .sixbadges
-	loadtrainer BEAUTY, CLAIRE_5
-	jump .cont
-.sixbadges
-	loadtrainer BEAUTY, CLAIRE_6
-	jump .cont
-.sevenbadges
-	loadtrainer BEAUTY, CLAIRE_7
-	jump .cont
-.eightbadges
-	loadtrainer BEAUTY, CLAIRE_8
-.cont
-	startbattle
-	dontrestartmapmusic
-	reloadmapafterbattle
-	playmapmusic
-	setevent EVENT_BEAT_LUSTER_GYM_TRAINER_4_REMATCH
-	end
-.FightDone
-	writetext LusterGymTrainer4RematchRegularText
-	waitbutton
-	closetext
-	end
-
-LusterGymTrainer4RematchRegularText:
-	text "Apparently the"
-	line "planters are in"
-	cont "the shape of"
-	cont "POLLY's favorite!"
-	done
-
-LusterGymTrainer4RematchSeenText:
-	text "Have you figured"
-	line "out the shape of"
-	cont "the planters yet?"
-	done
-
-LusterGymTrainer4RematchBeatenText:
-	text "You know your"
-	line "stuff!"
-	done
-	
-LusterGymTrainer5Rematch:
-	faceplayer
-	opentext
-	checkevent EVENT_BEAT_LUSTER_GYM_TRAINER_5_REMATCH
-	iftrue .FightDone
-	playmusic MUSIC_GENTLEMAN_ENCOUNTER
-	writetext LusterGymTrainer5RematchSeenText
-	waitbutton
-	closetext
-	waitsfx
-	winlosstext LusterGymTrainer5RematchBeatenText, 0
-	checkcode VAR_BADGES
-	ifequal 8, .eightbadges
-	ifequal 7, .sevenbadges
-	ifequal 6, .sixbadges
-	loadtrainer BEAUTY, SAM_5
-	jump .cont
-.sixbadges
-	loadtrainer BEAUTY, SAM_6
-	jump .cont
-.sevenbadges
-	loadtrainer BEAUTY, SAM_7
-	jump .cont
-.eightbadges
-	loadtrainer BEAUTY, SAM_8
-.cont
-	startbattle
-	dontrestartmapmusic
-	reloadmapafterbattle
-	playmapmusic
-	setevent EVENT_BEAT_LUSTER_GYM_TRAINER_5_REMATCH
-	end
-.FightDone
-	writetext LusterGymTrainer5RematchRegularText
-	waitbutton
-	closetext
-	end
-
-LusterGymTrainer5RematchRegularText:
-	text "AAAEEEIII!"
-	
-	para "I just can't take"
-	line "it!"
-	
-	para "POISON-types are"
-	line "just so precious!"
-	done
-
-LusterGymTrainer5RematchSeenText:
-	text "Don't you see how"
-	line "sweet POISON-type"
-	cont "#MON are?"
-	
-	para "I'll show you"
-	line "again!"
-	done
-
-LusterGymTrainer5RematchBeatenText:
-	text "My little"
-	line "sweeties!"
-	done
-	
-LusterGymTrainer6Rematch:
-	faceplayer
-	opentext
-	checkevent EVENT_BEAT_LUSTER_GYM_TRAINER_6_REMATCH
-	iftrue .FightDone
-	playmusic MUSIC_POKEMANIAC_ENCOUNTER
-	writetext LusterGymTrainer6RematchSeenText
-	waitbutton
-	closetext
-	waitsfx
-	winlosstext LusterGymTrainer6RematchBeatenText, 0
-	checkcode VAR_BADGES
-	ifequal 8, .eightbadges
-	ifequal 7, .sevenbadges
-	ifequal 6, .sixbadges
-	loadtrainer DELINQUENT_F, MEGAN_5
-	jump .cont
-.sixbadges
-	loadtrainer DELINQUENT_F, MEGAN_6
-	jump .cont
-.sevenbadges
-	loadtrainer DELINQUENT_F, MEGAN_7
-	jump .cont
-.eightbadges
-	loadtrainer DELINQUENT_F, MEGAN_8
-.cont
-	startbattle
-	dontrestartmapmusic
-	reloadmapafterbattle
-	playmapmusic
-	setevent EVENT_BEAT_LUSTER_GYM_TRAINER_6_REMATCH
-	end
-.FightDone
-	writetext LusterGymTrainer6RematchRegularText
-	waitbutton
-	closetext
-	end
-
-LusterGymTrainer6RematchRegularText:
-	text "Whatever…"
-	
-	para "I still don't"
-	line "really care…"
-	done
-
-LusterGymTrainer6RematchSeenText:
-	text "Another battle?"
-	
-	para "Yeah, <WAIT_M>sure…"
-	
-	para "Whatever…"
-	done
-
-LusterGymTrainer6RematchBeatenText:
 	text "Eh…"
 	done
 	

@@ -141,34 +141,10 @@ DEF PLAYER_F EQU __enum__
 
 	trainerclass FISHER
 	const DAVE
-	const GERALD_2
-	const GERALD_3
-	const GERALD_4
-	const GERALD_5
-	const GERALD_6
-	const GERALD_7
-	const GERALD_8
-	const WALTER_2
-	const WALTER_3
-	const WALTER_4
-	const WALTER_5
-	const WALTER_6
-	const WALTER_7
-	const WALTER_8
-	const BORRIS_2
-	const BORRIS_3
-	const BORRIS_4
-	const BORRIS_5
-	const BORRIS_6
-	const BORRIS_7
-	const BORRIS_8
-	const CLINT_2
-	const CLINT_3
-	const CLINT_4
-	const CLINT_5
-	const CLINT_6
-	const CLINT_7
-	const CLINT_8
+	const GERALD
+	const WALTER
+	const BORRIS
+	const CLINT
 	const HOMER
 	const HUE
 	const DARREN
@@ -186,36 +162,11 @@ DEF PLAYER_F EQU __enum__
 	const TODD
 	const RANDY
 	const JAZZ
-	const RICKY_3
-	const RICKY_4
-	const RICKY_5
-	const RICKY_6
-	const RICKY_7
-	const RICKY_8
-	const VERN_3
-	const VERN_4
-	const VERN_5
-	const VERN_6
-	const VERN_7
-	const VERN_8
-	const ROY_3
-	const ROY_4
-	const ROY_5
-	const ROY_6
-	const ROY_7
-	const ROY_8
-	const CHANCE_3
-	const CHANCE_4
-	const CHANCE_5
-	const CHANCE_6
-	const CHANCE_7
-	const CHANCE_8
-	const CALEB_3
-	const CALEB_4
-	const CALEB_5
-	const CALEB_6
-	const CALEB_7
-	const CALEB_8
+	const RICKY
+	const VERN
+	const ROY
+	const CHANCE
+	const CALEB
 	const SIDNEY
 	const MITCH
 	const KEVIN
@@ -349,28 +300,16 @@ DEF PLAYER_F EQU __enum__
 	const JUNE
 	const MELANIE
 	const MARSHA
-	const KATHY_5
-	const KATHY_6
-	const KATHY_7
-	const KATHY_8
-	const HARLEY_5
-	const HARLEY_6
-	const HARLEY_7
-	const HARLEY_8
+	const KATHY
+	const HARLEY
 	const DEEDEE
 
 
 	trainerclass BEAUTY
 	const BRITNEY
 	const SANDRA
-	const CLAIRE_5
-	const CLAIRE_6
-	const CLAIRE_7
-	const CLAIRE_8
-	const SAM_5
-	const SAM_6
-	const SAM_7
-	const SAM_8
+	const CLAIRE
+	const SAM
 	const MANDY
 	const TRIXIE
 	const HARMONY
@@ -398,22 +337,8 @@ DEF PLAYER_F EQU __enum__
 
 
 	trainerclass SCHOOLBOY
-	const TIMMY_1
-	const TIMMY_2
-	const TIMMY_3
-	const TIMMY_4
-	const TIMMY_5
-	const TIMMY_6
-	const TIMMY_7
-	const TIMMY_8
-	const DAMIAN_1
-	const DAMIAN_2
-	const DAMIAN_3
-	const DAMIAN_4
-	const DAMIAN_5
-	const DAMIAN_6
-	const DAMIAN_7
-	const DAMIAN_8
+	const TIMMY
+	const DAMIAN
 	const FREDDY
 	const FLYNN
 
@@ -633,14 +558,8 @@ DEF PLAYER_F EQU __enum__
 	const HELGA
 	const MERTLE
 	const REGINA
-	const TERI_5
-	const TERI_6
-	const TERI_7
-	const TERI_8
-	const MEGAN_5
-	const MEGAN_6
-	const MEGAN_7
-	const MEGAN_8
+	const TERI
+	const MEGAN
 	
 	trainerclass BUNEARY_M
 	const BOY_1
@@ -665,50 +584,15 @@ DEF PLAYER_F EQU __enum__
 	const ROD
 	
 	trainerclass SPA_TRAINER
-	const DENNIS_3
-	const DENNIS_4
-	const DENNIS_5
-	const DENNIS_6
-	const DENNIS_7
-	const DENNIS_8
-	const SHAYMUS_3
-	const SHAYMUS_4
-	const SHAYMUS_5
-	const SHAYMUS_6
-	const SHAYMUS_7
-	const SHAYMUS_8
-	const CHUCK_3
-	const CHUCK_4
-	const CHUCK_5
-	const CHUCK_6
-	const CHUCK_7
-	const CHUCK_8
-	const SEYMOUR_3
-	const SEYMOUR_4
-	const SEYMOUR_5
-	const SEYMOUR_6
-	const SEYMOUR_7
-	const SEYMOUR_8
-	const MAC_3
-	const MAC_4
-	const MAC_5
-	const MAC_6
-	const MAC_7
-	const MAC_8
+	const DENNIS
+	const SHAYMUS
+	const CHUCK
+	const SEYMOUR
+	const MAC
 	
 	trainerclass SPA_TRAINER_F
-	const LAURA_3
-	const LAURA_4
-	const LAURA_5
-	const LAURA_6
-	const LAURA_7
-	const LAURA_8
-	const BETTY_3
-	const BETTY_4
-	const BETTY_5
-	const BETTY_6
-	const BETTY_7
-	const BETTY_8
+	const LAURA
+	const BETTY
 	const ANDREA
 	
 	trainerclass AROMA_LADY

@@ -38,14 +38,12 @@ GlintGym_MapScriptHeader:
 	signpost 1, 0, SIGNPOST_READ, GlintGymBook18
 	bg_event  8,  5, SIGNPOST_ITEM + TAPE_PLAYER, EVENT_MUSIC_GYM
 
-	db 8 ; object events
+	db 6 ; object events
 	person_event SPRITE_STANLEY, 1, 5, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, GlintGymStanley, -1
 	person_event SPRITE_SCIENTIST_F, 16, 1, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, GlintGymLibrarian, -1
 	person_event SPRITE_GYM_GUY, 15, 7, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, GlintGymGuyScript, -1
-	person_event SPRITE_SCHOOLBOY, 10,  6, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 2, GlintGymTrainer1, EVENT_BEAT_STANLEY
-	person_event SPRITE_SCHOOLBOY,  7,  3, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 3, GlintGymTrainer2, EVENT_BEAT_STANLEY
-	person_event SPRITE_SCHOOLBOY, 10,  6, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, GlintGymTrainer1Rematch, EVENT_HAVENT_BEAT_STANLEY
-	person_event SPRITE_SCHOOLBOY,  7,  3, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, GlintGymTrainer2Rematch, EVENT_HAVENT_BEAT_STANLEY
+	person_event SPRITE_SCHOOLBOY, 10,  6, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 2, GlintGymTrainer1, -1
+	person_event SPRITE_SCHOOLBOY,  7,  3, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 3, GlintGymTrainer2, -1
 	hiddentape_event 8, 5, MUSIC_GYM, 1, EVENT_MUSIC_GYM
 
 	
@@ -55,8 +53,6 @@ GlintGym_MapScriptHeader:
 	const GLINTGYM_GYM_GUY
 	const GLINTGYM_TRAINER1
 	const GLINTGYM_TRAINER2
-	const GLINTGYM_TRAINER1_REMATCH
-	const GLINTGYM_TRAINER2_REMATCH
 	
 GlintGymTrigger0:
 	end
@@ -114,10 +110,6 @@ GlintGymStanley:
 	end
 
 .GotTMFromStanley:
-	checkevent EVENT_BEAT_GLINT_GYM_TRAINER_1_REMATCH
-	iffalse StanleyTextLoop
-	checkevent EVENT_BEAT_GLINT_GYM_TRAINER_2_REMATCH
-	iftrue GlintGymStanleyRematch
 StanleyTextLoop:
 	writetext GlintGymStanleyTextLoop
 	waitbutton
@@ -188,7 +180,7 @@ GlintGymStanleyRematch:
 	end
 	
 GlintGymTrainer1:
-	generictrainer SCHOOLBOY, TIMMY_1, EVENT_BEAT_GLINT_GYM_TRAINER_1, .SeenText, .BeatenText
+	generictrainer SCHOOLBOY, TIMMY, EVENT_BEAT_GLINT_GYM_TRAINER_1, .SeenText, .BeatenText
 
 	text "I haven't made it"
 	line "to 'B' yet."
@@ -212,7 +204,7 @@ GlintGymTrainer1:
 	done
 
 GlintGymTrainer2:
-	generictrainer SCHOOLBOY, DAMIAN_1, EVENT_BEAT_GLINT_GYM_TRAINER_2, .SeenText, .BeatenText
+	generictrainer SCHOOLBOY, DAMIAN, EVENT_BEAT_GLINT_GYM_TRAINER_2, .SeenText, .BeatenText
 
 	text "At least now I"
 	line "can study in"
@@ -230,157 +222,7 @@ GlintGymTrainer2:
 	text "I guess I need to"
 	line "read more about"
 	cont "type matchups…"
-	done
-
-	
-GlintGymTrainer1Rematch:
-	faceplayer
-	opentext
-	checkevent EVENT_BEAT_GLINT_GYM_TRAINER_1_REMATCH
-	iftrue .FightDone
-	playmusic MUSIC_YOUNGSTER_ENCOUNTER
-	writetext GlintGymTrainer1RematchSeenText
-	waitbutton
-	closetext
-	waitsfx
-	winlosstext GlintGymTrainer1RematchBeatenText, 0
-	checkcode VAR_BADGES
-	ifequal 8, .eightbadges
-	ifequal 7, .sevenbadges
-	ifequal 6, .sixbadges
-	ifequal 5, .fivebadges
-	ifequal 4, .fourbadges
-	ifequal 3, .threebadges
-	ifequal 2, .twobadges
-	loadtrainer SCHOOLBOY, TIMMY_1
-	jump .cont
-.twobadges
-	loadtrainer SCHOOLBOY, TIMMY_2
-	jump .cont
-.threebadges
-	loadtrainer SCHOOLBOY, TIMMY_3
-	jump .cont
-.fourbadges
-	loadtrainer SCHOOLBOY, TIMMY_4
-	jump .cont
-.fivebadges
-	loadtrainer SCHOOLBOY, TIMMY_5
-	jump .cont
-.sixbadges
-	loadtrainer SCHOOLBOY, TIMMY_6
-	jump .cont
-.sevenbadges
-	loadtrainer SCHOOLBOY, TIMMY_7
-	jump .cont
-.eightbadges
-	loadtrainer SCHOOLBOY, TIMMY_8
-.cont
-	startbattle
-	dontrestartmapmusic
-	reloadmapafterbattle
-	playmapmusic
-	setevent EVENT_BEAT_GLINT_GYM_TRAINER_1_REMATCH
-	end
-.FightDone
-	writetext GlintGymTrainer1RematchRegularText
-	waitbutton
-	closetext
-	end
-
-GlintGymTrainer1RematchRegularText:
-	text "I finally made"
-	line "it to 'B'!"
-	done
-
-GlintGymTrainer1RematchSeenText:
-	text "I'm still reading"
-	line "through the entire"
-	cont "set of"
-	cont "encyclopedias."
-	
-	para "I'm making some"
-	line "real progress!"
-	done
-
-GlintGymTrainer1RematchBeatenText:
-	text "You're just too"
-	line "hard to read!"
-	done
-
-GlintGymTrainer2Rematch:
-	faceplayer
-	opentext
-	checkevent EVENT_BEAT_GLINT_GYM_TRAINER_2_REMATCH
-	iftrue .FightDone
-	playmusic MUSIC_YOUNGSTER_ENCOUNTER
-	writetext GlintGymTrainer2RematchSeenText
-	waitbutton
-	closetext
-	waitsfx
-	winlosstext GlintGymTrainer2RematchBeatenText, 0
-	checkcode VAR_BADGES
-	ifequal 8, .eightbadges
-	ifequal 7, .sevenbadges
-	ifequal 6, .sixbadges
-	ifequal 5, .fivebadges
-	ifequal 4, .fourbadges
-	ifequal 3, .threebadges
-	ifequal 2, .twobadges
-	loadtrainer SCHOOLBOY, DAMIAN_1
-	jump .cont
-.twobadges
-	loadtrainer SCHOOLBOY, DAMIAN_2
-	jump .cont
-.threebadges
-	loadtrainer SCHOOLBOY, DAMIAN_3
-	jump .cont
-.fourbadges
-	loadtrainer SCHOOLBOY, DAMIAN_4
-	jump .cont
-.fivebadges
-	loadtrainer SCHOOLBOY, DAMIAN_5
-	jump .cont
-.sixbadges
-	loadtrainer SCHOOLBOY, DAMIAN_6
-	jump .cont
-.sevenbadges
-	loadtrainer SCHOOLBOY, DAMIAN_7
-	jump .cont
-.eightbadges
-	loadtrainer SCHOOLBOY, DAMIAN_8
-.cont
-	startbattle
-	dontrestartmapmusic
-	reloadmapafterbattle
-	playmapmusic
-	setevent EVENT_BEAT_GLINT_GYM_TRAINER_2_REMATCH
-	end
-.FightDone
-	writetext GlintGymTrainer2RematchRegularText
-	waitbutton
-	closetext
-	end
-
-GlintGymTrainer2RematchRegularText:
-	text "At least now I"
-	line "can study in"
-	cont "peace."
-	done
-
-GlintGymTrainer2RematchSeenText:
-	text "Quiet in the"
-	line "library!"
-	
-	para "Oh, <WAIT_S>it's you"
-	line "again…"
-	done
-
-GlintGymTrainer2RematchBeatenText:
-	text "I guess I need to"
-	line "read more about"
-	cont "type matchups…"
-	done
-	
+	done	
 	
 GlintGymGuyScript:
 	faceplayer

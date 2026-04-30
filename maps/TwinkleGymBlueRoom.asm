@@ -59,58 +59,18 @@ TwinkleGymBlueRoomTrainer:
 	closetext
 	waitsfx
 	winlosstext TwinkleGymBlueRoomTrainerBeatenText, 0
-.return
-	checkcode VAR_BADGES
-	ifequal 8, .eightbadges
-	ifequal 7, .sevenbadges
-	ifequal 6, .sixbadges
-	ifequal 5, .fivebadges
-	ifequal 4, .fourbadges
-	loadtrainer SPA_TRAINER, SHAYMUS_3
-	jump .cont
-.fourbadges
-	loadtrainer SPA_TRAINER, SHAYMUS_4
-	jump .cont
-.fivebadges
-	loadtrainer SPA_TRAINER, SHAYMUS_5
-	jump .cont
-.sixbadges
-	loadtrainer SPA_TRAINER, SHAYMUS_6
-	jump .cont
-.sevenbadges
-	loadtrainer SPA_TRAINER, SHAYMUS_7
-	jump .cont
-.eightbadges
-	loadtrainer SPA_TRAINER, SHAYMUS_8
-.cont
+	loadtrainer SPA_TRAINER, SHAYMUS
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle
 	playmapmusic
 	setevent EVENT_BEAT_TWINKLE_GYM_BLUE_ROOM_TRAINER
-	checkevent EVENT_BEAT_CHARLIE
-	iffalse .end
-	setevent EVENT_BEAT_TWINKLE_GYM_BLUE_ROOM_TRAINER_REMATCH
-	jump .end
+	end
 .FightDone
-	checkevent EVENT_BEAT_CAN_DO_TWINKLE_REMATCHES
-	iffalse .skip
-	checkevent EVENT_BEAT_TWINKLE_GYM_BLUE_ROOM_TRAINER_REMATCH
-	iffalse .rematch
-.skip
 	writetext TwinkleGymBlueRoomTrainerRegularText
 	waitbutton
 	closetext
-.end
 	end
-.rematch
-	playmusic MUSIC_HIKER_ENCOUNTER
-	writetext TwinkleGymBlueRoomTrainerRematchSeenText
-	waitbutton
-	closetext
-	waitsfx
-	winlosstext TwinkleGymBlueRoomTrainerRematchBeatenText, 0
-	jump .return
 
 TwinkleGymBlueRoomTrainerRegularText:
 	text "Ahh!"
@@ -130,27 +90,14 @@ TwinkleGymBlueRoomTrainerSeenText:
 	
 	para "I love the steam!"
 	done
-	
-TwinkleGymBlueRoomTrainerRematchSeenText:
-	text "I love battles"
-	line "as much as I love"
-	cont "the steam!"
-	done
 
 TwinkleGymBlueRoomTrainerBeatenText:
 	text "I'm all steamed"
 	line "up!"
 	done
 	
-TwinkleGymBlueRoomTrainerRematchBeatenText:
-	text "I'm all steamed"
-	line "up!"
-	done
-	
 TwinkleGymBlueRoomLeader:
 	opentext
-	checkevent EVENT_BEAT_CAN_DO_TWINKLE_REMATCHES
-	iftrue .rematch
 	checkevent EVENT_CAN_GET_YELLOW_KEY
 	iftrue .end
 	writetext TwinkleGymBlueRoomLeaderText1
@@ -158,13 +105,7 @@ TwinkleGymBlueRoomLeader:
 	closetext
 	winlosstext TwinkleGymBlueRoomLeaderWinText, 0
 	setlasttalked TWINKLE_GYM_BLUE_ROOM_LEADER
-	checkcode VAR_BADGES
-	ifequal 4, .fourbadges2
-	loadtrainer SPA_TRAINER, DENNIS_3
-	jump .cont2
-.fourbadges2
-	loadtrainer SPA_TRAINER, DENNIS_4
-.cont2
+	loadtrainer SPA_TRAINER, DENNIS
 	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
 	startbattle
 	reloadmapafterbattle
@@ -175,47 +116,6 @@ TwinkleGymBlueRoomLeader:
 	closetext
 	setevent EVENT_CAN_GET_YELLOW_KEY
 	setevent EVENT_BEAT_TWINKLE_GYM_BLUE_ROOM_LEADER
-	end
-.rematch
-	checkevent EVENT_BEAT_TWINKLE_GYM_BLUE_ROOM_LEADER_REMATCH
-	iftrue .end2
-	writetext TwinkleGymBlueRoomLeaderRematchText1
-	waitbutton
-	closetext
-	winlosstext TwinkleGymBlueRoomLeaderWinText, 0
-	setlasttalked TWINKLE_GYM_BLUE_ROOM_LEADER
-	checkcode VAR_BADGES
-	ifequal 8, .eightbadges
-	ifequal 7, .sevenbadges
-	ifequal 6, .sixbadges
-	ifequal 5, .fivebadges
-	ifequal 4, .fourbadges
-	loadtrainer SPA_TRAINER, DENNIS_3
-	jump .cont
-.fourbadges
-	loadtrainer SPA_TRAINER, DENNIS_4
-	jump .cont
-.fivebadges
-	loadtrainer SPA_TRAINER, DENNIS_5
-	jump .cont
-.sixbadges
-	loadtrainer SPA_TRAINER, DENNIS_6
-	jump .cont
-.sevenbadges
-	loadtrainer SPA_TRAINER, DENNIS_7
-	jump .cont
-.eightbadges
-	loadtrainer SPA_TRAINER, DENNIS_8
-.cont
-	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
-	startbattle
-	reloadmapafterbattle
-	opentext
-.end2
-	writetext TwinkleGymBlueRoomLeaderRematchText2
-	waitbutton
-	closetext
-	setevent EVENT_BEAT_TWINKLE_GYM_BLUE_ROOM_LEADER_REMATCH
 	end
 	
 TwinkleGymBlueRoomDoor:
@@ -355,15 +255,6 @@ TwinkleGymBlueRoomLeaderText1:
 	line "battle, though!"
 	done
 	
-TwinkleGymBlueRoomLeaderRematchText1:
-	text "Oh hey!"
-	
-	para "Back for more?"
-	
-	para "Sure, let's do"
-	line "it!"
-	done
-	
 TwinkleGymBlueRoomLeaderText2:
 	text "Sorry about the"
 	line "confusion."
@@ -375,12 +266,6 @@ TwinkleGymBlueRoomLeaderText2:
 	para "She can probably"
 	line "clear it up for"
 	cont "you."
-	done
-	
-TwinkleGymBlueRoomLeaderRematchText2:
-	text "Oh yeah."
-	
-	para "Great as always!"
 	done
 	
 TwinkleGymBlueRoomLeaderWinText:

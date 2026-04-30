@@ -11,26 +11,19 @@ RadiantGym_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 19 ; object events
+	db 12 ; object events
 	object_event  4,  2, SPRITE_LEILANI_VARIABLE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, RadiantGymLeilani2, EVENT_ALWAYS_SET
 	object_event  4,  2, SPRITE_LEILANI_CHAIR, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, RadiantGymLeilani, -1
 	object_event  4,  2, SPRITE_LEILANI_CHAIR_2, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
 	object_event  4,  2, SPRITE_LEILANI_CHAIR_2, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, RadiantGymChair, EVENT_ALWAYS_SET
 	object_event  3, 16, SPRITE_GYM_GUY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, RadiantGymGuy, -1
-	object_event  5, 14, SPRITE_PIGTAILS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_GENERICTRAINER, 1, RadiantGymRose, EVENT_BEAT_LEILANI
-	object_event  4, 10, SPRITE_PIGTAILS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_GENERICTRAINER, 1, RadiantGymLily, EVENT_BEAT_LEILANI
-	object_event  5, 10, SPRITE_PIGTAILS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 1, RadiantGymIris, EVENT_BEAT_LEILANI
-	object_event  6,  6, SPRITE_PIGTAILS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_GENERICTRAINER, 1, RadiantGymPoppy, EVENT_BEAT_LEILANI
-	object_event  3,  6, SPRITE_PIGTAILS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_GENERICTRAINER, 1, RadiantGymViolet, EVENT_BEAT_LEILANI
-	object_event  2,  9, SPRITE_PIGTAILS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 1, RadiantGymClover, EVENT_BEAT_LEILANI
-	object_event  7,  9, SPRITE_PIGTAILS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_GENERICTRAINER, 1, RadiantGymFelicia, EVENT_BEAT_LEILANI
-	object_event  5, 14, SPRITE_PIGTAILS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, RadiantGymRoseRematch, EVENT_HAVENT_BEAT_LEILANI
-	object_event  4, 10, SPRITE_PIGTAILS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, RadiantGymLilyRematch, EVENT_HAVENT_BEAT_LEILANI
-	object_event  5, 10, SPRITE_PIGTAILS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, RadiantGymIrisRematch, EVENT_HAVENT_BEAT_LEILANI
-	object_event  6,  6, SPRITE_PIGTAILS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, RadiantGymPoppyRematch, EVENT_HAVENT_BEAT_LEILANI
-	object_event  3,  6, SPRITE_PIGTAILS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, RadiantGymVioletRematch, EVENT_HAVENT_BEAT_LEILANI
-	object_event  2,  9, SPRITE_PIGTAILS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, RadiantGymCloverRematch, EVENT_HAVENT_BEAT_LEILANI
-	object_event  7,  9, SPRITE_PIGTAILS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, RadiantGymFeliciaRematch, EVENT_HAVENT_BEAT_LEILANI
+	object_event  5, 14, SPRITE_PIGTAILS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_GENERICTRAINER, 1, RadiantGymRose, -1
+	object_event  4, 10, SPRITE_PIGTAILS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_GENERICTRAINER, 1, RadiantGymLily, -1
+	object_event  5, 10, SPRITE_PIGTAILS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 1, RadiantGymIris, -1
+	object_event  6,  6, SPRITE_PIGTAILS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_GENERICTRAINER, 1, RadiantGymPoppy, -1
+	object_event  3,  6, SPRITE_PIGTAILS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_GENERICTRAINER, 1, RadiantGymViolet, -1
+	object_event  2,  9, SPRITE_PIGTAILS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 1, RadiantGymClover, -1
+	object_event  7,  9, SPRITE_PIGTAILS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_GENERICTRAINER, 1, RadiantGymFelicia, -1
 	
 	
 	const_def 1 ; object constants
@@ -130,20 +123,6 @@ RadiantGymLeilanicont:
 	end
 
 .GotTMFromLeilani:
-	checkevent EVENT_BEAT_RADIANT_GYM_ROSE_REMATCH
-	iffalse LeilaniTextLoop
-	checkevent EVENT_BEAT_RADIANT_GYM_LILY_REMATCH
-	iffalse LeilaniTextLoop
-	checkevent EVENT_BEAT_RADIANT_GYM_IRIS_REMATCH
-	iffalse LeilaniTextLoop
-	checkevent EVENT_BEAT_RADIANT_GYM_POPPY_REMATCH
-	iffalse LeilaniTextLoop
-	checkevent EVENT_BEAT_RADIANT_GYM_VIOLET_REMATCH
-	iffalse LeilaniTextLoop
-	checkevent EVENT_BEAT_RADIANT_GYM_CLOVER_REMATCH
-	iffalse LeilaniTextLoop
-	checkevent EVENT_BEAT_RADIANT_GYM_FELICIA_REMATCH
-	iftrue RadiantGymLeilaniRematch
 LeilaniTextLoop:
 	writetext RadiantGymLeilaniTextLoop
 	waitbutton
@@ -404,57 +383,6 @@ RadiantGymRose:
 	text "You beat me?"
 	done
 	
-RadiantGymRoseRematch:
-	faceplayer
-	opentext
-	checkevent EVENT_BEAT_RADIANT_GYM_ROSE_REMATCH
-	iftrue .FightDone
-	playmusic MUSIC_LASS_ENCOUNTER
-	writetext RadiantGymRoseRematchSeenText
-	waitbutton
-	closetext
-	waitsfx
-	winlosstext RadiantGymRoseRematchBeatenText, 0
-	checkcode VAR_BADGES
-	ifequal 8, .eightbadges
-	ifequal 7, .sevenbadges
-	loadtrainer ROSE, 1
-	jump .cont
-.sevenbadges
-	loadtrainer ROSE, 2
-	jump .cont
-.eightbadges
-	loadtrainer ROSE, 3
-.cont
-	startbattle
-	dontrestartmapmusic
-	reloadmapafterbattle
-	playmapmusic
-	setevent EVENT_BEAT_RADIANT_GYM_ROSE_REMATCH
-	end
-.FightDone
-	writetext RadiantGymRoseRematchRegularText
-	waitbutton
-	closetext
-	end
-
-RadiantGymRoseRematchRegularText:
-	text "You're good at"
-	line "battles!"
-	done
-
-RadiantGymRoseRematchSeenText:
-	text "You came back"
-	line "again?"
-	
-	para "Ok, <WAIT_S>I won't go"
-	line "easy on you!"
-	done
-
-RadiantGymRoseRematchBeatenText:
-	text "You beat me?"
-	done
-	
 RadiantGymLily:
 	generictrainer LILY, 1, EVENT_BEAT_RADIANT_GYM_LILY, .SeenText, .BeatenText
 
@@ -471,58 +399,6 @@ RadiantGymLily:
 	done
 
 .BeatenText:
-	text "You beat me?"
-	line "Sniffle…"
-	done
-	
-RadiantGymLilyRematch:
-	faceplayer
-	opentext
-	checkevent EVENT_BEAT_RADIANT_GYM_LILY_REMATCH
-	iftrue .FightDone
-	playmusic MUSIC_LASS_ENCOUNTER
-	writetext RadiantGymLilyRematchSeenText
-	waitbutton
-	closetext
-	waitsfx
-	winlosstext RadiantGymLilyRematchBeatenText, 0
-	checkcode VAR_BADGES
-	ifequal 8, .eightbadges
-	ifequal 7, .sevenbadges
-	loadtrainer LILY, 1
-	jump .cont
-.sevenbadges
-	loadtrainer LILY, 2
-	jump .cont
-.eightbadges
-	loadtrainer LILY, 3
-.cont
-	startbattle
-	dontrestartmapmusic
-	reloadmapafterbattle
-	playmapmusic
-	setevent EVENT_BEAT_RADIANT_GYM_LILY_REMATCH
-	end
-.FightDone
-	writetext RadiantGymLilyRematchRegularText
-	waitbutton
-	closetext
-	end
-
-RadiantGymLilyRematchRegularText:
-	text "WAHHHH!"
-	
-	para "Why did I lose?"
-	done
-
-RadiantGymLilyRematchSeenText:
-	text "…<WAIT_M>Hello."
-	
-	para "I'm supposed to"
-	line "battle you."
-	done
-
-RadiantGymLilyRematchBeatenText:
 	text "You beat me?"
 	line "Sniffle…"
 	done
@@ -549,60 +425,6 @@ RadiantGymIris:
 	para "Oh, I lost?"
 	done
 	
-RadiantGymIrisRematch:
-	faceplayer
-	opentext
-	checkevent EVENT_BEAT_RADIANT_GYM_IRIS_REMATCH
-	iftrue .FightDone
-	playmusic MUSIC_LASS_ENCOUNTER
-	writetext RadiantGymIrisRematchSeenText
-	waitbutton
-	closetext
-	waitsfx
-	winlosstext RadiantGymIrisRematchBeatenText, 0
-	checkcode VAR_BADGES
-	ifequal 8, .eightbadges
-	ifequal 7, .sevenbadges
-	loadtrainer IRIS, 1
-	jump .cont
-.sevenbadges
-	loadtrainer IRIS, 2
-	jump .cont
-.eightbadges
-	loadtrainer IRIS, 3
-.cont
-	startbattle
-	dontrestartmapmusic
-	reloadmapafterbattle
-	playmapmusic
-	setevent EVENT_BEAT_RADIANT_GYM_IRIS_REMATCH
-	end
-.FightDone
-	writetext RadiantGymIrisRematchRegularText
-	waitbutton
-	closetext
-	end
-
-RadiantGymIrisRematchRegularText:
-	text "I wasn't paying"
-	line "attention."
-	
-	para "I was too busy"
-	line "singing!"
-	done
-
-RadiantGymIrisRematchSeenText:
-	text "La <WAIT_S>la <WAIT_S>la!"
-	
-	para "Let's battle!"
-	done
-
-RadiantGymIrisRematchBeatenText:
-	text "La <WAIT_S>la <WAIT_S>la!"
-	
-	para "Oh, I lost?"
-	done
-	
 RadiantGymPoppy:
 	generictrainer POPPY, 1, EVENT_BEAT_RADIANT_GYM_POPPY, .SeenText, .BeatenText
 
@@ -619,58 +441,6 @@ RadiantGymPoppy:
 	done
 
 .BeatenText:
-	text "Graah!"
-	line "You beat me!"
-	done
-	
-RadiantGymPoppyRematch:
-	faceplayer
-	opentext
-	checkevent EVENT_BEAT_RADIANT_GYM_POPPY_REMATCH
-	iftrue .FightDone
-	playmusic MUSIC_LASS_ENCOUNTER
-	writetext RadiantGymPoppyRematchSeenText
-	waitbutton
-	closetext
-	waitsfx
-	winlosstext RadiantGymPoppyRematchBeatenText, 0
-	checkcode VAR_BADGES
-	ifequal 8, .eightbadges
-	ifequal 7, .sevenbadges
-	loadtrainer POPPY, 1
-	jump .cont
-.sevenbadges
-	loadtrainer POPPY, 2
-	jump .cont
-.eightbadges
-	loadtrainer POPPY, 3
-.cont
-	startbattle
-	dontrestartmapmusic
-	reloadmapafterbattle
-	playmapmusic
-	setevent EVENT_BEAT_RADIANT_GYM_POPPY_REMATCH
-	end
-.FightDone
-	writetext RadiantGymPoppyRematchRegularText
-	waitbutton
-	closetext
-	end
-
-RadiantGymPoppyRematchRegularText:
-	text "Grr…"
-	
-	para "I'll get you next"
-	line "time!"
-	done
-
-RadiantGymPoppyRematchSeenText:
-	text "Battle! <WAIT_S>Battle!"
-	
-	para "Let's battle!"
-	done
-
-RadiantGymPoppyRematchBeatenText:
 	text "Graah!"
 	line "You beat me!"
 	done
@@ -697,60 +467,6 @@ RadiantGymViolet:
 	text "You win!"
 	done
 	
-RadiantGymVioletRematch:
-	faceplayer
-	opentext
-	checkevent EVENT_BEAT_RADIANT_GYM_VIOLET_REMATCH
-	iftrue .FightDone
-	playmusic MUSIC_LASS_ENCOUNTER
-	writetext RadiantGymVioletRematchSeenText
-	waitbutton
-	closetext
-	waitsfx
-	winlosstext RadiantGymVioletRematchBeatenText, 0
-	checkcode VAR_BADGES
-	ifequal 8, .eightbadges
-	ifequal 7, .sevenbadges
-	loadtrainer VIOLET, 1
-	jump .cont
-.sevenbadges
-	loadtrainer VIOLET, 2
-	jump .cont
-.eightbadges
-	loadtrainer VIOLET, 3
-.cont
-	startbattle
-	dontrestartmapmusic
-	reloadmapafterbattle
-	playmapmusic
-	setevent EVENT_BEAT_RADIANT_GYM_VIOLET_REMATCH
-	end
-.FightDone
-	writetext RadiantGymVioletRematchRegularText
-	waitbutton
-	closetext
-	end
-
-RadiantGymVioletRematchRegularText:
-	text "You passed the"
-	line "test!"
-	
-	para "Are you gonna beat"
-	line "GRAMMA again?"
-	done
-
-RadiantGymVioletRematchSeenText:
-	text "We have to test"
-	line "people that wanna"
-	cont "battle GRAMMA."
-	
-	para "It's our job!"
-	done
-
-RadiantGymVioletRematchBeatenText:
-	text "You win!"
-	done
-	
 RadiantGymClover:
 	generictrainer CLOVER, 1, EVENT_BEAT_RADIANT_GYM_CLOVER, .SeenText, .BeatenText
 
@@ -767,62 +483,6 @@ RadiantGymClover:
 	done
 
 .BeatenText:
-	text "Huh?"
-	
-	para "How did you beat"
-	line "me?"
-	done
-	
-RadiantGymCloverRematch:
-	faceplayer
-	opentext
-	checkevent EVENT_BEAT_RADIANT_GYM_CLOVER_REMATCH
-	iftrue .FightDone
-	playmusic MUSIC_LASS_ENCOUNTER
-	writetext RadiantGymCloverRematchSeenText
-	waitbutton
-	closetext
-	waitsfx
-	winlosstext RadiantGymCloverRematchBeatenText, 0
-	checkcode VAR_BADGES
-	ifequal 8, .eightbadges
-	ifequal 7, .sevenbadges
-	loadtrainer CLOVER, 1
-	jump .cont
-.sevenbadges
-	loadtrainer CLOVER, 2
-	jump .cont
-.eightbadges
-	loadtrainer CLOVER, 3
-.cont
-	startbattle
-	dontrestartmapmusic
-	reloadmapafterbattle
-	playmapmusic
-	setevent EVENT_BEAT_RADIANT_GYM_CLOVER_REMATCH
-	end
-.FightDone
-	writetext RadiantGymCloverRematchRegularText
-	waitbutton
-	closetext
-	end
-
-RadiantGymCloverRematchRegularText:
-	text "There's no way"
-	line "GRAMMA will lose"
-	cont "again!"
-	done
-
-RadiantGymCloverRematchSeenText:
-	text "You think you're"
-	line "gonna beat GRAMMA"
-	cont "again?"
-	
-	para "You aren't gonna"
-	line "get past me!"
-	done
-
-RadiantGymCloverRematchBeatenText:
 	text "Huh?"
 	
 	para "How did you beat"
@@ -847,60 +507,6 @@ RadiantGymFelicia:
 	done
 
 .BeatenText:
-	text "Aw…<WAIT_M>"
-	line "You won!"
-	done
-	
-RadiantGymFeliciaRematch:
-	faceplayer
-	opentext
-	checkevent EVENT_BEAT_RADIANT_GYM_FELICIA_REMATCH
-	iftrue .FightDone
-	playmusic MUSIC_LASS_ENCOUNTER
-	writetext RadiantGymFeliciaRematchSeenText
-	waitbutton
-	closetext
-	waitsfx
-	winlosstext RadiantGymFeliciaRematchBeatenText, 0
-	checkcode VAR_BADGES
-	ifequal 8, .eightbadges
-	ifequal 7, .sevenbadges
-	loadtrainer FELICIA, 1
-	jump .cont
-.sevenbadges
-	loadtrainer FELICIA, 2
-	jump .cont
-.eightbadges
-	loadtrainer FELICIA, 3
-.cont
-	startbattle
-	dontrestartmapmusic
-	reloadmapafterbattle
-	playmapmusic
-	setevent EVENT_BEAT_RADIANT_GYM_FELICIA_REMATCH
-	end
-.FightDone
-	writetext RadiantGymFeliciaRematchRegularText
-	waitbutton
-	closetext
-	end
-
-RadiantGymFeliciaRematchRegularText:
-	text "Oh well!"
-	
-	para "Even though I"
-	line "lost, I still had"
-	cont "fun!"
-	done
-
-RadiantGymFeliciaRematchSeenText:
-	text "It's time for a"
-	line "#MON battle!"
-	
-	para "This'll be fun!"
-	done
-
-RadiantGymFeliciaRematchBeatenText:
 	text "Aw…<WAIT_M>"
 	line "You won!"
 	done

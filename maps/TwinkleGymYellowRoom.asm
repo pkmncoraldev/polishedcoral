@@ -66,20 +66,10 @@ TwinkleGymYellowRoomCallback:
 .no_door
 	checkevent EVENT_BEAT_TWINKLE_GYM_YELLOW_ROOM_BATHER_1
 	iffalse .check2ndbather
-	checkevent EVENT_BEAT_CAN_DO_TWINKLE_REMATCHES
-	iffalse .change1
-	checkevent EVENT_BEAT_TWINKLE_GYM_YELLOW_ROOM_BATHER_1_REMATCH
-	iffalse .check2ndbather
-.change1
 	changeblock $8, $8, $64
 .check2ndbather
 	checkevent EVENT_BEAT_TWINKLE_GYM_YELLOW_ROOM_BATHER_2
 	iffalse .end
-	checkevent EVENT_BEAT_CAN_DO_TWINKLE_REMATCHES
-	iffalse .change2
-	checkevent EVENT_BEAT_TWINKLE_GYM_YELLOW_ROOM_BATHER_2_REMATCH
-	iffalse .end
-.change2
 	changeblock $4, $a, $65
 .end
 	return
@@ -108,8 +98,6 @@ TwinkleGymYellowRoomPool2Asm:
 	
 TwinkleGymYellowRoomLeader:
 	opentext
-	checkevent EVENT_BEAT_CAN_DO_TWINKLE_REMATCHES
-	iftrue .rematch
 	checkevent EVENT_CAN_GET_RED_KEY
 	iftrue .end
 	writetext TwinkleGymBlueRoomLeaderText1
@@ -117,13 +105,7 @@ TwinkleGymYellowRoomLeader:
 	closetext
 	winlosstext TwinkleGymBlueRoomLeaderWinText, 0
 	setlasttalked TWINKLE_GYM_YELLOW_ROOM_LEADER
-	checkcode VAR_BADGES
-	ifequal 4, .fourbadges2
-	loadtrainer SPA_TRAINER, MAC_3
-	jump .cont2
-.fourbadges2
-	loadtrainer SPA_TRAINER, MAC_4
-.cont2
+	loadtrainer SPA_TRAINER, MAC
 	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
 	startbattle
 	reloadmapafterbattle
@@ -134,47 +116,6 @@ TwinkleGymYellowRoomLeader:
 	closetext
 	setevent EVENT_CAN_GET_RED_KEY
 	setevent EVENT_BEAT_TWINKLE_GYM_YELLOW_ROOM_LEADER
-	end
-.rematch
-	checkevent EVENT_BEAT_TWINKLE_GYM_YELLOW_ROOM_LEADER_REMATCH
-	iftrue .end2
-	writetext TwinkleGymBlueRoomLeaderRematchText1
-	waitbutton
-	closetext
-	winlosstext TwinkleGymBlueRoomLeaderWinText, 0
-	setlasttalked TWINKLE_GYM_YELLOW_ROOM_LEADER
-	checkcode VAR_BADGES
-	ifequal 8, .eightbadges
-	ifequal 7, .sevenbadges
-	ifequal 6, .sixbadges
-	ifequal 5, .fivebadges
-	ifequal 4, .fourbadges
-	loadtrainer SPA_TRAINER, MAC_3
-	jump .cont
-.fourbadges
-	loadtrainer SPA_TRAINER, MAC_4
-	jump .cont
-.fivebadges
-	loadtrainer SPA_TRAINER, MAC_5
-	jump .cont
-.sixbadges
-	loadtrainer SPA_TRAINER, MAC_6
-	jump .cont
-.sevenbadges
-	loadtrainer SPA_TRAINER, MAC_7
-	jump .cont
-.eightbadges
-	loadtrainer SPA_TRAINER, MAC_8
-.cont
-	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
-	startbattle
-	reloadmapafterbattle
-	opentext
-.end2
-	writetext TwinkleGymBlueRoomLeaderRematchText2
-	waitbutton
-	closetext
-	setevent EVENT_BEAT_TWINKLE_GYM_YELLOW_ROOM_LEADER_REMATCH
 	end
 	
 TwinkleGymYellowRoomDoor:
@@ -220,7 +161,7 @@ TwinkleGymYellowRoomDoor:
 	
 TwinkleGymYellowRoomBather1Script:
 	checkevent EVENT_BEAT_TWINKLE_GYM_YELLOW_ROOM_BATHER_1
-	iftrue .checkrematch
+	iftrue .end
 	setlasttalked TWINKLE_GYM_YELLOW_ROOM_BATHER_1
 	playmusic MUSIC_GENTLEMAN_ENCOUNTER
 	showemote EMOTE_SHOCK, TWINKLE_GYM_YELLOW_ROOM_BATHER_1,  30
@@ -244,30 +185,7 @@ TwinkleGymYellowRoomBather1Script:
 	closetext
 	waitsfx
 	winlosstext TwinkleGymYellowRoomBather1BeatenText, 0
-.return
-	checkcode VAR_BADGES
-	ifequal 8, .eightbadges
-	ifequal 7, .sevenbadges
-	ifequal 6, .sixbadges
-	ifequal 5, .fivebadges
-	ifequal 4, .fourbadges
-	loadtrainer SPA_TRAINER_F, LAURA_3
-	jump .cont
-.fourbadges
-	loadtrainer SPA_TRAINER_F, LAURA_4
-	jump .cont
-.fivebadges
-	loadtrainer SPA_TRAINER_F, LAURA_5
-	jump .cont
-.sixbadges
-	loadtrainer SPA_TRAINER_F, LAURA_6
-	jump .cont
-.sevenbadges
-	loadtrainer SPA_TRAINER_F, LAURA_7
-	jump .cont
-.eightbadges
-	loadtrainer SPA_TRAINER_F, LAURA_8
-.cont
+	loadtrainer SPA_TRAINER_F, LAURA
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle
@@ -275,45 +193,12 @@ TwinkleGymYellowRoomBather1Script:
 	callasm GenericFinishBridge
 	playmapmusic
 	setevent EVENT_BEAT_TWINKLE_GYM_YELLOW_ROOM_BATHER_1
-	checkevent EVENT_BEAT_CHARLIE
-	iffalse .end
-	setevent EVENT_BEAT_TWINKLE_GYM_YELLOW_ROOM_BATHER_1_REMATCH
-	end
-.checkrematch
-	checkevent EVENT_BEAT_CAN_DO_TWINKLE_REMATCHES
-	iffalse .end
-	checkevent EVENT_BEAT_TWINKLE_GYM_YELLOW_ROOM_BATHER_1_REMATCH
-	iftrue .end
-	setlasttalked TWINKLE_GYM_YELLOW_ROOM_BATHER_1
-	playmusic MUSIC_GENTLEMAN_ENCOUNTER
-	showemote EMOTE_SHOCK, TWINKLE_GYM_YELLOW_ROOM_BATHER_1,  30
-	pause 5
-	special Special_UpdatePalsInstant
-	changeblock $8, $8, $64
-	callasm RTC
-	callasm GenericFinishBridge
-	spriteface TWINKLE_GYM_YELLOW_ROOM_BATHER_1, LEFT
-	pause 2
-	spriteface TWINKLE_GYM_YELLOW_ROOM_BATHER_1, UP
-	pause 20
-	variablesprite SPRITE_BATHER_VARIABLE_1, SPRITE_BATHER_2
-	spriteface TWINKLE_GYM_YELLOW_ROOM_BATHER_1, DOWN
-	special MapCallbackSprites_LoadUsedSpritesGFX
-	pause 20
-	faceplayer
-	opentext
-	writetext TwinkleGymYellowRoomBather1RematchSeenText
-	waitbutton
-	closetext
-	waitsfx
-	winlosstext TwinkleGymYellowRoomBather1RematchBeatenText, 0
-	jump .return
 .end
 	end
 	
 TwinkleGymYellowRoomBather2Script:
 	checkevent EVENT_BEAT_TWINKLE_GYM_YELLOW_ROOM_BATHER_2
-	iftrue .checkrematch
+	iftrue .end
 	setlasttalked TWINKLE_GYM_YELLOW_ROOM_BATHER_2
 	playmusic MUSIC_GENTLEMAN_ENCOUNTER
 	showemote EMOTE_SHOCK, TWINKLE_GYM_YELLOW_ROOM_BATHER_2,  30
@@ -337,30 +222,7 @@ TwinkleGymYellowRoomBather2Script:
 	closetext
 	waitsfx
 	winlosstext TwinkleGymYellowRoomBather2BeatenText, 0
-.return
-	checkcode VAR_BADGES
-	ifequal 8, .eightbadges
-	ifequal 7, .sevenbadges
-	ifequal 6, .sixbadges
-	ifequal 5, .fivebadges
-	ifequal 4, .fourbadges
-	loadtrainer SPA_TRAINER_F, BETTY_3
-	jump .cont
-.fourbadges
-	loadtrainer SPA_TRAINER_F, BETTY_4
-	jump .cont
-.fivebadges
-	loadtrainer SPA_TRAINER_F, BETTY_5
-	jump .cont
-.sixbadges
-	loadtrainer SPA_TRAINER_F, BETTY_6
-	jump .cont
-.sevenbadges
-	loadtrainer SPA_TRAINER_F, BETTY_7
-	jump .cont
-.eightbadges
-	loadtrainer SPA_TRAINER_F, BETTY_8
-.cont
+	loadtrainer SPA_TRAINER_F, BETTY
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle
@@ -368,39 +230,6 @@ TwinkleGymYellowRoomBather2Script:
 	callasm GenericFinishBridge
 	playmapmusic
 	setevent EVENT_BEAT_TWINKLE_GYM_YELLOW_ROOM_BATHER_2
-	checkevent EVENT_BEAT_CHARLIE
-	iffalse .end
-	setevent EVENT_BEAT_TWINKLE_GYM_YELLOW_ROOM_BATHER_2_REMATCH
-	end
-.checkrematch
-	checkevent EVENT_BEAT_CAN_DO_TWINKLE_REMATCHES
-	iffalse .end
-	checkevent EVENT_BEAT_TWINKLE_GYM_YELLOW_ROOM_BATHER_2_REMATCH
-	iftrue .end
-	setlasttalked TWINKLE_GYM_YELLOW_ROOM_BATHER_2
-	playmusic MUSIC_GENTLEMAN_ENCOUNTER
-	showemote EMOTE_SHOCK, TWINKLE_GYM_YELLOW_ROOM_BATHER_2,  30
-	pause 5
-	special Special_UpdatePalsInstant
-	changeblock $4, $a, $65
-	callasm RTC
-	callasm GenericFinishBridge
-	spriteface TWINKLE_GYM_YELLOW_ROOM_BATHER_2, LEFT
-	pause 2
-	spriteface TWINKLE_GYM_YELLOW_ROOM_BATHER_2, UP
-	pause 20
-	variablesprite SPRITE_BATHER_VARIABLE_2, SPRITE_BATHER_2
-	spriteface TWINKLE_GYM_YELLOW_ROOM_BATHER_2, DOWN
-	special MapCallbackSprites_LoadUsedSpritesGFX
-	pause 20
-	faceplayer
-	opentext
-	writetext TwinkleGymYellowRoomBather2RematchSeenText
-	waitbutton
-	closetext
-	waitsfx
-	winlosstext TwinkleGymYellowRoomBather2RematchBeatenText, 0
-	jump .return
 .end
 	end
 	
@@ -422,57 +251,18 @@ TwinkleGymYellowRoomTrainer1:
 	waitsfx
 	winlosstext TwinkleGymYellowRoomTrainer1BeatenText, 0
 .return
-	checkcode VAR_BADGES
-	ifequal 8, .eightbadges
-	ifequal 7, .sevenbadges
-	ifequal 6, .sixbadges
-	ifequal 5, .fivebadges
-	ifequal 4, .fourbadges
-	loadtrainer SPA_TRAINER, CHUCK_3
-	jump .cont
-.fourbadges
-	loadtrainer SPA_TRAINER, CHUCK_4
-	jump .cont
-.fivebadges
-	loadtrainer SPA_TRAINER, CHUCK_5
-	jump .cont
-.sixbadges
-	loadtrainer SPA_TRAINER, CHUCK_6
-	jump .cont
-.sevenbadges
-	loadtrainer SPA_TRAINER, CHUCK_7
-	jump .cont
-.eightbadges
-	loadtrainer SPA_TRAINER, CHUCK_8
-.cont
+	loadtrainer SPA_TRAINER, CHUCK
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle
 	playmapmusic
 	setevent EVENT_BEAT_TWINKLE_GYM_YELLOW_ROOM_TRAINER_1
-	checkevent EVENT_BEAT_CHARLIE
-	iffalse .end
-	setevent EVENT_BEAT_TWINKLE_GYM_YELLOW_ROOM_TRAINER_1_REMATCH
-	jump .end
+	end
 .FightDone
-	checkevent EVENT_BEAT_CAN_DO_TWINKLE_REMATCHES
-	iffalse .skip
-	checkevent EVENT_BEAT_TWINKLE_GYM_YELLOW_ROOM_TRAINER_1_REMATCH
-	iffalse .rematch
-.skip
 	writetext TwinkleGymYellowRoomTrainer1RegularText
 	waitbutton
 	closetext
-.end
 	end
-.rematch
-	playmusic MUSIC_HIKER_ENCOUNTER
-	writetext TwinkleGymYellowRoomTrainer1RematchSeenText
-	waitbutton
-	closetext
-	waitsfx
-	winlosstext TwinkleGymYellowRoomTrainer1RematchBeatenText, 0
-	jump .return
 
 TwinkleGymYellowRoomTrainer1RegularText:
 	text "I got burned…"
@@ -486,20 +276,8 @@ TwinkleGymYellowRoomTrainer1SeenText:
 	para "I'll burn you down,"
 	line "kid!"
 	done
-	
-TwinkleGymYellowRoomTrainer1RematchSeenText:
-	text "Battle! <WAIT_S>Battle!"
-	
-	para "I'll burn you down,"
-	line "kid!"
-	done
 
 TwinkleGymYellowRoomTrainer1BeatenText:
-	text "Ah!<WAIT_M>"
-	line "It burns!"
-	done
-	
-TwinkleGymYellowRoomTrainer1RematchBeatenText:
 	text "Ah!<WAIT_M>"
 	line "It burns!"
 	done
@@ -515,58 +293,18 @@ TwinkleGymYellowRoomTrainer2:
 	closetext
 	waitsfx
 	winlosstext TwinkleGymYellowRoomTrainer2BeatenText, 0
-.return
-	checkcode VAR_BADGES
-	ifequal 8, .eightbadges
-	ifequal 7, .sevenbadges
-	ifequal 6, .sixbadges
-	ifequal 5, .fivebadges
-	ifequal 4, .fourbadges
-	loadtrainer SPA_TRAINER, SEYMOUR_3
-	jump .cont
-.fourbadges
-	loadtrainer SPA_TRAINER, SEYMOUR_4
-	jump .cont
-.fivebadges
-	loadtrainer SPA_TRAINER, SEYMOUR_5
-	jump .cont
-.sixbadges
-	loadtrainer SPA_TRAINER, SEYMOUR_6
-	jump .cont
-.sevenbadges
-	loadtrainer SPA_TRAINER, SEYMOUR_7
-	jump .cont
-.eightbadges
-	loadtrainer SPA_TRAINER, SEYMOUR_8
-.cont
+	loadtrainer SPA_TRAINER, SEYMOUR
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle
 	playmapmusic
 	setevent EVENT_BEAT_TWINKLE_GYM_YELLOW_ROOM_TRAINER_2
-	checkevent EVENT_BEAT_CHARLIE
-	iffalse .end
-	setevent EVENT_BEAT_TWINKLE_GYM_YELLOW_ROOM_TRAINER_2_REMATCH
-	jump .end
+	end
 .FightDone
-	checkevent EVENT_BEAT_CAN_DO_TWINKLE_REMATCHES
-	iffalse .skip
-	checkevent EVENT_BEAT_TWINKLE_GYM_YELLOW_ROOM_TRAINER_2_REMATCH
-	iffalse .rematch
-.skip
 	writetext TwinkleGymYellowRoomTrainer2RegularText
 	waitbutton
 	closetext
-.end
 	end
-.rematch
-	playmusic MUSIC_HIKER_ENCOUNTER
-	writetext TwinkleGymYellowRoomTrainer2RematchSeenText
-	waitbutton
-	closetext
-	waitsfx
-	winlosstext TwinkleGymYellowRoomTrainer2RematchBeatenText, 0
-	jump .return
 
 TwinkleGymYellowRoomTrainer2RegularText:
 	text "What a hot"
@@ -578,19 +316,8 @@ TwinkleGymYellowRoomTrainer2SeenText:
 	
 	para "Let's do this!"
 	done
-	
-TwinkleGymYellowRoomTrainer2RematchSeenText:
-	text "Battle time once"
-	line "again!"
-	
-	para "Let's do this!"
-	done
 
 TwinkleGymYellowRoomTrainer2BeatenText:
-	text "Well that's <WAIT_S>that!"
-	done
-	
-TwinkleGymYellowRoomTrainer2RematchBeatenText:
 	text "Well that's <WAIT_S>that!"
 	done
 	
@@ -670,19 +397,8 @@ TwinkleGymYellowRoomBather1SeenText:
 	line "that, were ya?"
 	done
 	
-TwinkleGymYellowRoomBather1RematchSeenText:
-	text "Surprise!"
-	
-	para "Oh, it's only you"
-	line "again…"
-	done
-	
 TwinkleGymYellowRoomBather1BeatenText:
 	text "Did I get you?"
-	done
-	
-TwinkleGymYellowRoomBather1RematchBeatenText:
-	text "You got me again!"
 	done
 	
 TwinkleGymYellowRoomBather2RegularText:
@@ -700,21 +416,7 @@ TwinkleGymYellowRoomBather2SeenText:
 	para "Splish <WAIT_S>splash!"
 	done
 	
-TwinkleGymYellowRoomBather2RematchSeenText:
-	text "I think I've been"
-	line "in here too long."
-	
-	para "I'm starting to"
-	line "prune!"
-	done
-	
 TwinkleGymYellowRoomBather2BeatenText:
-	text "Ah, <WAIT_S>who cares?"
-	
-	para "This is too nice!"
-	done
-	
-TwinkleGymYellowRoomBather2RematchBeatenText:
 	text "Ah, <WAIT_S>who cares?"
 	
 	para "This is too nice!"

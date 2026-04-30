@@ -70,8 +70,6 @@ GlintCityStanleyRematch:
 	checkevent EVENT_BEAT_STANLEY_REMATCH
 	iffalse .end
 	clearevent EVENT_BEAT_STANLEY_REMATCH
-	clearevent EVENT_BEAT_GLINT_GYM_TRAINER_1_REMATCH
-	clearevent EVENT_BEAT_GLINT_GYM_TRAINER_2_REMATCH
 .end
 	return
 	

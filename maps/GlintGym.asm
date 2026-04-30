@@ -96,6 +96,7 @@ GlintGymStanley:
 	iftrue .GotTMFromStanley
 	setevent EVENT_BEAT_GLINT_GYM_TRAINER_1
 	setevent EVENT_BEAT_GLINT_GYM_TRAINER_2
+	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	writetext GlintGymStanleyTextAfterBattle
 	buttonsound
 	changetextboxspeaker
@@ -110,6 +111,10 @@ GlintGymStanley:
 	end
 
 .GotTMFromStanley:
+	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
+	iftrue StanleyTextLoop
+	checkevent EVENT_CAN_REMATCH_STANLEY
+	iftrue GlintGymStanleyRematch
 StanleyTextLoop:
 	writetext GlintGymStanleyTextLoop
 	waitbutton
@@ -117,8 +122,6 @@ StanleyTextLoop:
 	end
 	
 GlintGymStanleyRematch:
-	checkevent EVENT_BEAT_STANLEY_REMATCH
-	iftrue StanleyTextLoop
 	writetext GlintGymStanleyTextBeforeBattle1Rematch
 	yesorno
 	iffalse .end
@@ -170,7 +173,8 @@ GlintGymStanleyRematch:
 	writetext GlintGymStanleyTextLoop
 	waitbutton
 	closetext
-	setevent EVENT_BEAT_STANLEY_REMATCH
+	clearevent EVENT_CAN_REMATCH_STANLEY
+	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	applymovement GLINTGYM_STANLEY, Movement_GlintGymMoveStanley2
 	end
 .end
@@ -588,10 +592,9 @@ GlintGymStanleyTextTMSpeech:
 	para "I'll study and"
 	line "train harder."
 	
-	para "Come back and beat"
-	line "all the TRAINERS"
-	cont "in the GYM if you"
-	cont "want a rematch."
+	para "Come back tomorrow"
+	line "if you want a"
+	cont "rematch."
 	
 	para "I'll be waiting!"
 	done
@@ -603,21 +606,18 @@ GlintGymStanleyTextLoop:
 	para "I'll study and"
 	line "train harder."
 	
-	para "Come back and beat"
-	line "all the TRAINERS"
-	cont "in the GYM if you"
-	cont "want a rematch."
+	para "Come back tomorrow"
+	line "if you want a"
+	cont "rematch."
 	
 	para "I'll be waiting!"
 	done
 
 GlintGymStanleyTextBeforeBattle1Rematch:
-	text "It seems like you"
-	line "beat everyone in"
-	cont "the GYM again."
+	text "You came back!"
 	
-	para "You must want a"
-	line "rematch!"
+	para "Does that mean you"
+	line "want a rematch!"
 	done
 	
 GlintGymStanleyTextNoRematch:

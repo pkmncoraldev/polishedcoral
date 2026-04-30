@@ -103,6 +103,7 @@ RadiantGymLeilanicont:
 .FightDone:	
 	checkevent EVENT_TM46
 	iftrue .GotTMFromLeilani
+	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	setevent EVENT_BEAT_RADIANT_GYM_ROSE
 	setevent EVENT_BEAT_RADIANT_GYM_LILY
 	setevent EVENT_BEAT_RADIANT_GYM_IRIS
@@ -123,6 +124,12 @@ RadiantGymLeilanicont:
 	end
 
 .GotTMFromLeilani:
+	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
+	iftrue LeilaniTextLoop
+	checkevent EVENT_BEAT_LEILANI_FIRST_TIME
+	iftrue LeilaniTextLoop
+	checkevent EVENT_CAN_REMATCH_LEILANI
+	iftrue RadiantGymLeilaniRematch
 LeilaniTextLoop:
 	writetext RadiantGymLeilaniTextLoop
 	waitbutton
@@ -137,8 +144,6 @@ RadiantGymLeilaniFacingRight:
 	end
 	
 RadiantGymLeilaniRematch:
-	checkevent EVENT_BEAT_LEILANI_REMATCH
-	iftrue LeilaniTextLoop
 	writetext RadiantGymLeilaniTextBeforeBattleRematch
 	yesorno
 	iffalse .end
@@ -194,7 +199,8 @@ RadiantGymLeilaniRematch:
 	writetext RadiantGymLeilaniTextLoop
 	waitbutton
 	closetext
-	setevent EVENT_BEAT_LEILANI_REMATCH
+	clearevent EVENT_CAN_REMATCH_LEILANI
+	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	setevent EVENT_ALWAYS_SET
 	end
 .end
@@ -255,10 +261,7 @@ RadiantGymLeilaniTextBeforeBattle2:
 	done
 	
 RadiantGymLeilaniTextBeforeBattleRematch:
-	text "You beat all the"
-	line "girls!"
-	
-	para "Well, <WAIT_S>are you ready"
+	text "Well, <WAIT_S>are you ready"
 	line "for our rematch?"
 	done
 	
@@ -300,9 +303,7 @@ RadiantGymLeilaniTextTMSpeech:
 	line "GRAMMA again some-"
 	cont "time, won't you?"
 	
-	para "If you'll battle"
-	line "all the girls,"
-	cont "I'd love to give"
+	para "I'd love to give"
 	cont "you a rematch!"
 	
 	para "Oh, and do say"

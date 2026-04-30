@@ -168,6 +168,38 @@ ResetDailyEventFlags:
 	eventflagreset EVENT_ROCK_CANDY_SOLD_OUT
 	eventflagreset EVENT_DAILY_PLAYER_RIVER_RAPID_GAME
 	call CheckRanchSecondRace
+	eventflagcheck EVENT_BEAT_STANLEY
+	jr z, .done_stanley
+	eventflagset EVENT_CAN_REMATCH_STANLEY
+.done_stanley
+	eventflagcheck EVENT_BEAT_RODNEY
+	jr z, .done_rodney
+	eventflagset EVENT_CAN_REMATCH_RODNEY
+.done_rodney
+	eventflagcheck EVENT_BEAT_WENDY
+	jr z, .done_wendy
+	eventflagset EVENT_CAN_REMATCH_WENDY
+.done_wendy
+	eventflagcheck EVENT_BEAT_CHARLIE
+	jr z, .done_charlie
+	eventflagset EVENT_CAN_REMATCH_CHARLIE
+.done_charlie
+	eventflagcheck EVENT_BEAT_POLLY
+	jr z, .done_polly
+	eventflagset EVENT_CAN_REMATCH_POLLY
+.done_polly
+	eventflagcheck EVENT_BEAT_LEILANI
+	jr z, .done_leilani
+	eventflagset EVENT_CAN_REMATCH_LEILANI
+.done_leilani
+	eventflagcheck EVENT_BEAT_ROCKY
+	jr z, .done_rocky
+	eventflagset EVENT_CAN_REMATCH_ROCKY
+.done_rocky
+	eventflagcheck EVENT_DRAGON_SHRINE_DONE
+	jr z, .done_darcy
+	eventflagset EVENT_CAN_REMATCH_DARCY
+.done_darcy
 	ret
 	
 CheckRanchSecondRace:

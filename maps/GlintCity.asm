@@ -3,9 +3,8 @@ GlintCity_MapScriptHeader:
 	scene_script GlintCityTrigger0
 	scene_script GlintCityTrigger1
 
-	db 2 ; callbacks
+	db 1 ; callbacks
 	callback MAPCALLBACK_NEWMAP, GlintCityFlyPoint
-	callback MAPCALLBACK_OBJECTS, GlintCityStanleyRematch
 
 	db 7 ; warp events
 	warp_def 15, 27, 2, GLINT_POKECENTER
@@ -64,13 +63,6 @@ GlintCityTrigger1:
 	
 GlintCityFlyPoint:
 	setflag ENGINE_FLYPOINT_GLINT
-	return
-	
-GlintCityStanleyRematch:
-	checkevent EVENT_BEAT_STANLEY_REMATCH
-	iffalse .end
-	clearevent EVENT_BEAT_STANLEY_REMATCH
-.end
 	return
 	
 GlintCitySign:

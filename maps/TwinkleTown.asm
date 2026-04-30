@@ -126,10 +126,6 @@ TwinkleTownCallback:
 	iffalse .snowmandone
 	changeblock $12, $1e, $b1
 .snowmandone
-	checkevent EVENT_BEAT_CHARLIE_REMATCH
-	iffalse .skip
-	clearevent EVENT_BEAT_CHARLIE_REMATCH
-.skip
 	checkevent EVENT_SNOWSTORM_HAPPENING
 	iffalse .endcallback
 	dotrigger $1

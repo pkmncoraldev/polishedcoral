@@ -79,6 +79,7 @@ ObscuraGymRocky:
 .FightDone:
 	checkevent EVENT_GOT_TM_FROM_ROCKY
 	iftrue .GotTMFromRocky
+	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	writetext ObscuraGymRockyTextAfterBattle
 	buttonsound
 	changetextboxspeaker
@@ -145,6 +146,10 @@ ObscuraGymRocky:
 .GotTMFromRocky:
 	checkevent EVENT_LUMINA_TOWN_UNDER_ATTACK
 	iftrue RockyTextLoop.underattack
+	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
+	iftrue RockyTextLoop
+	checkevent EVENT_CAN_REMATCH_ROCKY
+	iftrue ObscuraGymRockyRematch
 RockyTextLoop:
 	writetext ObscuraGymRockyTextLoop
 	waitbutton
@@ -157,12 +162,10 @@ RockyTextLoop:
 	end
 	
 ObscuraGymRockyRematch:
-	checkevent EVENT_BEAT_ROCKY_REMATCH
-	iftrue RockyTextLoop
 	writetext ObscuraGymRockyTextBeforeBattleRematch
 	yesorno
 	iffalse .end
-	writetext ObscuraGymRockyTextBeforeBattle
+	writetext ObscuraGymRockyTextBeforeBattleRematch2
 	waitbutton
 	closetext
 	waitsfx
@@ -180,7 +183,8 @@ ObscuraGymRockyRematch:
 	writetext ObscuraGymRockyTextLoop
 	waitbutton
 	closetext
-	setevent EVENT_BEAT_ROCKY_REMATCH
+	clearevent EVENT_CAN_REMATCH_ROCKY
+	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	spriteface OBSCURA_GYM_ROCKY, DOWN
 	end
 .end
@@ -258,6 +262,14 @@ ObscuraGymRockyTextBeforeBattleRematch:
 	para "Anyway, you must"
 	line "be here for a"
 	cont "rematch."
+	done
+	
+ObscuraGymRockyTextBeforeBattleRematch2:
+	text "Let's not waste"
+	cont "time."
+	
+	para "Show me what you"
+	line "can do."
 	done
 	
 ObscuraGymRockyTextNoRematch:

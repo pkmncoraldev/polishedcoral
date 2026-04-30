@@ -253,6 +253,7 @@ EventideGymWendy:
 .FightDone:	
 	checkevent EVENT_TM56
 	iftrue .GotTMFromWendy
+	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	setevent EVENT_BEAT_EVENTIDE_GYM_TRAINER_1
 	setevent EVENT_BEAT_EVENTIDE_GYM_TRAINER_2
 	setevent EVENT_BEAT_EVENTIDE_GYM_TRAINER_3
@@ -270,6 +271,10 @@ EventideGymWendy:
 	end
 
 .GotTMFromWendy:
+	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
+	iftrue WendyTextLoop
+	checkevent EVENT_CAN_REMATCH_WENDY
+	iftrue EventideGymWendyRematch
 WendyTextLoop:
 	writetext EventideGymWendyTextLoop
 	waitbutton
@@ -277,8 +282,6 @@ WendyTextLoop:
 	end
 	
 EventideGymWendyRematch:
-	checkevent EVENT_BEAT_WENDY_REMATCH
-	iftrue WendyTextLoop
 	writetext EventideGymWendyTextBeforeBattle1Rematch
 	yesorno
 	iffalse .end
@@ -316,7 +319,8 @@ EventideGymWendyRematch:
 	writetext EventideGymWendyTextLoop
 	waitbutton
 	closetext
-	setevent EVENT_BEAT_WENDY_REMATCH
+	clearevent EVENT_CAN_REMATCH_WENDY
+	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	end
 .end
 	writetext EventideGymWendyTextNoRematch
@@ -437,10 +441,9 @@ EventideGymWendyTextTMSpeech:
 	para "Now go spread your"
 	line "wings!"
 	
-	para "Come back and beat"
-	line "all the TRAINERS"
-	cont "in the GYM if you"
-	cont "want a rematch."
+	para "Come back tomorrow"
+	line "if you want a"
+	cont "rematch."
 	
 	para "Good luck out"
 	line "there!"
@@ -459,18 +462,16 @@ EventideGymWendyTextLoop:
 	para "Now go spread your"
 	line "wings!"
 	
-	para "Come back and beat"
-	line "all the TRAINERS"
-	cont "in the GYM if you"
-	cont "want a rematch."
+	para "Come back tomorrow"
+	line "if you want a"
+	cont "rematch."
 	
 	para "Good luck out"
 	line "there!"
 	done
 	
 EventideGymWendyTextBeforeBattle1Rematch:
-	text "You beat everyone"
-	line "else?"
+	text "Hi, <PLAYER>."
 	
 	para "Do you want a"
 	line "rematch?"

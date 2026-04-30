@@ -47,6 +47,7 @@ StarglowGymRodneyScript:
 .FightDone:	
 	checkevent EVENT_TM18
 	iftrue .GotTMFromRodney
+	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	setevent EVENT_BEAT_STARGLOW_GYM_TRAINER_1
 	setevent EVENT_BEAT_STARGLOW_GYM_TRAINER_2
 	setevent EVENT_BEAT_STARGLOW_GYM_TRAINER_3
@@ -65,6 +66,10 @@ StarglowGymRodneyScript:
 	end
 
 .GotTMFromRodney:
+	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
+	iftrue RodneyTextLoop
+	checkevent EVENT_CAN_REMATCH_RODNEY
+	iftrue StarglowGymRodneyRematch
 RodneyTextLoop:
 	writetext StarglowGymRodneyTextLoop
 	waitbutton
@@ -73,8 +78,6 @@ RodneyTextLoop:
 
 	
 StarglowGymRodneyRematch:
-	checkevent EVENT_BEAT_RODNEY_REMATCH
-	iftrue RodneyTextLoop
 	writetext StarglowGymRodneyTextBeforeBattle1Rematch
 	yesorno
 	iffalse .end
@@ -116,7 +119,8 @@ StarglowGymRodneyRematch:
 	writetext StarglowGymRodneyTextLoop
 	waitbutton
 	closetext
-	setevent EVENT_BEAT_RODNEY_REMATCH
+	clearevent EVENT_CAN_REMATCH_RODNEY
+	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	end
 .end
 	writetext StarglowGymRodneyTextNoRematch
@@ -357,8 +361,7 @@ StarglowGymRodneyTextTMSpeech:
 	cont "can be!"
 	
 	para "Come back for a"
-	line "rematch whenever"
-	cont "you want!"
+	line "rematch tomorrow!"
 	done
 	
 StarglowGymRodneyTextLoop:
@@ -377,8 +380,7 @@ StarglowGymRodneyTextLoop:
 	cont "can be!"
 	
 	para "Come back for a"
-	line "rematch whenever"
-	cont "you want!"
+	line "rematch tomorrow!"
 	done
 	
 StarglowGymRodneyTextNoRematch:
@@ -421,10 +423,6 @@ StarglowGymGuyWinText:
 
 StarglowGymRodneyTextBeforeBattle1Rematch:
 	text "You're back?"
-	
-	para "…and you took out"
-	line "all the TRAINERS"
-	cont "in the GYM!"
 	
 	para "You must want a"
 	line "rematch!"

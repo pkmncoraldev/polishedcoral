@@ -5,9 +5,8 @@ StarglowValley_MapScriptHeader:
 	scene_script StarglowValleyTrigger2
 	scene_script StarglowValleyTrigger3
 
-	db 2 ; callbacks
+	db 1 ; callbacks
 	callback MAPCALLBACK_NEWMAP, StarglowValleyFlyPoint
-	callback MAPCALLBACK_OBJECTS, StarglowValleyRodneyRematch
 
 	db 7 ; warp events
 	warp_def 5, 5, 1, STARGLOW_TOGEPI_HOUSE
@@ -104,39 +103,6 @@ StarglowValleyTrigger4:
 StarglowValleyFlyPoint:
 	setflag ENGINE_FLYPOINT_STARGLOW
 	return
-	
-StarglowValleyRodneyRematch:
-	checkevent EVENT_BEAT_RODNEY_REMATCH
-	iffalse .end
-	clearevent EVENT_BEAT_RODNEY_REMATCH
-.end
-	return
-	
-;StarglowClue:
-;	checkitem CLUE_3
-;	iffalse .end
-;	checkitem CLUE_4
-;	iftrue .end
-;	opentext
-;	writetext StarglowClueText
-;	waitbutton
-;	verbosegiveitem CLUE_4
-;	closetext
-;	end
-;.end
-;	killsfx
-;	end
-	
-;StarglowClueText:
-;	text "You find something"
-;	line "in the knot of the"
-;	cont "tree…"
-	
-;	para "It's another clue!"
-;	done
-	
-;FruitTreeScript_Starglow:
-;	fruittree FRUITTREE_STARGLOW
 	
 StarglowFisher2:
 	faceplayer

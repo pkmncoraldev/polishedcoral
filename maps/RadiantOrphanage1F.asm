@@ -286,6 +286,8 @@ RadiantOrphanage1FLeilani:
 	waitbutton
 	jump .cont
 .rematch
+	checkevent EVENT_CAN_REMATCH_LEILANI
+	iffalse .no
 	writetext RadiantOrphanage1FLeilaniText4
 	yesorno
 	iffalse .no
@@ -549,15 +551,15 @@ RadiantOrphanage1FLeilaniText4:
 	done
 	
 RadiantOrphanage1FLeilaniText5:
-	text "Oh, <WAIT_S>you just came"
-	line "for a visit?"
+	text "Oh, <WAIT_S>you came to"
+	line "visit GRAMMA?"
 	
 	para "How thoughtful!"
 	done
 	
 RadiantOrphanage1FLeilaniText6:
-	text "Oh, <WAIT_S>you just came"
-	line "for a visit?"
+	text "Oh, <WAIT_S>you came to"
+	line "visit GRAMMA?"
 	
 	para "How thoughtful!"
 	

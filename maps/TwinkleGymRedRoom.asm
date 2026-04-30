@@ -49,6 +49,7 @@ TwinkleGymCharlie:
 .FightDone:	
 	checkevent EVENT_TM11
 	iftrue .GotTMFromCharlie
+	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	setevent EVENT_BEAT_TWINKLE_GYM_BLUE_ROOM_TRAINER
 	setevent EVENT_BEAT_TWINKLE_GYM_BLUE_ROOM_LEADER
 	setevent EVENT_BEAT_TWINKLE_GYM_YELLOW_ROOM_TRAINER_1
@@ -74,6 +75,10 @@ TwinkleGymCharlie:
 	end
 
 .GotTMFromCharlie:
+	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
+	iftrue CharlieTextLoop
+	checkevent EVENT_CAN_REMATCH_CHARLIE
+	iftrue TwinkleGymCharlieRematch
 CharlieTextLoop:
 	writetext TwinkleGymCharlieTextLoop
 	waitbutton
@@ -81,8 +86,6 @@ CharlieTextLoop:
 	end
 	
 TwinkleGymCharlieRematch:
-	checkevent EVENT_BEAT_CHARLIE_REMATCH
-	iftrue CharlieTextLoop
 	writetext TwinkleGymCharlieTextBeforeBattle1Rematch
 	yesorno
 	iffalse .end
@@ -120,7 +123,8 @@ TwinkleGymCharlieRematch:
 	writetext TwinkleGymCharlieTextLoop
 	waitbutton
 	closetext
-	setevent EVENT_BEAT_CHARLIE_REMATCH
+	clearevent EVENT_CAN_REMATCH_CHARLIE
+	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	end
 .end
 	writetext TwinkleGymCharlieTextNoRematch
@@ -264,8 +268,8 @@ TwinkleGymCharlieTextLoop:
 TwinkleGymCharlieTextBeforeBattle1Rematch:
 	text "Haha!"
 	
-	para "You beat everyone"
-	line "else!"
+	para "You came back,"
+	line "kid."
 	
 	para "That means you"
 	line "want a rematch,"

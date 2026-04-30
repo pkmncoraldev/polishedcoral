@@ -81,19 +81,21 @@ RadiantTownshipFlyPoint:
 	return
 
 RadiantTownshipCallback:
-	checkevent EVENT_BEAT_LEILANI_REMATCH
-	iffalse .skip1
-	clearevent EVENT_BEAT_LEILANI_REMATCH
-	clearevent EVENT_RADIANT_GYM_ACTIVE
-	setevent EVENT_RADIANT_GYM_INACTIVE
-.skip1
+	checkevent EVENT_RADIANT_GYM_ACTIVE
+	iffalse .done_gym
 	checkevent EVENT_BEAT_LEILANI_FIRST_TIME
-	iffalse .skip2
+	iffalse .skip
 	clearevent EVENT_RADIANT_GYM_ACTIVE
 	setevent EVENT_RADIANT_GYM_INACTIVE
 	setevent EVENT_CAN_FIGHT_ERIKA
 	clearevent EVENT_BEAT_LEILANI_FIRST_TIME
-.skip2
+	jump .done_gym
+.skip
+	checkevent EVENT_CAN_REMATCH_LEILANI
+	iftrue .done_gym
+	clearevent EVENT_RADIANT_GYM_ACTIVE
+	setevent EVENT_RADIANT_GYM_INACTIVE
+.done_gym
 	checkevent EVENT_ERIKA_OUTSIDE_ORPAHANGE
 	iftrue .end
 	moveperson RADIANT_TOWNSHIP_ERIKA, -5, -5

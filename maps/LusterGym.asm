@@ -104,6 +104,7 @@ LusterGymPolly:
 .FightDone:	
 	checkevent EVENT_TM09
 	iftrue .GotTMFromPolly
+	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	setevent EVENT_BEAT_LUSTER_GYM_TRAINER_1
 	setevent EVENT_BEAT_LUSTER_GYM_TRAINER_2
 	setevent EVENT_BEAT_LUSTER_GYM_TRAINER_3
@@ -123,6 +124,10 @@ LusterGymPolly:
 	end
 
 .GotTMFromPolly:
+	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
+	iftrue PollyTextLoop
+	checkevent EVENT_CAN_REMATCH_POLLY
+	iftrue LusterGymPollyRematch
 PollyTextLoop:
 	writetext LusterGymPollyTextLoop
 	waitbutton
@@ -130,8 +135,6 @@ PollyTextLoop:
 	end
 	
 LusterGymPollyRematch:
-	checkevent EVENT_BEAT_POLLY_REMATCH
-	iftrue PollyTextLoop
 	writetext LusterGymPollyTextBeforeBattleRematch
 	yesorno
 	iffalse .end
@@ -161,7 +164,8 @@ LusterGymPollyRematch:
 	writetext LusterGymPollyTextLoop
 	waitbutton
 	closetext
-	setevent EVENT_BEAT_POLLY_REMATCH
+	clearevent EVENT_CAN_REMATCH_POLLY
+	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	spriteface LUSTER_GYM_POLLY, DOWN
 	end
 .end

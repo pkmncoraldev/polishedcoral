@@ -78,6 +78,7 @@ LuminaGymDarcy:
 	writetext LuminaGymDarcyTextAfterBattle
 	buttonsound
 	changetextboxspeaker
+	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	verbosegivetmhm TM_DARK_PULSE
 	setevent EVENT_TM57
 	setevent EVENT_GOT_TM_FROM_DARCY
@@ -91,10 +92,18 @@ LuminaGymDarcy:
 	appear 6
 	appear 7
 	end
+.not_leader_yet
+	writetext LuminaGymDarcyPreSceneText
+	waitbutton
+	closetext
+	end
 	
 .FightDone:	
-	checkevent EVENT_DARCY_REMATCH_AVAILABLE
+	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
+	iftrue DarcyTextLoop
+	checkevent EVENT_CAN_REMATCH_DARCY
 	iftrue LuminaGymDarcyRematch
+DarcyTextLoop:
 	checkevent EVENT_DRAGON_SHRINE_DONE
 	iftrue .shrine_done
 	writetext LuminaGymDarcyTextLoop
@@ -108,13 +117,30 @@ LuminaGymDarcy:
 	closetext
 	end
 	
-.not_leader_yet
-	writetext LuminaGymDarcyPreSceneText
+LuminaGymDarcyRematch:
+	writetext LuminaGymDarcyTextBeforeBattleRematch
+	yesorno
+	iffalse .end
+	writetext LuminaGymDarcyTextBeforeBattleRematch2
 	waitbutton
 	closetext
+	waitsfx
+	winlosstext LuminaGymDarcyTextWinRematch, LuminaGymDarcyTextLossRematch
+	loadtrainer DARCY, 1
+	startbattle
+	reloadmapafterbattle
+	opentext TEXTBOX_DARCY
+	writetext LuminaGymDarcyTextLoop
+	waitbutton
+	closetext
+	clearevent EVENT_CAN_REMATCH_DARCY
+	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
+	spriteface 1, DOWN
 	end
-	
-LuminaGymDarcyRematch:		;TODO
+.end
+	writetext LuminaGymDarcyTextNoRematch
+	waitbutton
+	closetext
 	end
 	
 LuminaGymDarcyPreSceneText:
@@ -122,6 +148,26 @@ LuminaGymDarcyPreSceneText:
 	
 	para "Let's get this"
 	line "done!"
+	done
+	
+LuminaGymDarcyTextBeforeBattleRematch:
+	text "TEXT 1"
+	done
+	
+LuminaGymDarcyTextBeforeBattleRematch2:
+	text "TEXT 2"
+	done
+	
+LuminaGymDarcyTextWinRematch:
+	text "YOU WIN"
+	done
+	
+LuminaGymDarcyTextLossRematch:
+	text "YOU LOSE"
+	done
+	
+LuminaGymDarcyTextNoRematch:
+	text "NO"
 	done
 	
 LuminaGymElder:

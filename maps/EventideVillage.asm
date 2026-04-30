@@ -3,7 +3,7 @@ EventideVillage_MapScriptHeader:
 
 	db 2 ; callbacks
 	callback MAPCALLBACK_NEWMAP, EventideVillageFlypointCallback
-	callback MAPCALLBACK_OBJECTS, EventideVillageWendyRematch
+	callback MAPCALLBACK_OBJECTS, EventideVillageSwitches
 
 	db 9 ; warp events
 	warp_event  6, 20, EVENTIDE_VILLAGE_GATE, 3
@@ -65,15 +65,11 @@ EventideVillageFlypointCallback:
 	setflag ENGINE_FLYPOINT_EVENTIDE
 	return
 	
-EventideVillageWendyRematch:
+EventideVillageSwitches:
 	setevent EVENT_EVENTIDE_GYM_BLUE_SWITCH
 	setevent EVENT_EVENTIDE_GYM_BLACK_SWITCH
 	clearevent EVENT_EVENTIDE_GYM_RED_SWITCH
 	clearevent EVENT_EVENTIDE_GYM_YELLOW_SWITCH
-	checkevent EVENT_BEAT_WENDY_REMATCH
-	iffalse .end
-	clearevent EVENT_BEAT_WENDY_REMATCH
-.end
 	return
 	
 EventideMakeYellowEvent:

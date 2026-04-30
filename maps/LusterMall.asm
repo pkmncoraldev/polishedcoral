@@ -112,10 +112,6 @@ LusterMallTrigger1:
 	end
 	
 LusterMallCallback:
-	checkevent EVENT_BEAT_POLLY_REMATCH
-	iffalse .donegymstuff
-	clearevent EVENT_BEAT_POLLY_REMATCH
-.donegymstuff
 	domaptrigger LUSTER_CITY_SHOPPING, $1
 	checkevent EVENT_STARTED_PART_TIME_JOB
 	iffalse .skip

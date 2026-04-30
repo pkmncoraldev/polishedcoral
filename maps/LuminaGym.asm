@@ -78,7 +78,8 @@ LuminaGymDarcy:
 	writetext LuminaGymDarcyTextAfterBattle
 	buttonsound
 	changetextboxspeaker
-	verbosegivetmhm TM_RAIN_DANCE
+	verbosegivetmhm TM_DARK_PULSE
+	setevent EVENT_TM57
 	setevent EVENT_GOT_TM_FROM_DARCY
 	changetextboxspeaker TEXTBOX_DARCY
 	writetext LuminaGymDarcyTextTMSpeech
@@ -425,7 +426,15 @@ LuminaGymDarcyTextAfterBattle:
 	done
 	
 LuminaGymDarcyTextTMSpeech:
-	text "TM SPEECH"
+	text "That TM contains"
+	line "DARK PULSE."
+	
+	para "It does really"
+	line "good damage, and"
+	cont "can even make"
+	cont "the foe flinch!"
+	
+	para "…"
 	
 	para "Ok, now what are"
 	line "you waiting for?"

@@ -87,7 +87,8 @@ ObscuraGymRocky:
 	writetext ObscuraGymRockyTextAfterBattle
 	buttonsound
 	changetextboxspeaker
-	verbosegivetmhm TM_VENOSHOCK
+	verbosegivetmhm TM_STONE_EDGE
+	setevent EVENT_TM63
 	setevent EVENT_GOT_TM_FROM_ROCKY
 	changetextboxspeaker TEXTBOX_ROCKY
 	writetext ObscuraGymRockyTextTMSpeech
@@ -212,7 +213,13 @@ ObscuraGymRockyTextAfterBattle:
 	done
 	
 ObscuraGymRockyTextTMSpeech:
-	text "TM SPEECH"
+	text "That TM contains"
+	line "STONE EDGE."
+	
+	para "It has a tendancy"
+	line "to miss, but if"
+	cont "it connects, it"
+	cont "does big damage!"
 	done
 	
 ObscuraGymRockyTextLoop:

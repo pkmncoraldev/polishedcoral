@@ -205,11 +205,31 @@ ObscuraGymRockyRematch:
 	end
 	
 ObscuraGymRockyTextBeforeBattle:
-	text "BEFORE BATTLE"
+	text "Alright then,"
+	line "you're here."
+	
+	para "You can clearly"
+	line "hold your own in"
+	cont "battle, so let's"
+	cont "not waste time."
+	
+	para "Show me what you"
+	line "can do."
 	done
 	
 ObscuraGymRockyTextAfterBattle:
-	text "AFTER BATTLE"
+	text "The GEOBADGE proves"
+	line "that you beat me."
+	
+	para "It will also let"
+	line "your #MON use"
+	cont "the move DIVE"
+	cont "outside of battle."
+	
+	para "Assuming you have"
+	line "an HM, of course."
+	
+	para "Take this as well."
 	done
 	
 ObscuraGymRockyTextTMSpeech:
@@ -223,7 +243,16 @@ ObscuraGymRockyTextTMSpeech:
 	done
 	
 ObscuraGymRockyTextLoop:
-	text "TEXT LOOP"
+	text "Well, “chosen one”"
+	line "or not, you're"
+	cont "one serious"
+	cont "TRAINER."
+	
+	para "Come back tomorrow"
+	line "if you want a"
+	cont "rematch."
+	
+	para "I'll be waiting."
 	done
 	
 Text_ReceivedSeventhBadge:
@@ -232,24 +261,38 @@ Text_ReceivedSeventhBadge:
 	done
 	
 ObscuraGymRockyTextBeforeBattleRematch:
-	text "BEFORE BATTLE"
-	line "REMATCH"
+	text "Look who's back."
+	
+	para "The dragon's"
+	line "“chosen one”."
+	
+	para "I hope you didn't"
+	line "really buy into"
+	cont "that legend."
+	
+	para "Anyway, you must"
+	line "be here for a"
+	cont "rematch."
 	done
 	
 ObscuraGymRockyTextNoRematch:
-	text "NO REMATCH"
+	text "Your choice."
 	done
 	
 ObscuraGymRockyTextWin:
-	text "YOU WIN"
-	done
+	text "Excellent."
+	
+	para "You're…<WAIT_M> good."
 	
 ObscuraGymRockyTextLoss:
-	text "YOU LOSE"
+	text "How disappointing."
 	done
 	
 ObscuraGymRockyTextWinRematch:
-	text "YOU WIN REMATCH"
+	text "Heh…"
+	
+	para "As expected of the"
+	line "“chosen one”." 
 	done
 	
 ObscuraGymRockyCallText1:

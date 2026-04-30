@@ -364,7 +364,7 @@ Inn1FKageText8:
 	para "You can't use it"
 	line "outside of battle"
 	cont "without a BADGE"
-	cont "from LUMINA TOWN,"		;TODO come up with town name
+	cont "from LUMINA TOWN,"
 	cont "anyway."
 	
 	para "And you aren't"

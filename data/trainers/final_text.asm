@@ -265,18 +265,16 @@ Polly_RematchFinalPkmnText:
 	
 Leilani_FirstBattleFinalPkmnText:
 Leilani_RematchFinalPkmnText:
-	text "Settle down."
+	text "Settle down, dear."
 	
 	para "You haven't got"
 	line "the best of GRAMMA"
-	cont "yet, dear."
+	cont "yet!"
 	prompt
 	
 Rocky_FirstBattleFinalPkmnText:
 Rocky_RematchFinalPkmnText:
-	text "Not bad!"
-	
-	para "You really are"
+	text "You really are"
 	line "something, huh?"
 	prompt
 	
@@ -284,7 +282,7 @@ Darcy_FirstBattleFinalPkmnText:
 	text "Come on, <PLAYER>!"
 	
 	para "It's time for"
-	line "both of use to"
+	line "both of us to"
 	cont "prove ourselves!"
 	prompt
 	
@@ -349,6 +347,12 @@ DojoMaster_FinalPkmnText:
 	prompt
 
 Erika_FinalPkmnText:
+	text "Amazing!"
+	
+	para "Let's finish out"
+	line "strong!"
+	prompt
+
 LedianRanger_FinalPkmnText:
 	text "Go! <WAIT_S>Go!<WAIT_S>"
 	line "LEDIAN RANGER!"

@@ -151,23 +151,34 @@ LuminaGymDarcyPreSceneText:
 	done
 	
 LuminaGymDarcyTextBeforeBattleRematch:
-	text "TEXT 1"
+	text "I know why youre"
+	cont "here again."
+	
+	para "A rematch, right?"	
 	done
 	
 LuminaGymDarcyTextBeforeBattleRematch2:
-	text "TEXT 2"
+	text "Ok, <PLAYER>!"
+	
+	para "Here we go."
+	
+	para "I won't hold"
+	line "anything back!"
 	done
 	
 LuminaGymDarcyTextWinRematch:
-	text "YOU WIN"
+	text "As expected."
+	
+	para "I still have a"
+	line "lot to learn."
 	done
 	
 LuminaGymDarcyTextLossRematch:
-	text "YOU LOSE"
+	text "Am I improving?"
 	done
 	
 LuminaGymDarcyTextNoRematch:
-	text "NO"
+	text "I see."
 	done
 	
 LuminaGymElder:
@@ -499,8 +510,19 @@ LuminaGymDarcyTextLoop:
 	cont "the shrine!"
 	done
 	
-LuminaGymDarcyTextLoop2:		;TODO
-	text "TEXT LOOP"
+LuminaGymDarcyTextLoop2:
+	text "As the village's"
+	line "champion and the"
+	cont "GYM LEADER,"
+	
+	para "I have to stay"
+	line "vigilant and keep"
+	cont "training."
+	
+	para "I'll become a"
+	line "TRAINER worthy of"
+	cont "making the DRAGON"
+	cont "appear for real!"
 	done
 	
 Movement_LuminaGymPlayer1:

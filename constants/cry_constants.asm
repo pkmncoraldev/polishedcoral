@@ -96,6 +96,9 @@
 	const CRY_FLOATZEL
 	const CRY_DRIFLOON
 	const CRY_DRIFBLIM
+	const CRY_BUNEARY
+	const CRY_LOPUNNY
+	const CRY_SPIRITOMB
 	const CRY_LEAFEON
 	const CRY_GLACEON
 	const CRY_PORYGONZ
@@ -113,6 +116,8 @@
 	const CRY_CHANDELURE
 	const CRY_MIENFOO
 	const CRY_MIENSHAO
+	const CRY_LARVESTA
+	const CRY_VOLCARONA
 ; gen 6
 	const CRY_SYLVEON
 	const CRY_NOIBAT
@@ -120,5 +125,8 @@
 	const CRY_COMFEY
 ; gen 7
 ; gen 8
+	const CRY_DREEPY
+	const CRY_DRAKLOAK
+	const CRY_DRAGAPULT
 ; gen 9
 	

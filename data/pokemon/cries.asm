@@ -461,10 +461,10 @@ CryHeaders2::
 	mon_cry CRY_BULBASAUR,   $080,  $081 	; Cherrim - PLACEHOLDER
 	mon_cry CRY_DRIFLOON,       0,   256 	; Drifloon
 	mon_cry CRY_DRIFBLIM,     255,   236	; Drifblim
-	mon_cry CRY_BULBASAUR,   $080,  $081 	; Buneary - PLACEHOLDER
-	mon_cry CRY_BULBASAUR,   $080,  $081 	; Lopunny - PLACEHOLDER
+	mon_cry CRY_BUNEARY,   	    0,   164 	; Buneary
+	mon_cry CRY_LOPUNNY,        0,   256	; Lopunny
 	mon_cry CRY_BULBASAUR,   $080,  $081 	; Honchkrow - PLACEHOLDER
-	mon_cry CRY_BULBASAUR,   $080,  $081 	; Spiritomb - PLACEHOLDER
+	mon_cry CRY_SPIRITOMB,    152,   392 	; Spiritomb
 	mon_cry CRY_BULBASAUR,   $080,  $081 	; Munchlax - PLACEHOLDER
 	mon_cry CRY_BULBASAUR,   $080,  $081	; Croagunk - PLACEHOLDER
 	mon_cry CRY_BULBASAUR,   $080,  $081	; Toxicroak - PLACEHOLDER
@@ -506,8 +506,8 @@ CryHeaders2::
 	mon_cry CRY_CHANDELURE,   255,   384	; Chandelure
 	mon_cry CRY_MIENFOO,      237,   256	; Mienfoo
 	mon_cry CRY_MIENSHAO,     237,   256	; Mienshao
-	mon_cry CRY_BULBASAUR,   $080,  $081 	; Larvesta - PLACEHOLDER
-	mon_cry CRY_BULBASAUR,   $080,  $081 	; Volcarona - PLACEHOLDER
+	mon_cry CRY_LARVESTA,       0,   328 	; Larvesta
+	mon_cry CRY_VOLCARONA,    195,   256 	; Volcarona
 	mon_cry CRY_SYLVEON,        0,   664 	; Sylveon
 	mon_cry CRY_BULBASAUR,   $080,  $081	; Phantump - PLACEHOLDER
 	mon_cry CRY_BULBASAUR,   $080,  $081	; Trevenant - PLACEHOLDER
@@ -521,9 +521,9 @@ CryHeaders2::
 	mon_cry CRY_COMFEY,       128,   142 	; Comfey
 	mon_cry CRY_BULBASAUR,   $080,  $081 	; Mimikyu - PLACEHOLDER
 	mon_cry CRY_MAGCARGO,    $081,  $0ff 	; Cursola
-	mon_cry CRY_BULBASAUR,   $080,  $081	; Dreepy - PLACEHOLDER
-	mon_cry CRY_BULBASAUR,   $080,  $081	; Drakloak - PLACEHOLDER
-	mon_cry CRY_BULBASAUR,   $080,  $081	; Dragapult - PLACEHOLDER
+	mon_cry CRY_DREEPY,       128,   164	; Dreepy
+	mon_cry CRY_DRAKLOAK,      61,   264	; Drakloak
+	mon_cry CRY_DRAGAPULT,    128,   264	; Dragapult
 	mon_cry CRY_BULBASAUR,   $080,  $081	; Wyrdeer - PLACEHOLDER
 	mon_cry CRY_BULBASAUR,   $080,  $081 	; Flittle - PLACEHOLDER
 	mon_cry CRY_BULBASAUR,   $080,  $081 	; Espathra - PLACEHOLDER

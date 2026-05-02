@@ -92,6 +92,9 @@ Cries:
 	dba Cry_Floatzel
 	dba Cry_Drifloon
 	dba Cry_Drifblim
+	dba Cry_Buneary
+	dba Cry_Lopunny
+	dba Cry_Spiritomb
 	dba Cry_Leafeon
 	dba Cry_Glaceon
 	dba Cry_PorygonZ
@@ -109,6 +112,8 @@ Cries:
 	dba Cry_Chandelure
 	dba Cry_Mienfoo
 	dba Cry_Mienshao
+	dba Cry_Larvesta
+	dba Cry_Volcarona
 ; gen 6
 	dba Cry_Sylveon
 	dba Cry_Noibat
@@ -116,4 +121,7 @@ Cries:
 	dba Cry_Comfey
 ; gen 7
 ; gen 8
+	dba Cry_Dreepy
+	dba Cry_Drakloak
+	dba Cry_Dragapult
 ; gen 9

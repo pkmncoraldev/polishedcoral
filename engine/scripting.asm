@@ -1324,6 +1324,8 @@ Script_changeaction:
 	ld [hl], a
 	dec hl
 	dec hl
+	ld a, STEP_TYPE_05
+	ld [hl], a
 	dec hl
 	call GetScriptByte
 	add a

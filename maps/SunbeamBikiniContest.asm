@@ -260,11 +260,11 @@ SunbeamBikiniContestTrigger0:
 	loadmenudata .BikiniMenuData
 	verticalmenu
 	closewindow
-	if_equal $1, .Lilac
+	if_equal $1, .Hazel
 	if_equal $2, .Aster
-	if_equal $3, .Hazel
+	if_equal $3, .Lilac
 	
-.Lilac
+.Hazel
 	clearevent EVENT_BIKINIP
 	domaptrigger SUNBEAM_SURF_SHOP, $1
 	writetext SunbeamContestText14
@@ -279,7 +279,7 @@ SunbeamBikiniContestTrigger0:
 	playsound SFX_EXIT_BUILDING
 	applymovement SUNBEAMCONTESTBIKINIBR, Movement_SunbeamContestBikini4
 	spriteface SUNBEAMCONTESTBIKINIBR, DOWN
-	opentext TEXTBOX_LILAC
+	opentext TEXTBOX_HAZEL
 	writetext SunBeamContestBikiniBrText2
 	waitbutton
 	closetext
@@ -364,7 +364,7 @@ SunbeamBikiniContestTrigger0:
 	waitsfx
 	warpfacing RIGHT, SUNBEAM_SURF_SHOP, $5, $5
 	end
-.Hazel
+.Lilac
 	clearevent EVENT_BIKINIBR
 	domaptrigger SUNBEAM_SURF_SHOP, $1
 	writetext SunbeamContestText16
@@ -379,7 +379,7 @@ SunbeamBikiniContestTrigger0:
 	playsound SFX_EXIT_BUILDING
 	applymovement SUNBEAMCONTESTBIKINIP, Movement_SunbeamContestBikini4
 	spriteface SUNBEAMCONTESTBIKINIP, DOWN
-	opentext TEXTBOX_HAZEL
+	opentext TEXTBOX_LILAC
 	writetext SunBeamContestBikiniPText2
 	waitbutton
 	closetext

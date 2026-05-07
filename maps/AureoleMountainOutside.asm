@@ -73,8 +73,12 @@ AureoleMountainOutsideWellEvent:
 	playsound SFX_MOVE_PUZZLE_PIECE
 	waitsfx
 	pause 40
+	setevent EVENT_DONT_ADJUST_CRY_VOLUME
+	loadvar wVolume, $33
 	cry MURKROW
 	waitsfx
+	loadvar wVolume, $77
+	clearevent EVENT_DONT_ADJUST_CRY_VOLUME
 	pause 45
 	playsound SFX_FORESIGHT
 	appear 2
@@ -118,8 +122,12 @@ AureoleMountainOutsideWellEvent:
 	callasm Movement_AureoleMountainOutsideCheckMurkrowAsm
 	if_not_equal 3, .end
 	pause 10
+	setevent EVENT_DONT_ADJUST_CRY_VOLUME
+	loadvar wVolume, $33
 	cry MURKROW
 	waitsfx
+	loadvar wVolume, $77
+	clearevent EVENT_DONT_ADJUST_CRY_VOLUME
 	pause 20
 	playsound SFX_UNKNOWN_63
 	waitsfx

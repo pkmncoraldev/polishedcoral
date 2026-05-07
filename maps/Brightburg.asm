@@ -15,7 +15,7 @@ Brightburg_MapScriptHeader:
 	warp_event 21, 18, BRIGHT_HOUSE_3, 1
 	warp_event 27, 10, BRIGHTBURG_GATE, 1
 	warp_event 27, 11, BRIGHTBURG_GATE, 2
-	warp_event  9,  5, ROUTE_25_GATE, 3
+	warp_event  9,  5, ROUTE_29_GATE, 3
 
 	db 0 ; coord events
 

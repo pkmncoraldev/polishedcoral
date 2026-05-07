@@ -5,7 +5,7 @@ AureoleMountain1F_MapScriptHeader:
 	callback MAPCALLBACK_TILES, AureoleMountain1FCallback
 
 	db 10 ; warp events
-	warp_def 47, 19, 3, ROUTE_30
+	warp_def 47, 19, 3, ROUTE_32
 	warp_def 29,  9, 1, AUREOLE_MOUNTAIN_2F
 	warp_def 39, 25, 4, AUREOLE_MOUNTAIN_1F
 	warp_def  9, 33, 3, AUREOLE_MOUNTAIN_1F

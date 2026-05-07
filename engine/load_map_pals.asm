@@ -173,6 +173,8 @@ LoadMapPals::
 	jp z, .starglow
 	cp TILESET_RANCH
 	jp z, .ranch
+	cp TILESET_MOUNTAIN
+	jp z, .ranch
 	cp TILESET_PARK
 	jp z, .park
 	cp TILESET_AIRPORT

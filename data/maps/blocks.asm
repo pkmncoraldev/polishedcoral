@@ -1057,6 +1057,9 @@ FakeNorthSouthGate_BlockData:
 DragonShrineInterior_BlockData:
 	INCBIN "maps/DragonShrineInterior.ablk.lz"
 	
+DragonShrineTop_BlockData:
+	INCBIN "maps/DragonShrineTop.ablk.lz"
+	
 SunbeamJunglePlumeCave_BlockData:
 	INCBIN "maps/SunbeamJunglePlumeCave.ablk.lz"
 	

@@ -216,6 +216,7 @@
 	const SPRITE_BILLBOARD_2
 	const SPRITE_BILLBOARD_3
 	const SPRITE_SPARKLE
+	const SPRITE_COLBY_FALL
 	
 	const_def $ed
 DEF SPRITE_POKEMON EQU const_value

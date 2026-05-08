@@ -1,13 +1,14 @@
 DragonShrineInterior_MapScriptHeader:
 	db 0 ; scene scripts
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_TILES, DragonShrineInteriorCallback
 
 	db 4 ; warp events
 	warp_def 75,  7, 1, LUMINA_GYM
 	warp_def 75,  8, 2, LUMINA_GYM
-	warp_def  1,  7, 1, ROUTE_1
-	warp_def  1,  8, 1, ROUTE_1
+	warp_def  1,  7, 1, DRAGON_SHRINE_TOP
+	warp_def  1,  8, 2, DRAGON_SHRINE_TOP
 
 	db 0 ; coord events
 
@@ -23,6 +24,10 @@ DragonShrineInterior_MapScriptHeader:
 
 	db 0 ; object events
 
+
+DragonShrineInteriorCallback:
+	clearevent EVENT_LIGHTNING_ACTIVE
+	return
 
 DragonShrineInteriorDoorText:
 	text "It looks like"

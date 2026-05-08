@@ -220,6 +220,7 @@ SpriteHeaders:
 	overworld_sprite Billboard2SpriteGFX, BILLBOARD_SPRITE, PAL_OW_SILVER
 	overworld_sprite Billboard3SpriteGFX, BILLBOARD_SPRITE, PAL_OW_SILVER
 	overworld_sprite SparkleSpriteGFX, STANDING_SPRITE, PAL_OW_SILVER
+	overworld_sprite ColbyFallSpriteGFX, BILLBOARD_SPRITE, PAL_OW_BLUE
 
 SpriteHeadersPlayers:
 	overworld_sprite CorySpriteGFX, WALKING_SPRITE, PAL_OW_RED

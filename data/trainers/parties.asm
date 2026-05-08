@@ -1145,6 +1145,61 @@ RivalSGroup:
 	db -1 ; end
 
 ; ================
+
+	; RIVAL_S (3-1)
+	db "<RIVAL>@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; RIVAL_S (3-2)
+	db "<RIVAL>@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; RIVAL_S (3-3)
+	db "<RIVAL>@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; RIVAL_S (3-4)
+	db "<RIVAL>@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; RIVAL_S (3-5)
+	db "<RIVAL>@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; RIVAL_S (3-6)
+	db "<RIVAL>@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
 ; ================================
 
 YoungsterGroup:

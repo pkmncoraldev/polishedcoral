@@ -404,6 +404,8 @@ GetStepVector:
 	ld hl, OBJECT_DIRECTION_WALKING
 	add hl, bc
 	ld a, [hl]
+	cp $19
+	jr z, .slowStep
 	cp (STEP_TYPE_SLOW << 2 | RIGHT) + 1
 	jr c, .slowStep
 	pop hl
@@ -450,6 +452,11 @@ StepVectors_FastStepType:
     db  0,  0,  4, 4
     db  0,  0,  4, 4
     db  0,  0,  4, 4
+	; slow half step
+	db  0,  1, 16, 1
+	db  0, -1, 16, 1
+	db -1,  0, 16, 1
+	db  1,  0, 16, 1
 
 
 GetStepVectorSign:
@@ -2761,6 +2768,8 @@ UpdateMapObjectDataAndSprites:: ; 55e0
 ; 5602
 
 BattleStart_HideAllSpritesExceptBattleParticipants: ; 5602, called at battle start
+	eventflagcheck EVENT_DONT_HIDE_SPRITES_BEFORE_BATTLE
+	ret nz
 	call MaskAllObjectStructs ; clear sprites
 	ld a, PLAYER
 	call RespawnObject ; respawn player

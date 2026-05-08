@@ -652,3 +652,8 @@ macro step_dealer_right
 macro jump_in_place
 	db movement_jump_in_place ; $11
 	endm
+	
+	enum movement_slow_half_step_back
+macro slow_half_step_back
+	db movement_slow_half_step_back ; $11
+	endm

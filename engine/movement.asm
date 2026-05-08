@@ -128,6 +128,7 @@ MovementPointers:
 	dw Movement_dealer_left
 	dw Movement_dealer_right
 	dw Movement_jump_in_place
+	dw Movement_slow_half_step_back
 	
 Movement_jump_in_place:
     ld a, STEP_TYPE_NONE << 2
@@ -594,6 +595,10 @@ Movement_fast_step_left:
 
 Movement_fast_step_right:
 	ld a, STEP_TYPE_FAST << 2 | RIGHT
+	jp Movement_do_step
+
+Movement_slow_half_step_back:
+	ld a, STEP_TYPE_SLOW_HALF << 2 | UP
 	jp Movement_do_step
 
 Movement_pippi_run_step_down:

@@ -150,6 +150,11 @@
 	RGB 14, 04, 02
 	RGB 00, 00, 00
 	RGB 00, 00, 00
+;30 - Dragon Shrine
+	RGB 18, 08, 04
+	RGB 14, 04, 02
+	RGB 00, 00, 00
+	RGB 00, 00, 00
 ;last - Evo Locations
 	RGB 27, 21, 10
 	RGB 21, 12, 01

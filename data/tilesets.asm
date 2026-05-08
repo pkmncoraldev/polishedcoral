@@ -356,7 +356,8 @@ INCBIN "gfx/tilesets/spooky.2bpp.vram0.lz"
 TilesetSpookyGFX1::
 INCBIN "gfx/tilesets/spooky.2bpp.vram1.lz"
 
-DEF TilesetSpookyGFX2 EQU 0
+TilesetSpookyGFX2::
+INCBIN "gfx/tilesets/spooky.2bpp.vram2.lz"
 
 TilesetSpookyMeta::
 INCBIN "data/tilesets/spooky_metatiles.bin.lz"

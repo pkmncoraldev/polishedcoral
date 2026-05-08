@@ -503,6 +503,7 @@ INCLUDE "maps/LuminaHealerHouse.asm"
 INCLUDE "maps/LuminaEldersHouse.asm"
 INCLUDE "maps/DragonShrineInterior.asm"
 INCLUDE "maps/LuminaTownCave.asm"
+INCLUDE "maps/DragonShrineTop.asm"
 
 SECTION "Misc Map Scripts", ROMX
 INCLUDE "maps/ObscuraGym.asm"

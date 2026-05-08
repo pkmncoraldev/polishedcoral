@@ -2531,6 +2531,9 @@ _PlayCryHeader:: ; e8b79
 	ld a, [wLastVolume]
 	and a
 	jr nz, .end
+	
+	eventflagcheck EVENT_DONT_ADJUST_CRY_VOLUME
+	jr nz, .end
 
 	ld a, [wVolume]
 	ld [wLastVolume], a

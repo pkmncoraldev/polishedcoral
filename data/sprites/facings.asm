@@ -116,6 +116,18 @@ Facings:
 	dw FacingBillboard1R
 	dw FacingBillboard2L
 	dw FacingBillboard2R
+	dw FacingColbyFall1
+	dw FacingColbyFall2
+	dw FacingColbyFall3
+	dw FacingColbyFall4
+	dw FacingColbyFall5
+	dw FacingColbyFall6
+	dw FacingColbyFall7
+	dw FacingColbyFall8
+	dw FacingColbyFall9
+	dw FacingColbyFall10
+	dw FacingColbyFall11
+	dw FacingColbyFall12
 FacingsEnd: dw 0
 
 DEF NUM_FACINGS EQU (FacingsEnd - Facings) / 2
@@ -1089,3 +1101,86 @@ FacingBillboard2R:
 	db  -4,  0, 0, $9e
 	db  -4,  8, 0, $9f
 	
+FacingColbyFall1:
+	db 4 ; #
+	db  -8,  0, 0, $00
+	db  -8,  8, 0, $01
+	db  0,  0, 2, $02
+	db  0,  8, 2, $03
+	
+FacingColbyFall2:
+	db 4 ; #
+	db  -8,  0, 0, $04
+	db  -8,  8, 0, $05
+	db  0,  0, 2, $06
+	db  0,  8, 2, $07
+	
+FacingColbyFall3:
+	db 4 ; #
+	db  -8,  0, 0, $08
+	db  -8,  8, 0, $09
+	db  0,  0, 2, $0a
+	db  0,  8, 2, $0b
+	
+FacingColbyFall4:
+	db 4 ; #
+	db  -8,  0, 0, $0c
+	db  -8,  8, 0, $0d
+	db  0,  0, 2, $0e
+	db  0,  8, 2, $0f
+	
+FacingColbyFall5:
+	db 4 ; #
+	db  -8,  0, 0, $10
+	db  -8,  8, 0, $11
+	db  0,  0, 2, $12
+	db  0,  8, 2, $13
+	
+FacingColbyFall6:
+	db 4 ; #
+	db  -8,  0, 0, $14
+	db  -8,  8, 0, $15
+	db  0,  0, 2, $16
+	db  0,  8, 2, $17
+	
+FacingColbyFall7:
+	db 4 ; #
+	db  -8,  0, 0, $18
+	db  -8,  8, 0, $19
+	db  0,  0, 2, $1a
+	db  0,  8, 2, $1b
+	
+FacingColbyFall8:
+	db 4 ; #
+	db  -8,  0, 0, $1c
+	db  -8,  8, 0, $1d
+	db  0,  0, 2, $1e
+	db  0,  8, 2, $1f
+	
+FacingColbyFall9:
+	db 4 ; #
+	db  -8,  0, 0, $80
+	db  -8,  8, 0, $81
+	db  0,  0, 2, $82
+	db  0,  8, 2, $83
+	
+FacingColbyFall10:
+	db 4 ; #
+	db  -8,  0, 0, $84
+	db  -8,  8, 0, $85
+	db  0,  0, 2, $86
+	db  0,  8, 2, $87
+	
+FacingColbyFall11:
+	db 4 ; #
+	db  -8,  0, 0, $88
+	db  -8,  8, 0, $89
+	db  0,  0, 2, $8a
+	db  0,  8, 2, $8b
+	
+FacingColbyFall12:
+	db 4 ; #
+	db  -8,  0, 0, $8c
+	db  -8,  8, 0, $8d
+	db  0,  0, 2, $8e
+	db  0,  8, 2, $8f

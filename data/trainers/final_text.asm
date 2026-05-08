@@ -154,6 +154,12 @@ FinalTextClassList:
 	dw Rival_S_2_FinalPkmnText
 	dw Rival_S_2_FinalPkmnText
 	dw Rival_S_2_FinalPkmnText
+	dw Rival_S_3_FinalPkmnText
+	dw Rival_S_3_FinalPkmnText
+	dw Rival_S_3_FinalPkmnText
+	dw Rival_S_3_FinalPkmnText
+	dw Rival_S_3_FinalPkmnText
+	dw Rival_S_3_FinalPkmnText
 
 .FinalText_Kage:
 	dw Kage_SunbeamFinalPkmnText
@@ -213,6 +219,14 @@ Rival_S_1_FinalPkmnText:
 Rival_S_2_FinalPkmnText:
 	text "This is a waste"
 	line "of my time!"
+	prompt
+	
+Rival_S_3_FinalPkmnText:
+	text "DRAGON!<WAIT_S>"
+	line "ARE YOU WATCHING?"
+	
+	para "NOW!<WAIT_S>"
+	line "SHOW YOURSELF!"
 	prompt
 	
 Stanley_FirstBattleFinalPkmnText:

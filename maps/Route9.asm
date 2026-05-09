@@ -4,22 +4,24 @@ Route9_MapScriptHeader:
 	db 1 ; callbacks
 	callback MAPCALLBACK_TILES, Route9Callback
 
-	db 5 ; warp events
+	db 7 ; warp events
 	warp_def 23, 21, 1, DODRIO_RANCH_HOUSE
 	warp_def 11, 30, 1, DODRIO_RANCH_BARN
 	warp_def 11, 31, 2, DODRIO_RANCH_BARN
 	warp_def 75, 19, 1, ROUTE_11_GATE
 	warp_def 75, 20, 2, ROUTE_11_GATE
+	warp_event  6, 24, EVENTIDE_VILLAGE_GATE, 3
+	warp_event  6, 25, EVENTIDE_VILLAGE_GATE, 4
 
 	db 27 ; coord events
-	xy_trigger 0, 24, 18, 0, DodrioRanchMapSignThing, 0, 0
-	xy_trigger 0, 25, 18, 0, DodrioRanchMapSignThing, 0, 0
-	xy_trigger 0, 26, 18, 0, DodrioRanchMapSignThing, 0, 0
-	xy_trigger 0, 27, 18, 0, DodrioRanchMapSignThing, 0, 0
 	xy_trigger 0, 24, 19, 0, DodrioRanchMapSignThing, 0, 0
 	xy_trigger 0, 25, 19, 0, DodrioRanchMapSignThing, 0, 0
 	xy_trigger 0, 26, 19, 0, DodrioRanchMapSignThing, 0, 0
 	xy_trigger 0, 27, 19, 0, DodrioRanchMapSignThing, 0, 0
+	xy_trigger 0, 24, 20, 0, DodrioRanchMapSignThing, 0, 0
+	xy_trigger 0, 25, 20, 0, DodrioRanchMapSignThing, 0, 0
+	xy_trigger 0, 26, 20, 0, DodrioRanchMapSignThing, 0, 0
+	xy_trigger 0, 27, 20, 0, DodrioRanchMapSignThing, 0, 0
 	xy_trigger 0,  9, 19, 0, DodrioRanchMapSignThing, 0, 0
 	xy_trigger 0,  9, 24, 0, DodrioRanchMapSignThing, 0, 0
 	xy_trigger 0,  9, 25, 0, DodrioRanchMapSignThing, 0, 0
@@ -31,14 +33,14 @@ Route9_MapScriptHeader:
 	xy_trigger 0, 20, 19, 0, DodrioRanchMapSignThing, 0, 0
 	xy_trigger 0, 21, 19, 0, DodrioRanchMapSignThing, 0, 0
 	xy_trigger 0, 22, 19, 0, DodrioRanchMapSignThing, 0, 0
+	xy_trigger 1, 24, 18, 0, Route9MapSignThing, 0, 0
+	xy_trigger 1, 25, 18, 0, Route9MapSignThing, 0, 0
+	xy_trigger 1, 26, 18, 0, Route9MapSignThing, 0, 0
+	xy_trigger 1, 27, 18, 0, Route9MapSignThing, 0, 0
 	xy_trigger 1, 24, 17, 0, Route9MapSignThing, 0, 0
 	xy_trigger 1, 25, 17, 0, Route9MapSignThing, 0, 0
 	xy_trigger 1, 26, 17, 0, Route9MapSignThing, 0, 0
 	xy_trigger 1, 27, 17, 0, Route9MapSignThing, 0, 0
-	xy_trigger 1, 24, 16, 0, Route9MapSignThing, 0, 0
-	xy_trigger 1, 25, 16, 0, Route9MapSignThing, 0, 0
-	xy_trigger 1, 26, 16, 0, Route9MapSignThing, 0, 0
-	xy_trigger 1, 27, 16, 0, Route9MapSignThing, 0, 0
 
 	db 10 ; bg events
 	signpost 22, 25, SIGNPOST_READ, RanchLogs
@@ -49,7 +51,7 @@ Route9_MapScriptHeader:
 	signpost 14, 30, SIGNPOST_READ, RanchLogs
 	signpost 24, 20, SIGNPOST_READ, RanchSign
 	signpost 46, 12, SIGNPOST_READ, Route9Sign
-	signpost 33,  8, SIGNPOST_READ, Route9Sign2
+	signpost 23, 10, SIGNPOST_READ, Route9Sign2
 	bg_event 17, 29, SIGNPOST_ITEM + FIRE_STONE, EVENT_ROUTE_9_HIDDEN_FIRE_STONE
 
 	db 20 ; object events
@@ -60,8 +62,8 @@ Route9_MapScriptHeader:
 	object_event 27, 16, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, DODUO, -1, -1, (1 << 3) | PAL_NPC_BROWN, PERSONTYPE_SCRIPT, 0, RanchDoduo, -1
 	itemball_event 32,  2, CARBOS, 1, EVENT_ROUTE_9_POKE_BALL_1
 	itemball_event 30, 16, FULL_RESTORE, 1, EVENT_ROUTE_9_POKE_BALL_2
-	person_event SPRITE_BIRD_KEEPER, 39, 15, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 5, TrainerRanch_1, -1
-	person_event SPRITE_BIRD_KEEPER, 32,  3, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 4, TrainerRanch_2, -1
+	person_event SPRITE_BIRD_KEEPER, 40, 15, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 5, TrainerRanch_1, -1
+	person_event SPRITE_BIRD_KEEPER, 31, 12, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 3, TrainerRanch_2, -1
 	person_event SPRITE_BEAUTY, 16, 17, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 5, TrainerRanch_3, -1
 	person_event SPRITE_BUG_CATCHER, 10, 13, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 5, TrainerRanch_4, -1
 	person_event SPRITE_BIRD_KEEPER,  7, 21, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 1, TrainerRanch_5, -1
@@ -373,15 +375,20 @@ Route9SignText:
 	para "NORTH: FLICKER"
 	line "STATION"
 	
-	para "SOUTH: ROUTE 12"
+	para "SOUTH: ROUTE 11"
 	
 	para "WEST: EVENTIDE"
 	line "VILLAGE"
 	done
 	
 Route9Sign2Text:
-	text "DODRIO RANCH"
-	line "ahead."
+	text "ROUTE 9"
+	
+	para "NORTH: FLICKER"
+	line "STATION"
+	
+	para "SOUTH: EVENTIDE"
+	line "VILLAGE & ROUTE 11"
 	done
 	
 RanchDodrioText1:

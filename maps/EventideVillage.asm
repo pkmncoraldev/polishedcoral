@@ -6,38 +6,38 @@ EventideVillage_MapScriptHeader:
 	callback MAPCALLBACK_OBJECTS, EventideVillageSwitches
 
 	db 9 ; warp events
-	warp_event  6, 20, EVENTIDE_VILLAGE_GATE, 3
-	warp_event  6, 21, EVENTIDE_VILLAGE_GATE, 4
-	warp_event 13, 17, EVENTIDE_POKECENTER, 1
+	warp_event  8, 20, EVENTIDE_VILLAGE_GATE, 3
+	warp_event  8, 21, EVENTIDE_VILLAGE_GATE, 4
+	warp_event 33, 13, EVENTIDE_POKECENTER, 1
 	warp_event 23, 25, EVENTIDE_MART, 1
 	warp_event 23, 13, EVENTIDE_BIKE_SHOP, 1
 	warp_event 13, 25, EVENTIDE_GYM_SPEECH_HOUSE, 1
-	warp_event 33, 13, EVENTIDE_SOOTHE_BELL_HOUSE, 1
+	warp_event 13, 17, EVENTIDE_SOOTHE_BELL_HOUSE, 1
 	warp_event 31, 37, EVENTIDE_GYM, 1
 	warp_event 32, 37, EVENTIDE_GYM, 2
 
 	db 4 ; coord events
 	coord_event 11, 31, 0, EventideMakeYellowEvent
 	coord_event 11, 29, 1, EventideMakeGrayEvent
-	coord_event 25, 16, 2, EventideBikeshopStop1
-	coord_event 25, 17, 2, EventideBikeshopStop2
+	coord_event 21, 16, 2, EventideBikeshopStop1
+	coord_event 21, 17, 2, EventideBikeshopStop2
 
 	db 9 ; bg events
 	bg_event 24, 36, SIGNPOST_JUMPTEXT, EventideVillageBiplaneText
 	bg_event 25, 36, SIGNPOST_JUMPTEXT, EventideVillageBiplaneText
 	bg_event 26, 36, SIGNPOST_JUMPTEXT, EventideVillageBiplaneText
 	bg_event 27, 36, SIGNPOST_JUMPTEXT, EventideVillageBiplaneText
-	bg_event 18, 19, SIGNPOST_JUMPTEXT, EventideVillageSignText
+	bg_event 30, 15, SIGNPOST_JUMPTEXT, EventideVillageSignText
 	bg_event 24, 15, SIGNPOST_JUMPTEXT, EventideVillageBikeShopSignText
 	bg_event 30, 38, SIGNPOST_JUMPTEXT, EventideVillageGymSignText
-	signpost 17, 14, SIGNPOST_READ, EventideVillagePokeCenterSign
+	signpost 13, 34, SIGNPOST_READ, EventideVillagePokeCenterSign
 	signpost 25, 24, SIGNPOST_READ, EventideVillageMartSign
 
 	db 18 ; object events
 	person_event SPRITE_BREEDER, 14, 23, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, EventideVllageBikeShopOwner, EVENT_GOT_BIKE
 	person_event SPRITE_COWGIRL, 34, 20, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, EventideVillageMilkGirl, -1
 	person_event SPRITE_ROCKER, 20, 15, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, EventideVillageNPC1, -1
-	person_event SPRITE_CUTE_GIRL, 15, 30, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, EventideVillageNPC2, -1
+	person_event SPRITE_CUTE_GIRL, 17, 28, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, EventideVillageNPC2, -1
 	person_event SPRITE_BUG_CATCHER, 29, 10, SPRITEMOVEDATA_STANDING_DOWN, 1, 1, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, EventideVillageNPC3, -1
 	person_event SPRITE_N64, 36, 11, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, EventideVillageScarecrow, -1
 	person_event SPRITE_HANGAR_PARTS, 32, 33, SPRITEMOVEDATA_HANGAR_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
@@ -50,7 +50,7 @@ EventideVillage_MapScriptHeader:
 	object_event 14, 37, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, MILTANK, -1, -1, PAL_NPC_PINK, PERSONTYPE_SCRIPT, 0, EventideVillageMiltank, -1
 	object_event 13, 31, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, TAUROS, -1, -1, PAL_NPC_BROWN, PERSONTYPE_SCRIPT, 0, EventideVillageTauros, -1
 	object_event 13, 41, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, TAUROS, -1, -1, PAL_NPC_BROWN, PERSONTYPE_SCRIPT, 0, EventideVillageTauros, -1
-	itemball_event  8, 18, PROTEIN, 1, EVENT_EVENTIDE_VILLAGE_POKEBALL
+	itemball_event 31, 12, PROTEIN, 1, EVENT_EVENTIDE_VILLAGE_POKEBALL
 	tapeball_event 10, 34, MUSIC_EVENTIDE_VILLAGE, 1, EVENT_MUSIC_EVENTIDE_VILLAGE
 
 	
@@ -101,7 +101,7 @@ EventideBikeshopStop1:
 	playsound SFX_PAY_DAY
 	spriteface EVENTIDE_VILLAGE_BIKE_SHOP_OWNER, DOWN
 	showemote EMOTE_SHOCK, EVENTIDE_VILLAGE_BIKE_SHOP_OWNER, 15
-	spriteface PLAYER, LEFT
+	spriteface PLAYER, UP
 	opentext TEXTBOX_LADY
 	writetext EventideBikeshopStopText1
 	waitbutton
@@ -121,7 +121,7 @@ EventideBikeshopStop2:
 	playsound SFX_PAY_DAY
 	spriteface EVENTIDE_VILLAGE_BIKE_SHOP_OWNER, DOWN
 	showemote EMOTE_SHOCK, EVENTIDE_VILLAGE_BIKE_SHOP_OWNER, 15
-	spriteface PLAYER, LEFT
+	spriteface PLAYER, UP
 	opentext TEXTBOX_LADY
 	writetext EventideBikeshopStopText1
 	waitbutton
@@ -144,14 +144,14 @@ EventideBikeshopStopText1:
 	done
 	
 Movement_EventideBikeshopStop1:
-	step_left
-	step_left
+	step_right
+	step_right
 	step_up
 	step_end
 	
 Movement_EventideBikeshopStop2:
-	step_left
-	step_left
+	step_right
+	step_right
 	step_up
 	step_up
 	step_end
@@ -265,14 +265,12 @@ EventideVillageNPC1Text:
 	done
 	
 EventideVillageNPC2Text:
-	text "Just passing"
-	line "through?"
+	text "Are you here for"
+	line "the GYM?"
 	
-	para "Yeah, <WAIT_S>if you aren't"
-	line "a farmer,"
-	
-	para "there isn't much to"
-	line "do around here."
+	para "Yeah, there isn't"
+	line "much else to do"
+	cont "around here…"
 	done
 	
 EventideVillageNPC3Text1:

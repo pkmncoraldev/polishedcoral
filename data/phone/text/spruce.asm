@@ -28,9 +28,6 @@ SprucePhoneComeToIslandText:
 	text "Hello?"
 	line "Is this <PLAYER>?"
 	
-	para "Ah!<WAIT_S>"
-	line "Wonderful!"
-	
 	para "I am PROF. SPRUCE."
 	
 	para "I'm the one who had"
@@ -38,16 +35,10 @@ SprucePhoneComeToIslandText:
 	cont "MON sent to the"
 	cont "LIGHTHOUSE."
 	
-	para "I'm very sorry I"
-	line "couldn't be there"
-	cont "in person to pre-"
-	cont "sent the #MON"
-	cont "to you children."
-	
 	para "How has my old"
 	line "#MON been?"
 	
-	para "What's that?"
+	para "…"
 	
 	para "You say you won"
 	line "the SPLASHBADGE in"
@@ -57,14 +48,10 @@ SprucePhoneComeToIslandText:
 	line "must be taking on"
 	cont "the GYM CHALLENGE!"
 	
-	para "The next GYM will"
-	line "be in EVENTIDE"
-	cont "VILLAGE nearby."
-	
-	para "Before that, why"
-	line "don't you stop by"
-	cont "my LAB on SUNBEAM"
-	cont "ISLAND?"
+	para "Before you move"
+	line "on, why not stop"
+	line "by my LAB on"
+	cont "SUNBEAM ISLAND?"
 	
 	para "I'll give you the"
 	line "grand tour!"

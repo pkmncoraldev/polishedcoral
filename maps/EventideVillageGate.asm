@@ -7,8 +7,8 @@ EventideVillageGate_MapScriptHeader:
 	db 4 ; warp events
 	warp_def 4, 0, 3, EVENTIDE_FOREST
 	warp_def 5, 0, 4, EVENTIDE_FOREST
-	warp_def 4, 9, 1, EVENTIDE_VILLAGE
-	warp_def 5, 9, 2, EVENTIDE_VILLAGE
+	warp_def 4, 9, 6, ROUTE_9
+	warp_def 5, 9, 7, ROUTE_9
 
 	db 0 ; coord events
 

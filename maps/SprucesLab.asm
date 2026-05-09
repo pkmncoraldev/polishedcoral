@@ -378,16 +378,30 @@ SpruceLabSpruceText7:
 	
 SpruceLabSpruceText8:
 	text "I suppose you're"
-	line "heading onward to"
-	cont "EVENTIDE VILLAGE."
+	line "headed to your"
+	cont "next GYM battle."
 	
-	para "Past EVENTIDE to"
-	line "the NORTH is snowy"
-	cont "ROUTE 10."
+	para "Head back NORTH"
+	line "to STARGLOW VALLEY."
+	
+	para "There are two GYMS"
+	line "EAST of there."
+	
+	para "One in EVENTIDE"
+	line "VILLAGE to the"
+	cont "SOUTHEAST,"
+	
+	para "and one in TWINKLE"
+	line "TOWN to the NORTH-"
+	cont "EAST."
 	
 	para "My colleague has a"
-	line "researcher there"
-	cont "looking for traces"
+	line "researcher posted"
+	cont "on snowy ROUTE 10"
+	cont "near TWINKLE TOWN."
+	
+	para "He's up there"
+	line "looking for traces"
 	cont "of ancient ruins."
 	
 	para "You should stop"

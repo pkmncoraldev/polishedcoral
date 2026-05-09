@@ -83,15 +83,14 @@ EventideBikeShopKidText:
 	done
 	
 EventideBikeShopOwnerNpcText:
-	text "Huh?<WAIT_M>"
-	line "Sorry we're closed…"
+	text "Sorry we're closed…"
 	
 	para "My son has gone"
 	line "missing!"
 	
 	para "He went off into"
-	line "the forest to"
-	cont "play, and hasn't"
+	line "the forest to the"
+	cont "NORTH, and hasn't"
 	cont "come home."
 	
 	para "Oh, I hope he's"

@@ -167,6 +167,9 @@ LoadSpecialMapPalette: ; 494ac
 	call LoadTimeofDayBGPal6
 	jp .do_nothing
 .lightning
+	ld a, [wMapGroup]
+	cp GROUP_DRAGON_SHRINE_TOP
+	jp nz, .do_nothing
 	ld a, [wTimeOfDayPalFlags]
 	and $3F
 	cp 1

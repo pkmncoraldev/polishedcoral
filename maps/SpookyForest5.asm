@@ -39,6 +39,7 @@ SpookyForest5LostKid:
 	closetext
 	special Special_ForcePlayerStateNormal
 	domaptrigger SPOOKY_FOREST_ESCORT, $1
+	pause 10
 	warp_stealth UP, SPOOKY_FOREST_ESCORT, $24, $13
 	end
 .no

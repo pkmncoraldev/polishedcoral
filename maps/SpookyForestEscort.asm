@@ -34,7 +34,8 @@ SpookyForestEscort_MapScriptHeader:
 	coord_event  7, 31, 0, SpookyForestSavedKidRight
 
 
-	db 0 ; bg events
+	db 1 ; bg events
+	signpost 26,  7, SIGNPOST_READ, SpookyForest1Sign
 
 	db 1 ; object events
 	person_event SPRITE_CHILD, 18, 36, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, SpookyForestEscortLostKid, -1

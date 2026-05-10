@@ -60,11 +60,10 @@ SpookyForest1SignText:
 	para "If you don't want"
 	line "to get lost,"
 	
-	para "you must pay"
-	line "very close atten-"
-	cont "tion to your"
-	cont "surroundings."
+	para "you must pay very"
+	line "close attention to"
+	cont "your surroundings."
 	
 	para "Watch carefully"
-	line "for clues."
+	line "for differences."
 	done

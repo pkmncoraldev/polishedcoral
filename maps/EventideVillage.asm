@@ -1,9 +1,10 @@
 EventideVillage_MapScriptHeader:
 	db 0 ; scene scripts
 
-	db 2 ; callbacks
+	db 3 ; callbacks
 	callback MAPCALLBACK_NEWMAP, EventideVillageFlypointCallback
 	callback MAPCALLBACK_OBJECTS, EventideVillageSwitches
+	callback MAPCALLBACK_TILES, EventideVillageCallback
 
 	db 9 ; warp events
 	warp_event  8, 20, EVENTIDE_VILLAGE_GATE, 3
@@ -22,16 +23,17 @@ EventideVillage_MapScriptHeader:
 	coord_event 21, 16, 2, EventideBikeshopStop1
 	coord_event 21, 17, 2, EventideBikeshopStop2
 
-	db 9 ; bg events
-	bg_event 24, 36, SIGNPOST_JUMPTEXT, EventideVillageBiplaneText
-	bg_event 25, 36, SIGNPOST_JUMPTEXT, EventideVillageBiplaneText
-	bg_event 26, 36, SIGNPOST_JUMPTEXT, EventideVillageBiplaneText
-	bg_event 27, 36, SIGNPOST_JUMPTEXT, EventideVillageBiplaneText
-	bg_event 30, 15, SIGNPOST_JUMPTEXT, EventideVillageSignText
+	db 10 ; bg events
+	signpost 36, 24, SIGNPOST_IFSET, EventideVillageBiplane
+	signpost 36, 25, SIGNPOST_IFSET, EventideVillageBiplane
+	signpost 36, 26, SIGNPOST_IFSET, EventideVillageBiplane
+	signpost 36, 27, SIGNPOST_IFSET, EventideVillageBiplane
+	bg_event 16, 19, SIGNPOST_JUMPTEXT, EventideVillageSignText
 	bg_event 24, 15, SIGNPOST_JUMPTEXT, EventideVillageBikeShopSignText
 	bg_event 30, 38, SIGNPOST_JUMPTEXT, EventideVillageGymSignText
 	signpost 13, 34, SIGNPOST_READ, EventideVillagePokeCenterSign
 	signpost 25, 24, SIGNPOST_READ, EventideVillageMartSign
+	signpost 37, 32, SIGNPOST_IFNOTSET, EventideVillageWendyNote
 
 	db 18 ; object events
 	person_event SPRITE_BREEDER, 14, 23, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, EventideVllageBikeShopOwner, EVENT_GOT_BIKE
@@ -40,7 +42,7 @@ EventideVillage_MapScriptHeader:
 	person_event SPRITE_CUTE_GIRL, 17, 28, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, EventideVillageNPC2, -1
 	person_event SPRITE_BUG_CATCHER, 29, 10, SPRITEMOVEDATA_STANDING_DOWN, 1, 1, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, EventideVillageNPC3, -1
 	person_event SPRITE_N64, 36, 11, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, EventideVillageScarecrow, -1
-	person_event SPRITE_HANGAR_PARTS, 32, 33, SPRITEMOVEDATA_HANGAR_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
+	person_event SPRITE_HANGAR_PARTS, 32, 28, SPRITEMOVEDATA_HANGAR_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
 	object_event 21, 32, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, MILTANK, -1, -1, PAL_NPC_PINK, PERSONTYPE_SCRIPT, 0, EventideVillageMiltank, -1
 	object_event 19, 34, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, MILTANK, -1, -1, PAL_NPC_PINK, PERSONTYPE_SCRIPT, 0, EventideVillageMiltank, -1
 	object_event 22, 36, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, MILTANK, -1, -1, PAL_NPC_PINK, PERSONTYPE_SCRIPT, 0, EventideVillageMiltank, -1
@@ -70,6 +72,18 @@ EventideVillageSwitches:
 	setevent EVENT_EVENTIDE_GYM_BLACK_SWITCH
 	clearevent EVENT_EVENTIDE_GYM_RED_SWITCH
 	clearevent EVENT_EVENTIDE_GYM_YELLOW_SWITCH
+	return
+	
+EventideVillageCallback:
+	checkevent EVENT_SAVED_BIKESHOP_OWNERS_SON
+	iftrue .end
+	changeblock $18, $22, $50
+	changeblock $1a, $22, $50
+	changeblock $18, $24, $50
+	changeblock $1a, $24, $50
+	changeblock $1e, $24, $1c
+	changeblock $20, $24, $b7
+.end
 	return
 	
 EventideMakeYellowEvent:
@@ -155,6 +169,28 @@ Movement_EventideBikeshopStop2:
 	step_up
 	step_up
 	step_end
+	
+EventideVillageWendyNote:
+	dw EVENT_SAVED_BIKESHOP_OWNERS_SON
+	jumptext EventideVillageWendyNoteText
+	
+EventideVillageWendyNoteText:
+	text "A child has gone"
+	line "missing from town."
+	
+	para "I've taken my plane"
+	line "to look for him."
+	
+	para "I'll be flying in"
+	line "the skies above"
+	cont "EVENTIDE FOREST."
+	
+	para "-WENDY"
+	done
+	
+EventideVillageBiplane:
+	dw EVENT_SAVED_BIKESHOP_OWNERS_SON
+	jumptext EventideVillageBiplaneText
 	
 EventideVillagePokeCenterSign:
 	jumpstd pokecentersign

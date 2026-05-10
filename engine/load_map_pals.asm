@@ -836,7 +836,7 @@ LoadMapPals::
 	jr z, .park
 	cp MAP_FLICKER_PASS_OUTSIDE
 	jr z, .ranchcont
-	jp .hangar
+	jp .bone
 .ranchcont
 	ld a, [wTimeOfDayPalFlags]
 	and $3F

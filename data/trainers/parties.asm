@@ -1736,15 +1736,6 @@ BirdKeeperGroup:
 ; ================
 
 	; BIRD_KEEPER
-	db "BRYANT@"
-	db TRAINERTYPE_NORMAL
-	; party
-	db 23, MURKROW
-	db -1 ; end
-
-; ================
-
-	; BIRD_KEEPER
 	db "TODD@"
 	db TRAINERTYPE_NORMAL
 	; party

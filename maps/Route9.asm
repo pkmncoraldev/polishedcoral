@@ -54,7 +54,7 @@ Route9_MapScriptHeader:
 	signpost 23, 10, SIGNPOST_READ, Route9Sign2
 	bg_event 17, 29, SIGNPOST_ITEM + FIRE_STONE, EVENT_ROUTE_9_HIDDEN_FIRE_STONE
 
-	db 20 ; object events
+	db 19 ; object events
 	person_event SPRITE_N64, 11, 21, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, RanchScarecrow, -1
 	object_event 26, 19, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, DODRIO, -1, -1, (1 << 3) | PAL_NPC_BROWN, PERSONTYPE_SCRIPT, 0, RanchDodrio1, -1
 	object_event 26, 10, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, DODRIO, -1, -1, (1 << 3) | PAL_NPC_BROWN, PERSONTYPE_SCRIPT, 0, RanchDodrio2, -1
@@ -63,7 +63,6 @@ Route9_MapScriptHeader:
 	itemball_event 32,  2, CARBOS, 1, EVENT_ROUTE_9_POKE_BALL_1
 	itemball_event 30, 16, FULL_RESTORE, 1, EVENT_ROUTE_9_POKE_BALL_2
 	person_event SPRITE_BIRD_KEEPER, 40, 15, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 5, TrainerRanch_1, -1
-	person_event SPRITE_BIRD_KEEPER, 31, 12, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 3, TrainerRanch_2, -1
 	person_event SPRITE_BEAUTY, 16, 17, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 5, TrainerRanch_3, -1
 	person_event SPRITE_BUG_CATCHER, 10, 13, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 5, TrainerRanch_4, -1
 	person_event SPRITE_BIRD_KEEPER,  7, 21, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 1, TrainerRanch_5, -1
@@ -199,24 +198,6 @@ TrainerRanch_1:
 
 .BeatenText:
 	text "Cripes!"
-	done
-	
-TrainerRanch_2:
-	generictrainer BIRD_KEEPER, BRYANT, EVENT_BEAT_ROUTE_9_TRAINER_2, .SeenText, .BeatenText
-
-	text "I got blown over…"
-	done
-
-.SeenText:
-	text "A TRAINER!"
-	
-	para "Think you can"
-	line "withstand the"
-	cont "wind?"
-	done
-
-.BeatenText:
-	text "What a blow out!"
 	done
 	
 TrainerRanch_3:

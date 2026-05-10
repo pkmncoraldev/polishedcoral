@@ -164,7 +164,6 @@ DEF PLAYER_F EQU __enum__
 
 	trainerclass BIRD_KEEPER
 	const TED
-	const BRYANT
 	const TODD
 	const RANDY
 	const JAZZ

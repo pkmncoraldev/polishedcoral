@@ -128,6 +128,7 @@ Facings:
 	dw FacingColbyFall10
 	dw FacingColbyFall11
 	dw FacingColbyFall12
+	dw FacingColbyFall13
 FacingsEnd: dw 0
 
 DEF NUM_FACINGS EQU (FacingsEnd - Facings) / 2
@@ -1184,3 +1185,10 @@ FacingColbyFall12:
 	db  -8,  8, 0, $8d
 	db  0,  0, 2, $8e
 	db  0,  8, 2, $8f
+	
+FacingColbyFall13:
+	db 4 ; #
+	db  -8,  0, 0, $00
+	db  -8,  8, 0, $01
+	db  0,  0, 2, $02
+	db  0,  8, 2, $03

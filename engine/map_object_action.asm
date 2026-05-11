@@ -90,7 +90,8 @@ Pointers445f: ; 445f
 	dw SetFacingBillboard1R,   		   SetFacingBillboard1R		  ; PERSON_ACTION_BILLBOARD_1_R
 	dw SetFacingBillboard2L,   		   SetFacingBillboard2L		  ; PERSON_ACTION_BILLBOARD_2_L
 	dw SetFacingBillboard2R,   		   SetFacingBillboard2R		  ; PERSON_ACTION_BILLBOARD_2_R
-	dw SetFacingColbyFall,			   SetFacingColbyFall		  ; PERSON_ACTION_COLBY_FALL
+	dw SetFacingColbyFall1,			   SetFacingColbyFall1		  ; PERSON_ACTION_COLBY_FALL_1
+	dw SetFacingColbyFall2,			   SetFacingColbyFall2		  ; PERSON_ACTION_COLBY_FALL_2
 	
 ; 44a3
 
@@ -796,27 +797,39 @@ FacingPlumeBossData:
 	dbw 221,	FACING_STEP_LEFT_0
 	dbw -1, 	FALSE
 	
-SetFacingColbyFall:
+SetFacingColbyFall1:
 	call IncrementOWSpriteAnimationTimer
 	ld a, [wOWSpriteAnimationTimer]
-	ld hl, FacingColbyFallData
+	ld hl, FacingColbyFall1Data
 	jp AnimateOWSprite
 	
-FacingColbyFallData:
+FacingColbyFall1Data:
 	;frame number, facing
 	;last entry determines whether or not to loop
 	dbw 1,		FACING_COLBY_FALL_1
 	dbw 4, 		FACING_COLBY_FALL_2
-	dbw 70, 	FACING_COLBY_FALL_3
-	dbw 74, 	FACING_COLBY_FALL_4
-	dbw 78,		FACING_COLBY_FALL_5
-	dbw 82,		FACING_COLBY_FALL_6
-	dbw 84,		FACING_COLBY_FALL_7
-	dbw 86,		FACING_COLBY_FALL_8
-	dbw 88,		FACING_COLBY_FALL_9
-	dbw 90,		FACING_COLBY_FALL_10
-	dbw 92,		FACING_COLBY_FALL_11
-	dbw 94,		FACING_COLBY_FALL_12
+	dbw 7, 		FACING_COLBY_FALL_13
+	dbw -1, 	FALSE
+	
+SetFacingColbyFall2:
+	call IncrementOWSpriteAnimationTimer
+	ld a, [wOWSpriteAnimationTimer]
+	ld hl, FacingColbyFall2Data
+	jp AnimateOWSprite
+	
+FacingColbyFall2Data:
+	;frame number, facing
+	;last entry determines whether or not to loop
+	dbw 1, 		FACING_COLBY_FALL_3
+	dbw 5, 		FACING_COLBY_FALL_4
+	dbw 9,		FACING_COLBY_FALL_5
+	dbw 13,		FACING_COLBY_FALL_6
+	dbw 15,		FACING_COLBY_FALL_7
+	dbw 17,		FACING_COLBY_FALL_8
+	dbw 19,		FACING_COLBY_FALL_9
+	dbw 21,		FACING_COLBY_FALL_10
+	dbw 23,		FACING_COLBY_FALL_11
+	dbw 25,		FACING_COLBY_FALL_12
 	dbw -1, 	FALSE
 
 IncrementOWSpriteAnimationTimer::

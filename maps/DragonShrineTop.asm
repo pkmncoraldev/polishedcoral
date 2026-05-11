@@ -7,8 +7,9 @@ DragonShrineTop_MapScriptHeader:
 	callback MAPCALLBACK_TILES, DragonShrineTopCallback
 
 	db 2 ; warp events
-	warp_def 39,  9, 3, DRAGON_SHRINE_INTERIOR
-	warp_def 39, 10, 4, DRAGON_SHRINE_INTERIOR
+	warp_event  9, 39, DRAGON_SHRINE_INTERIOR, 255
+	warp_event 10, 39, DRAGON_SHRINE_INTERIOR, 255
+
 
 	db 6 ; coord events
 	coord_event  7, 10, 0, DragonShrineTopScene1
@@ -18,7 +19,13 @@ DragonShrineTop_MapScriptHeader:
 	coord_event 11, 10, 0, DragonShrineTopScene5
 	coord_event 12, 10, 0, DragonShrineTopScene6
 
-	db 0 ; bg events
+	db 6 ; bg events
+	bg_event  7,  7, SIGNPOST_JUMPTEXT, DragonShrineTopViewDownText
+	bg_event  8,  7, SIGNPOST_JUMPTEXT, DragonShrineTopViewDownText
+	bg_event  9,  7, SIGNPOST_JUMPTEXT, DragonShrineTopViewDownText
+	bg_event 10,  7, SIGNPOST_JUMPTEXT, DragonShrineTopViewDownText
+	bg_event 11,  7, SIGNPOST_JUMPTEXT, DragonShrineTopViewDownText
+	bg_event 12,  7, SIGNPOST_JUMPTEXT, DragonShrineTopViewDownText
 
 	db 4 ; object events
 	object_event  9,  8, SPRITE_COLBY, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
@@ -74,6 +81,7 @@ DragonShrineTopRivalScene:
 	priority 1, LOW_PRIORITY
 	clearevent EVENT_LIGHTNING_ACTIVE
 	loadvar wLightning, 0
+	applymovement PLAYER, Movement_DragonShrineTopLightningShort
 	spriteface PLAYER, UP
 	pause 10
 	special Special_FadeOutMusic
@@ -227,38 +235,53 @@ DragonShrineTopRivalScene:
 	verbosegiveitem POTION;DRAGON_STONE
 	closetext
 	pause 20
+	applyonemovement 1, turn_step_up
+	applyonemovement PLAYER, remove_fixed_facing
 	opentext TEXTBOX_RIVAL
 	writetext DragonShrineTopRivalSceneText12
 	waitbutton
 	closetext
 	waitsfx
-	pause 40
+	pause 20
+	applyonemovement 1, turn_step_down
+	applyonemovement PLAYER, remove_fixed_facing
+	pause 20
+	special Special_FadeOutMusic
+	pause 20
 	applymovement 1, Movement_DragonShrineTopColbyStepBack;walk to edge of cliff
-	pause 10
+	pause 25
 	applyonemovement 2, slow_step_up
 	pause 10
 	applyonemovement PLAYER, show_person
 	applyonemovement PLAYER, remove_fixed_facing
 	disappear 2
-	special Special_FadeOutMusic
 	opentext TEXTBOX_RIVAL
 	writetext DragonShrineTopRivalSceneText13
 	waitbutton
 	closetext
 	waitsfx
+	pause 10
 ;colby jumps
 	disappear 4
 	moveperson 4, 9, 8
 	appear 4
 	applyonemovement PLAYER, remove_fixed_facing
 	disappear 1
-	changeaction 4, PERSON_ACTION_COLBY_FALL
+	changeaction 4, PERSON_ACTION_COLBY_FALL_1
+	pause 20
+	opentext TEXTBOX_RIVAL
+	writetext DragonShrineTopRivalSceneText14
+	waitbutton
+	closetext
+	waitsfx
+	pause 25
+	changeaction 4, PERSON_ACTION_COLBY_FALL_2
 	disappear 4
 
 	applyonemovement PLAYER, run_step_up
 	pause 40
 	opentext
-	writetext DragonShrineTopRivalSceneText14
+	writetext DragonShrineTopRivalSceneText16
 	waitbutton
 	closetext
 	waitsfx
@@ -272,6 +295,7 @@ DragonShrineTopRivalScene:
 ;	setevent EVENT_LIGHTNING_ACTIVE
 	setevent EVENT_DRAGON_SHRINE_DONE
 	loadvar wLightningCooldown, 60
+	warpmod 1, LUMINA_GYM
 	dotrigger $1
 	end
 	
@@ -404,19 +428,43 @@ DragonShrineTopRivalSceneText10:
 	done
 	
 DragonShrineTopRivalSceneText11:
-	text "He sought me out"
-	line "and gave me the "
-	cont "full force of"
-	cont "TEAM SNARE."
+	text "MR. ELI sought me"
+	line "out himself."
+	
+	para "He called me to"
+	line "the NETT BUILDING"
+	cont "in LUSTER CITY."
+	
+	para "There he told me"
+	line "how he'd started"
+	cont "TEAM SNARE,"
+	
+	para "and how he was"
+	line "using them to"
+	cont "solve all of his"
+	cont "problems."
+	
+	para "He told me about"
+	line "how you'd been"
+	cont "getting in their"
+	cont "way,"
+	
+	para "and that you were"
+	line "our common enemy."
 	
 	para "He must have known"
-	line "how important this"
-	cont "was to me."
+	line "how important the"
+	cont "DRAGON STONE was"
+	cont "to me,"
 	
-	para "All he asked in"
-	line "return is that I"
-	cont "don't disappoint"
-	cont "him."
+	para "because he offered"
+	line "me the full force"
+	cont "of TEAM SNARE."
+	
+	para "And all he asked"
+	line "in return is that"
+	cont "I don't let him"
+	cont "down."
 	
 	para "But I did…"
 	
@@ -430,11 +478,14 @@ DragonShrineTopRivalSceneText11:
 	done
 	
 DragonShrineTopRivalSceneText12:
-	text "Now, get outta"
-	line "here!"
+	text "I have nothing"
+	line "left anymore…"
+	
+	para "I know what I"
+	line "must do."
 	
 	para "You won't be seeing"
-	line "any more of me."
+	line "me again."
 	done
 	
 DragonShrineTopRivalSceneText13:
@@ -446,6 +497,10 @@ DragonShrineTopRivalSceneText13:
 	done
 	
 DragonShrineTopRivalSceneText14:
+	text "Goodbye, <PLAYER>."
+	done
+	
+DragonShrineTopRivalSceneText16:
 	text "…<WAIT_L>He's gone…"
 	done
 	
@@ -507,3 +562,11 @@ Movement_DragonShrineTopColbyStepBack:
 	slow_half_step_back
 	remove_fixed_facing
 	step_end
+	
+DragonShrineTopViewDownText:
+	text "It's so far down."
+	
+	para "There's no way"
+	line "<RIVAL> could've"
+	cont "landed safely…"
+	done

@@ -132,6 +132,7 @@ DragonShrineTopRivalScene:
 	pause 40
 	applymovement PLAYER, Movement_DragonShrineTopCameraPan
 	pause 20
+	playmusic MUSIC_RIVAL_ENCOUNTER_2
 	opentext TEXTBOX_RIVAL
 	writetext DragonShrineTopRivalSceneText6
 	waitbutton
@@ -159,6 +160,9 @@ DragonShrineTopRivalScene:
 	waitsfx
 	pause 5
 	applyonemovement 2, slow_step_up
+	pause 10
+	special Special_FadeOutMusic
+	pause 20
 	callasm DragonShrineLightning
 	applymovement PLAYER, Movement_DragonShrineTopLightningShort
 	scall DragonShrineTopLightning
@@ -206,6 +210,7 @@ DragonShrineTopRivalScene:
 	pause 30
 	applymovement PLAYER, Movement_DragonShrineTopCameraPan2
 	spriteface PLAYER, UP
+	playmusic MUSIC_RIVAL_ENCOUNTER_2
 	opentext TEXTBOX_RIVAL
 	writetext DragonShrineTopRivalSceneText11
 	waitbutton
@@ -235,15 +240,12 @@ DragonShrineTopRivalScene:
 	applyonemovement PLAYER, show_person
 	applyonemovement PLAYER, remove_fixed_facing
 	disappear 2
-	
-	
+	special Special_FadeOutMusic
 	opentext TEXTBOX_RIVAL
-	
 	writetext DragonShrineTopRivalSceneText13
 	waitbutton
 	closetext
 	waitsfx
-
 ;colby jumps
 	disappear 4
 	moveperson 4, 9, 8

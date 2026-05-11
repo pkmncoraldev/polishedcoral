@@ -69,3 +69,4 @@ TapeNames::
 	db "“AUREOLE MOUNTAIN”@"
 	db "“LUMINA TOWN”@"
 	db "“DRAGON SHRINE”@"
+	db "“SPOTTED!<LNBRK><LNBRK>RIVAL 2”@"

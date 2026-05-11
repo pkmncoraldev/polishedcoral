@@ -68,6 +68,7 @@ Music:
 	dba Music_AureoleMoutain
 	dba Music_LuminaTown
 	dba Music_DragonShrine
+	dba Music_RivalEncounter2
 	dba Music_SnareLeaderBattle
 	dba Music_RBYWildBattle
 	

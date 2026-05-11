@@ -254,6 +254,7 @@ SECTION "Stadium Music", ROMX
 SECTION "Encounter Music", ROMX
 INCLUDE "audio/music/encounter/aftertherivalfight.asm" ; shares with lookrival.asm
 INCLUDE "audio/music/encounter/rival_encounter.asm" ; shares with aftertherivalfight.asm
+INCLUDE "audio/music/encounter/rival_encounter2.asm" ; dragon shrine
 INCLUDE "audio/music/encounter/youngster_encounter.asm"
 INCLUDE "audio/music/encounter/lass_encounter.asm"
 INCLUDE "audio/music/encounter/hiker_encounter.asm"

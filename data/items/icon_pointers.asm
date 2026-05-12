@@ -108,7 +108,7 @@ ItemIconPointers:
 	dba NettSpecsIcon
 	dba Room104KeyIcon
 	dba ServiceKeyIcon
-	dba NoItemIcon
+	dba DragonStoneIcon
 	dba NoItemIcon
 	dba NoItemIcon
 	dba FlowerPetalIcon

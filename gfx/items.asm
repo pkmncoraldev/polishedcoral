@@ -323,5 +323,6 @@ CoverFossilIcon: 	  			INCBIN "gfx/items/cover_fossil.2bpp"
 PlumeFossilIcon:   				INCBIN "gfx/items/plume_fossil.2bpp"
 MiracleTonicIcon:  				INCBIN "gfx/items/miracle_tonic.2bpp"
 RockCandyIcon:  				INCBIN "gfx/items/rock_candy.2bpp"
+DragonStoneIcon:  				INCBIN "gfx/items/dragon_stone.2bpp"
 
 ClothesIcon:      				INCBIN "gfx/items/0.2bpp"

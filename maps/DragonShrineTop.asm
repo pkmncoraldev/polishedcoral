@@ -232,7 +232,7 @@ DragonShrineTopRivalScene:
 	applymovement 3, Movement_DragonShrineTopThrowItem
 	disappear 3
 	opentext
-	verbosegiveitem POTION;DRAGON_STONE
+	verbosegiveitem DRAGON_STONE
 	closetext
 	pause 20
 	applyonemovement 1, turn_step_up

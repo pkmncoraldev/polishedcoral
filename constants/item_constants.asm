@@ -125,7 +125,7 @@
 	const NETT_SPECS   ; 6a
 	const ROOM_104_KEY ; 6b
 	const SERVICE_KEY  ; 6c
-	const OLD_SEA_MAP  ; 6d - replace
+	const DRAGON_STONE ; 6d
 	const SHINY_CHARM  ; 6e - replace
 	const OVAL_CHARM   ; 6f - replace
 	const FLOWER_PETAL ; 70

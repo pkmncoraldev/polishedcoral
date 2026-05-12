@@ -107,7 +107,7 @@ ItemNames::
 	db "NETT SPECS@"
 	db "ROOM 104 KEY@"
 	db "SERVICE KEY@"
-	db "OLD SEA MAP@"
+	db "DRAGON STONE@"
 	db "SHINY CHARM@"
 	db "OVAL CHARM@"
 	db "FLOWER PETAL@"

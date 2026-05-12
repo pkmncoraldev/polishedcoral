@@ -107,7 +107,7 @@ ItemDescriptions:
 	dw NettSpecsDesc
 	dw Room104KeyDesc
 	dw ServiceKeyDesc
-	dw OldSeaMapDesc
+	dw DragonStoneDesc
 	dw ShinyCharmDesc
 	dw OvalCharmDesc
 	dw FlowerPetalDesc
@@ -656,9 +656,9 @@ ServiceKeyDesc:
 	db   "Opens the service"
 	next "room in the INN.@"
 
-OldSeaMapDesc:
-	db   "A faded sea chart"
-	next "of a small island.@"
+DragonStoneDesc:
+	db   "Said to summon a"
+	next "legendary DRAGON.@"
 
 ShinyCharmDesc:
 	db   "A charm for find-"

@@ -8,12 +8,11 @@ Music_RivalEncounter2_Ch1:
 	volume $77
 	tone $0001
 	vibrato $12, $15
-	stereopanning $f
-	notetype $c, $77
+	stereopanning $0f
+	notetype $c, $58
 	note __, 2
 Music_RivalEncounter2_Ch1_Loop:
-	dutycycle $1
-	notetype $c, $77
+	dutycycle $2
 	octave 3
 	note C#, 3
 	octave 2
@@ -29,7 +28,6 @@ Music_RivalEncounter2_Ch1_Loop:
 	note G#, 2
 
 	dutycycle $0
-	notetype $c, $58
 	octave 2
 	note G#, 8
 	octave 3
@@ -43,8 +41,8 @@ Music_RivalEncounter2_Ch1_Loop:
 Music_RivalEncounter2_Ch2:
 	dutycycle $1
 	vibrato $8, $36
-	stereopanning $f0
-	notetype $c, $b5
+	stereopanning $ff
+	notetype $c, $77
 	note __, 2
 Music_RivalEncounter2_Ch2_Loop:
 	octave 1
@@ -59,16 +57,19 @@ Music_RivalEncounter2_Ch2_Loop:
 	octave 1
 	note G#, 6
 	note E_, 2
+	note C#, 1
+	note __, 1
+	note C#, 1
 	
 	dutycycle $0
 	notetype $c, $38
 	octave 3
-	note E_, 8
+	note E_, 5
 	note G#, 8
 	note F#, 8
 	note D#, 6
 	dutycycle $1
-	notetype $c, $b5
+	notetype $c, $77
 	octave 1
 	note E_, 2
 	
@@ -83,11 +84,13 @@ Music_RivalEncounter2_Ch2_Loop:
 	octave 1
 	note G#, 6
 	note E_, 2
+	note C#, 1
+	note __, 1
+	note C#, 1
 	
 	dutycycle $2
 	notetype $c, $48
 	octave 3
-	note C#, 3
 	note E_, 1
 	note G#, 1
 	note __, 1
@@ -100,7 +103,7 @@ Music_RivalEncounter2_Ch2_Loop:
 	note C_, 4
 	note D#, 2
 	dutycycle $1
-	notetype $c, $b5
+	notetype $c, $77
 	octave 1
 	note E_, 2
 ;	endchannel
@@ -108,9 +111,9 @@ Music_RivalEncounter2_Ch2_Loop:
 	endchannel
 
 Music_RivalEncounter2_Ch3:
-	notetype $c, $21
-
+	stereopanning $f0
 Music_RivalEncounter2_Ch3_Loop:
+	notetype $c, $20
 	octave 4
 	note C#, 1
 	note D#, 1
@@ -129,6 +132,5 @@ Music_RivalEncounter2_Ch3_Loop:
 	note E_, 8
 	note D#, 8
 	note C_, 6
-	notetype $c, $21
 	loopchannel 0, Music_RivalEncounter2_Ch3_Loop
 	endchannel

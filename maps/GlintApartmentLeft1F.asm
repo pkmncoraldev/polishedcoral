@@ -56,7 +56,7 @@ GlintApt11FNpc1Text:
 	cont "by a FIGHTING-type"
 	cont "#MON!"
 	
-	para "Nice bonus!"
+	para "A nice bonus!"
 	done
 	
 GlintApt11FNpc2Text:
@@ -74,19 +74,6 @@ GlintApt11FNpc2Text:
 	cont "to learn the move"
 	cont "to use it outside"
 	cont "of battle!"
-	done
-	
-GlintApt11FNpc2Text3:
-	text "That HM will teach"
-	line "ROCK SMASH."
-	
-	para "It's a FIGHTING-"
-	line "type move,"
-	
-	para "so it might come"
-	line "in handy against"
-	cont "NORMAL-type"
-	cont "#MON!"
 	done
 	
 GlintApt11FNpc3Text:

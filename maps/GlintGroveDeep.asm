@@ -4,7 +4,7 @@ GlintGroveDeep_MapScriptHeader:
 	db 0 ; callbacks
 
 	db 7 ; warp events
-	warp_def 33,  7, 1, GLINT_GROVE_EAST
+	warp_def 33,  7, 3, GLINT_GROVE
 	warp_def 27, 11, 3, GLINT_GROVE_DEEP
 	warp_def  9,  7, 2, GLINT_GROVE_DEEP
 	warp_def 31, 21, 5, GLINT_GROVE_DEEP

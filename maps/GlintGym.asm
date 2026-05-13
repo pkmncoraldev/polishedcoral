@@ -9,11 +9,7 @@ GlintGym_MapScriptHeader:
 	warp_def 17, 5, 7, GLINT_CITY
 	warp_def 17, 4, 7, GLINT_CITY
 
-	db 4 ; coord events
-	xy_trigger 0, 15, 3, 0, GlintGymLibrarianStopsYou1, 0, 0
-	xy_trigger 0, 15,  4, 0, GlintGymLibrarianStopsYou2, 0, 0
-	xy_trigger 0, 15, 5, 0, GlintGymLibrarianStopsYou3, 0, 0
-	xy_trigger 0, 15, 6, 0, GlintGymLibrarianStopsYou4, 0, 0
+	db 0 ; coord events
 
 	db 21 ; bg events
 	signpost -1, -1, SIGNPOST_READ, GlintGymStatue
@@ -61,6 +57,7 @@ GlintGymTrigger1:
 	end
 	
 GlintGymStanley:
+	setevent EVENT_MET_STANLEY
 	faceplayer
 	opentext TEXTBOX_STANLEY
 	checkevent EVENT_BEAT_STANLEY
@@ -246,32 +243,7 @@ GlintGymGuyScript:
 	end
 
 GlintGymLibrarian:
-	faceplayer
-	checkitem LIBRARY_CARD
-	iftrue .GlintGymLibrarian2
-	opentext
-	writetext GlintGymLibrarianText1
-	waitbutton
-	closetext
-	end
-	
-.GlintGymLibrarian2:
-	checkevent EVENT_SHOWN_LIBRARY_CARD
-	iftrue .GlintGymLibrarian3
-	setevent EVENT_SHOWN_LIBRARY_CARD
-	opentext
-	writetext GlintGymLibrarianText2
-	waitbutton
-	closetext
-	dotrigger $1
-	end
-	
-.GlintGymLibrarian3:
-	opentext
-	writetext GlintGymLibrarianText3
-	waitbutton
-	closetext
-	end
+	jumptextfaceplayer GlintGymLibrarianText1
 	
 GlintGymStatue:
 	checkflag ENGINE_FIRSTBADGE
@@ -280,163 +252,6 @@ GlintGymStatue:
 .Beaten:
 	trainertotext STANLEY, 1, $1
 	jumpstd gymstatue2
-
-GlintGymLibrarianStopsYou1:
-	checkitem LIBRARY_CARD
-	iftrue GlintGymLibrarianStopsYou1_2
-	special Special_StopRunning
-	playsound SFX_PAY_DAY
-	showemote EMOTE_SHOCK, GLINTGYM_LIBRARIAN, 15
-	pause 7
-	opentext
-	spriteface PLAYER, LEFT
-	writetext GlintGymLibrarianStopsYouText
-	waitbutton
-	closetext
-	applymovement PLAYER, Movement_GlintGymMoveStanley
-	spriteface PLAYER, LEFT
-	opentext
-	writetext GlintGymLibrarianText1
-	waitbutton
-	closetext
-	end
-	
-GlintGymLibrarianStopsYou1_2:
-	special Special_StopRunning
-	playsound SFX_PAY_DAY
-	showemote EMOTE_SHOCK, GLINTGYM_LIBRARIAN, 15
-	pause 7
-	opentext
-	spriteface PLAYER, LEFT
-	writetext GlintGymLibrarianStopsYouText
-	waitbutton
-	closetext
-	applymovement PLAYER, Movement_GlintGymMoveStanley
-	spriteface PLAYER, LEFT
-	opentext
-	writetext GlintGymLibrarianText2
-	waitbutton
-	closetext
-	setevent EVENT_SHOWN_LIBRARY_CARD
-	dotrigger $1
-	end
-	
-GlintGymLibrarianStopsYou2:
-	checkitem LIBRARY_CARD
-	iftrue GlintGymLibrarianStopsYou2_2
-	special Special_StopRunning
-	playsound SFX_PAY_DAY
-	showemote EMOTE_SHOCK, GLINTGYM_LIBRARIAN, 15
-	pause 7
-	opentext
-	spriteface PLAYER, LEFT
-	writetext GlintGymLibrarianStopsYouText
-	waitbutton
-	closetext
-	applymovement PLAYER, Movement_GlintGymLibrarianStopsYou2
-	opentext
-	writetext GlintGymLibrarianText1
-	waitbutton
-	closetext
-	end
-	
-GlintGymLibrarianStopsYou2_2:
-	special Special_StopRunning
-	playsound SFX_PAY_DAY
-	showemote EMOTE_SHOCK, GLINTGYM_LIBRARIAN, 15
-	pause 7
-	opentext
-	spriteface PLAYER, LEFT
-	writetext GlintGymLibrarianStopsYouText
-	waitbutton
-	closetext
-	applymovement PLAYER, Movement_GlintGymLibrarianStopsYou2
-	opentext
-	writetext GlintGymLibrarianText2
-	waitbutton
-	closetext
-	setevent EVENT_SHOWN_LIBRARY_CARD
-	dotrigger $1
-	end
-	
-GlintGymLibrarianStopsYou3:
-	checkitem LIBRARY_CARD
-	iftrue GlintGymLibrarianStopsYou3_2
-	special Special_StopRunning
-	playsound SFX_PAY_DAY
-	showemote EMOTE_SHOCK, GLINTGYM_LIBRARIAN, 15
-	pause 7
-	opentext
-	spriteface PLAYER, LEFT
-	writetext GlintGymLibrarianStopsYouText
-	waitbutton
-	closetext
-	applymovement PLAYER, Movement_GlintGymLibrarianStopsYou3
-	opentext
-	writetext GlintGymLibrarianText1
-	waitbutton
-	closetext
-	end
-	
-GlintGymLibrarianStopsYou3_2:
-	special Special_StopRunning
-	playsound SFX_PAY_DAY
-	showemote EMOTE_SHOCK, GLINTGYM_LIBRARIAN, 15
-	pause 7
-	opentext
-	spriteface PLAYER, LEFT
-	writetext GlintGymLibrarianStopsYouText
-	waitbutton
-	closetext
-	applymovement PLAYER, Movement_GlintGymLibrarianStopsYou3
-	opentext
-	writetext GlintGymLibrarianText2
-	waitbutton
-	closetext
-	setevent EVENT_SHOWN_LIBRARY_CARD
-	dotrigger $1
-	end
-	
-GlintGymLibrarianStopsYou4:
-	checkitem LIBRARY_CARD
-	iftrue GlintGymLibrarianStopsYou4_2
-	special Special_StopRunning
-	playsound SFX_PAY_DAY
-	showemote EMOTE_SHOCK, GLINTGYM_LIBRARIAN, 15
-	pause 7
-	opentext
-	spriteface PLAYER, LEFT
-	writetext GlintGymLibrarianStopsYouText
-	waitbutton
-	closetext
-	applymovement PLAYER, Movement_GlintGymLibrarianStopsYou4
-	opentext
-	writetext GlintGymLibrarianText1
-	waitbutton
-	closetext
-	end
-	
-GlintGymLibrarianStopsYou4_2:
-	special Special_StopRunning
-	playsound SFX_PAY_DAY
-	showemote EMOTE_SHOCK, GLINTGYM_LIBRARIAN, 15
-	pause 7
-	opentext
-	spriteface PLAYER, LEFT
-	writetext GlintGymLibrarianStopsYouText
-	waitbutton
-	closetext
-	applymovement PLAYER, Movement_GlintGymLibrarianStopsYou4
-	opentext
-	writetext GlintGymLibrarianText2
-	waitbutton
-	closetext
-	setevent EVENT_SHOWN_LIBRARY_CARD
-	dotrigger $1
-	end
-	
-GlintGymLibrarianStopsYouEnd:
-	end
 	
 Movement_GlintGymMovePlayer:
 	step_left
@@ -450,31 +265,8 @@ Movement_GlintGymMoveStanley2:
 	step_up
 	step_end
 	
-Movement_GlintGymLibrarianStopsYou2:
-	step_down
-	step_left
-	step_end
-	
-Movement_GlintGymLibrarianStopsYou3:
-	step_down
-	step_left
-	step_left
-	step_end
-	
-Movement_GlintGymLibrarianStopsYou4:
-	step_down
-	step_left
-	step_left
-	step_left
-	step_end
-	
 GlintGymStanleyTextBeforeBattle1:
-	text "Ah. <WAIT_S>You came."
-	
-	para "I knew you were"
-	line "something special"
-	cont "when I met you in"
-	cont "the grove."
+	text "Ah, <WAIT_S>it's you."
 	
 	para "I'm STANLEY."
 	
@@ -485,6 +277,12 @@ GlintGymStanleyTextBeforeBattle1:
 	line "my class at the"
 	cont "DAYBREAK #MON"
 	cont "TRAINER SCHOOL."
+	
+	para "I think I remember"
+	line "you from school."
+	
+	para "You're <PLAYER>,"
+	line "right?"
 	
 	para "NORMAL-types are"
 	line "vastly underrated."
@@ -633,8 +431,8 @@ GlintGymGuyText:
 	
 	para "The TRAINERS here"
 	line "specialize in"
-	cont "NORMAL-type #-"
-	cont "MON."
+	cont "NORMAL-type"
+	cont "#MON."
 	
 	para "They can't take a"
 	line "hit from FIGHTING-"
@@ -645,7 +443,7 @@ GlintGymGuyText:
 	cont "all."
 	
 	para "You should be"
-	line "ready for"
+	line "prepared for"
 	cont "anything."
 	done
 
@@ -660,60 +458,16 @@ GlintGymGuyWinText:
 	
 	para "Keep it up, kid!"
 	done
-
-GlintGymLibrarianStopsYouText:
-	text "Excuse me!"
-	done
 	
 GlintGymLibrarianText1:
 	text "Welcome to the"
-	line "GLINT CITY #-"
-	cont "MON GYM."
+	line "GLINT CITY"
+	cont "#MON GYM."
 	
 	para "The GYM doubles as"
 	line "a library,"
-	
-	para "so please keep"
-	line "your voice down."
-	
-	para "You need a LIBRARY"
-	line "CARD to enter."
-	
-	para "Please return with"
-	line "a LIBRARY CARD."
-	done
-
-GlintGymLibrarianText2:
-	text "Welcome to the"
-	line "GLINT CITY #-"
-	cont "MON GYM."
-	
-	para "The GYM doubles as"
-	line "a library,"
-	
-	para "so please keep"
-	line "your voice down."
-	
-	para "You need a LIBRARY"
-	line "CARD to enter."
-	
-	para "Let me see."
-	
-	para "Ok, <PLAYER>."
-	
-	para "Have a nice visit."
-	done
-
-GlintGymLibrarianText3:
-	text "Welcome to the"
-	line "GLINT CITY #-"
-	cont "MON GYM."
-	
-	para "The GYM doubles as"
-	line "a library,"
-	
-	para "so please keep"
-	line "your voice down."
+	cont "so please keep"
+	cont "your voice down."
 	
 	para "Have a nice visit."
 	done
@@ -813,8 +567,8 @@ GlintGymBookText2:
 GlintGymBookText3:
 	text "A children's novel"
 	line "where people can"
-	cont "morph into #-"
-	cont "MON."
+	cont "morph into"
+	cont "#MON."
 	
 	para "You remember"
 	line "reading these when"
@@ -856,8 +610,8 @@ GlintGymBookText7:
 	line "ENCYCLOPEDIA!"
 	
 	para "This is what they"
-	line "used before #-"
-	cont "DEXES."
+	line "used before"
+	cont "#DEXES."
 	done
 	
 GlintGymBookText8:
@@ -893,25 +647,29 @@ GlintGymBookText11:
 	done
 	
 GlintGymBookText12:
-	text "Crimson orbs."
+	text "“Crimson orbs."
 	
 	para "They cannot be"
-	line "detected by"
-	cont "machines."
+	line "detected by eyes"
+	cont "or machines."
 	
-	para "It might be too"
-	line "late for some."
+	para "Some can be"
+	line "missed."
 	
-	para "Tear of the"
+	para "Wet from blue"
+	line "in a sea of pink."
+	
+	para "Teardrop of the"
 	line "smiling woods."
 	
-	para "Dark hallway in a"
-	line "dry shrine."
+	para "Dark hallway in"
+	line "an arid shrine."
 	
 	para "Beneath the lady"
-	line "near the leaves."
+	line "of the fallen"
+	cont "leaves."
 	
-	para "Good luck."
+	para "Good luck.”"
 	done
 	
 GlintGymBookText13:
@@ -962,12 +720,12 @@ GlintGymBookText16:
 	cont "energy."
 	
 	para "This energy is"
-	line "said to be what"
-	cont "attracts FAIRY-"
-	cont "type #MON to"
-	cont "the grove and also"
-	cont "gives the trees "
-	cont "their distinct"
+	line "said to attract"
+	cont "many FAIRY-type"
+	cont "#MON,"
+
+	para "and also give"
+	line "the trees their"
 	cont "year-round pink"
 	cont "color.”"
 	

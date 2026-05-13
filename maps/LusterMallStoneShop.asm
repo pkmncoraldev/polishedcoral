@@ -24,7 +24,7 @@ LusterMallStoneShop_MapScriptHeader:
 	signpost  1,  4, SIGNPOST_JUMPTEXT, LusterMallStoneShopPosterText
 
 	db 5 ; object events
-	object_event  6,  2, SPRITE_FAT_GUY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_COMMAND, pokemart, MARTTYPE_STONE, MART_LUSTER_MALL_STONE_1, EVENT_GLINT_GROVE_EAST_POKE_BALL_4
+	object_event  6,  2, SPRITE_FAT_GUY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_COMMAND, pokemart, MARTTYPE_STONE, MART_LUSTER_MALL_STONE_1, -1
 	object_event  -5,  -5, SPRITE_FAT_GUY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_COMMAND, pokemart, MARTTYPE_STONE, MART_LUSTER_MALL_STONE_2, -1
 	person_event SPRITE_GENTLEMAN,  4,  1, SPRITEMOVEDATA_WANDER, 1, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, LusterMallStoneShop_NPC1, -1
 	person_event SPRITE_POKEFAN_F,  5,  7, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, LusterMallStoneShop_NPC2, -1
@@ -39,8 +39,12 @@ LusterMallStoneShop_MapScriptHeader:
 	const LUSTER_MALL_STONE_SHOP_POLLY
 	
 LusterMallStoneShopCallback:
-	checkevent EVENT_GLINT_GROVE_EAST_POKE_BALL_4
+	checkevent EVENT_GLINT_GROVE_EAST_POKE_BALL
+	iftrue .move
+	checkevent EVENT_AUREOLE_MOUNTAIN_4F_ITEM_1
 	iffalse .skip
+.move
+	moveperson LUSTER_MALL_STONE_SHOP_CLERK, -5, -5
 	moveperson LUSTER_MALL_STONE_SHOP_CLERK2, 6, 2
 .skip
 	return

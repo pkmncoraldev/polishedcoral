@@ -240,11 +240,13 @@ LoadMapPals::
 	jp .normal
 .grove
 	ld a, [wMapNumber]
-	cp MAP_GLINT_GROVE_EAST
+	cp MAP_GLINT_GROVE
+	jp nz, .normal
+	eventflagcheck EVENT_GLINT_GROVE_ROCK_GONE
 	jp nz, .normal
 	ld a, [wYCoord]
-	cp $11
-	jp c, .normal
+	cp $1c
+	jp nc, .normal
 	jp .rocks
 .bar
 	ld a, [wPlayerPalette]

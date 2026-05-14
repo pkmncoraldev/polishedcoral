@@ -20,9 +20,9 @@ StarglowValley_MapScriptHeader:
 	db 5 ; coord events
 	xy_trigger 0,  4, 12, 0, StarglowGirlStopsYouL, 0, 0
 	xy_trigger 0,  4, 13, 0, StarglowGirlStopsYouR, 0, 0
-	xy_trigger 1, 18, 36, 0, StarglowSnareStopsYou, 0, 0
-	xy_trigger 2, 18, 36, 0, StarglowSnareStopsYou, 0, 0
-	xy_trigger 3, 18, 36, 0, StarglowSnareStopsYou, 0, 0
+	xy_trigger 1, -5, -5, 0, StarglowSnareStopsYou, 0, 0
+	xy_trigger 2, -5, -5, 0, StarglowSnareStopsYou, 0, 0
+	xy_trigger 3, -5, -5, 0, StarglowSnareStopsYou, 0, 0
 
 	db 7 ; bg events
 	signpost  4, 14, SIGNPOST_READ, StarglowValleySign
@@ -39,16 +39,16 @@ StarglowValley_MapScriptHeader:
 	person_event SPRITE_SNARE, 6, 23, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, StarglowSnare1, EVENT_BEAT_STARGLOW_SNARE_1
 	person_event SPRITE_SNARE_GIRL, 10, 31, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, StarglowSnare2, EVENT_BEAT_STARGLOW_SNARE_2
 	person_event SPRITE_SNARE, 22, 6, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, StarglowSnare3, EVENT_STARGLOW_MAIN_PUNK
-	person_event SPRITE_SNARE, 19, 36, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, StarglowSnare4, EVENT_PUNKS_LEAVE_STARGLOW
+	person_event SPRITE_SNARE, -5, -5, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, StarglowSnare4, EVENT_PUNKS_LEAVE_STARGLOW
 	person_event SPRITE_GRAMPS, 10, 6, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, StarglowGramps, -1
 	person_event SPRITE_YOUNGSTER, 14, 26, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, StarglowYoungster, -1
-	person_event SPRITE_LASS, 19, 29, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 1, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, StarglowLass, EVENT_PUNKS_LEAVE_STARGLOW
+	person_event SPRITE_CUTE_GIRL, 19, 29, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 1, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, StarglowLass, -1
 	person_event SPRITE_FISHER, 9, 19, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, StarglowFisher2, EVENT_PUNKS_HAVENT_LEFT_STARGLOW
 	person_event SPRITE_FISHER, 24, 20, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, StarglowFisher3, EVENT_PUNKS_HAVENT_LEFT_STARGLOW
 	person_event SPRITE_SCHOOLBOY, 20, 31, SPRITEMOVEDATA_STANDING_DOWN, 2, 2, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, StarglowYoungster2, -1
 	object_event 32, 20, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, POLIWHIRL, -1, -1, PAL_NPC_BLUE, PERSONTYPE_SCRIPT, 0, StarglowPoliwhirl, -1
 	person_event SPRITE_COOLTRAINER_F, 18, 13, SPRITEMOVEDATA_WALK_UP_DOWN, 1, 1, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, StarglowLass2, EVENT_PUNKS_HAVENT_LEFT_STARGLOW
-	person_event SPRITE_RODNEY, 21,  6, SPRITEMOVEDATA_STANDING_DOWN, 1, 1, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, StarglowLass, EVENT_ALWAYS_SET
+	person_event SPRITE_RODNEY, 21,  6, SPRITEMOVEDATA_STANDING_DOWN, 1, 1, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_ALWAYS_SET
 	person_event SPRITE_SNARE, 22, 6, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, StarglowSnare3, EVENT_STARGLOW_MAIN_PUNK_2
 	fruittree_event 28, 26, FRUITTREE_STARGLOW_VALLEY, PERSIM_BERRY
 	cuttree_event 34, 30, EVENT_STARGLOW_VALLEY_CUT_TREE
@@ -616,11 +616,22 @@ StarglowYoungsterText2:
 	done
 	
 StarglowLassText:
-	text "That weirdo over"
-	line "there won't let me"
-	cont "leave town."
+	text "Someday I want to"
+	line "visit SOUTH ONWA."
 	
-	para "What's his problem?"
+	para "I hear they're"
+	line "building a bridge"
+	cont "to make getting"
+	cont "there easier."
+	done
+	
+StarglowLassText2:
+	text "Someday I want to"
+	line "visit SOUTH ONWA."
+	
+	para "I hear they're"
+	line "building a bridge"
+	cont "to make it easier."
 	done
 	
 StarglowYoungster2Text:

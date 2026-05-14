@@ -293,17 +293,13 @@ Route4SnorlaxTextSnorlaxGone:
 	done
 	
 Route4NPC5Text:
-	text "It's always some-"
-	line "thing."
-	
-	para "First that weirdo"
-	line "wouldn't let me"
-	cont "leave town,"
-	
-	para "and now a SNORLAX"
-	line "decided this was"
+	text "Why did a SNORLAX"
+	line "decide this was"
 	cont "the perfect place"
-	cont "to take a nap!"
+	cont "to take a nap?"
+	
+	para "It's always some-"
+	line "thing!"
 	
 	para "I'm just trying to"
 	line "get home…"

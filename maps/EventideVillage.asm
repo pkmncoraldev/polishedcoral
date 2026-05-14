@@ -301,12 +301,21 @@ EventideVillageNPC1Text:
 	done
 	
 EventideVillageNPC2Text:
-	text "Are you here for"
-	line "the GYM?"
+	text "Finally made it"
+	line "home after that"
+	cont "SNORLAX blocked"
+	cont "the path!"
 	
-	para "Yeah, there isn't"
-	line "much else to do"
-	cont "around here…"
+	para "I wish I could"
+	line "have just flown"
+	cont "home…"
+	
+	para "Maybe I should get"
+	line "an HM for FLY from"
+	cont "the DODRIO RANCH!"
+	
+	para "I hear they give"
+	line "them out there."
 	done
 	
 EventideVillageNPC3Text1:

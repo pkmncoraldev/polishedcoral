@@ -199,7 +199,7 @@ TrainerRoute11_1:
 	line "around."
 	
 	para "Well, after our"
-	line "battle, of course."
+	line "battle, of course!"
 	done
 
 .BeatenText:
@@ -252,7 +252,7 @@ TrainerRoute11_1_2:
 	cont "bridge."
 	
 	para "Well, after our"
-	line "battle, of course."
+	line "battle, of course!"
 	done
 
 .BeatenText:

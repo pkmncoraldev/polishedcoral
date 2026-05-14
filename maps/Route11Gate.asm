@@ -114,7 +114,7 @@ Route11NPCsText2:
 	done
 	
 Route11NPCsText3:
-	text "So true!"
+	text "That's so true!"
 	done
 	
 Route11NPCsText4:

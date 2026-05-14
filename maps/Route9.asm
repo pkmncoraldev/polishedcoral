@@ -354,7 +354,8 @@ Route9SignText:
 	text "ROUTE 9"
 	
 	para "NORTH: FLICKER"
-	line "STATION"
+	line "STATION &"
+	cont "TWINKLE TOWN"
 	
 	para "SOUTH: ROUTE 11"
 	

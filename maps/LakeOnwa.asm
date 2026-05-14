@@ -815,14 +815,9 @@ LakeRivalText1:
 	
 	para "You're actually"
 	line "still training"
-	cont "your pathetic"
-	cont "#MON?"
+	cont "your #MON?"
 	
 	para "Give it a rest!"
-	
-	para "A wimp like you"
-	line "will never get"
-	cont "ahead!"
 	
 	para "Last time was a"
 	line "fluke, you know!"

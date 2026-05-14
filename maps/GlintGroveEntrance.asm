@@ -1,10 +1,8 @@
 GlintGroveEntrance_MapScriptHeader:
-	db 4 ; scene scripts
+	db 2 ; scene scripts
 	
 	scene_script GlintGroveEntranceTrigger0
 	scene_script GlintGroveEntranceTrigger1
-	scene_script GlintGroveEntranceTrigger2
-	scene_script GlintGroveEntranceTrigger3
 
 	db 1 ; callbacks
 	callback MAPCALLBACK_TILES, GlintGroveEntrancePiles
@@ -13,39 +11,21 @@ GlintGroveEntrance_MapScriptHeader:
 	warp_def  5,  9, 1, GLINT_GROVE
 	warp_def  5,  8, 2, GLINT_GROVE
 
-	db 8 ; coord events
-	xy_trigger 0, 12, 8, 0, GlintContactsScriptL, 0, 0
-	xy_trigger 0, 12,  9, 0, GlintContactsScriptR, 0, 0
-	xy_trigger 1,  6,  8, 0, GlintRival_L, 0, 0
-	xy_trigger 1,  6,  9, 0, GlintRival_R, 0, 0
-	xy_trigger 3, 17,  9, 0, GlintContactsScriptSquish, 0, 0
-	xy_trigger 3, 17,  8, 0, GlintContactsScriptSquish, 0, 0
-	xy_trigger 3, 12,  8, 0, GlintContactsScriptL, 0, 0
-	xy_trigger 3, 12,  9, 0, GlintContactsScriptR, 0, 0
+	db 2 ; coord events
+	xy_trigger 0,  6,  8, 0, GlintRival_L, 0, 0
+	xy_trigger 0,  6,  9, 0, GlintRival_R, 0, 0
 
 	db 1 ; bg events
 	signpost 10, 10, SIGNPOST_READ, GlintGroveSign
 
-	db 3 ; object events
-	person_event SPRITE_COLBY, 0, 0, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, -1, EVENT_GLINT_RIVAL_WILL_BUMP
-	person_event SPRITE_PSYCHIC, 11, 7, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, GlintGroveEntranceContactsGuy, EVENT_GLINT_CONTACT_GUY_1
-	person_event SPRITE_PSYCHIC, 11, 7, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, GlintGroveEntranceContactsGuy, EVENT_GLINT_CONTACT_GUY_2
+	db 1 ; object events
+	person_event SPRITE_COLBY, -5, -5, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, -1, -1
 	
 	const_def 1 ; object constants
 	const GLINT_RIVAL
-	const GLINT_CONTACT_GUY_1
-	const GLINT_CONTACT_GUY_2
 	
 GlintGroveEntranceTrigger0:
-	end
-
 GlintGroveEntranceTrigger1:
-	end
-
-GlintGroveEntranceTrigger2:
-	end
-
-GlintGroveEntranceTrigger3:
 	end
 	
 GlintGroveEntrancePiles:
@@ -58,94 +38,14 @@ GlintGroveEntrancePiles:
 	clearflag ENGINE_GLINT_GROVE_PILE_7
 	return
 	
-GlintContactsScriptSquish:
-	special Special_StopRunning
-	playsound SFX_EGG_CRACK
-	pause 10
-	opentext
-	writetext GlintGroveEntranceContactsSquishText
-	waitbutton
-	closetext
-	dotrigger $0
-	end
-	
-GlintContactsScriptL:
-	special Special_StopRunning
-	spriteface GLINT_CONTACT_GUY_1, RIGHT
-	playsound SFX_PAY_DAY
-	showemote EMOTE_SHOCK, GLINT_CONTACT_GUY_1, 15
-	pause 7
-	applymovement GLINT_CONTACT_GUY_1, Movement_GlintContactsScriptL1
-	faceplayer
-	opentext
-	checkevent EVENT_TALKED_TO_GLINT_CONTACT_GUY
-	iftrue .skiptalk
-	writetext GlintGroveEntranceContactsGuy1Text1
-	waitbutton
-	closetext
-	applymovement PLAYER, Movement_GlintContactsDown
-	applymovement GLINT_CONTACT_GUY_1, Movement_GlintContactsScriptL2
-	setevent EVENT_TALKED_TO_GLINT_CONTACT_GUY
-	dotrigger $3
-	end
-.skiptalk
-	writetext GlintGroveEntranceContactsGuy1Text2
-	waitbutton
-	closetext
-	applymovement GLINT_CONTACT_GUY_1, Movement_GlintContactsScriptL2
-	applymovement PLAYER, Movement_GlintContactsDown
-	end
-	
-GlintContactsScriptR:
-	special Special_StopRunning
-	spriteface GLINT_CONTACT_GUY_1, RIGHT
-	playsound SFX_PAY_DAY
-	showemote EMOTE_SHOCK, GLINT_CONTACT_GUY_1, 15
-	pause 7
-	applymovement GLINT_CONTACT_GUY_1, Movement_GlintContactsScriptR1
-	faceplayer
-	opentext
-	checkevent EVENT_TALKED_TO_GLINT_CONTACT_GUY
-	iftrue .skiptalk
-	writetext GlintGroveEntranceContactsGuy1Text1
-	waitbutton
-	closetext
-	applymovement PLAYER, Movement_GlintContactsDown
-	applymovement GLINT_CONTACT_GUY_1, Movement_GlintContactsScriptR2
-	setevent EVENT_TALKED_TO_GLINT_CONTACT_GUY
-	dotrigger $3
-	end
-.skiptalk
-	writetext GlintGroveEntranceContactsGuy1Text2
-	waitbutton
-	closetext
-	applymovement GLINT_CONTACT_GUY_1, Movement_GlintContactsScriptR2
-	applymovement PLAYER, Movement_GlintContactsDown
-	end
-	
-GlintGroveEntranceContactsGuy:
-	faceplayer
-	opentext
-	checkevent EVENT_TALKED_TO_GLINT_CONTACT_GUY
-	iffalse .didntseecontactguyscene
-	writetext GlintGroveEntranceContactsGuyText
-	waitbutton
-	closetext
-	end
-.didntseecontactguyscene
-	writetext GlintGroveEntranceContactsGuyText2
-	waitbutton
-	closetext
-	end
-	
 GlintGroveSign:
 	jumptext GlintGroveSignText
 	
 GlintRival_L:
 	special Special_StopRunning
+	disappear GLINT_RIVAL
 	moveperson GLINT_RIVAL, 8, 5
 	appear GLINT_RIVAL
-	clearevent EVENT_GLINT_RIVAL_WILL_BUMP
 	playsound SFX_EXIT_BUILDING
 	applymovement PLAYER, Movement_GlintRivalBump
 	playmusic MUSIC_RIVAL_AFTER
@@ -232,29 +132,35 @@ GlintRival_L:
 	opentext TEXTBOX_RIVAL
 	writetext GlintRivalText2
 	waitbutton
+	changetextboxspeaker
+	writetext GlintGroveEntranceGiveText
+	takeitem RIVAL_POKEDEX
+	playsound SFX_LEVEL_UP 
+	waitsfx
+	changetextboxspeaker TEXTBOX_RIVAL
+	writetext GlintRivalText3
+	waitbutton
 	closetext
-	applymovement PLAYER, Movement_GlintRivalOuttaTheWay2
+	applyonemovement PLAYER, step_right
 	spriteface PLAYER, LEFT
 	applymovement GLINT_RIVAL, Movement_GlintRivalWalkAway
 	disappear GLINT_RIVAL
 	special Special_FadeOutMusic
 	pause 15
 	playmapmusic
-	setevent EVENT_GLINT_RIVAL_WILL_BUMP
-	dotrigger $2
+	dotrigger $1
 	end
-	
 	
 GlintRival_R:
 	special Special_StopRunning
+	disappear GLINT_RIVAL
 	moveperson GLINT_RIVAL, 9, 5
 	appear GLINT_RIVAL
-	clearevent EVENT_GLINT_RIVAL_WILL_BUMP
 	playsound SFX_EXIT_BUILDING
 	applymovement PLAYER, Movement_GlintRivalBump
 	playmusic MUSIC_RIVAL_AFTER
 	applymovement GLINT_RIVAL, Movement_GlintRivalBump2
-	opentext
+	opentext TEXTBOX_RIVAL
 	writetext GlintRivalText1
 	waitbutton
 	closetext
@@ -332,19 +238,26 @@ GlintRival_R:
 	
 .afterbattle
 	playmusic MUSIC_RIVAL_AFTER
-	opentext
+	opentext TEXTBOX_RIVAL
 	writetext GlintRivalText2
 	waitbutton
+	changetextboxspeaker
+	writetext GlintGroveEntranceGiveText
+	takeitem RIVAL_POKEDEX
+	playsound SFX_LEVEL_UP 
+	waitsfx
+	changetextboxspeaker TEXTBOX_RIVAL
+	writetext GlintRivalText3
+	waitbutton
 	closetext
-	applymovement PLAYER, Movement_GlintRivalOuttaTheWay1
+	applyonemovement PLAYER, step_left
 	spriteface PLAYER, RIGHT
 	applymovement GLINT_RIVAL, Movement_GlintRivalWalkAway
 	disappear GLINT_RIVAL
 	special Special_FadeOutMusic
 	pause 15
 	playmapmusic
-	setevent EVENT_GLINT_RIVAL_WILL_BUMP
-	dotrigger $2
+	dotrigger $1
 	end
 	
 GlintGroveSignText:
@@ -368,20 +281,23 @@ GlintRivalText1:
 	cont "just take it?"
 	
 	para "I don't need help"
-	line "from a weakling"
-	cont "like you."
+	line "from someone like"
+	cont "you!"
 	
 	para "I bet you aren't"
 	line "even any stronger"
 	cont "than at the"
 	cont "LIGHTHOUSE!"
 	
-	para "I was heading"
-	line "home, <WAIT_S>but I"
-	cont "could take you"
-	cont "down real quick."
+	para "I was just"
+	line "finishing up my"
+	cont "training,"
+	
+	para "but I could take"
+	line "you down real"
+	cont "quick."
 	done
-
+	
 GlintRivalText2:
 	text "Tch!<WAIT_M>"
 	line "Whatever…"
@@ -392,7 +308,18 @@ GlintRivalText2:
 	para "I don't need to"
 	line "deal with this."
 	
-	para "Outta my way!"
+	para "Just hand over my"
+	line "#DEX, and stay"
+	cont "outta my way!"
+	done
+	
+GlintRivalText3:
+	text "Now, step aside!"
+	done
+	
+GlintGroveEntranceGiveText:
+	text "<PLAYER> handed over"
+	line "<RIVAL>'s #DEX."
 	done
 	
 GlintRivalWinText:
@@ -404,98 +331,6 @@ GlintRivalLoseText:
 	text "Hmph!"
 	line "<WAIT_M>Too easy."
 	done
-	
-GlintGroveEntranceContactsGuy1Text1:
-	text "Wait!"
-	
-	para "I dropped my cont-"
-	line "act lens on the"
-	cont "ground!"
-	
-	para "I can't see a"
-	line "thing!"
-	
-	para "…<WAIT_M>"
-	line "What?"
-	
-	para "Why are you look-"
-	line "ing at me like"
-	cont "that?"
-	
-	para "You don't believe"
-	line "me?"
-	
-	para "…"
-	
-	para "Look, <WAIT_S>can you just"
-	line "come back after"
-	cont "I've found my"
-	cont "contact lens?"
-	done
-	
-GlintGroveEntranceContactsGuy1Text2:
-	text "Hey!"
-	
-	para "Can you just come"
-	line "back after I've"
-	cont "found my contact"
-	cont "lens?"
-	done
-	
-GlintGroveEntranceContactsGuyText:
-	text "I found my contact"
-	line "lens, <WAIT_S>but it's all"
-	cont "squished!"
-	
-	para "I still can't see"
-	line "anything!"
-	done
-	
-GlintGroveEntranceContactsGuyText2:
-	text "I dropped my con-"
-	line "tact lens on the"
-	cont "ground earlier."
-	
-	para "I'm lucky someone"
-	line "didn't walk by"
-	cont "while I was look-"
-	cont "ing for it."
-	
-	para "It could have been"
-	line "squished!"
-	done
-	
-GlintGroveEntranceContactsSquishText:
-	text "Squitch!"
-	
-	para "You stepped on a…"
-	line "<WAIT_L>CONTACT LENS!"
-	
-	para "Better just keep"
-	line "moving…"
-	done
-	
-Movement_GlintContactsDown:
-	step_down
-	step_end
-	
-Movement_GlintContactsScriptL1:
-	step_right
-	step_end
-	
-Movement_GlintContactsScriptL2:
-	step_left
-	step_end
-	
-Movement_GlintContactsScriptR1:
-	step_right
-	step_right
-	step_end
-	
-Movement_GlintContactsScriptR2:
-	step_left
-	step_left
-	step_end
 	
 Movement_GlintRivalBump:
 	fix_facing
@@ -517,12 +352,4 @@ Movement_GlintRivalWalkAway:
 	step_down
 	step_down
 	step_down
-	step_end
-	
-Movement_GlintRivalOuttaTheWay1:
-	step_left
-	step_end
-	
-Movement_GlintRivalOuttaTheWay2:
-	step_right
 	step_end

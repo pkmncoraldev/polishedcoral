@@ -12,7 +12,7 @@ GlintRivalHouse_MapScriptHeader:
 	db 0 ; bg events
 
 	db 2 ; object events
-	person_event SPRITE_POKEFAN_F, 4, 2, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, GlintRivalHouseMom, -1
+	person_event SPRITE_POKEFAN_F, 4, 2, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, GlintRivalHouseMom, -1
 	tapeball_event  4,  3, MUSIC_RIVAL_ENCOUNTER, 2, EVENT_MUSIC_RIVAL_ENCOUNTER
 
 	const_def 1 ; object constants
@@ -22,125 +22,52 @@ GlintRivalHouseMom:
 	faceplayer
 	opentext TEXTBOX_RIVALS_MOM
 	checkitem RIVAL_POKEDEX
-	iffalse .GlintRivalHouseMomLoop
-	domaptrigger GLINT_GROVE_ENTRANCE, $1
-	takeitem RIVAL_POKEDEX
+	iffalse .gave_pokedex
 	writetext GlintRivalMomText1
 	waitbutton
-	changetextboxspeaker
-	writetext GlintRivalMomTextGiveDex
-	playsound SFX_LEVEL_UP 
-	waitsfx
-;	waitbutton
-	changetextboxspeaker TEXTBOX_RIVALS_MOM
-	writetext GlintRivalMomText4
-	buttonsound
-	stringtotext .mapcardname, $1
-	scall .JumpstdReceiveItem
-	setflag ENGINE_MAP_CARD
-	changetextboxspeaker
-	writetext GotMapCardText
-	buttonsound
-	changetextboxspeaker TEXTBOX_RIVALS_MOM
+	closetext
+	end
+.gave_pokedex
 	writetext GlintRivalMomText2
 	waitbutton
 	closetext
-	setevent EVENT_GLINT_CONTACT_GUY_1
-	clearevent EVENT_GLINT_CONTACT_GUY_2
-	domaptrigger GLINT_GROVE_ENTRANCE, $1
 	end
-
-.GlintRivalHouseMomLoop:
-	writetext GlintRivalMomText3
-	waitbutton
-	closetext
-	end
-
-.JumpstdReceiveItem:
-	jumpstd receiveitem
-	end
-
-.mapcardname
-	db "MAP CARD@"
-	
-GlintRivalHouseRivalHmphText:
-	text "Hmph…"
-	done
-	
-GotMapCardText:
-	text "<PLAYER>'s #GEAR"
-	line "now has a MAP!"
-	done
 	
 GlintRivalMomText1:
-	text "You must be"
-	line "<PLAYER>!"
-	
-	para "<RIVAL> has told"
-	line "me all about you."
-	
-	para "I know he can be a"
-	line "lot to deal with,"
-	
-	para "but don't let it"
-	line "get to you."
+	text "You're looking for"
+	line "<RIVAL>?"
+
+	para "He went off to"
+	line "GLINT GROVE to do"
+	cont "some training."
 	
 	para "Oh?<WAIT_M>"
 	line "A #DEX?"
 	
 	para "<RIVAL> ran off"
 	line "before they were"
-	cont "handed out? <WAIT_M>Sigh…"
+	cont "handed out?"
+	
+	para "Sigh…"
 	
 	para "That boy is just"
 	line "like his father."
 	
 	para "For better or for"
 	line "worse…"
-	
-	para "Well, thanks for"
-	line "bringing it by."
 	done
 	
 GlintRivalMomText2:
-	text "That MAP CARD lets"
-	line "you view a map of"
-	cont "the ONWA region"
-	cont "from your #-"
-	cont "GEAR."
+	text "<RIVAL> went"
+	line "off looking for"
+	cont "something."
 	
-	para "It's really handy!"
+	para "I worry about"
+	line "him."
 	
-	para "Thanks again for"
-	line "bringing by"
-	cont "<RIVAL>'s #DEX."
-	done
+	para "That boy is just"
+	line "like his father."
 	
-GlintRivalMomText3:
-	text "Thanks again for"
-	line "bringing by"
-	cont "<RIVAL>'s #DEX."
-	done
-	
-GlintRivalMomText4:
-	text "<RIVAL> went off"
-	line "to GLINT GROVE to"
-	cont "do some training."
-	
-	para "I'll be sure to"
-	line "give this to him"
-	cont "when he gets back."
-	
-	para "Say, you're taking"
-	line "the GYM CHALLENGE"
-	cont "too, right?"
-	
-	para "Why don't you take"
-	line "this as thanks?"
-	done
-	
-GlintRivalMomTextGiveDex:
-	text "<PLAYER> gave"
-	line "<RIVAL>'s #DEX"
-	cont "to <RIVAL>'s MOM."
+	para "For better or for"
+	line "worse…"
 	done

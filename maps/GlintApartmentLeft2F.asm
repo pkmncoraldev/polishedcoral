@@ -13,7 +13,7 @@ GlintApartmentLeft2F_MapScriptHeader:
 
 	db 2 ; object events
 	person_event SPRITE_COOL_DUDE, 5, 2, SPRITEMOVEDATA_STANDING_UP, 0, 1, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, GlintApt12FNpc1, -1
-	person_event SPRITE_POKEFAN_F, 6, 5, SPRITEMOVEDATA_STANDING_LEFT, 0, 1, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, GlintApt12FNpc2, -1
+	person_event SPRITE_POKEFAN_F, 5, 5, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 1, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, GlintApt12FNpc2, -1
 
 	const_def 1 ; object constants
 	const GLINT_APT12F_NPC1
@@ -31,18 +31,31 @@ GlintApt12FNpc1:
 GlintApt12FNpc2:
 	faceplayer
 	opentext
-	checkitem RIVAL_POKEDEX
-	iffalse .havemapcard
+	checkflag ENGINE_MAP_CARD
+	iftrue .havemapcard
 	writetext GlintApt12FNpc2Text1
 	waitbutton
-	closetext
-	end
-	
-.havemapcard:
+	writetext GotMapCardText1
+	playsound SFX_KEY_ITEM
+	waitsfx
+	setflag ENGINE_MAP_CARD
+	writetext GotMapCardText2
+	buttonsound
+.havemapcard
 	writetext GlintApt12FNpc2Text2
 	waitbutton
 	closetext
 	end
+	
+GotMapCardText1:
+	text "<PLAYER> received"
+	line "MAP CARD."
+	done
+	
+GotMapCardText2:
+	text "<PLAYER>'s #GEAR"
+	line "now has a MAP!"
+	done
 	
 GlintApt12FTV:
 	special Special_StopRunning
@@ -111,30 +124,15 @@ GlintApt12FNpc2Text1:
 	para "you can view it"
 	line "from anywhere."
 	
-	para "You should see if"
-	line "you can find one."
+	para "Here.<WAIT_S>"
+	line "A gift!"
 	done
 	
 GlintApt12FNpc2Text2:
-	text "Do you see that"
-	line "map on the wall"
-	cont "by the TV?"
-	
-	para "That's a map of"
-	line "the ONWA REGION."
-	
-	para "If you have a"
-	line "MAP CARD for your"
-	cont "#GEAR,"
-	
-	para "you can view it"
-	line "from anywhere."
-	
-	para "Oh!<WAIT_M>"
-	line "You already have"
-	cont "one."
-	
-	para "How convenient."
+	text "Think about me"
+	line "every time you"
+	cont "check your map,"
+	cont "ok?"
 	done
 	
 GlintApt12FTVText1:

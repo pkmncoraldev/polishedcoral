@@ -103,7 +103,7 @@ DEF MAP_NONE   EQU 0
 	map_const GLINT_APARTMENT_RIGHT_2F,                    4,  4 ;  5
 	map_const GLINT_MART,                                  6,  4 ;  6
 	map_const GLINT_GYM,                                   5,  9 ;  7
-	map_const GLINT_GROVE_ENTRANCE,                        9,  9 ;  8
+	map_const GLINT_GROVE_ENTRANCE,                        9,  7 ;  8
 	map_const GLINT_CITY,                                 19, 11 ;  9
 	map_const GLINT_RIVAL_HOUSE,                  		   4,  4 ; 10
 	map_const GLINT_EVO_HOUSE,                             4,  4 ; 11

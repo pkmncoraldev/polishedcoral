@@ -13,7 +13,7 @@ GlintGroveDeep_MapScriptHeader:
 	warp_def 28, 12, 6, GLINT_GROVE_DEEP
 
 	db 1 ; coord events
-	coord_event  4,  5, 2, GlintGroveDeepSmeargleScene
+	coord_event  4,  5, 1, GlintGroveDeepSmeargleScene
 
 	db 2 ; bg events
 	bg_event  4, 23, SIGNPOST_ITEM + SUPER_REPEL, EVENT_GLINT_DEEP_HIDDEN_ITEM_1
@@ -178,7 +178,7 @@ GlintGroveDeepSmeargleScene:
 	playsound SFX_EXIT_BUILDING
 	disappear GLINTSECRET_MINA
 	waitsfx
-	dotrigger $4
+	dotrigger $2
 	special Special_FadeOutMusic
 	pause 10
 	playmapmusic

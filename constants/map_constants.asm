@@ -106,7 +106,7 @@ DEF MAP_NONE   EQU 0
 	map_const GLINT_GROVE_ENTRANCE,                        9,  7 ;  8
 	map_const GLINT_CITY,                                 19, 11 ;  9
 	map_const GLINT_RIVAL_HOUSE,                  		   4,  4 ; 10
-	map_const GLINT_EVO_HOUSE,                             4,  4 ; 11
+	map_const GLINT_TEA_HOUSE,                             4,  4 ; 11
 	map_const ROUTE_3,                                    28, 16 ; 12
 	map_const ROUTE_3_FRIENDSHIP_HOUSE,                    4,  4 ; 13
 	map_const ROUTE_8,                                    31, 20 ; 14

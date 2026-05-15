@@ -103,7 +103,7 @@ ObscuraMachoBraceHouse_BlockData:
 	INCBIN "maps/NormalHouse2.ablk.lz"
 	
 SunsetLegendsHouse_BlockData:
-GlintEvoHouse_BlockData:
+GlintTeaHouse_BlockData:
 StarglowNoPokemonHouse_BlockData:
 SunbeamSoftSandHouse_BlockData:
 FlickerSoundSpeechHouse_BlockData:

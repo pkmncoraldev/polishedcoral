@@ -9,7 +9,7 @@ GlintCity_MapScriptHeader:
 	db 7 ; warp events
 	warp_def 15, 27, 2, GLINT_POKECENTER
 	warp_def 9, 27, 2, GLINT_MART
-	warp_def 9, 7, 2, GLINT_EVO_HOUSE
+	warp_def 9, 7, 2, GLINT_TEA_HOUSE
 	warp_def 3, 5, 2, GLINT_RIVAL_HOUSE
 	warp_def 5, 15, 2, GLINT_APARTMENT_LEFT_1F
 	warp_def 5, 21, 2, GLINT_APARTMENT_RIGHT_1F

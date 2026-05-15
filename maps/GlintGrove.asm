@@ -92,15 +92,9 @@ GlintGrovePetalMan:
 	jumptextfaceplayer GlintGrovePetalManText
 	
 GlintGrovePetalManText:
-	text "Have you seen"
+	text "Have you seen the"
 	line "piles of FLOWER"
 	cont "PETALS around?"
-	
-	para "People collect"
-	line "those petals to"
-	cont "make into tea."
-	
-	para "Watch out, though."
 	
 	para "Sometimes they'll"
 	line "blow away before"

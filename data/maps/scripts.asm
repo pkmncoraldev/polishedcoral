@@ -186,7 +186,7 @@ INCLUDE "maps/GlintApartmentLeft2F.asm"
 INCLUDE "maps/GlintApartmentRight1F.asm"
 INCLUDE "maps/GlintApartmentRight2F.asm"
 INCLUDE "maps/GlintRivalHouse.asm"
-INCLUDE "maps/GlintEvoHouse.asm"
+INCLUDE "maps/GlintTeaHouse.asm"
 
 
 SECTION "Starglow Valley Scripts", ROMX

@@ -616,7 +616,7 @@ ENDM
 	map_attributes DaybreakPokeCenter, DAYBREAK_POKECENTER, $0, 0
 	map_attributes DaybreakAlexHouse, DAYBREAK_ALEX_HOUSE, $0, 0
 	map_attributes GlintPokeCenter, GLINT_POKECENTER, $0, 0
-	map_attributes GlintEvoHouse, GLINT_EVO_HOUSE, $0, 0
+	map_attributes GlintTeaHouse, GLINT_TEA_HOUSE, $0, 0
 	map_attributes GlintRivalHouse, GLINT_RIVAL_HOUSE, $0, 0
 	map_attributes GlintApartmentLeft1F, GLINT_APARTMENT_LEFT_1F, $0, 0
 	map_attributes GlintApartmentLeft2F, GLINT_APARTMENT_LEFT_2F, $0, 0

@@ -276,24 +276,60 @@ SprucePhoneIceTempleText:
 	
 	para "How's your journey?"
 	
-	para "You must be near"
-	line "ROUTE 10 by now,"
-	cont "am I correct?"
+	para "I'll cut right to"
+	line "the chase."
+	
+	para "My colleague has a"
+	line "researcher posted"
+	cont "near TWINKLE TOWN."
+	
+	para "He's up there"
+	line "looking for traces"
+	cont "of ancient ruins."
+	
+	para "Since you aren't"
+	line "far from there,"
+	
+	para "I told him I would"
+	line "send you his way."
+	
+	para "Look for him in a"
+	line "tent on the EAST"
+	cont "of ROUTE 10."
+	
+	para "Do at least stop"
+	line "by and speak to"
+	cont "him, won't you?"
+	
+	para "Don't forget, now."
+	
+	para "Anyway, I must"
+	line "be going."
+	
+	para "Take care."
+	prompt
+	
+	
+SprucePhoneIceTempleText2:
+	text "Hello?"
+	
+	para "Ah, <PLAYER>!"
 	
 	para "Did you ever meet"
 	line "with my colleague's"
 	cont "researcher that I"
 	cont "told you about?"
 	
-	para "He's set up camp"
-	line "on EAST ROUTE 10."
+	para "Look for him in a"
+	line "tent on the EAST"
+	cont "of ROUTE 10."
 	
 	para "Do at least stop"
 	line "by and speak to"
 	cont "him, won't you?"
 	
 	para "Anyway, I must"
-	line "be going now."
+	line "be going."
 	
 	para "Take care."
 	prompt

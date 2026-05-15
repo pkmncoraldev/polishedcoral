@@ -35,8 +35,8 @@ EventideGymSpeechHouseNPC1Text:
 	
 EventideGymSpeechHouseNPC2Text:
 	text "The GYM LEADER"
-	line "here, <WAIT_S>WENDY, <WAIT_S>is a"
-	cont "well-known pilot!"
+	line "here, WENDY, is an"
+	cont "ace pilot!"
 	
 	para "I wonder why she"
 	line "sticks around here"
@@ -44,5 +44,5 @@ EventideGymSpeechHouseNPC2Text:
 	cont "anywhere."
 	
 	para "She must love this"
-	line "quiet little town!"
+	line "quiet little town."
 	done

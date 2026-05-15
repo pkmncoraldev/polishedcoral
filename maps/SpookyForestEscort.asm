@@ -143,11 +143,11 @@ SpookyForestEscortLostKidText4:
 SpookyForestEscortLostKidText5:
 	text "Wait a second!"
 	
-	para "I know where I am"
-	line "now!"
+	para "I know where"
+	line "I am now!"
 	
-	para "I can make it home"
-	line "from here."
+	para "I can make it"
+	line "home from here."
 	
 	para "Thank you for"
 	line "helping me!"

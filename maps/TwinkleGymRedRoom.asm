@@ -68,10 +68,6 @@ TwinkleGymCharlie:
 	closetext
 	variablesprite SPRITE_BATHER_VARIABLE_1, SPRITE_BATHER_2
 	variablesprite SPRITE_BATHER_VARIABLE_2, SPRITE_BATHER_2
-	checkevent EVENT_GOT_HM08_ROCK_CLIMB
-	iftrue .end
-	specialphonecall SPECIALCALL_SPRUCEICETEMPLECALL
-.end
 	end
 
 .GotTMFromCharlie:

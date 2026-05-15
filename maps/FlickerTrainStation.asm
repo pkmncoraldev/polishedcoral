@@ -249,8 +249,9 @@ FlickerTrainStationScheduleBack:
 	jumptext FlickerTrainStationScheduleBackText
 	
 FlickerTrainStationSnareText:
-	text "Where's my TRAIN"
-	line "TICKET!?"
+	text "A big gust of wind"
+	line "came and blew away"
+	cont "my TRAIN TICKET."
 	
 	para "They won't let me"
 	line "on without it!"

@@ -395,23 +395,22 @@ SpruceLabSpruceText8:
 	line "TOWN to the NORTH-"
 	cont "EAST."
 	
-	para "My colleague has a"
-	line "researcher posted"
-	cont "on snowy ROUTE 10"
-	cont "near TWINKLE TOWN."
+	para "Whichever you"
+	line "tackle next is"
+	cont "up to you."
 	
-	para "He's up there"
-	line "looking for traces"
-	cont "of ancient ruins."
+	para "A small word of"
+	line "advice however:"
 	
-	para "You should stop"
-	line "by and speak to"
-	cont "him, yes?"
+	para "If you find your-"
+	line "self struggling"
+	cont "with one of them,"
 	
-	para "Don't forget, now."
+	para "why not move on"
+	line "and try the other?"
 	
-	para "Thank you for"
-	line "visiting!"
+	para "Anyway, thank you"
+	line "for visiting!"
 	
 	para "Do call me if you"
 	line "need anything."

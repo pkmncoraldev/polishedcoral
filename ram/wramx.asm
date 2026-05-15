@@ -1037,7 +1037,6 @@ wSpookhouseTVRoomTrigger:: ds 1
 wEventideVillageTrigger:: ds 1
 wRoute9Trigger:: ds 1
 wDodrioRanchRaceTrackTrigger:: ds 1
-wFlickerStationTrigger:: ds 1
 wFlickerTrainGraveyardTrigger:: ds 1
 wFlickerPass2FTrigger:: ds 1
 wFlickerTrainCutsceneTrigger:: ds 1
@@ -1106,7 +1105,7 @@ wRoute11Trigger:: ds 1
 wRoute22_2Trigger:: ds 1
 wLuminaGymTrigger:: ds 1
 wAureoleMountainOutside:: ds 1
-ds 14
+ds 15
 
 wAmpharosFood:: ds 1
 

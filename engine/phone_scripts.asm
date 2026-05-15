@@ -257,6 +257,9 @@ SprucePhoneScript: ; 0xbd081
 	checkevent EVENT_SPRUCE_CAN_RECALL_ABOUT_ANCIENTBALL
 	iftrue .ancientball
 	
+	checkevent EVENT_SPRUCE_CAN_RECALL_ABOUT_ICE_TEMPLE
+	iftrue .repeaticetemple
+	
 	checkevent EVENT_GOT_POKEFLUTE
 	iftrue .normal
 	
@@ -309,6 +312,11 @@ SprucePhoneScript: ; 0xbd081
 .icetemple
 	specialphonecall SPECIALCALL_NONE
 	farwritetext SprucePhoneIceTempleText
+	setevent EVENT_SPRUCE_CAN_RECALL_ABOUT_ICE_TEMPLE
+	setevent EVENT_CAN_TALK_TO_TENT_MAN
+	end
+.repeaticetemple
+	farwritetext SprucePhoneIceTempleText2
 	end
 .bird
 	setevent EVENT_FIRST_BIRD_ACTIVE

@@ -268,6 +268,7 @@ EventideGymWendy:
 	writetext EventideGymWendyTextTMSpeech
 	waitbutton
 	closetext
+	specialphonecall SPECIALCALL_SPRUCEICETEMPLECALL
 	end
 
 .GotTMFromWendy:

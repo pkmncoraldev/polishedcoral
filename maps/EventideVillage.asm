@@ -115,7 +115,7 @@ EventideBikeshopStop1:
 	playsound SFX_PAY_DAY
 	spriteface EVENTIDE_VILLAGE_BIKE_SHOP_OWNER, DOWN
 	showemote EMOTE_SHOCK, EVENTIDE_VILLAGE_BIKE_SHOP_OWNER, 15
-	spriteface PLAYER, UP
+	spriteface PLAYER, RIGHT
 	opentext TEXTBOX_LADY
 	writetext EventideBikeshopStopText1
 	waitbutton

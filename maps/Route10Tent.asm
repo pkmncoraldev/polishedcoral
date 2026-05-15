@@ -24,6 +24,8 @@ Route10Tent_MapScriptHeader:
 Route10TentNPC:
 	faceplayer
 	opentext
+	checkevent EVENT_CAN_TALK_TO_TENT_MAN
+	iffalse .cant_talk
 	checkevent EVENT_ICE_TEMPLE_GOT_TREASURE
 	iftrue .got_treasure
 	checkevent EVENT_TALKED_TO_TENT_GUY_ONCE
@@ -34,6 +36,7 @@ Route10TentNPC:
 	verbosegivetmhm HM_ROCK_CLIMB
 	setevent EVENT_GOT_HM08_ROCK_CLIMB
 	setflag ENGINE_GOT_ROCK_CLIMB
+	clearevent EVENT_SPRUCE_CAN_RECALL_ABOUT_ICE_TEMPLE
 .talked_once_no_treasure
 	writetext Route10TentNPCText11
 	jump .end
@@ -71,6 +74,9 @@ Route10TentNPC:
 	jump .end
 .have_talked
 	writetext Route10TentNPCText2
+	jump .end
+.cant_talk
+	writetext Route10TentNPCTextCantTalk
 .end
 	waitbutton
 	closetext
@@ -85,10 +91,21 @@ Route10TentWigglytuff:
 	closetext
 	end
 	
+Route10TentNPCTextCantTalk:
+	text "Hello there."
+	
+	para "Are you taking"
+	line "shelter from the"
+	cont "cold?"
+	
+	para "Feel free to warm"
+	line "up by the fire."
+	done
+	
 Route10TentNPCText1:
-	text "Are you here"
-	line "looking for the"
-	cont "treasure too?"
+	text "Are you the one"
+	line "PROF. SPRUCE said"
+	cont "would swing by?"
 	
 	para "There is record"
 	line "of a ruined temple"
@@ -107,9 +124,8 @@ Route10TentNPCText1:
 	
 	para "If you want to"
 	line "take a look around"
-	cont "yourself,"
-	
-	para "try using this."
+	cont "yourself, try"
+	cont "using this."
 	done
 	
 Route10TentNPCText11:

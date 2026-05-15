@@ -43,7 +43,6 @@ MapTriggers::
 	scene_var EVENTIDE_VILLAGE,						  wEventideVillageTrigger
 	scene_var ROUTE_9,								  wRoute9Trigger
 	scene_var DODRIO_RANCH_RACETRACK,				  wDodrioRanchRaceTrackTrigger
-	scene_var FLICKER_STATION,						  wFlickerStationTrigger
 	scene_var FLICKER_TRAIN_GRAVEYARD,				  wFlickerTrainGraveyardTrigger
 	scene_var FLICKER_PASS_2F,						  wFlickerPass2FTrigger
 	scene_var FLICKER_TRAIN_CUTSCENE,				  wFlickerTrainCutsceneTrigger

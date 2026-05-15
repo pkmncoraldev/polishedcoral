@@ -679,16 +679,15 @@ GlintGroveNPC4Text:
 	done
 
 GlintGroveMina:
+	checkevent EVENT_TALKED_TO_MINA_ONCE
+	iftrue .talked
+	setevent EVENT_TALKED_TO_MINA_ONCE
 	opentext TEXTBOX_UNKNOWN
 	writetext GlintGroveMinaText10
 	waitbutton
 	closetext
 	pause 10
 	faceplayer
-	checkevent EVENT_DIDNT_GIVE_MINA_TEA
-	iftrue .said_no
-	checkevent EVENT_TALKED_TO_MINA_ONCE
-	iftrue .talked
 	opentext TEXTBOX_UNKNOWN
 	writetext GlintGroveMinaText1
 	buttonsound
@@ -720,14 +719,22 @@ GlintGroveMina:
 	iftrue .have_tea
 	spriteface GLINTGROVE_MINA, UP
 	closetext
-	setevent EVENT_TALKED_TO_MINA_ONCE
 	special Special_FadeOutMusic
 	pause 5
 	playmapmusic
 	end
 .talked
+	opentext TEXTBOX_MINA
+	writetext GlintGroveMinaText10
+	waitbutton
+	closetext
+	pause 10
+	faceplayer
+	checkevent EVENT_DIDNT_GIVE_MINA_TEA
+	iftrue .said_no
 	checkitem BLOSSOM_TEA
 	iftrue .talked_have_tea
+.talked_no_tea
 	opentext TEXTBOX_MINA
 	writetext GlintGroveMinaText4
 	waitbutton
@@ -811,6 +818,8 @@ GlintGroveMina:
 	spriteface GLINTGROVE_MINA, UP
 	end
 .said_no
+	checkitem BLOSSOM_TEA
+	iffalse .talked_no_tea
 	opentext TEXTBOX_MINA
 	writetext GlintGroveMinaText8
 	yesorno

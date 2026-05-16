@@ -211,9 +211,7 @@ GlintGroveDeepMinaText3:
 	cont "until you showed"
 	cont "up and ruined it!"
 	
-	para "…"
-	
-	para "Oh well…"
+	para "…<WAIT_L>Oh well…"
 	
 	para "I was almost done"
 	line "painting, anyway."
@@ -255,7 +253,7 @@ GlintGroveDeepMinaText6:
 	done
 	
 GlintGroveDeepMinaText7:
-	text "Wow! <WAIT_M>What an"
+	text "Wow! <WAIT_S>What an"
 	line "awesome battle!"
 	
 	para "I wouldn't have"

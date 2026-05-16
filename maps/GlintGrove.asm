@@ -39,9 +39,9 @@ GlintGrove_MapScriptHeader:
 	person_event SPRITE_TWIN, 39, 31, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_GENERICTRAINER, 1, TrainerGlintGrove_4, -1
 	person_event SPRITE_TWIN, 38, 31, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_GENERICTRAINER, 1, TrainerGlintGrove_5, -1
 	person_event SPRITE_BUG_CATCHER, 30,  4, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 3, TrainerGlintGrove_6, -1
-	person_event SPRITE_MINA, 23, 17, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, GlintGroveMina, EVENT_GLINT_GROVE_MINA_GONE
+	person_event SPRITE_MINA, 23, 16, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, GlintGroveMina, EVENT_GLINT_GROVE_MINA_GONE
+	person_event SPRITE_SNUBBULL_SHRINK, 23, 17, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, GlintGroveSnubbull, EVENT_GLINT_GROVE_MINA_GONE
 	person_event SPRITE_PONYTAIL, 72, 21, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, GlintGroveNPC1, -1
-	person_event SPRITE_CHILD, 75, 22, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, GlintGroveNPC2, -1
 	person_event SPRITE_PONYTAIL, 55, 16, SPRITEMOVEDATA_WANDER, 1, 3, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, GlintGroveNPC3, -1
 	person_event SPRITE_POKEMANIAC, 74, 31, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, GlintGroveNPC4, -1
 	itemball_event 10, 41, AWAKENING, 1, EVENT_GLINT_GROVE_POKE_BALL1
@@ -62,8 +62,8 @@ GlintGrove_MapScriptHeader:
 	const GLINTGROVE_TRAINER5
 	const GLINTGROVE_TRAINER6
 	const GLINTGROVE_MINA
+	const GLINTGROVE_SNUBBULL
 	const GLINTGROVE_NPC1
-	const GLINTGROVE_NPC2
 	const GLINTGROVE_NPC3
 	const GLINTGROVE_NPC4
 	const GLINTGROVE_POKEBALL
@@ -629,13 +629,13 @@ GlintGroveNPC4:
 	end
 	
 GlintGroveNPC1Text:
-	text "You didn't hear it"
-	line "from me,"
+	text "You didn't hear"
+	line "it from me,"
 	
 	para "but they say"
 	line "there's a secret"
-	cont "spot somewhere in"
-	cont "this forest."
+	cont "spot somewhere"
+	cont "in these woods."
 	
 	para "Where?"
 	
@@ -676,6 +676,25 @@ GlintGroveNPC4Text:
 	para "I wish I could"
 	line "explore it,"
 	cont "but I can't swim!"
+	done
+
+GlintGroveSnubbull:
+	opentext TEXTBOX_POKEMON, SNUBBULL
+	writetext GlintGroveSnubbullText1
+	cry SNUBBULL
+	waitsfx
+	buttonsound
+	writetext GlintGroveSnubbullText2
+	waitbutton
+	closetext
+	end
+	
+GlintGroveSnubbullText1:
+	text "…<WAIT_S>Snub…"
+	done
+	
+GlintGroveSnubbullText2:
+	text "It's panting…"
 	done
 
 GlintGroveMina:
@@ -755,18 +774,28 @@ GlintGroveMina:
 	takeitem BLOSSOM_TEA
 	playsound SFX_LEVEL_UP 
 	waitsfx
+	closetext
 .return
+	pause 5
+	spriteface GLINTGROVE_MINA, RIGHT
+	opentext TEXTBOX_MINA
 	writetext GlintGroveMinaText6
 	waitbutton
 	closetext
 	pause 5
-	spriteface GLINTGROVE_MINA, UP
-	pause 5
+	playsound SFX_POTION
+	waitsfx
+	pause 10
 	opentext TEXTBOX_MINA
 	writetext GlintGroveMinaText11
 	waitbutton
 	closetext
 	pause 5
+	playsound SFX_JUMP_OVER_LEDGE
+	applymovement GLINTGROVE_SNUBBULL, Movement_GlintGroveHops
+	playsound SFX_JUMP_OVER_LEDGE
+	applymovement GLINTGROVE_SNUBBULL, Movement_GlintGroveHops
+	waitsfx
 	opentext
 	writetext GlintGroveMinaRockSmashText
 	waitbutton
@@ -786,16 +815,25 @@ GlintGroveMina:
 	disappear GLINTGROVE_ROCK
 	setlasttalked GLINTGROVE_MINA
 	pause 5
+	opentext TEXTBOX_MINA
+	writetext GlintGroveMinaText12
+	waitbutton
+	closetext
+	pause 5
+	playsound SFX_BALL_POOF
+	changeaction GLINTGROVE_SNUBBULL, PERSON_ACTION_SNUBBULL_SHRINK
+	disappear GLINTGROVE_SNUBBULL
+	pause 15
 	faceplayer
 	opentext TEXTBOX_MINA
 	writetext GlintGroveMinaText7
 	waitbutton
 	closetext
+	pause 5
 	applymovement GLINTGROVE_MINA, Movement_Mina_Walk_Away
 	disappear GLINTGROVE_MINA
 	setevent EVENT_GLINT_GROVE_MINA_GONE
 	setevent EVENT_TALKED_TO_MINA_ONCE
-	domaptrigger GLINT_GROVE_ENTRANCE, $2
 	special Special_FadeOutMusic
 	pause 10
 	playmapmusic
@@ -828,6 +866,7 @@ GlintGroveMina:
 	takeitem BLOSSOM_TEA
 	playsound SFX_LEVEL_UP 
 	waitsfx
+	closetext
 	playmusic MUSIC_MINA
 	jump .return
 	
@@ -900,18 +939,32 @@ GlintGroveMinaText5:
 	done
 	
 GlintGroveMinaText6:
-	text "Great!"
-	
-	para "Now SNUBBULL can"
-	line "blast on through!"
+	text "Here ya go, buddy.<WAIT_S>"
+	line "Drink up!"
 	done
 	
 GlintGroveMinaText7:
-	text "I'm going to see"
-	line "what's ahead."
+	text "Thanks for the"
+	line "help!"
+	
+	para "What did you say"
+	line "your name was?"
+	
+	para "…"
+	
+	para "<PLAYER>, huh?"
+	
+	para "Well, <PLAYER>,"
+	line "I'm going to see"
+	cont "what's ahead."
 	
 	para "Something cool,"
 	line "I hope!"
+	
+	para "ALOLA!<WAIT_M>"
+	line "Oops, I mean…"
+	
+	para "Goodbye!"
 	done
 	
 GlintGroveMinaText8:
@@ -938,6 +991,13 @@ GlintGroveMinaText11:
 	para "Let's do it!"
 	done
 	
+GlintGroveMinaText12:
+	text "Great job,"
+	line "SNUBBULL!"
+	
+	para "Now, return!"
+	done
+	
 GlintGroveMinaTextNo:
 	text "Sigh…"
 	done
@@ -957,6 +1017,7 @@ MovementData_Mina_Rock_Smash:
 	step_end
 
 Movement_Mina_Walk_Away:
+	step_right
 	step_up
 	step_up
 	step_up
@@ -964,6 +1025,12 @@ Movement_Mina_Walk_Away:
 	step_right
 	step_up
 	step_up
+	step_end
+	
+Movement_GlintGroveHops:
+	fix_facing
+	jump_in_place
+	remove_fixed_facing
 	step_end
 	
 GlintGroveRock:

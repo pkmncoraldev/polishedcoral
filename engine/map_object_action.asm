@@ -92,6 +92,7 @@ Pointers445f: ; 445f
 	dw SetFacingBillboard2R,   		   SetFacingBillboard2R		  ; PERSON_ACTION_BILLBOARD_2_R
 	dw SetFacingColbyFall1,			   SetFacingColbyFall1		  ; PERSON_ACTION_COLBY_FALL_1
 	dw SetFacingColbyFall2,			   SetFacingColbyFall2		  ; PERSON_ACTION_COLBY_FALL_2
+	dw SetFacingSnubbullShrink,		   SetFacingSnubbullShrink	  ; PERSON_ACTION_SNUBBULL_SHRINK
 	
 ; 44a3
 
@@ -758,6 +759,18 @@ SetFacingCasino1:
 SetFacingCasino2:
 	ld a, FACING_CASINO_2
 	jp SetFixedFacing
+	
+SetFacingSnubbullShrink:
+	ld hl, FacingSetFacingSnubbullShrinkData
+	jp IncrementOWSpriteAnimationTimer
+	
+FacingSetFacingSnubbullShrinkData:
+	;frame number, facing
+	;last entry determines whether or not to loop
+	dbw 1,		FACING_STEP_DOWN_0
+	dbw 4,		FACING_STEP_LEFT_0
+	dbw 8,		FACING_STEP_DOWN_1
+	dbw -1, 	FALSE
 	
 SetFacingCursola:
 	ld hl, FacingCursolaData

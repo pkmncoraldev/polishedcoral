@@ -200,3 +200,9 @@
 	tilecoll UP_WALL, WALL, FLOOR, WALL ; c7
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; c8
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; c9
+	tilecoll WALL, WALL, WALL, FLOOR ; ca
+	tilecoll WALL, WALL, FLOOR, WALL ; cb
+	tilecoll WALL, WALL, WALL, WALL ; cc
+	tilecoll WALL, WALL, WALL, WALL ; cd
+	tilecoll CAVE, WALL, FLOOR, FLOOR ; ce
+	tilecoll FLOOR, FLOOR, ROCK_CLIMB, WALL ; cf

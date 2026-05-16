@@ -6,11 +6,12 @@ EventideForest_MapScriptHeader:
 
 	db 0 ; callbacks
 
-	db 4 ; warp events
+	db 5 ; warp events
 	warp_def  4,  6, 3, ROUTE_4_EVENTIDE_GATE
 	warp_def  5,  6, 4, ROUTE_4_EVENTIDE_GATE
-	warp_def 68, 39, 1, EVENTIDE_VILLAGE_GATE
-	warp_def 69, 39, 2, EVENTIDE_VILLAGE_GATE
+	warp_def 66, 39, 1, EVENTIDE_VILLAGE_GATE
+	warp_def 67, 39, 2, EVENTIDE_VILLAGE_GATE
+	warp_def 42, 38, 1, FLICKER_MOSS_ROCK_ROOM
 
 	db 8 ; coord events
 	xy_trigger 0, 14, 26, 0, ForestGhostGirlTrigger, 0, 0
@@ -24,22 +25,21 @@ EventideForest_MapScriptHeader:
 
 	db 4 ; bg events
 	signpost  6,  8, SIGNPOST_READ, EventideForestSign
-	signpost 67, 37, SIGNPOST_READ, EventideForestSign2
+	signpost 65, 37, SIGNPOST_READ, EventideForestSign2
 	bg_event 37, 17, SIGNPOST_ITEM + DUSK_STONE, EVENT_EVENTIDE_FOREST_HIDDEN_DUSK_STONE
 	signpost 61,  9, SIGNPOST_IFNOTSET, EventideForestSecret
 
-	db 14 ; object events
+	db 13 ; object events
 	person_event SPRITE_TWIN, 11, 31, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_FOREST_GHOST_GIRL_GONE
 	person_event SPRITE_TWIN,  5, 34, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_FOREST_GHOST_GIRL_GONE2
 	person_event SPRITE_YOUNGSTER, 12,  8, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 2, TrainerEventide_1, -1
 	person_event SPRITE_LASS, 21, 19, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_GENERICTRAINER, 2, TrainerEventide_2, -1
 	person_event SPRITE_POKEFAN_M, 31, 23, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_GENERICTRAINER, 3, TrainerEventide_3, -1
-	person_event SPRITE_POKEFAN_F, 62, 29, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_GENERICTRAINER, 2, TrainerEventide_4, -1
+	person_event SPRITE_POKEFAN_F, 60, 29, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_GENERICTRAINER, 2, TrainerEventide_4, -1
 	person_event SPRITE_POKEFAN_M, 49, 20, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_GENERICTRAINER, 4, TrainerEventide_5, -1
 	person_event SPRITE_BUG_CATCHER, 35, 18, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 3, TrainerEventide_6, -1
 	itemball_event 29, 22, SUPER_REPEL, 1, EVENT_FOREST_POKE_BALL_1
-	itemball_event 33, 46, SILVERPOWDER, 1, EVENT_FOREST_POKE_BALL_2
-	itemball_event 21, 20, ANTIDOTE, 1, EVENT_FOREST_POKE_BALL_3
+	itemball_event 21, 20, ANTIDOTE, 1, EVENT_FOREST_POKE_BALL_2
 	fruittree_event 27, 14, FRUITTREE_EVENTIDE_FOREST, PECHA_BERRY
 	cuttree_event 33, 22, EVENT_EVENTIDE_FOREST_CUT_TREE_1
 	cuttree_event 33, 16, EVENT_EVENTIDE_FOREST_CUT_TREE_2

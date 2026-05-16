@@ -153,13 +153,11 @@ FlickerSignText:
 	done
 	
 FlickerStationNPC6Text:
-	text "The train station"
-	line "recently reopened."
-	
-	para "It was closed for"
-	line "renovations."
-	
-	para "How inconvenient!"
+	text "There's a group of"
+	line "punks that hang"
+	cont "out at the old"
+	cont "train depot and"
+	cont "cause problems."
 	done
 	
 FlickerStationNPC1Text:

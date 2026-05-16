@@ -7,8 +7,7 @@ FlickerTrainGraveyard_MapScriptHeader:
 	db 1 ; callbacks
 	callback MAPCALLBACK_OBJECTS, FlickerTrainGraveyardGirlMove
 
-	db 1 ; warp events
-	warp_def 25, 22, 1, FLICKER_MOSS_ROCK_ROOM
+	db 0 ; warp events
 
 	db 3 ; coord events
 	xy_trigger 0, 28, 18, 0, FlickerTrainGraveyard3Girls, 0, 0
@@ -27,7 +26,7 @@ FlickerTrainGraveyard_MapScriptHeader:
 	person_event SPRITE_DELINQUENT_F, 26, 18, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, FlickerTrainGraveyardGirl1, -1
 	person_event SPRITE_DELINQUENT_F, 28, 20, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, FlickerTrainGraveyardGirl2, -1
 	person_event SPRITE_DELINQUENT_F, 30, 18, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, FlickerTrainGraveyardGirl3, -1
-	tmhmball_event 22, 29, TM_WILL_O_WISP, EVENT_TM61
+	tmhmball_event 21, 28, TM_WILL_O_WISP, EVENT_TM61
 	tapeball_event  6, 14, MUSIC_FLICKER_STATION, 1, EVENT_MUSIC_FLICKER_STATION
 
 

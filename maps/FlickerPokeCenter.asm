@@ -35,9 +35,19 @@ FlickerCenterNPC1Text:
 	done
 	
 FlickerCenterNPC2Text:
-	text "There's a group of"
-	line "punks that hang"
-	cont "out at the old"
-	cont "train depot and"
-	cont "cause problems."
+	text "Have you heard of"
+	line "the #MON EEVEE?"
+	
+	para "There are special"
+	line "spots that cause"
+	cont "it to evolve."
+	
+	para "An icy cave NORTH"
+	line "of here, and a"
+	cont "mossy cave SOUTH-"
+	cont "EAST of here."
+	
+	para "I've heard there's"
+	line "also a third spot"
+	cont "somewhere…"
 	done

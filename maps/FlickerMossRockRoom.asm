@@ -4,7 +4,7 @@ FlickerMossRockRoom_MapScriptHeader:
 	db 0 ; callbacks
 
 	db 1 ; warp events
-	warp_def  7,  5, 1, FLICKER_TRAIN_GRAVEYARD
+	warp_def  7,  4, 5, EVENTIDE_FOREST
 
 	db 0 ; coord events
 

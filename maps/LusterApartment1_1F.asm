@@ -15,7 +15,7 @@ LusterApartment1_1F_MapScriptHeader:
 	db 3 ; object events
 	person_event SPRITE_AROMA_LADY,  3,  4, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, LusterApartment1_1F_NPC1, -1
 	person_event SPRITE_PSYCHIC,  3,  1, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, LusterApartment1_1F_NPC2, -1
-	object_event 2, 4, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, SNUBBULL, -1, -1, PAL_NPC_PINK, PERSONTYPE_SCRIPT, 0, LusterApartment1_1F_NPC3, -1
+	object_event 2, 4, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, EEVEE, -1, -1, PAL_NPC_BROWN, PERSONTYPE_SCRIPT, 0, LusterApartment1_1F_NPC3, -1
 
 LusterApartment1_1F_NPC1:
 	jumptextfaceplayer LusterApartment1_1F_NPC1Text
@@ -24,9 +24,9 @@ LusterApartment1_1F_NPC2:
 	jumptextfaceplayer LusterApartment1_1F_NPC2Text
 	
 LusterApartment1_1F_NPC3:
-	opentext TEXTBOX_POKEMON, SNUBBULL
+	opentext TEXTBOX_POKEMON, EEVEE
 	writetext LusterApartment1_1F_NPC3Text1
-	cry SNUBBULL
+	cry EEVEE
 	waitsfx
 	buttonsound
 	writetext LusterApartment1_1F_NPC3Text2
@@ -58,7 +58,7 @@ LusterApartment1_1F_NPC2Text:
 	done
 	
 LusterApartment1_1F_NPC3Text1:
-	text "…<WAIT_S>Snub…"
+	text "…<WAIT_S>Vui…"
 	done
 	
 LusterApartment1_1F_NPC3Text2:

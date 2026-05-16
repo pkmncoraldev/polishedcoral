@@ -760,9 +760,8 @@ SetFacingCasino2:
 	jp SetFixedFacing
 	
 SetFacingCursola:
-	call IncrementOWSpriteAnimationTimer
 	ld hl, FacingCursolaData
-	jp AnimateOWSprite
+	jp IncrementOWSpriteAnimationTimer
 	
 FacingCursolaData:
 	;frame number, facing
@@ -782,10 +781,8 @@ FacingCursolaData:
 SetFacingPlumeBoss:
 	ld a, 1
 	ld [wScriptDelay], a
-	call IncrementOWSpriteAnimationTimer
-	ld a, [wOWSpriteAnimationTimer]
 	ld hl, FacingPlumeBossData
-	jp AnimateOWSprite
+	jp IncrementOWSpriteAnimationTimer
 	
 FacingPlumeBossData:
 	;frame number, facing
@@ -798,10 +795,8 @@ FacingPlumeBossData:
 	dbw -1, 	FALSE
 	
 SetFacingColbyFall1:
-	call IncrementOWSpriteAnimationTimer
-	ld a, [wOWSpriteAnimationTimer]
 	ld hl, FacingColbyFall1Data
-	jp AnimateOWSprite
+	jp IncrementOWSpriteAnimationTimer
 	
 FacingColbyFall1Data:
 	;frame number, facing
@@ -812,10 +807,8 @@ FacingColbyFall1Data:
 	dbw -1, 	FALSE
 	
 SetFacingColbyFall2:
-	call IncrementOWSpriteAnimationTimer
-	ld a, [wOWSpriteAnimationTimer]
 	ld hl, FacingColbyFall2Data
-	jp AnimateOWSprite
+	jp IncrementOWSpriteAnimationTimer
 	
 FacingColbyFall2Data:
 	;frame number, facing
@@ -836,7 +829,6 @@ IncrementOWSpriteAnimationTimer::
 	ld a, [wOWSpriteAnimationTimer]
 	inc a
 	ld [wOWSpriteAnimationTimer], a
-	ret
 
 AnimateOWSprite:
 	ld a, [wOWSpriteAnimationScript]

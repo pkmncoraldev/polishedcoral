@@ -94,8 +94,8 @@ HuntersThicketPokeballCut:
 	opentext
 	writetext ReceivedCutText1
 	waitsfx
-	specialsound
-	waitbutton
+	playsound SFX_GET_TM
+	waitsfx
 	writetext ReceivedCutText2
 	waitbutton
 	closetext

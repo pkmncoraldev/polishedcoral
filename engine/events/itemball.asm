@@ -156,8 +156,8 @@ FindTapeInBallScript::
 	disappear LAST_TALKED
 	opentext
 	writetext .text_found
-	playsound SFX_ITEM
-	pause 60
+	playsound SFX_KEY_ITEM
+	waitsfx
 	callasm GetTapeNameLines
 	ifequal 2, .two_line_name
 	writetext TapeNameText

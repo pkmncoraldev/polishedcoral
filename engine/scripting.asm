@@ -647,7 +647,6 @@ GiveItemScript:
 	iffalse .Full
 	waitsfx
 	specialsound
-	waitbutton
 	itemnotify
 	end
 
@@ -3186,7 +3185,6 @@ GiveTMHMScript:
 	waitsfx
 	playsound SFX_GET_TM
 	waitsfx
-	waitbutton
 	tmhmnotify
 	end
 

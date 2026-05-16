@@ -202,8 +202,8 @@ AirportPokeballSurf:
 	opentext
 	writetext ReceivedSurfText1
 	waitsfx
-	specialsound
-	waitbutton
+	playsound SFX_GET_TM
+	waitsfx
 	writetext ReceivedSurfText2
 	waitbutton
 	closetext

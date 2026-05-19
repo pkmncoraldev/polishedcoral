@@ -297,7 +297,7 @@ BarInsideBartenderText1:
 	cont "drinkin' the"
 	cont "house special."
 	
-	para "You're curious"
+	para "…<WAIT_L>You're curious"
 	line "about the house"
 	cont "special?"
 	
@@ -306,7 +306,7 @@ BarInsideBartenderText1:
 	
 	para "It's MOOMOO MILK"
 	line "with a little"
-	cont "somethin'… <WAIT_L>extra…"
+	cont "somethin'… <WAIT_M>extra…"
 	cont "mixed in."
 	
 	para "Anyway, <WAIT_S>enough of"
@@ -324,9 +324,7 @@ BarInsideBartenderText2:
 	para "I can't sell"
 	line "em' to a kid!"
 	
-	para "…"
-	
-	para "Alright, <WAIT_S>tell ya"
+	para "…<WAIT_L>Alright, <WAIT_S>tell ya"
 	line "what."
 	
 	para "If you can prove"

@@ -527,8 +527,11 @@ LoadSpecialMapPalette: ; 494ac
 	cp GROUP_SHIMMER_CITY
 	jp nz, .check_shimmer_flowers
 	ld a, [wMapNumber]
+	cp MAP_ROUTE_11_UNDER_BRIDGE
+	jr z, .boardwalk
 	cp MAP_SHIMMER_UNDER_BOARDWALK
 	jp nz, .do_nothing
+.boardwalk
 	ld hl, BoardwalkPalette
 	ld de, wUnknBGPals + 1 palettes
 	ld bc, 2 palettes

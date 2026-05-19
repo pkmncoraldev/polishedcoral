@@ -341,6 +341,7 @@ DEF MAP_NONE   EQU 0
 	map_const ROUTE_4,                                    31, 16 ; 10
 	map_const ROUTE_12,									  20, 25 ; 11
 	map_const ROUTE_19,									  24, 26 ; 12
+	map_const ROUTE_11_UNDER_BRIDGE,					  11, 21 ; 13
 	
 	
 	newgroup													 ; 17

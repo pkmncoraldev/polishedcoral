@@ -541,4 +541,5 @@ INCLUDE "maps/Inn3F.asm"
 INCLUDE "maps/InnElevator.asm"
 INCLUDE "maps/InnVent.asm"
 INCLUDE "maps/Route25Gate.asm"
+INCLUDE "maps/Route11UnderBridge.asm"
 

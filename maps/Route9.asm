@@ -29,7 +29,7 @@ Route9_MapScriptHeader:
 	xy_trigger 0,  9, 23, 0, DodrioRanchMapSignThing, 0, 0
 	xy_trigger 0,  9, 22, 0, DodrioRanchMapSignThing, 0, 0
 	xy_trigger 0,  9, 20, 0, DodrioRanchMapSignThing, 0, 0
-	xy_trigger 0, 19, 19, 0, DodrioRanchMapSignThing, 0, 0
+	xy_trigger 0, 18, 19, 0, DodrioRanchMapSignThing, 0, 0
 	xy_trigger 0, 20, 19, 0, DodrioRanchMapSignThing, 0, 0
 	xy_trigger 0, 21, 19, 0, DodrioRanchMapSignThing, 0, 0
 	xy_trigger 0, 22, 19, 0, DodrioRanchMapSignThing, 0, 0

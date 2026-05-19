@@ -7,9 +7,11 @@ Route11_2_MapScriptHeader:
 	db 1 ; callbacks
 	callback MAPCALLBACK_TILES, Route11_2Callback
 
-	db 2 ; warp events
+	db 4 ; warp events
 	warp_def  3, 19, 3, ROUTE_11_GATE
 	warp_def 65, 15, 1, ROUTE_11_HOUSE
+	warp_def 30, 13, 1, ROUTE_11_UNDER_BRIDGE
+	warp_def 31, 13, 3, ROUTE_11_UNDER_BRIDGE
 
 	db 1 ; coord events
 	coord_event 21, 64, 0, Route11_2SnubbullJump

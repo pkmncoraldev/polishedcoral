@@ -857,3 +857,4 @@ ENDM
 	map_attributes AureoleMountain4F, AUREOLE_MOUNTAIN_4F, $9, 0
 	map_attributes AureoleMountain5F, AUREOLE_MOUNTAIN_5F, $9, 0
 	map_attributes LuminaTownCave, LUMINA_TOWN_CAVE, $9, 0
+	map_attributes Route11UnderBridge, ROUTE_11_UNDER_BRIDGE, 0, 0

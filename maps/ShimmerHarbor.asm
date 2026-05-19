@@ -33,7 +33,7 @@ ShimmerHarbor_MapScriptHeader:
 	signpost 18,  4, SIGNPOST_READ, ShimmerContainers2
 	signpost 18,  7, SIGNPOST_READ, ShimmerContainers
 	signpost 22,  6, SIGNPOST_READ, ShimmerContainers
-	signpost 22, 10, SIGNPOST_READ, ShimmerContainers
+	signpost -1, -1, SIGNPOST_READ, ShimmerContainers
 	signpost 20, 11, SIGNPOST_READ, ShimmerContainers
 	signpost 20,  5, SIGNPOST_READ, ShimmerContainers
 	signpost 16,  7, SIGNPOST_READ, ShimmerContainers3

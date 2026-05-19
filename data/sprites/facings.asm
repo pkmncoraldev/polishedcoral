@@ -1104,91 +1104,91 @@ FacingBillboard2R:
 	
 FacingColbyFall1:
 	db 4 ; #
-	db  -8,  0, 0, $00
-	db  -8,  8, 0, $01
-	db  0,  0, 2, $02
-	db  0,  8, 2, $03
+	db  0,  0, 0, $00
+	db  0,  8, 0, $01
+	db  8,  0, 2, $02
+	db  8,  8, 2, $03
 	
 FacingColbyFall2:
 	db 4 ; #
-	db  -8,  0, 0, $04
-	db  -8,  8, 0, $05
-	db  0,  0, 2, $06
-	db  0,  8, 2, $07
+	db  0,  0, 0, $90
+	db  0,  8, 0, $91
+	db  8,  0, 2, $92
+	db  8,  8, 2, $93
 	
 FacingColbyFall3:
 	db 4 ; #
-	db  -8,  0, 0, $08
-	db  -8,  8, 0, $09
-	db  0,  0, 2, $0a
-	db  0,  8, 2, $0b
+	db  0,  0, 0, $94
+	db  0,  8, 0, $95
+	db  8,  0, 2, $96
+	db  8,  8, 2, $97
 	
 FacingColbyFall4:
 	db 4 ; #
-	db  -8,  0, 0, $0c
-	db  -8,  8, 0, $0d
-	db  0,  0, 2, $0e
-	db  0,  8, 2, $0f
+	db  0,  0, 0, $98
+	db  0,  8, 0, $99
+	db  8,  0, 2, $9a
+	db  8,  8, 2, $9b
 	
 FacingColbyFall5:
 	db 4 ; #
-	db  -8,  0, 0, $10
-	db  -8,  8, 0, $11
-	db  0,  0, 2, $12
-	db  0,  8, 2, $13
+	db  0,  0, 0, $10
+	db  0,  8, 0, $11
+	db  8,  0, 2, $12
+	db  8,  8, 2, $13
 	
 FacingColbyFall6:
 	db 4 ; #
-	db  -8,  0, 0, $14
-	db  -8,  8, 0, $15
-	db  0,  0, 2, $16
-	db  0,  8, 2, $17
+	db  0,  0, 0, $14
+	db  0,  8, 0, $15
+	db  8,  0, 2, $16
+	db  8,  8, 2, $17
 	
 FacingColbyFall7:
 	db 4 ; #
-	db  -8,  0, 0, $18
-	db  -8,  8, 0, $19
-	db  0,  0, 2, $1a
-	db  0,  8, 2, $1b
+	db  0,  0, 0, $18
+	db  0,  8, 0, $19
+	db  8,  0, 2, $1a
+	db  8,  8, 2, $1b
 	
 FacingColbyFall8:
 	db 4 ; #
-	db  -8,  0, 0, $1c
-	db  -8,  8, 0, $1d
-	db  0,  0, 2, $1e
-	db  0,  8, 2, $1f
+	db  0,  0, 0, $1c
+	db  0,  8, 0, $1d
+	db  8,  0, 2, $1e
+	db  8,  8, 2, $1f
 	
 FacingColbyFall9:
 	db 4 ; #
-	db  -8,  0, 0, $80
-	db  -8,  8, 0, $81
-	db  0,  0, 2, $82
-	db  0,  8, 2, $83
+	db  0,  0, 0, $80
+	db  0,  8, 0, $81
+	db  8,  0, 2, $82
+	db  8,  8, 2, $83
 	
 FacingColbyFall10:
 	db 4 ; #
-	db  -8,  0, 0, $84
-	db  -8,  8, 0, $85
-	db  0,  0, 2, $86
-	db  0,  8, 2, $87
+	db  0,  0, 0, $84
+	db  0,  8, 0, $85
+	db  8,  0, 2, $86
+	db  8,  8, 2, $87
 	
 FacingColbyFall11:
 	db 4 ; #
-	db  -8,  0, 0, $88
-	db  -8,  8, 0, $89
-	db  0,  0, 2, $8a
-	db  0,  8, 2, $8b
+	db  0,  0, 0, $88
+	db  0,  8, 0, $89
+	db  8,  0, 2, $8a
+	db  8,  8, 2, $8b
 	
 FacingColbyFall12:
 	db 4 ; #
-	db  -8,  0, 0, $8c
-	db  -8,  8, 0, $8d
-	db  0,  0, 2, $8e
-	db  0,  8, 2, $8f
+	db  0,  0, 0, $8c
+	db  0,  8, 0, $8d
+	db  8,  0, 2, $8e
+	db  8,  8, 2, $8f
 	
 FacingColbyFall13:
 	db 4 ; #
-	db  -8,  0, 0, $00
-	db  -8,  8, 0, $01
-	db  0,  0, 2, $02
-	db  0,  8, 2, $03
+	db  0,  0, 0, $0c
+	db  0,  8, 0, $0d
+	db  8,  0, 2, $0e
+	db  8,  8, 2, $0f

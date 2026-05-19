@@ -27,18 +27,18 @@ DragonShrineTop_MapScriptHeader:
 	bg_event 11,  7, SIGNPOST_JUMPTEXT, DragonShrineTopViewDownText
 	bg_event 12,  7, SIGNPOST_JUMPTEXT, DragonShrineTopViewDownText
 
-	db 4 ; object events
-	object_event  9,  8, SPRITE_COLBY, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
+	db 3 ; object events
+	object_event  9,  8, SPRITE_GENERAL_VARIABLE_1, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
 	person_event SPRITE_PLAYER_CUTSCENE,  9,  9, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, EVENT_PLAYER_CUTSCENE_SILVER
 	object_event  9,  8, SPRITE_BALL_CUT_FRUIT, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_ALWAYS_SET
-	object_event  1,  1, SPRITE_COLBY_FALL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
-
+	
 	
 DragonShrineTopTrigger0:
 DragonShrineTopTrigger1:
 	end
 	
 DragonShrineTopCallback:
+	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_COLBY
 	setevent EVENT_LIGHTNING_ACTIVE
 	loadvar wLightningCooldown, 60
 	return
@@ -119,13 +119,18 @@ DragonShrineTopRivalScene:
 	closetext
 	waitsfx
 ;push player
-	spriteface 1, RIGHT
-	pause 2
-	spriteface 1, DOWN
+	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_COLBY_FALL
+;	special MapCallbackSprites_LoadUsedSpritesGFX
+	spriteface 1, UP
+	pause 5
+	spriteface 1, LEFT
 	callasm DragonShrineLightning
 	earthquake 3
 	applymovement 2, Movement_DragonShrineTopPlayerJump
 	applymovement PLAYER, Movement_DragonShrineTopLightning
+	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_COLBY
+	special MapCallbackSprites_LoadUsedSpritesGFX
+	spriteface 1, DOWN
 	
 	pause 10
 	opentext TEXTBOX_RIVAL
@@ -177,9 +182,9 @@ DragonShrineTopRivalScene:
 	waitsfx
 	pause 5
 	changeblock $8, $2, $b4
-	changeblock $a, $2, $b4
+	changeblock $a, $2, $d2
 	changeblock $8, $4, $b4
-	changeblock $a, $4, $b4
+	changeblock $a, $4, $d6
 	setevent EVENT_DONT_HIDE_SPRITES_BEFORE_BATTLE
 	winlosstext DragonShrineTopRivalWinText, DragonShrineTopRivalLoseText
 	setlasttalked 1
@@ -262,12 +267,9 @@ DragonShrineTopRivalScene:
 	waitsfx
 	pause 10
 ;colby jumps
-	disappear 4
-	moveperson 4, 9, 8
-	appear 4
-	applyonemovement PLAYER, remove_fixed_facing
-	disappear 1
-	changeaction 4, PERSON_ACTION_COLBY_FALL_1
+	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_COLBY_FALL
+	special MapCallbackSprites_LoadUsedSpritesGFX
+	changeaction 1, PERSON_ACTION_COLBY_FALL_1
 	pause 20
 	opentext TEXTBOX_RIVAL
 	writetext DragonShrineTopRivalSceneText14
@@ -275,8 +277,8 @@ DragonShrineTopRivalScene:
 	closetext
 	waitsfx
 	pause 25
-	changeaction 4, PERSON_ACTION_COLBY_FALL_2
-	disappear 4
+	changeaction 1, PERSON_ACTION_COLBY_FALL_2
+	disappear 1
 
 	applyonemovement PLAYER, run_step_up
 	pause 40
@@ -372,13 +374,10 @@ DragonShrineTopRivalSceneText6:
 	cont "itself and deem"
 	cont "me the strongest."
 	
-	para "Just like my"
-	line "FATHER!"
-	
-	para "Then I would"
-	line "finally be able"
-	cont "to show my face"
-	cont "in front of him…"
+	para "Then I could"
+	line "finally show my"
+	cont "face in front"
+	cont "of my father…"
 	done
 	
 DragonShrineTopRivalSceneText7:

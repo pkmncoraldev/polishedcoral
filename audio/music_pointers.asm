@@ -58,6 +58,7 @@ Music:
 	dba Music_GentlemanEncounter
 	dba Music_Bar
 	dba Music_Erika
+	dba Music_Cycling
 	dba Music_RivalBattle2
 	dba Music_Autumn
 	dba Music_Dojo

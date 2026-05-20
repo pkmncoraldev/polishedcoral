@@ -118,6 +118,7 @@ INCLUDE "audio/music/fakesunsetbay.asm"
 INCLUDE "audio/music/luminatown.asm"
 INCLUDE "audio/music/dragonshrine.asm"
 INCLUDE "audio/music/aureole.asm"
+INCLUDE "audio/music/cycling.asm"
 
 
 SECTION "Music 6", ROMX

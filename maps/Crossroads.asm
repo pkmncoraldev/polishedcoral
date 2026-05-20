@@ -415,6 +415,7 @@ CrossroadsSnare2Text:
 	
 CrossroadsUnfortunateCustomer:
 	opentext TEXTBOX_OTHER_CORY
+	faceplayer
 	writetext CrossroadsUnfortunateCustomerText
 	waitbutton
 	closetext

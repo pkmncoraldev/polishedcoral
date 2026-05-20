@@ -1224,7 +1224,7 @@ Inn1FUnfortunateCustomerText2:
 	
 Inn1FUnfortunateCustomerText3:
 	text "Well, what am I"
-	cont "meant to do now?"
+	line "meant to do now?"
 	
 	para "I don't have any"
 	line "place to stay!"

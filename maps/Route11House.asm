@@ -19,13 +19,7 @@ Route11HouseNPC:
 	jumptextfaceplayer Route11HouseNPCText
 	
 Route11HouseNPCText:
-	text "I used to love"
-	line "living here."
-	
-	para "It was so nice"
-	line "and secluded."
-	
-	para "Ever since they"
+	text "Ever since they"
 	line "built that darn"
 	cont "bridge,"
 	
@@ -39,4 +33,11 @@ Route11HouseNPCText:
 	cont "so irritable that"
 	cont "I have to keep"
 	cont "her outside!"
+	
+	para "She only calms"
+	line "down when I give"
+	cont "her her favorite"
+	cont "treat:"
+	
+	para "A nice juicy bone."
 	done

@@ -239,6 +239,7 @@ SpriteHeadersPlayers:
 	overworld_sprite CoryPhoto2SpriteGFX, STANDING_SPRITE, PAL_OW_RED
 	overworld_sprite CoryPhoto3SpriteGFX, STANDING_SPRITE, PAL_OW_RED
 	overworld_sprite CoryPhoto4SpriteGFX, STANDING_SPRITE, PAL_OW_RED
+	overworld_sprite CoryBike2SpriteGFX, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite CoraSpriteGFX, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite CoraBikeSpriteGFX, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite CoraSurfSpriteGFX, WALKING_SPRITE, PAL_OW_BLUE
@@ -254,6 +255,7 @@ SpriteHeadersPlayers:
 	overworld_sprite CoraPhoto2SpriteGFX, STANDING_SPRITE, PAL_OW_BLUE
 	overworld_sprite CoraPhoto3SpriteGFX, STANDING_SPRITE, PAL_OW_BLUE
 	overworld_sprite CoraPhoto4SpriteGFX, STANDING_SPRITE, PAL_OW_BLUE
+	overworld_sprite CoraBike2SpriteGFX, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite PippiSpriteGFX, WALKING_SPRITE, PAL_OW_PINK
 	overworld_sprite PippiBikeSpriteGFX, WALKING_SPRITE, PAL_OW_PINK
 	overworld_sprite CorySpriteGFX, WALKING_SPRITE, PAL_OW_RED

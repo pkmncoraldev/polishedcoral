@@ -2981,7 +2981,7 @@ CheckChangeMusic::
 	cp MUSIC_COMMUNITY_CENTER
 	jr z, .community
 	cp MUSIC_BRIGHTBURG
-	jr z, .bright
+	jp z, .bright
 	cp MUSIC_BRIGHT_CENTER
 	jp z, .bright_center
 	cp MUSIC_CROSSROADS_OUTSIDE
@@ -2990,6 +2990,8 @@ CheckChangeMusic::
 	jp z, .crossroads_inside
 	cp MUSIC_MUSEUM
 	jp z, .museum
+	cp MUSIC_HIGHWAY
+	jp z, .highway
 	ld a, $ff
 .done
 	ld [wSlotBias], a
@@ -3094,6 +3096,17 @@ CheckChangeMusic::
 	ld a, MUSIC_OBSCURA_CITY
 	jp .done
 	
+.highway
+	ld a, [wPlayerState]
+	cp PLAYER_FAST_BIKE
+	jr z, .bike
+	ld a, MUSIC_BAR
+	jp .done
+	
+.bike
+	ld a, MUSIC_CYCLING
+	jp .done
+	
 GetMapMusic::
 	eventflagcheck EVENT_YOU_CHEATED
 	ret nz
@@ -3146,6 +3159,8 @@ ENDM
 	music_map SHIMMER_CITY, DoSurfMusic
 	music_map SHIMMER_HARBOR, DoSurfMusic
 	music_map SHIMMER_UNDER_BOARDWALK, DoSurfMusic
+;	music_map ROUTE_22, DoBikeMusic
+;	music_map ROUTE_22_2, DoBikeMusic
 	db 0 ; end
 
 DoSurfMusic:

@@ -73,6 +73,8 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	jp z, .Surf
 	cp PLAYER_DODRIO
 	jr z, .Normal
+	cp PLAYER_FAST_BIKE
+	jr z, .Normal
 	cp PLAYER_SLIP
 	jp z, .Ice
 	cp PLAYER_SITTING
@@ -623,6 +625,8 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 .debug_skip
 	ld a, [wPlayerState]
 	cp PLAYER_DODRIO
+	jp z, .fast
+	cp PLAYER_FAST_BIKE
 	jp z, .fast
 	cp PLAYER_CLOWN
 	jp z, .slow
@@ -1350,9 +1354,13 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 	ld e, a
 	ld d, 0
 	
+	ld a, [wPlayerState]
+	cp PLAYER_FAST_BIKE
+	jr z, .pippi
 	ld a, [wPlayerGender]
 	cp PIPPI
 	jr nz, .DoStepNotPippi
+.pippi
 	ld hl, .StepsPippi
 	jr .DoStepCont2
 	

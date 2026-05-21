@@ -205,12 +205,15 @@ Route22Callback:
 Route22StartEngine:
 	checkevent EVENT_BIKE_ENGINE_ON
 	iftrue .end
+	writecode VAR_MOVEMENT, PLAYER_FAST_BIKE
+	loadvar wOnBike, 1
+	loadvar wOnSkateboard, 0
+	playnewmapmusic
 	opentext
 	writetext Route22StartEngineText
 	waitbutton
 	closetext
 	setevent EVENT_BIKE_ENGINE_ON
-	writecode VAR_MOVEMENT, PLAYER_DODRIO
 	special MapCallbackSprites_LoadUsedSpritesGFX
 .end
 	return
@@ -276,6 +279,8 @@ Movement_Route22_Snare1:
 	step_end
 	
 Route22Snare2:
+	special SaveMusic
+	playmusic MUSIC_TEAM_SNARE_ENCOUNTER
 	faceplayer
 	opentext
 	writetext Route22Snare2Text1
@@ -384,6 +389,8 @@ Route22Snare2WinText:
 	done
 	
 Route22Snare3:
+	special SaveMusic
+	playmusic MUSIC_TEAM_SNARE_ENCOUNTER
 	faceplayer
 	opentext
 	writetext Route22Snare3Text1

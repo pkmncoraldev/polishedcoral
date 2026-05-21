@@ -137,6 +137,8 @@ Billboard2SpriteGFX::   	   INCBIN "gfx/sprites/billboard2.2bpp.lz"
 Billboard3SpriteGFX::   	   INCBIN "gfx/sprites/billboard3.2bpp.lz"
 SparkleSpriteGFX::         	   INCBIN "gfx/sprites/sparkle.2bpp.lz"
 ColbyFallSpriteGFX::           INCBIN "gfx/sprites/colby_fall.2bpp.lz"
+CoryBike2SpriteGFX::           INCBIN "gfx/sprites/cory_bike_2.2bpp.lz"
+CoraBike2SpriteGFX::           INCBIN "gfx/sprites/cora_bike_2.2bpp.lz"
 
 
 SECTION "Overworld Sprites 4", ROMX

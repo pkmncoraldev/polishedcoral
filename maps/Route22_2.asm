@@ -1,19 +1,24 @@
 Route22_2_MapScriptHeader:
-	db 2 ; scene scripts
+	db 3 ; scene scripts
 	scene_script Route22_2Trigger0
 	scene_script Route22_2Trigger1
+	scene_script Route22_2Trigger2
 
 	db 1 ; callbacks
 	callback MAPCALLBACK_TILES, Route22_2Callback
 
 	db 0 ; warp events
 
-	db 5 ; coord events
+	db 9 ; coord events
 	coord_event 58, 31, 0, Route22_2_Snare
 	coord_event 58, 32, 0, Route22_2_Snare
 	coord_event 58, 33, 0, Route22_2_Snare
 	coord_event 58, 34, 0, Route22_2_Snare
 	coord_event 58, 35, 0, Route22_2_Snare
+	coord_event 38, 12, 1, Route22_2StopEngine
+	coord_event 39, 12, 1, Route22_2StopEngine
+	coord_event 38, 11, 2, Route22_2StartEngine
+	coord_event 39, 11, 2, Route22_2StartEngine
 
 	db 0 ; bg events
 
@@ -45,6 +50,7 @@ Route22_2Callback:
 	
 Route22_2Trigger0:
 Route22_2Trigger1:
+Route22_2Trigger2:
 	special Special_UpdatePalsInstant
 	callasm Route22_2GetXCoordAsm
 	if_equal 1, .first_right
@@ -97,6 +103,38 @@ Route22_2Trigger1:
 .clear
 	clearevent EVENT_BILLBOARDS_RIGHT
 .billboards_done
+	end
+	
+Route22_2StartEngine:
+	checkevent EVENT_BIKE_ENGINE_ON
+	iftrue .end
+	writecode VAR_MOVEMENT, PLAYER_FAST_BIKE
+	loadvar wOnBike, 1
+	loadvar wOnSkateboard, 0
+	playnewmapmusic
+	opentext
+	writetext Route22StartEngineText
+	waitbutton
+	closetext
+	setevent EVENT_BIKE_ENGINE_ON
+	special MapCallbackSprites_LoadUsedSpritesGFX
+	dotrigger $1
+.end
+	end
+	
+Route22_2StopEngine:
+	checkevent EVENT_BIKE_ENGINE_ON
+	iffalse .end
+	writecode VAR_MOVEMENT, PLAYER_BIKE
+	callasm FadeToMapMusic
+	opentext
+	writetext Route22StopEngineText
+	waitbutton
+	closetext
+	clearevent EVENT_BIKE_ENGINE_ON
+	special MapCallbackSprites_LoadUsedSpritesGFX
+	dotrigger $2
+.end
 	end
 	
 Route22_2GetXCoordAsm:

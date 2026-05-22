@@ -1,7 +1,7 @@
 	const_def
 	const NORTH_ONWA_REGION
 	const SOUTH_ONWA_REGION
-	const ORANGE_REGION
+	const ONWA_KEYS_REGION
 
 
 	const_def
@@ -89,13 +89,13 @@ DEF SOUTH_ONWA_LANDMARK EQU const_value
 	const ROUTE_32
 	const AUREOLE_MOUNTAIN
 	const LUMINA_TOWN
-	
+
+DEF ONWA_KEYS_LANDMARK EQU const_value
+
 	const BRILLO_TOWN
 	const ROUTE_17
 	const ROUTE_18
 	const DESERT_WASTELAND
-
-DEF SHAMOUTI_LANDMARK EQU const_value
 
 	const GATE_LANDMARK
 	const DIVE_LANDMARK

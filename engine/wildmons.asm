@@ -40,6 +40,8 @@ FindNest: ; 2a01f
 	xor a
 	call ByteFill
 	ld a, e
+	cp ONWA_KEYS_REGION
+	jr z, .keys
 	cp SOUTH_ONWA_REGION
 	jr z, .south
 	decoord 0, 0
@@ -58,6 +60,13 @@ FindNest: ; 2a01f
 	ld hl, SouthOnwaGrassWildMons
 	call .FindGrass
 	ld hl, SouthOnwaWaterWildMons
+	jp .FindWater
+	
+.keys
+	decoord 0, 0
+	ld hl, OnwaKeysGrassWildMons
+	call .FindGrass
+	ld hl, OnwaKeysWaterWildMons
 	jp .FindWater
 
 .FindGrass: ; 2a052
@@ -1265,22 +1274,28 @@ RandomPhoneMon: ; 2a567
 ; 2a5e9
 
 
-NorthOnwaGrassWildMons: ; 0x2a5e9
+NorthOnwaGrassWildMons:
 INCLUDE "data/wild/north_onwa_grass.asm"
 
-NorthOnwaWaterWildMons: ; 0x2b11d
+NorthOnwaWaterWildMons:
 INCLUDE "data/wild/north_onwa_water.asm"
 
-SouthOnwaGrassWildMons: ; 0x2b274
+SouthOnwaGrassWildMons:
 INCLUDE "data/wild/south_onwa_grass.asm"
 
-SouthOnwaWaterWildMons: ; 0x2b7f7
+SouthOnwaWaterWildMons:
 INCLUDE "data/wild/south_onwa_water.asm"
 
-SwarmGrassWildMons: ; 0x2b8d0
+OnwaKeysGrassWildMons:
+INCLUDE "data/wild/onwa_keys_grass.asm"
+
+OnwaKeysWaterWildMons:
+INCLUDE "data/wild/onwa_keys_water.asm"
+
+SwarmGrassWildMons:
 INCLUDE "data/wild/swarm_grass.asm"
 
-SwarmWaterWildMons: ; 0x2b92f
+SwarmWaterWildMons:
 INCLUDE "data/wild/swarm_water.asm"
 
 SpecialCaseWildMons:

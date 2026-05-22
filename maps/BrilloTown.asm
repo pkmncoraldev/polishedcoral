@@ -92,6 +92,7 @@ JustRodeBoatBrillo:
 	special Special_StartLandmarkTimer
 	waitsfx
 	setevent EVENT_BRILLO_BOATMAN
+	setevent EVENT_UNLOCKED_KEYS_MAP
 	dotrigger $0
 	end
 	

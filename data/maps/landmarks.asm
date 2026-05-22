@@ -86,10 +86,10 @@ Landmarks: ; 0x1ca8c3
 	landmark 140,  68, AureoleMountainName
 	landmark 140,  52, LuminaTownName
 	
-	landmark  20, 124, BrilloTownName
-	landmark  32, 124, Route17Name
-	landmark  36, 120, Route18Name
-	landmark  36, 108, DesertWastelandName
+	landmark 108, 116, BrilloTownName
+	landmark 124, 112, Route17Name
+	landmark 132,  96, Route18Name
+	landmark 132,  76, DesertWastelandName
 	
 	
 	landmark -16, -16, GateName

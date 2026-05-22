@@ -2021,8 +2021,8 @@ RegionCheck::
 ; If in South Onwa, returns 1 in e.
 ; If on Shamouti Island, returns 2 in e.
 	call GetCurrentLandmark
-	ld e, ORANGE_REGION
-	cp SHAMOUTI_LANDMARK
+	ld e, ONWA_KEYS_REGION
+	cp ONWA_KEYS_LANDMARK
 	ret nc
 	dec e ; SOUTH_ONWA_REGION
 	cp SOUTH_ONWA_LANDMARK

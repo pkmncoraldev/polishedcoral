@@ -430,8 +430,8 @@ InitPokegearTilemap: ; 90da8 (24:4da8)
 	cp 5 ; SouthOnwa
 	call z, TownMapSouthOnwaFlips
 	ld a, [wJumptableIndex]
-	cp 7 ; Orange
-	call z, TownMapSouthOnwaFlips
+	cp 7 ; OnwaKeys
+	call z, TownMapOnwaKeysFlips
 .cont
 	ld a, [wcf65]
 	and a
@@ -639,7 +639,7 @@ PokegearJumptable: ; 90f04 (24:4f04)
 	dw PokegearMap_Init
 	dw PokegearMap_SouthOnwaMap
 	dw PokegearMap_Init
-	dw PokegearMap_OrangeMap
+	dw PokegearMap_OnwaKeysMap
 	dw PokegearPhone_Init
 	dw PokegearPhone_Joypad
 	dw PokegearPhone_MakePhoneCall
@@ -791,8 +791,8 @@ Pokegear_UpdateClock: ; 90f86 (24:4f86)
 
 PokegearMap_CheckRegion: ; 90fb4 (24:4fb4)
 	ld a, [wPokegearMapPlayerIconLandmark]
-	cp SHAMOUTI_LANDMARK
-	jr nc, .orange
+	cp ONWA_KEYS_LANDMARK
+	jr nc, .keys
 	cp SOUTH_ONWA_LANDMARK
 	jr nc, .south_onwa
 	ld a, 3
@@ -800,7 +800,7 @@ PokegearMap_CheckRegion: ; 90fb4 (24:4fb4)
 .south_onwa
 	ld a, 5
 	jr .done
-.orange
+.keys
 	ld a, 7
 .done
 	ld [wJumptableIndex], a
@@ -828,8 +828,8 @@ PokegearMap_SouthOnwaMap: ; 90fe9 (24:4fe9)
 	call TownMap_GetSouthOnwaLandmarkLimits
 	jr PokegearMap_ContinueMap
 
-PokegearMap_OrangeMap:
-	call TownMap_GetOrangeLandmarkLimits
+PokegearMap_OnwaKeysMap:
+	call TownMap_GetOnwaKeysLandmarkLimits
 PokegearMap_ContinueMap: ; 90ff2 (24:4ff2)
 	ld hl, hJoyLast
 	ld a, [hl]
@@ -1052,14 +1052,11 @@ TownMap_GetNorthOnwaLandmarkLimits:
 	ret
 
 TownMap_GetSouthOnwaLandmarkLimits: ; 910e8
-	lb de, DESERT_WASTELAND, SHIMMER_CITY
-	eventflagcheck EVENT_CAN_GO_TO_DESERT
-	ret nz
-	ld d, LUMINA_TOWN
+	lb de, LUMINA_TOWN, SHIMMER_CITY
 	ret
 
-TownMap_GetOrangeLandmarkLimits:
-	lb de, SUNSET_BAY, SUNSET_BAY
+TownMap_GetOnwaKeysLandmarkLimits:
+	lb de, DESERT_WASTELAND, BRILLO_TOWN
 	ret
 
 ; 910f9
@@ -2242,8 +2239,8 @@ _TownMap: ; 9191c
 	call DelayFrame
 
 	ld a, [wTownMapPlayerIconLandmark]
-	cp SHAMOUTI_LANDMARK
-	jr nc, .orange
+	cp ONWA_KEYS_LANDMARK
+	jr nc, .onwa_keys
 	cp SOUTH_ONWA_LANDMARK
 	jr nc, .south_onwa
 	call TownMap_GetNorthOnwaLandmarkLimits
@@ -2251,8 +2248,8 @@ _TownMap: ; 9191c
 .south_onwa
 	call TownMap_GetSouthOnwaLandmarkLimits
 	jr .resume
-.orange
-	call TownMap_GetOrangeLandmarkLimits
+.onwa_keys
+	call TownMap_GetOnwaKeysLandmarkLimits
 
 .resume
 	call .loop
@@ -2337,13 +2334,18 @@ _TownMap: ; 9191c
 .InitTilemap: ; 91a04
 	call LoadTownMapGFX
 	ld a, [wTownMapPlayerIconLandmark]
-	cp SHAMOUTI_LANDMARK
-	jr nc, .south
+	cp ONWA_KEYS_LANDMARK
+	jr nc, .keys
 	cp SOUTH_ONWA_LANDMARK
 	jr nc, .south
 	call FillNorthOnwaMap
 	call TownMapPals
 	call TownMapNorthOnwaFlips
+	jr .finish
+.keys
+	call FillOnwaKeysMap
+	call TownMapPals
+	call TownMapOnwaKeysFlips
 	jr .finish
 .south
 	call FillSouthOnwaMap
@@ -2380,6 +2382,8 @@ _TownMap: ; 9191c
 PokegearMap: ; 91ae1
 	call LoadTownMapGFX
 	ld a, [wPokegearMapPlayerIconLandmark]
+	cp ONWA_KEYS_LANDMARK
+	jp nc, .keys
 	cp SOUTH_ONWA_LANDMARK
 	jp nc, .south
 .north
@@ -2396,13 +2400,25 @@ PokegearMap: ; 91ae1
 	call GetCGBLayout
 	call SetPalettes
 	jp FillSouthOnwaMap
+.keys
+	ld a, 2
+	ld [wWarpNumber], a
+	ld b, CGB_POKEGEAR_PALS
+	call GetCGBLayout
+	call SetPalettes
+	jp FillOnwaKeysMap
 
 _FlyMap: ; 91af3
 	call GetCurrentLandmark
-; The first 46 locations are part of NorthOnwa. The rest are in SouthOnwa
+	cp ONWA_KEYS_LANDMARK
+	jr nc, .OnwaKeysFlyMap
 	cp SOUTH_ONWA_LANDMARK
 	jr nc, .SouthOnwaFlyMap
 	xor a
+	ld [wWarpNumber], a
+	jr .cont
+.OnwaKeysFlyMap
+	ld a, 2
 	ld [wWarpNumber], a
 	jr .cont
 .SouthOnwaFlyMap
@@ -2447,8 +2463,11 @@ _FlyMap: ; 91af3
 	eventflagcheck EVENT_UNLOCKED_SOUTH_FLY_MAP
 	jr z, .loop
 	ld a, [wWarpNumber]
-	cp 1
+	cp 2
 	jr z, .switch_to_north
+	cp 1
+	jr z, .on_south_map
+.switch_to_south
 	ld a, 1
 	ld [wWarpNumber], a
 	call ClearBGPalettes
@@ -2466,6 +2485,17 @@ _FlyMap: ; 91af3
 	xor a
 	ldh [hBGMapMode], a
 	jr _FlyMap.cont2
+.on_south_map
+	eventflagcheck EVENT_UNLOCKED_KEYS_MAP
+	jr z, .switch_to_north
+	ld a, 2
+	ld [wWarpNumber], a
+	call ClearBGPalettes
+	call ClearTileMap
+	call ClearSprites
+	xor a
+	ldh [hBGMapMode], a
+	jp _FlyMap.cont2
 
 .pressedB
 	ld a, -1
@@ -2550,11 +2580,6 @@ TownMapBubble: ; 91bb5
 	eventflagcheck EVENT_UNLOCKED_SOUTH_FLY_MAP
 	jr z, .cant_switch
 	hlcoord $1, $10
-	ld a, [wWarpNumber]
-	cp 1
-	jr nz, .place_sel
-	hlcoord $0e, $10
-.place_sel
 	ld de, .String_Select
 	call PlaceString
 .cant_switch
@@ -2671,11 +2696,13 @@ HasVisitedSpawn: ; 91c50
 INCLUDE "data/maps/flypoints.asm"
 
 FlyMap: ; 91c90
-	eventflagcheck EVENT_UNLOCKED_SOUTH_FLY_MAP
-	jr z, .NorthOnwaFlyMap
+;	eventflagcheck EVENT_UNLOCKED_SOUTH_FLY_MAP
+;	jr z, .NorthOnwaFlyMap
 	ld a, [wWarpNumber]
 	cp 1
 	jr z, .SouthOnwaFlyMap
+	cp 2
+	jr z, .OnwaKeysFlyMap
 .NorthOnwaFlyMap:
 	push af
 ; Start from Sunset Bay
@@ -2731,6 +2758,28 @@ FlyMap: ; 91c90
 ; The first 46 locations are part of NorthOnwa. The rest are in SouthOnwa
 	cp SOUTH_ONWA_LANDMARK
 	ret c
+	cp ONWA_KEYS_LANDMARK
+	ret nc
+	jp TownMapPlayerIcon
+	
+.OnwaKeysFlyMap:
+	push af
+	ld a, FLY_BRILLO
+	ld [wTownMapPlayerIconLandmark], a
+	ld [wStartFlypoint], a
+	ld a, FLY_BRILLO	;TODO
+	ld [wEndFlypoint], a
+; Fill out the map
+	call FillOnwaKeysMap
+	call TownMapBubble
+	call TownMapPals
+	call TownMapOnwaKeysFlips
+	call .MapHud
+	pop af
+	call GetCurrentLandmark
+; The first 46 locations are part of NorthOnwa. The rest are in SouthOnwa
+	cp ONWA_KEYS_LANDMARK
+	ret c
 	jp TownMapPlayerIcon
 
 .MapHud:
@@ -2769,8 +2818,8 @@ _Area: ; 91d11
 	call LoadTownMapGFX
 
 	ld a, [wTownMapPlayerIconLandmark]
-;	cp SHAMOUTI_LANDMARK
-;	jr nc, .shamouti
+	cp ONWA_KEYS_LANDMARK
+	jr nc, .keys
 	cp SOUTH_ONWA_LANDMARK
 	jr nc, .south_onwa
 .north_onwa
@@ -2778,9 +2827,11 @@ _Area: ; 91d11
 	ld [wWarpNumber], a
 	ld a, NORTH_ONWA_REGION
 	jr .set_region
-;.shamouti
-;	ld a, ORANGE_REGION
-;	jr .set_region
+.keys
+	ld a, 2
+	ld [wWarpNumber], a
+	ld a, ONWA_KEYS_REGION
+	jr .set_region
 .south_onwa
 	ld a, 1
 	ld [wWarpNumber], a
@@ -2856,8 +2907,8 @@ _Area: ; 91d11
 	ld a, [wTownMapCursorLandmark]
 	cp SOUTH_ONWA_REGION
 	jr z, .SouthOnwaGFX
-	cp ORANGE_REGION
-	jr z, .OrangeGFX
+	cp ONWA_KEYS_REGION
+	jr z, .OnwaKeysGFX
 	call FillNorthOnwaMap
 	call .PlaceString_MonsNest
 	call TownMapPals
@@ -2879,11 +2930,11 @@ _Area: ; 91d11
 	call TownMapSouthOnwaFlips
 	jr .FinishGFX
 
-.OrangeGFX:
-	call FillOrangeMap
+.OnwaKeysGFX:
+	call FillOnwaKeysMap
 	call .PlaceString_MonsNest
 	call TownMapPals
-	call TownMapOrangeFlips
+	call TownMapOnwaKeysFlips
 	jr .FinishGFX
 
 ; 91dcd
@@ -3040,8 +3091,8 @@ _Area: ; 91d11
 ; not in the same region as what's currently
 ; on the screen.
 	ld a, [wTownMapPlayerIconLandmark]
-	cp SHAMOUTI_LANDMARK
-	jr nc, .player_in_orange
+	cp ONWA_KEYS_LANDMARK
+	jr nc, .player_in_keys
 	cp SOUTH_ONWA_LANDMARK
 	jr nc, .player_in_south_onwa
 	ld a, [wTownMapCursorLandmark]
@@ -3057,9 +3108,9 @@ _Area: ; 91d11
 	jr nz, .clear
 	jr .ok
 
-.player_in_orange
+.player_in_keys
 	ld a, [wTownMapCursorLandmark]
-	cp ORANGE_REGION
+	cp ONWA_KEYS_REGION
 	jr nz, .clear
 	jr .ok
 
@@ -3123,34 +3174,10 @@ FillNorthOnwaMap: ; 91eff
 	ld de, NorthOnwaMap
 	jr FillTownMap
 
-FillOrangeMap:
-;	ld de, OrangeMap
-;	call FillTownMap
-;	eventflagcheck EVENT_VISITED_FARAWAY_ISLAND
-;	ret nz
-;	ld a, $a
-;	hlcoord 1, 12
-;	ld [hli], a
-;	ld [hli], a
-;	ld [hli], a
-;	ld [hli], a
-;	ld [hl], a
-;	hlcoord 5, 13
-;	ld [hl], a
-;	hlcoord 2, 14
-;	ld [hli], a
-;	ld [hli], a
-;	inc hl
-;	ld [hl], a
-;	hlcoord 2, 15
-;	ld [hli], a
-;	ld [hli], a
-;	inc hl
-;	ld [hl], a
-;	hlcoord 5, 16
-;	ld [hl], a
-;	ret
-
+FillOnwaKeysMap:
+	ld de, OnwaKeysMap
+	jr FillTownMap
+	
 FillSouthOnwaMap: ; 91f04
 	ld de, SouthOnwaMap
 FillTownMap: ; 91f07
@@ -3262,7 +3289,7 @@ endm
 	townmappals 2, 2, 2, 3, 3, 7, 0, 0, 2, 2, 4, 2, 5, 6, 6, 5
 	townmappals 2, 2, 7, 3, 4, 5, 0, 0, 2, 2, 0, 4, 2, 3, 3, 6
 	townmappals 2, 2, 2, 7, 7, 4, 0, 0, 3, 7, 4, 0, 0, 0, 0, 0
-	townmappals 2, 6, 3, 7, 2, 2, 4, 6, 4, 6, 3, 4, 0, 0, 0, 0
+	townmappals 2, 6, 3, 7, 2, 2, 4, 6, 4, 6, 3, 4, 5, 0, 0, 0
 	townmappals 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
 	townmappals 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
 
@@ -3316,8 +3343,8 @@ TownMapSouthOnwaFlips:
 	decoord 0, 0, SouthOnwaMap
 	jr TownMapFlips
 
-TownMapOrangeFlips:
-	decoord 0, 0, OrangeMap
+TownMapOnwaKeysFlips:
+	decoord 0, 0, OnwaKeysMap
 TownMapFlips:
 	hlcoord 0, 0, wAttrMap
 	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
@@ -3493,8 +3520,8 @@ SouthOnwaMap: ; 92168
 INCBIN "gfx/town_map/south_onwa.bin"
 ; 922d1
 
-OrangeMap:
-INCBIN "gfx/town_map/orange.bin"
+OnwaKeysMap:
+INCBIN "gfx/town_map/onwa_keys.bin"
 
 PokedexNestIconGFX: ; 922d1
 INCBIN "gfx/town_map/dexmap_nest_icon.2bpp"

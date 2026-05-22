@@ -270,6 +270,7 @@ PlayerHouseDebugPoster:
 	setflag ENGINE_FLYPOINT_OBSCURA
 	setflag ENGINE_FLYPOINT_LUMINA
 	setevent EVENT_UNLOCKED_SOUTH_FLY_MAP
+	setevent EVENT_UNLOCKED_KEYS_MAP
 	setevent EVENT_CAN_GO_TO_SHIMMER
 	jump .return
 .deco

@@ -328,8 +328,8 @@ _CGB_PokegearPals: ; 8eb9
 	call FarCopyWRAM
 	
 	ld a, [wWarpNumber]
-	cp 1
-	jr nz, .skip
+	cp 0
+	jr z, .skip
 	ld hl, PokegearDesertIslandPal
 	ld de, wUnknBGPals palette 7
 	ld bc, 1 palettes
@@ -406,8 +406,8 @@ _CGB_PokedexAreaPals:
 	call FarCopyWRAM
 	
 	ld a, [wWarpNumber]
-	cp 1
-	jr nz, .skip
+	cp 0
+	jr z, .skip
 	ld hl, PokegearDesertIslandPal
 	ld de, wUnknBGPals palette 7
 	ld bc, 1 palettes

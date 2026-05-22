@@ -20,7 +20,6 @@ Flypoints:
 DEF SOUTH_ONWA_FLYPOINT EQU const_value
 	
 	flypoint SHIMMER,			SHIMMER_CITY
-	flypoint BRILLO,			BRILLO_TOWN
 	flypoint RADIANT,			RADIANT_TOWNSHIP
 	flypoint DUSK,				DUSK_TURNPIKE
 	flypoint CROSSROADS,		CROSSROADS
@@ -28,6 +27,10 @@ DEF SOUTH_ONWA_FLYPOINT EQU const_value
 	flypoint BRIGHT,			BRIGHTBURG
 	flypoint OBSCURA,			OBSCURA_CITY
 	flypoint LUMINA,			LUMINA_TOWN
+	
+DEF _ONWA_KEYS_FLYPOINT EQU const_value
+
+	flypoint BRILLO,			BRILLO_TOWN
 	
 	flypoint LASTFLYPOINT,		SHIMMER_CITY
 	db -1

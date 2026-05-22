@@ -17,7 +17,6 @@ SpawnPoints: ; 0x152ab
 	spawn TWINKLE_TOWN,				   15, 48
 	spawn LUSTER_CITY_RESIDENTIAL,	   17, 26
 	spawn SHIMMER_CITY,                37, 18
-	spawn BRILLO_TOWN,				   22, 14
 	spawn RADIANT_TOWNSHIP,             7,  8
 	spawn DUSK_TURNPIKE,			   23, 32
 	spawn CROSSROADS,      		       30,  8
@@ -25,6 +24,7 @@ SpawnPoints: ; 0x152ab
 	spawn BRIGHTBURG,	 			   19, 10
 	spawn OBSCURA_CITY,	 			   31, 36
 	spawn LUMINA_TOWN,	 			   25, 18
+	spawn BRILLO_TOWN,				   22, 14
 	
 	spawn STARGLOW_CAVERN_DEPTHS,	   16, 15
 	spawn FAKE_PLAYERS_HOUSE_2F,	    1,  4

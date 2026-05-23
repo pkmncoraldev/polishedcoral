@@ -511,10 +511,20 @@ InitPokegearTilemap: ; 90da8 (24:4da8)
 	ld [hl], $6
 	hlcoord 8, 0
 	ld [hl], $06
+	ld a, $7
+	ld bc, $a
+	hlcoord 9, 0
+	call ByteFill
 	hlcoord 8, 1
 	ld [hl], $16
 	hlcoord 8, 2
 	ld [hl], $27
+	hlcoord $13, 0
+	ld [hl], $17
+	hlcoord $13, 1
+	ld [hl], $16
+	hlcoord $13, 2
+	ld [hl], $16
 	ld a, [wPokegearMapCursorLandmark]
 	jp PokegearMap_UpdateLandmarkName
 
@@ -2190,7 +2200,7 @@ DrawRadioScreen:
 .Sharp
 	db "<SHARP>@"
 	
-_TownMap: ; 9191c
+_TownMap:
 	ld hl, wOptions1
 	ld a, [hl]
 	push af
@@ -2355,6 +2365,10 @@ _TownMap: ; 9191c
 	hlcoord 0, 0, wAttrMap
 	ld bc, SCREEN_WIDTH * 2
 	ld a, 1
+	call ByteFill
+	hlcoord 0, 2, wAttrMap
+	ld bc, SCREEN_WIDTH
+	ld a, 0
 	call ByteFill
 	hlcoord 0, 0
 	ld bc, SCREEN_WIDTH * 2
@@ -2577,12 +2591,6 @@ FlyMapScroll: ; 91b73
 
 TownMapBubble: ; 91bb5
 ; Draw the bubble containing the location text in the town map HUD
-	eventflagcheck EVENT_UNLOCKED_SOUTH_FLY_MAP
-	jr z, .cant_switch
-	hlcoord $1, $10
-	ld de, .String_Select
-	call PlaceString
-.cant_switch
 	hlcoord 0, 0
 ;	ld a, $30
 ;	ld [hli], a
@@ -2616,9 +2624,6 @@ TownMapBubble: ; 91bb5
 	hlcoord 18, 1
 	ld [hl], "<UPDN>"
 	ret
-
-.String_Select:
-	db "SEL:<UPDN>@"
 
 .Where:
 	db "Where to?@"
@@ -2783,6 +2788,17 @@ FlyMap: ; 91c90
 	jp TownMapPlayerIcon
 
 .MapHud:
+	eventflagcheck EVENT_UNLOCKED_SOUTH_FLY_MAP
+	jr z, .cant_switch
+	hlcoord $1, $10
+	ld de, .String_Select
+	call PlaceString
+	hlcoord $1, $10, wAttrMap
+	ld bc, 5
+	ld a, 1
+	call ByteFill
+.cant_switch
+
 	hlbgcoord 0, 0 ; BG Map 0
 	call TownMapBGUpdate
 	call TownMapMon
@@ -2792,7 +2808,8 @@ FlyMap: ; 91c90
 	ld [wTownMapCursorCoordinates + 1], a
 	ret
 
-; 91d11
+.String_Select:
+	db "SEL:<UPDN>@"
 
 _Area: ; 91d11
 ; e: Current landmark
@@ -3171,28 +3188,20 @@ TownMapBGUpdate: ; 91ee4
 ; 91eff
 
 FillNorthOnwaMap: ; 91eff
-	ld de, NorthOnwaMap
+	ld hl, NorthOnwaMap
 	jr FillTownMap
 
 FillOnwaKeysMap:
-	ld de, OnwaKeysMap
+	ld hl, OnwaKeysMap
 	jr FillTownMap
 	
 FillSouthOnwaMap: ; 91f04
-	ld de, SouthOnwaMap
+	ld hl, SouthOnwaMap
 FillTownMap: ; 91f07
-	hlcoord 0, 0
-.loop
-	ld a, [de]
-	cp -1
-	ret z
-	; [de] == yxTTTTTT
-	ld a, [de]
-	and %00111111
-	; a == 00TTTTTT
-	ld [hli], a
-	inc de
-	jr .loop
+	decoord 0, 3
+	ld bc, SCREEN_WIDTH * (SCREEN_HEIGHT - 3)
+	rst CopyBytes
+	ret
 
 ; 91f13
 
@@ -3286,12 +3295,12 @@ rept _NARG / 2
 	shift
 endr
 endm
-	townmappals 2, 2, 2, 3, 3, 7, 0, 0, 2, 2, 4, 2, 5, 6, 6, 5
-	townmappals 2, 2, 7, 3, 4, 5, 0, 0, 2, 2, 0, 4, 2, 3, 3, 6
-	townmappals 2, 2, 2, 7, 7, 4, 0, 0, 3, 7, 4, 0, 0, 0, 0, 0
-	townmappals 2, 6, 3, 7, 2, 2, 4, 6, 4, 6, 3, 4, 5, 0, 0, 0
-	townmappals 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
-	townmappals 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
+	townmappals 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+	townmappals 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+	townmappals 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+	townmappals 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+	townmappals 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+	townmappals 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
 
 GetNextPokegearTilePalette:
 ; The palette data is condensed to nybbles, least-significant first.
@@ -3336,32 +3345,29 @@ endm
 	pokegearpals 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
 
 TownMapNorthOnwaFlips:
-	decoord 0, 0, NorthOnwaMap
+	ld hl, TownMapNorthOnwaFlipsAttrmap
 	jr TownMapFlips
 
 TownMapSouthOnwaFlips:
-	decoord 0, 0, SouthOnwaMap
+	ld hl, TownMapSouthOnwaFlipsAttrmap
 	jr TownMapFlips
 
 TownMapOnwaKeysFlips:
-	decoord 0, 0, OnwaKeysMap
+	ld hl, TownMapOnwaKeysFlipsAttrmap
 TownMapFlips:
-	hlcoord 0, 0, wAttrMap
-	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
-.loop
-	; [de] == YXtttttt
-	ld a, [de]
-	and %11000000
-	srl a
-	; a == 0YX00000
-	or [hl]
-	ld [hli], a
-	inc de
-	dec bc
-	ld a, b
-	or c
-	jr nz, .loop
+	decoord 0, 3, wAttrMap
+	ld bc, SCREEN_WIDTH * (SCREEN_HEIGHT - 3)
+	rst CopyBytes
 	ret
+	
+TownMapNorthOnwaFlipsAttrmap:
+	INCBIN "gfx/town_map/north_onwa.attrmap"
+	
+TownMapSouthOnwaFlipsAttrmap:
+	INCBIN "gfx/town_map/south_onwa.attrmap"
+	
+TownMapOnwaKeysFlipsAttrmap:
+	INCBIN "gfx/town_map/onwa_keys.attrmap"
 
 TownMapMon: ; 91f7b
 ; Draw the FlyMon icon at town map location in

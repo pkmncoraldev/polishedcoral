@@ -416,12 +416,6 @@ _CGB_PokedexAreaPals:
 	
 .skip
 
-;	ld hl, .InvertedGrayPalette
-;	ld de, wUnknBGPals palette 0
-;	ld bc, 1 palettes
-;	ld a, $5
-;	call FarCopyWRAM
-
 	call ApplyPals
 	ld a, $1
 	ldh [hCGBPalUpdate], a

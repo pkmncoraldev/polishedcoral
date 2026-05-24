@@ -25,10 +25,10 @@ Landmarks: ; 0x1ca8c3
 	landmark  84, 124, SunbeamIslandName
 	landmark  92, 124, SunbeamJungleName
 	landmark  76,  76, Route8Name
-	landmark 116,  92, EventideForestName
-	landmark 124, 100, EventideVillageName
-	landmark 132,  92, Route9Name
-	landmark 124, 116, Route11Name
+	landmark 116,  84, EventideForestName
+	landmark 132, 100, Route9Name
+	landmark 116, 108, EventideVillageName
+	landmark 132, 124, Route11Name
 	landmark 140,  92, DodrioRanchName
 	landmark 132,  76, FlickerStationName
 	landmark 132,  68, FlickerPassName
@@ -58,18 +58,18 @@ Landmarks: ; 0x1ca8c3
 	landmark -16, -16, UnkownPassageName
 	landmark  60, 132, ConnectingCavernName
 	
-	landmark  36,  44, ShimmerName
-	landmark  44,  52, Route19Name
-	landmark  52,  44, SeasideCaveName
-	landmark  52,  68, Route20Name
-	landmark  60,  76, RadiantName
-	landmark  68,  68, Route21Name
-	landmark  68,  52, DuskTurnpikeName
-	landmark  88,  52, Route22Name
+	landmark  28,  44, ShimmerName
+	landmark  36,  52, Route19Name
+	landmark  44,  44, SeasideCaveName
+	landmark  44,  64, Route20Name
+	landmark  52,  76, RadiantName
+	landmark  52,  84, RadiantMeadowName
+	landmark  60,  64, Route21Name
+	landmark  60,  52, DuskTurnpikeName
+	landmark  84,  52, Route22Name
 	landmark 108,  52, CrossroadsName
-	landmark 120,  52, Route23Name
-	landmark 100,  36, Route11Name
-	landmark 108,  36, Route24Name
+	landmark 108,  36, Route23Name
+	landmark 120,  52, Route24Name
 	landmark 124,  44, BoneCavernName
 	landmark 108,  72, Route25Name
 	landmark 108,  92, KomoreVillageName
@@ -86,10 +86,12 @@ Landmarks: ; 0x1ca8c3
 	landmark 140,  68, AureoleMountainName
 	landmark 140,  52, LuminaTownName
 	
-	landmark 108, 116, BrilloTownName
-	landmark 124, 112, Route17Name
+	landmark 108,  36, Route11Name
+	
+	landmark 108, 108, BrilloTownName
+	landmark 124, 108, Route17Name
 	landmark 132,  96, Route18Name
-	landmark 132,  76, DesertWastelandName
+	landmark 132,  84, DesertWastelandName
 	
 	
 	landmark -16, -16, GateName
@@ -149,6 +151,7 @@ DesertWastelandName:   db "DESERT¯WASTELAND@"
 Route19Name:		   db "ROUTE 19@"
 Route20Name:		   db "ROUTE 20@"
 RadiantName:	 	   db "RADIANT¯TOWN@"
+RadiantMeadowName:	   db "RADIANT¯MEADOW@"
 Route21Name:		   db "ROUTE 21@"
 DuskTurnpikeName:	   db "DUSK¯TURNPIKE@"
 SeasideCaveName:	   db "SEASIDE¯CAVE@"

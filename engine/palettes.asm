@@ -1162,9 +1162,9 @@ TMHMTypes:
 	db NORMAL 	; ROCK_CLIMB
 
 PokegearDesertIslandPal:
-	RGB 28, 31, 20
+	RGB 12, 26, 26
 	RGB 31, 15, 00
-	RGB 00, 00, 31
+	RGB 08, 08, 31
 	RGB 00, 00, 00
 
 BankCardPals:
@@ -1225,15 +1225,15 @@ PokegearPals:
 	RGB 00, 00, 00
 	RGB 28, 31, 20
 ; map 2
-	RGB 28, 31, 20
-	RGB 00, 31, 00
-	RGB 00, 00, 31
+	RGB 12, 26, 26
+	RGB 09, 25, 08
+	RGB 08, 08, 31
 	RGB 00, 00, 00
 ; map 3
 	RGB 28, 31, 20
-	RGB 00, 31, 00
+	RGB 09, 25, 08
 	RGB 15, 07, 00
-	RGB 00, 00, 31
+	RGB 08, 08, 31
 ; map 4
 	RGB 28, 31, 20
 	RGB 31, 15, 00
@@ -1241,16 +1241,16 @@ PokegearPals:
 	RGB 00, 00, 00
 ; map 5
 	RGB 28, 31, 20
-	RGB 00, 31, 00
+	RGB 09, 25, 08
 	RGB 31, 15, 00
 	RGB 31, 00, 00
 ; map 6
 	RGB 28, 31, 20
-	RGB 00, 00, 31
+	RGB 08, 08, 31
 	RGB 15, 07, 00
 	RGB 31, 00, 00
 ; map 7
-	RGB 00, 31, 00
+	RGB 09, 25, 08
 	RGB 31, 15, 00
 	RGB 15, 07, 00
 	RGB 00, 00, 00

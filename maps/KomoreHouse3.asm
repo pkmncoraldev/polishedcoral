@@ -4,8 +4,8 @@ KomoreHouse3_MapScriptHeader:
 	db 0 ; callbacks
 
 	db 2 ; warp events
-	warp_event  2,  7, KOMORE_VILLAGE, 5
-	warp_event  3,  7, KOMORE_VILLAGE, 5
+	warp_event  2,  6, KOMORE_VILLAGE, 5
+	warp_event  3,  6, KOMORE_VILLAGE, 5
 
 	db 0 ; coord events
 

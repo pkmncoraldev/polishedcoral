@@ -4,15 +4,15 @@ KomoreHouse2_MapScriptHeader:
 	db 0 ; callbacks
 
 	db 2 ; warp events
-	warp_event  2,  7, KOMORE_VILLAGE, 4
-	warp_event  3,  7, KOMORE_VILLAGE, 4
+	warp_event  2,  6, KOMORE_VILLAGE, 4
+	warp_event  3,  6, KOMORE_VILLAGE, 4
 
 	db 0 ; coord events
 
 	db 0 ; bg events
 
 	db 3 ; object events
-	person_event SPRITE_GRAMPS,  7, 6, SPRITEMOVEDATA_STANDING_DOWN, 1, 1, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, KomoreHouse2WindyMan, -1
+	person_event SPRITE_GRAMPS,  6, 6, SPRITEMOVEDATA_STANDING_DOWN, 1, 1, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, KomoreHouse2WindyMan, -1
 	person_event SPRITE_REDS_MOM,  4, 2, SPRITEMOVEDATA_SPINRANDOM_SLOW, 1, 1, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, KomoreHouse2NPC1, -1
 	person_event SPRITE_YOUNGSTER,  3, 5, SPRITEMOVEDATA_SPINRANDOM_SLOW, 1, 1, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, KomoreHouse2NPC2, -1
 	

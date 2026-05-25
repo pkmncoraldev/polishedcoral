@@ -1263,8 +1263,9 @@ TellerTapeText:
 	dw Music_BrilloTownText
 	dw Music_OasisText
 	dw Music_GentlemanEncounterText
-	dw Music_BarText
 	dw Music_ErikaText
+	dw Music_BarText
+	dw Music_CyclingText
 	dw Music_RivalBattle2Text
 	dw Music_AutumnText
 	dw Music_DojoText
@@ -1330,8 +1331,11 @@ Music_PokemonCenterText:
 	prompt
 	
 Music_RivalEncounterText:
- 	text "RIVAL ENCOUNTER"
-	line "TODO"
+ 	text "Check on the table"
+	line "in a house in"
+	cont "DAYBREAK VILLAGE."
+	
+	para "You can't miss it!"
 	prompt
 	
 Music_RivalBattleText:
@@ -1357,7 +1361,7 @@ Music_WildBattleText:
 	cont "woman's house."
 	
 	para "Between GLINT CITY"
-	line "and STARGLOW."
+	line "and a huge lake."
 	prompt
 	
 Music_WildPokemonVictoryText:
@@ -1483,8 +1487,13 @@ Music_TeamSnareEncounterText:
 	prompt
 	
 Music_SnareBattleText:
- 	text "SNARE BATTLE"
-	line "TODO"
+ 	text "It's floating in"
+	line "the waters of"
+	cont "SUNBEAM ISLAND."
+	
+	para "It's in a spot you"
+	line "can only reach"
+	cont "from the jungle."
 	prompt
 	
 Music_SnareVictoryText:
@@ -1749,6 +1758,14 @@ Music_GentlemanEncounterText:
 	line "it somehow?"
 	prompt
 	
+Music_ErikaText:
+ 	text "It's in RADIANT"
+	line "TOWN."
+	
+	para "It's inside of"
+	line "a radio."
+	prompt
+	
 Music_BarText:
  	text "It's in a seedy"
 	line "bar…"
@@ -1757,12 +1774,9 @@ Music_BarText:
 	line "I can hear music…"
 	prompt
 	
-Music_ErikaText:
- 	text "It's in RADIANT"
-	line "TOWN."
-	
-	para "It's inside of"
-	line "a radio."
+Music_CyclingText:
+	text "CYCLING"
+	line "TODO"
 	prompt
 	
 Music_RivalBattle2Text:

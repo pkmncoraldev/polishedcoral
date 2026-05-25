@@ -37,7 +37,7 @@ BrilloLegendSpeechHouseNPC1Text:
 BrilloLegendSpeechHouseNPC2Text:
 	text "We have plenty of"
 	line "myths and legends"
-	cont "around here."
+	cont "here in the KEYS."
 	
 	para "The mainland has"
 	line "its fair share,"

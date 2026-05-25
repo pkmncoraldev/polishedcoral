@@ -126,8 +126,8 @@ BrilloLemonadeCop:
 	end
 	
 BrilloLemonadeCopText:
-	text "A kid running a"
-	line "lemonade stand?"
+	text "A lemonade stand,"
+	line "huh?"
 	
 	para "I hope he's got"
 	line "a permit!"
@@ -161,11 +161,11 @@ BrilloLemonade:
 	takeitem LEMONADE
 	checkmoney $0, 375
 	if_equal $2, .no_money
+	writetext BrilloLemonadeText3
 	playsound SFX_TRANSACTION
 	takemoney $0, 375
 	special PlaceMoneyTopRight
-	writetext BrilloLemonadeText3
-	buttonsound
+	waitsfx
 	verbosegiveitem LEMONADE
 	writetext BrilloLemonadeText7
 	yesorno
@@ -941,7 +941,8 @@ BrilloSailboatText:
 	
 BrilloJustRodeBoatText:
 	text "Here we are,<WAIT_S>"
-	line "PUEBLO BRILLO."
+	line "PUEBLO BRILLO"
+	cont "in the ONWA KEYS."
 	
 	para "That's “BREE-O”,"
 	line "not “BRILL-O”."

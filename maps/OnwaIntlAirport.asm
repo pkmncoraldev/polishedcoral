@@ -312,9 +312,12 @@ OnwaIntlAirportNPC6Text:
 	text "Are you taking the"
 	line "GYM CHALLENGE?"
 	
+	para "Did you know the"
+	line "#MON LEAGUE is"
+	cont "on an island?"
+	
 	para "I think the only"
-	line "way to the #MON"
-	cont "LEAGUE is by"
+	line "way there is by"
 	cont "airplane."
 	done
 	

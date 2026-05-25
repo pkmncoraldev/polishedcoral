@@ -224,8 +224,9 @@ ShimmerLabResearchRoomProfText4:
 	line "very similar."
 	
 	para "We found ours in"
-	line "the desert on a"
-	cont "nearby island."
+	line "the desert on an"
+	cont "island in the"
+	cont "nearby ONWA KEYS."
 	
 	para "To find such a"
 	line "similar artifact"

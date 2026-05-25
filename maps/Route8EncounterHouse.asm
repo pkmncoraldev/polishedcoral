@@ -156,9 +156,7 @@ Route8EncounterHouseLadyAsm2:
 	ret
 	
 Route8EncounterHouseLadyText1:
-	text "Ah!"
-	
-	para "#MON just love"
+	text "#MON just love"
 	line "the flowers in my"
 	cont "garden."
 	
@@ -198,6 +196,10 @@ Route8EncounterHouseLadyText4:
 	line "luck finding that"
 	cont "#MON in the"
 	cont "garden?"
+	
+	para "I'm sure more"
+	line "#MON will come"
+	cont "to play tomorrow."
 	done
 
 Route8EncounterHouseLadyText5:

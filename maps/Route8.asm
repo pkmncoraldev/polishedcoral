@@ -19,7 +19,7 @@ Route8_MapScriptHeader:
 	signpost 20, 35, SIGNPOST_ITEM + DAWN_STONE, EVENT_ROUTE_8_HIDDEN_DAWN_STONE
 
 	db 15 ; object events
-	person_event SPRITE_YOUNGSTER, 13, 25, SPRITEMOVEDATA_WANDER, 2, 1, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, Route8NPC1, -1
+	person_event SPRITE_YOUNGSTER, 12, 22, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, Route8NPC1, -1
 	person_event SPRITE_PONYTAIL, 29, 45, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, Route8NPC2, -1
 	person_event SPRITE_POKEFAN_F, 10, 10, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, Route8NPC3, -1
 	person_event SPRITE_FISHER, 14, 37, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 0, TrainerRoute8_1, -1
@@ -142,30 +142,49 @@ TrainerRoute8_4:
 	done
 	
 Route8NPC1Text:
-	text "The lady in that"
+	text "The lady in this"
 	line "house really likes"
-	cont "likes to brag"
-	cont "about her flowers."
+	cont "to talk about her"
+	cont "garden."
 	
-	para "I guess they ARE"
-	line "kinda pretty…"
+	para "She says that"
+	line "different #MON"
+	cont "come to visit"
+	cont "each day."
+	
+	para "If you show her a"
+	line "#MON, she says"
+	cont "more might appear"
+	cont "back there…"
 	done
 	
 Route8NPC2Text:
-	text "Can't talk…"
+	text "Keep an eye out"
+	line "for rocky spots"
+	cont "on cliff walls."
 	
-	para "Looking for #-"
-	line "MON…"
+	para "I saw something"
+	line "like that on the"
+	cont "other side of"
+	cont "LAKE ONWA."
+	
+	para "#MON can climb"
+	line "them with the help"
+	cont "of an HM."
 	done
 	
 Route8NPC3Text:
-	text "Ah!"
+	text "Have you heard"
+	line "of the ONWA KEYS?"
 	
-	para "Feels nice to"
-	line "finally sit down!"
+	para "They're a little"
+	line "string of islands"
+	cont "off the coast of"
+	cont "SOUTH ONWA."
 	
-	para "Thanks whoever put"
-	line "a bench here!"
+	para "I think that's"
+	line "where the #MON"
+	cont "LEAGUE is."
 	done
 	
 Route8SignText:

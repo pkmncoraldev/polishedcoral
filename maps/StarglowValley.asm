@@ -625,15 +625,6 @@ StarglowLassText:
 	cont "there easier."
 	done
 	
-StarglowLassText2:
-	text "Someday I want to"
-	line "visit SOUTH ONWA."
-	
-	para "I hear they're"
-	line "building a bridge"
-	cont "to make it easier."
-	done
-	
 StarglowYoungster2Text:
 	text "Are you a TRAINER?"
 	

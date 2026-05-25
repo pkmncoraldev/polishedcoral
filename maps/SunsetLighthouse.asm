@@ -732,9 +732,9 @@ LighthouseGotRivalDexText:
 	done
 	
 LighthousePutAwayRivalDexText:
-	text "<PLAYER> put the"
-	line "#DEX in"
-	cont "the KEY POCKET."
+	text "<PLAYER> put"
+	line "<RIVAL>'s #DEX"
+	cont "in the KEY POCKET."
 	done
 	
 Lighthouse_GetDexText:
@@ -743,10 +743,9 @@ Lighthouse_GetDexText:
 	done
 	
 LighthouseAbnerText1:
-	text "<PLAYER>!"
-	
-	para "So nice of you to"
-	line "finally join us."
+	text "So nice of you to"
+	line "finally join us,"
+	cont "<PLAYER>."
 	
 	para "Now we're just"
 	line "missing <RIVAL>,"
@@ -772,10 +771,10 @@ LighthouseAbnerText2:
 	text "Congrats!"
 	
 	para "You are all now"
-	line "#MON trainers!"
+	line "#MON TRAINERS!"
 	
 	para "Go out and be"
-	line "the best trainers"
+	line "the best TRAINERS"
 	cont "you can be."
 	done
 	
@@ -802,19 +801,22 @@ LighthouseAbnerTextGiveDex:
 	done
 	
 LighthouseAbnerText5:
-	text "<RIVAL> ran off"
+	text "That #DEX will"
+	line "keep track of the"
+	cont "#MON you've seen"
+	cont "and caught."
+	
+	para "<RIVAL> ran off"
 	line "before I could"
 	cont "give him his…"
-	
-	para "<PLAYER>."
 	
 	para "Do you think you"
 	line "could take it with"
 	cont "you?"
 	
 	para "<RIVAL> lives in"
-	line "GLINT CITY to the"
-	cont "NORTH."
+	line "DAYBREAK VILLAGE"
+	cont "to the NORTH."
 	
 	para "You're going that"
 	line "way anyway, aren't"
@@ -827,8 +829,6 @@ LighthouseAbnerText6:
 	
 	para "I'm sure you'll"
 	line "do great things!"
-	
-	para "Good luck!"
 	done
 	
 LighthouseAbnerText7:
@@ -846,30 +846,40 @@ LighthouseAbnerText8:
 	done
 	
 LighthouseAbnerText9:
-	text "As I'm sure you're"
-	line "no doubt aware,"
-	
-	para "the #MON LEAGUE"
-	line "INVITATIONAL TOUR-"
-	cont "NAMENT is fast"
-	cont "approaching."
+	text "The #MON LEAGUE"
+	line "TOURNAMENT is"
+	cont "fast approaching."
 	
 	para "The tournament is"
 	line "held every 5 years"
-	cont "and is open to the"
-	cont "strongest TRAINERS"
-	cont "across the OWNA"
-	cont "REGION."
 	
-	para "That invitation is"
-	line "also extended to"
-	cont "any TRAINER who"
-	cont "can collect the"
-	cont "8 #MON LEAGUE"
-	cont "GYM BADGES."
+	para "and is open to the"
+	line "strongest TRAINERS"
+	cont "across the REGION."
 	
-	para "They call it the"
-	line "GYM CHALLENGE!"
+	para "That also extends"
+	line "to any TRAINER who"
+	cont "can collect eight"
+	cont "LEAGUE GYM BADGES."
+	
+	para "These days, less"
+	line "people consider"
+	cont "themselves actual"
+	cont "#MON TRAINERS."
+	
+	para "And those that do"
+	line "aren't that serious"
+	cont "about it,"
+	
+	para "treating it like"
+	cont "a mere hobby."
+	
+	para "That's why I'm"
+	line "ecstatic that you"
+	cont "kids are taking"
+	cont "the GYM CHALLENGE!"
+	
+	para "…"
 	
 	para "I have in this"
 	line "bag six rare"
@@ -890,11 +900,6 @@ LighthouseAbnerText9:
 	line "pick one #MON,"
 	cont "so choose wisely."
 	
-	para "But no matter"
-	line "which you choose,<WAIT_S>"
-	cont "you must train"
-	cont "it well."
-	
 	para "<PLAYER>!"
 	
 	para "Why don't you"
@@ -902,11 +907,7 @@ LighthouseAbnerText9:
 	done
 	
 LighthouseAbnerText10:
-	text "Right."
-	
-	para "Didn't think so."
-	
-	para "You're just lucky"
+	text "You're just lucky"
 	line "<PLAYER> was also"
 	cont "running late,"
 	
@@ -923,8 +924,10 @@ LighthouseAbnerText:
 	
 	para "And those that do"
 	line "aren't that serious"
-	cont "about it, treating"
-	cont "it like a hobby."
+	cont "about it,"
+	
+	para "treating it like"
+	cont "a mere hobby."
 	
 	para "That's why I'm"
 	line "ecstatic that you"
@@ -933,7 +936,9 @@ LighthouseAbnerText:
 	done
 
 LighthouseRivalText1:
-	text "Your #MON"
+	text "Heh!"
+	
+	para "Your #MON"
 	line "looks weak,"
 	cont "<PLAYER>."
 	
@@ -1142,8 +1147,9 @@ Kid2PicksChikoritaText:
 	done
 	
 LighthouseRivalWinText:
-	text "WHAT? How could"
-	line "I lose?"
+	text "WHAT?"
+	
+	para "How could I lose?"
 	done
 
 LighthouseRivalLoseText:

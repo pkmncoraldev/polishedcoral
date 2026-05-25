@@ -849,6 +849,8 @@ LakeRivalText2:
 	line "next time,"
 	cont "<PLAYER>!"
 	
+	para "It can't…"
+	
 	para "Now, step aside!"
 	done
 	

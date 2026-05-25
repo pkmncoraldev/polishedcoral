@@ -9,20 +9,19 @@ GlintCity_MapScriptHeader:
 	db 7 ; warp events
 	warp_def 15, 27, 2, GLINT_POKECENTER
 	warp_def 9, 27, 2, GLINT_MART
-	warp_def 9, 7, 2, GLINT_TEA_HOUSE
-	warp_def 3, 5, 2, GLINT_RIVAL_HOUSE
+	warp_def  3,  5, 2, GLINT_TEA_HOUSE
+	warp_def  9,  7, 2, DAYBREAK_ALEX_HOUSE
 	warp_def 5, 15, 2, GLINT_APARTMENT_LEFT_1F
 	warp_def 5, 21, 2, GLINT_APARTMENT_RIGHT_1F
 	warp_def 15, 6, 2, GLINT_GYM
 
 	db 0 ; coord events
 
-	db 10 ; bg events
+	db 9 ; bg events
 	signpost 18, 20, SIGNPOST_READ, GlintCitySign
 	signpost 16, 5, SIGNPOST_READ, GlintGymSign
 	signpost 5, 19, SIGNPOST_READ, GlintApartmentsSign
 	signpost -1, -1, SIGNPOST_READ, GlintCityParkSign
-	signpost 3, 8, SIGNPOST_READ, GlintCityRivalHouseSign
 	signpost 15, 28, SIGNPOST_READ, GlintCityPokeCenterSign
 	signpost 9, 28, SIGNPOST_READ, GlintCityMartSign
 	signpost 17,  2, SIGNPOST_ITEM + REVIVE, EVENT_GLINT_CITY_HIDDEN_REVIVE
@@ -77,9 +76,6 @@ GlintApartmentsSign:
 GlintCityParkSign:
 	jumptext GlintCityParkSignText
 	
-GlintCityRivalHouseSign:
-	jumptext GlintCityRivalHouseSignText
-	
 GlintCityPokeCenterSign:
 	jumpstd pokecentersign
 	
@@ -114,10 +110,6 @@ GlintCityParkSignText:
 	
 	para "The jewel of"
 	line "GLINT CITY."
-	done
-	
-GlintCityRivalHouseSignText:
-	text "<RIVAL>'s HOUSE"
 	done
 	
 GlintCityRoute3signText:

@@ -13,7 +13,7 @@ DaybreakMarcusHouse_MapScriptHeader:
 
 	db 2 ; object events
 	person_event SPRITE_REDS_MOM, 3, 2, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, DaybreakMarcusMom, -1
-	object_event 6, 5, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, BRELOOM, -1, -1, PAL_NPC_GREEN, PERSONTYPE_SCRIPT, 0, DaybreakMarcusHouseBreloom, -1
+	object_event 6, 5, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, MACHOP, -1, -1, PAL_NPC_BLUE, PERSONTYPE_SCRIPT, 0, DaybreakMarcusHouseBreloom, -1
 
 	const_def 1 ; object constants
 	const DAYBREAK_MARCUS_HOUSE_MARCUS_MOM
@@ -22,21 +22,17 @@ DaybreakMarcusMom:
 	jumptextfaceplayer DaybreakMarcusMomText
 	
 DaybreakMarcusHouseBreloom:
-	opentext TEXTBOX_POKEMON, BRELOOM
+	opentext TEXTBOX_POKEMON, MACHOP
 	writetext DaybreakMarcusHouseBreloomText
-	cry BRELOOM
+	cry MACHOP
 	waitbutton
 	closetext
 	end
 
 DaybreakMarcusMomText:
-	text "My son just got"
-	line "his first #MON!"
-	
-	para "He's already left"
-	line "for his first GYM"
-	cont "in GLINT CITY to"
-	cont "the NORTH."
+	text "There's a #MON"
+	line "GYM in GLINT CITY"
+	cont "to the NORTH."
 	
 	para "I know the GYM's"
 	line "type is NORMAL."
@@ -48,5 +44,5 @@ DaybreakMarcusMomText:
 	done
 
 DaybreakMarcusHouseBreloomText:
-	text "Loo lum?"
+	text "Guoh! Gogogoh!"
 	done

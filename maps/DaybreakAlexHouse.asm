@@ -4,8 +4,8 @@ DaybreakAlexHouse_MapScriptHeader:
 	db 0 ; callbacks
 
 	db 2 ; warp events
-	warp_event 3, 6, DAYBREAK_VILLAGE, 4
-	warp_event 2, 6, DAYBREAK_VILLAGE, 4
+	warp_def 7, 2, 4, GLINT_CITY
+	warp_def 7, 3, 4, GLINT_CITY
 
 	db 0 ; coord events
 

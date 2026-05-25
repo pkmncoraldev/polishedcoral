@@ -8,15 +8,16 @@ DaybreakVillage_MapScriptHeader:
 	warp_event  4, 11, DAYBREAK_POKEMON_TRAINER_SCHOOL, 2
 	warp_event 13,  7, DAYBREAK_POKECENTER, 2
 	warp_event 19,  7, DAYBREAK_MARCUS_HOUSE, 2
-	warp_event 17, 11, DAYBREAK_ALEX_HOUSE, 2
+	warp_event 17, 11, GLINT_RIVAL_HOUSE, 2
 	
 	db 0 ; coord events
 
-	db 4 ; bg events
+	db 5 ; bg events
 	bg_event 11, 10, SIGNPOST_JUMPTEXT, DaybreakVillageSignText
 	bg_event  5, 12, SIGNPOST_JUMPTEXT, DaybreakTrainerSchoolSignText
 	bg_event 14,  7, SIGNPOST_JUMPSTD, pokecentersign
 	bg_event 19,  4, SIGNPOST_ITEM + SUPER_POTION, EVENT_DAYBREAK_HIDDEN_SUPER_POTION
+	bg_event 15, 11, SIGNPOST_JUMPTEXT, DaybreakRivalHouseSign
 
 	db 2 ; object events
 	person_event SPRITE_GRANNY, 8, 10, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, DaybreakNPC1, -1
@@ -75,4 +76,8 @@ DaybreakVillageSignText:
 DaybreakTrainerSchoolSignText:
 	text "DAYBREAK #MON"
 	line "TRAINER SCHOOL"
+	done
+
+DaybreakRivalHouseSign:
+	text "<RIVAL>'s HOUSE"
 	done

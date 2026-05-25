@@ -92,7 +92,7 @@ ObscuraGymSpeechHouse_BlockData:
 	INCBIN "maps/NormalHouse1.ablk.lz"
 	
 SunsetGengarHouse_BlockData:
-GlintRivalHouse_BlockData:
+DaybreakAlexHouse_BlockData:
 StarglowTogepiHouse_BlockData:
 StarglowFishingGuruHouse_BlockData:
 SunbeamOldCouplesHouse_BlockData:
@@ -121,7 +121,7 @@ LakeOnwaItemHouse_BlockData:
 KomoreHouse1_BlockData:
 KomoreHouse2_BlockData:
 KomoreHouse3_BlockData:
-DaybreakAlexHouse_BlockData:
+GlintRivalHouse_BlockData:
 DaybreakMarcusHouse_BlockData:
 EventideGymSpeechHouse_BlockData:
 EventideSootheBellHouse_BlockData:

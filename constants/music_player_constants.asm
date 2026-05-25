@@ -24,6 +24,7 @@ DEF NUM_MP_EDIT_FIELDS EQU const_value
 	const_def
 	const ORIGIN_NONE    ; 00
 	const ORIGIN_GSC     ; 01
+	const ORIGIN_SUMO    ; 02
 
 	const_def
 	const COMPOSER_NONE                          ; 00
@@ -36,4 +37,5 @@ DEF NUM_MP_EDIT_FIELDS EQU const_value
 	const COMPOSER_EIKO							 ; 07
 	const COMPOSER_ALPHA_REMASTER				 ; 08
 	const COMPOSER_MINAKO_ADACHI				 ; 09
-	const COMPOSER_MUDSTEP_CORALDEV				 ; 0a
+	const COMPOSER_MUDSTEP						 ; 0a
+	const COMPOSER_MUDSTEP_CORALDEV				 ; 0b

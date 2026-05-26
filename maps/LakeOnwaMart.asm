@@ -11,34 +11,17 @@ LakeOnwaMart_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 3 ; object events
+	db 2 ; object events
 	mart_clerk_event  1,  3, MARTTYPE_STANDARD, MART_LAKE_ONWA
-	person_event SPRITE_PONYTAIL, 2, 6, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, LakeOnwaMartNpc1, -1
-	person_event SPRITE_HIKER, 7, 9, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, LakeOnwaMartNpc2, -1
+	person_event SPRITE_HIKER, 7, 9, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, LakeOnwaMartNpc, -1
 
 	const_def 1 ; object constants
 	const LAKE_ONWA_CLERK
 	
-LakeOnwaMartNpc1:
-	jumptextfaceplayer LakeOnwaMartNpc1Text
+LakeOnwaMartNpc:
+	jumptextfaceplayer LakeOnwaMartNpcText
 	
-LakeOnwaMartNpc1Text:
-	text "It gets pretty hot"
-	line "the deeper into"
-	cont "MT. ONWA you dive."
-	
-	para "If you just want"
-	line "to get through"
-	cont "the mountain,"
-	
-	para "you'll be better"
-	line "off moving upward."
-	done
-	
-LakeOnwaMartNpc2:
-	jumptextfaceplayer LakeOnwaMartNpc2Text
-	
-LakeOnwaMartNpc2Text:
+LakeOnwaMartNpcText:
 	text "When hiking, I"
 	line "always remember"
 	cont "what my GRANDPAPPY"

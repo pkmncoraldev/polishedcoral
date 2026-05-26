@@ -68,9 +68,12 @@ LusterSkyscraper_4F_NPC1Text:
 ;	done
 	
 LusterSkyscraper_4F_NPC3Text:
-	text "Not now!"
+	text "Man I'm so tired"
+	line "of this job."
 	
-	para "This is important"
-	line "work!"
+	para "I wanna quit and"
+	line "retire to my own"
+	cont "private island on"
+	cont "the ONWA KEYS!"
 	done
 	

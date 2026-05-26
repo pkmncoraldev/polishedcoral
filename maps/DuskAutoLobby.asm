@@ -161,8 +161,8 @@ DuskAutoLobbyNPC3Text3:
 DuskAutoLobbyNPC4Text:
 	text "My friend fell"
 	line "asleep in the"
-	cont "middle of me talk-"
-	cont "ing to him!"
+	cont "middle of our"
+	cont "conversation!"
 	
 	para "How rude!"
 	

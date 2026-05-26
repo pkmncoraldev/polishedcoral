@@ -232,6 +232,7 @@ HuntersThicketRanger:
 	waitbutton
 	closetext
 	scall LedianRangerPoseEnd2
+	priority HUNTERS_THICKET_LEDIAN_RANGER, HIGH_PRIORITY
 	playsound SFX_WARP_TO
 	applyonemovement HUNTERS_THICKET_LEDIAN_RANGER, teleport_from
 	disappear HUNTERS_THICKET_LEDIAN_RANGER

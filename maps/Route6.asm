@@ -487,7 +487,8 @@ Route6Lass2Text:
 	line "in the distance."
 	
 	para "Looks like I have"
-	line "to take a boat…"
+	line "to take a boat"
+	cont "from LAKE ONWA…"
 	done
 	
 Route6RaticateText:
@@ -500,23 +501,19 @@ Route6Lass3Text:
 	para "I made it through"
 	line "the woods."
 	
-	para "Halfway home!"
+	para "Halfway to"
+	line "LAKE ONWA!"
 	done
 	
 Route6FisherText:
-	text "If you go NORTH"
-	line "from here,"
-	
-	para "you'll reach LAKE"
-	line "ONWA."
+	text "The mountain to"
+	line "the NORTH is a"
+	cont "popular place to"
+	cont "train #MON."
 	
 	para "There's a little"
-	line "town set up on the"
-	cont "lakeside."
-	
-	para "I don't think they"
-	line "have a GYM there,"
-	cont "though…"
+	line "rest stop set up"
+	cont "on the lakeside."
 	done
 	
 Route6SignText:
@@ -525,12 +522,13 @@ Route6SignText:
 	para "NORTH:"
 	line "ROUTE 5"
 	
-	para "WEST:"
+	para "NORTHWEST:"
 	line "LAKE ONWA"
 	done
 	
 Route6LakeSignText:
-	text "LAKE ONWA ahead."
+	text "NORTH: LAKE ONWA &"
+	line "MT. ONWA"
 	done
 	
 Movement_Route6_PokeFanM:

@@ -22,7 +22,7 @@ TwinkleMartNpc1:
 TwinkleMartNpc1Text:
 	text "After I'm done"
 	line "stocking up, I'm"
-	cont "headng into the"
+	cont "heading into the"
 	cont "nearby caves."
 	
 	para "There's rumors"

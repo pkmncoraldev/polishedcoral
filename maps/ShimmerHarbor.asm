@@ -184,10 +184,13 @@ ShimmerHarborLockedDoor:
 	jumptext ShimmerHarborLockedDoorText
 	
 ShimmerHarborLockedDoorText:
-	text "Closed."
+	text "There's a note"
+	line "on the door:"
+	
+	para "“Closed."
 	
 	para "Back in five"
-	line "minutes."
+	line "minutes.”"
 	done
 	
 JustRodeBoatShimmer:

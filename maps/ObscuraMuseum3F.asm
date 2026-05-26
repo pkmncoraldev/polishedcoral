@@ -13,13 +13,21 @@ ObscuraMuseum3F_MapScriptHeader:
 	coord_event  8,  4, 1, ObscuraMuseum3FDragonStoneScene
 	coord_event  9,  4, 1, ObscuraMuseum3FDragonStoneSceneR
 
-	db 6 ; bg events
+	db 14 ; bg events
 	signpost  5,  6, SIGNPOST_READ, ObscuraMuseumClayPotSign
 	signpost  5, 11, SIGNPOST_READ, ObscuraMuseumBlackPearlSign
 	signpost 10,  6, SIGNPOST_JUMPTEXT, ObscuraMuseumRainbowWingSignText
 	signpost 10, 11, SIGNPOST_JUMPTEXT, ObscuraMuseumSilverWingSignText
 	signpost  2,  7, SIGNPOST_JUMPTEXT, ObscuraMuseumDragonStoneSignText
 	signpost 10,  0, SIGNPOST_JUMPTEXT, ObscuraMuseum3FSign
+	signpost 11, 12, SIGNPOST_JUMPTEXT, ObscuraMuseumCoralText
+	signpost 11, 13, SIGNPOST_JUMPTEXT, ObscuraMuseumCoralText
+	signpost 11, 14, SIGNPOST_JUMPTEXT, ObscuraMuseumCoralText
+	signpost 11, 15, SIGNPOST_JUMPTEXT, ObscuraMuseumCoralText
+	signpost 14,  6, SIGNPOST_JUMPTEXT, ObscuraMuseumFossilText
+	signpost 14,  7, SIGNPOST_JUMPTEXT, ObscuraMuseumFossilText
+	signpost 14, 10, SIGNPOST_JUMPTEXT, ObscuraMuseumFossilText
+	signpost 14, 11, SIGNPOST_JUMPTEXT, ObscuraMuseumFossilText
 
 	db 12 ; object events
 	person_event SPRITE_LOCKE,  2,  9, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_SNARE_GONE_FROM_MUSEUM
@@ -46,6 +54,11 @@ ObscuraMuseum3F_MapScriptHeader:
 	const OBSCURA_MUSEUM_3F_BLACK_PEARL_TEAL
 	
 ObscuraMuseum3FCallback:
+	checkevent EVENT_GAVE_ABIE_BLACK_PEARL
+	iftrue .skip_pearl
+	moveperson OBSCURA_MUSEUM_3F_BLACK_PEARL_PURPLE, -5, -5
+	moveperson OBSCURA_MUSEUM_3F_BLACK_PEARL_TEAL, -5, -5
+.skip_pearl
 	domaptrigger OBSCURA_MUSEUM_2F, $0
 	readvar VAR_PLAYER_COLOR
 	if_equal 4, .purple
@@ -64,6 +77,11 @@ ObscuraMuseum3FCallback:
 	clearevent EVENT_HIDE_OW_OBJECTS_PINK
 	clearevent EVENT_HIDE_OW_OBJECTS_RED
 	return
+	
+ObscuraMuseumCoralText:
+	text "Shards of"
+	line "fossilized coral."
+	done
 
 ObscuraMuseum3FDragonStoneSceneR:
 	setevent EVENT_MUSEUM_SCENE_2_RIGHT
@@ -491,7 +509,11 @@ ObscuraMuseumClayPotSign:
 	jumptext ObscuraMuseumEmptyExhibitText
 	
 ObscuraMuseumBlackPearlSign:
+	checkevent EVENT_GAVE_ABIE_BLACK_PEARL
+	iffalse .no_pearl
 	jumptext ObscuraMuseumBlackPearlSignText
+.no_pearl
+	jumptext ObscuraMuseumEmptyExhibitText
 	
 ObscuraMuseumEmptyExhibitText:
 	text "New exhibit:"

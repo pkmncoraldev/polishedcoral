@@ -21,7 +21,7 @@ ObscuraCity_MapScriptHeader:
 
 	db 0 ; coord events
 
-	db 10 ; bg events
+	db 12 ; bg events
 	signpost 33, 28, SIGNPOST_JUMPTEXT, ObscuraCitySign
 	signpost 14, 24, SIGNPOST_JUMPTEXT, ObscuraCityMuseumSign
 	signpost  9, 32, SIGNPOST_JUMPTEXT, ObscuraCityMuseumBackSign
@@ -31,6 +31,8 @@ ObscuraCity_MapScriptHeader:
 	signpost 31, 15, SIGNPOST_JUMPTEXT, ObscuraCityTrashText
 	signpost 31, 14, SIGNPOST_JUMPTEXT, ObscuraCityDebrisText
 	signpost 33, 16, SIGNPOST_JUMPTEXT, ObscuraCityDebrisText
+	signpost 32,  8, SIGNPOST_JUMPTEXT, ObscuraCityFlowersText
+	signpost 33,  8, SIGNPOST_JUMPTEXT, ObscuraCityFlowersText
 	bg_event 34, 33, SIGNPOST_ITEM + PP_UP, EVENT_OBSCURA_CITY_HIDDEN_ITEM
 
 	db 20 ; object events
@@ -211,7 +213,9 @@ ObscuraCityNPC5Text:
 	text "Where are you"
 	line "from?"
 	
-	para "SUNSET BAY?<WAIT_S> Wow!"
+	para "SUNSET BAY?"
+	
+	para "Wow!"
 	
 	para "It sounds like"
 	line "you've been all"
@@ -295,6 +299,17 @@ ObscuraCityNPC11Text:
 	para "I wonder if I"
 	line "could sneak back"
 	cont "there…"
+	done
+	
+ObscuraCityFlowersText:
+	text "Some flowers."
+	
+	para "They smell pretty"
+	line "good."
+	
+	para "Not as good as"
+	line "MOM's back home,"
+	cont "though…"
 	done
 
 ObscuraCityPostSnareScene:

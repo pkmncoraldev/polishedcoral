@@ -223,8 +223,8 @@ RadiantTownshipGymSignText:
 	done
 	
 RadiantTownshipRoute21SignText:
-	text "NORTH:"
-	line "ROUTE 21"
+	text "NORTH: ROUTE 21 &"
+	line "DUSK TURNPIKE"
 	done
 	
 RadiantTownshipFlowerShopSignText:

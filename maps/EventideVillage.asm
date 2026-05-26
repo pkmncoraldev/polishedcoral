@@ -175,7 +175,10 @@ EventideVillageWendyNote:
 	jumptext EventideVillageWendyNoteText
 	
 EventideVillageWendyNoteText:
-	text "A child has gone"
+	text "There's a note"
+	line "on the door:"
+	
+	para "“A child has gone"
 	line "missing from town."
 	
 	para "I've taken my plane"
@@ -183,7 +186,7 @@ EventideVillageWendyNoteText:
 	
 	para "I'll be flying in"
 	line "the skies above"
-	cont "EVENTIDE FOREST."
+	cont "EVENTIDE FOREST.”"
 	
 	para "-WENDY"
 	done

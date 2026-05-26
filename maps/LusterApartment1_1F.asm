@@ -54,7 +54,7 @@ LusterApartment1_1F_NPC2Text:
 	
 	para "but our little"
 	line "guy seems to LOVE"
-	cont "them!"
+	cont "it!"
 	done
 	
 LusterApartment1_1F_NPC3Text1:

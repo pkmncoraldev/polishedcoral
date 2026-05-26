@@ -24,7 +24,7 @@ ObscuraGymSpeechHouseNPC2:
 	
 ObscuraGymSpeechHouseNPC1Text:
 	text "ROCKY isn't origi-"
-	line "nanlly from here"
+	line "nally from here"
 	cont "in OBSCURA CITY."
 	
 	para "He was raised in"

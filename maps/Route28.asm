@@ -69,8 +69,8 @@ Route28NPC2:
 	jumptextfaceplayer Route28NPC2Text
 	
 Route28NPC2Text:
-	text "Nearby there's an"
-	line "old building."
+	text "There's an old"
+	line "building nearby."
 	
 	para "It used to be our"
 	line "COMMUNITY CENTER."

@@ -253,6 +253,10 @@ FlickerTrainStationSnareText:
 	line "came and blew away"
 	cont "my TRAIN TICKET."
 	
+	para "It flew up onto"
+	line "the cliffs past"
+	cont "the train tracks."
+	
 	para "They won't let me"
 	line "on without it!"
 	

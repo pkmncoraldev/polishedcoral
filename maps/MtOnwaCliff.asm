@@ -192,9 +192,8 @@ TrainerMtOnwaOutside_1:
 	
 	para "The air out here"
 	line "is so refreshing"
-	cont "after being in"
-	cont "that cave for so"
-	cont "long."
+	cont "after being in the"
+	cont "cave for so long."
 	
 	para "Now I'm itching for"
 	line "a battle!"
@@ -298,8 +297,7 @@ MtOnwaMinaText6:
 	done
 
 MtOnwaMinaText7:
-	text "“Mountaintop"
-	line "Vista”."
+	text "“Distant Diorama”."
 	done
 
 MtOnwaMinaText8:

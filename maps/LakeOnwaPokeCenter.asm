@@ -31,18 +31,16 @@ LakeOwnaCenterNPC2:
 	jumptextfaceplayer LakeOwnaCenterNPC2Text
 	
 LakeOwnaCenterNPC1Text:
-	text "This #MON"
-	line "CENTER is still"
-	cont "fairly new."
+	text "It gets pretty hot"
+	line "the deeper into"
+	cont "MT. ONWA you dive."
 	
-	para "There were so many"
-	line "TRAINERS whose"
-	cont "#MON were get-"
-	cont "ting injured in"
-	cont "MT. ONWA,"
+	para "If you just want"
+	line "to get through"
+	cont "the mountain,"
 	
-	para "that they had to"
-	line "build one."
+	para "you'll be better"
+	line "off moving upward."
 	done
 	
 LakeOwnaCenterNPC2Text:

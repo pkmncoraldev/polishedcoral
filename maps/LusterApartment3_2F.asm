@@ -19,13 +19,16 @@ LusterApartment3_2F_NPC:
 LusterApartment3_2F_NPC_Text:
 	text "Not only do #-"
 	line "MON hide in the"
-	cont "trash, but people"
-	cont "throw out some of"
-	cont "the best stuff!"
+	cont "trash,"
+	
+	para "but people throw"
+	line "out some of the"
+	cont "best stuff, too!"
 	
 	para "Hey, <WAIT_S>don't look at"
 	line "me like that!"
 	
-	para "See for yourself!"
+	para "Go see for"
+	line "yourself!"
 	done
 

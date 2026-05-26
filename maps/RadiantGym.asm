@@ -38,7 +38,7 @@ RadiantGymLeilani2:
 	jump RadiantGymLeilanicont
 RadiantGymLeilani:
 	checkcode VAR_FACING
-	if_equal RIGHT, RadiantGymLeilaniFacingRight
+	if_not_equal LEFT, RadiantGymLeilaniFacingRight
 	variablesprite SPRITE_LEILANI_VARIABLE, SPRITE_LEILANI_CHAIR
 	spriteface RADIANT_GYM_LEILANI_2, DOWN
 RadiantGymLeilanicont:

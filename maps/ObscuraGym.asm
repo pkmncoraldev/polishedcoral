@@ -10,7 +10,9 @@ ObscuraGym_MapScriptHeader:
 
 	db 0 ; coord events
 
-	db 0 ; bg events
+	db 2 ; bg events
+	signpost 24, 14, SIGNPOST_IFSET, ObscuraGymLockedDoors
+	signpost 24, 15, SIGNPOST_IFSET, ObscuraGymLockedDoors
 
 	db 8 ; object events
 	person_event SPRITE_ROCKY,  2, 15, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, ObscuraGymRocky, -1
@@ -48,6 +50,17 @@ ObscuraGymCallback:
 	changeblock $e, $8, $4b
 .skip_3
 	return
+	
+ObscuraGymLockedDoors:
+	dw EVENT_OBSCURA_GYM_LOCKED
+	jumptext ObscuraGymLockedDoorsText
+	
+ObscuraGymLockedDoorsText:
+	text "The doors are"
+	line "locked until you"
+	cont "finish the GYM"
+	cont "CHALLENGE!"
+	done
 	
 ObscuraGymRocky:
 	faceplayer
@@ -207,7 +220,7 @@ ObscuraGymRockyTextBeforeBattle:
 	done
 	
 ObscuraGymRockyTextAfterBattle:
-	text "The GEOBADGE proves"
+	text "The GEOBADGE shows"
 	line "that you beat me."
 	
 	para "It will also let"
@@ -226,9 +239,11 @@ ObscuraGymRockyTextTMSpeech:
 	line "STONE EDGE."
 	
 	para "It has a tendancy"
-	line "to miss, but if"
-	cont "it connects, it"
-	cont "does big damage!"
+	line "to miss,"
+	
+	para "but it does big"
+	line "damage if it"
+	cont "does connect!"
 	done
 	
 ObscuraGymRockyTextLoop:
@@ -313,10 +328,6 @@ ObscuraGymRockyCallText2:
 	
 	para "…"
 	
-	para "Ok."
-	
-	para "…"
-	
 	para "Ok, calm down,"
 	line "DARCY."
 	
@@ -324,10 +335,6 @@ ObscuraGymRockyCallText2:
 	
 	para "We'll figure this"
 	line "out."
-	
-	para "…"
-	
-	para "Ok, bye."
 	done
 	
 ObscuraGymRockyCallText2_girl:
@@ -344,10 +351,6 @@ ObscuraGymRockyCallText2_girl:
 	
 	para "…"
 	
-	para "Ok."
-	
-	para "…"
-	
 	para "Ok, calm down,"
 	line "DARCY."
 	
@@ -355,10 +358,6 @@ ObscuraGymRockyCallText2_girl:
 	
 	para "We'll figure this"
 	line "out."
-	
-	para "…"
-	
-	para "Ok, bye."
 	done
 	
 ObscuraGymRockyCallText3:
@@ -394,7 +393,10 @@ ObscuraGymRockyCallText3:
 	cont "talk some sense"
 	cont "into him!"
 	
-	para "LUMINA TOWN is"
+	para "LUMINA TOWN is on"
+	line "AUREOLE MOUNTAIN."
+	
+	para "The mountain is"
 	line "EAST of a little"
 	cont "place called"
 	cont "BRIGHTBURG."
@@ -405,11 +407,10 @@ ObscuraGymRockyCallText3:
 	done
 	
 ObscuraGymRockyTextLoop2:
-	text "I need you to head"
-	line "to LUMINA TOWN and"
-	cont "stop that thief."
+	text "LUMINA TOWN is on"
+	line "AUREOLE MOUNTAIN."
 	
-	para "LUMINA TOWN is"
+	para "The mountain is"
 	line "EAST of a little"
 	cont "place called"
 	cont "BRIGHTBURG."
@@ -1648,7 +1649,7 @@ ObscuraGymQ1Q3CorrectText:
 	text "I don't keep"
 	line "a plant at my"
 	cont "station because"
-	cont "kept knocking"
+	cont "I kept knocking"
 	cont "it over…"
 	done
 	

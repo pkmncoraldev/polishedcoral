@@ -25,8 +25,8 @@ StarglowHouse3NPC1Text:
 	text "Thank you for your"
 	line "help, child,"
 	
-	para "but I was never in"
-	line "any danger."
+	para "but I was never"
+	line "in any danger."
 	
 	para "I'm the toughest"
 	line "TRAINER around!"
@@ -44,7 +44,7 @@ StarglowHouse3NPC2Text:
 	cont "#MON in years."
 	
 	para "Between you and"
-	line "me, <WAIT_S>he's nothing"
+	line "me, he's nothing"
 	cont "special nowadays."
 	
 	para "I just don't have"

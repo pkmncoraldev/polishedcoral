@@ -43,8 +43,8 @@ LakeOnwa_MapScriptHeader:
 	object_event 42, 32, SPRITE_SAILBOAT, SPRITEMOVEDATA_TILE_UP_SOLID, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, LakeBoat, -1
 	person_event SPRITE_WEIRD_TREE, 23, 58, SPRITEMOVEDATA_SUDOWOODO, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, LakeSudowoodo, EVENT_FOUGHT_SUDOWOODO_LAKE
 	person_event SPRITE_COOL_DUDE, 32, 48, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, LakeNpc1, -1
-	person_event SPRITE_FISHER, 26, 12, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, LakeNpc2, -1
-	person_event SPRITE_CUTE_GIRL, 12, 27, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, LakeNpc3, -1
+	person_event SPRITE_FISHING_GURU, 26, 12, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, LakeNpc2, -1
+	person_event SPRITE_REDS_MOM, 12, 27, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, LakeNpc3, -1
 	person_event SPRITE_GRANNY, 20, 10, SPRITEMOVEDATA_WANDER, 0, 1, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, LakeNpc4, -1
 	tapeball_event 41, 16, MUSIC_ROUTE_4, 1, EVENT_MUSIC_ROUTE_4
 	itemball_event 28,  6, REVIVE, 1, EVENT_LAKE_ONWA_POKE_BALL2
@@ -52,7 +52,7 @@ LakeOnwa_MapScriptHeader:
 	smashrock_event 26, 10
 	smashrock_event 28,  9
 	smashrock_event 29,  8
-	person_event SPRITE_COLBY,  7, 39, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, LakeBoat, EVENT_BEAT_LAKE_RIVAL
+	person_event SPRITE_COLBY,  7, 39, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, LakeBoat, EVENT_BEAT_LAKE_RIVAL
 	itemball_event  4, 24, PP_MAX, 1, EVENT_LAKE_ONWA_POKE_BALL3
 
 
@@ -230,9 +230,8 @@ LakeRivalT:
 	iftrue .end
 	special Special_StopRunning
 	playsound SFX_PAY_DAY
-	showemote EMOTE_SHOCK, LAKERIVAL, 15
 	spriteface LAKERIVAL, DOWN
-	pause 7
+	showemote EMOTE_SHOCK, LAKERIVAL, 15
 	playmusic MUSIC_RIVAL_ENCOUNTER
 	pause 10
 	applymovement LAKERIVAL, Movement_Lake_Rival_1
@@ -339,9 +338,8 @@ LakeRivalB:
 	iftrue .end
 	special Special_StopRunning
 	playsound SFX_PAY_DAY
-	showemote EMOTE_SHOCK, LAKERIVAL, 15
 	spriteface LAKERIVAL, DOWN
-	pause 7
+	showemote EMOTE_SHOCK, LAKERIVAL, 15
 	playmusic MUSIC_RIVAL_ENCOUNTER
 	pause 10
 	applymovement LAKERIVAL, Movement_Lake_Rival_2
@@ -654,16 +652,16 @@ LakeSignText:
 	done
 
 LakeBoatHouseSignRText:
-	text "LAKE ONWA BOAT"
-	line "HOUSE 1"
+	text "LAKE ONWA EAST"
+	line "BOAT HOUSE"
 	
 	para "Inquire inside"
 	line "for a ride."
 	done
 
 LakeBoatHouseSignLText:
-	text "LAKE ONWA BOAT"
-	line "HOUSE 2"
+	text "LAKE ONWA WEST"
+	line "BOAT HOUSE"
 	
 	para "Inquire inside"
 	line "for a ride."
@@ -693,32 +691,33 @@ LakeNpc1Text:
 	text "Unless you have a"
 	line "#MON that can"
 	cont "travel across the"
-	cont "water, you'll have"
+	cont "water,"
+	
+	para "you'll have"
 	cont "to take a boat."
 	done
 
 LakeNpc2Text:
-	text "This place is"
-	line "growing fast."
+	text "MT. ONWA is a hot-"
+	line "spot for TRAINERS"
+	cont "serious about"
+	cont "improving."
 	
-	para "Until recently, we"
-	line "didn't even have a"
-	cont "#MON CENTER or"
-	cont "#MART."
+	para "That's why they"
+	line "built a #MON"
+	cont "CENTER and a"
+	cont "#MART here."
 	done
 
 LakeNpc3Text:
-	text "Alright."
+	text "These days, there"
+	line "are less people"
+	cont "who take training"
+	cont "#MON seriously."
 	
-	para "I've heard this"
-	line "mountain is pretty"
-	cont "dangerous."
-	
-	para "I've got my POTIONS"
-	line "and # BALLS."
-	
-	para "I think I'm good"
-	line "to go."
+	para "Even so, MT. ONWA"
+	line "still sees its"
+	cont "share of them."
 	done
 
 LakeNpc4Text1:

@@ -42,14 +42,14 @@ TwinkleTown_MapScriptHeader:
 	person_event SPRITE_SNOWGIRL_SMALL, 30, 18, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, TwinkleTownNPC2, EVENT_TWINKLE_SNOWMAN_3_1
 	person_event SPRITE_ICESKATER_VARIABLE, 29, 39, SPRITEMOVEDATA_ICESKATER, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, TwinkleTownNPC3, -1
 	person_event SPRITE_BOARDER, 29, 42, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, TwinkleTownNPC4, -1
-	person_event SPRITE_SNOWGIRL, 34, 39, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, TwinkleTownNPC5, -1
-	person_event SPRITE_BOARDER, 34, 40, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, TwinkleTownNPC6, -1
+	person_event SPRITE_SNOWGIRL, 34, 39, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, TwinkleTownNPC5, -1
+	person_event SPRITE_BOARDER, 34, 40, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, TwinkleTownNPC6, -1
 	person_event SPRITE_SNOWGIRL, 40, 26, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, TwinkleTownNPC7, -1
 	person_event SPRITE_BOARDER, 50, 13, SPRITEMOVEDATA_WANDER, 1, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, TwinkleTownNPC8, -1
 	person_event SPRITE_BOARDER, 37, 18, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, TwinkleTownNPC9, -1
 	person_event SPRITE_SNOWGIRL_SMALL, 39, 35, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, TwinkleTownNPC10, -1
-	person_event SPRITE_BOARDER, 15, 45, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_GENERICTRAINER, 3, TrainerTwinkle_1, -1
-	person_event SPRITE_SKIER, 19, 40, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_GENERICTRAINER, 3, TrainerTwinkle_2, -1
+	person_event SPRITE_BOARDER, 19, 40, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_GENERICTRAINER, 3, TrainerTwinkle_1, -1
+	person_event SPRITE_SKIER, 15, 45, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_GENERICTRAINER, 3, TrainerTwinkle_2, -1
 	itemball_event 31, 26, HP_UP, 1, EVENT_TWINKLE_POKE_BALL_HP_UP
 	tmhmball_event 45, 18, TM_BULLDOZE, EVENT_TM21
 	hiddentape_event 24, 29, MUSIC_TWINKLE_TOWN, 1, EVENT_MUSIC_TWINKLE_TOWN
@@ -168,19 +168,15 @@ TwinkleTownTrigger1:
 TrainerTwinkle_1:
 	generictrainer BOARDER, GEORGE, EVENT_BEAT_TWINKLE_TRAINER_1, .SeenText, .BeatenText
 
-	text "It's just so boring"
-	line "around here…"
-	
-	para "I'm itching for an"
-	line "adventure!"
+	text "You have to have"
+	line "hardy #MON to"
+	cont "do well in this"
+	cont "cold."
 	done
 
 .SeenText:
-	text "There's a cave up"
-	line "there, right?"
-	
-	para "Find anything cool"
-	line "inside?"
+	text "Check out my"
+	line "hardy #MON!"
 	done
 
 .BeatenText:
@@ -631,9 +627,7 @@ TwinkleTownNPC7Text:
 	done
 	
 TwinkleTownNPC8Text:
-	text "Hey you made it!"
-	
-	para "It can be brutal"
+	text "It can be brutal"
 	line "out there, but you"
 	cont "can finally take a"
 	cont "deep breath!"

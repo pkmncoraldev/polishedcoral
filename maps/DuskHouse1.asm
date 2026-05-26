@@ -27,13 +27,13 @@ DuskHouse1NPC1Text:
 	line "NETT CORP.?"
 	
 	para "No one knows what"
-	line "happened it's"
+	line "happened to it's"
 	cont "founder."
 	
-	para "He gave up the"
-	line "entire company to"
-	cont "his son one day,"
-	cont "and disappeared."
+	para "He gave the whole"
+	line "company to his son"
+	cont "one day, and just"
+	cont "disappeared."
 	
 	para "I wonder if he's"
 	line "living a new life"

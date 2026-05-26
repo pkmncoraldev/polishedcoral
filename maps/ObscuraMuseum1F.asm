@@ -447,7 +447,10 @@ ObscuraMuseum1FNPC2Text1:
 	line "visiting the"
 	cont "museum."
 	
-	para "We might have to"
+	para "With TEAM SNARE"
+	line "running amok,"
+	
+	para "we might have to"
 	line "stop coming for"
 	cont "her own safety…"
 	done

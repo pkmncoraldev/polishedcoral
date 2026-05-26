@@ -28,7 +28,7 @@ ShimmerPokeCenterNpc1Text:
 	cont "#MON back from"
 	cont "fossils."
 	
-	para "How cool is that?"
+	para "Awesome!"
 	done
 	
 ShimmerPokeCenterNpc2:

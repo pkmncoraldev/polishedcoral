@@ -96,13 +96,13 @@ DuskTurnpike_MapScriptHeader:
 	signpost  6, 17, SIGNPOST_READ, DuskTurnpikeTrashcan
 	signpost 31, 24, SIGNPOST_READ, DuskTurnpikePokeCenterSign
 	signpost 31, 32, SIGNPOST_READ, DuskTurnpikeMartSign
-	signpost 26, 17, SIGNPOST_JUMPTEXT, DuskTurnpikeDestiny
+	signpost -1, -1, SIGNPOST_JUMPTEXT, DuskTurnpikeDestiny
 	
 
 	db 12 ; object events
 	person_event SPRITE_INVISIBLE, 13, 37, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, DuskTurnpikeTollbooth, -1
 	person_event SPRITE_PLANK_BRIDGE,  5, 22, SPRITEMOVEDATA_TILE_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
-	person_event SPRITE_SPA_WORKER, 26, 27, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, DuskTurnpikeNPC1, -1
+	person_event SPRITE_SPA_WORKER, 28, 26, SPRITEMOVEDATA_WANDER, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, DuskTurnpikeNPC1, -1
 	person_event SPRITE_COOLTRAINER_F, 30, 15, SPRITEMOVEDATA_WANDER, 2, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, DuskTurnpikeNPC2, -1
 	person_event SPRITE_COOL_DUDE, 33, 29, SPRITEMOVEDATA_WANDER, 2, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, DuskTurnpikeNPC3, -1
 	person_event SPRITE_SKATER, 23, 20, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, DuskTurnpikeNPC4, -1

@@ -212,14 +212,16 @@ Route5NPC7Text:
 	done
 	
 Route5NPC8Text:
-	text "I've heard there's a"
-	line "spot in the woods"
-	cont "where you can find"
-	cont "a #MON that"
-	cont "evolves into many"
-	cont "different #MON!"
+	text "Do you know the"
+	line "#MON that can"
+	cont "evolve into eight"
+	cont "different forms?"
 	
-	para "Pretty cool, huh?"
+	para "You might find one"
+	line "somewhere in these"
+	cont "woods."
+	
+	para "Pretty neat, huh?"
 	done
 	
 Route5NPC9Text:

@@ -79,7 +79,7 @@ LusterSkyscraper_5F_NPC2Text1:
 	cont "fast-paced, kid!"
 	
 	para "I wouldn't be able"
-	line "too keep up if I"
+	line "to keep up if I"
 	cont "didn't have my"
 	cont "secret weapon."
 	

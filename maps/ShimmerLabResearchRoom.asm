@@ -399,7 +399,7 @@ ShimmerLabResearchRoomNPC4Text:
 	
 	para "Usually, though,"
 	line "they are just"
-	cont "that: legends."
+	cont "that: <WAIT_S>legends."
 	
 	para "They simply aren't"
 	line "true."

@@ -352,10 +352,6 @@ Route30ColbyText2:
 	para "I can't wait to"
 	line "bring you down a"
 	cont "peg or two."
-	
-	para "And I'll do it"
-	line "by any means"
-	cont "necessary."
 	done
 	
 Route30ColbyText3:

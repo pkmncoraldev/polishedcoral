@@ -412,7 +412,8 @@ ShimmerCityNpc10:
 ShimmerCityNpc10Text:
 	text "Have you been to"
 	line "a town called"
-	cont "STARGLOW VALLEY?"
+	cont "STARGLOW VALLEY"
+	cont "in NORTH ONWA?"
 	
 	para "There's a special"
 	line "spot I used to"

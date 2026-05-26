@@ -60,14 +60,19 @@ RadiantOrphanage1FCallback:
 	checkevent EVENT_SAVED_ALL_LOST_GIRLS
 	iffalse .fireplace
 	checkevent EVENT_RADIANT_GYM_INACTIVE
-	iftrue .end
+	iftrue .cont
 	checkevent EVENT_RADIANT_GYM_ACTIVE
-	iffalse .end
+	iffalse .cont
 	changeblock $8, $2, $39
 .fireplace
 	changeblock $4, $2, $9c
 	changeblock $4, $4, $9d
 ;	callasm GenericFinishBridge
+.cont
+	checkevent EVENT_SAVED_ALL_LOST_GIRLS
+	iftrue .end
+	moveperson RADIANT_ORPHANAGE_1F_LEILANI_1, -5, -5
+	moveperson RADIANT_ORPHANAGE_1F_LEILANI_CHAIR_1, -5, -5
 .end
 	return
 	

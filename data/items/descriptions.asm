@@ -1078,8 +1078,8 @@ MagmarizerDesc:
 	next "magma energy.@"
 
 ChlorophialDesc:
-	db	 "FIRE-type SUNFLORA"
-	next "in the sun. (HOLD)@"
+	db	 "SUN makes SUNFLORA"
+	next "FIRE-type. (HOLD)@"
 
 NuggetDesc:
 	db   "Made of pure gold."

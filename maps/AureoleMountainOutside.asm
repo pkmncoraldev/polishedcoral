@@ -9,26 +9,26 @@ AureoleMountainOutside_MapScriptHeader:
 	callback MAPCALLBACK_TILES, AureoleMountainOutsideChangeBlocks
 
 	db 4 ; warp events
-	warp_def 49, 10, 10, AUREOLE_MOUNTAIN_1F
-	warp_def 43, 36, 1, AUREOLE_MOUNTAIN_4F
-	warp_def 23, 30, 4, AUREOLE_MOUNTAIN_5F
-	warp_def 33, 20, 3, LUMINA_TOWN_CAVE
+	warp_def 21, 10, 10, AUREOLE_MOUNTAIN_1F
+	warp_def 15, 36, 1, AUREOLE_MOUNTAIN_4F
+	warp_def -1, -1, 4, AUREOLE_MOUNTAIN_5F
+	warp_def  5, 20, 3, LUMINA_TOWN_CAVE
 
 	db 4 ; coord events
-	coord_event  4, 38, 0, AureoleMountainOutsideBridgeUp
-	coord_event  5, 38, 0, AureoleMountainOutsideBridgeUp
-	coord_event  4, 39, 1, AureoleMountainOutsideBridgeDown
-	coord_event  5, 39, 1, AureoleMountainOutsideBridgeDown
+	coord_event  4, 10, 0, AureoleMountainOutsideBridgeUp
+	coord_event  5, 10, 0, AureoleMountainOutsideBridgeUp
+	coord_event  4, 11, 1, AureoleMountainOutsideBridgeDown
+	coord_event  5, 11, 1, AureoleMountainOutsideBridgeDown
 
 	db 3 ; bg events
-	signpost 32, 27, SIGNPOST_JUMPTEXT, AureoleMountainOutsideBarrelText
-	signpost 33, 27, SIGNPOST_JUMPTEXT, AureoleMountainOutsideBarrelText
-	signpost 32, 25, SIGNPOST_READ, AureoleMountainOutsideWell
+	signpost  4, 27, SIGNPOST_JUMPTEXT, AureoleMountainOutsideBarrelText
+	signpost  5, 27, SIGNPOST_JUMPTEXT, AureoleMountainOutsideBarrelText
+	signpost  4, 25, SIGNPOST_READ, AureoleMountainOutsideWell
 
 	db 3 ; object events
-	object_event 25, 32, SPRITE_BALL_CUT_FRUIT, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_ALWAYS_SET
-	object_event 25, 32, SPRITE_SPARKLE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_ALWAYS_SET
-	object_event 25, 32, SPRITE_SPARKLE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_ALWAYS_SET
+	object_event 25,  4, SPRITE_BALL_CUT_FRUIT, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_ALWAYS_SET
+	object_event 25,  4, SPRITE_SPARKLE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_ALWAYS_SET
+	object_event 25,  4, SPRITE_SPARKLE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_ALWAYS_SET
 
 
 AureoleMountainOutsideTrigger0:
@@ -45,9 +45,9 @@ AureoleMountainOutsideChangeBlocks:
 	ifequal $1, .changeblocks
 	return
 .changeblocks
-	changeblock $16, $28, $b1
-	changeblock $18, $28, $b2
-	changeblock $1a, $28, $b3
+	changeblock $16, $c, $b1
+	changeblock $18, $c, $b2
+	changeblock $1a, $c, $b3
 	return
 
 AureoleMountainOutsideWell:
@@ -252,16 +252,16 @@ AureoleMountainOutsideBarrelText:
 	done
 	
 AureoleMountainOutsideBridgeUp:
-	changeblock $16, $28, $b1
-	changeblock $18, $28, $b2
-	changeblock $1a, $28, $b3
+	changeblock $16, $c, $b1
+	changeblock $18, $c, $b2
+	changeblock $1a, $c, $b3
 	dotrigger $1
 	end
 	
 AureoleMountainOutsideBridgeDown:
-	changeblock $16, $28, $b5
-	changeblock $18, $28, $b6
-	changeblock $1a, $28, $b7
+	changeblock $16, $c, $b5
+	changeblock $18, $c, $b6
+	changeblock $1a, $c, $b7
 	dotrigger $0
 	end
 	

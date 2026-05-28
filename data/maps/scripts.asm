@@ -103,6 +103,7 @@ INCLUDE "maps/AureoleMountain3F.asm"
 INCLUDE "maps/AureoleMountain4F.asm"
 INCLUDE "maps/AureoleMountain5F.asm"
 INCLUDE "maps/AureoleMountainOutside.asm"
+INCLUDE "maps/AureoleMountainOutside2.asm"
 
 
 SECTION "Routes Scripts", ROMX

@@ -1090,6 +1090,9 @@ AureoleMountain5F_BlockData:
 AureoleMountainOutside_BlockData:
 	INCBIN "maps/AureoleMountainOutside.ablk.lz"
 	
+AureoleMountainOutside2_BlockData:
+	INCBIN "maps/AureoleMountainOutside2.ablk.lz"
+	
 Route11UnderBridge_BlockData:
 	INCBIN "maps/Route11UnderBridge.ablk.lz"
 	

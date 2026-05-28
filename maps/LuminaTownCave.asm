@@ -1,7 +1,8 @@
 LuminaTownCave_MapScriptHeader:
 	db 0 ; scene scripts
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_TILES, LuminaTownCaveCallback
 
 	db 3 ; warp events
 	warp_def 17, 21, 6, LUMINA_TOWN
@@ -14,3 +15,7 @@ LuminaTownCave_MapScriptHeader:
 
 	db 1 ; object events
 	tmhmball_event  4, 16, TM_POWER_GEM, EVENT_TM39
+	
+LuminaTownCaveCallback:
+	domaptrigger AUREOLE_MOUNTAIN_OUTSIDE, 0
+	return

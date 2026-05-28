@@ -512,8 +512,9 @@ DEF MAP_NONE   EQU 0
 	map_const LUMINA_RUSS_HOUSE,						   4,  4 ; 4
 	map_const LUMINA_ADMIN_HOUSE,						   4,  4 ; 5
 	map_const LUMINA_ELDERS_HOUSE,						   4,  4 ; 6
-	map_const AUREOLE_MOUNTAIN_OUTSIDE,					  22, 29 ; 7
-	map_const LUMINA_TOWN_CAVE,							  16, 18 ; 8
+	map_const AUREOLE_MOUNTAIN_OUTSIDE,					  22, 15 ; 7
+	map_const AUREOLE_MOUNTAIN_OUTSIDE_2,				  22, 15 ; 8
+	map_const LUMINA_TOWN_CAVE,							  16, 18 ; 9
 	
 	newgroup													 ; 30
 	map_const DRAGON_SHRINE_TOP,						  10, 22 ; 1

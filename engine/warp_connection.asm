@@ -204,13 +204,17 @@ LoadWarpData: ; 1046c6
 	call GetAnyMapPermission
 	call CheckIndoorMap
 	ret nz
-;	ld a, [wPrevMapGroup]
-;	cp GROUP_TIN_TOWER_ROOF
-;	jr nz, .not_tin_tower_roof
-;	ld a, [wPrevMapNumber]
-;	cp MAP_TIN_TOWER_ROOF
-;	ret z
-;.not_tin_tower_roof
+	ld a, [wTileset]
+	cp TILESET_MOUNTAIN
+	jr nz, .not_mountain
+	ld a, [wPrevMapNumber]
+	cp MAP_MT_ONWA_CLIFF
+	ret z
+	cp MAP_MT_ONWA_LOWER_CLIFF
+	ret z
+	cp MAP_AUREOLE_MOUNTAIN_OUTSIDE
+	ret z
+.not_mountain
 	ld a, [wPrevWarp]
 	ld [wDigWarp], a
 	ld a, [wPrevMapGroup]

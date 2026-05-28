@@ -8,7 +8,7 @@ AureoleMountain5F_MapScriptHeader:
 	warp_def 27,  7, 2, AUREOLE_MOUNTAIN_4F
 	warp_def  9, 15, 3, AUREOLE_MOUNTAIN_5F
 	warp_def 29, 25, 2, AUREOLE_MOUNTAIN_5F
-	warp_def 31, 27, 3, AUREOLE_MOUNTAIN_OUTSIDE
+	warp_def 31, 27, 1, AUREOLE_MOUNTAIN_OUTSIDE_2
 
 	db 0 ; coord events
 

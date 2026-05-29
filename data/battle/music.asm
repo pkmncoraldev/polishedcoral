@@ -113,6 +113,8 @@ PlayBattleMusic: ; 2ee6c
 	dbw CHARLIE,		  MUSIC_GYM_BATTLE
 	dbw POLLY,			  MUSIC_GYM_BATTLE
 	dbw LEILANI,		  MUSIC_GYM_BATTLE
+	dbw ROCKY,			  MUSIC_GYM_BATTLE
+	dbw DARCY,			  MUSIC_GYM_BATTLE
 	db -1
 
 

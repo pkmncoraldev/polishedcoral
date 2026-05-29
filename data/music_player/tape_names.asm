@@ -48,7 +48,7 @@ TapeNames::
 	db "“LUSTER CITY”@"
 	db "“SPOTTED!<LNBRK><LNBRK>HARDCORE”@"
 	db "“BATTLE!<LNBRK><LNBRK>SPECIAL TRAINER”@"
-	db "“ROUTE 11”@"
+	db "“ROUTE 12”@"
 	db "“ROUTE 14”@"
 	db "“PORT SHIMMER”@"
 	db "“PUEBLO BRILLO”@"

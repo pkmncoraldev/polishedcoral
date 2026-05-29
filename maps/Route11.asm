@@ -1,3 +1,4 @@
+Route11Padding_MapScriptHeader:
 Route11_MapScriptHeader:
 	db 0 ; scene scripts
 

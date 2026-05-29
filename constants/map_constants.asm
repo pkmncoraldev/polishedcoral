@@ -321,6 +321,7 @@ DEF MAP_NONE   EQU 0
 	map_const AIRPORT,									   7, 11 ; 8
 	map_const ROUTE_11_GATE,							   4,  4 ; 9
 	map_const ROUTE_11_HOUSE,		                       4,  4 ; 10
+	map_const ROUTE_11_PADDING,							  16,  1 ; 11
 	
 	newgroup													 ; 16
 	

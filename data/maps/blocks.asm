@@ -524,6 +524,9 @@ Route10East_BlockData:
 Route11_BlockData:
 	INCBIN "maps/Route11.ablk.lz"
 	
+Route11Padding_BlockData:
+	INCBIN "maps/Route11Padding.ablk.lz"
+	
 Route12_BlockData:
 	INCBIN "maps/Route12.ablk.lz"
 	

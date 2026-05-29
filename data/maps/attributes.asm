@@ -297,9 +297,11 @@ ENDM
 	map_attributes Route12, ROUTE_12, $02, EAST
 	connection east, Skatepark, SKATEPARK, -4
 	
-	map_attributes Route11, ROUTE_11, $30, 0
+	map_attributes Route11, ROUTE_11, $30, NORTH
+	connection north, Route11Padding, ROUTE_11_PADDING, 0
 	
-	map_attributes Route11_2, ROUTE_11_2, $35, EAST
+	map_attributes Route11_2, ROUTE_11_2, $35, NORTH | EAST
+	connection north, Route11Padding, ROUTE_11_PADDING, 0
 	connection east, Route23, ROUTE_23, 30
 	
 	map_attributes OnwaIntlAirport, ONWA_INTL_AIRPORT, $c4, NORTH
@@ -859,3 +861,4 @@ ENDM
 	map_attributes AureoleMountainOutside, AUREOLE_MOUNTAIN_OUTSIDE, $71, 0
 	map_attributes LuminaTownCave, LUMINA_TOWN_CAVE, $9, 0
 	map_attributes Route11UnderBridge, ROUTE_11_UNDER_BRIDGE, 0, 0
+	map_attributes Route11Padding, ROUTE_11_PADDING, 0, 0

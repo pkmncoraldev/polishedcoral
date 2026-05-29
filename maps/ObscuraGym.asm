@@ -295,6 +295,7 @@ ObscuraGymRockyTextWin:
 	text "Excellent."
 	
 	para "You're…<WAIT_M> good."
+	done
 	
 ObscuraGymRockyTextLoss:
 	text "How disappointing."

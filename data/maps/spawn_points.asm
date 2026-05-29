@@ -23,7 +23,7 @@ SpawnPoints: ; 0x152ab
 	spawn KOMORE_VILLAGE, 			   31,  6
 	spawn BRIGHTBURG,	 			   19, 10
 	spawn OBSCURA_CITY,	 			   31, 36
-	spawn LUMINA_TOWN,	 			   25, 18
+	spawn LUMINA_TOWN,	 			   27, 18
 	spawn BRILLO_TOWN,				   22, 14
 	
 	spawn STARGLOW_CAVERN_DEPTHS,	   16, 15

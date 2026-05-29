@@ -74,7 +74,6 @@ DEF const_value = -1
 	const SPAWN_TWINKLE
 	const SPAWN_LUSTER
 	const SPAWN_SHIMMER
-	const SPAWN_BRILLO
 	const SPAWN_RADIANT
 	const SPAWN_DUSK
 	const SPAWN_CROSSROADS
@@ -82,6 +81,7 @@ DEF const_value = -1
 	const SPAWN_BRIGHT
 	const SPAWN_OBSCURA
 	const SPAWN_LUMINA
+	const SPAWN_BRILLO
 	
 	const SPAWN_STARGLOW_CAVERN_DEPTHS
 	const SPAWN_FAKE_SUNSET

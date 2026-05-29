@@ -872,7 +872,7 @@ LighthouseAbnerText9:
 	cont "about it,"
 	
 	para "treating it like"
-	cont "a mere hobby."
+	line "a mere hobby."
 	
 	para "That's why I'm"
 	line "ecstatic that you"
@@ -927,7 +927,7 @@ LighthouseAbnerText:
 	cont "about it,"
 	
 	para "treating it like"
-	cont "a mere hobby."
+	line "a mere hobby."
 	
 	para "That's why I'm"
 	line "ecstatic that you"

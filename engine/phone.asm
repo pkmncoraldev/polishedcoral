@@ -433,7 +433,6 @@ Script_ReceivePhoneCall: ; 0x90241
 	refreshscreen
 	callasm RingTwice_StartCall
 	ptcall wPhoneScriptPointer
-	playsound SFX_HANG_UP
 	callasm HangUp
 	closetext
 	callasm InitCallReceiveDelay
@@ -502,7 +501,6 @@ Phone_NoSignal: ; 902e3 (24:42e3)
 
 HangUp:: ; 902eb
 	call HangUp_Beep
-;	call HangUp_Wait20Frames
 Phone_CallEnd:
 	call HangUp_BoopOn
 	call HangUp_Wait20Frames
@@ -522,6 +520,9 @@ HangUp_Beep: ; 9031d
 	ld hl, UnknownText_0x9032a
 	call PrintText
 	call ApplyTilemap
+	call WaitSFX
+	ld de, SFX_HANG_UP
+	call PlaySFX
 	call WaitSFX
 	ld de, SFX_NO_SIGNAL
 	jp PlaySFX

@@ -1,5 +1,10 @@
 LuminaGym_MapScriptHeader:
-	db 0 ; scene scripts
+	db 5 ; scene scripts
+	scene_script LuminaGymTrigger0
+	scene_script LuminaGymTrigger1
+	scene_script LuminaGymTrigger2
+	scene_script LuminaGymTrigger3
+	scene_script LuminaGymTrigger4
 
 	db 1 ; callbacks
 	callback MAPCALLBACK_TILES, LuminaGymCallback
@@ -23,7 +28,7 @@ LuminaGym_MapScriptHeader:
 	signpost 10,  6, SIGNPOST_JUMPTEXT, LuminaTownBarrelsText
 	signpost 10,  7, SIGNPOST_JUMPTEXT, LuminaTownBarrelsText
 
-	db 7 ; object events
+	db 9 ; object events
 	person_event SPRITE_DARCY,  5, 10, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, LuminaGymDarcy, EVENT_LUMINA_GYM_DARCY_GONE
 	person_event SPRITE_ELDER,  5,  9, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, LuminaGymElder, EVENT_LUMINA_GYM_ELDER_GONE
 	person_event SPRITE_ELDER,  8,  7, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, LuminaGymElder, EVENT_LUMINA_GYM_ELDER_2_GONE
@@ -31,9 +36,22 @@ LuminaGym_MapScriptHeader:
 	person_event SPRITE_GRANNY,  7, 24, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, LuminaTownNPC1, EVENT_LUMINA_LADIES_1_GONE
 	person_event SPRITE_GRANNY,  8, 22, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, LuminaTownNPC2, EVENT_LUMINA_LADIES_2_GONE
 	person_event SPRITE_GRANNY,  8, 25, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, LuminaTownNPC2, EVENT_LUMINA_LADIES_2_GONE
+	person_event SPRITE_DARCY,  9, 23, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_LUMINA_GYM_CUTSCENE
+	person_event SPRITE_ELDER,  9, 24, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_LUMINA_GYM_CUTSCENE
 
+
+LuminaGymTrigger0:
+LuminaGymTrigger1:
+LuminaGymTrigger2:
+LuminaGymTrigger3:
+	end
+	
+LuminaGymTrigger4:
+	priorityjump LuminaGymPostDragonShrine
+	end
 
 LuminaGymCallback:
+	clearevent EVENT_LIGHTNING_ACTIVE
 	checkevent EVENT_BEAT_DARCY
 	iffalse .end
 	moveperson 3, $a, $6
@@ -51,10 +69,13 @@ LuminaGymDarcy:
 	waitbutton
 	closetext
 	waitsfx
+	dotrigger $2
 	winlosstext LuminaGymDarcyTextWin, LuminaGymDarcyTextLoss
 	loadtrainer DARCY, 1
 	startbattle
+	dontrestartmapmusic
 	reloadmapafterbattle
+	dotrigger $3
 	setevent EVENT_BEAT_DARCY
 	clearevent EVENT_HAVENT_BEAT_DARCY
 	applymovement 3, Movement_LuminaGymElder2
@@ -64,11 +85,12 @@ LuminaGymDarcy:
 	writetext Text_ReceivedEighthBadge
 	playsound SFX_GET_BADGE
 	waitsfx
+	playmapmusic
 	setflag ENGINE_EIGHTHBADGE
 	changetextboxspeaker TEXTBOX_ELDER
 	writetext LuminaGymElderText2
 	playsound SFX_2ND_PLACE
-	waitbutton
+	waitsfx
 	closetext
 	applyonemovement 3, slow_step_right
 	spriteface 3, LEFT
@@ -125,10 +147,14 @@ LuminaGymDarcyRematch:
 	waitbutton
 	closetext
 	waitsfx
+	dotrigger $2
 	winlosstext LuminaGymDarcyTextWinRematch, LuminaGymDarcyTextLossRematch
 	loadtrainer DARCY, 1
 	startbattle
+	dontrestartmapmusic
 	reloadmapafterbattle
+	dotrigger $3
+	playmapmusic
 	opentext TEXTBOX_DARCY
 	writetext LuminaGymDarcyTextLoop
 	waitbutton
@@ -559,18 +585,427 @@ Movement_LuminaGymDarcy1:
 	step_end
 
 StartLuminaGymMusic:
-	setevent EVENT_LUMINA_GYM_MUSIC
-	callasm FadeToMapMusic
 	dotrigger $3
+	callasm FadeToMapMusic
 	end
 	
 StopLuminaGymMusic:
-	clearevent EVENT_LUMINA_GYM_MUSIC
-	callasm FadeToMapMusic
 	dotrigger $2
+	callasm FadeToMapMusic
 	end
 
 LuminaGymSign:
 	text "CLIFFSIDE"
 	line "BATTLEGROUND"
 	done
+	
+LuminaGymPostDragonShrine:
+	applymovement PLAYER, Movement_LuminaGymCutscene1
+	pause 10
+	playsound SFX_PAY_DAY
+	spriteface 8, UP
+	showemote EMOTE_SHOCK, 8, 15
+	dotrigger $2
+	playnewmapmusic
+	spriteface 9, UP
+	applymovement 8, Movement_LuminaGymCutscene2
+	opentext TEXTBOX_DARCY
+	writetext LuminaGymPostDragonShrineDarcyText1
+	waitbutton
+	changetextboxspeaker
+	writetext LuminaGymPostDragonShrineGiveText
+	takeitem DRAGON_STONE
+	playsound SFX_LEVEL_UP 
+	waitsfx
+	closetext
+	pause 5
+	applyonemovement 8, turn_step_down
+	opentext TEXTBOX_DARCY
+	writetext LuminaGymPostDragonShrineDarcyText2
+	waitbutton
+	closetext
+	pause 5
+	applymovement 9, Movement_LuminaGymCutscene3
+	spriteface 9, LEFT
+	pause 5
+	spriteface PLAYER, RIGHT
+	opentext TEXTBOX_ELDER
+	writetext LuminaGymPostDragonShrineElderText1
+	waitbutton
+	closetext
+	pause 5
+	playsound SFX_PAY_DAY
+	showemote EMOTE_SHOCK, 8, 15
+	applymovement 8, Movement_LuminaGymCutscene4
+	pause 5
+	opentext TEXTBOX_DARCY
+	writetext LuminaGymPostDragonShrineDarcyText3
+	waitbutton
+	closetext
+	pause 25
+	opentext TEXTBOX_ELDER
+	writetext LuminaGymPostDragonShrineElderText2
+	waitbutton
+	closetext
+	pause 15
+	applyonemovement 8, turn_step_right
+	applyonemovement PLAYER, remove_fixed_facing
+	pause 10
+	opentext TEXTBOX_DARCY
+	writetext LuminaGymPostDragonShrineDarcyText4
+	waitbutton
+	closetext
+	pause 35
+	spriteface 9, DOWN
+	pause 15
+	opentext TEXTBOX_ELDER
+	writetext LuminaGymPostDragonShrineElderText3
+	waitbutton
+	closetext
+;	special Special_FadeOutMusic
+	pause 45
+	opentext TEXTBOX_ELDER
+	writetext LuminaGymPostDragonShrineElderText4
+	waitbutton
+	closetext
+	pause 25
+	applyonemovement 8, turn_step_right
+	applyonemovement PLAYER, remove_fixed_facing
+	pause 5
+	opentext TEXTBOX_DARCY
+	writetext LuminaGymPostDragonShrineDarcyText5
+	waitbutton
+	closetext
+	pause 5
+	applyonemovement 9, slow_step_down
+	spriteface PLAYER, DOWN
+	pause 25
+	opentext TEXTBOX_ELDER
+	writetext LuminaGymPostDragonShrineElderText5
+	waitbutton
+	closetext
+	pause 5
+	spriteface 9, LEFT
+	opentext TEXTBOX_ELDER
+	writetext LuminaGymPostDragonShrineElderText6
+	waitbutton
+	closetext
+	pause 25
+	applyonemovement 8, turn_step_right
+	applyonemovement PLAYER, remove_fixed_facing
+	pause 5
+	opentext TEXTBOX_DARCY
+	writetext LuminaGymPostDragonShrineDarcyText6
+	waitbutton
+	closetext
+	pause 20
+	spriteface 8, UP
+	opentext TEXTBOX_DARCY
+	writetext LuminaGymPostDragonShrineDarcyText7
+	waitbutton
+	changetextboxspeaker
+	verbosegiveitem DRAGON_STONE
+	closetext
+	pause 5
+	applyonemovement 9, turn_step_left
+	opentext TEXTBOX_ELDER
+	writetext LuminaGymPostDragonShrineElderText7
+	waitbutton
+	closetext
+	spriteface 8, DOWN
+	pause 5
+	applymovement 9, Movement_LuminaGymCutscene5
+	disappear 9
+	pause 5
+	
+	playsound SFX_PAY_DAY
+	showemote EMOTE_SHOCK, 8, 15
+	applymovement 8, Movement_LuminaGymCutscene4
+	pause 5
+	spriteface PLAYER, DOWN
+	opentext TEXTBOX_DARCY
+	writetext LuminaGymPostDragonShrineDarcyText8
+	waitbutton
+	closetext
+	pause 5
+	applymovement 8, Movement_LuminaGymCutscene6
+	opentext TEXTBOX_DARCY
+	writetext LuminaGymPostDragonShrineDarcyText9
+	waitbutton
+	closetext
+	applyonemovement 8, step_up
+	opentext TEXTBOX_DARCY
+	writetext LuminaGymPostDragonShrineDarcyText10
+	waitbutton
+	closetext
+	pause 5
+	applymovement 8, Movement_LuminaGymCutscene7
+	disappear 8
+	setevent EVENT_LUMINA_GYM_CUTSCENE
+	end
+	
+LuminaGymPostDragonShrineDarcyText1:
+	text "<PLAYER>!"
+	
+	para "What happened?"
+	
+	para "Did the DRAGON"
+	line "appear?"
+	
+	para "Did you get the"
+	line "DRAGON STONE back?"
+	done
+	
+LuminaGymPostDragonShrineDarcyText2:
+	text "Oh, thank"
+	line "goodness!"
+	
+	para "MWAH! MWAH!"
+	
+	para "I'm never gonna let"
+	line "you outta my sight"
+	cont "again!"
+	done
+	
+LuminaGymPostDragonShrineDarcyText3:
+	text "That's right!"
+	
+	para "Where is that"
+	line "little twerp?"
+	
+	para "I'll pound him into"
+	line "the ground!"
+	done
+	
+LuminaGymPostDragonShrineDarcyText4:
+	text "Wait, what?"
+	
+	para "That kid…"
+	
+	para "He didn't…?"
+	done
+	
+LuminaGymPostDragonShrineDarcyText5:
+	text "G-<WAIT_S>GRANDPA?"
+	done
+	
+LuminaGymPostDragonShrineDarcyText6:
+	text "I…"
+	
+	para "…<WAIT_L>I understand,"
+	line "GRANDPA."
+	done
+	
+LuminaGymPostDragonShrineDarcyText7:
+	text "In that case…"
+	
+	para "Here, <PLAYER>."
+	
+	para "I want you to take"
+	line "it with you."
+	done
+	
+LuminaGymPostDragonShrineDarcyText8:
+	text "Wait!"
+    
+    para "That kid was with"
+    line "TEAM SNARE, right?"
+    
+    para "What about their"
+    line "part in all this?"
+	
+	para "Did he tell you"
+	line "anything about"
+	cont "them?"
+	done
+    
+LuminaGymPostDragonShrineDarcyText9:
+    text "WH<WAIT_S>A<WAIT_S>A<WAIT_S>A<WAIT_S>A<WAIT_S>A<WAIT_S>A<WAIT_S>A<WAIT_S>A<WAIT_M>T!?"
+	done
+    
+LuminaGymPostDragonShrineDarcyText10:
+    text "He said they take"
+    line "orders from the"
+    cont "CEO of NETT CORP.?"
+    
+    para "That big company"
+    line "in LUSTER CITY?"
+    
+    para "Why would someone"
+    line "like him be work-"
+    cont "ing with thugs"
+    cont "like TEAM SNARE?"
+	
+	para "Well, either way,"
+	line "something's gotta"
+	cont "be done about"
+	cont "those guys."
+	
+	para "It's time someone"
+	line "went and dealt"
+	cont "with them,"
+	
+	para "don't you think,"
+	line "<PLAYER>?"
+    done
+	
+LuminaGymPostDragonShrineElderText1:
+	text "The child who took"
+	line "the stone…"
+	
+	para "Where is he?"
+	done
+	
+LuminaGymPostDragonShrineElderText2:
+	text "<PLAYER>?"
+	
+	para "…"
+	
+	para "…<WAIT_L><WAIT_L>I see…"
+	
+	para "This didn't have"
+	line "to happen…"
+	done
+	
+LuminaGymPostDragonShrineElderText3:
+	text "A child so young"
+	line "and so brash."
+	
+	para "He must have felt"
+	line "he had so much to"
+	cont "prove."
+	
+	para "But to throw his"
+	line "life away over a"
+	cont "fairy tale…"
+	
+	para "It's…"
+	done
+	
+LuminaGymPostDragonShrineElderText4:
+	text "I am to blame."
+	
+	para "That legend…"
+	
+	para "I clung onto it"
+	line "because I felt the"
+	cont "people of LUMINA"
+	cont "TOWN needed it."
+	
+	para "That we needed"
+	line "something to"
+	cont "believe in."
+	
+	para "…"
+	
+	para "The world is "
+	line "changing so fast."
+	
+	para "It's leaving us"
+	line "behind."
+	
+	para "Our traditions…"
+	
+	para "and that legend…"
+	
+	para "They're all we"
+	line "have left."
+	
+	para "…<WAIT_M>or so I thought."
+	done
+	
+LuminaGymPostDragonShrineElderText5:
+	text "I see now that I"
+	line "was wrong."
+	
+	para "We can no longer"
+	line "cling to the past."
+	
+	para "Not if it comes at"
+	line "the expense of the"
+	cont "future."
+	done
+	
+LuminaGymPostDragonShrineElderText6:
+	text "DARCY."
+	
+	para "It's time we let"
+	line "this legend die."
+	
+	para "We can't let some-"
+	line "thing like this"
+	cont "happen in the name"
+	cont "of tradition ever"
+	cont "again."
+	done
+	
+LuminaGymPostDragonShrineElderText7:
+	text "Very good, DARCY."
+	
+	para "You'll make a fine"
+	line "village head one"
+	cont "day."
+	
+	para "Now if you'll"
+	line "excuse me."
+	
+	para "I'll be on my way."
+	done
+	
+LuminaGymPostDragonShrineGiveText:
+	text "<PLAYER> handed over"
+	line "DRAGON STONE."
+	done
+	
+Movement_LuminaGymCutscene1:
+	step_down
+	step_down
+	step_end
+	
+Movement_LuminaGymCutscene2:
+	turn_step_up
+	turn_step_up
+	turn_step_up
+	run_step_up
+	step_end
+	
+Movement_LuminaGymCutscene3:
+	slow_step_up
+	slow_step_up
+	step_end
+	
+Movement_LuminaGymCutscene4:
+	turn_step_up
+	turn_step_up
+	turn_step_up
+	step_end
+	
+Movement_LuminaGymCutscene5:
+	slow_step_down
+	slow_step_down
+	slow_step_left
+	slow_step_left
+	slow_step_left
+	slow_step_left
+	slow_step_left
+	slow_step_left
+	step_end
+	
+Movement_LuminaGymCutscene6:
+	fix_facing
+	turn_step_up
+	turn_step_up
+	turn_step_up
+	fast_step_down
+	remove_fixed_facing
+	step_end
+	
+Movement_LuminaGymCutscene7:
+	step_down
+	step_down
+	step_left
+	step_left
+	step_left
+	step_left
+	step_left
+	step_end

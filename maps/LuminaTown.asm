@@ -96,10 +96,9 @@ LuminaTownNPC1Text3:
 LuminaTownNPC2:
 	faceplayer
 	opentext
-	checkevent EVENT_DONE_DRAGON_SHRINE
+	checkevent EVENT_DRAGON_SHRINE_DONE
 	iftrue .talked
 	writetext LuminaTownNPC2Text1
-	setevent EVENT_DONE_DRAGON_SHRINE
 	jump .finish
 .talked
 	writetext LuminaTownNPC2Text2

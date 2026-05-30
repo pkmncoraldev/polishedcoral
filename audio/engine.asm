@@ -2998,8 +2998,11 @@ CheckChangeMusic::
 	ret
 	
 .lumina
-	eventflagcheck EVENT_LUMINA_GYM_MUSIC
-	jr nz, .gym
+	ld a, [wLuminaGymTrigger]
+	cp 4
+	jr z, .none
+	cp 3
+	jr z, .gym
 	ld a, MUSIC_LUMINA_TOWN
 	jr .done
 .gym

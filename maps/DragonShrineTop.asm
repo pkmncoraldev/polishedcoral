@@ -294,11 +294,18 @@ DragonShrineTopRivalScene:
 	waitsfx
 	loadvar wVolume, $77
 	clearevent EVENT_DONT_ADJUST_CRY_VOLUME
-;	setevent EVENT_LIGHTNING_ACTIVE
+	setevent EVENT_LIGHTNING_ACTIVE
 	setevent EVENT_DRAGON_SHRINE_DONE
+	setevent EVENT_LUMINA_LADIES_1_GONE
+	setevent EVENT_LUMINA_LADIES_2_GONE
+	setevent EVENT_LUMINA_GYM_ELDER_GONE
+	setevent EVENT_LUMINA_GYM_ELDER_2_GONE
+	clearevent EVENT_LUMINA_GYM_DARCY_GONE
+	clearevent EVENT_LUMINA_GYM_CUTSCENE
 	loadvar wLightningCooldown, 60
 	warpmod 1, LUMINA_GYM
 	dotrigger $1
+	domaptrigger LUMINA_GYM, $4
 	end
 	
 DragonShrineTopLightning:

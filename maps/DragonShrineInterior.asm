@@ -13,8 +13,8 @@ DragonShrineInterior_MapScriptHeader:
 	db 0 ; coord events
 
 	db 8 ; bg events
-	signpost  1,  7, SIGNPOST_JUMPTEXT, DragonShrineInteriorDoorText
-	signpost  1,  8, SIGNPOST_JUMPTEXT, DragonShrineInteriorDoorText
+	signpost  1,  7, SIGNPOST_READ, DragonShrineInteriorDoor
+	signpost  1,  8, SIGNPOST_READ, DragonShrineInteriorDoor
 	signpost  6,  7, SIGNPOST_READ, DragonShrineInteriorBigStatue
 	signpost  6,  8, SIGNPOST_READ, DragonShrineInteriorBigStatue
 	signpost  7,  7, SIGNPOST_READ, DragonShrineInteriorBigStatue
@@ -27,12 +27,30 @@ DragonShrineInterior_MapScriptHeader:
 
 DragonShrineInteriorCallback:
 	clearevent EVENT_LIGHTNING_ACTIVE
+	checkevent EVENT_DRAGON_SHRINE_DONE
+	iffalse .end
+	changeblock $06, $00, $9e
+	changeblock $08, $00, $9f
+.end
 	return
 
-DragonShrineInteriorDoorText:
+DragonShrineInteriorDoor:
+	checkevent EVENT_DRAGON_SHRINE_DONE
+	iftrue .done
+	jumptext DragonShrineInteriorDoorText1
+.done
+	jumptext DragonShrineInteriorDoorText2
+
+DragonShrineInteriorDoorText1:
 	text "It looks like"
 	line "someone broke"
 	cont "down the door."
+	done
+	
+DragonShrineInteriorDoorText2:
+	text "The ruined door"
+	line "has been boarded"
+	cont "up."
 	done
 	
 DragonShrineInteriorBigStatue:

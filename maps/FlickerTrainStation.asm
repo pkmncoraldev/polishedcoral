@@ -257,8 +257,8 @@ FlickerTrainStationSnareText:
 	line "the cliffs past"
 	cont "the train tracks."
 	
-	para "They won't let me"
-	line "on without it!"
+	para "I can't board the"
+	line "train without it!"
 	
 	para "Oh, I'm so fired…"
 	done

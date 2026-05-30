@@ -175,6 +175,8 @@ MomPhoneScript: ; 0xbceaa
 	if_equal SPECIALCALL_MOMCALLABOUTTEAMSNARE, .teamsnare
 	callasm CallingMomCheckPlayerRoomAsm
 	iftrue .upstairs
+	checkevent EVENT_POST_8_BADGE_PRE_LEAGUE_CALLS
+	iftrue .all_badges
 	checkevent EVENT_MOM_CAN_GET_BANK_CARD
 	iftrue .bankcard2
 	checkevent EVENT_GOT_A_POKEMON_FROM_SPRUCE
@@ -201,6 +203,10 @@ MomPhoneScript: ; 0xbceaa
 	
 .bankcard2
 	farwritetext MomPhoneComeGetBankCardText2
+	end
+	
+.all_badges
+	farwritetext MomPhoneAllBadgesText
 	end
 	
 .teamsnare
@@ -257,6 +263,9 @@ SprucePhoneScript: ; 0xbd081
 	checkevent EVENT_SPRUCE_CAN_RECALL_ABOUT_ANCIENTBALL
 	iftrue .ancientball
 	
+	checkevent EVENT_POST_8_BADGE_PRE_LEAGUE_CALLS
+	iftrue .all_badges
+	
 	checkevent EVENT_SPRUCE_CAN_RECALL_ABOUT_ICE_TEMPLE
 	iftrue .repeaticetemple
 	
@@ -301,6 +310,9 @@ SprucePhoneScript: ; 0xbd081
 	end
 .busy
 	farwritetext SpruceVoicemailText
+	end
+.all_badges
+	farwritetext SprucePhoneAllBadgesText
 	end
 .ancientball
 	clearevent EVENT_SPRUCE_BUSY_SIGNAL

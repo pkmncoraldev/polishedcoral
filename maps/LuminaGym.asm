@@ -87,6 +87,7 @@ LuminaGymDarcy:
 	waitsfx
 	playmapmusic
 	setflag ENGINE_EIGHTHBADGE
+	setevent EVENT_POST_8_BADGE_PRE_LEAGUE_CALLS
 	changetextboxspeaker TEXTBOX_ELDER
 	writetext LuminaGymElderText2
 	playsound SFX_2ND_PLACE

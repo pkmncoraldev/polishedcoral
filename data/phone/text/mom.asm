@@ -210,9 +210,44 @@ MomPhoneComeGetBankCardText:
 MomPhoneComeGetBankCardText2:
 	text "<PLAYER>?"
 	
-	para "What's wrong?"
+	para "You got something"
+	line "in the mail!"
 	
-	para "We'll talk when you"
-	line "get home."
+	para "Come home and get"
+	line "it when you can,"
+	cont "ok?"
+	
+	para "See you soon,"
+	line "honey!"
 	prompt
+	
+MomPhoneAllBadgesText:
+	text "Hello?"
+	
+	para "Oh, hi, sweetie."
+	
+	para "How are things?"
+	
+	para "What's that?"
+	
+	para "Wow! You have all"
+	line "eight BADGES you"
+	cont "need to qualify"
+	
+	para "for the #MON"
+	line "LEAGUE TOURNAMENT?"
+	
+	para "That's great!"
+	
+	para "We still have some"
+	line "time before the"
+	cont "tourney starts,"
+	
+	para "so don't you worry"
+	line "about that."
+	
+	para "I'm so proud of"
+	line "you, <PLAYER>!"
+	done
+	
 	

@@ -345,3 +345,33 @@ SpruceVoicemailText:
 	para "My apologies!"
 	prompt
 	
+SprucePhoneAllBadgesText:
+	text "Hello?"
+	
+	para "Ah, <PLAYER>!"
+	
+	para "How is your"
+	line "journey?"
+	
+	para "Ah! Eight GYM"
+	line "BADGES you say?"
+	
+	para "That's wonderful!"
+	
+	para "That means you"
+	line "qualify for the"
+	cont "POKEMON LEAGUE"
+	cont "TOURNAMENT!"
+	
+	para "Worry not, though."
+	
+	para "There is still"
+	line "some time before"
+	cont "the tournament."
+	
+	para "Feel free to take"
+	line "care of anything"
+	cont "you need to in the"
+	cont "meantime."
+	done
+	

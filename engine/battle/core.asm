@@ -50,7 +50,7 @@ DoBattle: ; 3c000
 	; Wild mons bypass NewEnemyMonStatus, so set
 	; their ability here too.
 	call ResetEnemyAbility
-	ld c, 40
+	ld c, 10
 	call DelayFrames
 
 .player_2
@@ -2224,7 +2224,7 @@ HandleEnemyMonFaint:
 .return
 	ld a, $1
 	ldh [hBGMapMode], a
-	ld c, 60
+	ld c, 30
 	call DelayFrames
 
 	ld a, [wBattleMode]
@@ -2242,8 +2242,8 @@ HandleEnemyMonFaint:
 	ld a, [wWalkingOnBridge]
 	cp 5
 	jr nz, .return
-	ld c, 10				;this area gets called as many times as I have extra encounters and idk why
-	call DelayFrames		;I want 60 delay frames, I have 6 encounters in the event, so 10x6.
+	ld c, 5					;this area gets called as many times as I have extra encounters and idk why
+	call DelayFrames		;I want 30 delay frames, I have 6 encounters in the event, so 5x6.
 	ld a, 1
 	ld [wBattleEnded], a
 	xor a
@@ -2646,7 +2646,7 @@ WinTrainerBattle: ; 3cfa4
 	jr nz, .battle_tower
 
 	call BattleWinSlideInEnemyTrainerFrontpic
-	ld c, 40
+	ld c, 20
 	call DelayFrames
 	ld a, [wBattleType]
 	cp BATTLETYPE_CANLOSE
@@ -2664,7 +2664,7 @@ WinTrainerBattle: ; 3cfa4
 .battle_tower
 	call BattleWinSlideInEnemyTrainerFrontpic
 	ld c, 40
-	call DelayFrames
+	call DelayFrames	;unmodified
 	call EmptyBattleTextBox
 	ld c, $3
 	farcall BattleTowerText
@@ -3208,7 +3208,7 @@ LostBattle: ; 3d38e
 	call ClearBox
 	call BattleWinSlideInEnemyTrainerFrontpic
 
-	ld c, 40
+	ld c, 20
 	call DelayFrames
 
 	ld a, [wMonStatusFlags]
@@ -3230,7 +3230,7 @@ LostBattle: ; 3d38e
 	call BattleWinSlideInEnemyTrainerFrontpic
 
 	ld c, 40
-	call DelayFrames
+	call DelayFrames	;unmodified
 
 	call EmptyBattleTextBox
 	ld c, 2
@@ -3714,7 +3714,7 @@ Function_SetEnemyPkmnAndSendOutAnimation: ; 3d7c7
 	jr z, .porygon
 	cp 2
 	jr nc, .not_first
-	ld c, 40
+	ld c, 20
 	call DelayFrames
 	ld hl, BattleText_PorygonEncounterHuh
 	call StdBattleTextBox
@@ -3728,7 +3728,7 @@ Function_SetEnemyPkmnAndSendOutAnimation: ; 3d7c7
 	ld de, TRANSFORM_SKETCH_MIMIC_SPLASH_METRO
 	call ForcePlayBattleAnim
 	
-	ld c, 60
+	ld c, 30
 	call DelayFrames
 	jr .cont
 .not_first
@@ -5393,7 +5393,7 @@ BattleMenu_BaitRock_Common:
 PatchesMonStaring:
 	ld hl, GlaringText
 	call StdBattleTextBox
-	ld c, 50
+	ld c, 25
 	call DelayFrames
 	ret
 
@@ -5441,11 +5441,11 @@ LoadBattleMenu2: ; 3e19b
 BattleMenu_SafariFight:
 	ld hl, ThrewAPunchText
 	call StdBattleTextBox
-	ld c, 20
+	ld c, 10
 	call DelayFrames
 	ld de, SFX_MEGA_PUNCH
 	call PlaySFX
-	ld c, 65
+	ld c, 30
 	call DelayFrames
 	ld hl, UnaffectedText
 	call StdBattleTextBox
@@ -5879,7 +5879,7 @@ TextJump_EnemyWithdrew:
 BattleMonEntrance: ; 3e40b
 	call WithdrawPkmnText
 
-	ld c, 50
+	ld c, 25
 	call DelayFrames
 	
 	ld hl, wPlayerSubStatus4
@@ -5914,7 +5914,7 @@ BattleMonEntrance: ; 3e40b
 ; 3e459
 
 PassedBattleMonEntrance: ; 3e459
-	ld c, 50
+	ld c, 25
 	call DelayFrames
 
 	hlcoord 9, 7
@@ -6487,7 +6487,7 @@ MoveSelectionScreen2:
 	ld [wCurPlayerMove], a
 	ld hl, BattleText_PkmnHasNoMovesLeft
 	call StdBattleTextBox
-	ld c, 60
+	ld c, 30
 	call DelayFrames
 	xor a
 	ret
@@ -7591,7 +7591,7 @@ FinalPkmnAnimation:
 	ret nz
 	; ...then hide the Pokémon...
 	call EmptyBattleTextBox
-	ld c, 20
+	ld c, 15
 	call DelayFrames
 	call SlideEnemyPicOut
 	; ...show their sprite and final dialog...
@@ -9858,7 +9858,7 @@ BattleStartMessage: ; 3fc8b
 	call PlaySFX
 	call WaitSFX
 
-	ld c, 20
+	ld c, 15
 	call DelayFrames
 
 	farcall Battle_GetTrainerName
@@ -9988,7 +9988,7 @@ _PorygonPreEncounterMon:
 	call GetCGBLayout
 	call SetPalettes
 	call ForceEnemySwitch.porygon
-	ld c, 50
+	ld c, 25
 	call DelayFrames
 	farcall PorygonPreEncounterMon2
 	jp GiveExperiencePointsAfterCatch.pory_encounter_cont

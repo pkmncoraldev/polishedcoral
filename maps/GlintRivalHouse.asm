@@ -37,10 +37,11 @@ GlintRivalMomText1:
 	text "You're looking for"
 	line "<RIVAL>?"
 
-	para "You just missed him."
+	para "You just missed"
+	line "him."
 
-	para "He went off in a"
-	line "rush to GLINT CITY."
+	para "He rushed off to"
+	line "GLINT CITY."
 	
 	para "Oh?<WAIT_M>"
 	line "A #DEX?"

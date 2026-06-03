@@ -2481,51 +2481,53 @@ PoundUsers:
 	db POLIWAG
 	db POLIWHIRL
 	db POLIWRATH
+	db POLITOED
 	db GRIMER
 	db MUK
+	db DROWZEE
+	db HYPNO
 	db CHANSEY
 	db BLISSEY
 	db DRATINI
 	db DRAGONAIR
 	db DRAGONITE
-	db POLITOED
-	db SUDOWOODO
-	db SNOVER
-	db ABOMASNOW
-	db SNORUNT
-	db GLALIE
-	db FROSLASS
-	db DROWZEE
-	db HYPNO
-	db DRIFLOON
-	db DRIFBLIM
+	db TOGEPI
+	db TOGETIC
+	db TOGEKISS
 	db SUNKERN
 	db SUNFLORA
-	db MIENFOO
-	db MIENSHAO
+	db SUDOWOODO
+	db MEDITITE
+	db MEDICHAM
+	db BUNEARY
+	db LOPUNNY
 	db MINCCINO
 	db CINCCINO
+	db MIENFOO
+	db MIENSHAO
 	db -1
 	
 ScratchUsers:
 	db CHARMANDER
 	db CHARMELEON
 	db CHARIZARD
+	db NIDORAN_F
+	db NIDORINA
+	db NIDOQUEEN
+	db MEOWTH
+	db PERSIAN
 	db TOTODILE
 	db CROCONAW
 	db FERALIGATR
 	db BUIZEL
 	db FLOATZEL
-	db NIDORAN_F
-	db NIDORINA
-	db NIDOQUEEN
-	db TEDDIURSA
-	db URSARING
 	db SNEASEL
 	db WEAVILE
-	db MIMIKYU
+	db TEDDIURSA
+	db URSARING
 	db DRILBUR
 	db EXCADRILL
+	db MIMIKYU
 	db -1
 
 WithdrawUsers:
@@ -2542,20 +2544,27 @@ WithdrawUsers:
 	db -1
 
 HardenUsers:
+	db GEODUDE
+	db GRAVELER
+	db GOLEM
+	db GRIMER
+	db MUK
 	db ONIX
 	db STEELIX
 	db STARYU
 	db STARMIE
+	db GLIGAR
+	db GLISCOR
 	db SLUGMA
 	db MAGCARGO
 	db CORSOLA
+	db CURSOLA
+	db SUDOWOODO
 	db ARON
 	db LAIRON
 	db AGGRON
-	db GLIGAR
-	db GLISCOR
-	db GRIMER
-	db MUK
+	db LARVESTA
+	db VOLCARONA
 	db -1
 
 TailWhipUsers:
@@ -2592,7 +2601,6 @@ TailWhipUsers:
 	db CLODSIRE
 	db SNUBBULL
 	db GRANBULL
-	
 	db -1
 	
 IronDefenseUsers:

@@ -145,9 +145,9 @@ ItemNameOrder:
 	db NAM_SITRUS_BERRY ; d7
 	db NAM_FIGY_BERRY   ; 40
 	db NAM_SERPSPARILLA ; 66
-	db NAM_UNUSED2 ; 4a
-	db NAM_UNUSED3  ; ca
-	db NAM_UNUSED4 ; a0
+	db NAM_KEY_CARD_R ; 4a
+	db NAM_KEY_CARD_B  ; ca
+	db NAM_KEY_CARD_Y ; a0
 	db NAM_UNUSED5 ; 05
 	db NAM_UNUSED6 ; 5e
 	db NAM_UNUSED7  ; c5

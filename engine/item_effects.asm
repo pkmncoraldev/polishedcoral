@@ -140,9 +140,9 @@ ItemEffects: ; e73c
 	dw RestoreHPEffect  ; SITRUS_BERRY
 	dw RestoreHPEffect  ; FIGY_BERRY
 	dw SerpsparillaEffect         ; SERPSPARILLA
-	dw NoEffect         ; UNUSED2
-	dw NoEffect         ; UNUSED3
-	dw NoEffect         ; UNUSED4
+	dw NoEffect         ; KEY_CARD_R
+	dw NoEffect         ; KEY_CARD_B
+	dw NoEffect         ; KEY_CARD_Y
 	dw NoEffect         ; UNUSED5
 	dw NoEffect         ; UNUSED6
 	dw NoEffect         ; UNUSED7

@@ -91,7 +91,7 @@ ItemIconPointers:
 	dba CoinCupIcon
 	dba ItemfinderIcon
 	dba ExpShareIcon
-	dba LibraryCardIcon
+	dba KeyCardIcon
 	dba PokeFluteIcon
 	dba TheThingIcon
 	dba TorchIcon
@@ -126,9 +126,9 @@ ItemIconPointers:
 	dba SitrusBerryIcon
 	dba FigyBerryIcon
 	dba SodaPopIcon
-	dba NoItemIcon
-	dba NoItemIcon
-	dba NoItemIcon
+	dba KeyCardIcon
+	dba KeyCardIcon
+	dba KeyCardIcon
 	dba NoItemIcon
 	dba NoItemIcon
 	dba NoItemIcon

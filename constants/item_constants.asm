@@ -146,9 +146,9 @@
 	const FIGY_BERRY   ; 7d
 	
 	const SERPSPARILLA ; 7e
-	const UNUSED2      ; 7f - replace
-	const UNUSED3      ; 80 - replace
-	const UNUSED4      ; 81 - replace
+	const KEY_CARD_R   ; 7f
+	const KEY_CARD_B   ; 80
+	const KEY_CARD_Y   ; 81
 	const UNUSED5      ; 82 - replace
 	const UNUSED6      ; 83 - replace
 	const UNUSED7      ; 84 - replace
@@ -368,7 +368,7 @@
 	const NAM_FRIEND_BALL  ; 47
 	const NAM_FULL_HEAL    ; 48
 	const NAM_FULL_RESTORE ; 49
-	const NAM_UNUSED2      ; 4a
+	const NAM_KEY_CARD_R   ; 4a
 	const NAM_GOLD_LEAF    ; 4b
 	const NAM_GOOD_ROD     ; 4c
 	const NAM_GREAT_BALL   ; 4d
@@ -454,7 +454,7 @@
 	const NAM_BLACK_PEARL  ; 9d
 	const NAM_PECHA_BERRY  ; 9e
 	const NAM_PERSIM_BERRY ; 9f
-	const NAM_UNUSED4      ; a0
+	const NAM_KEY_CARD_Y   ; a0
 	const NAM_PEWTERCRUNCH ; a1
 	const NAM_PINK_BOW     ; a2
 	const NAM_POISON_BARB  ; a3
@@ -496,7 +496,7 @@
 	const NAM_SACRED_ASH   ; c7
 	const NAM_SAFARI_BALL  ; c8
 	const NAM_SAFE_GOGGLES ; c9
-	const NAM_UNUSED3      ; ca
+	const NAM_KEY_CARD_B   ; ca
 	const NAM_SCOPE_LENS   ; cb
 	const NAM_THE_THING    ; cc
 	const NAM_SHARP_BEAK   ; cd

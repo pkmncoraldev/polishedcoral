@@ -125,9 +125,9 @@ ItemDescriptions:
 	dw SitrusBerryDesc
 	dw FigyBerryDesc
 	dw SerpsprillaDesc
-	dw TeruSamaDesc
-	dw TeruSamaDesc
-	dw TeruSamaDesc
+	dw KeyCardDesc
+	dw KeyCardDesc
+	dw KeyCardDesc
 	dw TeruSamaDesc
 	dw TeruSamaDesc
 	dw TeruSamaDesc
@@ -727,6 +727,10 @@ FigyBerryDesc:
 SerpsprillaDesc:
 	db   "Heals 150 HP."
 	next "Ups ATK and SPEED.@"
+	
+KeyCardDesc:
+	db   "Opens a door in"
+	line "the NETT BUILDING.@" 
 	
 TeruSamaDesc:
 	db   "?@"

@@ -194,7 +194,7 @@ SuperRodIcon:					INCBIN "gfx/items/rods.2bpp"				;done by sourapple
 CoinCupIcon:     				INCBIN "gfx/items/coin_cup.2bpp"
 ItemfinderIcon:   				INCBIN "gfx/items/itemfinder.2bpp"			;done by nuuk
 ExpShareIcon:     				INCBIN "gfx/items/exp_share.2bpp"
-LibraryCardIcon:  				INCBIN "gfx/items/library_card.2bpp"
+KeyCardIcon:  					INCBIN "gfx/items/key_card.2bpp"
 PokeFluteIcon:    				INCBIN "gfx/items/pokeflute.2bpp"
 TheThingIcon: 	  				INCBIN "gfx/items/the_thing.2bpp"
 TorchIcon:        				INCBIN "gfx/items/torch.2bpp"

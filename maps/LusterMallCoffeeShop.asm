@@ -680,8 +680,8 @@ LusterMallCoffeeShop_NPC2Text1:
 	line "write my novel."
 	
 	para "I like to write in"
-	line "public so every-"
-	cont "one can see."
+	line "public so everyone"
+	cont "can see."
 	
 	para "…"
 	

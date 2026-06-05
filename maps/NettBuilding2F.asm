@@ -3,111 +3,107 @@ NettBuilding2F_MapScriptHeader:
 
 	db 0 ; callbacks
 
-	db 4 ; warp events
-	warp_event  2, 11, NETT_BUILDING_ELEVATOR, 1
-	warp_event  9, 11, ROUTE_1, 1
-	warp_event  5,  1, NETT_BUILDING_OFFICE, 1
-	warp_event  6,  1, NETT_BUILDING_OFFICE, 2
+	db 2 ; warp events
+	warp_event 21,  2, NETT_BUILDING_1F, 3
+	warp_event 17,  2, NETT_BUILDING_3F, 1
 
-	db 2 ; coord events
-	coord_event  5,  2, 0, NettBuilding2FStopL
-	coord_event  6,  2, 0, NettBuilding2FStopR
+	db 7 ; coord events
+	coord_event 16,  9, -1, NettBuilding2FTeleporter1
+	coord_event 15, 15, -1, NettBuilding2FTeleporter2
+	coord_event 21, 15, -1, NettBuilding2FTeleporter3
+	coord_event 11,  9, -1, NettBuilding2FTeleporter4
+	coord_event  3,  9, -1, NettBuilding2FTeleporter5
+	coord_event  7, 15, -1, NettBuilding2FTeleporter6
+	coord_event  1, 15, -1, NettBuilding2FTeleporter7
 
-	db 13 ; bg events
-	signpost 11, 10, SIGNPOST_READ, NettBuilding2F_Sign1
-	signpost  1,  4, SIGNPOST_READ, NettBuilding2F_Sign2
-	signpost  2,  2, SIGNPOST_READ, NettBuildingOfficeRoseBushes
-	signpost  5,  4, SIGNPOST_READ, NettBuildingOfficeRoseBushes
-	signpost  5,  7, SIGNPOST_READ, NettBuildingOfficeRoseBushes
-	signpost  7,  4, SIGNPOST_READ, NettBuildingOfficeRoseBushes
-	signpost  7,  7, SIGNPOST_READ, NettBuildingOfficeRoseBushes
-	signpost  9,  4, SIGNPOST_READ, NettBuildingOfficeRoseBushes
-	signpost  9,  7, SIGNPOST_READ, NettBuildingOfficeRoseBushes
-	signpost 11,  4, SIGNPOST_READ, NettBuildingOfficeRoseBushes
-	signpost 11,  7, SIGNPOST_READ, NettBuildingOfficeRoseBushes
-	signpost 12,  0, SIGNPOST_READ, NettBuildingOfficeRoseBushes
-	signpost 12, 11, SIGNPOST_READ, NettBuildingOfficeRoseBushes
+	db 1 ; bg events
+	signpost  2, 19, SIGNPOST_JUMPTEXT, NettBuilding2FSignText
 
-	db 2 ; object events
-	person_event SPRITE_OFFICER, 12,  9, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, NettBuilding1F_NPC_3, -1
-	person_event SPRITE_RECEPTIONIST,  2,  9, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, NettBuilding2F_NPC_2, -1
-
-
-NettBuilding2FStopL:
-	special Special_StopRunning
-	playsound SFX_PAY_DAY
-	spriteface ROUTE_12_GATE_OFFICER2, LEFT
-	showemote EMOTE_SHOCK, ROUTE_12_GATE_OFFICER2, 15
-	opentext TEXTBOX_LADY
-	writetext NettBuilding2FStopText
-	waitbutton
-	closetext
-	applymovement PLAYER, Movement_NettBuilding2FStop
-	jump NettBuilding2FStopR.cont
+	db 1 ; object events
+	person_event SPRITE_SNARE_GIRL,  2,  2, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, NettBuilding2FNurse, -1
 	
 	
-NettBuilding2FStopR:
-	special Special_StopRunning
-	playsound SFX_PAY_DAY
-	spriteface ROUTE_12_GATE_OFFICER2, LEFT
-	showemote EMOTE_SHOCK, ROUTE_12_GATE_OFFICER2, 15
-	opentext TEXTBOX_LADY
-	writetext NettBuilding2FStopText
+NettBuilding2FSignText:
+	text "FLOOR 2"
+	done
+	
+NettBuilding3FSignText:
+	text "FLOOR 3"
+	done
+	
+NettBuilding4FSignText:
+	text "FLOOR 4"
+	done
+	
+NettBuilding5FSignText:
+	text "FLOOR 5"
+	done
+	
+NettBuilding6FSignText:
+	text "FLOOR 6"
+	done
+	
+NettBuilding7FSignText:
+	text "FLOOR 7"
+	done
+	
+NettBuilding2FNurse:
+	faceplayer
+	opentext
+	writetext NettBuilding2FNurseText1
+	yesorno
+	iffalse .no_heal
+	closetext	
+	special FadeOutPalettesBlack
+	special HealParty
+	special SaveMusic
+	playmusic MUSIC_HEAL
+	pause 60
+	special RestoreMusic
+	callasm LoadMapPals
+	special FadeInPalettes
+	end
+.no_heal
+	writetext NettBuilding2FNurseText2
 	waitbutton
 	closetext
-	applyonemovement PLAYER, step_right
-.cont
-	opentext TEXTBOX_LADY
-	writetext NettBuilding2F_NPC_2_Text1
-	waitbutton
-	closetext
-	dotrigger $1
 	end
 	
-Movement_NettBuilding2FStop:
-	step_right
-	step_right
-	step_end
-
-NettBuilding2F_NPC_2:
-	checkitem TRAIN_PASS
-	iftrue .got_pass
-	jumptextfaceplayer NettBuilding2F_NPC_2_Text1
-.got_pass
-	jumptextfaceplayer NettBuilding2F_NPC_2_Text2
+NettBuilding2FTeleporter1:
+	teleporter NETT_BUILDING_3F, 22, 7
+	end
 	
-NettBuilding2F_Sign1:
-	jumptext NettBuilding2F_Sign1Text
+NettBuilding2FTeleporter2:
+	teleporter NETT_BUILDING_3F, 11, 5
+	end
 	
-NettBuilding2F_Sign2:
-	jumptext NettBuilding2F_Sign2Text
+NettBuilding2FTeleporter3:
+	teleporter NETT_BUILDING_6F, 1, 15
+	end
 	
-NettBuilding2FStopText:
-	text "Excuse me!"
+NettBuilding2FTeleporter4:
+	teleporter NETT_BUILDING_3F, 21, 15
+	end
 	
-	para "Can I help you?"
+NettBuilding2FTeleporter5:
+	teleporter NETT_BUILDING_3F, 3, 13
+	end
+	
+NettBuilding2FTeleporter6:
+	teleporter NETT_BUILDING_6F, 13, 13
+	end
+	
+NettBuilding2FTeleporter7:
+	teleporter NETT_BUILDING_4F, 17, 11
+	end
+	
+NettBuilding2FNurseText1:
+	text "I used to be a"
+	line "nurse before I"
+	cont "joined TEAM SNARE."
 	done
 	
-NettBuilding2F_NPC_2_Text1:
-	text "Ah, you must be"
-	line "<PLAYER>."
-	
-	para "You indeed have an"
-	line "appointment with"
-	cont "MR. ELI."
-	
-	para "Go on in."
+NettBuilding2FNurseText2:
+	text "TEXT 2"
 	done
 	
-NettBuilding2F_NPC_2_Text2:
-	text "Have a nice day,"
-	line "<PLAYER>!"
-	done
-	
-NettBuilding2F_Sign1Text:
-	text "FLOOR 9"
-	done
-	
-NettBuilding2F_Sign2Text:
-	text "ELI'S OFFICE"
-	done

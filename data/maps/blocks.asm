@@ -433,8 +433,8 @@ LusterSkyscraperPorygonRoom_BlockData:
 NettBuilding1F_BlockData:
 	INCBIN "maps/NettBuilding1F.ablk.lz"
 	
-NettBuilding2F_BlockData:
-	INCBIN "maps/NettBuilding2F.ablk.lz"
+NettBuildingTopFloor_BlockData:
+	INCBIN "maps/NettBuildingTopFloor.ablk.lz"
 	
 NettBuildingStairwell_BlockData:
 	INCBIN "maps/NettBuildingStairwell.ablk.lz"
@@ -1098,4 +1098,22 @@ AureoleMountainOutside2_BlockData:
 	
 Route11UnderBridge_BlockData:
 	INCBIN "maps/Route11UnderBridge.ablk.lz"
+	
+NettBuilding2F_BlockData:
+	INCBIN "maps/NettBuilding2F.ablk.lz"
+	
+NettBuilding3F_BlockData:
+	INCBIN "maps/NettBuilding3F.ablk.lz"
+	
+NettBuilding4F_BlockData:
+	INCBIN "maps/NettBuilding4F.ablk.lz"
+	
+NettBuilding5F_BlockData:
+	INCBIN "maps/NettBuilding5F.ablk.lz"
+	
+NettBuilding6F_BlockData:
+	INCBIN "maps/NettBuilding6F.ablk.lz"
+	
+NettBuilding7F_BlockData:
+	INCBIN "maps/NettBuilding7F.ablk.lz"
 	

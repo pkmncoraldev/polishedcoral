@@ -1,40 +1,48 @@
 NettBuilding1F_MapScriptHeader:
 	db 0 ; scene scripts
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_TILES, NettBuilding1FCallback
 
 	db 6 ; warp events
-	warp_event  8, 13, LUSTER_CITY_BUSINESS, 5
-	warp_event  9, 13, LUSTER_CITY_BUSINESS, 6
-	warp_event  2,  3, NETT_BUILDING_STAIRWELL, 1
-	warp_event  4,  3, NETT_BUILDING_ELEVATOR, 1
-	warp_event 14,  3, NETT_BUILDING_M_BATHROOM, 1
-	warp_event 16,  3, NETT_BUILDING_F_BATHROOM, 1
+	warp_event 12, 19, LUSTER_CITY_BUSINESS, 5
+	warp_event 13, 19, LUSTER_CITY_BUSINESS, 6
+	warp_event 24,  3, NETT_BUILDING_2F, 1
+	warp_event 20,  3, NETT_BUILDING_ELEVATOR, 1
+	warp_event  5,  3, NETT_BUILDING_M_BATHROOM, 1
+	warp_event  2,  3, NETT_BUILDING_F_BATHROOM, 1
 
 	db 0 ; coord events
 
 	db 8 ; bg events
-	signpost  3,  8, SIGNPOST_READ, NettBuilding1F_NPC_4
-	signpost  3,  1, SIGNPOST_READ, NettBuilding1F_Sign
-	signpost  6,  8, SIGNPOST_READ, NettBuilding1F_Pokeball
-	signpost  6,  9, SIGNPOST_READ, NettBuilding1F_Pokeball
-	signpost  7,  8, SIGNPOST_READ, NettBuilding1F_Pokeball
-	signpost  7,  9, SIGNPOST_READ, NettBuilding1F_Pokeball
-	signpost  3, 13, SIGNPOST_READ, NettBuilding1F_MensRoom
-	signpost  3, 15, SIGNPOST_READ, NettBuilding1F_LadiesRoom
+	signpost  3, 12, SIGNPOST_READ, NettBuilding1F_NPC_4
+	signpost  3, 23, SIGNPOST_READ, NettBuilding1F_Sign
+	signpost  8, 12, SIGNPOST_READ, NettBuilding1F_Pokeball
+	signpost  8, 13, SIGNPOST_READ, NettBuilding1F_Pokeball
+	signpost  9, 12, SIGNPOST_READ, NettBuilding1F_Pokeball
+	signpost  9, 13, SIGNPOST_READ, NettBuilding1F_Pokeball
+	signpost  3,  4, SIGNPOST_READ, NettBuilding1F_MensRoom
+	signpost  3,  1, SIGNPOST_READ, NettBuilding1F_LadiesRoom
 
-	db 11 ; object events
-	person_event SPRITE_SLOWPOKETAIL,  5,  8, SPRITEMOVEDATA_TILE_LEFT_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, 0, -1
-	person_event SPRITE_SLOWPOKETAIL,  5,  9, SPRITEMOVEDATA_TILE_RIGHT_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, 0, -1
-	person_event SPRITE_CAMPFIRE,  3, 13, SPRITEMOVEDATA_TILE_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, 0, -1
-	person_event SPRITE_CAMPFIRE,  3, 15, SPRITEMOVEDATA_TILE_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, 0, -1
-	person_event SPRITE_SUPER_NERD, 13, 12, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, NettBuilding1F_NPC_1, -1
-	person_event SPRITE_BEAUTY, 13, 11, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, NettBuilding1F_NPC_2, -1
-	person_event SPRITE_OFFICER,  4,  2, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, NettBuilding1F_NPC_3, -1
-	person_event SPRITE_RECEPTIONIST,  2,  8, SPRITEMOVEDATA_TILE_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, NettBuilding1F_NPC_4, -1
-	person_event SPRITE_TEACHER,  8, 10, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, NettBuilding1F_NPC_5, -1
-	person_event SPRITE_GENTLEMAN, 11,  3, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, NettBuilding1F_NPC_6, -1
-	person_event SPRITE_POKEMANIAC,  7,  7, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, NettBuilding1F_NPC_7, -1
+	db 18 ; object events
+	person_event SPRITE_SLOWPOKETAIL,  7, 12, SPRITEMOVEDATA_TILE_LEFT_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, 0, -1
+	person_event SPRITE_SLOWPOKETAIL,  7, 13, SPRITEMOVEDATA_TILE_RIGHT_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, 0, -1
+	person_event SPRITE_CAMPFIRE,  3,  4, SPRITEMOVEDATA_TILE_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, 0, -1
+	person_event SPRITE_CAMPFIRE,  3,  1, SPRITEMOVEDATA_TILE_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, 0, -1
+	person_event SPRITE_ROCKER,  7, 15, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, NettBuilding1F_NPC_1, -1
+	person_event SPRITE_REDS_MOM,  6,  3, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, NettBuilding1F_NPC_2, -1
+	person_event SPRITE_OFFICER,  4, 24, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, NettBuilding1F_NPC_3, -1
+	person_event SPRITE_RECEPTIONIST,  2, 12, SPRITEMOVEDATA_TILE_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, NettBuilding1F_NPC_4, -1
+	person_event SPRITE_TEACHER, 12, 13, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, NettBuilding1F_NPC_5, -1
+	person_event SPRITE_GENTLEMAN, 15,  6, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, NettBuilding1F_NPC_6, -1
+	person_event SPRITE_POKEMANIAC,  9, 11, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, NettBuilding1F_NPC_7, -1
+	person_event SPRITE_INVISIBLE, -5, -5, SPRITEMOVEDATA_NO_RENDER, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, NettBuilding1FLockedElevator, -1
+	person_event SPRITE_SUPER_NERD, 15, 13, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, NettBuilding1F_Mumble, -1
+	person_event SPRITE_BEAUTY, 15, 12, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, NettBuilding1F_Mumble, -1
+	person_event SPRITE_SUPER_NERD,  6, 24, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, NettBuilding1F_Mumble, -1
+	person_event SPRITE_BEAUTY,  6, 25, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, NettBuilding1F_Mumble, -1
+	person_event SPRITE_SUPER_NERD,  7,  8, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, NettBuilding1F_Mumble, -1
+	person_event SPRITE_BEAUTY,  8,  8, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, NettBuilding1F_Mumble, -1
 
 	
 	const_def 1 ; object constants
@@ -50,6 +58,22 @@ NettBuilding1F_MapScriptHeader:
 	const NETT_1F_NPC_6
 	const NETT_1F_NPC_7
 	
+NettBuilding1FCallback:
+	checkevent EVENT_NETT_ELEVATOR_BROKEN
+	iffalse .end
+	moveperson 7, $c, $4
+	moveperson 12, $d, $3
+.end
+	return
+	
+NettBuilding1FLockedElevator:
+	jumptext NettBuilding1FLockedElevatorText
+	
+NettBuilding1FLockedElevatorText:
+	text "The doors won't"
+	line "budge…"
+	done
+	
 NettBuilding1F_Sign:
 	jumptext NettBuilding1F_SignText
 	
@@ -63,13 +87,17 @@ NettBuilding1F_LadiesRoom:
 	jumptext NettBuilding1F_LadiesRoomText
 	
 NettBuilding1F_NPC_1:
-	jumptext NettBuilding1F_NPC_1_Text
+	jumptextfaceplayer NettBuilding1F_NPC_1_Text
 	
 NettBuilding1F_NPC_2:
-	jumptext NettBuilding1F_NPC_2_Text
+	jumptextfaceplayer NettBuilding1F_NPC_2_Text
 	
 NettBuilding1F_NPC_3:
-	jumptextfaceplayer NettBuilding1F_NPC_3_Text
+	checkevent EVENT_NETT_BUILDING_DUNGEON
+	iftrue .elevator_broken
+	jumptextfaceplayer NettBuilding1F_NPC_3_Text1
+.elevator_broken
+	jumptextfaceplayer NettBuilding1F_NPC_3_Text2
 	
 NettBuilding1F_NPC_4:
 	jumptext NettBuilding1F_NPC_4_Text
@@ -114,25 +142,40 @@ NettBuilding1F_LadiesRoomText:
 	done
 	
 NettBuilding1F_NPC_1_Text:
-	text "Mumble… <WAIT_S>mumble…"
+	text "The CEO, MR. ELI,"
+	line "inhereted the"
+	cont "company from his"
+	cont "father."
 	
-	para "This presentation"
-	line "needs to go well…"
+	para "I wonder what kind"
+	line "of man he was."
 	done
 	
 NettBuilding1F_NPC_2_Text:
-	text "Mumble… <WAIT_S>mumble…"
+	text "Apparently profits"
+	line "have been down"
+	cont "since the current"
+	cont "CEO took over."
 	
-	para "This contract will"
-	line "make or break our"
-	cont "careers…"
+	para "You'd never know it"
+	line "just from looking"
+	cont "at the building!"
 	done
 	
-NettBuilding1F_NPC_3_Text:
+NettBuilding1F_NPC_3_Text1:
 	text "The stairwell is"
 	line "through here."
 	
 	para "Employees only!"
+	done
+	
+NettBuilding1F_NPC_3_Text2:
+	text "Something's wrong"
+	line "with the elevator."
+	
+	para "It seems to be"
+	line "stuck on the 7th"
+	cont "floor."
 	done
 	
 NettBuilding1F_NPC_4_Text:
@@ -177,4 +220,11 @@ NettBuilding1F_NPC_7_Text:
 	line "tacky, but eh…"
 	
 	para "What do I know?"
+	done
+	
+NettBuilding1F_Mumble:
+	jumptext NettBuilding1FMumbleText
+	
+NettBuilding1FMumbleText:
+	text "Mumble… <WAIT_S>mumble…"
 	done

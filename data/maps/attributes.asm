@@ -736,6 +736,12 @@ ENDM
 	map_attributes LusterSkyscraperPorygonRoom, LUSTER_SKYSCRAPER_PORYGON_ROOM, 0, 0
 	map_attributes NettBuilding1F, NETT_BUILDING_1F, 0, 0
 	map_attributes NettBuilding2F, NETT_BUILDING_2F, 0, 0
+	map_attributes NettBuilding3F, NETT_BUILDING_3F, 0, 0
+	map_attributes NettBuilding4F, NETT_BUILDING_4F, 0, 0
+	map_attributes NettBuilding5F, NETT_BUILDING_5F, 0, 0
+	map_attributes NettBuilding6F, NETT_BUILDING_6F, 0, 0
+	map_attributes NettBuilding7F, NETT_BUILDING_7F, 0, 0
+	map_attributes NettBuildingTopFloor, NETT_BUILDING_TOP_FLOOR, 0, 0
 	map_attributes NettBuildingElevator, NETT_BUILDING_ELEVATOR, 0, 0
 	map_attributes NettBuildingMBathroom, NETT_BUILDING_M_BATHROOM, 0, 0
 	map_attributes NettBuildingFBathroom, NETT_BUILDING_F_BATHROOM, 0, 0

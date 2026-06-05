@@ -296,7 +296,7 @@ INCLUDE "maps/LusterSkyscraperB1F.asm"
 SECTION "Nett Building Scripts", ROMX
 
 INCLUDE "maps/NettBuilding1F.asm"
-INCLUDE "maps/NettBuilding2F.asm"
+INCLUDE "maps/NettBuildingTopFloor.asm"
 INCLUDE "maps/NettBuildingElevator.asm"
 INCLUDE "maps/NettBuildingMBathroom.asm"
 INCLUDE "maps/NettBuildingFBathroom.asm"
@@ -314,6 +314,15 @@ INCLUDE "maps/LusterSkyscraper_3F.asm"
 INCLUDE "maps/LusterSkyscraper_4F.asm"
 INCLUDE "maps/LusterSkyscraper_5F.asm"
 INCLUDE "maps/LusterSkyscraper_Elevator.asm"
+
+SECTION "Nett Building Scripts 2", ROMX
+
+INCLUDE "maps/NettBuilding2F.asm"
+INCLUDE "maps/NettBuilding3F.asm"
+INCLUDE "maps/NettBuilding4F.asm"
+INCLUDE "maps/NettBuilding5F.asm"
+INCLUDE "maps/NettBuilding6F.asm"
+INCLUDE "maps/NettBuilding7F.asm"
 
 SECTION "Route 12 Scripts", ROMX
 INCLUDE "maps/Route12.asm"

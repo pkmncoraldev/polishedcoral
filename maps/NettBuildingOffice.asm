@@ -8,8 +8,8 @@ NettBuildingOffice_MapScriptHeader:
 	callback MAPCALLBACK_TILES, NettBuildingOfficeCallback
 
 	db 2 ; warp events
-	warp_event  5,  9, NETT_BUILDING_2F, 3
-	warp_event  6,  9, NETT_BUILDING_2F, 4
+	warp_event  5,  9, NETT_BUILDING_TOP_FLOOR, 3
+	warp_event  6,  9, NETT_BUILDING_TOP_FLOOR, 4
 
 	db 2 ; coord events
 	coord_event  5,  8, 1, NettBuildingOfficeNettCutsceneL

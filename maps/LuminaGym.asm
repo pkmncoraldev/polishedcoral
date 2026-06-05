@@ -743,6 +743,8 @@ LuminaGymPostDragonShrine:
 	applymovement 8, Movement_LuminaGymCutscene7
 	disappear 8
 	setevent EVENT_LUMINA_GYM_CUTSCENE
+	setevent EVENT_NETT_BUILDING_DUNGEON
+	setevent EVENT_NETT_ELEVATOR_BROKEN
 	end
 	
 LuminaGymPostDragonShrineDarcyText1:

@@ -51,7 +51,7 @@ NettBuildingMBathroomTrigger0:
 	special FadeOutPalettes
 	playsound SFX_EXIT_BUILDING
 	waitsfx
-	warpfacing DOWN, NETT_BUILDING_1F, $0e, $04
+	warpfacing DOWN, NETT_BUILDING_1F, 5, 3
 .end
 	end
 	

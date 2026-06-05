@@ -299,17 +299,24 @@ DEF MAP_NONE   EQU 0
 	map_const LUSTER_SPAM_BUILDING_3F,					  19,  9 ; 42
 	map_const LUSTER_SPAM_BUILDING_4F,					  21, 14 ; 43
 	map_const LUSTER_SPAM_BUILDING_RIGHT_ROOM,			   7,  8 ; 44
+	map_const NETT_BUILDING_2F,							  12,  9 ; 45
+	map_const NETT_BUILDING_3F,							  12,  8 ; 46
+	map_const NETT_BUILDING_4F,							  12,  8 ; 47
+	map_const NETT_BUILDING_5F,							  12,  8 ; 48
+	map_const NETT_BUILDING_6F,							  12,  8 ; 49
 	
 	newgroup													 ; 14
 	
-	map_const NETT_BUILDING_1F,							   9,  7 ; 1
-	map_const NETT_BUILDING_2F,							   6,  7 ; 2
+	map_const NETT_BUILDING_1F,							  13, 10 ; 1
+	map_const NETT_BUILDING_TOP_FLOOR,					   6,  7 ; 2
 	map_const NETT_BUILDING_ELEVATOR,					   2,  2 ; 3
 	map_const NETT_BUILDING_M_BATHROOM,					   3,  4 ; 4
 	map_const NETT_BUILDING_F_BATHROOM,					   3,  4 ; 5
 	map_const NETT_BUILDING_STAIRWELL,					   3,  5 ; 6
-	map_const NETT_BUILDING_OFFICE,						   5,  5 ; 7
-	map_const CONNECTING_CAVERN,						  20, 24 ; 8
+	map_const NETT_BUILDING_7F,							   7,  6 ; 7
+	map_const NETT_BUILDING_OFFICE,						   5,  5 ; 8
+	map_const CONNECTING_CAVERN,						  20, 24 ; 9
+	
 	
 	newgroup													 ; 15
 	map_const SKATEPARK,								  16, 32 ; 2

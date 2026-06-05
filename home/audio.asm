@@ -1,6 +1,10 @@
 ; Audio interfaces.
 
 MapSetup_Sound_Off:: ; 3b4e
+	eventflagcheck EVENT_SKIP_MAP_MUSIC
+	ret nz
+	eventflagcheck EVENT_YOU_CHEATED
+	ret nz
 
 	push hl
 	push de

@@ -279,6 +279,7 @@ ScriptCommandTable:
 	dw Script_billboard_move
 	dw Script_checkspritex
 	dw Script_checkspritey
+	dw Script_teleporter
 
 StartScript:
 	ld hl, wScriptFlags
@@ -1277,6 +1278,40 @@ Script_checkspritey:
 	ld a, [hl]
 	sub 4
 	ld [wScriptVar], a
+	ret
+	
+Script_teleporter:
+	call GetScriptByte
+	ld [wMapGroup], a
+	call GetScriptByte
+	ld [wMapNumber], a
+	call GetScriptByte
+	ld [wBuffer5], a
+	call GetScriptByte
+	ld [wBuffer6], a	
+	ld a, -1
+	ld [wDefaultSpawnpoint], a
+	ld b, BANK(TeleporterScript)
+	ld de, TeleporterScript
+	jp ScriptCall
+	
+TeleporterScript::
+	setevent EVENT_SKIP_MAP_MUSIC
+	playsound SFX_WARP_TO
+	applyonemovement PLAYER, teleport_from
+	writecode VAR_MOVEMENT, PLAYER_NORMAL
+	callasm TeleporterCoordsAsm
+	newloadmap MAPSETUP_TELEPORT
+	playsound SFX_WARP_FROM
+	applyonemovement PLAYER, teleport_to
+	clearevent EVENT_SKIP_MAP_MUSIC
+	end
+	
+TeleporterCoordsAsm:
+	ld a, [wBuffer5]
+	ld [wXCoord], a	
+	ld a, [wBuffer6]
+	ld [wYCoord], a
 	ret
 
 Script_priority:

@@ -1410,6 +1410,14 @@ macro checkspritey
 	db \1 ; person
 	endm
 	
+	enum teleporter_command
+macro teleporter
+	db teleporter_command
+	map_id \1 ; map
+	db \2 ; x
+	db \3 ; y
+	endm
+	
 macro thisasm
 	callasm .asm\@
 	end

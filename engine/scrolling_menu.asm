@@ -413,9 +413,6 @@ ScrollingMenu_UpdateDisplay:
 	ld a, [wMenuData2Flags]
 	bit 4, a ; place arrows
 	ret z
-	ld a, [wPlaceBallsX]
-	cp 0
-	ret z
 	ld a, [wMenuBorderBottomCoord]
 	ld b, a
 	ld a, [wMenuBorderRightCoord]

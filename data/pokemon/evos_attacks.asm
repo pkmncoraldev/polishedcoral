@@ -2111,10 +2111,10 @@ NatuEvosAttacks:
 	db 20, OMINOUS_WIND
 	db 23, CONFUSE_RAY
 	db 28, WISH
-	db 33, PSYCHIC_M
+	db 33, FUTURE_SIGHT
 	db 36, FORESIGHT_ODOR_SLEUTH_MIRACLE_EYE
 	db 39, CALM_MIND
-	db 44, FUTURE_SIGHT
+	db 44, PSYCHIC_M
 	db 47, REFLECT
 	db 47, LIGHT_SCREEN
 	db 50, DRILL_PECK
@@ -2132,10 +2132,10 @@ XatuEvosAttacks:
 	db 1, OMINOUS_WIND
 	db 1, CONFUSE_RAY
 	db 29, WISH
-	db 35, PSYCHIC_M
+	db 35, FUTURE_SIGHT
 	db 39, FORESIGHT_ODOR_SLEUTH_MIRACLE_EYE
 	db 43, CALM_MIND
-	db 49, FUTURE_SIGHT
+	db 49, PSYCHIC_M
 	db 53, REFLECT
 	db 53, LIGHT_SCREEN
 	db 57, DRILL_PECK
@@ -2385,9 +2385,9 @@ EspeonEvosAttacks:
 	db 25, FUTURE_SIGHT
 	db 29, REFLECT
 	db 33, SYNTHESIS_MOONLIGHT_MORNING_SUN
-	db 37, PSYCHIC_M
+	db 37, CALM_MIND
 	db 41, DOUBLE_EDGE
-	db 45, CALM_MIND
+	db 45, PSYCHIC_M
 	db 0 ; no more level-up moves
 
 UmbreonEvosAttacks:
@@ -2905,6 +2905,7 @@ StantlerEvosAttacks:
 	db 43, JUMP_KICK
 	db 49, SWAGGER
 	db 55, DOUBLE_EDGE
+	db 62, MEGAHORN
 	db 0 ; no more level-up moves
 
 SmeargleEvosAttacks:
@@ -4703,11 +4704,11 @@ DragapultEvosAttacks:
 	
 WyrdeerEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, PSYSHOCK
+	db 1, PSYSHIELD_BASH
 	db 1, TACKLE_SCRATCH_POUND
-	db 1, LEER_TAIL_WHIP
-	db 1, DISABLE
-	db 1, SING_HYPNOSIS
+	db 3, LEER_TAIL_WHIP
+	db 7, DISABLE
+	db 10, SING_HYPNOSIS
 	db 13, STOMP
 	db 16, MUD_SLAP
 	db 21, TAKE_DOWN

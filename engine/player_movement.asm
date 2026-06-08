@@ -1542,6 +1542,15 @@ DoPlayerMovement:: ; 80000wWalkingDirection
 
 	call CheckSpinning
 	jr z, .not_spinning
+	push af
+	ld a, [wPlayerState]
+	cp PLAYER_RUN
+	jr nz, .skip_spinning_stop_run
+	ld a, PLAYER_NORMAL
+	ld [wPlayerState], a
+	call ReplaceKrisSprite ; UpdateSprites
+.skip_spinning_stop_run
+	pop af
 	dec a
 	jr .force
 

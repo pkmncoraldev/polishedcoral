@@ -304,6 +304,7 @@ DEF MAP_NONE   EQU 0
 	map_const NETT_BUILDING_4F,							  12,  8 ; 47
 	map_const NETT_BUILDING_5F,							  12,  8 ; 48
 	map_const NETT_BUILDING_6F,							  12,  8 ; 49
+	map_const NETT_BUILDING_SPINNER_ROOM,				  15, 11 ; 50
 	
 	newgroup													 ; 14
 	

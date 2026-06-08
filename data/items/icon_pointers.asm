@@ -91,7 +91,7 @@ ItemIconPointers:
 	dba CoinCupIcon
 	dba ItemfinderIcon
 	dba ExpShareIcon
-	dba KeyCardIcon
+	dba IDCardIcon
 	dba PokeFluteIcon
 	dba TheThingIcon
 	dba TorchIcon

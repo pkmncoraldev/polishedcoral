@@ -5,20 +5,21 @@ NettBuilding7F_MapScriptHeader:
 	callback MAPCALLBACK_TILES, NettBuilding7FCallback
 
 	db 2 ; warp events
-	warp_event 13,  0, NETT_BUILDING_6F, 2
+	warp_event 13,  6, NETT_BUILDING_6F, 2
 	warp_event  6,  1, NETT_BUILDING_ELEVATOR, 1
 
 	db 1 ; coord events
 	coord_event  2,  9, -1, NettBuilding7FTeleporter
 
-	db 3 ; bg events
+	db 4 ; bg events
 	signpost  8,  6, SIGNPOST_UP, NettBuilding7FCardReader
 	signpost  7,  4, SIGNPOST_IFNOTSET, NettBuilding7FBarrier
 	signpost  7,  5, SIGNPOST_IFNOTSET, NettBuilding7FBarrier
-	signpost  0, 11, SIGNPOST_JUMPTEXT, NettBuilding7FSignText
+	signpost  6, 11, SIGNPOST_JUMPTEXT, NettBuilding7FSignText
 
-	db 1 ; object events
+	db 2 ; object events
 	person_event SPRITE_CORAL_STAR, -5, -5, SPRITEMOVEDATA_TILE_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, 0, -1
+	person_event SPRITE_SNARE,  7, 10, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 3, TrainerNettBuilding7F, -1
 
 
 NettBuilding7FCallback:
@@ -31,7 +32,32 @@ NettBuilding7FCallback:
 	iffalse .skip_door
 	changeblock 4, 6, 143
 .skip_door
+	clearevent EVENT_DONT_CHANGE_EMOTE_COLOR
 	return
+
+TrainerNettBuilding7F:
+	generictrainer GRUNTM, NETT_GRUNTM_15, EVENT_BEAT_NETT_BUILDING_TRAINER_22, .SeenText, .BeatenText
+
+	text "You have to find"
+	line "a way to get over"
+	cont "there."
+	done
+
+.SeenText:
+	text "The elevator to"
+	line "ELI's office is"
+	cont "on this floor."
+	
+	para "Surely you didn't"
+	line "think getting to"
+	cont "it would be that"
+	cont "easy, though."
+	done
+
+.BeatenText:
+	text "You'll never get"
+	line "to that elevator!"
+	done
 
 NettBuilding7FBarrier:
 	dw EVENT_NETT_BARRIER_DOWN

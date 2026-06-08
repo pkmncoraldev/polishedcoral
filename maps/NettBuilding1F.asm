@@ -30,7 +30,7 @@ NettBuilding1F_MapScriptHeader:
 	person_event SPRITE_CAMPFIRE,  3,  4, SPRITEMOVEDATA_TILE_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, 0, -1
 	person_event SPRITE_CAMPFIRE,  3,  1, SPRITEMOVEDATA_TILE_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, 0, -1
 	person_event SPRITE_ROCKER,  7, 15, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, NettBuilding1F_NPC_1, -1
-	person_event SPRITE_REDS_MOM,  6,  3, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, NettBuilding1F_NPC_2, -1
+	person_event SPRITE_REDS_MOM,  6,  4, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, NettBuilding1F_NPC_2, -1
 	person_event SPRITE_OFFICER,  4, 24, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, NettBuilding1F_NPC_3, -1
 	person_event SPRITE_RECEPTIONIST,  2, 12, SPRITEMOVEDATA_TILE_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, NettBuilding1F_NPC_4, -1
 	person_event SPRITE_TEACHER, 12, 13, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, NettBuilding1F_NPC_5, -1
@@ -39,8 +39,8 @@ NettBuilding1F_MapScriptHeader:
 	person_event SPRITE_INVISIBLE, -5, -5, SPRITEMOVEDATA_NO_RENDER, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, NettBuilding1FLockedElevator, -1
 	person_event SPRITE_SUPER_NERD, 15, 13, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, NettBuilding1F_Mumble, -1
 	person_event SPRITE_BEAUTY, 15, 12, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, NettBuilding1F_Mumble, -1
-	person_event SPRITE_SUPER_NERD,  6, 24, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, NettBuilding1F_Mumble, -1
-	person_event SPRITE_BEAUTY,  6, 25, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, NettBuilding1F_Mumble, -1
+	person_event SPRITE_SUPER_NERD,  6, 22, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, NettBuilding1F_Mumble, -1
+	person_event SPRITE_BEAUTY,  6, 23, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, NettBuilding1F_Mumble, -1
 	person_event SPRITE_SUPER_NERD,  7,  8, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, NettBuilding1F_Mumble, -1
 	person_event SPRITE_BEAUTY,  8,  8, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, NettBuilding1F_Mumble, -1
 
@@ -60,9 +60,12 @@ NettBuilding1F_MapScriptHeader:
 	
 NettBuilding1FCallback:
 	checkevent EVENT_NETT_ELEVATOR_BROKEN
+	iffalse .skip_locked_elevator
+	moveperson  7, 20, 4
+.skip_locked_elevator
+	checkevent EVENT_NETT_OFFICER_MOVED
 	iffalse .end
-	moveperson 7, $c, $4
-	moveperson 12, $d, $3
+	moveperson 12, 19, 3
 .end
 	return
 	
@@ -93,7 +96,7 @@ NettBuilding1F_NPC_2:
 	jumptextfaceplayer NettBuilding1F_NPC_2_Text
 	
 NettBuilding1F_NPC_3:
-	checkevent EVENT_NETT_BUILDING_DUNGEON
+	checkevent EVENT_NETT_ELEVATOR_BROKEN
 	iftrue .elevator_broken
 	jumptextfaceplayer NettBuilding1F_NPC_3_Text1
 .elevator_broken

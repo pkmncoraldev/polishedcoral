@@ -90,7 +90,7 @@ ItemNames::
 	db "COIN CUP@"
 	db "ITEMFINDER@"
 	db "EXP.SHARE@"
-	db "LIBRARY CARD@"
+	db "EMPLOYEE ID@"
 	db "POKE FLUTE@"
 	db "“THE THING”@"
 	db "TORCH@"

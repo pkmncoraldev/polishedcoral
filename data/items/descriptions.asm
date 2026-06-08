@@ -90,7 +90,7 @@ ItemDescriptions:
 	dw CoinCaseDesc
 	dw ItemfinderDesc
 	dw ExpShareDesc
-	dw LibraryCardDesc
+	dw EmployeeIDDesc
 	dw PokeFluteDesc
 	dw TheThingDesc
 	dw TorchDesc
@@ -594,9 +594,9 @@ ExpShareDesc:
 	db   "Shares battle EXP."
 	next "POINTS. (HOLD)@"
 
-LibraryCardDesc:
-	db   "Allows entry to"
-	next "the GLINT GYM.@"
+EmployeeIDDesc:
+	db   "Allows resting at"
+	next "employee lounge.@"
 
 PokeFluteDesc:
 	db   "A flute that"

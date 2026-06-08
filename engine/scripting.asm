@@ -1296,6 +1296,7 @@ Script_teleporter:
 	jp ScriptCall
 	
 TeleporterScript::
+	special Special_StopRunning
 	setevent EVENT_SKIP_MAP_MUSIC
 	playsound SFX_WARP_TO
 	applyonemovement PLAYER, teleport_from
@@ -1526,11 +1527,11 @@ Script_showemote:
 	jr z, .ok
 	ldh [hLastTalked], a
 .ok
+	eventflagcheck EVENT_DONT_CHANGE_EMOTE_COLOR
+	jr nz, .no_color_change
 	ld a, [wPermission]
 	cp INDOOR
 	jp z, .indoor
-	cp 69
-	jp z, .no_color_change
 	call GetScriptByte
 	ld [wScriptDelay], a
 	ld b, BANK(ShowEmoteScript)

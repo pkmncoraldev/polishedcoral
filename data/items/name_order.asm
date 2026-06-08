@@ -108,7 +108,7 @@ ItemNameOrder:
 	db NAM_COIN_CASE    ; 29
 	db NAM_ITEMFINDER   ; 5d
 	db NAM_EXP_SHARE    ; 3d
-	db NAM_LIBRARY_CARD	; 8b
+	db NAM_EMPLOYEE_ID	; 8b
 	db NAM_SQUIRTBOTTLE ; df
 	db NAM_THE_THING    ; cc
 	db NAM_TORCH	    ; bf

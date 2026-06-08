@@ -108,7 +108,7 @@
 	const COIN_CASE    ; 59
 	const ITEMFINDER   ; 5a
 	const EXP_SHARE    ; 5b
-	const LIBRARY_CARD ; 5c
+	const EMPLOYEE_ID  ; 5c
 	const POKE_FLUTE   ; 5d
 	const THE_THING    ; 5e
 	const TORCH		   ; 5f
@@ -433,7 +433,7 @@
 	const NAM_SUNSHINE_TEA ; 88
 	const NAM_MUSCLE_BAND  ; 89
 	const NAM_MUSIC_MAIL   ; 8a
-	const NAM_LIBRARY_CARD ; 8b
+	const NAM_EMPLOYEE_ID  ; 8b
 	const NAM_MYSTIC_WATER ; 8c
 	const NAM_MYSTICTICKET ; 8d
 	const NAM_NEST_BALL    ; 8e

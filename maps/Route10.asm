@@ -123,7 +123,7 @@ Route10Mina:
 	writetext Route10MinaText1
 	yesorno
 	iffalse .no
-	callasm Route10MinaIndoorPermsAsm1
+	setevent EVENT_DONT_CHANGE_EMOTE_COLOR
 	farwritetext StdBlankText
 	pause 6
 	writetext Route10MinaText2
@@ -134,7 +134,7 @@ Route10Mina:
 	wait 5
 	playsound SFX_PAY_DAY
 	showemote EMOTE_SHOCK, 3, 15
-	callasm Route10MinaIndoorPermsAsm2
+	clearevent EVENT_DONT_CHANGE_EMOTE_COLOR
 	faceplayer
 	playmusic MUSIC_MINA
 	opentext TEXTBOX_MINA
@@ -229,16 +229,6 @@ Route10Mina:
 	waitbutton
 	closetext
 	end
-	
-Route10MinaIndoorPermsAsm1:
-	ld a, 69
-	ld [wPermission], a
-	ret
-	
-Route10MinaIndoorPermsAsm2:
-	ld a, 2
-	ld [wPermission], a
-	ret
 	
 Route10MinaText1:
 	text "She's shivering,"

@@ -741,6 +741,7 @@ ENDM
 	map_attributes NettBuilding5F, NETT_BUILDING_5F, 0, 0
 	map_attributes NettBuilding6F, NETT_BUILDING_6F, 0, 0
 	map_attributes NettBuilding7F, NETT_BUILDING_7F, 0, 0
+	map_attributes NettBuildingSpinnerRoom, NETT_BUILDING_SPINNER_ROOM, $57, 0
 	map_attributes NettBuildingTopFloor, NETT_BUILDING_TOP_FLOOR, 0, 0
 	map_attributes NettBuildingElevator, NETT_BUILDING_ELEVATOR, 0, 0
 	map_attributes NettBuildingMBathroom, NETT_BUILDING_M_BATHROOM, 0, 0

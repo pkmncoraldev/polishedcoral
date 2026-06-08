@@ -2274,6 +2274,139 @@ GruntMGroup:
 	db -1 ; end
 
 ; ================
+
+	; NETT_GRUNTM_1
+	db "GRUNT@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; NETT_GRUNTM_2
+	db "GRUNT@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; NETT_GRUNTM_3
+	db "GRUNT@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
+	; NETT_GRUNTM_4
+	db "GRUNT@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+	
+; ================
+
+	; NETT_GRUNTM_5
+	db "GRUNT@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+	
+; ================
+
+	; NETT_GRUNTM_6
+	db "GRUNT@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+	
+; ================
+
+	; NETT_GRUNTM_7
+	db "GRUNT@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+	
+; ================
+
+	; NETT_GRUNTM_8
+	db "GRUNT@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+	
+; ================
+
+	; NETT_GRUNTM_9
+	db "GRUNT@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+	
+; ================
+
+	; NETT_GRUNTM_10
+	db "GRUNT@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+	
+; ================
+
+	; NETT_GRUNTM_11
+	db "GRUNT@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+	
+; ================
+
+	; NETT_GRUNTM_12
+	db "GRUNT@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+	
+; ================
+
+	; NETT_GRUNTM_13
+	db "GRUNT@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+	
+; ================
+
+	; NETT_GRUNTM_14
+	db "GRUNT@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+	
+; ================
+
+	; NETT_GRUNTM_15
+	db "GRUNT@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
 ; ================================
 
 
@@ -2397,6 +2530,60 @@ GruntFGroup:
 	db 47, RATICATE
 	db -1 ; end
 
+
+; ================
+
+	; NETT_GRUNTF_1
+	db "GRUNT@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+	
+; ================
+
+	; NETT_GRUNTF_2
+	db "GRUNT@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+	
+; ================
+
+	; NETT_GRUNTF_3
+	db "GRUNT@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+	
+; ================
+
+	; NETT_GRUNTF_4
+	db "GRUNT@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+	
+; ================
+
+	; NETT_GRUNTF_5
+	db "GRUNT@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+	
+; ================
+
+	; NETT_GRUNTF_6
+	db "GRUNT@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
 ; ================
 ; ================================
 

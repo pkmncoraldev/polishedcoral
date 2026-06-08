@@ -1117,3 +1117,6 @@ NettBuilding6F_BlockData:
 NettBuilding7F_BlockData:
 	INCBIN "maps/NettBuilding7F.ablk.lz"
 	
+NettBuildingSpinnerRoom_BlockData:
+	INCBIN "maps/NettBuildingSpinnerRoom.ablk.lz"
+	

@@ -1,7 +1,8 @@
 NettBuilding6F_MapScriptHeader:
 	db 0 ; scene scripts
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_TILES, NettBuilding2FCallback
 
 	db 2 ; warp events
 	warp_event 21,  0, NETT_BUILDING_5F, 2
@@ -18,9 +19,54 @@ NettBuilding6F_MapScriptHeader:
 	db 1 ; bg events
 	signpost  0, 19, SIGNPOST_JUMPTEXT, NettBuilding6FSignText
 
-	db 1 ; object events
+	db 4 ; object events
 	itemball_event 11,  4, KEY_CARD_R, 1, EVENT_GOT_RED_KEY_CARD
+	person_event SPRITE_SNARE,  8,  3, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 1, TrainerNettBuilding6F_1, -1
+	person_event SPRITE_SNARE_GIRL, 15,  7, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 1, TrainerNettBuilding6F_2, -1
+	person_event SPRITE_SNARE,  1,  9, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 1, TrainerNettBuilding6F_3, -1
 	
+	
+TrainerNettBuilding6F_1:
+	generictrainer GRUNTM, NETT_GRUNTM_12, EVENT_BEAT_NETT_BUILDING_TRAINER_19, .SeenText, .BeatenText
+
+	text "NORMAL TEXT"
+	done
+
+.SeenText:
+	text "SEEN TEXT"
+	done
+
+.BeatenText:
+	text "YOU WIN"
+	done
+	
+TrainerNettBuilding6F_2:
+	generictrainer GRUNTM, NETT_GRUNTM_13, EVENT_BEAT_NETT_BUILDING_TRAINER_20, .SeenText, .BeatenText
+
+	text "NORMAL TEXT"
+	done
+
+.SeenText:
+	text "SEEN TEXT"
+	done
+
+.BeatenText:
+	text "YOU WIN"
+	done
+	
+TrainerNettBuilding6F_3:
+	generictrainer GRUNTM, NETT_GRUNTM_14, EVENT_BEAT_NETT_BUILDING_TRAINER_21, .SeenText, .BeatenText
+
+	text "NORMAL TEXT"
+	done
+
+.SeenText:
+	text "SEEN TEXT"
+	done
+
+.BeatenText:
+	text "YOU WIN"
+	done
 	
 NettBuilding6FTeleporter1:
 	teleporter NETT_BUILDING_5F, 7, 15
@@ -31,7 +77,7 @@ NettBuilding6FTeleporter2:
 	end
 	
 NettBuilding6FTeleporter3:
-	teleporter NETT_BUILDING_3F, 11, 13
+	teleporter NETT_BUILDING_3F, 11, 9
 	end
 	
 NettBuilding6FTeleporter4:

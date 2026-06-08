@@ -745,6 +745,7 @@ LuminaGymPostDragonShrine:
 	setevent EVENT_LUMINA_GYM_CUTSCENE
 	setevent EVENT_NETT_BUILDING_DUNGEON
 	setevent EVENT_NETT_ELEVATOR_BROKEN
+	setevent EVENT_NETT_OFFICER_MOVED
 	end
 	
 LuminaGymPostDragonShrineDarcyText1:

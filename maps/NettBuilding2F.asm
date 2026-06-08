@@ -1,7 +1,8 @@
 NettBuilding2F_MapScriptHeader:
 	db 0 ; scene scripts
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_TILES, NettBuilding2FCallback
 
 	db 2 ; warp events
 	warp_event 21,  2, NETT_BUILDING_1F, 3
@@ -9,19 +10,29 @@ NettBuilding2F_MapScriptHeader:
 
 	db 7 ; coord events
 	coord_event 16,  9, -1, NettBuilding2FTeleporter1
-	coord_event 15, 15, -1, NettBuilding2FTeleporter2
+	coord_event 11, 15, -1, NettBuilding2FTeleporter2
 	coord_event 21, 15, -1, NettBuilding2FTeleporter3
 	coord_event 11,  9, -1, NettBuilding2FTeleporter4
 	coord_event  3,  9, -1, NettBuilding2FTeleporter5
 	coord_event  7, 15, -1, NettBuilding2FTeleporter6
 	coord_event  1, 15, -1, NettBuilding2FTeleporter7
 
-	db 1 ; bg events
+	db 2 ; bg events
 	signpost  2, 19, SIGNPOST_JUMPTEXT, NettBuilding2FSignText
+	signpost  3,  2, SIGNPOST_READ, NettBuilding2FNurse
 
-	db 1 ; object events
-	person_event SPRITE_SNARE_GIRL,  2,  2, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, NettBuilding2FNurse, -1
+	db 6 ; object events
+	person_event SPRITE_BACKPACK,  2,  2, SPRITEMOVEDATA_TILE_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, NettBuilding2FNurse, -1
+	person_event SPRITE_SNARE, 13,  4, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 2, TrainerNettBuilding2F_1, -1
+	person_event SPRITE_SNARE, 11, 15, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 3, TrainerNettBuilding2F_2, -1
+	person_event SPRITE_SNARE, 17, 13, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 3, TrainerNettBuilding2F_3, -1
+	person_event SPRITE_SNARE_GIRL, 13, 19, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 4, TrainerNettBuilding2F_4, -1
+	person_event SPRITE_SNARE,  9,  7, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, NettBuilding2FNPC, -1
 	
+	
+NettBuilding2FCallback:
+	clearevent EVENT_DONT_CHANGE_EMOTE_COLOR
+	return
 	
 NettBuilding2FSignText:
 	text "FLOOR 2"
@@ -47,12 +58,95 @@ NettBuilding7FSignText:
 	text "FLOOR 7"
 	done
 	
+TrainerNettBuilding2F_1:
+	generictrainer GRUNTM, NETT_GRUNTM_1, EVENT_BEAT_NETT_BUILDING_TRAINER_1, .SeenText, .BeatenText
+
+	text "NORMAL TEXT"
+	done
+
+.SeenText:
+	text "SEEN TEXT"
+	done
+
+.BeatenText:
+	text "YOU WIN"
+	done
+	
+TrainerNettBuilding2F_2:
+	generictrainer GRUNTM, NETT_GRUNTM_2, EVENT_BEAT_NETT_BUILDING_TRAINER_2, .SeenText, .BeatenText
+
+	text "NORMAL TEXT"
+	done
+
+.SeenText:
+	text "SEEN TEXT"
+	done
+
+.BeatenText:
+	text "YOU WIN"
+	done
+	
+TrainerNettBuilding2F_3:
+	generictrainer GRUNTM, NETT_GRUNTM_3, EVENT_BEAT_NETT_BUILDING_TRAINER_3, .SeenText, .BeatenText
+
+	text "NORMAL TEXT"
+	done
+
+.SeenText:
+	text "SEEN TEXT"
+	done
+
+.BeatenText:
+	text "YOU WIN"
+	done
+	
+TrainerNettBuilding2F_4:
+	generictrainer GRUNTF, NETT_GRUNTF_1, EVENT_BEAT_NETT_BUILDING_TRAINER_4, .SeenText, .BeatenText
+
+	text "NORMAL TEXT"
+	done
+
+.SeenText:
+	text "SEEN TEXT"
+	done
+
+.BeatenText:
+	text "YOU WIN"
+	done
+	
+NettBuilding2FNPC:
+	jumptextfaceplayer NettBuilding2FNPCText
+	
+NettBuilding2FNPCText:
+	text "I'm in no mood to"
+	line "battle you…"
+	
+	para "I lost my stupid"
+	line "EMPLOYEE ID down"
+	cont "in the warehouse."
+	
+	para "Nursezilla over"
+	line "there won't let me"
+	cont "use the lounge."
+	
+	para "She sees me every"
+	line "single day!"
+	
+	para "Can't she cut me"
+	line "some slack?"
+	done
+	
 NettBuilding2FNurse:
+	setlasttalked 1
 	faceplayer
 	opentext
 	writetext NettBuilding2FNurseText1
 	yesorno
 	iffalse .no_heal
+	checkitem EMPLOYEE_ID
+	iffalse .no_card
+	writetext NettBuilding2FNurseText4
+	waitbutton
 	closetext	
 	special FadeOutPalettesBlack
 	special HealParty
@@ -62,12 +156,22 @@ NettBuilding2FNurse:
 	special RestoreMusic
 	callasm LoadMapPals
 	special FadeInPalettes
-	end
+	opentext
 .no_heal
 	writetext NettBuilding2FNurseText2
-	waitbutton
-	closetext
+.end
+	changeaction 1, PERSON_ACTION_TILE_UP
+	pause 10
+	changeaction 1, PERSON_ACTION_TILE_DOWN
+	pause 10
+	endtext
 	end
+.no_card
+	writetext NettBuilding2FNurseText3
+	buttonsound
+	farwritetext StdBlankText
+	pause 6
+	jump .no_heal
 	
 NettBuilding2FTeleporter1:
 	teleporter NETT_BUILDING_3F, 22, 7
@@ -82,7 +186,7 @@ NettBuilding2FTeleporter3:
 	end
 	
 NettBuilding2FTeleporter4:
-	teleporter NETT_BUILDING_3F, 21, 15
+	teleporter NETT_BUILDING_SPINNER_ROOM, 27, 17
 	end
 	
 NettBuilding2FTeleporter5:
@@ -99,11 +203,38 @@ NettBuilding2FTeleporter7:
 	
 NettBuilding2FNurseText1:
 	text "I used to be a"
-	line "nurse before I"
-	cont "joined TEAM SNARE."
+	line "nurse at the"
+	cont "#MON CENTER,"
+	
+	para "but TEAM SNARE"
+	line "pays better."
+	
+	para "Now I run the"
+	line "employee lounge."
+	
+	para "Show me your"
+	line "EMPLOYEE ID, and"
+	cont "you can rest here."
 	done
 	
 NettBuilding2FNurseText2:
-	text "TEXT 2"
+	text "We hope to see you"
+	line "again."
 	done
 	
+NettBuilding2FNurseText3:
+	text "No EMPLOYEE ID, no"
+	line "employee lounge."
+	done
+	
+NettBuilding2FNurseText4:
+	text "Hmmm…"
+	
+	para "You don't look much"
+	line "like your photo…"
+	
+	para "…<WAIT_M>Oh well!<WAIT_S>"
+	line "An ID's and ID!"
+	
+	para "Enjoy your rest!"
+	done

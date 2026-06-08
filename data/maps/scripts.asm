@@ -323,6 +323,7 @@ INCLUDE "maps/NettBuilding4F.asm"
 INCLUDE "maps/NettBuilding5F.asm"
 INCLUDE "maps/NettBuilding6F.asm"
 INCLUDE "maps/NettBuilding7F.asm"
+INCLUDE "maps/NettBuildingSpinnerRoom.asm"
 
 SECTION "Route 12 Scripts", ROMX
 INCLUDE "maps/Route12.asm"

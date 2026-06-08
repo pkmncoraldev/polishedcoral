@@ -324,5 +324,6 @@ PlumeFossilIcon:   				INCBIN "gfx/items/plume_fossil.2bpp"
 MiracleTonicIcon:  				INCBIN "gfx/items/miracle_tonic.2bpp"
 RockCandyIcon:  				INCBIN "gfx/items/rock_candy.2bpp"
 DragonStoneIcon:  				INCBIN "gfx/items/dragon_stone.2bpp"
+IDCardIcon:  					INCBIN "gfx/items/id_card.2bpp"
 
 ClothesIcon:      				INCBIN "gfx/items/0.2bpp"

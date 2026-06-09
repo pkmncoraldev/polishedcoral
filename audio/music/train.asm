@@ -1,11 +1,7 @@
 Music_Crossroads:
 	musicheader 3, 1, Music_Crossroads_Ch1
-	musicheader 1, 2, Music_Train_Ch2
-	musicheader 1, 3, Music_Train_Ch3
-
-Music_Crossroads_Ch1:
-	tempo $ac
-	loopchannel 0, Music_Crossroads_Ch1_2
+	musicheader 1, 2, Music_Crossroads_Ch2
+	musicheader 1, 3, Music_Crossroads_Ch3
 
 Music_Train:
 	musicheader 4, 1, Music_Train_Ch1
@@ -13,15 +9,25 @@ Music_Train:
 	musicheader 1, 3, Music_Train_Ch3
 	musicheader 1, 4, Music_Train_Ch4
 
+Music_Crossroads_Ch1:
+	tempo $96
+	volume $77
+	stereopanning $77
+	octave 1
+	notetype $C, $00
+	loopchannel 0, Music_Crossroads_Ch1_2
+
 Music_Train_Ch1:
 	tempo $96
-Music_Crossroads_Ch1_2:
 	volume $77
 	stereopanning $77
 	octave 1
 	notetype $C, $00
 	note __, 16
-	note __, 8
+	note __, 2
+Music_Crossroads_Ch1_2:
+	note __, 6
+	notetype $C, $00
 	dutycycle 1
 	intensity $88
 	vibrato $00, $33
@@ -308,6 +314,9 @@ Music_Train_Ch2:
 	notetype $C, $00
 	note __, 16
 	note __, 2
+Music_Crossroads_Ch2:
+	octave 1
+	notetype $C, $00
 	dutycycle 1
 	intensity $88
 	vibrato $00, $33
@@ -557,7 +566,10 @@ Music_Train_Ch2_loop:
 Music_Train_Ch3:
 	notetype $C, $00
 	note __, 16
-	note __, 16
+	note __, 2
+Music_Crossroads_Ch3:
+	notetype $C, $00
+	note __, 14
 	note __, 16
 	note __, 16
 	note __, 16

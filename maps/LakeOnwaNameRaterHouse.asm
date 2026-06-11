@@ -4,8 +4,8 @@ LakeOnwaNameRaterHouse_MapScriptHeader:
 	db 0 ; callbacks
 
 	db 2 ; warp events
-	warp_def 7, 3, 4, LAKE_ONWA
-	warp_def 7, 2, 4, LAKE_ONWA
+	warp_def 6, 3, 4, LAKE_ONWA
+	warp_def 6, 2, 4, LAKE_ONWA
 
 	db 0 ; coord events
 
@@ -14,7 +14,7 @@ LakeOnwaNameRaterHouse_MapScriptHeader:
 	signpost 1, 7, SIGNPOST_READ, LakeNameRaterBookshelf
 
 	db 1 ; object events
-	person_event SPRITE_GENTLEMAN,  4,  2, SPRITEMOVEDATA_STANDING_DOWN, 0, 2, -1, -1, 0, PERSONTYPE_SCRIPT, 0, LakeNameRater, -1
+	person_event SPRITE_GENTLEMAN,  3,  5, SPRITEMOVEDATA_STANDING_DOWN, 0, 2, -1, -1, 0, PERSONTYPE_SCRIPT, 0, LakeNameRater, -1
 
 LakeNameRater:
 	faceplayer

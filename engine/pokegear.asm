@@ -2835,6 +2835,10 @@ _Area: ; 91d11
 	call LoadTownMapGFX
 
 	ld a, [wTownMapPlayerIconLandmark]
+	cp GATE_LANDMARK
+	jr nz, .not_gate
+	ld a, [wPreviousLandmark]
+.not_gate
 	cp ONWA_KEYS_LANDMARK
 	jr nc, .keys
 	cp SOUTH_ONWA_LANDMARK
@@ -3054,6 +3058,10 @@ _Area: ; 91d11
 	call .CheckPlayerLocation
 	ret c
 	ld a, [wTownMapPlayerIconLandmark]
+	cp GATE_LANDMARK
+	jr nz, .not_gate3
+	ld a, [wPreviousLandmark]
+.not_gate3
 	ld e, a
 	farcall GetLandmarkCoords
 	ld c, e
@@ -3108,6 +3116,10 @@ _Area: ; 91d11
 ; not in the same region as what's currently
 ; on the screen.
 	ld a, [wTownMapPlayerIconLandmark]
+	cp GATE_LANDMARK
+	jr nz, .not_gate2
+	ld a, [wPreviousLandmark]
+.not_gate2
 	cp ONWA_KEYS_LANDMARK
 	jr nc, .player_in_keys
 	cp SOUTH_ONWA_LANDMARK

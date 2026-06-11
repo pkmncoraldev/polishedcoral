@@ -1945,56 +1945,62 @@ GetWorldMapLocationNest::
 	push hl
 	push de
 	push bc
-	jr GetWorldMapLocation.skip
+	ld de, 5 ; landmark
+	call GetAnyMapHeaderMember
+	ld a, c
+	jp PopBCDEHL
 
 GetWorldMapLocation:: ; 0x2caf
 ; given a map group/id in bc, return its location on the Pokégear map.
 	push hl
 	push de
 	push bc
-
-	ld a, [wMapGroup]	;Route_11_2 is in it's own mapgroup
-	cp GROUP_ROUTE_11_2
-	jr nz, .skip
-	ld a, [wYCoord]
-	cp $2b
-	jp c, .skip2
-	ld a, ROUTE_11_SOUTH
-	jr .end
 	
-.skip
-	eventflagcheck EVENT_ON_DODRIO_RANCH
-	ld a, DODRIO_RANCH
-	jr nz, .end
-	
-	eventflagcheck EVENT_AT_AIRPORT
-	ld a, AIRPORT
-	jr nz, .end
-	
-	eventflagcheck EVENT_ON_ROUTE_29
-	ld a, ROUTE_29
-	jr nz, .end
-	
-	eventflagcheck EVENT_IN_RESIDENTIAL_DISTRICT
-	ld a, RESIDENTIAL_DISTRICT
-	jr nz, .end
-	
-	eventflagcheck EVENT_IN_SHOPPING_DISTRICT
-	ld a, SHOPPING_DISTRICT
-	jr nz, .end
-	
-	eventflagcheck EVENT_IN_BUSINESS_DISTRICT
-	ld a, BUSINESS_DISTRICT
-	jr nz, .end
-
-.skip2
-	pop bc
-	push bc
 	ld de, 5 ; landmark
 	call GetAnyMapHeaderMember
 	ld a, c
+	push af
 
-.end
+	cp GATE_LANDMARK
+	jr z, .normal
+	ld a, [wMapGroup]	;Route_11_2 is in it's own mapgroup
+	cp GROUP_ROUTE_11_2
+	jr nz, .special_cases
+	ld a, [wYCoord]
+	cp $2b
+	jp c, .normal
+	ld a, ROUTE_11_SOUTH
+	jr .done_special_cases
+	
+.special_cases	
+	eventflagcheck EVENT_ON_DODRIO_RANCH
+	ld a, DODRIO_RANCH
+	jr nz, .done_special_cases
+	
+	eventflagcheck EVENT_AT_AIRPORT
+	ld a, AIRPORT
+	jr nz, .done_special_cases
+	
+	eventflagcheck EVENT_ON_ROUTE_29
+	ld a, ROUTE_29
+	jr nz, .done_special_cases
+	
+	eventflagcheck EVENT_IN_RESIDENTIAL_DISTRICT
+	ld a, RESIDENTIAL_DISTRICT
+	jr nz, .done_special_cases
+	
+	eventflagcheck EVENT_IN_SHOPPING_DISTRICT
+	ld a, SHOPPING_DISTRICT
+	jr nz, .done_special_cases
+	
+	eventflagcheck EVENT_IN_BUSINESS_DISTRICT
+	ld a, BUSINESS_DISTRICT
+	jr nz, .done_special_cases
+.normal
+	pop af
+	jp PopBCDEHL
+.done_special_cases
+	pop bc
 	jp PopBCDEHL
 ; 0x2cbd
 

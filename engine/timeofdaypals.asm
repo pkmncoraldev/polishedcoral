@@ -127,8 +127,8 @@ FadeInPalettesSign::
 	ldh [hWY], a
 	xor a
 	ldh [hLCDCPointer], a
-	call GetMapPermission
-	cp GATE
+	call GetCurrentLandmark
+	cp GATE_LANDMARK
 	jr z, .cont
 	call CheckMovingWithinLandmarkFade
 	jr z, .cont
@@ -140,12 +140,6 @@ FadeInPalettes::
 	jp FadePalettes
 
 FadeOutPalettes::
-;	ld a, [wLandmarkSignTimer]
-;	cp $00
-;	jr z, .cont
-;	ld a, $70
-;	ld [wLandmarkSignTimer], a
-
 	ld c, 10
 	jp FadeToWhite
 	

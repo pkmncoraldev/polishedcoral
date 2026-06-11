@@ -293,8 +293,8 @@ FadeToMapMusic:: ; 3cbc
 	ld a, [wTileset]
 	cp TILESET_PLAYER_ROOM
 	ret z
-	call GetCurrentLandmark
-	cp GATE_LANDMARK
+	call GetMapPermission
+	cp GATE
 	ret z
 	push hl
 	push de

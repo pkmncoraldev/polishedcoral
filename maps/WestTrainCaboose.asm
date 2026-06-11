@@ -120,7 +120,7 @@ WestTrainCabooseTrigger0:
 	writetext WestTrainCaboosePAText4
 	waitsfx
 	setflag ENGINE_PUNKS_ON_TRAIN
-	playmusic MUSIC_SNARE_THEME
+	playnewmapmusic
 	writetext WestTrainCaboosePAText2
 	pause 80
 	buttonsound

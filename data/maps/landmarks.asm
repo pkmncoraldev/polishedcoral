@@ -57,6 +57,7 @@ Landmarks: ; 0x1ca8c3
 	landmark  84,  44, StarglowDepthsName
 	landmark -16, -16, UnkownPassageName
 	landmark  60, 132, ConnectingCavernName
+	landmark -16, -16, TrainName
 	
 	landmark  28,  44, ShimmerName
 	landmark  36,  52, Route19Name
@@ -183,4 +184,5 @@ UnkownPassageName:	   db "UNKNOWN¯PASSAGE@"
 ConnectingCavernName:  db "CONNECTING¯CAVERN@"
 GateName:	 	 	   db "UNKNOWN@"
 DiveName:	 	 	   db "UNDERWATER@"
+TrainName:	 	 	   db "TRAIN¯CARRAGE@"
 SpecialMapName:        db "?","@"

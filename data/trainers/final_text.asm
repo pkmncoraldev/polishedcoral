@@ -164,10 +164,12 @@ FinalTextClassList:
 .FinalText_Kage:
 	dw Kage_SunbeamFinalPkmnText
 	dw Kage_InnFinalPkmnText
+	dw Kage_NettFinalPkmnText
 	
 .FinalText_Locke:
 	dw Locke_TrainFinalPkmnText
 	dw Locke_MuseumFinalPkmnText
+	dw Locke_NettFinalPkmnText
 	
 .FinalText_Frankie:
 	dw Frankie_FinalPkmnText
@@ -322,6 +324,10 @@ Kage_InnFinalPkmnText:
 	cont "you brat!"
 	prompt
 	
+Kage_NettFinalPkmnText:
+	text "HRAAAAAH!!"
+	prompt
+	
 Locke_TrainFinalPkmnText:
 	text "Who do you think"
 	line "you are?"
@@ -337,6 +343,11 @@ Locke_MuseumFinalPkmnText:
 
 	para "Just buying a"
 	line "child some time?"
+	prompt
+	
+Locke_NettFinalPkmnText:
+	text "Just! Go!"
+	line "Down!"
 	prompt
 	
 Frankie_FinalPkmnText:

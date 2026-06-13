@@ -309,7 +309,7 @@ DEF MAP_NONE   EQU 0
 	newgroup													 ; 14
 	
 	map_const NETT_BUILDING_1F,							  13, 10 ; 1
-	map_const NETT_BUILDING_TOP_FLOOR,					   6,  7 ; 2
+	map_const NETT_BUILDING_TOP_FLOOR,					   6,  8 ; 2
 	map_const NETT_BUILDING_ELEVATOR,					   2,  2 ; 3
 	map_const NETT_BUILDING_M_BATHROOM,					   3,  4 ; 4
 	map_const NETT_BUILDING_F_BATHROOM,					   3,  4 ; 5

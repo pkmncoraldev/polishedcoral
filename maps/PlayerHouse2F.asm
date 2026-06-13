@@ -1,4 +1,4 @@
-DEF NUM_DEBUG_QUEST_MENU_OPTIONS EQU 8
+DEF NUM_DEBUG_QUEST_MENU_OPTIONS EQU 9
 
 PlayerHouse2F_MapScriptHeader:
 	db 0 ; scene scripts
@@ -7,7 +7,7 @@ PlayerHouse2F_MapScriptHeader:
 	callback MAPCALLBACK_NEWMAP, PlayerHouse2FInitializeRoom
 	callback MAPCALLBACK_TILES, PlayerHouse2FSetSpawn
 
-	db 24 ; warp events
+	db 25 ; warp events
 	warp_event  9,  0, PLAYER_HOUSE_1F, 3
 	warp_event  5, 10, SUNSET_BAY, 1
 	warp_event  7, 10, DAYBREAK_VILLAGE, 1
@@ -32,11 +32,12 @@ PlayerHouse2F_MapScriptHeader:
 	warp_event 15, 18, UNDERWATER_TEMPLE_2, 9
 	warp_event 17, 18, ROUTE_11_2, 2
 	warp_event 19, 18, LUMINA_TOWN, 1
+	warp_event  5, 22, NETT_BUILDING_TOP_FLOOR, 1
 
 	db 1 ; coord events
 	xy_trigger 0, 10, 17, 0, SunbeamWarp, 0, 0
 
-	db 30 ; bg events
+	db 31 ; bg events
 	bg_event  4,  1, SIGNPOST_UP, PlayerHousePC
 	bg_event  5,  1, SIGNPOST_READ, PlayerHouseRadio
 	bg_event -1, -1, SIGNPOST_READ, PlayerHouseBookshelf
@@ -68,6 +69,7 @@ PlayerHouse2F_MapScriptHeader:
 	bg_event 14, 18, SIGNPOST_JUMPTEXT, PlayerHouseUnderwaterTemple
 	bg_event 16, 18, SIGNPOST_JUMPTEXT, PlayerHouseRoute32
 	bg_event 18, 18, SIGNPOST_JUMPTEXT, PlayerHouseLumina
+	bg_event  4, 22, SIGNPOST_JUMPTEXT, PlayerHouseNett
 
 	db 7 ; object events
 	object_event  6,  2, SPRITE_CONSOLE, SPRITEMOVEDATA_DOLL, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, GameConsole, EVENT_KRISS_HOUSE_2F_CONSOLE
@@ -140,6 +142,7 @@ PlayerHouseDebugPoster:
 	if_equal $6, .ancient_ball
 	if_equal $7, .bridge
 	if_equal $8, .lumina
+	if_equal $9, .nett_building
 	closewindow
 	jump .page2
 .Items
@@ -427,6 +430,16 @@ PlayerHouseDebugPoster:
 	setevent EVENT_LUMINA_TOWN_UNDER_ATTACK
 	domaptrigger LUMINA_GYM, $1
 	jump .return
+.nett_building
+	closewindow
+	writetext PlayerHouseDebug2NettBuildingText
+	waitbutton
+	setevent EVENT_LUMINA_GYM_CUTSCENE
+	setevent EVENT_NETT_BUILDING_DUNGEON
+	setevent EVENT_NETT_ELEVATOR_BROKEN
+	setevent EVENT_NETT_OFFICER_MOVED
+	domaptrigger NETT_BUILDING_TOP_FLOOR, $3
+	jump .return
 .end
 	closetext
 	end
@@ -521,6 +534,11 @@ PlayerHouseDebug2BridgeText:
 PlayerHouseDebug2LuminaText:
 	text "DRAGON SHRINE"
 	line "under attack."
+	done
+	
+PlayerHouseDebug2NettBuildingText:
+	text "NETT BUILDING"
+	line "dungeon."
 	done
 	
 PlayerRoomEventFlagTest:
@@ -1593,6 +1611,11 @@ PlayerHouseLumina:
 	text "LUMINA TOWN"
 	done
 	
+PlayerHouseNett:
+	text "NETT BUILDING"
+	line "TOP FLOOR"
+	done
+	
 PlayerHouse2FInitializeRoom:
 	special ToggleDecorationsVisibility
 	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_8
@@ -1847,6 +1870,7 @@ QuestStrings:
 	dw .AncientBall
 	dw .Route11Bridge
 	dw .LuminaTown
+	dw .NettBuilding
 	dw .Back
 	
 .Mina:				db "ACTIVATE MINA@"
@@ -1857,6 +1881,7 @@ QuestStrings:
 .AncientBall:		db "ANCIENT BALL@"
 .Route11Bridge:		db "ROUTE 11 BRIDGE@"
 .LuminaTown:		db "LUMINA TOWN@"
+.NettBuilding:		db "NETT BUILDING@"
 .Back:				db "BACK@"
 
 PlayerHouseBookshelf:

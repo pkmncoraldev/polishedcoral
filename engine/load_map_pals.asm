@@ -485,7 +485,7 @@ LoadMapPals::
 	
 	
 .nett2
-	eventflagcheck EVENT_NETT_BUILDING_DUNGEON
+	eventflagcheck EVENT_NETT_OFFICE_DARK
 	jr nz, .nett2_dark
 	call .normal
 	ld hl, MapObjectPalsNett2

@@ -120,6 +120,7 @@ DEF CMDQUEUE_STONETABLE EQU 2 ; types 0, 1, 3, and 4 are unused
 	const _11F
 	const _35F
 	const _58F
+	const _99F
 	const _ROOF
 
 ; see engine/overworld.asm:EmotesPointers

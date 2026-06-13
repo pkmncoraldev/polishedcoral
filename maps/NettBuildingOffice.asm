@@ -49,6 +49,8 @@ NettBuildingOfficeCallback:
 	iffalse .skip1
 	changeblock $4, $2, $ae
 .skip1
+	setevent EVENT_NETT_OFFICE_DARK
+	setevent EVENT_NETT_OFFICE_MUSIC_OFF
 	checkevent EVENT_NEWTON_OFF
 	iffalse .skip2
 	changeblock $6, $4, $36

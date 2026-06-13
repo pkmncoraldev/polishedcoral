@@ -19,10 +19,10 @@ NettBuilding2F_MapScriptHeader:
 
 	db 2 ; bg events
 	signpost  2, 19, SIGNPOST_JUMPTEXT, NettBuilding2FSignText
-	signpost  3,  2, SIGNPOST_READ, NettBuilding2FNurse
+	signpost  3,  4, SIGNPOST_READ, NettBuilding2FNurse
 
 	db 6 ; object events
-	person_event SPRITE_BACKPACK,  2,  2, SPRITEMOVEDATA_TILE_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, NettBuilding2FNurse, -1
+	person_event SPRITE_BACKPACK,  2,  4, SPRITEMOVEDATA_TILE_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, NettBuilding2FNurse, -1
 	person_event SPRITE_SNARE, 13,  4, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 2, TrainerNettBuilding2F_1, -1
 	person_event SPRITE_SNARE, 11, 15, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 3, TrainerNettBuilding2F_2, -1
 	person_event SPRITE_SNARE, 17, 13, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 3, TrainerNettBuilding2F_3, -1
@@ -140,6 +140,8 @@ NettBuilding2FNurse:
 	setlasttalked 1
 	faceplayer
 	opentext
+	checkevent EVENT_HEALED_AT_EMPLOYEE_LOUNGE
+	iftrue .healed_before
 	writetext NettBuilding2FNurseText1
 	yesorno
 	iffalse .no_heal
@@ -147,7 +149,17 @@ NettBuilding2FNurse:
 	iffalse .no_card
 	writetext NettBuilding2FNurseText4
 	waitbutton
-	closetext	
+	closetext
+	jump .heal
+.healed_before
+	writetext NettBuilding2FNurseText5
+	yesorno
+	iffalse .no_heal
+	writetext NettBuilding2FNurseText4
+	waitbutton
+	closetext
+.heal
+	setevent EVENT_HEALED_AT_EMPLOYEE_LOUNGE
 	special FadeOutPalettesBlack
 	special HealParty
 	special SaveMusic
@@ -234,7 +246,17 @@ NettBuilding2FNurseText4:
 	line "like your photo…"
 	
 	para "…<WAIT_M>Oh well!<WAIT_S>"
-	line "An ID's and ID!"
+	line "An ID's an ID!"
 	
 	para "Enjoy your rest!"
+	done
+	
+NettBuilding2FNurseText5:
+	text "Show me your"
+	line "EMPLOYEE ID, and"
+	cont "you can rest here."
+	done
+	
+NettBuilding2FNurseText6:
+	text "Enjoy your rest!"
 	done

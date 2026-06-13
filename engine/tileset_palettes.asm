@@ -569,7 +569,7 @@ LoadSpecialMapPalette: ; 494ac
 	ret
 	
 .nett2
-	eventflagcheck EVENT_NETT_BUILDING_DUNGEON
+	eventflagcheck EVENT_NETT_OFFICE_DARK
 	jr nz, .nett2_dark
 	ld hl, Nett2Palette
 	ld de, wUnknBGPals + 4 palettes

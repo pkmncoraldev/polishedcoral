@@ -35,12 +35,12 @@ NettBuildingElevatorButton:
 .Floors:
 	db 2 ; floors
 	elevfloor _1F, 4, NETT_BUILDING_1F
-	elevfloor _9F, 1, NETT_BUILDING_TOP_FLOOR
+	elevfloor _99F, 1, NETT_BUILDING_TOP_FLOOR
 	db -1 ; end
 	
 .Floors2:
 	db 3 ; floors
 	elevfloor _1F, 4, NETT_BUILDING_1F
 	elevfloor _7F, 2, NETT_BUILDING_7F
-	elevfloor _9F, 1, NETT_BUILDING_TOP_FLOOR
+	elevfloor _99F, 1, NETT_BUILDING_TOP_FLOOR
 	db -1 ; end

@@ -261,11 +261,13 @@ DEF PLAYER_F EQU __enum__
 	trainerclass KAGE
 	const SUNBEAM_KAGE
 	const INN_1F_KAGE
+	const NETT_KAGE
 	
 	
 	trainerclass LOCKE
 	const TRAIN_LOCKE
 	const MUSEUM_LOCKE
+	const NETT_LOCKE
 
 	
 	trainerclass POKEFANM

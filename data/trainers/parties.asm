@@ -2619,6 +2619,15 @@ KageGroup:
 	db -1 ; end
 
 ; ================
+
+	; NETT_KAGE
+	db "CAGE@"
+	db TRAINERTYPE_EVS | TRAINERTYPE_DVS | TRAINERTYPE_PERSONALITY | TRAINERTYPE_MOVES
+
+	; party
+	db 1, BULBASAUR, 1, $DD, $8D, $D8, ABILITY_2 | QUIRKY, MALE
+	db -1 ; end
+; ================
 ; ================================
 
 
@@ -2654,6 +2663,15 @@ LockeGroup:
 		db THUNDERPUNCH, BULK_UP, KNOCK_OFF, CROSS_CHOP
 	db -1 ; end
 
+; ================
+
+	; NETT_LOCKE
+	db "LOCKE@"
+	db TRAINERTYPE_EVS | TRAINERTYPE_DVS | TRAINERTYPE_PERSONALITY | TRAINERTYPE_MOVES
+
+	; party
+	db 1, BULBASAUR, 1, $DD, $8D, $D8, ABILITY_2 | QUIRKY, MALE
+	db -1 ; end
 ; ================
 ; ================================
 

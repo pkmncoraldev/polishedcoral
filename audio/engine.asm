@@ -2966,6 +2966,8 @@ INCLUDE "audio/nite_music.asm"
 
 CheckChangeMusic::
 	ld a, [wSlotBias]
+	cp MUSIC_NETT_BUILDING
+	jr z, .nett
 	cp MUSIC_LUMINA
 	jr z, .lumina
 	cp MUSIC_STARGLOW
@@ -2975,11 +2977,11 @@ CheckChangeMusic::
 	cp MUSIC_TRAIN_RIDE
 	jr z, .train
 	cp MUSIC_TV_ROOM
-	jr z, .tvroom
+	jp z, .tvroom
 	cp MUSIC_LUSTER_STATION
-	jr z, .luster_station
+	jp z, .luster_station
 	cp MUSIC_COMMUNITY_CENTER
-	jr z, .community
+	jp z, .community
 	cp MUSIC_BRIGHTBURG
 	jp z, .bright
 	cp MUSIC_BRIGHT_CENTER
@@ -2997,6 +2999,16 @@ CheckChangeMusic::
 	ld [wSlotBias], a
 	ret
 	
+.nett
+	eventflagcheck EVENT_NETT_OFFICE_MUSIC_OFF
+	jr nz, .none
+	eventflagcheck EVENT_NETT_BUILDING_DUNGEON
+	jr nz, .nett_dungeon
+	ld a, MUSIC_LUSTER_CITY
+	jr .done
+.nett_dungeon
+	ld a, MUSIC_SNARE_INVASION	;TODO replace with unique music
+	jr .done
 .lumina
 	ld a, [wLuminaGymTrigger]
 	cp 4
@@ -3068,13 +3080,13 @@ CheckChangeMusic::
 	eventflagcheck EVENT_BRIGHTBURG_REVEALED
 	jr nz, .none
 	ld a, MUSIC_DAYBREAK_VILLAGE
-	jr .done
+	jp .done
 	
 .bright_center
 	eventflagcheck EVENT_BRIGHT_CENTER_MART_EMPTY
 	jr nz, .none
 	ld a, MUSIC_POKEMON_CENTER
-	jr .done
+	jp .done
 	
 .crossroads_outside
 	eventflagcheck EVENT_CROSSROADS_CUTSCENE_DONE

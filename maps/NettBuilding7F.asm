@@ -180,6 +180,7 @@ NettBuilding7FCardReader:
 	callasm GenericFinishBridge
 	earthquake 5
 	setevent EVENT_NETT_BARRIER_DOWN
+	domaptrigger NETT_BUILDING_TOP_FLOOR, $3
 	end
 .opentext_return
 	opentext

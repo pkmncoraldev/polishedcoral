@@ -232,8 +232,11 @@ PlayerHouseDebugPoster:
 	givetmhm TM_WEATHER_BALL
 	givetmhm TM_STEEL_WING
 	givetmhm TM_ROOST
+	givetmhm TM_DARK_PULSE
+	givetmhm TM_ENDURE
 	givetmhm TM_WILL_O_WISP
 	givetmhm TM_ACROBATICS
+	givetmhm TM_STONE_EDGE
 	givetmhm TM_SELFDESTRUCT
 	givetmhm TM_GIGA_IMPACT
 	givetmhm TM_SAND_ATTACK_SMOKESCREEN_FLASH

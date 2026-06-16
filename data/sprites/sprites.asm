@@ -44,12 +44,10 @@ SpriteHeaders:
 	overworld_sprite BoarderSpriteGFX, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite BreederSpriteGFX, WALKING_SPRITE, PAL_OW_GREEN
 	overworld_sprite BugCatcherSpriteGFX, WALKING_SPRITE, PAL_OW_BROWN
-	overworld_sprite BugManiacSpriteGFX, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite BurglarSpriteGFX, WALKING_SPRITE, PAL_OW_PURPLE
 	overworld_sprite CamperSpriteGFX, WALKING_SPRITE, PAL_OW_GREEN
 	overworld_sprite ChildSpriteGFX, WALKING_SPRITE, PAL_OW_BROWN
 	overworld_sprite CoolDudeSpriteGFX, WALKING_SPRITE, PAL_OW_BLUE
-	overworld_sprite CosplayerSpriteGFX, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite CowgirlSpriteGFX, WALKING_SPRITE, PAL_OW_BROWN
 	overworld_sprite CuteGirlSpriteGFX, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite ElderSpriteGFX, WALKING_SPRITE, PAL_OW_GREEN
@@ -68,12 +66,10 @@ SpriteHeaders:
 	overworld_sprite MatronSpriteGFX, WALKING_SPRITE, PAL_OW_BROWN
 	overworld_sprite NurseSpriteGFX, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite OfficerSpriteGFX, WALKING_SPRITE, PAL_OW_BLUE
-	overworld_sprite PharmacistSpriteGFX, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite PicnickerSpriteGFX, WALKING_SPRITE, PAL_OW_GREEN
 	overworld_sprite PokefanMSpriteGFX, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite PokefanFSpriteGFX, WALKING_SPRITE, PAL_OW_PURPLE
 	overworld_sprite PokemaniacSpriteGFX, WALKING_SPRITE, PAL_OW_PURPLE
-	overworld_sprite PsychicSpriteGFX, WALKING_SPRITE, PAL_OW_PURPLE
 	overworld_sprite RockerSpriteGFX, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite SnareSpriteGFX, WALKING_SPRITE, PAL_OW_GREEN
 	overworld_sprite SnareGirlSpriteGFX, WALKING_SPRITE, PAL_OW_GREEN
@@ -223,6 +219,7 @@ SpriteHeaders:
 	overworld_sprite ColbyFallSpriteGFX, BILLBOARD_SPRITE, PAL_OW_BLUE
 	overworld_sprite SnubbullShrinkSpriteGFX, WALKING_SPRITE, PAL_OW_PINK
 	overworld_sprite SpinnerSpriteGFX, STANDING_SPRITE, PAL_OW_SILVER
+	overworld_sprite PunkChickSpriteGFX, WALKING_SPRITE, PAL_OW_PURPLE
 
 SpriteHeadersPlayers:
 	overworld_sprite CorySpriteGFX, WALKING_SPRITE, PAL_OW_RED

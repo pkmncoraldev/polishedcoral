@@ -514,6 +514,15 @@ UpdateClothesDescriptionAndOwnership:
 	hlcoord 0, 0
 	lb bc, 1, 8
 	call ClearBox
+	ld a, [wPlayerPalette]
+	inc a
+	ld e, a
+	ld a, [wMenuSelection]
+	cp e
+	jr nz, UpdateClothesDescription
+	ld de, WearingString
+	hlcoord 0, 0
+	call PlaceString
 UpdateClothesDescription:
 	hlcoord 0, 12
 	lb bc, 4, SCREEN_WIDTH - 2
@@ -592,6 +601,8 @@ SeenMonString:
 	db "SEEN@"
 NewMonString:
 	db "UNSEEN@"
+WearingString:
+	db "WEARING@"
 	
 GetQuantityInBag:
 	ld a, [wCurItem]

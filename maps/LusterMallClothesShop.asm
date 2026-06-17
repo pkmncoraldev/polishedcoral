@@ -38,10 +38,10 @@ LusterMallClothesShopTrigger0:
 	end
 	
 LusterMallClothesShopTrigger1:
-	priorityjump LusterMallClerkAfter
+	priorityjump LusterMallClothesShopClerkAfter
 	end
 	
-LusterMallClerkAfter:
+LusterMallClothesShopClerkAfter:
 	dotrigger $0
 	pause 10
 	applymovement PLAYER, ChangeColorMovement
@@ -50,9 +50,20 @@ LusterMallClerkAfter:
 	closetext
 	waitsfx
 	pause 10
+	callasm LusterMallClothesShopCoordAsm
+	if_equal 2, .up
 	applyonemovement LUSTER_MALL_CLOTHES_SHOP_CLERK, turn_step_down
 	applyonemovement LUSTER_MALL_CLOTHES_SHOP_CLERK, remove_fixed_facing
 	jumptext LusterMallClerkAfterText
+.up
+	applyonemovement LUSTER_MALL_CLOTHES_SHOP_CLERK, turn_step_left
+	applyonemovement LUSTER_MALL_CLOTHES_SHOP_CLERK, remove_fixed_facing
+	jumptext LusterMallClerkAfterText
+
+LusterMallClothesShopCoordAsm:
+	ld a, [wYCoord]
+	ld [wScriptVar], a
+	ret
 
 LusterMallClothesShopChangeColor:
 	ld a, [wPlayerInitialPalette]

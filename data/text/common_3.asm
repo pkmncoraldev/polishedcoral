@@ -510,17 +510,16 @@ UnknownText_0x1c4f3e::
 	done
 
 UnknownText_Mart_Clothes_Intro::
-	text "Welcome to"
-	line "BOUTIQUE COUTOUR…"
-	
-	para "What do you want?"
+	text "What do you want?"
 	done
 	
 UnknownText_Mart_Clothes_ComeAgain::
-	text "You look sooooo"
-	line "good!"
+	text "Come again!<WAIT_M>"
+	line "Or don't."
+	done
 	
-	para "Snicker…"
+ClothesMartHereYouGoText::
+	text "Fine. <WAIT_S>Here."
 	done
 	
 UnknownText_0x1c4f62::
@@ -1412,8 +1411,8 @@ AlreadyHaveTMText::
 	done
 
 AlreadyHaveClothesText::
-	text "You already have"
-	line "that outfit."
+	text "You're already"
+	line "wearing that!"
 	done
 	
 MartPremierBallText::

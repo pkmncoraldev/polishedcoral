@@ -388,11 +388,11 @@ LusterMallBall4:
 	
 ShimmerFishMarket:
 	db 5 ; # items
-	dbw MAGIKARP, 	500
-	dbw CHINCHOU, 	3000
-	dbw HORSEA, 	5000
-	dbw CARVANHA, 	5000
-	dbw STARYU, 	3000
+	dbw BUYMON_MAGIKARP, 	500
+	dbw BUYMON_CHINCHOU, 	3000
+	dbw BUYMON_HORSEA, 	5000
+	dbw BUYMON_CARVANHA, 	5000
+	dbw BUYMON_STARYU, 	3000
 	db -1
 	
 ShimmerBerryMarket:

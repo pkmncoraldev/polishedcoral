@@ -1,5 +1,5 @@
 	tilecoll WALL, WALL, WALL, WALL ; 00
-	tilecoll WALL, WALL, TV, BOOKSHELF ; 01
+	tilecoll WALL, WALL, TV, FLOOR ; 01
 	tilecoll WALL, WALL, WALL, WALL ; 02
 	tilecoll WALL, WALL, FLOOR, FLOOR ; 03
 	tilecoll WALL, WALL, FLOOR, FLOOR ; 04
@@ -32,7 +32,7 @@
 	tilecoll WALL, WALL, WALL, WALL ; 1f
 	tilecoll WALL, WALL, WALL, WALL ; 20
 	tilecoll WALL, WALL, FLOOR, FLOOR ; 21
-	tilecoll WALL, WALL, TV, BOOKSHELF ; 22
+	tilecoll WALL, WALL, TV, FLOOR ; 22
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 23
 	tilecoll FLOOR, WALL, FLOOR, FLOOR ; 24
 	tilecoll FLOOR, WALL, FLOOR, FLOOR ; 25

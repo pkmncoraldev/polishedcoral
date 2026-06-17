@@ -167,4 +167,5 @@ MapTriggers::
 	scene_var AUREOLE_MOUNTAIN_4F,				 	  wAureoleMountainOutside
 	scene_var NETT_BUILDING_TOP_FLOOR,				  wNettBuildingOfficeTrigger
 	scene_var DRAGON_SHRINE_TOP,					  wAlways0Trigger
+	scene_var LUSTER_MALL_CLOTHES_SHOP,				  wAlways0Trigger
 	db -1

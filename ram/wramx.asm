@@ -965,9 +965,6 @@ wNumPCItems:: ds 1
 wPCItems:: ds MAX_PC_ITEMS * 2 + 1
 wPCItemsEnd::
 
-wClothesOwned:: flag_array NUM_CLOTHES
-wClothesOwnedEnd::
-
 wMinaFlags::
 	; 0 - glint grove deep
 	; 1 - route 6
@@ -977,7 +974,7 @@ wMinaFlags::
 	; 5 - route 10
 	ds 1
 
-ds 5
+ds 6
 
 wPokegearFlags::
 ; bit 0: map

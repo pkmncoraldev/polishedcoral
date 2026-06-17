@@ -37,11 +37,8 @@ PlayerHouse2F_MapScriptHeader:
 	db 1 ; coord events
 	xy_trigger 0, 10, 17, 0, SunbeamWarp, 0, 0
 
-	db 31 ; bg events
+	db 28 ; bg events
 	bg_event  4,  1, SIGNPOST_UP, PlayerHousePC
-	bg_event  5,  1, SIGNPOST_READ, PlayerHouseRadio
-	bg_event -1, -1, SIGNPOST_READ, PlayerHouseBookshelf
-	bg_event  7,  1, SIGNPOST_READ, PlayerHouseCloset
 	bg_event  8,  0, SIGNPOST_IFSET, PlayersHousePoster
 ;	powergap
 	bg_event  2, 10, SIGNPOST_READ, PlayerHouseDebugPoster
@@ -78,7 +75,7 @@ PlayerHouse2F_MapScriptHeader:
 	object_event  2,  1, SPRITE_BIG_DOLL, SPRITEMOVEDATA_BIGDOLL, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, BigDoll, EVENT_KRISS_HOUSE_2F_BIG_DOLL
 	object_event -5, -5, SPRITE_MUSEUM_STANDEE, SPRITEMOVEDATA_TILE_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
 	object_event -5, -5, SPRITE_MINA_PAINTING, SPRITEMOVEDATA_TILE_DOWN, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
-	itemball_event  7,  4, TAPE_PLAYER, 1, EVENT_GOT_TAPE_PLAYER
+	itemball_event  5,  1, TAPE_PLAYER, 1, EVENT_GOT_TAPE_PLAYER
 	
 
 	const_def 1 ; object constants
@@ -164,9 +161,10 @@ PlayerHouseDebugPoster:
 	addcellnum PHONE_AUTO
 	setevent EVENT_MOM_GOT_POKEGEAR
 	givecoins 20
+	givemoney $0, 100000
 	setevent EVENT_KNOW_OLLIE
 	setevent EVENT_KNOW_GRIND
-	callasm FillPokedex
+;	callasm FillPokedex
 	special InitRoamMoltres
 	callasm UnlockSongs
 	jump .return
@@ -1624,7 +1622,6 @@ PlayerHouse2FInitializeRoom:
 	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_8
 	checkevent EVENT_INITIALIZED_EVENTS
 	iftrue .SkipInizialization
-	callasm FixPlayerPalKrisHouse
 	callasm SetHuntersThicketBalls
 	addcellnum PHONE_MOM
 	readvar VAR_PLAYER_GENDER
@@ -1887,8 +1884,6 @@ QuestStrings:
 .NettBuilding:		db "NETT BUILDING@"
 .Back:				db "BACK@"
 
-PlayerHouseBookshelf:
-	jumpstd picturebookshelf
 	
 GameConsole:
 	opentext
@@ -1941,10 +1936,6 @@ GameConsoleRestoreMapMusic:
 GameConsoleMusic:
 	ld [wMapMusic], a
 	ret
-	
-PlayerHouseRadio:
-	jumpstd radio1
-	end
 
 PlayerHousePC:
 ;	jumptext PlayerHousePCText
@@ -1955,86 +1946,6 @@ PlayerHousePC:
 .Warp:
 	warp NONE, 0, 0
 	end
-
-PlayerHouseCloset:
-	opentext
-	readvar VAR_PLAYER_GENDER
-	if_equal PIPPI, .pippi
-	writetext ChangeColorQuestionText
-	yesorno
-	iffalse .end
-	writetext ChangeColorText
-	waitbutton
-	refreshscreen $0
-	loadmenu .PlayerHouseChangeColorMenuData
-	verticalmenu
-	closewindow
-	iffalse .end
-	pause 10
-	applymovement PLAYER, ChangeColorMovement1
-	playsound SFX_TWINKLE
-	callasm SetPlayerPalKrisHouse
-	opentext
-	writetext ChangeColorText2
-	waitbutton
-	closetext
-	end
-.pippi
-	writetext PlayerHouseClosetPippiText
-	waitbutton
-.end
-	closetext
-	end
-
-.PlayerHouseChangeColorMenuData: ; 0x48dfc
-	db $40 ; flags
-	db 00, 05 ; start coords
-	db 16, 15 ; end coords
-	dw .MenuData2PalKrisHouse
-	db 1 ; default option
-; 0x48e04
-
-.MenuData2PalKrisHouse: ; 0x48e04
-	db $80 ; flags
-	db 7 ; items
-	db "RED@"
-	db "BLUE@"
-	db "GREEN@"
-	db "BROWN@"
-	db "PURPLE@"
-	db "TEAL@"
-	db "PINK@"
-
-ChangeColorMovement1:
-	turn_head_right
-	turn_head_down
-	turn_head_left
-	turn_head_up
-	turn_head_right
-	turn_head_down
-	turn_head_left
-	turn_head_up
-	turn_head_right
-	step_sleep 1
-	turn_head_down
-	step_sleep 1
-	turn_head_left
-	step_sleep 1
-	turn_head_up
-	step_sleep 1
-	turn_head_right
-	step_sleep 2
-	turn_head_down
-	step_sleep 2
-	turn_head_left
-	step_sleep 2
-	turn_head_up
-	step_sleep 3
-	turn_head_right
-	step_sleep 6
-	turn_head_down
-	step_sleep 12
-	step_end
 	
 SunbeamWarp:
 	domaptrigger SUNBEAM_ISLAND, $0
@@ -2078,47 +1989,6 @@ GameConsoleText_AskTurnOffKirby:
 	
 	para "Turn off the SNES?"
 	done
-	
-ChangeColorText:
-	text "Select your"
-	line "favorite color."
-	done
-	
-ChangeColorText2:
-	text "Lookin' good!"
-	done
-	
-ChangeColorQuestionText:
-	text "Change your"
-	line "clothes?"
-	done
-	
-PlayerHouseClosetPippiText:
-	text "Don't be silly!"
-	
-	para "You aren't wearing"
-	line "any clothes!"
-	done
-	
-KrisRadioText1:
-	text "PROF.OAK'S #MON"
-	line "TALK! Please tune"
-	cont "in next time!"
-	done
-
-KrisRadioText2:
-	text "#MON CHANNEL!"
-	done
-
-KrisRadioText3:
-	text "This is DJ MARY,"
-	line "your co-host!"
-	done
-
-KrisRadioText4:
-	text "#MON!"
-	line "#MON CHANNEL…"
-	done
 
 PlayerHousePCText:
 	text "Your PC."
@@ -2128,12 +1998,6 @@ PlayerHousePCText:
 	cont "you picked out"
 	cont "yourself!"
 	done
-
-FixPlayerPalKrisHouse:
-	ld a, [wPlayerPalette]
-	inc a
-	call ReceiveStartingClothes
-	ret
 	
 SetHuntersThicketBalls:
 	ld a, 5
@@ -2141,10 +2005,3 @@ SetHuntersThicketBalls:
 	inc a
 	ld [wHuntersDisguise], a
 	ret
-	
-SetPlayerPalKrisHouse:
-	ld a, [wMenuCursorY] ; 1 - 8
-	sub $1
-	ld [wPlayerPalette], a
-	ld [wPlayerInitialPalette], a
-	jp ReplaceKrisSprite

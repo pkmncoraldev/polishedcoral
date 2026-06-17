@@ -319,3 +319,12 @@ DEF SECOND_BATTLE EQU 2
 	const UNOWN_QUESTION_FORM
 DEF NUM_UNOWN EQU const_value +- 1
 
+
+; buy mons
+	const_def
+	const BUYMON_NONE
+	const BUYMON_HORSEA
+	const BUYMON_STARYU
+	const BUYMON_MAGIKARP
+	const BUYMON_CHINCHOU
+	const BUYMON_CARVANHA

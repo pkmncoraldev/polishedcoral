@@ -139,8 +139,17 @@ ClothesShop: ; 15a6e
 	ld hl, Text_Mart_Clothes_Intro
 	call MartTextBox
 	call BuyClothesMenu
+	ld a, [wPlayerInitialPalette]
+	ld e, a
+	ld a, [wPlayerPalette]
+	cp e
+	jr nz, .change
 	ld hl, Text_Mart_Clothes_ComeAgain
 	jp MartTextBox
+.change
+	ld a, 1
+	ld [wAlways0Trigger], a
+	ret
 
 DecoShop: ; 15a6e
 	call FarReadTMMart
@@ -714,6 +723,31 @@ BuyClothesMenu:
 .loop
 	call BuyClothesMenuLoop ; menu loop
 	jr nc, .loop
+	ld a, [wPlayerInitialPalette]
+	ld e, a
+	ld a, [wPlayerPalette]
+	cp e
+	jr z, .change
+	push af
+	ld a, $1
+	ld [wSpriteUpdatesEnabled], a
+	call ClearBGPalettes
+	call ClearSprites
+	call ReloadTilesetAndPalettes
+	ld hl, wVramState
+	set 0, [hl]
+	call UpdateSprites
+	call ApplyAttrAndTilemapInVBlank
+	ld b, CGB_MAPPALS
+	call GetCGBLayout
+	farcall LoadBlindingFlashPalette
+	call UpdateTimePals
+	call DelayFrame
+	ld a, $1
+	ldh [hMapAnims], a
+	pop af
+	ret
+.change
 	jr BuyMenu_Finish
 
 BuyDecoMenu:
@@ -735,28 +769,28 @@ BlueCardBuyMenu:
 .loop
 	call BlueCardBuyMenuLoop ; menu loop
 	jr nc, .loop
-	jr BuyMenu_Finish
+	jp BuyMenu_Finish
 
 BTBuyMenu:
 	call BuyMenu_InitGFX
 .loop
 	call BTBuyMenuLoop ; menu loop
 	jr nc, .loop
-	jr BuyMenu_Finish
+	jp BuyMenu_Finish
 
 BuyMenuCoins: ; 15c62
 	call BuyMenu_InitGFX
 .loop
 	call BuyMenuCoinsLoop ; menu loop
 	jr nc, .loop
-	jr BuyMenu_Finish
+	jp BuyMenu_Finish
 	
 BuyMenuPollen:
 	call BuyMenu_InitGFX
 .loop
 	call BuyMenuPollenLoop ; menu loop
 	jr nc, .loop
-	jr BuyMenu_Finish
+	jp BuyMenu_Finish
 
 BuyMenu_InitGFX::
 	xor a
@@ -1007,7 +1041,7 @@ GetMartDialogGroup: ; 15ca3
 	dw Text_ClothesMart_CostsThisMuch
 	dw Text_Mart_InsufficientFunds
 	dw Text_Mart_BagFull
-	dw Text_Mart_HereYouGo
+	dw Text_ClothesMart_HereYouGo
 	dw BuyClothesMenuLoop
 	
 .DecoMartPointers:
@@ -1396,7 +1430,7 @@ BuyClothesMenuLoop:
 	lb bc, PRINTNUM_MONEY | 3, 7
 	call PrintNum
 	call UpdateSprites
-;	farcall Pack_Draw_Sprites
+	farcall Pack_Draw_Sprites
 	ld hl, ClothesMenuDataHeader_Buy
 	call CopyMenuDataHeader
 	call DoMartScrollingMenu
@@ -1412,7 +1446,9 @@ BuyClothesMenuLoop:
 	ld bc, hMoneyTemp
 	farcall CompareMoney
 	jp c, MartMenuLoop_InsufficientFunds
-	call ReceiveClothes
+	ld a, [wCurItem]
+	dec a
+	ld [wPlayerInitialPalette], a
 	ld de, wMoney
 	ld bc, hMoneyTemp
 	farcall TakeMoney
@@ -1427,6 +1463,7 @@ BuyClothesMenuLoop:
 	lb bc, PRINTNUM_MONEY | 3, 7
 	call PrintNum
 	call JoyWaitAorB
+	jp MartMenuLoop_SetCarry
 .cancel
 	call SpeechTextBox
 	and a
@@ -1489,9 +1526,9 @@ BuyPokemonMenuLoop: ; 15cef
 	cp B_BUTTON
 	jp z, MartMenuLoop_SetCarry
 	call ClothesMartAskPurchaseQuantity
-	jr c, .cancel
+	jp c, .cancel
 	call ClothesMartConfirmPurchase
-	jr c, .cancel
+	jp c, .cancel
 	ld de, wMoney
 	ld bc, hMoneyTemp
 	farcall CompareMoney
@@ -1520,6 +1557,13 @@ BuyPokemonMenuLoop: ; 15cef
 	ld [wPlaceBallsX], a
 	
 	ld a, [wCurItem]
+	dec a
+	ld hl, BuyMons
+	ld e, a
+	xor a
+	ld d, a
+	add hl, de
+	ld a, [hl]
 	ld [wCurPartySpecies], a
 	ld a, 5
 	ld [wCurPartyLevel], a
@@ -1726,8 +1770,11 @@ TMMartAskPurchaseQuantity:
 	
 ClothesMartAskPurchaseQuantity:
 	ld a, [wCurTMHM]
-	call CheckClothes
-	jr c, .AlreadyHaveClothes
+	dec a
+	ld e, a
+	ld a, [wPlayerPalette]
+	cp e
+	jr z, .AlreadyHaveClothes
 
 	ld a, 1
 	ld [wItemQuantityChangeBuffer], a
@@ -2360,6 +2407,10 @@ Text_TMMart_CostsThisMuch:
 Text_ClothesMart_CostsThisMuch:
 	; That will be ¥@ .
 	text_jump ClothesMartCostsThisMuchText
+	db "@"
+	
+Text_ClothesMart_HereYouGo:
+	text_jump ClothesMartHereYouGoText
 	db "@"
 
 Text_BlueCardMart_HowMayIHelpYou: ; 0x8b072

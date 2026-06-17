@@ -1,5 +1,7 @@
 LusterMallClothesShop_MapScriptHeader:
-	db 0 ; scene scripts
+	db 2 ; scene scripts
+	scene_script LusterMallClothesShopTrigger0
+	scene_script LusterMallClothesShopTrigger1
 
 	db 0 ; callbacks
 
@@ -31,6 +33,69 @@ LusterMallClothesShop_MapScriptHeader:
 	const LUSTER_MALL_CLOTHES_SHOP_NPC_2
 	const LUSTER_MALL_CLOTHES_SHOP_POLLY
 	
+	
+LusterMallClothesShopTrigger0:
+	end
+	
+LusterMallClothesShopTrigger1:
+	priorityjump LusterMallClerkAfter
+	end
+	
+LusterMallClerkAfter:
+	dotrigger $0
+	pause 10
+	applymovement PLAYER, ChangeColorMovement
+	playsound SFX_TWINKLE
+	callasm LusterMallClothesShopChangeColor
+	closetext
+	waitsfx
+	pause 10
+	applyonemovement LUSTER_MALL_CLOTHES_SHOP_CLERK, turn_step_down
+	applyonemovement LUSTER_MALL_CLOTHES_SHOP_CLERK, remove_fixed_facing
+	jumptext LusterMallClerkAfterText
+
+LusterMallClothesShopChangeColor:
+	ld a, [wPlayerInitialPalette]
+	ld [wPlayerPalette], a
+	jp ReplaceKrisSprite
+	
+LusterMallClerkAfterText:
+	text "You look sooooo"
+	line "good!"
+	
+	para "Snicker…"
+	done
+	
+ChangeColorMovement:
+	turn_head_right
+	turn_head_down
+	turn_head_left
+	turn_head_up
+	turn_head_right
+	turn_head_down
+	turn_head_left
+	turn_head_up
+	turn_head_right
+	step_sleep 1
+	turn_head_down
+	step_sleep 1
+	turn_head_left
+	step_sleep 1
+	turn_head_up
+	step_sleep 1
+	turn_head_right
+	step_sleep 2
+	turn_head_down
+	step_sleep 2
+	turn_head_left
+	step_sleep 2
+	turn_head_up
+	step_sleep 3
+	turn_head_right
+	step_sleep 6
+	turn_head_down
+	step_sleep 12
+	step_end
 	
 LusterMallClothesShopPolly:
 	setevent EVENT_MET_POLLY

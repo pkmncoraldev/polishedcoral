@@ -7,12 +7,12 @@ UpdateTMHMIconAndDescriptionAndOwnership::
 	
 UpdateClothesIconAndDescriptionAndOwnership::
 	farcall UpdateClothesDescriptionAndOwnership
-	call LoadClothesIcons
+;	farcall GetItemIconTiles
 	jp SetPalettes
 	
 UpdateDecoIconAndDescriptionAndOwnership::
 	farcall UpdateDecoDescriptionAndOwnership
-	call LoadClothesIcons
+;	farcall GetItemIconTiles
 	jp SetPalettes
 
 UpdateMonIconAndDescriptionAndOwnership::
@@ -24,71 +24,7 @@ UpdateItemIconAndDescriptionAndBagQuantity::
 UpdateItemIcon::
 	ret
 
-LoadBuyMonIcon::
-	ld a, [wMenuSelection]
-	cp a, -1
-	jr z, .clear
-	ld de, PokeBallIcon
-	lb bc, BANK(PokeBallIcon), 4
-	ld a, 1
-	ld [wCurSpecies], a
-	ld a, [wPlaceBallsX]
-	cp 0
-	jr z, .first
-	cp 1
-	jr z, .second
-	cp 2
-	jr z, .third
-	cp 3
-	jr z, .forth
-	jr .fifth
-.first
-	ld hl, VTiles0 tile $68
-	jr .finish
-.second
-	ld hl, VTiles0 tile $6c
-	jr .finish
-.third
-	ld hl, VTiles0 tile $70
-	jr .finish
-.forth
-	ld hl, VTiles0 tile $74
-.finish
-	call Get2bpp
-	farcall LoadItemIconPalette
-	ld a, [wPlaceBallsX]
-	inc a
-	ld [wPlaceBallsX], a
-	ret
-.fifth
-	ld hl, VTiles0 tile $78
-	call Get2bpp
-	farcall LoadItemIconPalette
-	xor a
-	ld [wPlaceBallsX], a
-	ret
-.clear
-	ld de, NoItemIcon
-	lb bc, BANK(NoItemIcon), 4
-	ld hl, VTiles0 tile $78
-	jp Get2bpp
-	
-LoadClothesIcons::
-	ld hl, VTiles0 tile $68
-	call LoadClothesIcon
-	ld hl, VTiles0 tile $6c
-	call LoadClothesIcon
-	ld hl, VTiles0 tile $70
-	call LoadClothesIcon
-	ld hl, VTiles0 tile $74
-	call LoadClothesIcon
-	ld hl, VTiles0 tile $78
-	jp LoadClothesIcon
-	
-LoadClothesIcon:
-	ld de, ClothesIcon
-	lb bc, BANK(ClothesIcon), 4
-	jp Get2bpp
+
 
 
 SECTION "Item Icons 1", ROMX
@@ -325,5 +261,9 @@ MiracleTonicIcon:  				INCBIN "gfx/items/miracle_tonic.2bpp"
 RockCandyIcon:  				INCBIN "gfx/items/rock_candy.2bpp"
 DragonStoneIcon:  				INCBIN "gfx/items/dragon_stone.2bpp"
 IDCardIcon:  					INCBIN "gfx/items/id_card.2bpp"
-
-ClothesIcon:      				INCBIN "gfx/items/0.2bpp"
+ClothesIcon:        			INCBIN "gfx/items/pearl.2bpp"
+HorseaBuyMonIcon:     			INCBIN "gfx/icons/horsea.2bpp"
+StaryuBuyMonIcon:     			INCBIN "gfx/icons/staryu.2bpp"
+MagikarpBuyMonIcon:     		INCBIN "gfx/icons/magikarp.2bpp"
+ChinchouBuyMonIcon:     		INCBIN "gfx/icons/chinchou.2bpp"
+CarvanhaBuyMonIcon:     		INCBIN "gfx/icons/carvanha.2bpp"

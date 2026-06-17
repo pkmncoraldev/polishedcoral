@@ -1857,7 +1857,7 @@ Script_ptcall:
 	ld d, [hl]
 	; fallthrough
 
-ScriptCall:
+ScriptCall::
 ; Bug: The script stack has a capacity of 5 scripts, yet there is
 ; nothing to stop you from pushing a sixth script.  The high part
 ; of the script address can then be overwritten by modifications

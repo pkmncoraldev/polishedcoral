@@ -472,10 +472,24 @@ UpdateMonDescription:
 	jr z, UpdateMonDescription2
 	ld a, [wCurItem]
 	dec a
+	ld hl, BuyMons
+	ld e, a
+	xor a
+	ld d, a
+	add hl, de
+	ld a, [hl]
+	dec a
 	call CheckCaughtMon
 	ld de, OwnedTMString
 	jr nz, .GotString
 	ld a, [wCurItem]
+	dec a
+	ld hl, BuyMons
+	ld e, a
+	xor a
+	ld d, a
+	add hl, de
+	ld a, [hl]
 	dec a
 	call CheckSeenMon
 	ld de, SeenMonString
@@ -500,20 +514,7 @@ UpdateClothesDescriptionAndOwnership:
 	hlcoord 0, 0
 	lb bc, 1, 8
 	call ClearBox
-	ld a, [wMenuSelection]
-	cp -1
-	jr z, UpdateClothesDescription
-	ld a, [wCurTMHM]
-	call CheckClothes
-	ld de, OwnedTMString
-	jr c, .GotString
-	ld de, UnownedTMString
-.GotString
-	hlcoord 0, 0
-	call PlaceString
 UpdateClothesDescription:
-	ld a, [wMenuSelection]
-	ld [wCurSpecies], a
 	hlcoord 0, 12
 	lb bc, 4, SCREEN_WIDTH - 2
 	call TextBox
@@ -591,7 +592,7 @@ SeenMonString:
 	db "SEEN@"
 NewMonString:
 	db "UNSEEN@"
-
+	
 GetQuantityInBag:
 	ld a, [wCurItem]
 	push af
@@ -661,9 +662,18 @@ GetItemIconTiles::
 	ld a, [wCurSpecies]
 	cp a, -1
 	jr z, .clear
+	ld a, [wEngineBuffer1]
+	cp MARTTYPE_CLOTHES
+	ld hl, ClothesIconPointers
+	jr z, .got_pointers
+	cp MARTTYPE_FISH_MARKET
+	ld hl, BuyMonIconPointers
+	jr z, .got_pointers
+	ld hl, ItemIconPointers
+.got_pointers
+	ld a, [wCurSpecies]
 	ld e, a
 	ld d, 0
-	ld hl, ItemIconPointers
 	add hl, de
 	add hl, de
 	add hl, de
@@ -778,12 +788,14 @@ PlaceMenuTMHMName:
 PlaceMartClothesName:
 	push de
 	ld a, [wMenuSelection]
+	ld [wCurSpecies], a
 	cp a, -1 ; special case for Cancel in Key Items pocket
 	ld de, ScrollingMenu_CancelString ; found in scrolling_menu.asm
 	ld [wNamedObjectIndexBuffer], a
 	call nz, GetClothesName
 	pop hl
-	jp PlaceString
+	call PlaceString
+	farjp GetItemIconTiles
 	
 PlaceMartDecoName:
 	push de
@@ -798,13 +810,22 @@ PlaceMartDecoName:
 PlaceMartPokemonName:
 	push de
 	ld a, [wMenuSelection]
-	cp a, -1 ; special case for Cancel in Key Items pocket
+	ld [wCurSpecies], a
+	dec a
+	ld hl, BuyMons
+	ld e, a
+	xor a
+	ld d, a
+	add hl, de
 	ld de, ScrollingMenu_CancelString ; found in scrolling_menu.asm
+	ld a, [hl]
 	ld [wNamedObjectIndexBuffer], a
+	ld a, [wMenuSelection]
+	cp a, -1 ; special case for Cancel in Key Items pocket
 	call nz, GetPokemonName
 	pop hl
 	call PlaceString
-	farjp LoadBuyMonIcon
+	farjp GetItemIconTiles
 
 PlaceMenuItemQuantity: ; 0x24ac3
 	push de
@@ -4861,7 +4882,7 @@ PrintClothesDescription:
 ; Print the description for Clothes [wCurSpecies] at de.
 
 	ld hl, ClothesDescriptions
-	ld a, [wCurSpecies]
+	ld a, [wMenuSelection]
 	dec a
 	ld c, a
 	ld b, 0
@@ -4879,7 +4900,7 @@ PrintMonDescription: ; 0x1c8955
 
 	ld hl, BuyMonDescriptions
 	ld a, [wCurSpecies]
-	dec a
+;	dec a
 	ld c, a
 	ld b, 0
 	add hl, bc

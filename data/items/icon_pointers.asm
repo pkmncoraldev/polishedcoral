@@ -255,3 +255,22 @@ ItemIconPointers:
 	dba NoItemIcon
 	dba NoItemIcon
 	dba NoItemIcon
+	dba NoItemIcon
+	
+ClothesIconPointers:
+	dba NoItemIcon
+	dba ClothesIcon
+	dba ClothesIcon
+	dba ClothesIcon
+	dba ClothesIcon
+	dba ClothesIcon
+	dba ClothesIcon
+	dba ClothesIcon
+	
+BuyMonIconPointers:
+	dba NoItemIcon
+	dba HorseaBuyMonIcon
+	dba StaryuBuyMonIcon
+	dba MagikarpBuyMonIcon
+	dba ChinchouBuyMonIcon
+	dba CarvanhaBuyMonIcon

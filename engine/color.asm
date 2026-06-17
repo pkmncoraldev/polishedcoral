@@ -140,10 +140,17 @@ LoadCategoryAndTypePals:
 	ld a, $5
 	jp FarCopyWRAM
 	
-	
 LoadItemIconPalette:
-	ld a, [wCurSpecies]
+	ld a, [wEngineBuffer1]
+	cp MARTTYPE_CLOTHES
+	ld bc, ClothesIconPalettes
+	jr z, .got_pals
+	cp MARTTYPE_FISH_MARKET
+	ld bc, BuyMonIconPalettes
+	jr z, .got_pals
 	ld bc, ItemIconPalettes
+.got_pals
+	ld a, [wCurSpecies]
 	ld l, a
 	ld h, 0
 	add hl, hl
@@ -179,23 +186,6 @@ LoadItemIconPalette:
 .fifth
 	ld de, wUnknOBPals palette 4 + 2
 .cont
-	ld bc, 4
-	ld a, $5
-	call FarCopyWRAM
-	ld hl, BlackPalette
-	ld bc, 2
-	ld a, $5
-	jp FarCopyWRAM
-	
-LoadClothesIconPalette:
-	ld a, [wCurSpecies]
-	ld bc, ClothesIconPalettes
-	ld l, a
-	ld h, 0
-	add hl, hl
-	add hl, hl
-	add hl, bc
-	ld de, wUnknBGPals palette 7 + 2
 	ld bc, 4
 	ld a, $5
 	call FarCopyWRAM

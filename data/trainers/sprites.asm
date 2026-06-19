@@ -92,9 +92,10 @@ BTTrainerClassSprites:
 	db SPRITE_PIGTAILS	    ; Clover
 	db SPRITE_ERIKA			; Erika
 	db SPRITE_MINA			; Mina
-	db SPRITE_LEDIAN_RANGER_MASK	; LEDIAN_RANGER
+	db SPRITE_LEDIAN_RANGER_MASK	; LedianRanger
 	db SPRITE_SPA_WORKER	; PoliceCaptain
 	db SPRITE_RECEPTIONIST	; MuseumGuide
 	db SPRITE_RECEPTIONIST	; MuseumGuide2
 	db SPRITE_SUPER_NERD	; Businessman
-	db SPRITE_GOLD_NPC      ; TOWERTYCOON
+	db SPRITE_GOLD_NPC      ; SnareBoss
+	db SPRITE_GOLD_NPC      ; TowerTycoon

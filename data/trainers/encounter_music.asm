@@ -76,7 +76,7 @@ TrainerEncounterMusic: ; e9027
 	db MUSIC_POKEMANIAC_ENCOUNTER	; bunearym
 	db MUSIC_POKEMANIAC_ENCOUNTER	; bunearyf
 	db MUSIC_NONE					; frankie
-	db MUSIC_NONE					; mall cop
+	db MUSIC_NONE					; mallcop
 	db MUSIC_HARDCORE_ENCOUNTER		; skater
 	db MUSIC_HIKER_ENCOUNTER		; spatrainer
 	db MUSIC_LASS_ENCOUNTER			; spatrainerf
@@ -98,4 +98,5 @@ TrainerEncounterMusic: ; e9027
 	db MUSIC_NONE					; museumguide
 	db MUSIC_NONE					; museumguide2
 	db MUSIC_HIKER_ENCOUNTER		; businessman
+	db MUSIC_NONE			 		; snareboss
 	db MUSIC_NONE			 		; towertycoon

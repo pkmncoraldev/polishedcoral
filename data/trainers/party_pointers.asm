@@ -99,4 +99,5 @@ TrainerGroups: ; 0x39999
 	dba MuseumGuideGroup
 	dba MuseumGuide2Group
 	dba BusinessmanGroup
+	dba SnareBossGroup
 	dba TowerTycoonGroup

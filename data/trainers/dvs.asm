@@ -128,6 +128,7 @@ TrainerClassDVsAndPersonality: ; 270d6
 	db  24, $88, $88, $88, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM   ; museumguide
 	db  24, $88, $88, $88, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM   ; museumguide2
 	db  48, $88, $88, $88, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; businessman
+	db 252, PERFECT_DVS,   ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; snareboss
 	db 252, PERFECT_DVS,   ABILITY_1 | QUIRKY, MALE | PLAIN_FORM   ; towertycoon
 
 ; 2715c

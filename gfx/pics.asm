@@ -755,6 +755,7 @@ SwimmerfPic:              INCBIN "gfx/trainers/swimmer_f.2bpp.lz"
 BurglarPic:               INCBIN "gfx/trainers/burglar.2bpp.lz"
 ScientistPic:			  INCBIN "gfx/trainers/scientist.2bpp.lz"
 BoarderPic:               INCBIN "gfx/trainers/boarder.2bpp.lz"
+SnareBossPic:             INCBIN "gfx/trainers/snare_boss.2bpp.lz"
 
 
 SECTION "Trainer Pics 4", ROMX

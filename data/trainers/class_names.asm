@@ -97,5 +97,6 @@ TrainerClassNames::
 	db "MUSEUM@"		   ; MUSEUM_GUIDE
 	db "MUSEUM@"		   ; MUSEUM_GUIDE_2
 	db "OFFICE@"	 	   ; BUSINESSMAN
+	db "SNARE BOSS@"	   ; SNARE_BOSS
 	db "TYCOON@"		   ; TOWERTYCOON
 	

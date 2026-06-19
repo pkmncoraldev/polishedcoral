@@ -5876,6 +5876,19 @@ BusinessmanGroup:
 ; ================
 ; ================================
 
+SnareBossGroup:
+; ================================
+; ================
+
+; SNARE_BOSS
+	db "ELI@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+
 TowerTycoonGroup:
 ; ================================
 ; ================

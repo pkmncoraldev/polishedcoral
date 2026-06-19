@@ -100,6 +100,7 @@ PoliceCaptainPalette:	 INCLUDE "gfx/trainers/police_captain.pal"
 MuseuemGuidePalette:	 INCLUDE "gfx/trainers/museum_guide_blue.pal"
 MuseuemGuide2Palette:	 INCLUDE "gfx/trainers/museum_guide_red.pal"
 BusinessmanPalette:	 	 INCLUDE "gfx/trainers/businessman.pal"
+SnareBossPalette:	 	 INCLUDE "gfx/trainers/snare_boss.pal"
 TowerTycoonPalette:
 
 

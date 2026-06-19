@@ -674,6 +674,8 @@ DEF PLAYER_F EQU __enum__
 	trainerclass MUSEUM_GUIDE_2
 	
 	trainerclass BUSINESSMAN
+	
+	trainerclass SNARE_BOSS
 
 	trainerclass TOWERTYCOON ; 1
 

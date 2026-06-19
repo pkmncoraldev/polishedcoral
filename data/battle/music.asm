@@ -115,6 +115,7 @@ PlayBattleMusic: ; 2ee6c
 	dbw LEILANI,		  MUSIC_GYM_BATTLE
 	dbw ROCKY,			  MUSIC_GYM_BATTLE
 	dbw DARCY,			  MUSIC_GYM_BATTLE
+	dbw SNARE_BOSS,	  	  MUSIC_SNARE_LEADER_BATTLE
 	db -1
 
 

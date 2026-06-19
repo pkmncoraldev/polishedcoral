@@ -68,7 +68,6 @@ LusterTrainStationArrive:
 	special Special_StopLandmarkTimer
 	applyonemovement PLAYER, remove_fixed_facing
 	playmusic MUSIC_TRAIN_STOP
-;	refreshscreen
 	disappear LUSTER_TRAIN_STATION_OFFICER
 	disappear LUSTER_TRAIN_STATION_CONDUCTOR
 	clearevent EVENT_MET_MR_NETT
@@ -89,8 +88,6 @@ LusterTrainStationArrive:
 	appear LUSTER_TRAIN_STATION_OFFICER
 	pause 10
 	applymovement PLAYER, Movement_LusterTrainArrives3
-;	applymovement LUSTER_TRAIN_STATION_OFFICER, Movement_LusterStationOfficer1
-;	spriteface LUSTER_TRAIN_STATION_OFFICER, UP
 	pause 15
 	playsound SFX_EXIT_BUILDING
 	special Special_ForcePlayerStateNormal
@@ -169,7 +166,7 @@ LusterTrainStationArrive:
 	waitsfx
 	special FadeInTextboxPalettes
 	pause 20
-	playmusic MUSIC_MOM		;Mr Nett's theme song
+	playmusic MUSIC_CROSSROADS
 	applyonemovement LUSTER_TRAIN_STATION_NETT, step_left
 	spriteface LUSTER_TRAIN_STATION_NETT, UP
 	spriteface PLAYER, DOWN
@@ -195,9 +192,6 @@ LusterTrainStationArrive:
 	playsound SFX_EXIT_BUILDING
 	disappear LUSTER_TRAIN_STATION_NETT
 	waitsfx
-	special Special_FadeOutMusic
-	pause 10
-	playmapmusic
 	setevent EVENT_MET_MR_NETT
 	clearevent EVENT_HAVENT_BEEN_TO_LUSTER_CITY
 	clearevent EVENT_TRAIN_GOING_EAST

@@ -3063,7 +3063,7 @@ CheckChangeMusic::
 	
 .luster_station
 	eventflagcheck EVENT_REACHED_LUSTER_CITY
-	jr z, .none
+	jr z, .crossroads
 	ld a, MUSIC_LUSTER_CITY
 	jr .done
 .none

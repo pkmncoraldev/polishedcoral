@@ -216,6 +216,7 @@
 	const SPRITE_SNUBBULL_SHRINK
 	const SPRITE_SPINNER
 	const SPRITE_PUNK_CHICK
+	const SPRITE_ELI
 	
 	const_def $ed
 DEF SPRITE_POKEMON EQU const_value

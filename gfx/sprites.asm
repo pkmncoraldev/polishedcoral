@@ -165,6 +165,7 @@ TrunksWaterSpriteGFX::		   INCBIN "gfx/sprites/trunks_water.2bpp.lz"
 PaintingsSpriteGFX::		   INCBIN "gfx/sprites/paintings.2bpp.lz"
 CoralStarSpriteGFX::		   INCBIN "gfx/sprites/coral_star.2bpp.lz"
 RafflesiaSpriteGFX::		   INCBIN "gfx/sprites/rafflesia.2bpp.lz"
+EliSpriteGFX::				   INCBIN "gfx/sprites/eli.2bpp.lz"
 
 
 SECTION "Overworld Sprites 5", ROMX

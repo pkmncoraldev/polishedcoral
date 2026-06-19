@@ -2836,62 +2836,19 @@ PlayVictoryMusic: ; 3d0ea
 	and a
 	jr z, .lost
 	jr .play_music
-
 .trainer_victory
 	ld de, MUSIC_GYM_VICTORY
-	call IsBossTrainer
+	farcall IsBossTrainer
 	jr c, .play_music
 	ld de, MUSIC_SNARE_VICTORY
-	call IsSnareTrainer
+	farcall IsSnareTrainer
 	jr c, .play_music
 	ld de, MUSIC_TRAINER_VICTORY
-
 .play_music
 	call PlayMusic
-
 .lost
 	pop de
 	ret
-; 3d123
-
-
-IsBossTrainer:
-	ld hl, BossTrainers
-	push de
-	ld a, [wOtherTrainerClass]
-	ld de, $1
-	call IsInArray
-	pop de
-	ret
-
-IsSnareTrainer:
-	ld hl, SnareTrainers
-	push de
-	ld a, [wOtherTrainerClass]
-	ld de, $1
-	call IsInArray
-	pop de
-	ret
-	
-IsSetOrderTrainerTrainer:
-	ld a, [wOtherTrainerClass]
-	cp DELINQUENT_M
-	jr nz, .not_beau
-	ld a, [wOtherTrainerID]
-	cp BEAU
-	jr nz, .not_beau
-	scf
-	ret
-.not_beau
-	ld hl, SetOrderTrainers
-	push de
-	ld de, $1
-	call IsInArray
-	pop de
-	ret
-
-INCLUDE "data/trainers/bosstrainers.asm"
-
 
 HandlePlayerMonFaint:
 	call FaintYourPokemon
@@ -3540,7 +3497,7 @@ FindPkmnInOTPartyToSwitchIntoBattle:
 LoadEnemyPkmnToSwitchTo:
 	; 'b' contains the PartyNr of the Pkmn the AI will switch to
 	push bc
-	call IsSetOrderTrainerTrainer
+	farcall IsSetOrderTrainerTrainer
 	pop bc
 	jr nc, .done_set_order
 	eventflagcheck EVENT_USED_ROAR
@@ -9075,7 +9032,7 @@ InitEnemyTrainer: ; 3f594
 	ld a, TRAINER_BATTLE
 	ld [wBattleMode], a
 
-	call IsBossTrainer
+	farcall IsBossTrainer
 	ret nc
 	xor a
 	ld [wCurPartyMon], a

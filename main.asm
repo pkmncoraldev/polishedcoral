@@ -6337,3 +6337,4 @@ SECTION "Coral Data 7", ROMX
 	
 SECTION "Coral Data 8", ROMX
 	INCLUDE "data/trainers/final_text.asm"
+	INCLUDE "data/trainers/bosstrainers.asm"

@@ -29,7 +29,6 @@ GetFinalPkmnTextPointer::
 	ld l, a
 	or h
 	jr z, .nothing
-.done:
 	scf
 	ret
 
@@ -56,6 +55,7 @@ FinalTextClassList:
 	dbw ERIKA, .FinalText_Erika
 	dbw LEDIAN_RANGER, .FinalText_LedianRanger
 	dbw POLICE_CAPTAIN, .FinalText_PoliceCaptain
+	dbw SNARE_BOSS, .FinalText_SnareBoss
 	db -1
 
 .FinalText_Stanley:
@@ -116,12 +116,12 @@ FinalTextClassList:
 	dw Darcy_RematchFinalPkmnText
 
 .FinalText_Rival:
-	dw -1
-	dw -1
-	dw -1
-	dw -1
-	dw -1
-	dw -1
+	dw Rival_1_FinalPkmnText
+	dw Rival_1_FinalPkmnText
+	dw Rival_1_FinalPkmnText
+	dw Rival_1_FinalPkmnText
+	dw Rival_1_FinalPkmnText
+	dw Rival_1_FinalPkmnText
 	dw Rival_2_FinalPkmnText
 	dw Rival_2_FinalPkmnText
 	dw Rival_2_FinalPkmnText
@@ -188,6 +188,9 @@ FinalTextClassList:
 	
 .FinalText_PoliceCaptain:
 	dw PoliceCaptain_FinalPkmnText
+	
+.FinalText_SnareBoss
+	dw SnareBoss_FinalPkmnText	
 	
 Rival_2_FinalPkmnText:
 	text "Come on!"
@@ -367,6 +370,7 @@ MallCop_FinalPkmnText:
 	line "backup!"
 	prompt
 	
+Rival_1_FinalPkmnText:
 DojoMaster_FinalPkmnText:
 	text "…"
 	prompt
@@ -391,5 +395,17 @@ PoliceCaptain_FinalPkmnText:
 	
 	para "Respect my"
 	line "authority!"
+	prompt
+	
+SnareBoss_FinalPkmnText:
+	text "…"
+	
+	para "My company…"
+	
+	para "My legacy…"
+	
+	para "…"
+	
+	para "You WILL fall!"
 	prompt
 	

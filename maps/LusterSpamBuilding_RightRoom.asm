@@ -4,14 +4,14 @@ LusterSpamBuilding_RightRoom_MapScriptHeader:
 	db 0 ; callbacks
 
 	db 8 ; warp events
-	warp_event  1,  5, LUSTER_SPAM_BUILDING_2F, 2
 	warp_event  2,  5, LUSTER_SPAM_BUILDING_2F, 2
-	warp_event 11,  5, LUSTER_SPAM_BUILDING_2F, 3
+	warp_event  3,  5, LUSTER_SPAM_BUILDING_2F, 2
 	warp_event 12,  5, LUSTER_SPAM_BUILDING_2F, 3
-	warp_event  1, 15, LUSTER_SPAM_BUILDING_3F, 2
+	warp_event 13,  5, LUSTER_SPAM_BUILDING_2F, 3
 	warp_event  2, 15, LUSTER_SPAM_BUILDING_3F, 2
-	warp_event 11, 15, LUSTER_SPAM_BUILDING_4F, 2
+	warp_event  3, 15, LUSTER_SPAM_BUILDING_3F, 2
 	warp_event 12, 15, LUSTER_SPAM_BUILDING_4F, 2
+	warp_event 13, 15, LUSTER_SPAM_BUILDING_4F, 2
 
 	db 0 ; coord events
 

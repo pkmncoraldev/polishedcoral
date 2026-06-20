@@ -1,355 +1,4 @@
 ; S. Onwa Pokémon in grass
-
-	map_id ROUTE_17
-	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
-	; morn
-	db 31, NUMEL		;30%
-	db 31, DWEBBLE		;30%
-	db 31, CACNEA		;20%
-	db 31, MINCCINO		;10%
-	db 31, CACNEA		;5%
-	db 31, CACTURNE		;4%
-	db 31, CACTURNE		;1%
-	; day
-	db 31, NUMEL		;30%
-	db 31, DWEBBLE		;30%
-	db 31, CACNEA		;20%
-	db 31, MINCCINO		;10%
-	db 31, CACNEA		;5%
-	db 31, CACTURNE		;4%
-	db 31, CACTURNE		;1%
-	; nite
-	db 31, NUMEL		;30%
-	db 31, DWEBBLE		;30%
-	db 31, CACNEA		;20%
-	db 31, MINCCINO		;10%
-	db 31, CACNEA		;5%
-	db 31, CACTURNE		;4%
-	db 31, CACTURNE		;1%
-	
-	map_id ROUTE_18
-	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
-	; morn
-	db 31, NUMEL		;30%
-	db 31, DWEBBLE		;30%
-	db 31, CACNEA		;20%
-	db 31, MINCCINO		;10%
-	db 31, CACNEA		;5%
-	db 31, CACTURNE		;4%
-	db 31, CACTURNE		;1%
-	; day
-	db 31, NUMEL		;30%
-	db 31, DWEBBLE		;30%
-	db 31, CACNEA		;20%
-	db 31, MINCCINO		;10%
-	db 31, CACNEA		;5%
-	db 31, CACTURNE		;4%
-	db 31, CACTURNE		;1%
-	; nite
-	db 31, NUMEL		;30%
-	db 31, DWEBBLE		;30%
-	db 31, CACNEA		;20%
-	db 31, MINCCINO		;10%
-	db 31, CACNEA		;5%
-	db 31, CACTURNE		;4%
-	db 31, CACTURNE		;1%
-	
-	map_id BRILLO_BOAT_HOUSE ; used in desert when stuck in sand
-	db 20 percent, 20 percent, 20 percent ; encounter rates: morn/day/nite
-	; morn
-	db 32, GLIGAR		;30%
-	db 32, GLIGAR		;30%
-	db 32, DWEBBLE		;20%
-	db 32, DWEBBLE		;10%
-	db 32, DWEBBLE		;5%
-	db 32, DWEBBLE		;4%
-	db 32, DWEBBLE		;1%
-	; day
-	db 32, GLIGAR		;30%
-	db 32, GLIGAR		;30%
-	db 32, DWEBBLE		;20%
-	db 32, DWEBBLE		;10%
-	db 32, DWEBBLE		;5%
-	db 32, DWEBBLE		;4%
-	db 32, DWEBBLE		;1%
-	; nite
-	db 32, GLIGAR		;30%
-	db 32, GLIGAR		;30%
-	db 32, DWEBBLE		;20%
-	db 32, DWEBBLE		;10%
-	db 32, DWEBBLE		;5%
-	db 32, DWEBBLE		;4%
-	db 32, DWEBBLE		;1%
-	
-	map_id DESERT_WASTELAND_1
-	db 2 percent, 2 percent, 2 percent ; encounter rates: morn/day/nite
-	; morn
-	db 31, CACNEA		;30%
-	db 31, NUMEL		;30%
-	db 31, CACNEA		;20%
-	db 31, MARACTUS		;10%
-	db 32, MARACTUS		;5%
-	db 32, LARVESTA		;4%
-	db 32, LARVESTA		;1%
-	; day
-	db 31, CACNEA		;30%
-	db 31, NUMEL		;30%
-	db 31, CACNEA		;20%
-	db 31, MARACTUS		;10%
-	db 32, MARACTUS		;5%
-	db 32, LARVESTA		;4%
-	db 32, LARVESTA		;1%
-	; nite
-	db 31, CACNEA		;30%
-	db 31, NUMEL		;30%
-	db 31, CACNEA		;20%
-	db 31, MARACTUS		;10%
-	db 32, MARACTUS		;5%
-	db 32, LARVESTA		;4%
-	db 32, LARVESTA		;1%
-	
-	map_id DESERT_WASTELAND_2
-	db 2 percent, 2 percent, 2 percent ; encounter rates: morn/day/nite
-	; morn
-	db 31, CACNEA		;30%
-	db 31, NUMEL		;30%
-	db 31, CACNEA		;20%
-	db 31, MARACTUS		;10%
-	db 32, MARACTUS		;5%
-	db 32, LARVESTA		;4%
-	db 32, LARVESTA		;1%
-	; day
-	db 31, CACNEA		;30%
-	db 31, NUMEL		;30%
-	db 31, CACNEA		;20%
-	db 31, MARACTUS		;10%
-	db 32, MARACTUS		;5%
-	db 32, LARVESTA		;4%
-	db 32, LARVESTA		;1%
-	; nite
-	db 31, CACNEA		;30%
-	db 31, NUMEL		;30%
-	db 31, CACNEA		;20%
-	db 31, MARACTUS		;10%
-	db 32, MARACTUS		;5%
-	db 32, LARVESTA		;4%
-	db 32, LARVESTA		;1%
-
-	map_id DESERT_WASTELAND_3
-	db 2 percent, 2 percent, 2 percent ; encounter rates: morn/day/nite
-	; morn
-	db 31, CACNEA		;30%
-	db 31, NUMEL		;30%
-	db 31, CACNEA		;20%
-	db 31, MARACTUS		;10%
-	db 32, MARACTUS		;5%
-	db 32, LARVESTA		;4%
-	db 32, LARVESTA		;1%
-	; day
-	db 31, CACNEA		;30%
-	db 31, NUMEL		;30%
-	db 31, CACNEA		;20%
-	db 31, MARACTUS		;10%
-	db 32, MARACTUS		;5%
-	db 32, LARVESTA		;4%
-	db 32, LARVESTA		;1%
-	; nite
-	db 31, CACNEA		;30%
-	db 31, NUMEL		;30%
-	db 31, CACNEA		;20%
-	db 31, MARACTUS		;10%
-	db 32, MARACTUS		;5%
-	db 32, LARVESTA		;4%
-	db 32, LARVESTA		;1%
-
-	map_id DESERT_WASTELAND_4
-	db 2 percent, 2 percent, 2 percent ; encounter rates: morn/day/nite
-	; morn
-	db 31, CACNEA		;30%
-	db 31, NUMEL		;30%
-	db 31, CACNEA		;20%
-	db 31, MARACTUS		;10%
-	db 32, MARACTUS		;5%
-	db 32, LARVESTA		;4%
-	db 32, LARVESTA		;1%
-	; day
-	db 31, CACNEA		;30%
-	db 31, NUMEL		;30%
-	db 31, CACNEA		;20%
-	db 31, MARACTUS		;10%
-	db 32, MARACTUS		;5%
-	db 32, LARVESTA		;4%
-	db 32, LARVESTA		;1%
-	; nite
-	db 31, CACNEA		;30%
-	db 31, NUMEL		;30%
-	db 31, CACNEA		;20%
-	db 31, MARACTUS		;10%
-	db 32, MARACTUS		;5%
-	db 32, LARVESTA		;4%
-	db 32, LARVESTA		;1%
-
-	map_id DESERT_WASTELAND_5
-	db 2 percent, 2 percent, 2 percent ; encounter rates: morn/day/nite
-	; morn
-	db 31, CACNEA		;30%
-	db 31, NUMEL		;30%
-	db 31, CACNEA		;20%
-	db 31, MARACTUS		;10%
-	db 32, MARACTUS		;5%
-	db 32, LARVESTA		;4%
-	db 32, LARVESTA		;1%
-	; day
-	db 31, CACNEA		;30%
-	db 31, NUMEL		;30%
-	db 31, CACNEA		;20%
-	db 31, MARACTUS		;10%
-	db 32, MARACTUS		;5%
-	db 32, LARVESTA		;4%
-	db 32, LARVESTA		;1%
-	; nite
-	db 31, CACNEA		;30%
-	db 31, NUMEL		;30%
-	db 31, CACNEA		;20%
-	db 31, MARACTUS		;10%
-	db 32, MARACTUS		;5%
-	db 32, LARVESTA		;4%
-	db 32, LARVESTA		;1%
-
-	map_id DESERT_WASTELAND_6
-	db 2 percent, 2 percent, 2 percent ; encounter rates: morn/day/nite
-	; morn
-	db 31, CACNEA		;30%
-	db 31, NUMEL		;30%
-	db 31, CACNEA		;20%
-	db 31, MARACTUS		;10%
-	db 32, MARACTUS		;5%
-	db 32, LARVESTA		;4%
-	db 32, LARVESTA		;1%
-	; day
-	db 31, CACNEA		;30%
-	db 31, NUMEL		;30%
-	db 31, CACNEA		;20%
-	db 31, MARACTUS		;10%
-	db 32, MARACTUS		;5%
-	db 32, LARVESTA		;4%
-	db 32, LARVESTA		;1%
-	; nite
-	db 31, CACNEA		;30%
-	db 31, NUMEL		;30%
-	db 31, CACNEA		;20%
-	db 31, MARACTUS		;10%
-	db 32, MARACTUS		;5%
-	db 32, LARVESTA		;4%
-	db 32, LARVESTA		;1%
-
-	map_id DESERT_WASTELAND_7
-	db 2 percent, 2 percent, 2 percent ; encounter rates: morn/day/nite
-	; morn
-	db 31, CACNEA		;30%
-	db 31, NUMEL		;30%
-	db 31, CACNEA		;20%
-	db 31, MARACTUS		;10%
-	db 32, MARACTUS		;5%
-	db 32, LARVESTA		;4%
-	db 32, LARVESTA		;1%
-	; day
-	db 31, CACNEA		;30%
-	db 31, NUMEL		;30%
-	db 31, CACNEA		;20%
-	db 31, MARACTUS		;10%
-	db 32, MARACTUS		;5%
-	db 32, LARVESTA		;4%
-	db 32, LARVESTA		;1%
-	; nite
-	db 31, CACNEA		;30%
-	db 31, NUMEL		;30%
-	db 31, CACNEA		;20%
-	db 31, MARACTUS		;10%
-	db 32, MARACTUS		;5%
-	db 32, LARVESTA		;4%
-	db 32, LARVESTA		;1%
-
-	map_id DESERT_WASTELAND_8
-	db 2 percent, 2 percent, 2 percent ; encounter rates: morn/day/nite
-	; morn
-	db 31, CACNEA		;30%
-	db 31, NUMEL		;30%
-	db 31, CACNEA		;20%
-	db 31, MARACTUS		;10%
-	db 32, MARACTUS		;5%
-	db 32, LARVESTA		;4%
-	db 32, LARVESTA		;1%
-	; day
-	db 31, CACNEA		;30%
-	db 31, NUMEL		;30%
-	db 31, CACNEA		;20%
-	db 31, MARACTUS		;10%
-	db 32, MARACTUS		;5%
-	db 32, LARVESTA		;4%
-	db 32, LARVESTA		;1%
-	; nite
-	db 31, CACNEA		;30%
-	db 31, NUMEL		;30%
-	db 31, CACNEA		;20%
-	db 31, MARACTUS		;10%
-	db 32, MARACTUS		;5%
-	db 32, LARVESTA		;4%
-	db 32, LARVESTA		;1%
-
-	map_id DESERT_WASTELAND_9
-	db 2 percent, 2 percent, 2 percent ; encounter rates: morn/day/nite
-	; morn
-	db 31, CACNEA		;30%
-	db 31, NUMEL		;30%
-	db 31, CACNEA		;20%
-	db 31, MARACTUS		;10%
-	db 32, MARACTUS		;5%
-	db 32, LARVESTA		;4%
-	db 32, LARVESTA		;1%
-	; day
-	db 31, CACNEA		;30%
-	db 31, NUMEL		;30%
-	db 31, CACNEA		;20%
-	db 31, MARACTUS		;10%
-	db 32, MARACTUS		;5%
-	db 32, LARVESTA		;4%
-	db 32, LARVESTA		;1%
-	; nite
-	db 31, CACNEA		;30%
-	db 31, NUMEL		;30%
-	db 31, CACNEA		;20%
-	db 31, MARACTUS		;10%
-	db 32, MARACTUS		;5%
-	db 32, LARVESTA		;4%
-	db 32, LARVESTA		;1%
-	
-	map_id DESERT_WASTELAND_OASIS
-	db 25 percent, 25 percent, 25 percent ; encounter rates: morn/day/nite
-	; morn
-	db 32, MINCCINO		;30%
-	db 32, PHANPY		;30%
-	db 32, TOUCANNON	;20%
-	db 32, DONPHAN		;10%
-	db 32, DONPHAN		;5%
-	db 32, CHANSEY		;4%
-	db 32, CHANSEY		;1%
-	; day
-	db 32, MINCCINO		;30%
-	db 32, PHANPY		;30%
-	db 32, TOUCANNON	;20%
-	db 32, DONPHAN		;10%
-	db 32, DONPHAN		;5%
-	db 32, CHANSEY		;4%
-	db 32, CHANSEY		;1%
-	; nite
-	db 32, MINCCINO		;30%
-	db 32, PHANPY		;30%
-	db 32, TOUCANNON	;20%
-	db 32, DONPHAN		;10%
-	db 32, DONPHAN		;5%
-	db 32, CHANSEY		;4%
-	db 32, CHANSEY		;1%
 	
 	map_id ROUTE_19
 	db 25 percent, 25 percent, 25 percent ; encounter rates: morn/day/nite
@@ -440,26 +89,53 @@
 	db 33, DROWZEE		;20%
 	db 33, DROWZEE		;10%
 	db 33, MEOWTH		;5%
-	db 33, MUNCHLAX		;4%
-	db 33, MUNCHLAX		;1%
+	db 33, RATICATE		;4%
+	db 33, RATICATE		;1%
 	; day
 	db 33, KOFFING		;30%
 	db 33, MEOWTH		;30%
 	db 33, DROWZEE		;20%
 	db 33, DROWZEE		;10%
 	db 33, MEOWTH		;5%
-	db 33, MUNCHLAX		;4%
-	db 33, MUNCHLAX		;1%
+	db 33, RATICATE		;4%
+	db 33, RATICATE		;1%
 	; nite
 	db 33, KOFFING		;30%
 	db 33, MEOWTH		;30%
 	db 33, DROWZEE		;20%
 	db 33, DROWZEE		;10%
 	db 33, MEOWTH		;5%
-	db 33, MUNCHLAX		;4%
-	db 33, MUNCHLAX		;1%
+	db 33, RATICATE		;4%
+	db 33, RATICATE		;1%
 	
-	map_id ROUTE_11_2
+	map_id ROUTE_23
+	db 15 percent, 15 percent, 15 percent ; encounter rates: morn/day/nite
+	; morn
+	db 38, GEODUDE		;30%
+	db 38, LAIRON		;30%
+	db 38, DWEBBLE		;20%
+	db 38, GRAVELER		;10%
+	db 38, GRAVELER		;5%
+	db 38, GRAVELER		;4%
+	db 38, GRAVELER		;1%
+	; day
+	db 38, GEODUDE		;30%
+	db 38, LAIRON		;30%
+	db 38, DWEBBLE		;20%
+	db 38, GRAVELER		;10%
+	db 38, GRAVELER		;5%
+	db 38, GRAVELER		;4%
+	db 38, GRAVELER		;1%
+	; nite
+	db 38, GEODUDE		;30%
+	db 38, LAIRON		;30%
+	db 38, DWEBBLE		;20%
+	db 38, GRAVELER		;10%
+	db 38, GRAVELER		;5%
+	db 38, GRAVELER		;4%
+	db 38, GRAVELER		;1%
+	
+	map_id ROUTE_11_2	; only here for pokedex area
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	db 21, MACHOP		;30%
@@ -486,11 +162,38 @@
 	db 21, DWEBBLE		;4%
 	db 21, DWEBBLE		;1%
 	
+	map_id ROUTE_24
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	; morn
+	db 38, GEODUDE		;30%
+	db 38, LAIRON		;30%
+	db 38, GRAVELER		;20%
+	db 38, CUBONE		;10%
+	db 38, CUBONE		;5%
+	db 38, GRAVELER		;4%
+	db 38, GRAVELER		;1%
+	; day
+	db 38, GEODUDE		;30%
+	db 38, LAIRON		;30%
+	db 38, GRAVELER		;20%
+	db 38, CUBONE		;10%
+	db 38, CUBONE		;5%
+	db 38, GRAVELER		;4%
+	db 38, GRAVELER		;1%
+	; nite
+	db 38, GEODUDE		;30%
+	db 38, LAIRON		;30%
+	db 38, GRAVELER		;20%
+	db 38, CUBONE		;10%
+	db 38, CUBONE		;5%
+	db 38, GRAVELER		;4%
+	db 38, GRAVELER		;1%
+	
 	map_id ROUTE_25
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
 	db 39, SHROOMISH	;30%
-	db 39, PONYTA		;30%
+	db 39, MURKROW		;30%
 	db 39, GIRAFARIG	;20%
 	db 39, LITWICK		;10%
 	db 39, BRELOOM		;5%
@@ -498,7 +201,7 @@
 	db 39, BRELOOM		;1%
 	; day
 	db 39, SHROOMISH	;30%
-	db 39, PONYTA		;30%
+	db 39, MURKROW		;30%
 	db 39, GIRAFARIG	;20%
 	db 39, LITWICK		;10%
 	db 39, BRELOOM		;5%
@@ -506,7 +209,7 @@
 	db 39, BRELOOM		;1%
 	; nite
 	db 39, SHROOMISH	;30%
-	db 39, PONYTA		;30%
+	db 39, MURKROW		;30%
 	db 39, GIRAFARIG	;20%
 	db 39, LITWICK		;10%
 	db 39, BRELOOM		;5%
@@ -519,7 +222,7 @@
 	db 39, SHROOMISH	;30%
 	db 39, LITWICK		;30%
 	db 39, GIRAFARIG	;20%
-	db 39, PONYTA		;10%
+	db 39, MURKROW		;10%
 	db 39, BRELOOM		;5%
 	db 39, BRELOOM		;4%
 	db 39, BRELOOM		;1%
@@ -527,7 +230,7 @@
 	db 39, SHROOMISH	;30%
 	db 39, LITWICK		;30%
 	db 39, GIRAFARIG	;20%
-	db 39, PONYTA		;10%
+	db 39, MURKROW		;10%
 	db 39, BRELOOM		;5%
 	db 39, BRELOOM		;4%
 	db 39, BRELOOM		;1%
@@ -535,7 +238,7 @@
 	db 39, SHROOMISH	;30%
 	db 39, LITWICK		;30%
 	db 39, GIRAFARIG	;20%
-	db 39, PONYTA		;10%
+	db 39, MURKROW		;10%
 	db 39, BRELOOM		;5%
 	db 39, BRELOOM		;4%
 	db 39, BRELOOM		;1%
@@ -546,7 +249,7 @@
 	db 39, SHROOMISH	;30%
 	db 39, LITWICK		;30%
 	db 39, GIRAFARIG	;20%
-	db 39, PONYTA		;10%
+	db 39, MURKROW		;10%
 	db 39, BRELOOM		;5%
 	db 39, BRELOOM		;4%
 	db 39, BRELOOM		;1%
@@ -554,7 +257,7 @@
 	db 39, SHROOMISH	;30%
 	db 39, LITWICK		;30%
 	db 39, GIRAFARIG	;20%
-	db 39, PONYTA		;10%
+	db 39, MURKROW		;10%
 	db 39, BRELOOM		;5%
 	db 39, BRELOOM		;4%
 	db 39, BRELOOM		;1%
@@ -562,7 +265,7 @@
 	db 39, SHROOMISH	;30%
 	db 39, LITWICK		;30%
 	db 39, GIRAFARIG	;20%
-	db 39, PONYTA		;10%
+	db 39, MURKROW		;10%
 	db 39, BRELOOM		;5%
 	db 39, BRELOOM		;4%
 	db 39, BRELOOM		;1%
@@ -571,7 +274,7 @@
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
 	db 41, SHROOMISH	;30%
-	db 41, PONYTA		;30%
+	db 41, MURKROW		;30%
 	db 41, GIRAFARIG	;20%
 	db 41, LITWICK		;10%
 	db 41, BRELOOM		;5%
@@ -579,7 +282,7 @@
 	db 41, BRELOOM		;1%
 	; day
 	db 41, SHROOMISH	;30%
-	db 41, PONYTA		;30%
+	db 41, MURKROW		;30%
 	db 41, GIRAFARIG	;20%
 	db 41, LITWICK		;10%
 	db 41, BRELOOM		;5%
@@ -587,7 +290,7 @@
 	db 41, BRELOOM		;1%
 	; nite
 	db 41, SHROOMISH	;30%
-	db 41, PONYTA		;30%
+	db 41, MURKROW		;30%
 	db 41, GIRAFARIG	;20%
 	db 41, LITWICK		;10%
 	db 41, BRELOOM		;5%
@@ -625,7 +328,7 @@
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
 	db 39, DRIFLOON		;30%
-	db 39, PONYTA		;30%
+	db 39, MURKROW		;30%
 	db 39, GIRAFARIG	;20%
 	db 39, SKARMORY		;10%
 	db 39, BRELOOM		;5%
@@ -633,7 +336,7 @@
 	db 39, BRELOOM		;1%
 	; day
 	db 39, DRIFLOON		;30%
-	db 39, PONYTA		;30%
+	db 39, MURKROW		;30%
 	db 39, GIRAFARIG	;20%
 	db 39, SKARMORY		;10%
 	db 39, BRELOOM		;5%
@@ -641,7 +344,7 @@
 	db 39, BRELOOM		;1%
 	; nite
 	db 39, DRIFLOON		;30%
-	db 39, PONYTA		;30%
+	db 39, MURKROW		;30%
 	db 39, GIRAFARIG	;20%
 	db 39, SKARMORY		;10%
 	db 39, BRELOOM		;5%
@@ -706,7 +409,7 @@
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
 	db 41, DRIFLOON		;30%
-	db 41, PONYTA		;30%
+	db 41, MURKROW		;30%
 	db 41, GIRAFARIG	;20%
 	db 41, SKARMORY		;10%
 	db 41, BRELOOM		;5%
@@ -714,7 +417,7 @@
 	db 41, BRELOOM		;1%
 	; day
 	db 41, DRIFLOON		;30%
-	db 41, PONYTA		;30%
+	db 41, MURKROW		;30%
 	db 41, GIRAFARIG	;20%
 	db 41, SKARMORY		;10%
 	db 41, BRELOOM		;5%
@@ -722,7 +425,7 @@
 	db 41, BRELOOM		;1%
 	; nite
 	db 41, DRIFLOON		;30%
-	db 41, PONYTA		;30%
+	db 41, MURKROW		;30%
 	db 41, GIRAFARIG	;20%
 	db 41, SKARMORY		;10%
 	db 41, BRELOOM		;5%
@@ -1214,5 +917,248 @@
 	db 37, HOUNDOUR		;5%
 	db 37, MAROWAK		;4%
 	db 37, MAROWAK		;1%
+	
+	map_id ROUTE_32
+	db 15 percent, 15 percent, 15 percent ; encounter rates: morn/day/nite
+	; morn
+	db 43, DONPHAN		;30%
+	db 43, MEDITITE		;30%
+	db 43, MEDICHAM		;20%
+	db 43, MEDICHAM		;10%
+	db 43, MUNCHLAX		;5%
+	db 43, MUNCHLAX		;4%
+	db 43, MUNCHLAX		;1%
+	; day
+	db 43, DONPHAN		;30%
+	db 43, MEDITITE		;30%
+	db 43, MEDICHAM		;20%
+	db 43, MEDICHAM		;10%
+	db 43, MUNCHLAX		;5%
+	db 43, MUNCHLAX		;4%
+	db 43, MUNCHLAX		;1%
+	; nite
+	db 43, DONPHAN		;30%
+	db 43, MEDITITE		;30%
+	db 43, MEDICHAM		;20%
+	db 43, MEDICHAM		;10%
+	db 43, MUNCHLAX		;5%
+	db 43, MUNCHLAX		;4%
+	db 43, MUNCHLAX		;1%
+	
+	map_id AUREOLE_MOUNTAIN_1F
+	db 5 percent, 5 percent, 5 percent ; encounter rates: morn/day/nite
+	; morn
+	db 43, DONPHAN		;30%
+	db 43, GRAVELER		;30%
+	db 43, NOIBAT		;20%
+	db 43, MEDICHAM		;10%
+	db 43, LARVITAR		;5%
+	db 43, MIENFOO		;4%
+	db 43, MIENFOO		;1%
+	; day
+	db 43, DONPHAN		;30%
+	db 43, GRAVELER		;30%
+	db 43, NOIBAT		;20%
+	db 43, MEDICHAM		;10%
+	db 43, LARVITAR		;5%
+	db 43, MIENFOO		;4%
+	db 43, MIENFOO		;1%
+	; nite
+	db 43, DONPHAN		;30%
+	db 43, GRAVELER		;30%
+	db 43, NOIBAT		;20%
+	db 43, MEDICHAM		;10%
+	db 43, LARVITAR		;5%
+	db 43, MIENFOO		;4%
+	db 43, MIENFOO		;1%
+	
+	map_id AUREOLE_MOUNTAIN_2F
+	db 4 percent, 4 percent, 4 percent ; encounter rates: morn/day/nite
+	; morn
+	db 43, DONPHAN		;30%
+	db 43, GRAVELER		;30%
+	db 43, NOIBAT		;20%
+	db 43, MEDICHAM		;10%
+	db 43, LARVITAR		;5%
+	db 43, MIENFOO		;4%
+	db 43, MIENFOO		;1%
+	; day
+	db 43, DONPHAN		;30%
+	db 43, GRAVELER		;30%
+	db 43, NOIBAT		;20%
+	db 43, MEDICHAM		;10%
+	db 43, LARVITAR		;5%
+	db 43, MIENFOO		;4%
+	db 43, MIENFOO		;1%
+	; nite
+	db 43, DONPHAN		;30%
+	db 43, GRAVELER		;30%
+	db 43, NOIBAT		;20%
+	db 43, MEDICHAM		;10%
+	db 43, LARVITAR		;5%
+	db 43, MIENFOO		;4%
+	db 43, MIENFOO		;1%
+	
+	map_id AUREOLE_MOUNTAIN_3F
+	db 3 percent, 3 percent, 3 percent ; encounter rates: morn/day/nite
+	; morn
+	db 43, DONPHAN		;30%
+	db 43, GRAVELER		;30%
+	db 43, NOIBAT		;20%
+	db 43, MEDICHAM		;10%
+	db 43, LARVITAR		;5%
+	db 43, MIENFOO		;4%
+	db 43, MIENFOO		;1%
+	; day
+	db 43, DONPHAN		;30%
+	db 43, GRAVELER		;30%
+	db 43, NOIBAT		;20%
+	db 43, MEDICHAM		;10%
+	db 43, LARVITAR		;5%
+	db 43, MIENFOO		;4%
+	db 43, MIENFOO		;1%
+	; nite
+	db 43, DONPHAN		;30%
+	db 43, GRAVELER		;30%
+	db 43, NOIBAT		;20%
+	db 43, MEDICHAM		;10%
+	db 43, LARVITAR		;5%
+	db 43, MIENFOO		;4%
+	db 43, MIENFOO		;1%
+	
+	map_id AUREOLE_MOUNTAIN_4F
+	db 2 percent, 2 percent, 2 percent ; encounter rates: morn/day/nite
+	; morn
+	db 43, DONPHAN		;30%
+	db 43, GRAVELER		;30%
+	db 43, NOIBAT		;20%
+	db 43, MEDICHAM		;10%
+	db 43, LARVITAR		;5%
+	db 43, MIENFOO		;4%
+	db 43, MIENFOO		;1%
+	; day
+	db 43, DONPHAN		;30%
+	db 43, GRAVELER		;30%
+	db 43, NOIBAT		;20%
+	db 43, MEDICHAM		;10%
+	db 43, LARVITAR		;5%
+	db 43, MIENFOO		;4%
+	db 43, MIENFOO		;1%
+	; nite
+	db 43, DONPHAN		;30%
+	db 43, GRAVELER		;30%
+	db 43, NOIBAT		;20%
+	db 43, MEDICHAM		;10%
+	db 43, LARVITAR		;5%
+	db 43, MIENFOO		;4%
+	db 43, MIENFOO		;1%
+	
+	map_id AUREOLE_MOUNTAIN_5F
+	db 1 percent, 1 percent, 1 percent ; encounter rates: morn/day/nite
+	; morn
+	db 43, DONPHAN		;30%
+	db 43, GRAVELER		;30%
+	db 43, NOIBAT		;20%
+	db 43, MEDICHAM		;10%
+	db 43, LARVITAR		;5%
+	db 43, MIENFOO		;4%
+	db 43, MIENFOO		;1%
+	; day
+	db 43, DONPHAN		;30%
+	db 43, GRAVELER		;30%
+	db 43, NOIBAT		;20%
+	db 43, MEDICHAM		;10%
+	db 43, LARVITAR		;5%
+	db 43, MIENFOO		;4%
+	db 43, MIENFOO		;1%
+	; nite
+	db 43, DONPHAN		;30%
+	db 43, GRAVELER		;30%
+	db 43, NOIBAT		;20%
+	db 43, MEDICHAM		;10%
+	db 43, LARVITAR		;5%
+	db 43, MIENFOO		;4%
+	db 43, MIENFOO		;1%
+	
+	map_id AUREOLE_MOUNTAIN_OUTSIDE
+	db 15 percent, 15 percent, 15 percent ; encounter rates: morn/day/nite
+	; morn
+	db 43, MIENFOO		;30%
+	db 43, NATU			;30%
+	db 43, XATU			;20%
+	db 43, LARVITAR		;10%
+	db 43, LARVITAR		;5%
+	db 43, MIENFOO		;4%
+	db 43, MIENSHAO		;1%
+	; day
+	db 43, MIENFOO		;30%
+	db 43, NATU			;30%
+	db 43, XATU			;20%
+	db 43, LARVITAR		;10%
+	db 43, LARVITAR		;5%
+	db 43, MIENFOO		;4%
+	db 43, MIENSHAO		;1%
+	; nite
+	db 43, MIENFOO		;30%
+	db 43, NATU			;30%
+	db 43, XATU			;20%
+	db 43, LARVITAR		;10%
+	db 43, LARVITAR		;5%
+	db 43, MIENFOO		;4%
+	db 43, MIENSHAO		;1%
+	
+	map_id AUREOLE_MOUNTAIN_OUTSIDE_2
+	db 15 percent, 15 percent, 15 percent ; encounter rates: morn/day/nite
+	; morn
+	db 43, MIENFOO		;30%
+	db 43, NATU			;30%
+	db 43, XATU			;20%
+	db 43, LARVITAR		;10%
+	db 43, LARVITAR		;5%
+	db 43, MIENFOO		;4%
+	db 43, MIENSHAO		;1%
+	; day
+	db 43, MIENFOO		;30%
+	db 43, NATU			;30%
+	db 43, XATU			;20%
+	db 43, LARVITAR		;10%
+	db 43, LARVITAR		;5%
+	db 43, MIENFOO		;4%
+	db 43, MIENSHAO		;1%
+	; nite
+	db 43, MIENFOO		;30%
+	db 43, NATU			;30%
+	db 43, XATU			;20%
+	db 43, LARVITAR		;10%
+	db 43, LARVITAR		;5%
+	db 43, MIENFOO		;4%
+	db 43, MIENSHAO		;1%
+	
+	map_id LUMINA_TOWN_CAVE
+	db 4 percent, 4 percent, 4 percent ; encounter rates: morn/day/nite
+	; morn
+	db 43, DONPHAN		;30%
+	db 43, GRAVELER		;30%
+	db 43, NOIBAT		;20%
+	db 43, MEDICHAM		;10%
+	db 43, LARVITAR		;5%
+	db 43, MIENFOO		;4%
+	db 43, MIENFOO		;1%
+	; day
+	db 43, DONPHAN		;30%
+	db 43, GRAVELER		;30%
+	db 43, NOIBAT		;20%
+	db 43, MEDICHAM		;10%
+	db 43, LARVITAR		;5%
+	db 43, MIENFOO		;4%
+	db 43, MIENFOO		;1%
+	; nite
+	db 43, DONPHAN		;30%
+	db 43, GRAVELER		;30%
+	db 43, NOIBAT		;20%
+	db 43, MEDICHAM		;10%
+	db 43, LARVITAR		;5%
+	db 43, MIENFOO		;4%
+	db 43, MIENFOO		;1%
 	
 	db -1 ; end

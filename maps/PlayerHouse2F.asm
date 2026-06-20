@@ -164,7 +164,7 @@ PlayerHouseDebugPoster:
 	givemoney $0, 100000
 	setevent EVENT_KNOW_OLLIE
 	setevent EVENT_KNOW_GRIND
-;	callasm FillPokedex
+	callasm FillPokedex
 	special InitRoamMoltres
 	callasm UnlockSongs
 	jump .return

@@ -351,4 +351,112 @@
 	db 32, CHANSEY		;4%
 	db 32, CHANSEY		;1%
 	
+	map_id CORAL_REEF
+	db 5 percent, 5 percent, 5 percent ; encounter rates: morn/day/nite
+	; morn
+	db 43, CORSOLA		;30%
+	db 43, CHINCHOU		;30%
+	db 43, CORSOLA		;20%
+	db 43, CHINCHOU		;10%
+	db 43, LANTURN		;5%
+	db 43, LANTURN		;4%
+	db 43, LANTURN		;1%
+	; day
+	db 43, CORSOLA		;30%
+	db 43, CHINCHOU		;30%
+	db 43, CORSOLA		;20%
+	db 43, CHINCHOU		;10%
+	db 43, LANTURN		;5%
+	db 43, LANTURN		;4%
+	db 43, LANTURN		;1%
+	; nite
+	db 43, CORSOLA		;30%
+	db 43, CHINCHOU		;30%
+	db 43, CORSOLA		;20%
+	db 43, CHINCHOU		;10%
+	db 43, LANTURN		;5%
+	db 43, LANTURN		;4%
+	db 43, LANTURN		;1%
+	
+	map_id ROUTE_13_UNDERWATER
+	db 12 percent, 12 percent, 12 percent ; encounter rates: morn/day/nite
+	; morn
+	db 43, CORSOLA		;30%
+	db 43, CHINCHOU		;30%
+	db 43, CORSOLA		;20%
+	db 43, CHINCHOU		;10%
+	db 43, LANTURN		;5%
+	db 43, LANTURN		;4%
+	db 43, LANTURN		;1%
+	; day
+	db 43, CORSOLA		;30%
+	db 43, CHINCHOU		;30%
+	db 43, CORSOLA		;20%
+	db 43, CHINCHOU		;10%
+	db 43, LANTURN		;5%
+	db 43, LANTURN		;4%
+	db 43, LANTURN		;1%
+	; nite
+	db 43, CORSOLA		;30%
+	db 43, CHINCHOU		;30%
+	db 43, CORSOLA		;20%
+	db 43, CHINCHOU		;10%
+	db 43, LANTURN		;5%
+	db 43, LANTURN		;4%
+	db 43, LANTURN		;1%
+	
+	map_id ROUTE_14_15_UNDERWATER
+	db 12 percent, 12 percent, 12 percent ; encounter rates: morn/day/nite
+	; morn
+	db 43, CORSOLA		;30%
+	db 43, CHINCHOU		;30%
+	db 43, CORSOLA		;20%
+	db 43, CHINCHOU		;10%
+	db 43, LANTURN		;5%
+	db 43, LANTURN		;4%
+	db 43, LANTURN		;1%
+	; day
+	db 43, CORSOLA		;30%
+	db 43, CHINCHOU		;30%
+	db 43, CORSOLA		;20%
+	db 43, CHINCHOU		;10%
+	db 43, LANTURN		;5%
+	db 43, LANTURN		;4%
+	db 43, LANTURN		;1%
+	; nite
+	db 43, CORSOLA		;30%
+	db 43, CHINCHOU		;30%
+	db 43, CORSOLA		;20%
+	db 43, CHINCHOU		;10%
+	db 43, LANTURN		;5%
+	db 43, LANTURN		;4%
+	db 43, LANTURN		;1%
+	
+	map_id ROUTE_6_UNDERWATER
+	db 12 percent, 12 percent, 12 percent ; encounter rates: morn/day/nite
+	; morn
+	db 43, CORSOLA		;30%
+	db 43, CHINCHOU		;30%
+	db 43, CORSOLA		;20%
+	db 43, CHINCHOU		;10%
+	db 43, LANTURN		;5%
+	db 43, LANTURN		;4%
+	db 43, LANTURN		;1%
+	; day
+	db 43, CORSOLA		;30%
+	db 43, CHINCHOU		;30%
+	db 43, CORSOLA		;20%
+	db 43, CHINCHOU		;10%
+	db 43, LANTURN		;5%
+	db 43, LANTURN		;4%
+	db 43, LANTURN		;1%
+	; nite
+	db 43, CORSOLA		;30%
+	db 43, CHINCHOU		;30%
+	db 43, CORSOLA		;20%
+	db 43, CHINCHOU		;10%
+	db 43, LANTURN		;5%
+	db 43, LANTURN		;4%
+	db 43, LANTURN		;1%
+	
 	db -1 ; end

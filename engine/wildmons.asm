@@ -565,15 +565,15 @@ _GrassWildmonLookup: ; 2a205
 .normal
 	call _GetGrassWildmonPointer
 	ld bc, GRASS_WILDDATA_LENGTH
-	jr _NormalWildmonOK
+	jp _NormalWildmonOK
 .on_ranch
 	call _GetGrassWildmonPointer
 	ld bc, GRASS_WILDDATA_LENGTH
-	jr _RanchWildmonOK
+	jp _RanchWildmonOK
 .in_sand
 	call _GetGrassWildmonPointer
 	ld bc, GRASS_WILDDATA_LENGTH
-	jr _SandWildmonOK
+	jp _SandWildmonOK
 
 _WaterWildmonLookup: ; 2a21d
 	ld hl, SwarmWaterWildMons
@@ -587,19 +587,33 @@ _WaterWildmonLookup: ; 2a21d
 _GetGrassWildmonPointer:
 	call RegionCheck
 	ld a, e
+	cp ONWA_KEYS_REGION
+	jr z, .keys
+	cp SOUTH_ONWA_REGION
+	jr z, .south
 	ld hl, NorthOnwaGrassWildMons
-	and a ; cp NORTH_ONWA_REGION
-	ret z
+	ret
+.south
 	ld hl, SouthOnwaGrassWildMons
+	ret
+.keys
+	ld hl, OnwaKeysGrassWildMons
 	ret
 
 _GetWaterWildmonPointer:
 	call RegionCheck
 	ld a, e
+	cp ONWA_KEYS_REGION
+	jr z, .keys
+	cp SOUTH_ONWA_REGION
+	jr z, .south
 	ld hl, NorthOnwaWaterWildMons
-	and a ; cp NORTH_ONWA_REGION
-	ret z
+	ret
+.south
 	ld hl, SouthOnwaWaterWildMons
+	ret
+.keys
+	ld hl, OnwaKeysWaterWildMons
 	ret
 
 _SwarmWildmonCheck:

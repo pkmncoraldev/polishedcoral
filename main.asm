@@ -670,9 +670,6 @@ PlaceMenuItemName::
 	call PlaceString
 ;fallthrough
 GetItemIconTiles::
-	ld a, [wCurSpecies]
-	cp a, -1
-	jr z, .clear
 	ld a, [wEngineBuffer1]
 	cp MARTTYPE_CLOTHES
 	ld hl, ClothesIconPointers
@@ -695,86 +692,47 @@ GetItemIconTiles::
 	ld d, [hl]
 	ld a, 4
 	ld c, a
-	ld a, [wPlaceBallsX]
-	cp 0
-	jr z, .first
-	cp 1
-	jr z, .second
-	cp 2
-	jr z, .third
-	cp 3
-	jr z, .forth
-	cp 7
-	jr z, .eighth
-	jr .fifth
-.eighth
-.first
+	push de
+	ld e, $40
+	ld d, 0
 	ld hl, VTiles0 tile $68
-	jr .finish
-.second
-	ld hl, VTiles0 tile $6c
-	jr .finish
-.third
-	ld hl, VTiles0 tile $70
-	jr .finish
-.forth
-	ld hl, VTiles0 tile $74
-.finish
+	ld a, [wPlaceBallsX]
 	push af
+	cp 7		;Debug Item Menu in Player's Room
+	jr nz, .loop
+	xor a
+.loop
+	cp 0
+	jr z, .done_loop
+	add hl, de
+	dec a
+	jr .loop
+.done_loop
+	pop af
+	pop de
+	push af
+	ld a, [wCurSpecies]
+	cp a, -1
+	jr z, .clear
 	call Get2bpp
 	farcall LoadItemIconPalette
 	call SetPalettes
 	pop af
+	cp 4
+	jr z, .final
 	inc a
 	ld [wPlaceBallsX], a
 	ret
-.fifth
-	ld hl, VTiles0 tile $78
-	call Get2bpp
-	farcall LoadItemIconPalette
-	call SetPalettes
-	xor a
-	ld [wPlaceBallsX], a
-	ret
 .clear
-	ld a, [wPlaceBallsX]
-	cp 0
-	jr z, .first2
-	cp 1
-	jr z, .second2
-	cp 2
-	jr z, .third2
-	cp 3
-	jr z, .forth2
-	jr .fifth2
-.first2
+	pop af
 	ld de, NoItemIcon
 	lb bc, BANK(NoItemIcon), 4
-	ld hl, VTiles0 tile $68
 	call Get2bpp
-.second2
-	ld de, NoItemIcon
-	lb bc, BANK(NoItemIcon), 4
-	ld hl, VTiles0 tile $6c
-	call Get2bpp
-.third2
-	ld de, NoItemIcon
-	lb bc, BANK(NoItemIcon), 4
-	ld hl, VTiles0 tile $70
-	call Get2bpp
-.forth2
-	ld de, NoItemIcon
-	lb bc, BANK(NoItemIcon), 4
-	ld hl, VTiles0 tile $74
-	call Get2bpp
-.fifth2
-	ld de, NoItemIcon
-	lb bc, BANK(NoItemIcon), 4
-	ld hl, VTiles0 tile $78
-	call Get2bpp
+.final
 	xor a
 	ld [wPlaceBallsX], a
 	ret
+
 
 PlaceMenuTMHMName:
 	push de
@@ -811,12 +769,14 @@ PlaceMartClothesName:
 PlaceMartDecoName:
 	push de
 	ld a, [wMenuSelection]
+	ld [wCurSpecies], a
 	cp a, -1 ; special case for Cancel in Key Items pocket
 	ld de, ScrollingMenu_CancelString ; found in scrolling_menu.asm
 	ld [wNamedObjectIndexBuffer], a
 	call nz, GetDecoName2
 	pop hl
-	jp PlaceString
+	call PlaceString
+	farjp GetItemIconTiles
 	
 PlaceMartPokemonName:
 	push de

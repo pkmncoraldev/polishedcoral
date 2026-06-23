@@ -17,7 +17,7 @@ MenuMonIconColors::
 	iconpal BROWN, GRAY ; PIDGEOT
 	iconpal PURPLE, GRAY ; RATTATA
 	iconpal BROWN, RED ; RATICATE
-	iconpal BROWN, RED ; PIKACHU
+	iconpal RED, BROWN ; PIKACHU
 	iconpal RED, BROWN ; RAICHU
 	iconpal TEAL, PURPLE ; NIDORAN_F
 	iconpal TEAL, PURPLE ; NIDORINA
@@ -25,10 +25,10 @@ MenuMonIconColors::
 	iconpal PURPLE, TEAL ; NIDORAN_M
 	iconpal PURPLE, TEAL ; NIDORINO
 	iconpal PURPLE, TEAL ; NIDOKING
-	iconpal PINK, RED ; CLEFAIRY
-	iconpal PINK, RED ; CLEFABLE
-	iconpal PINK, RED ; JIGGLYPUFF
-	iconpal PINK, RED ; WIGGLYTUFF
+	iconpal RED, PINK ; CLEFAIRY
+	iconpal RED, PINK ; CLEFABLE
+	iconpal RED, PINK ; JIGGLYPUFF
+	iconpal RED, PINK ; WIGGLYTUFF
 	iconpal RED, GREEN ; ZUBAT
 	iconpal RED, GREEN ; GOLBAT
 	iconpal GREEN, TEAL ; ODDISH
@@ -225,8 +225,8 @@ MenuMonIconColors::
 	iconpal BLUE, TEAL ; CARRACOSTA
 	iconpal RED, TEAL ; ARCHEN
 	iconpal RED, TEAL ; ARCHEOPS
-	iconpal GRAY, RED ; MINCCINO
-	iconpal GRAY, RED ; CINCCINO
+	iconpal BROWN, PINK ; MINCCINO
+	iconpal BROWN, PINK ; CINCCINO
 	iconpal BROWN, GREEN ; JOLTIK
 	iconpal BROWN, RED ; GALVANTULA
 	iconpal PURPLE, RED ; LITWICK

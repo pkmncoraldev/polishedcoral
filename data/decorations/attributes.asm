@@ -47,8 +47,6 @@ DecorationAttributes:
 	decoration DECO_BIGDOLL,  MUK,   	         SET_UP_BIG_DOLL,    EVENT_DECO_BIG_MUK_DOLL,    	    SPRITE_BIG_MUK
 	decoration DECO_PLANT,    PUT_IT_AWAY,       PUT_AWAY_DOLL,      EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1,         $00
 	decoration DECO_DOLL,     PIKACHU,           SET_UP_DOLL,        EVENT_DECO_PIKACHU_DOLL,           SPRITE_MON_DOLL_1
-	decoration DECO_DOLL,     RAICHU,            SET_UP_DOLL,        EVENT_DECO_RAICHU_DOLL,            SPRITE_MON_DOLL_1
-	decoration DECO_PLANT,    SURF_PIKA_DOLL,    SET_UP_DOLL,        EVENT_DECO_SURFING_PIKACHU_DOLL,   SPRITE_SURFING_PIKACHU
 	decoration DECO_DOLL,     CLEFAIRY,          SET_UP_DOLL,        EVENT_DECO_CLEFAIRY_DOLL,          SPRITE_MON_DOLL_1
 	decoration DECO_DOLL,     JIGGLYPUFF,        SET_UP_DOLL,        EVENT_DECO_JIGGLYPUFF_DOLL,        SPRITE_MON_DOLL_1
 	decoration DECO_DOLL,     BULBASAUR,         SET_UP_DOLL,        EVENT_DECO_BULBASAUR_DOLL,         SPRITE_MON_DOLL_1
@@ -57,24 +55,17 @@ DecorationAttributes:
 	decoration DECO_DOLL,     CHIKORITA,         SET_UP_DOLL,        EVENT_DECO_CHIKORITA_DOLL,         SPRITE_MON_DOLL_1
 	decoration DECO_DOLL,     CYNDAQUIL,         SET_UP_DOLL,        EVENT_DECO_CYNDAQUIL_DOLL,         SPRITE_MON_DOLL_1
 	decoration DECO_DOLL,     TOTODILE,          SET_UP_DOLL,        EVENT_DECO_TOTODILE_DOLL,          SPRITE_MON_DOLL_1
-	decoration DECO_DOLL,     POLIWAG,           SET_UP_DOLL,        EVENT_DECO_POLIWAG_DOLL,           SPRITE_MON_DOLL_1
 	decoration DECO_DOLL,     MAREEP,            SET_UP_DOLL,        EVENT_DECO_MAREEP_DOLL,            SPRITE_MON_DOLL_1
 	decoration DECO_DOLL,     TOGEPI,            SET_UP_DOLL,        EVENT_DECO_TOGEPI_DOLL,            SPRITE_MON_DOLL_1
-	decoration DECO_DOLL,     MAGIKARP,          SET_UP_DOLL,        EVENT_DECO_MAGIKARP_DOLL,          SPRITE_MON_DOLL_1
-	decoration DECO_DOLL,     ODDISH,            SET_UP_DOLL,        EVENT_DECO_ODDISH_DOLL,            SPRITE_MON_DOLL_1
-	decoration DECO_DOLL,     GENGAR,            SET_UP_DOLL,        EVENT_DECO_GENGAR_DOLL,            SPRITE_MON_DOLL_1
-	decoration DECO_DOLL,     MARACTUS,         SET_UP_DOLL,        EVENT_DECO_MARACTUS_DOLL,         SPRITE_MON_DOLL_1
 	decoration DECO_DOLL,     DITTO,             SET_UP_DOLL,        EVENT_DECO_DITTO_DOLL,             SPRITE_MON_DOLL_1
-	decoration DECO_DOLL,     VOLTORB,           SET_UP_DOLL,        EVENT_DECO_VOLTORB_DOLL,           SPRITE_MON_DOLL_1
 	decoration DECO_DOLL,     GIRAFARIG,         SET_UP_DOLL,        EVENT_DECO_GIRAFARIG_DOLL,         SPRITE_MON_DOLL_1
-	decoration DECO_DOLL,     COTTONEE,             SET_UP_DOLL,        EVENT_DECO_COTTONEE_DOLL,             SPRITE_MON_DOLL_1
-	decoration DECO_DOLL,     GEODUDE,           SET_UP_DOLL,        EVENT_DECO_GEODUDE_DOLL,           SPRITE_MON_DOLL_1
-	decoration DECO_DOLL,     FLITTLE,            SET_UP_DOLL,        EVENT_DECO_FLITTLE_DOLL,            SPRITE_MON_DOLL_1
-	decoration DECO_DOLL,     EXEGGCUTE,            SET_UP_DOLL,        EVENT_DECO_EXEGGCUTE_DOLL,            SPRITE_MON_DOLL_1
+	decoration DECO_DOLL,     COTTONEE,          SET_UP_DOLL,        EVENT_DECO_COTTONEE_DOLL,          SPRITE_MON_DOLL_1
+	decoration DECO_DOLL,     MARILL,            SET_UP_DOLL,        EVENT_DECO_MARILL_DOLL,         	SPRITE_MON_DOLL_1
 	decoration DECO_DOLL,     TEDDIURSA,         SET_UP_DOLL,        EVENT_DECO_TEDDIURSA_DOLL,         SPRITE_MON_DOLL_1
 	decoration DECO_DOLL,     MEOWTH,            SET_UP_DOLL,        EVENT_DECO_MEOWTH_DOLL,            SPRITE_MON_DOLL_1
 	decoration DECO_DOLL,     BUIZEL,            SET_UP_DOLL,        EVENT_DECO_BUIZEL_DOLL,            SPRITE_MON_DOLL_1
 	decoration DECO_DOLL,     GROWLITHE,         SET_UP_DOLL,        EVENT_DECO_GROWLITHE_DOLL,         SPRITE_MON_DOLL_1
 	decoration DECO_DOLL,     EEVEE,             SET_UP_DOLL,        EVENT_DECO_EEVEE_DOLL,             SPRITE_MON_DOLL_1
+	decoration DECO_DOLL,     MINCCINO,          SET_UP_DOLL,        EVENT_DECO_MINCCINO_DOLL,          SPRITE_MON_DOLL_1
 	decoration DECO_PLANT,    GOLD_TROPHY,       SET_UP_DOLL,        EVENT_DECO_GOLD_TROPHY,            SPRITE_N64
-	decoration DECO_PLANT,    MAGNAPLANT,     SET_UP_DOLL,        EVENT_DECO_SILVER_TROPHY,          SPRITE_N64
+	decoration DECO_PLANT,    MAGNAPLANT,     	 SET_UP_DOLL,        EVENT_DECO_SILVER_TROPHY,          SPRITE_N64

@@ -274,3 +274,49 @@ BuyMonIconPointers:
 	dba MagikarpBuyMonIcon
 	dba ChinchouBuyMonIcon
 	dba CarvanhaBuyMonIcon
+	
+DecosIconPointers:
+	dba NoItemIcon
+	dba BedIcon
+	dba BedIcon
+	dba BedIcon
+	dba BedIcon
+	dba BedIcon
+	dba BedIcon
+	dba RedRugIcon
+	dba BlueRugIcon
+	dba YellowRugIcon
+	dba GreenRugIcon
+	dba RedRugIcon
+	dba MagnaPlantIcon
+	dba TropicPlantIcon
+	dba JumboPlantIcon
+	dba SpikeyPlantIcon
+	dba PokeBallPosterIcon
+	dba PikachuPosterIcon
+	dba ClefairyPosterIcon
+	dba JigglypuffPosterIcon
+	dba EeveePosterIcon
+	dba MarillPosterIcon
+	dba NoItemIcon
+	dba NoItemIcon
+	dba NoItemIcon
+	dba NoItemIcon
+	dba BigSnorlaxIcon
+	dba NoItemIcon
+	dba BigLaprasIcon
+	dba NoItemIcon
+	dba NoItemIcon
+	dba NoItemIcon
+	dba PikachuBuyMonIcon
+	dba EeveeBuyMonIcon
+	dba ClefairyBuyMonIcon
+	dba JigglypuffBuyMonIcon
+	dba MeowthBuyMonIcon
+	dba MinccinoBuyMonIcon
+	dba MarillBuyMonIcon
+	dba TeddiursaBuyMonIcon
+	dba CottoneeBuyMonIcon
+	dba GrowlitheBuyMonIcon
+	dba BuizelBuyMonIcon
+	dba DittoBuyMonIcon

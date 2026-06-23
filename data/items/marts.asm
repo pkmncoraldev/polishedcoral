@@ -44,6 +44,8 @@ Marts: ; 160a9
 	dw OttoMart
 	dw HealerMart
 	dw LuminaBar
+	dw LusterMallPosters
+	dw LusterMallDoll
 MartsEnd:
 
 
@@ -244,10 +246,19 @@ LusterMallElectronicsDeco:
 	db -1
 	
 LusterMallFurniture:
-	db 3 ; # items
-	dbw FEATHERY_BED_BUY, 	5000
-	dbw YELLOW_CARPET_BUY, 	5000
-	dbw MAGNAPLANT_BUY, 	5000
+	db 12 ; # items
+	dbw PINK_BED_BUY, 			5000
+	dbw BLUE_BED_BUY, 			5000
+	dbw YELLOW_BED_BUY, 		5000
+	dbw GREEN_BED_BUY, 			5000
+	dbw RED_CARPET_BUY, 		4000
+	dbw BLUE_CARPET_BUY, 		4000
+	dbw YELLOW_CARPET_BUY, 		4000
+	dbw GREEN_CARPET_BUY, 		4000
+	dbw MAGNAPLANT_BUY, 		3000
+	dbw TROPICPLANT_BUY, 		3000
+	dbw JUMBOPLANT_BUY, 		3000
+	dbw SPIKEYPLANT_BUY, 		3000
 	db -1
 	
 LusterMallCoffee:
@@ -593,4 +604,32 @@ LuminaBar:
 	db SODA_POP
 	db BLOSSOM_TEA
 	db SWEET_HONEY
+	db -1
+	
+LusterMallPosters:
+	db 6 ; # items
+	dbw POKEBALL_POSTER_BUY, 	4000
+	dbw PIKACHU_POSTER_BUY, 	6000
+	dbw CLEFAIRY_POSTER_BUY, 	6000
+	dbw JIGGLYPUFF_POSTER_BUY, 	6000
+	dbw EEVEE_POSTER_BUY, 		6000
+	dbw MARILL_POSTER_BUY, 		6000
+	db -1
+	
+LusterMallDoll:
+	db 14 ; # items
+	dbw DITTO_DOLL_BUY, 		6000
+	dbw PIKACHU_DOLL_BUY, 		3000
+	dbw EEVEE_DOLL_BUY, 		3000
+	dbw CLEFAIRY_DOLL_BUY, 		3000
+	dbw JIGGLYPUFF_DOLL_BUY, 	3000
+	dbw MEOWTH_DOLL_BUY, 		3000
+	dbw MINCCINO_DOLL_BUY, 		4000
+	dbw MARILL_DOLL_BUY, 		4000
+	dbw TEDDIURSA_DOLL_BUY, 	4000
+	dbw COTTONEE_DOLL_BUY, 		5000
+	dbw GROWLITHE_DOLL_BUY, 	5000
+	dbw BUIZEL_DOLL_BUY, 		5000
+	dbw BIG_SNORLAX_DOLL_BUY, 	10000
+	dbw BIG_LAPRAS_DOLL_BUY, 	10000
 	db -1

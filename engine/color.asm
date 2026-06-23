@@ -140,8 +140,41 @@ LoadCategoryAndTypePals:
 	ld a, $5
 	jp FarCopyWRAM
 	
+LoadDecoIconPalette:
+	ld bc, DecosIconPalettes
+	ld a, [wCurSpecies]
+	dec a
+	ld l, a
+	ld h, 0
+	add hl, hl
+	add hl, hl
+	add hl, hl
+	add hl, bc
+	push hl
+	ld e, 8
+	ld d, 0
+	ld hl, wUnknOBPals palette 0
+	ld a, [wPlaceBallsX]
+.loop
+	cp 0
+	jr z, .done
+	add hl, de
+	dec a
+	jr .loop
+.done
+	ld a, l
+	ld e, a
+	ld a, h
+	ld d, a
+	pop hl
+	ld bc, 8
+	ld a, $5
+	jp FarCopyWRAM
+	
 LoadItemIconPalette:
 	ld a, [wEngineBuffer1]
+	cp MARTTYPE_DECO
+	jr z, LoadDecoIconPalette
 	cp MARTTYPE_CLOTHES
 	ld bc, ClothesIconPalettes
 	jr z, .got_pals

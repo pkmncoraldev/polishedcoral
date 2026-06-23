@@ -154,11 +154,8 @@ ClothesShop: ; 15a6e
 DecoShop: ; 15a6e
 	call FarReadTMMart
 	call LoadStandardMenuDataHeader
-	ld hl, Text_Mart_Clothes_Intro
-	call MartTextBox
 	call BuyDecoMenu
-	ld hl, Text_Mart_Clothes_ComeAgain
-	jp MartTextBox
+	ret
 
 Pharmacist: ; 15aae
 	call FarReadMart
@@ -1475,7 +1472,7 @@ BuyDecoMenuLoop:
 	lb bc, PRINTNUM_MONEY | 3, 7
 	call PrintNum
 	call UpdateSprites
-;	farcall Pack_Draw_Sprites
+	farcall Pack_Draw_Sprites
 	ld hl, DecoMenuDataHeader_Buy
 	call CopyMenuDataHeader
 	call DoMartScrollingMenu
@@ -1815,7 +1812,7 @@ DecoMartAskPurchaseQuantity:
 	farcall CheckDeco
 	ld a, [wScriptVar]
 	cp TRUE
-	jr z, .AlreadyHaveClothes
+	jr z, .AlreadyHaveDeco
 
 	ld a, 1
 	ld [wItemQuantityChangeBuffer], a
@@ -1840,15 +1837,15 @@ DecoMartAskPurchaseQuantity:
 	and a
 	ret
 
-.AlreadyHaveClothes
-	ld hl, .AlreadyHaveClothesText
+.AlreadyHaveDeco
+	ld hl, .AlreadyHaveDecoText
 	call PrintText
 	call JoyWaitAorB
 	scf
 	ret
 
-.AlreadyHaveClothesText
-	text_jump AlreadyHaveClothesText
+.AlreadyHaveDecoText
+	text_jump AlreadyHaveDecoText
 	db "@"
 
 BTMartAskPurchaseQuantity:

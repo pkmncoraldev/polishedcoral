@@ -1,7 +1,7 @@
 ; N. Onwa Pokémon in water
 
 	map_id SUNSET_BAY
-	db 6 percent ; encounter rate
+	db 4 percent ; encounter rate
 	db 27, WINGULL		;30%
 	db 27, WINGULL		;30%
 	db 27, HORSEA		;20%

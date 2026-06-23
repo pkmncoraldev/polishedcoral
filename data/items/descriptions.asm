@@ -1249,19 +1249,18 @@ PinkClothesDesc:
 	db   "A set of PINK"
 	next "clothes.@"
 	
-	
 DecoDescriptions:
-	dw FeatheryBedDesc
+	dw NoDecoDesc
 	dw PinkBedDesc
 	dw BlueBedDesc
 	dw YellowBedDesc
 	dw GreenBedDesc
-	dw CheckerBedDesc
+	dw NoDecoDesc
 	dw RedCarpetDesc
 	dw BlueCarpetDesc
 	dw YellowCarpetDesc
 	dw GreenCarpetDesc
-	dw CheckerCarpetDesc
+	dw NoDecoDesc
 	dw MagnaplantDesc
 	dw TropicplantDesc
 	dw JumboplantDesc
@@ -1272,52 +1271,31 @@ DecoDescriptions:
 	dw JigglypuffPosterDesc
 	dw EeveePosterDesc
 	dw MarillPosterDesc
-	dw TownMapDesc
-	dw MinasPaintingDesc
-	dw SnesDesc
-	dw N64Desc
+	dw NoDecoDesc
+	dw NoDecoDesc
+	dw NoDecoDesc
+	dw NoDecoDesc
+	dw BigSnorlaxDollDesc
+	dw NoDecoDesc
+	dw BigLaprasDollDesc
+	dw NoDecoDesc
+	dw NoDecoDesc
+	dw NoDecoDesc
 	dw PikachuDollDesc
-	dw RaichuDollDesc
-	dw SurfPikachuDollDesc
+	dw EeveeDollDesc
 	dw ClefairyDollDesc
 	dw JigglypuffDollDesc
-	dw BulbasaurDollDesc
-	dw CharmanderDollDesc
-	dw SquirtleDollDesc
-	dw ChikoritaDollDesc
-	dw CyndaquilDollDesc
-	dw TotodileDollDesc
-	dw PoliwagDollDesc
-	dw MareepDollDesc
-	dw TogepiDollDesc
-	dw MagikarpDollDesc
-	dw OddishDollDesc
-	dw GengarDollDesc
-	dw MaractusDollDesc
-	dw DittoDollDesc
-	dw VoltorbDollDesc
-	dw StantlerDollDesc
-	dw CottoneeDollDesc
-	dw GeodudeDollDesc
-	dw PinecoDollDesc
-	dw ExeggcuteDollDesc
-	dw TeddiursaDollDesc
 	dw MeowthDollDesc
-	dw BuizelDollDesc
+	dw MinccinoDollDesc
+	dw MarillDollDesc
+	dw TeddiursaDollDesc
+	dw CottoneeDollDesc
 	dw GrowlitheDollDesc
-	dw EeveeDollDesc
-	dw BigSnorlaxDollDesc
-	dw BigOnixDollDesc
-	dw BigLaprasDollDesc
-	dw BigGyaradosDollDesc
-	dw BigMamoswineDollDesc
-	dw BigMukDollDesc
-	dw GoldTrophyDollDesc
-	dw SilverTrophyDollDesc
+	dw BuizelDollDesc
+	dw DittoDollDesc
 	
-FeatheryBedDesc:
-	db   "Bed with white"
-	next "sheets.@"
+NoDecoDesc:
+	db   "@"
 	
 PinkBedDesc:
 	db   "Bed with pink"
@@ -1332,64 +1310,116 @@ YellowBedDesc:
 	next "sheets.@"
 	
 GreenBedDesc:
-CheckerBedDesc:
+	db   "Bed with green"
+	next "sheets.@"
 RedCarpetDesc:
+	db   "A red rug"
+	next "for your room.@"
+
 BlueCarpetDesc:
-YellowCarpetDesc:
-GreenCarpetDesc:
-CheckerCarpetDesc:
-MagnaplantDesc:
-TropicplantDesc:
-JumboplantDesc:
-SpikeyplantDesc:
-PokeballPosterDesc:
-PikachuPosterDesc:
-ClefairyPosterDesc:
-JigglypuffPosterDesc:
-EeveePosterDesc:
-MarillPosterDesc:
-TownMapDesc:
-MinasPaintingDesc:
-SnesDesc:
-N64Desc:
-PikachuDollDesc:
-RaichuDollDesc:
-SurfPikachuDollDesc:
-ClefairyDollDesc:
-JigglypuffDollDesc:
-BulbasaurDollDesc:
-CharmanderDollDesc:
-SquirtleDollDesc:
-ChikoritaDollDesc:
-CyndaquilDollDesc:
-TotodileDollDesc:
-PoliwagDollDesc:
-MareepDollDesc:
-TogepiDollDesc:
-MagikarpDollDesc:
-OddishDollDesc:
-GengarDollDesc:
-MaractusDollDesc:
-DittoDollDesc:
-VoltorbDollDesc:
-StantlerDollDesc:
-CottoneeDollDesc:
-GeodudeDollDesc:
-PinecoDollDesc:
-ExeggcuteDollDesc:
-TeddiursaDollDesc:
-MeowthDollDesc:
-BuizelDollDesc:
-GrowlitheDollDesc:
-EeveeDollDesc:
-BigSnorlaxDollDesc:
-BigOnixDollDesc:
-BigLaprasDollDesc:
-BigGyaradosDollDesc:
-BigMamoswineDollDesc:
-BigMukDollDesc:
-GoldTrophyDollDesc:
-SilverTrophyDollDesc:
-	db   "Generic"
-	next "description.@"
+	db   "A blue rug"
+	next "for your room.@"
 	
+YellowCarpetDesc:
+	db   "A yellow rug"
+	next "for your room.@"
+	
+GreenCarpetDesc:
+	db   "A green rug"
+	next "for your room.@"
+	
+MagnaplantDesc:
+	db   "A small, fluffy"
+	next "potted plant.@"
+	
+TropicplantDesc:
+	db   "A small, leafy"
+	next "potted plant.@"
+	
+JumboplantDesc:
+	db   "An impressive"
+	next "potted plant.@"
+	
+SpikeyplantDesc:
+	db   "A dangerous"
+	next "potted plant.@"
+	
+PokeballPosterDesc:
+	db   "A poster with a"
+	next "# BALL design.@"
+	
+PikachuPosterDesc:
+	db   "A poster with a"
+	next "PIKACHU design.@"
+	
+ClefairyPosterDesc:
+	db   "A poster with a"
+	next "CLEFAIRY design.@"
+	
+JigglypuffPosterDesc:
+	db   "A poster with a"
+	next "JIGGLYPUFF design.@"
+	
+EeveePosterDesc:
+	db   "A poster with as"
+	next "EEVEE design.@"
+	
+MarillPosterDesc:
+	db   "A poster with a"
+	next "MARILL design.@"
+	
+BigSnorlaxDollDesc:
+	db   "A HUGE, fluffy"
+	next "SNORLAX doll.@"
+	
+BigLaprasDollDesc:
+	db   "A HUGE, fluffy"
+	next "LAPRAS doll.@"
+	
+PikachuDollDesc:
+	db   "An adorable"
+	next "PIKACHU doll.@"
+	
+EeveeDollDesc:
+	db   "An adorable"
+	next "EEVEE doll.@"
+	
+ClefairyDollDesc:
+	db   "An adorable"
+	next "CLEFAIRY doll.@"
+	
+JigglypuffDollDesc:
+	db   "An adorable"
+	next "JIGGLYPUFF doll.@"
+	
+MeowthDollDesc:
+	db   "An adorable"
+	next "MEOWTH doll.@"
+	
+MinccinoDollDesc:
+	db   "An adorable"
+	next "MINCCINO doll.@"
+	
+MarillDollDesc:
+	db   "An adorable"
+	next "MARILL doll.@"
+	
+TeddiursaDollDesc:
+	db   "An adorable"
+	next "TEDDIURSA doll.@"
+	
+CottoneeDollDesc:
+	db   "An adorable"
+	next "COTTONEE doll.@"
+	
+GrowlitheDollDesc:
+	db   "An adorable"
+	next "GROWLITHE doll.@"
+	
+BuizelDollDesc:
+	db   "An adorable"
+	next "BUIZEL doll.@"
+	
+DittoDollDesc:
+	db   "An adorable"
+	next "DITTO doll.@"

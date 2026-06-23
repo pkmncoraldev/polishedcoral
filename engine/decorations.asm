@@ -305,15 +305,8 @@ FindOwnedConsoles: ; 26910
 ; 2691d
 
 DecoOrnamentMenu: ; 2691d
-	eventflagcheck EVENT_GOT_TAPE_PLAYER
-	jr z, .tape_player
 	call FindOwnedOrnaments
 	call PopulateDecoCategoryMenu
-	xor a
-	ret
-.tape_player
-	ld hl, DecoText_GrabTapePlayer
-	call MenuTextBoxBackup
 	xor a
 	ret
 
@@ -325,8 +318,6 @@ FindOwnedOrnaments: ; 26925
 
 .ornaments ; 2692d
 	db DECO_PIKACHU_DOLL
-	db DECO_RAICHU_DOLL
-	db DECO_SURF_PIKACHU_DOLL
 	db DECO_CLEFAIRY_DOLL
 	db DECO_JIGGLYPUFF_DOLL
 	db DECO_BULBASAUR_DOLL
@@ -335,25 +326,18 @@ FindOwnedOrnaments: ; 26925
 	db DECO_CHIKORITA_DOLL
 	db DECO_CYNDAQUIL_DOLL
 	db DECO_TOTODILE_DOLL
-	db DECO_POLIWAG_DOLL
 	db DECO_MAREEP_DOLL
 	db DECO_TOGEPI_DOLL
-	db DECO_MAGIKARP_DOLL
-	db DECO_ODDISH_DOLL
-	db DECO_GENGAR_DOLL
-	db DECO_MARACTUS_DOLL
 	db DECO_DITTO_DOLL
-	db DECO_VOLTORB_DOLL
 	db DECO_GIRAFARIG_DOLL
 	db DECO_COTTONEE_DOLL
-	db DECO_GEODUDE_DOLL
-	db DECO_PINECO_DOLL
-	db DECO_EXEGGCUTE_DOLL
+	db DECO_MARILL_DOLL
 	db DECO_TEDDIURSA_DOLL
 	db DECO_MEOWTH_DOLL
 	db DECO_BUIZEL_DOLL
 	db DECO_GROWLITHE_DOLL
 	db DECO_EEVEE_DOLL
+	db DECO_MINCCINO_DOLL
 	db DECO_GOLD_TROPHY_DOLL
 	db DECO_SILVER_TROPHY_DOLL
 	db -1
@@ -987,10 +971,6 @@ MenuData2_0x26eb3: ; 0x26eb3
 	db "RIGHT SIDE@"
 	db "CANCEL@"
 ; 0x26ed1
-
-DecoText_GrabTapePlayer:
-	text_jump UnknownText_GrabTapePlayer
-	db "@"
 
 DecoText_PutAwayTheDeco: ; 0x26ed1
 	; Put away the @ .

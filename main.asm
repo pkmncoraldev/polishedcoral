@@ -671,6 +671,9 @@ PlaceMenuItemName::
 ;fallthrough
 GetItemIconTiles::
 	ld a, [wEngineBuffer1]
+	cp MARTTYPE_DECO
+	ld hl, DecosIconPointers
+	jr z, .got_pointers
 	cp MARTTYPE_CLOTHES
 	ld hl, ClothesIconPointers
 	jr z, .got_pointers

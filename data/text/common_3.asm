@@ -1415,6 +1415,11 @@ AlreadyHaveClothesText::
 	line "wearing that!"
 	done
 	
+AlreadyHaveDecoText::
+	text "You already own"
+	line "that one!"
+	done
+	
 MartPremierBallText::
 	text "You also get a"
 	line "PREMIER BALL as"

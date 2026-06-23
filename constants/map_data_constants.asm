@@ -73,6 +73,7 @@ DEF const_value = -1
 	const SPAWN_FLICKER
 	const SPAWN_TWINKLE
 	const SPAWN_LUSTER
+	const SPAWN_AIRPORT
 	const SPAWN_SHIMMER
 	const SPAWN_RADIANT
 	const SPAWN_DUSK

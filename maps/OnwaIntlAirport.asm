@@ -1,7 +1,8 @@
 OnwaIntlAirport_MapScriptHeader:
 	db 0 ; scene scripts
 
-	db 1 ; callbacks
+	db 2 ; callbacks
+	callback MAPCALLBACK_NEWMAP, OnwaIntlAirportFlyPoint
 	callback MAPCALLBACK_TILES, OnwaIntlAirportCallback
 
 	db 4 ; warp events
@@ -59,6 +60,10 @@ OnwaIntlAirport_MapScriptHeader:
 	const ONWA_INTL_AIRPORT_XATU
 	const ONWA_INTL_AIRPORT_WENDY
 	const ONWA_INTL_AIRPORT_PLAYER_CUTSCENE
+	
+OnwaIntlAirportFlyPoint:
+	setflag ENGINE_FLYPOINT_AIRPORT
+	return
 	
 OnwaIntlAirportCallback:
 	checkevent EVENT_AIRPORT_WENDY

@@ -80,16 +80,16 @@ EngineFlags: ; 80462
 	engine_flag wVisitedSpawns, 8  ; flicker
 	engine_flag wVisitedSpawns, 9  ; twinkle
 	engine_flag wVisitedSpawns, 10 ; luster
-	engine_flag wVisitedSpawns, 11 ; shimmer
-	engine_flag wVisitedSpawns, 12 ; brillo
+	engine_flag wVisitedSpawns, 11 ; airport
+	engine_flag wVisitedSpawns, 12 ; shimmer
 	engine_flag wVisitedSpawns, 13 ; radiant
 	engine_flag wVisitedSpawns, 14 ; dusk
 	engine_flag wVisitedSpawns, 15 ; crossroads
 	engine_flag wVisitedSpawns, 16 ; komore
 	engine_flag wVisitedSpawns, 17 ; bright
 	engine_flag wVisitedSpawns, 18 ; obscura
-	engine_flag wVisitedSpawns, 19 ; unused
-	engine_flag wVisitedSpawns, 20 ; unused
+	engine_flag wVisitedSpawns, 19 ; lumina
+	engine_flag wVisitedSpawns, 20 ; brillo
 	engine_flag wVisitedSpawns, 21 ; unused
 	engine_flag wVisitedSpawns, 22 ; unused
 	engine_flag wVisitedSpawns, 23 ; unused

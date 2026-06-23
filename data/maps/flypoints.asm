@@ -16,6 +16,7 @@ Flypoints:
 	flypoint FLICKER,			FLICKER_STATION
 	flypoint TWINKLE,			TWINKLE_TOWN
 	flypoint LUSTER,			LUSTER_CITY
+	flypoint AIRPORT,			AIRPORT
 	
 DEF SOUTH_ONWA_FLYPOINT EQU const_value
 	

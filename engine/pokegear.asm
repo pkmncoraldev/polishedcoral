@@ -2637,12 +2637,19 @@ TownMapBubble: ; 91bb5
 	ld de, Flypoints
 	add hl, de
 	ld e, [hl]
+	ld a, e
+	cp AIRPORT
+	jr z, .airport
 	farcall GetLandmarkName
 	hlcoord 2, 1
 	ld de, wStringBuffer1
 	jp PlaceString
-
-; 91c17
+.airport
+	hlcoord 2, 1
+	ld de, .AirportString
+	jp PlaceString
+.AirportString
+	db "AIRPORT@"
 
 GetMapCursorCoordinates: ; 91c17
 	ld a, [wTownMapPlayerIconLandmark]
@@ -2715,8 +2722,8 @@ FlyMap: ; 91c90
 	ld [wTownMapPlayerIconLandmark], a
 ; Flypoints begin at Sunset Bay...
 	ld [wStartFlypoint], a
-; ..and end at Luster City
-	ld a, FLY_LUSTER
+; ..and end at Airport
+	ld a, FLY_AIRPORT
 	ld [wEndFlypoint], a
 ; Fill out the map
 	call FillNorthOnwaMap

@@ -822,7 +822,7 @@ MailMovedFromBoxText::
 Text_WasSentToBillsPC::
 	text_from_ram wStringBuffer1
 	text " was"
-	line "sent to BILL's PC."
+	line "sent to ALAN's PC."
 	prompt
 
 UnknownText_0x1c1006::
@@ -1044,7 +1044,7 @@ UnknownText_0x1c1462::
 	done
 
 UnknownText_0x1c1474::
-	text "BILL's PC"
+	text "ALAN's PC"
 	line "accessed."
 
 	para "#MON STORAGE"

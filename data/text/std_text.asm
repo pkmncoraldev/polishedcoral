@@ -265,7 +265,7 @@ ContestResults_PartyFullText::
 	line "so the #MON was"
 
 	para "sent to your BOX"
-	line "in BILL's PC."
+	line "in ALAN's PC."
 	prompt
 
 ContestResults_BoxFullText::

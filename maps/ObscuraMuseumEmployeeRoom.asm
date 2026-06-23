@@ -100,6 +100,7 @@ ObscuraMuseumEmployeeRoomAbiegail:
 	buttonsound
 	changetextboxspeaker
 	verbosegivetmhm HM_DIVE
+	setflag ENGINE_GOT_DIVE
 .gave_pearl
 	changetextboxspeaker TEXTBOX_ABIE
 	writetext ObscuraMuseumEmployeeRoomAbiegailText6

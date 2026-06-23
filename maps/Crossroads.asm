@@ -3,8 +3,7 @@ Crossroads_MapScriptHeader:
 	scene_script CrossroadsTrigger0
 	scene_script CrossroadsTrigger1
 
-	db 3 ; callbacks
-	callback MAPCALLBACK_NEWMAP, CrossroadsFlyPoint
+	db 2 ; callbacks
 	callback MAPCALLBACK_TILES, CrossroadsCallback
 	callback MAPCALLBACK_OBJECTS, DuskTurnpikeStopEngine
 
@@ -53,10 +52,6 @@ Crossroads_MapScriptHeader:
 	const CROSSROADS_COLBY
 	const CROSSROADS_COLBY2
 
-CrossroadsFlyPoint:
-	setflag ENGINE_FLYPOINT_CROSSROADS
-	return
-	
 CrossroadsTrigger0:
 CrossroadsTrigger1:
 	checkevent EVENT_CROSSROADS_UNFORTUNATE_CUSTOMER
@@ -383,6 +378,7 @@ CrossroadsCutscene2:
 	disappear CROSSROADS_COLBY2
 	special Special_FadeOutMusic
 	pause 15
+	setflag ENGINE_FLYPOINT_CROSSROADS
 	setevent EVENT_CROSSROADS_CUTSCENE_DONE
 	setevent EVENT_ROUTE_11_BRIDGE_BUILT
 	clearevent EVENT_ROUTE_11_BRIDGE_NOT_BUILT

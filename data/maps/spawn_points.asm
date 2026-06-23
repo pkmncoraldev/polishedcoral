@@ -12,7 +12,7 @@ SpawnPoints: ; 0x152ab
 	spawn STARGLOW_VALLEY,			   17, 18
 	spawn LAKE_ONWA,				   19, 18
 	spawn SUNBEAM_ISLAND,			   17, 36
-	spawn EVENTIDE_VILLAGE,			   13, 18
+	spawn EVENTIDE_VILLAGE,			   33, 14
 	spawn FLICKER_STATION,			   11, 30
 	spawn TWINKLE_TOWN,				   15, 48
 	spawn LUSTER_CITY_RESIDENTIAL,	   17, 26

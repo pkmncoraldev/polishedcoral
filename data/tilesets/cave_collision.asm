@@ -187,7 +187,7 @@
 	tilecoll UP_WALL, UP_WALL, UP_WALL, WALL ; ba
 	tilecoll LEDGE_DOWN, FLOOR, WALL, FLOOR ; bb
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; bc
-	tilecoll WATERFALL, WATERFALL, WATERFALL, WATERFALL ; bd
+	tilecoll LEDGE_DOWN, FLOOR, WALL, WALL ; bd
 	tilecoll UP_WALL, WALL, FLOOR, WALL ; be
 	tilecoll WALL, LEDGE_DOWN, WALL, WALL ; bf
 	tilecoll PUDDLE, PUDDLE, PUDDLE, PUDDLE ; c0

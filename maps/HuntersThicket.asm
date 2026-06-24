@@ -15,10 +15,11 @@ HuntersThicket_MapScriptHeader:
 	db 1 ; bg events
 	bg_event 29, 20, SIGNPOST_ITEM + SUN_STONE, EVENT_HUNTERS_THICKET_HIDDEN_SUN_STONE
 
-	db 19 ; object events
+	db 20 ; object events
 	itemball_event 18, 29, REPEL, 1, EVENT_HUNTERS_THICKET_BALL_1
 	itemball_event 14, 21, SILVERPOWDER, 1, EVENT_HUNTERS_THICKET_BALL_2
-	person_event SPRITE_BALL_CUT_FRUIT, 20,  5, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, HuntersThicketPokeballCut, EVENT_GOT_HM01_CUT
+	person_event SPRITE_BALL_CUT_FRUIT, 20,  4, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, HuntersThicketPokeballCut, EVENT_GOT_HM01_CUT
+	person_event SPRITE_FISHER, 19,  7, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, HuntersThicketCutMan, -1
 	person_event SPRITE_COOLTRAINER_F, 29, 19, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_GENERICTRAINER, 4, TrainerHunters_1, -1
 	person_event SPRITE_BUG_CATCHER, 16, 23, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 2, TrainerHunters_2, -1
 	person_event SPRITE_PICNICKER, 19, 15, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 2, TrainerHunters_3, -1
@@ -41,6 +42,7 @@ HuntersThicket_MapScriptHeader:
 	const HUNTERS_THICKET_POKE_BALL_1
 	const HUNTERS_THICKET_POKE_BALL_2
 	const HUNTERS_THICKET_POKE_BALL_3
+	const HUNTERS_THICKET_CUT_GUY
 	const HUNTERS_THICKET_TRAINER_1
 	const HUNTERS_THICKET_TRAINER_2
 	const HUNTERS_THICKET_TRAINER_3
@@ -89,6 +91,33 @@ HuntersThicketLoadDisguise:
 	ld [wScriptVar], a
 	ret
 	
+HuntersThicketCutMan:
+	faceplayer
+	opentext
+	checkevent EVENT_GOT_HM01_CUT
+	iftrue .got_cut
+	writetext HuntersThicketCutManText2
+	jump .end
+.got_cut
+	writetext HuntersThicketCutManText
+.end
+	waitbutton
+	closetext
+	spriteface HUNTERS_THICKET_CUT_GUY, DOWN
+	end
+	
+HuntersThicketCutManText:
+	text "You make sure to"
+	line "take good care of"
+	cont "that HM, ok?"
+	done
+	
+HuntersThicketCutManText2:
+	text "My fishing line"
+	line "keeps gettin'"
+	cont "tangled!"
+	done
+	
 HuntersThicketPokeballCut:
 	disappear LAST_TALKED
 	opentext
@@ -102,6 +131,15 @@ HuntersThicketPokeballCut:
 	givetmhm HM_CUT
 	setevent EVENT_GOT_HM01_CUT
 	setflag ENGINE_GOT_CUT
+	pause 5
+	applymovement HUNTERS_THICKET_CUT_GUY, Movement_HuntersThicketNPCWalkLeft
+	spriteface HUNTERS_THICKET_CUT_GUY, DOWN
+	opentext
+	writetext ReceivedCutText3
+	waitbutton
+	closetext
+	applymovement HUNTERS_THICKET_CUT_GUY, Movement_HuntersThicketNPCWalkRight
+	spriteface AIRPORT_NPC_2, DOWN
 	end
 	
 ReceivedCutText1:
@@ -113,6 +151,42 @@ ReceivedCutText2:
 	text "<PLAYER> put HM01"
 	line "in the TM POCKET."
 	done
+	
+ReceivedCutText3:
+	text "Oh! I was looking"
+	line "for that!"
+	
+	para "I use it to cut"
+	line "my line when it"
+	cont "gets tangled."
+	
+	para "Well, finders"
+	line "keepers!"
+
+	para "You probably won't"
+	line "need to use it"
+	cont "while fishing,"
+	
+	para "but you could use"
+	line "it to CUT down"
+	cont "small trees in"
+	cont "your way."
+	
+	para "You need the BADGE"
+	line "from STARGLOW"
+	cont "VALLEY to use it"
+	cont "outside of battle."
+	done
+
+Movement_HuntersThicketNPCWalkLeft:
+	step_left
+	step_left
+	step_end
+	
+Movement_HuntersThicketNPCWalkRight:
+	step_right
+	step_right
+	step_end
 
 HuntersThicketRanger:
 	waitsfx

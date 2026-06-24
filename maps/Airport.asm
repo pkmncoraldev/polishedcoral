@@ -211,6 +211,16 @@ AirportPokeballSurf:
 	changeblock $0c, $0c, $b5
 	setevent EVENT_GOT_HM03_SURF
 	setflag ENGINE_GOT_SURF
+	pause 5
+	applymovement AIRPORT_NPC_2, Movement_AirportNPCWalkUp
+	spriteface AIRPORT_NPC_2, RIGHT
+	spriteface PLAYER, LEFT
+	opentext
+	writetext ReceivedSurfText3
+	waitbutton
+	closetext
+	applymovement AIRPORT_NPC_2, Movement_AirportNPCWalkDown
+	spriteface AIRPORT_NPC_2, UP
 	end
 	
 ReceivedSurfText1:
@@ -222,6 +232,46 @@ ReceivedSurfText2:
 	text "<PLAYER> put HM03"
 	line "in the TM POCKET."
 	done
+	
+ReceivedSurfText3:
+	text "You took that HM"
+	line "even though it"
+	cont "didn't belong to"
+	cont "you, didn'tcha?"
+	
+	para "Hey, <WAIT_S>it's not my"
+	line "problem."
+	
+	para "I won't tell…"
+	
+	para "Anyway, that's"
+	line "HM03 SURF, isn't"
+	cont "it?"
+	
+	para "They say that's"
+	line "not just a good"
+	cont "move in battle."
+	
+	para "It can also be"
+	line "used to traverse"
+	cont "bodies of water"
+	cont "with ease."
+	
+	para "I think you need"
+	line "the BADGE from"
+	cont "LUSTER CITY for"
+	cont "that, though…"
+	done
+	
+Movement_AirportNPCWalkUp:
+	step_up
+	step_up
+	step_end
+	
+Movement_AirportNPCWalkDown:
+	step_down
+	step_down
+	step_end
 	
 AirportStopYou:
 	setlasttalked AIRPORT_X_RAY_GIRL
@@ -249,12 +299,6 @@ AirportNpc2:
 	writetext AirportNpc2Text2
 	jump .end
 .got_surf
-	checkevent EVENT_AIRPORT_SURF_EXPLAINED
-	iftrue .normal
-	setevent EVENT_AIRPORT_SURF_EXPLAINED
-	writetext AirportNpc2Text3
-	jump .end
-.normal
 	writetext AirportNpc2Text
 .end
 	waitbutton
@@ -378,36 +422,6 @@ AirportNpc2Text2:
 	line "baggage claim and"
 	cont "no one came back"
 	cont "for it…"
-	done
-	
-AirportNpc2Text3:
-	text "You took that HM"
-	line "even though it"
-	cont "didn't belong to"
-	cont "you, didn'tcha?"
-	
-	para "Hey, <WAIT_S>it's not my"
-	line "problem."
-	
-	para "I won't tell…"
-	
-	para "Anyway, that's"
-	line "HM03 SURF, isn't"
-	cont "it?"
-	
-	para "They say that's"
-	line "not just a good"
-	cont "move in battle."
-	
-	para "It can also be"
-	line "used to traverse"
-	cont "bodies of water"
-	cont "with ease."
-	
-	para "I think you need"
-	line "the BADGE from"
-	cont "LUSTER CITY for"
-	cont "that, though…"
 	done
 	
 AirportNpc3Text:

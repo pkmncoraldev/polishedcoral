@@ -9,9 +9,8 @@ WendyPhoneText1:
 	cont "maybe you could"
 	cont "travel by sea?"
 	
-	para "Well hey, listen."
-	
-	para "I've gotta jet."
+	para "Well hey, listen.<WAIT_S>"
+	line "I've gotta jet."
 	
 	para "Talk to you"
 	line "later!"

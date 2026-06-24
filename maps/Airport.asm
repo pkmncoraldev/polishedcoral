@@ -354,9 +354,6 @@ AirportNpc1Text:
 	
 	para "Blah! Blah!"
 	line "Blah!"
-	
-	para "She just won't"
-	line "stop!"
 	done
 	
 AirportNpc2Text:

@@ -207,7 +207,7 @@ OnwaIntlAirportWendy:
 	spriteface ONWA_INTL_AIRPORT_WENDY, UP
 	applyonemovement PLAYER, hide_person
 	pause 10
-	applymovement PLAYER, Movement_OnwaIntlAirportCutscene0
+	applymovement PLAYER, Movement_OnwaIntlAirportCutscene2
 	appear ONWA_INTL_AIRPORT_NPC2
 	pause 25
 	opentext TEXTBOX_WENDY
@@ -216,12 +216,11 @@ OnwaIntlAirportWendy:
 	closetext
 	pause 25
 	special FadeOutPalettesBlack
-	disappear ONWA_INTL_AIRPORT_WENDY
-	moveperson ONWA_INTL_AIRPORT_WENDY, $1b, $03
-	appear ONWA_INTL_AIRPORT_WENDY
+	warp_stealth UP, ONWA_INTL_AIRPORT, 4, 13
+	applyonemovement PLAYER, hide_person
+	closetext
 	setevent EVENT_PLAYER_CUTSCENE_SILVER
 	disappear ONWA_INTL_AIRPORT_PLAYER_CUTSCENE
-	applymovement PLAYER, Movement_OnwaIntlAirportCutscene2
 	callasm LoadMapPals
 	special FadeInPalettes
 	pause 25
@@ -231,12 +230,13 @@ OnwaIntlAirportWendy:
 	closetext
 	pause 25
 	special FadeOutPalettesBlack
-	applymovement PLAYER, Movement_OnwaIntlAirportCutscene3
-	applyonemovement PLAYER, show_person
-	spriteface PLAYER, UP
-	spriteface ONWA_INTL_AIRPORT_WENDY, DOWN
+	warp_stealth UP, ONWA_INTL_AIRPORT, 27, 4
+	moveperson ONWA_INTL_AIRPORT_WENDY, $1b, $03
+	appear ONWA_INTL_AIRPORT_WENDY
+	closetext
 	callasm LoadMapPals
 	special FadeInPalettes
+	pause 15
 	opentext TEXTBOX_WENDY
 	writetext OnwaIntlAirportWendyText4
 	waitbutton
@@ -465,87 +465,15 @@ Movement_OnwaIntlAirportWendyBump:
 	remove_fixed_facing
 	step_end
 	
-Movement_OnwaIntlAirportCutscene0:
+Movement_OnwaIntlAirportCutscene1:
 	slow_step_left
 	
-Movement_OnwaIntlAirportCutscene1:
-	slow_step_up
-	slow_step_up
-	slow_step_up
-	slow_step_up
-	step_end
-	
 Movement_OnwaIntlAirportCutscene2:
-	big_step_down
-	big_step_down
-	big_step_down
-	big_step_down
-	big_step_down
-	big_step_down
-	big_step_down
-	big_step_down
-	big_step_down
-	big_step_down
-	big_step_down
-	big_step_down
-	big_step_down
-	big_step_left
-	big_step_left
-	big_step_left
-	big_step_left
-	big_step_left
-	big_step_left
-	big_step_left
-	big_step_left
-	big_step_left
-	big_step_left
-	big_step_left
-	big_step_left
-	big_step_left
-	big_step_left
-	big_step_left
-	big_step_left
-	big_step_left
-	big_step_left
-	big_step_left
-	big_step_left
-	big_step_left
-	big_step_left
-	step_end
-	
-Movement_OnwaIntlAirportCutscene3:
-	big_step_right
-	big_step_right
-	big_step_right
-	big_step_right
-	big_step_right
-	big_step_right
-	big_step_right
-	big_step_right
-	big_step_right
-	big_step_right
-	big_step_right
-	big_step_right
-	big_step_right
-	big_step_right
-	big_step_right
-	big_step_right
-	big_step_right
-	big_step_right
-	big_step_right
-	big_step_right
-	big_step_right
-	big_step_right
-	big_step_right
-	big_step_up
-	big_step_up
-	big_step_up
-	big_step_up
-	big_step_up
-	big_step_up
-	big_step_up
-	big_step_up
-	big_step_up
+	slow_step_left
+	slow_step_up
+	slow_step_up
+	slow_step_up
+	slow_step_up
 	step_end
 	
 Movement_OnwaIntlAirportWendyLeave:

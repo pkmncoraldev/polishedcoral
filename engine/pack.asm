@@ -1,6 +1,7 @@
 Pack: ; 10000
 	xor a
 	ld [wPlaceBallsX], a
+	ld [wEngineBuffer1], a
 	ld hl, wOptions1
 	set NO_TEXT_SCROLL, [hl]
 	call InitPackBuffers
@@ -802,6 +803,7 @@ QuitItemSubmenu: ; 10492
 BattlePack: ; 10493
 	xor a
 	ld [wPlaceBallsX], a
+	ld [wEngineBuffer1], a
 	ld hl, wOptions1
 	set NO_TEXT_SCROLL, [hl]
 	call InitPackBuffers

@@ -109,7 +109,7 @@ AureoleMountain1F_Trainer_5:
 	done
 	
 AureoleMountain1F_Trainer_6:
-	generictrainer COOLTRAINERM, BROOKE, EVENT_BEAT_AUREOLE_MOUNTAIN_1F_TRAINER_6, .SeenText, .BeatenText
+	generictrainer COOLTRAINERF, BROOKE, EVENT_BEAT_AUREOLE_MOUNTAIN_1F_TRAINER_6, .SeenText, .BeatenText
 
 	text "NORMAL TEXT"
 	done

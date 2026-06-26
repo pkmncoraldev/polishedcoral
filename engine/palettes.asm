@@ -1806,26 +1806,26 @@ DecosIconPalettes:
 	
 ClothesIconPalettes:
 ; RED
-	RGB 29, 24, 31
-	RGB 20, 15, 26
+	RGB 31, 19, 10
+	RGB 31, 05, 00
 ; BLUE
-	RGB 31, 27, 15
-	RGB 29, 17, 11
+	RGB 31, 19, 10
+	RGB 10, 09, 31
 ; GREEN
-	RGB 29, 25, 28
-	RGB 31, 18, 27
+	RGB 31, 19, 10
+	RGB 07, 21, 02
 ; BROWN
-	RGB 23, 25, 31
-	RGB 04, 16, 28
+	RGB 31, 19, 10
+	RGB 15, 10, 03
 ; PURPLE
-	RGB 31, 27, 09
-	RGB 25, 20, 00
+	RGB 31, 19, 10
+	RGB 21, 06, 21
 ; TEAL
-	RGB 17, 30, 17
-	RGB 13, 26, 13
+	RGB 31, 19, 10
+	RGB 03, 21, 19
 ; PINK	
-	RGB 31, 31, 18
-	RGB 27, 27, 11
+	RGB 31, 19, 10
+	RGB 31, 12, 13
 	
 BuyMonIconPalettes:
 ; HORSEA

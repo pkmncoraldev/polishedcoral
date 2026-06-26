@@ -259,13 +259,20 @@ ItemIconPointers:
 	
 ClothesIconPointers:
 	dba NoItemIcon
-	dba ClothesIcon
-	dba ClothesIcon
-	dba ClothesIcon
-	dba ClothesIcon
-	dba ClothesIcon
-	dba ClothesIcon
-	dba ClothesIcon
+	dba ClothesIconBoy
+	dba ClothesIconBoy
+	dba ClothesIconBoy
+	dba ClothesIconBoy
+	dba ClothesIconBoy
+	dba ClothesIconBoy
+	dba ClothesIconBoy
+	dba ClothesIconGirl
+	dba ClothesIconGirl
+	dba ClothesIconGirl
+	dba ClothesIconGirl
+	dba ClothesIconGirl
+	dba ClothesIconGirl
+	dba ClothesIconGirl
 	
 BuyMonIconPointers:
 	dba NoItemIcon

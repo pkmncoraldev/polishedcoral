@@ -675,14 +675,22 @@ GetItemIconTiles::
 	ld hl, DecosIconPointers
 	jr z, .got_pointers
 	cp MARTTYPE_CLOTHES
-	ld hl, ClothesIconPointers
-	jr z, .got_pointers
+	jr z, .clothes
 	cp MARTTYPE_FISH_MARKET
 	ld hl, BuyMonIconPointers
 	jr z, .got_pointers
 	ld hl, ItemIconPointers
+	jr .got_pointers
+.clothes
+	eventflagcheck EVENT_PLAYER_IS_MALE
+	ld hl, ClothesIconPointers
+	jr nz, .got_pointers
+	ld a, [wCurSpecies]
+	add 7
+	jr .got_pointers2
 .got_pointers
 	ld a, [wCurSpecies]
+.got_pointers2
 	ld e, a
 	ld d, 0
 	add hl, de

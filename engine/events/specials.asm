@@ -713,6 +713,7 @@ Special_MinaGoodbye:
 	ld hl, MinaGoodbyeText5
 	jr .end
 .six
+	eventflagreset EVENT_MINA_NOT_AT_HOME
 	ld hl, MinaGoodbyeText6
 .end
 	call PrintText
@@ -779,7 +780,18 @@ MinaGoodbyeText5:
 	done
 	
 MinaGoodbyeText6:
-	text "ALOLA,"
+	text "Oh, before I"
+	line "forget:"
+	
+	para "I'm staying at"
+	line "an apartment in"
+	cont "LUSTER CITY."
+	
+	para "You should stop"
+	line "by for a visit"
+	cont "sometime."
+	
+	para "Anyway, ALOLA,"
 	line "<PLAYER>."
 	
 	para "I mean- <WAIT_M>"

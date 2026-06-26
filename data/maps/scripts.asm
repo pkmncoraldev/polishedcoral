@@ -41,7 +41,6 @@ SECTION "Dungeon Scripts", ROMX
 INCLUDE "maps/StarglowCavern1F.asm"
 INCLUDE "maps/StarglowCavern2F.asm"
 INCLUDE "maps/StarglowCavern3F.asm"
-INCLUDE "maps/MtOnwaB1F.asm"
 INCLUDE "maps/MtOnwaB2F.asm"
 INCLUDE "maps/MtOnwaB3F.asm"
 INCLUDE "maps/MtOnwaCliff.asm"
@@ -104,6 +103,7 @@ INCLUDE "maps/AureoleMountain4F.asm"
 INCLUDE "maps/AureoleMountain5F.asm"
 INCLUDE "maps/AureoleMountainOutside.asm"
 INCLUDE "maps/AureoleMountainOutside2.asm"
+INCLUDE "maps/MtOnwaB1F.asm"
 
 
 SECTION "Routes Scripts", ROMX
@@ -326,7 +326,6 @@ INCLUDE "maps/NettBuilding7F.asm"
 INCLUDE "maps/NettBuildingSpinnerRoom.asm"
 
 SECTION "Route 12 Scripts", ROMX
-INCLUDE "maps/Route12.asm"
 INCLUDE "maps/Route11.asm"
 INCLUDE "maps/OnwaIntlAirport.asm"
 INCLUDE "maps/AirportRunway.asm"
@@ -540,6 +539,7 @@ INCLUDE "maps/LusterApartment6_1F.asm"
 INCLUDE "maps/LusterApartment6_2F.asm"
 INCLUDE "maps/Route11House.asm"
 INCLUDE "maps/Route11Gate.asm"
+INCLUDE "maps/Route12.asm"
 
 SECTION "Misc Map Scripts 4", ROMX
 INCLUDE "maps/ObscuraFortuneHouse.asm"

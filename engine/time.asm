@@ -167,6 +167,7 @@ ResetDailyEventFlags:
 	eventflagreset EVENT_BOUGHT_MOO_MOO_MILK_TODAY
 	eventflagreset EVENT_ROCK_CANDY_SOLD_OUT
 	eventflagreset EVENT_DAILY_PLAYER_RIVER_RAPID_GAME
+	eventflagreset EVENT_DAILY_MINA_PAINTING_DONE
 	call CheckRanchSecondRace
 	eventflagcheck EVENT_BEAT_STANLEY
 	jr z, .done_stanley

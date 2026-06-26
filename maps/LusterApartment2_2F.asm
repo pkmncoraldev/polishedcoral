@@ -16,7 +16,7 @@ LusterApartment2_2F_MapScriptHeader:
 	signpost  7,  6, SIGNPOST_IFNOTSET, LusterApartment2_2FFlowers
 
 	db 6 ; object events
-	person_event SPRITE_MISC_BAGGAGE,  4,  7, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, LusterApartment2_2F_Luggage, EVENT_MINA_APARTMENT_EMPTY
+	person_event SPRITE_MISC_BAGGAGE,  4,  7, SPRITEMOVEDATA_TILE_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, LusterApartment2_2F_Luggage, EVENT_MINA_APARTMENT_EMPTY
 	person_event SPRITE_VALVE_1,  3,  4, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, LusterApartment2_2F_Easel2, EVENT_MINA_APARTMENT_EMPTY
 	person_event SPRITE_LEAVES,  3,  4, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, LusterApartment2_2F_Easel, EVENT_MINA_APARTMENT_EMPTY
 	person_event SPRITE_LEAVES,  5,  2, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, LusterApartment2_2F_Easel, EVENT_MINA_APARTMENT_EMPTY
@@ -28,15 +28,256 @@ LusterApartment2_2FCallback:
 	checkevent EVENT_MINA_APARTMENT_EMPTY
 	iftrue .empty
 	changemap LusterApartmentMina_BlockData
+	checkevent EVENT_DAILY_MINA_PAINTING_DONE
+	iffalse .empty
+	moveperson 2, -5, -5
 .empty
 	return
 	
 LusterApartment2_2F_Mina:
-	jumptextfaceplayer LusterApartment2_2F_MinaText
+	faceplayer
+	opentext TEXTBOX_MINA
+	checkevent EVENT_GOT_LUCKY_EGG
+	iftrue .already_got_lucky_egg
+	writetext LusterApartment2_2F_MinaText1
+	waitbutton
+	changetextboxspeaker
+	verbosegiveitem LUCKY_EGG
+	iffalse .no_room
+	setevent EVENT_GOT_LUCKY_EGG
+	changetextboxspeaker TEXTBOX_MINA
+	writetext LusterApartment2_2F_MinaText2
+	yesorno
+	iffalse .painting_no
+	jump .do_painting
+.already_got_lucky_egg
+	checkevent EVENT_DAILY_MINA_PAINTING_DONE
+	iftrue .done_painting_today
+	writetext LusterApartment2_2F_MinaText6
+	yesorno
+	iffalse .painting_no
+.do_painting
+	writetext LusterApartment2_2F_MinaText7
+	waitbutton
+	changetextboxspeaker
+	callasm LusterApartment2_2FMinaAsm
+	iffalse .painting_no
+	changetextboxspeaker TEXTBOX_MINA
+	writetext LusterApartment2_2F_MinaText3
+	waitbutton
+	closetext
+	pause 10
+	special FadeOutPalettesBlack
+	setevent EVENT_DAILY_MINA_PAINTING_DONE
+	warp_stealth UP, LUSTER_APARTMENT_2_2F, 4, 5
+	disappear 6
+	moveperson 6, 4, 4
+	appear 6
+	spriteface 6, UP
+	pause 20
+	opentext
+	writetext LusterApartment2_2F_PaintText
+	farwritetext StdBlankText
+	pause 6
+	writetext LusterApartment2_2F_PaintText2
+	waitbutton
+	closetext
+	pause 20
+	callasm LoadMapPals
+	special FadeInPalettes
 	
-LusterApartment2_2F_MinaText:
-	text "Hi, <PLAYER>."
+	pause 10
+	applyonemovement 6, turn_step_down
+	applyonemovement 6, remove_fixed_facing
+	opentext TEXTBOX_MINA
+	writetext LusterApartment2_2F_MinaText4
+	waitbutton
+	changetextboxspeaker
+	setevent EVENT_DECO_POSTER_8
+	writetext GiveMinasPaintingText
+	playsound SFX_ITEM
+	pause 60
+	writetext PutAwayMinasPaintingText
+	waitbutton
+	changetextboxspeaker TEXTBOX_MINA
+	writetext LusterApartment2_2F_MinaText5
+	waitbutton
+	closetext
+	end
+.done_painting_today
+	writetext LusterApartment2_2F_MinaText5
+	waitbutton
+	closetext
+	end
+.no_room
+	changetextboxspeaker TEXTBOX_MINA
+	writetext LusterApartment2_2F_NoRoomText
+	waitbutton
+	closetext
+	end
+.painting_no
+	changetextboxspeaker TEXTBOX_MINA
+	writetext LusterApartment2_2F_NoText
+	waitbutton
+	closetext
+	end
+	
+GiveMinasPaintingText:
+	text "<PLAYER> received"
+	line "MINA's PAINTING!"
 	done
+	
+PutAwayMinasPaintingText:
+	text "It was sent"
+	line "to the PC in"
+	cont "<PLAYER>'s room."
+	done
+	
+LusterApartment2_2F_PaintText:
+	text "A few lines here…"
+	
+	para "A splash of color"
+	line "there…"
+	
+	para "1…<WAIT_M><WAIT_S> 2…<WAIT_M><WAIT_S> 3…<WAIT_L>"
+	line "A<WAIT_S>a<WAIT_S>a<WAIT_S>a<WAIT_S>and…<WAIT_L>"
+	done
+	
+LusterApartment2_2F_PaintText2:
+	text "Done!"
+	done
+	
+LusterApartment2_2F_MinaText1:
+	text "Oh, <PLAYER>!"
+	
+	para "You came for that"
+	line "visit after all!"
+	
+	para "You know, I've "
+	line "traveled all over"
+	cont "ONWA looking for"
+	cont "inspiration,"
+	
+	para "and it seems like"
+	line "wherever I went,"
+	cont "you were there!"
+	
+	para "This whole trip"
+	line "wouldn't have been"
+	cont "the same if I had"
+	cont "never met you."
+	
+	para "So thank you,"
+	line "<PLAYER>."
+	
+	para "I want you to have"
+	line "this as a token of"
+	cont "our friendship."
+	done
+	
+LusterApartment2_2F_MinaText2:
+	text "Let your #MON"
+	line "hold that, and"
+	cont "it'll earn bonus"
+	cont "experience points."
+	
+	para "It's super handy!"
+	
+	para "…"
+	
+	para "Oh!"
+	
+	para "While you're here,"
+	line "why don't I paint"
+	cont "you something?"
+	
+	para "How about one of"
+	line "your #MON?"
+	done
+	
+LusterApartment2_2F_MinaText3:
+	text "Ok!<WAIT_S>"
+	line "I'll get started!"
+	done
+	
+LusterApartment2_2F_MinaText4:
+	text "Here you go!"
+	
+	para "I think it turned"
+	line "out great!"
+	done
+	
+LusterApartment2_2F_MinaText5:
+	text "Thanks for"
+	line "stopping by!"
+	
+	para "Come back tomorrow"
+	line "and I'll paint for"
+	cont "you again!"
+	done
+	
+LusterApartment2_2F_MinaText6:
+	text "Oh, <PLAYER>!"
+	
+	para "Make yourself at"
+	line "home."
+	
+	para "While you're here,"
+	line "why don't I paint"
+	cont "you something?"
+	
+	para "How about one of"
+	line "your #MON?"
+	done
+	done
+	
+LusterApartment2_2F_MinaText7:
+	text "Who should I"
+	line "paint?"
+	done
+	
+LusterApartment2_2F_NoRoomText:
+	text "Oh! You're carrying"
+	line "too much!"
+	
+	para "Make some room and"
+	line "come back later."
+	done
+	
+LusterApartment2_2F_NoText:
+	text "No?<WAIT_S>"
+	line "Aww… Ok."
+	
+	para "Maybe next time."
+	done
+	
+LusterApartment2_2FMinaAsm:
+	farcall SelectEncounterHouseMon
+	jr c, .cancel
+	ld a, [wCurPartySpecies]
+	ld [wMinaPaintingMonSpecies], a
+	
+	ld a, [wCurForm]
+	ld [wMinaPaintingMonForm], a
+	
+	ld hl, wPartyMonNicknames
+	ld a, PARTYMON
+	ld [wMonType], a
+	ld a, [wCurPartyMon]
+	call GetNick
+	ld hl, wMinaPaintingMonNick
+	call CopyName2
+	farcall GetShininess
+;	ld a, b
+	ld [wMinaPaintingMonShiny], a
+	
+	ld a, TRUE
+	ld [wScriptVar], a
+	ret
+.cancel
+	ld a, FALSE
+	ld [wScriptVar], a
+	ret
 	
 LusterApartment2_2FJournal:
 	dw EVENT_MINA_APARTMENT_EMPTY

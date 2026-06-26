@@ -3403,7 +3403,7 @@ PrintStatDifferences: ; 50b7b
 	pop bc
 	ret
 
-GetShininess:
+GetShininess::
 ; Return the shininess of a given monster (wCurPartyMon/wCurOTMon/CurWildMon)
 ; based on wMonType.
 

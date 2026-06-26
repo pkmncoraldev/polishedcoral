@@ -686,10 +686,11 @@ GetItemIconTiles::
 	ld hl, ClothesIconPointers
 	jr nz, .got_pointers
 	ld a, [wCurSpecies]
-	add 7
+	add 6
 	jr .got_pointers2
 .got_pointers
 	ld a, [wCurSpecies]
+	dec a
 .got_pointers2
 	ld e, a
 	ld d, 0

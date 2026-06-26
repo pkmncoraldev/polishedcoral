@@ -1,5 +1,4 @@
 ItemIconPointers:
-	dba NoItemIcon
 	dba PokeBallIcon
 	dba GreatBallIcon
 	dba UltraBallIcon
@@ -258,7 +257,6 @@ ItemIconPointers:
 	dba NoItemIcon
 	
 ClothesIconPointers:
-	dba NoItemIcon
 	dba ClothesIconBoy
 	dba ClothesIconBoy
 	dba ClothesIconBoy
@@ -275,7 +273,6 @@ ClothesIconPointers:
 	dba ClothesIconGirl
 	
 BuyMonIconPointers:
-	dba NoItemIcon
 	dba HorseaBuyMonIcon
 	dba StaryuBuyMonIcon
 	dba MagikarpBuyMonIcon
@@ -283,7 +280,6 @@ BuyMonIconPointers:
 	dba CarvanhaBuyMonIcon
 	
 DecosIconPointers:
-	dba NoItemIcon
 	dba BedIcon
 	dba BedIcon
 	dba BedIcon

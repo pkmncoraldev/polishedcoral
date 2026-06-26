@@ -262,7 +262,7 @@ LusterMallFurniture:
 	db -1
 	
 LusterMallCoffee:
-	db 5 ; # items
+	db 6 ; # items
 	db FRESH_WATER
 	db BERRY_JUICE
 	db SODA_POP
@@ -272,7 +272,7 @@ LusterMallCoffee:
 	db -1
 	
 LusterMallCoffee2:
-	db 6 ; # items
+	db 7 ; # items
 	db BLOSSOM_TEA
 	db FRESH_WATER
 	db BERRY_JUICE

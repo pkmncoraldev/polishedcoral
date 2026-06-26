@@ -34,7 +34,7 @@ KomoreHouse1Trigger1:
 	setevent EVENT_DECO_GIRAFARIG_DOLL
 	writetext GiveGirafarigDollText
 	playsound SFX_ITEM
-	pause 60
+	waitsfx
 	writetext PutAwayGirafarigDollText
 	waitbutton
 	closetext
@@ -59,7 +59,7 @@ GiveGirafarigDollText:
 	done
 	
 PutAwayGirafarigDollText:
-	text "The DOLL was sent"
-	line "to the PC in"
+	text "GIRAFARIG DOLL was"
+	line "sent to the PC in"
 	cont "<PLAYER>'s room."
 	done

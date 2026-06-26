@@ -470,7 +470,7 @@ FightingDojoMaster:
 	changetextboxspeaker
 	writetext FightingDojoMasterTestsTapeText3
 	playsound SFX_ITEM
-	pause 60
+	waitsfx
 	writetext FightingDojoMasterTestsTapeText4
 	buttonsound
 	writetext FightingDojoMasterTestsTapeText5
@@ -1073,7 +1073,7 @@ FightingDojoMasterTestsTapeText3:
 	
 FightingDojoMasterTestsTapeText4:
 	text "“FIGHTING DOJO"
-	line "(G/S BURNED TOWER”"
+	line "G/S BURNED TOWER”"
 	cont "is written on the"
 	cont "label."
 	done

@@ -80,7 +80,8 @@ LusterApartment2_2F_Mina:
 	farwritetext StdBlankText
 	pause 6
 	writetext LusterApartment2_2F_PaintText2
-	waitbutton
+	playsound SFX_LEVEL_UP
+	waitsfx
 	closetext
 	pause 20
 	callasm LoadMapPals
@@ -96,7 +97,7 @@ LusterApartment2_2F_Mina:
 	setevent EVENT_DECO_POSTER_8
 	writetext GiveMinasPaintingText
 	playsound SFX_ITEM
-	pause 60
+	waitsfx
 	writetext PutAwayMinasPaintingText
 	waitbutton
 	changetextboxspeaker TEXTBOX_MINA
@@ -128,8 +129,8 @@ GiveMinasPaintingText:
 	done
 	
 PutAwayMinasPaintingText:
-	text "It was sent"
-	line "to the PC in"
+	text "MINA's PAINTING was"
+	line "sent to the PC in"
 	cont "<PLAYER>'s room."
 	done
 	

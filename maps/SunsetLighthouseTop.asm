@@ -203,8 +203,8 @@ GiveMareepDollText:
 	done
 	
 PutAwayMareepDollText:
-	text "The DOLL was sent"
-	line "to the PC in"
+	text "MAREEP DOLL was"
+	line "sent to the PC in"
 	cont "<PLAYER>'s room."
 	done
 	

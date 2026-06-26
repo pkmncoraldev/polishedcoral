@@ -96,7 +96,6 @@ DaybreakPokemonTrainerSchoolNPC1:
 	writetext DaybreakPokemonTrainerSchoolGetPokeballsText
 	playsound SFX_ITEM
 	waitsfx
-	buttonsound
 	writetext DaybreakPokemonTrainerSchoolPutAwayPokeballsText
 	waitbutton
 	giveitem POKE_BALL, 5

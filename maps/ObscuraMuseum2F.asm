@@ -249,7 +249,7 @@ ObscuraMuseum2FPhoto:
 	setevent EVENT_DECO_POSTER_9
 	writetext GiveMuseumPhotoText
 	playsound SFX_ITEM
-	pause 60
+	waitsfx
 	writetext PutAwayMuseumPhotoText
 	waitbutton
 	closetext
@@ -390,8 +390,8 @@ GiveMuseumPhotoText:
 	done
 	
 PutAwayMuseumPhotoText:
-	text "The PHOTO was sent"
-	line "to the PC in"
+	text "MUSEUM PHOTO was"
+	line "sent to the PC in"
 	cont "<PLAYER>'s room."
 	done
 	

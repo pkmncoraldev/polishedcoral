@@ -381,8 +381,8 @@ SpruceLabSpruceText8:
 	line "headed to your"
 	cont "next GYM battle."
 	
-	para "Head back NORTH"
-	line "to STARGLOW VALLEY."
+	para "Head back NORTH to"
+	line "STARGLOW VALLEY."
 	
 	para "There are two GYMS"
 	line "EAST of there."

@@ -821,7 +821,12 @@ LoadSpecialMapPalette: ; 494ac
 	
 .mall
 	ld hl, MallPalette
-	jp LoadSevenBGPalettes
+	call LoadSevenBGPalettes
+	ld a, [wMapNumber]
+	cp MAP_LUSTER_MALL_CLOTHES_SHOP
+	ret nz
+	ld hl, MallClothesPalette
+	jp LoadBGPal6
 	
 .sewer
 	ld hl, LusterSewerPalette
@@ -1169,6 +1174,9 @@ INCLUDE "maps/palettes/bgpals/nettdark.pal"
 
 MallPalette:
 INCLUDE "maps/palettes/bgpals/lustermall.pal"
+
+MallClothesPalette:
+INCLUDE "maps/palettes/bgpals/mallclothes.pal"
 
 LusterSewerPalette:
 INCLUDE "maps/palettes/bgpals/lustersewer.pal"

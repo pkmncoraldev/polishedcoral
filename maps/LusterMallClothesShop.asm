@@ -11,13 +11,13 @@ LusterMallClothesShop_MapScriptHeader:
 
 	db 0 ; coord events
 
-	db 3 ; bg events
-	signpost  2,  3, SIGNPOST_READ, LusterMallClothesShopShoes
+	db 4 ; bg events
 	signpost  2,  4, SIGNPOST_READ, LusterMallClothesShopShoes
+	signpost  2,  5, SIGNPOST_READ, LusterMallClothesShopShoes
 	signpost  2, 10, SIGNPOST_READ, LusterMallClothesShopShoes
+	signpost  3,  7, SIGNPOST_READ, LusterMallClothesShopClerk
 
 	db 9 ; object events
-	object_event 7, 2, SPRITE_PUNK_CHICK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_COMMAND, pokemart, MARTTYPE_CLOTHES, MART_LUSTER_MALL_CLOTHES, -1
 	person_event SPRITE_CUTE_GIRL,  4,  2, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, LusterMallClothesShopNpc1, -1
 	person_event SPRITE_PONYTAIL,  6,  9, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, LusterMallClothesShopNpc2, -1
 	person_event SPRITE_POLLY,  6,  6, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, LusterMallClothesShopPolly, EVENT_POLLY_NOT_IN_BOUTIQUE
@@ -25,10 +25,10 @@ LusterMallClothesShop_MapScriptHeader:
 	person_event SPRITE_CLOTHES_RACKS,  7,  8, SPRITEMOVEDATA_TILE_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
 	person_event SPRITE_CLOTHES_RACKS,  4,  1, SPRITEMOVEDATA_TILE_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
 	person_event SPRITE_CLOTHES_RACKS,  5,  1, SPRITEMOVEDATA_TILE_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
-	person_event SPRITE_CLOTHES_RACKS,  7,  6, SPRITEMOVEDATA_TILE_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
+	person_event SPRITE_MANNEQUIN,  7,  5, SPRITEMOVEDATA_TILE_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
+	person_event SPRITE_MANNEQUIN,  7,  6, SPRITEMOVEDATA_TILE_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
 
 	const_def 1 ; object constants
-	const LUSTER_MALL_CLOTHES_SHOP_CLERK
 	const LUSTER_MALL_CLOTHES_SHOP_NPC_1
 	const LUSTER_MALL_CLOTHES_SHOP_NPC_2
 	const LUSTER_MALL_CLOTHES_SHOP_POLLY
@@ -41,6 +41,14 @@ LusterMallClothesShopTrigger1:
 	priorityjump LusterMallClothesShopClerkAfter
 	end
 	
+LusterMallClothesShopClerk:
+	opentext 
+;	writetext BarInsideBartenderText3
+;	waitbutton
+	callasm LusterMallClothesShopClerkAsm
+	closetext
+	end
+	
 LusterMallClothesShopClerkAfter:
 	dotrigger $0
 	pause 10
@@ -50,19 +58,17 @@ LusterMallClothesShopClerkAfter:
 	closetext
 	waitsfx
 	pause 10
-	callasm LusterMallClothesShopCoordAsm
-	if_equal 2, .up
-	applyonemovement LUSTER_MALL_CLOTHES_SHOP_CLERK, turn_step_down
-	applyonemovement LUSTER_MALL_CLOTHES_SHOP_CLERK, remove_fixed_facing
-	jumptext LusterMallClerkAfterText
-.up
-	applyonemovement LUSTER_MALL_CLOTHES_SHOP_CLERK, turn_step_left
-	applyonemovement LUSTER_MALL_CLOTHES_SHOP_CLERK, remove_fixed_facing
 	jumptext LusterMallClerkAfterText
 
-LusterMallClothesShopCoordAsm:
-	ld a, [wYCoord]
-	ld [wScriptVar], a
+LusterMallClothesShopClerkAsm:
+	ld a, MARTTYPE_CLOTHES
+	ld c, a
+	ld a, MART_LUSTER_MALL_CLOTHES
+	ld e, a
+	ld d, 0
+	ld a, [wScriptBank]
+	ld b, a
+	farcall OpenMartDialog
 	ret
 
 LusterMallClothesShopChangeColor:

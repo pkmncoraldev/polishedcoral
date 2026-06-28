@@ -46,6 +46,7 @@ PeepHoleSpriteGFX::      	   INCBIN "gfx/sprites/peep_hole.2bpp.lz"
 CasinoSpriteGFX::      	  	   INCBIN "gfx/sprites/casino.2bpp.lz"
 CopScrubSpriteGFX::      	   INCBIN "gfx/sprites/cop_scrub.2bpp.lz"
 FortuneTellerSpriteGFX::       INCBIN "gfx/sprites/fortune_teller.2bpp.lz"
+MannequinSpriteGFX::      	   INCBIN "gfx/sprites/mannequin.2bpp.lz"
 
 
 SECTION "Overworld Sprites 2", ROMX
@@ -150,7 +151,6 @@ PicnickerSpriteGFX::           INCBIN "gfx/sprites/picnicker.2bpp.lz"
 PokefanMSpriteGFX::            INCBIN "gfx/sprites/pokefan_m.2bpp.lz"
 PokefanFSpriteGFX::            INCBIN "gfx/sprites/pokefan_f.2bpp.lz"
 PokemaniacSpriteGFX::          INCBIN "gfx/sprites/pokemaniac.2bpp.lz"
-PunkChickSpriteGFX::       	   INCBIN "gfx/sprites/punk_chick.2bpp.lz"
 RockerSpriteGFX::              INCBIN "gfx/sprites/rocker.2bpp.lz"
 SnareSpriteGFX::               INCBIN "gfx/sprites/snare.2bpp.lz"
 SnareGirlSpriteGFX::           INCBIN "gfx/sprites/snare_girl.2bpp.lz"

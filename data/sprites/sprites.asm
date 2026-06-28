@@ -219,8 +219,8 @@ SpriteHeaders:
 	overworld_sprite ColbyFallSpriteGFX, BILLBOARD_SPRITE, PAL_OW_BLUE
 	overworld_sprite SnubbullShrinkSpriteGFX, WALKING_SPRITE, PAL_OW_PINK
 	overworld_sprite SpinnerSpriteGFX, STANDING_SPRITE, PAL_OW_SILVER
-	overworld_sprite PunkChickSpriteGFX, WALKING_SPRITE, PAL_OW_PURPLE
 	overworld_sprite EliSpriteGFX, WALKING_SPRITE, PAL_OW_GREEN
+	overworld_sprite MannequinSpriteGFX, STANDING_SPRITE, PAL_OW_BROWN
 
 SpriteHeadersPlayers:
 	overworld_sprite CorySpriteGFX, WALKING_SPRITE, PAL_OW_RED

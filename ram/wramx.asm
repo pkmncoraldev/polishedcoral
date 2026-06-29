@@ -307,7 +307,7 @@ wUsingItemWithSelect:: ds 1
 
 UNION
 ; mart data
-wCurMart:: ds 16
+wCurMart:: ds 17
 wCurMartEnd::
 NEXTU
 ; miscellaneous

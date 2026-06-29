@@ -453,12 +453,13 @@ BrilloMart:
 	db -1
 	
 CoinsMart1:
-	db 14 ; # items
+	db 15 ; # items
 	dbw PLUME_FOSSIL,  1500
+	dbw ABILITY_CAP,  1500
 	dbw THICK_CLUB,  100
 	dbw LUCKY_PUNCH,  250
-	dbw TOXIC_ORB, 500
-	dbw FLAME_ORB, 500
+	dbw TOXIC_ORB, 250
+	dbw FLAME_ORB, 250
 	dbw CHOICE_BAND, 500
 	dbw CHOICE_SCARF, 500
 	dbw CHOICE_SPECS, 500
@@ -471,12 +472,13 @@ CoinsMart1:
 	db -1
 	
 CoinsMart2:
-	db 14 ; # items
+	db 15 ; # items
 	dbw COVER_FOSSIL,  1500
+	dbw ABILITY_CAP,  1500
 	dbw THICK_CLUB,  100
 	dbw LUCKY_PUNCH,  250
-	dbw TOXIC_ORB, 500
-	dbw FLAME_ORB, 500
+	dbw TOXIC_ORB, 250
+	dbw FLAME_ORB, 250
 	dbw CHOICE_BAND, 500
 	dbw CHOICE_SCARF, 500
 	dbw CHOICE_SPECS, 500
@@ -491,10 +493,10 @@ CoinsMart2:
 CoinsMart3:
 	db 14 ; # items
 	dbw ABILITY_CAP,  1500
-	dbw THICK_CLUB,  100
+	dbw THICK_CLUB,  250
 	dbw LUCKY_PUNCH,  250
-	dbw TOXIC_ORB, 500
-	dbw FLAME_ORB, 500
+	dbw TOXIC_ORB, 250
+	dbw FLAME_ORB, 250
 	dbw CHOICE_BAND, 500
 	dbw CHOICE_SCARF, 500
 	dbw CHOICE_SPECS, 500

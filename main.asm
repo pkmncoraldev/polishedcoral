@@ -606,11 +606,20 @@ WearingString:
 	
 GetQuantityInBag:
 	ld a, [wCurItem]
+	cp PLUME_FOSSIL	; hardcoded to show 0 because sold in the coin shop if you dont have one
+	jr z, .fossil
+	cp COVER_FOSSIL	; hardcoded to show 0 because sold in the coin shop if you dont have one
+	jr z, .fossil
 	push af
 	ld a, [wMenuSelection]
 	ld [wCurItem], a
 	call CountItem
 	pop af
+	ret
+.fossil
+	xor a
+	ld [wBuffer1], a
+	ld [wBuffer2], a
 	ret
 
 INCLUDE "data/items/icon_pointers.asm"
@@ -2664,6 +2673,29 @@ _FindThatSpeciesYourTrainerID: ; 4dbe6
 	jr nz, .nope
 	inc hl
 	ld a, [wPlayerID + 1]
+	cp [hl]
+	jr nz, .nope
+	ld a, $1
+	and a
+	ret
+
+.nope
+	xor a
+	ret
+	
+_FindThatSpeciesSpecificTrainerID:
+	ld hl, wPartyMon1Species
+	call FindThatSpecies
+	ret z
+	ld a, c
+	ld hl, wPartyMon1ID
+	ld bc, PARTYMON_STRUCT_LENGTH
+	rst AddNTimes
+	ld a, [wOTTrademonID]
+	cp [hl]
+	jr nz, .nope
+	inc hl
+	ld a, [wOTTrademonID + 1]
 	cp [hl]
 	jr nz, .nope
 	ld a, $1

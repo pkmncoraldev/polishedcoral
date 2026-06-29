@@ -260,9 +260,17 @@ BarInsideBartender:
 .house_special_buy
 	waitbutton
 	callasm BartenderAsm2
+	checkevent EVENT_JUST_GOT_MILTANK_DOLL
+	iftrue .good_customer
 	writetext BarInsideBartenderText7
 	waitbutton
 	closetext
+	end
+.good_customer
+	writetext BarInsideBartenderText8
+	waitbutton
+	closetext
+	clearevent EVENT_JUST_GOT_MILTANK_DOLL
 	end
 	
 BartenderAsm1:
@@ -375,6 +383,12 @@ BarInsideBartenderText6:
 BarInsideBartenderText7:
 	text "Keep this between"
 	line "us, <WAIT_S>alright?"
+	done
+	
+BarInsideBartenderText8:
+	text "You take good care"
+	line "of that MILTANK"
+	cont "DOLL, alright?"
 	done
 	
 BarInsideRegular1:

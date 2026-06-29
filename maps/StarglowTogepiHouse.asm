@@ -123,29 +123,32 @@ StarglowHouse1GirlStopsYou2:
 	end
 	
 StarglowHouse1Mommy:
+	checkevent EVENT_GOT_TOGEPI
+	iftrue .took_eggy
 	checkevent EVENT_STARGLOW_HELPED_LITTLEGIRL
 	iftrue .mommy2
 	jumptextfaceplayer StarglowHouse1MommyText2
-	end
 .mommy2
 	checkevent EVENT_PUNKS_LEAVE_STARGLOW
 	iftrue .mommy3
 	jumptextfaceplayer StarglowHouse1MommyText4
-	end
 .mommy3
 	jumptextfaceplayer StarglowHouse1MommyText5
-	end
+.took_eggy
+	checkevent EVENT_DECO_TOGEPI_DOLL
+	iftrue .got_doll
+	jumptextfaceplayer StarglowHouse1MommyText6
+.got_doll
+	jumptextfaceplayer StarglowHouse1MommyText7
 
 StarglowHouse1LittleGirl:
 	checkevent EVENT_STARGLOW_HELPED_LITTLEGIRL
 	iftrue .littlegirl2
 	jumptextfaceplayer StarglowHouse1LittleGirlText2
-	end
 .littlegirl2
 	checkevent EVENT_PUNKS_LEAVE_STARGLOW
 	iftrue .littlegirl3
 	jumptextfaceplayer StarglowHouse1LittleGirlText3
-	end
 .littlegirl3
 	spriteface STARGLOWHOUSE1_MOMMY3, LEFT
 	checkevent EVENT_DIDNT_TAKE_TOGEPI
@@ -226,10 +229,50 @@ StarglowHouse1LittleGirl:
 .gottogepi
 	faceplayer
 	opentext
+	checkevent EVENT_DECO_TOGEPI_DOLL
+	iftrue .got_doll
+	loadvar wOTTrademonID + 1, $79
+	loadvar wOTTrademonID, $47
+	writebyte TOGEPI
+	special Special_FindThatSpeciesSpecificTrainerID
+	iftrue .have_eggy_not_evolved
+	writebyte TOGETIC
+	special Special_FindThatSpeciesSpecificTrainerID
+	iftrue .have_eggy_evolved
+	writebyte TOGEKISS
+	special Special_FindThatSpeciesSpecificTrainerID
+	iftrue .have_eggy_evolved
 	writetext StarglowHouse1LittleGirlText8
 	waitbutton
 	closetext
 	end
+.have_eggy_not_evolved
+	writetext StarglowHouse1LittleGirlText11
+	waitbutton
+	closetext
+	end
+	
+.have_eggy_evolved
+	buttonsound
+	farwritetext StdBlankText
+	pause 6
+	writetext StarglowHouse1LittleGirlText12
+	waitbutton
+	setevent EVENT_DECO_TOGEPI_DOLL
+	writetext GiveTogepiDollText
+	playsound SFX_ITEM
+	waitsfx
+	writetext PutAwayTogepiDollText
+	waitbutton
+	closetext
+	end
+	
+.got_doll
+	writetext StarglowHouse1LittleGirlText13
+	waitbutton
+	closetext
+	end
+	
 .end
 	setevent EVENT_DIDNT_TAKE_TOGEPI
 	writetext StarglowHouse1LittleGirlText9
@@ -243,6 +286,17 @@ StarglowHouse1LittleGirl:
 	waitbutton
 	closetext
 	end
+	
+GiveTogepiDollText:
+	text "<PLAYER> received"
+	line "TOGEPI DOLL!"
+	done
+	
+PutAwayTogepiDollText:
+	text "TOGEPI DOLL was"
+	line "sent to the PC in"
+	cont "<PLAYER>'s room."
+	done
 	
 StarglowHouse1Rocket:
 	faceplayer
@@ -494,12 +548,38 @@ StarglowHouse1MommyText5:
 	text "You chased off"
 	line "those ruffians?"
 	
+	para "That's very"
+	line "impressive!"
+	
 	para "Thank you so much"
 	line "for everything"
 	cont "you've done!"
 	
 	para "Good luck out"
 	line "there!"
+	done
+	
+StarglowHouse1MommyText6:
+	text "I do hope you'll"
+	line "take good care of"
+	cont "little EGGY."
+	
+	para "It means the world"
+	line "to my daughter."
+	done
+	
+StarglowHouse1MommyText7:
+	text "My little girl is"
+	line "so happy with the"
+	cont "progress you've"
+	cont "made with EGGY."
+	
+	para "She won't stop"
+	line "talking about it!"
+	
+	para "Thank you so much"
+	line "for everything"
+	cont "you've done."
 	done
 	
 StarglowHouse1TogepiText:
@@ -632,4 +712,36 @@ StarglowHouse1LittleGirlText10:
 	
 	para "You need to make"
 	line "some room!"
+	done
+	
+StarglowHouse1LittleGirlText11:
+	text "Try your best and"
+	line "help out, ok EGGY?"
+	done
+
+StarglowHouse1LittleGirlText12:
+	text "Gasp!"
+	
+	para "Is that really"
+	line "EGGY!?"
+	
+	para "It evolved!"
+	
+	para "Wow!<WAIT_S> You must be"
+	line "a great TRAINER!"
+	
+	para "I'm so happy that"
+	line "EGGY went along"
+	cont "with you."
+	
+	para "EGGY is happy too!"
+	
+	para "This is thanks"
+	line "for taking good"
+	cont "care of EGGY."
+	done
+	
+StarglowHouse1LittleGirlText13:
+	text "Please keep taking"
+	line "good care of EGGY!"
 	done

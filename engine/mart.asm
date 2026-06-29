@@ -1143,6 +1143,11 @@ BuyMenuLoop: ; 15cef
 	lb bc, PRINTNUM_MONEY | 3, 7
 	call PrintNum
 	call JoyWaitAorB
+	ld a, [wCurItem]
+	cp MOOMOO_MILK
+	jr z, .milk
+	cp MOOMOO_BREW
+	jr z, .milk
 	farcall CheckItemPocket
 	ld a, [wItemAttributeParamBuffer]
 	cp BALL
@@ -1166,6 +1171,27 @@ BuyMenuLoop: ; 15cef
 	ld de, SFX_LEVEL_UP
 	call PlaySFX
 	call JoyWaitAorB
+	jr .cancel
+.milk
+	eventflagcheck EVENT_DECO_MILTANK_DOLL
+	jr nz, .cancel
+	ld a, [wItemQuantityChangeBuffer]
+	cp 12
+	jr c, .cancel
+	ld hl, .MiltankDollText
+	call PrintText
+	call JoyWaitAorB
+	eventflagset EVENT_DECO_MILTANK_DOLL
+	eventflagset EVENT_JUST_GOT_MILTANK_DOLL
+	ld hl, .GiveMiltankDollText
+	call PrintText
+	call WaitSFX
+	ld de, SFX_ITEM
+	call PlaySFX
+	call WaitSFX
+	ld hl, .PutAwayMiltankDollText
+	call PrintText
+	call JoyWaitAorB
 .cancel
 	call SpeechTextBox
 	and a
@@ -1173,6 +1199,18 @@ BuyMenuLoop: ; 15cef
 
 .PremierBallText
 	text_jump MartPremierBallText
+	db "@"
+	
+.MiltankDollText
+	text_jump MartMiltankDollText
+	db "@"
+	
+.GiveMiltankDollText
+	text_jump GiveMiltankDollText
+	db "@"
+	
+.PutAwayMiltankDollText
+	text_jump PutAwayMiltankDollText
 	db "@"
 	
 BuyMenuCoinsLoop: ; 15cef
@@ -1208,10 +1246,49 @@ BuyMenuCoinsLoop: ; 15cef
 	call ClearBox
 	farcall Special_DisplayCoinCaseBalance
 	call JoyWaitAorB
+	eventflagcheck EVENT_DECO_MARACTUS_DOLL
+	jr nz, .done_doll
+	ld hl, .MaractusDollText
+	call PrintText
+	call JoyWaitAorB
+	eventflagset EVENT_DECO_MARACTUS_DOLL
+	ld hl, .GiveMaractusDollText
+	call PrintText
+	call WaitSFX
+	ld de, SFX_ITEM
+	call PlaySFX
+	call WaitSFX
+	ld hl, .PutAwayMaractusDollText
+	call PrintText
+	call JoyWaitAorB
+.done_doll
+	ld a, [wCurItem]
+	cp PLUME_FOSSIL
+	jr z, .plumefossil
+	cp COVER_FOSSIL
+	jr z, .coverfossil
 .cancel
 	call SpeechTextBox
 	and a
 	ret
+.plumefossil
+	eventflagset EVENT_GOT_PLUME_FOSSIL
+	jp MartMenuLoop_SetCarry
+.coverfossil
+	eventflagset EVENT_GOT_COVER_FOSSIL
+	jp MartMenuLoop_SetCarry
+	
+.MaractusDollText
+	text_jump MartMaractusDollText
+	db "@"
+	
+.GiveMaractusDollText
+	text_jump GiveMaractusDollText
+	db "@"
+	
+.PutAwayMaractusDollText
+	text_jump PutAwayMaractusDollText
+	db "@"
 	
 BuyMenuPollenLoop: ; 15cef
 	farcall Special_DisplayPollenPouchBalance

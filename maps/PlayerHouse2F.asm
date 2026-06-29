@@ -160,7 +160,7 @@ PlayerHouseDebugPoster:
 	addcellnum PHONE_WENDY
 	addcellnum PHONE_AUTO
 	setevent EVENT_MOM_GOT_POKEGEAR
-	givecoins 20
+	givecoins 10000
 	givemoney $0, 100000
 	setevent EVENT_KNOW_OLLIE
 	setevent EVENT_KNOW_GRIND
@@ -338,6 +338,20 @@ PlayerHouseDebugPoster:
 	setevent EVENT_DECO_TOGEPI_DOLL
 	setevent EVENT_DECO_MAREEP_DOLL
 	setevent EVENT_DECO_GIRAFARIG_DOLL
+	setevent EVENT_DECO_DROWZEE_DOLL
+	setevent EVENT_DECO_MUNCHLAX_DOLL
+	setevent EVENT_DECO_BUNEARY_DOLL
+	setevent EVENT_DECO_NIDOKING_DOLL
+	setevent EVENT_DECO_LEDIAN_DOLL
+	setevent EVENT_DECO_SPIRITOMB_DOLL
+	setevent EVENT_DECO_DODUO_DOLL
+	setevent EVENT_DECO_SMEARGLE_DOLL
+	setevent EVENT_DECO_SWABLU_DOLL
+	setevent EVENT_DECO_CUBONE_DOLL
+	setevent EVENT_DECO_WOOPER_DOLL
+	setevent EVENT_DECO_SUNFLORA_DOLL
+	setevent EVENT_DECO_SUDOWOODO_DOLL
+	setevent EVENT_DECO_NATU_DOLL
 	jump .return
 .Sfx
 	closewindow

@@ -37,6 +37,7 @@ DEF const_value = 1
 	const TOWN_MAP
 	const MINAS_PAINTING
 	const MUSEUM_PHOTO
+	const P_WOOPER_DOLL
 
 DEF const_value = 1
 	const SET_UP_BED
@@ -130,6 +131,22 @@ DEF __enum__ = 0
 	deco  TOGEPI_DOLL
 	deco  MAREEP_DOLL
 	deco  GIRAFARIG_DOLL
+	deco  DROWZEE_DOLL
+	deco  MUNCHLAX_DOLL
+	deco  BUNEARY_DOLL
+	deco  NIDOKING_DOLL
+	deco  LEDIAN_DOLL
+	deco  SPIRITOMB_DOLL
+	deco  DODUO_DOLL
+	deco  MILTANK_DOLL
+	deco  MARACTUS_DOLL
+	deco  SMEARGLE_DOLL
+	deco  SWABLU_DOLL
+	deco  CUBONE_DOLL
+	deco  P_WOOPER_DOLL
+	deco  SUNFLORA_DOLL
+	deco  SUDOWOODO_DOLL
+	deco  NATU_DOLL
 	deco  GOLD_TROPHY_DOLL
 	deco  SILVER_TROPHY_DOLL
 	

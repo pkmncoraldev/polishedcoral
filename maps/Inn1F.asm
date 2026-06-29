@@ -1509,15 +1509,50 @@ Inn1FClerkDeskText6:
 Inn1FClerk:
 	faceplayer
 	opentext
+	checkevent EVENT_DECO_DROWZEE_DOLL
+	iftrue .got_doll
 	writetext Inn1FClerkBackText
+	waitbutton
+	setevent EVENT_DECO_DROWZEE_DOLL
+	writetext GiveDrowzeeDollText
+	playsound SFX_ITEM
+	waitsfx
+	writetext PutAwayDrowzeeDollText
 	waitbutton
 	closetext
 	spriteface INN_1F_CLERK, RIGHT
+	loadvar wScriptVar, 0
+	end
+.got_doll
+	writetext PutAwayDrowzeeDollText2
+	waitbutton
+	closetext
+	spriteface INN_1F_CLERK, RIGHT
+	loadvar wScriptVar, 0
 	end
 	
 Inn1FClerkBackText:
-	text "How'd you get back"
-	line "here?"
+	text "You're not supposed"
+	line "to be back here!"
+	
+	para "Take this and get"
+	line "outta here!"
+	done
+	
+PutAwayDrowzeeDollText2:
+	text "You're not supposed"
+	line "to be back here!"
 	
 	para "Come back later."
+	done
+	
+GiveDrowzeeDollText:
+	text "<PLAYER> received"
+	line "DROWZEE DOLL!"
+	done
+	
+PutAwayDrowzeeDollText:
+	text "DROWZEE DOLL was"
+	line "sent to the PC in"
+	cont "<PLAYER>'s room."
 	done

@@ -40,7 +40,36 @@ LusterApartment4_2F_MapScriptHeader:
 	const LUSTER_APARTMENT_4_2F_BUNEARY4
 		
 LusterApartment4_2F_Frankie:
-	jumptextfaceplayer LusterApartment4_2F_FrankieText
+	faceplayer
+	opentext TEXTBOX_FRANKIE
+	checkevent EVENT_DECO_BUNEARY_DOLL
+	iftrue .done_doll
+	writetext LusterApartment4_2F_FrankieText1
+	waitbutton
+	setevent EVENT_DECO_BUNEARY_DOLL
+	writetext GiveBunearyDollText
+	playsound SFX_ITEM
+	waitsfx
+	writetext PutAwayBunearyDollText
+	waitbutton
+	closetext
+	end
+.done_doll
+	writetext LusterApartment4_2F_FrankieText2
+	waitbutton
+	closetext
+	end
+	
+GiveBunearyDollText:
+	text "<PLAYER> received"
+	line "BUNEARY DOLL!"
+	done
+	
+PutAwayBunearyDollText:
+	text "BUNEARY DOLL was"
+	line "sent to the PC in"
+	cont "<PLAYER>'s room."
+	done
 	
 LusterApartment4_2F_Brutus:
 	jumptextfaceplayer LusterApartment4_2F_BrutusText
@@ -158,7 +187,7 @@ LusterApartment4_2F_NPC6Text:
 	cont "TRAIN STATION."
 	done
 	
-LusterApartment4_2F_FrankieText:
+LusterApartment4_2F_FrankieText1:
 	text "I've gotta hand it"
 	line "to you, kid."
 	
@@ -167,6 +196,15 @@ LusterApartment4_2F_FrankieText:
 	
 	para "Remember though,"
 	line "this isn't over."
+	
+	para "For now, take"
+	line "this as a show of"
+	cont "respect."
+	done
+	
+LusterApartment4_2F_FrankieText2:
+	text "Remember, this"
+	line "isn't over."
 	
 	para "You'll get yours"
 	line "someday…"

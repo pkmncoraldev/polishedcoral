@@ -1426,6 +1426,43 @@ MartPremierBallText::
 	cont "an added bonus."
 	done
 	
+MartMiltankDollText::
+	text "That's a lot of"
+	line "milk!"
+	
+	para "Take this for"
+	line "bein' such a great"
+	cont "customer!"
+	done
+	
+GiveMiltankDollText::
+	text "<PLAYER> received"
+	line "MILTANK DOLL!"
+	done
+	
+PutAwayMiltankDollText::
+	text "MILTANK DOLL was"
+	line "sent to the PC in"
+	cont "<PLAYER>'s room."
+	done
+	
+MartMaractusDollText::
+	text "And as a special"
+	line "first-timer bonus,"
+	cont "take this."
+	done
+	
+GiveMaractusDollText::
+	text "<PLAYER> received"
+	line "MARACTUS DOLL!"
+	done
+	
+PutAwayMaractusDollText::
+	text "MARACTUS DOLL was"
+	line "sent to the PC in"
+	cont "<PLAYER>'s room."
+	done
+	
 RefreshmentsMartExtraItemText::
 	text "Oh!"
 	

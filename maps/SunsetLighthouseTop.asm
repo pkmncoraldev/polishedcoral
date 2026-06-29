@@ -198,7 +198,7 @@ SunsetLighthouseTopTVAsm:
 	ret
 	
 GiveMareepDollText:
-	text "<PLAYER> received"
+	text "<PLAYER> found"
 	line "MAREEP DOLL!"
 	done
 	

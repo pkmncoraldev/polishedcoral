@@ -365,14 +365,12 @@ SpecialGiveShinyTogepi:
 	call _GetLastPartyMonAttribute
 	ld [hl], RARE_CANDY
 
-; OT ID. Guaranteed to not be the same as the player's for Masuda method breeding.
+; OT ID. $4779. 18297 in decimal.
 	ld hl, wPartyMon1ID + 1
 	call _GetLastPartyMonAttribute
-	ld a, [wPlayerID + 1]
-	add %01100101
+	ld a, $79
 	ld [hld], a
-	ld a, [wPlayerID]
-	adc %10100110
+	ld a, $47
 	ld [hl], a
 
 ; DVs and personality.

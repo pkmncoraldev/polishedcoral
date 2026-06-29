@@ -14,7 +14,6 @@ ROMX $03
 ROMX $04
 	org $4000
 	"Code 4"
-	"Variant Pic Pointers"
 
 ROMX $05
 	org $4000
@@ -230,6 +229,10 @@ ROMX $38
 	org $4000
 	"Crystal Data"
 	"Trainer Pic Pointers"
+	
+ROMX $39
+	org $4000
+	"Variant Pic Pointers"
 	
 ROMX $e0
 	org $4000

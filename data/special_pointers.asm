@@ -201,5 +201,6 @@ SpecialsPointers::
 	add_special Special_ForceSkateboard
 	add_special Special_IncSecretCounter
 	add_special PlaceCoinsTopRight
+	add_special Special_FindThatSpeciesSpecificTrainerID
 
 	add_special SpecialNone

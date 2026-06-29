@@ -20,13 +20,14 @@ SprucesLab_MapScriptHeader:
 	signpost  2,  0, SIGNPOST_READ, SpruceLabLockedDoor
 	bg_event  9,  3, SIGNPOST_ITEM + TAPE_PLAYER, EVENT_MUSIC_SPRUCE
 
-	db 7 ; object events
+	db 8 ; object events
 	person_event SPRITE_SPRUCE, 3, 3, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, SpruceLabSpruce, EVENT_SPRUCELAB_SPRUCE1_GONE
 	person_event SPRITE_SPRUCE, 0, 5, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, SpruceLabSpruce, EVENT_SPRUCELAB_SPRUCE2_GONE
 	person_event SPRITE_SPRUCE,  5,  8, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, SpruceLabSpruce, EVENT_SPRUCELAB_SPRUCE3_GONE
-	person_event SPRITE_SNES, 5, 9, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, SpruceLabMunchlaxSleep, EVENT_SPRUCELAB_MUNCH1_GONE
-	object_event 9, 5, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, MUNCHLAX, -1, -1, PAL_NPC_BLUE, PERSONTYPE_SCRIPT, 0, SpruceLabMunchlax, EVENT_SPRUCELAB_MUNCH2_GONE
-	object_event  0,  5, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, MUNCHLAX, -1, -1, PAL_NPC_BLUE, PERSONTYPE_SCRIPT, 0, SpruceLabMunchlax, EVENT_SPRUCELAB_MUNCH3_GONE
+	person_event SPRITE_SNES, 5, 9, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, SpruceLabMunchlaxSleep, EVENT_SPRUCELAB_MUNCH1_GONE
+	object_event 9, 5, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, MUNCHLAX, -1, -1, PAL_NPC_TEAL, PERSONTYPE_SCRIPT, 0, SpruceLabMunchlax, EVENT_SPRUCELAB_MUNCH2_GONE
+	person_event SPRITE_SNES, 5, 0, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, SpruceLabMunchlaxSleep, EVENT_SPRUCELAB_MUNCH3_GONE
+	object_event  0,  5, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, MUNCHLAX, -1, -1, PAL_NPC_TEAL, PERSONTYPE_SCRIPT, 0, SpruceLabMunchlax, EVENT_SPRUCELAB_MUNCH4_GONE
 	hiddentape_event 9, 3, MUSIC_SPRUCE, 1, EVENT_MUSIC_SPRUCE
 
 	const_def 1 ; object constants
@@ -36,6 +37,7 @@ SprucesLab_MapScriptHeader:
 	const SPRUCELAB_MUNCHLAX1
 	const SPRUCELAB_MUNCHLAX2
 	const SPRUCELAB_MUNCHLAX3
+	const SPRUCELAB_MUNCHLAX4
 
 SpruceLabUnlockDoor:
 	checkevent EVENT_TALKED_TO_SPRUCE
@@ -46,6 +48,39 @@ SpruceLabUnlockDoor:
 	
 SpruceLabLockedDoor:
 	jumptext SpruceLabLockedDoorText
+	
+SpruceLabPlayedFluteForMunch::
+	special SaveMusic
+	special Special_FadeOutMusic
+	pause 20
+	writetext SpruceLabPokeFluteText4
+	playsound SFX_POKEFLUTE
+	waitsfx
+	special RestoreMusic
+	closetext
+	wait 10
+	appear SPRUCELAB_MUNCHLAX4
+	closetext
+	wait 5
+	disappear SPRUCELAB_MUNCHLAX3
+	opentext TEXTBOX_POKEMON, MUNCHLAX
+	writetext SpruceLabMunchlaxText3
+	cry MUNCHLAX
+	waitsfx
+	buttonsound
+	changetextboxspeaker
+	writetext SpruceLabPokeFluteText3
+	waitbutton
+	writetext SpruceLabPokeFluteText5
+	waitbutton
+	setevent EVENT_DECO_MUNCHLAX_DOLL
+	writetext GiveMunchDollText
+	playsound SFX_ITEM
+	waitsfx
+	writetext PutAwayMunchDollText
+	waitbutton
+	closetext
+	end
 	
 SpruceLabSpruce:
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
@@ -606,6 +641,17 @@ SpruceLabSpruceText18:
 	cont "sleepy!"
 	done
 	
+GiveMunchDollText:
+	text "<PLAYER> received"
+	line "MUNCHLAX DOLL!"
+	done
+	
+PutAwayMunchDollText:
+	text "MUNCHLAX DOLL was"
+	line "sent to the PC in"
+	cont "<PLAYER>'s room."
+	done
+	
 SpruceLabPokeFluteText1:
 	text "SPRUCE played the"
 	line "#FLUTE."
@@ -619,6 +665,20 @@ SpruceLabPokeFluteText2:
 SpruceLabPokeFluteText3:
 	text "MUNCHLAX is"
 	line "wide awake!"
+	done
+	
+SpruceLabPokeFluteText4:
+	text "<PLAYER> played the"
+	line "# FLUTE."
+	done
+	
+SpruceLabPokeFluteText5:
+	text "It's clutching"
+	line "something in its"
+	cont "hand."
+	
+	para "It offers it to"
+	line "to you."
 	done
 	
 SpruceLabMunchlaxText1:

@@ -86,6 +86,7 @@ _PokeFlute: ; 50730
 	if_equal 4, .sunbeam_sleeping_beauty_script
 	if_equal 5, .train_old_man_script
 	if_equal 6, .auto_lobby_guy_script
+	if_equal 7, .muchlax_script
 .snorlax_script
 	checkcode VAR_MAPNUMBER
 	if_equal MAP_ROUTE_32, .route32
@@ -104,6 +105,8 @@ _PokeFlute: ; 50730
 	farjump TrainCabin2PlayedFluteForOldMan
 .auto_lobby_guy_script
 	farjump DuskAutoLobbyPlayedFluteForGuy
+.muchlax_script
+	farjump SpruceLabPlayedFluteForMunch
 
 .NothingHappenedScript:
 	special SaveMusic
@@ -158,17 +161,21 @@ _PokeFlute: ; 50730
 	ret
 
 .sunbeamgroup
+	ld a, [wMapNumber]
+	cp MAP_SPRUCES_LAB
+	jr z, .spruce_lab
+	
 	callba GetFacingObject
 	ld a, d
 	cp SPRITEMOVEDATA_STANDING_LEFT
 	jr nz, .nope
-
+	
 	ld a, [wMapNumber]
 	cp MAP_SUNBEAM_ISLAND
 	jr z, .sunbeam_sleepy_snare
 	cp MAP_SUNBEAM_BEACH
 	jr z, .sunbeam_sleeping_beauty
-	jr .nope
+	jr .nope	
 	
 .sunbeam_sleepy_snare
 	ld a, 3
@@ -177,6 +184,15 @@ _PokeFlute: ; 50730
 
 .sunbeam_sleeping_beauty
 	ld a, 4
+	ld [wScriptVar], a
+	ret
+	
+.spruce_lab
+	callba GetFacingObject
+	ld a, d
+	cp SPRITEMOVEDATA_STANDING_UP
+	jr nz, .nope
+	ld a, 7
 	ld [wScriptVar], a
 	ret
 	

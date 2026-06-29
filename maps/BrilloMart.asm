@@ -131,7 +131,7 @@ BrilloMartClerk:
 	checkevent EVENT_GOT_COVER_FOSSIL
 	iftrue .normal
 	callasm BrilloMartClerkSecretAsmCover
-	writetext BrilloMartClerkText4
+	writetext BrilloMartClerkText5
 	waitbutton
 	closetext
 	end
@@ -139,7 +139,7 @@ BrilloMartClerk:
 	checkevent EVENT_GOT_COVER_FOSSIL
 	iffalse .normal
 	callasm BrilloMartClerkSecretAsmPlume
-	writetext BrilloMartClerkText4
+	writetext BrilloMartClerkText5
 	waitbutton
 	closetext
 	end
@@ -363,8 +363,21 @@ BrilloMartClerkText3:
 	done
 	
 BrilloMartClerkText4:
-	text "Keep this to"
-	line "youself, kid…"
+	text "Keep this place to"
+	line "yourself, kid…"
+	done
+	
+BrilloMartClerkText5:
+	text "Some weirdo came"
+	line "in and pawned that"
+	cont "fossil off."
+	
+	para "Said it was mess-"
+	line "in' with his mind."
+	
+	para "Anyway, that's the"
+	line "only one of those"
+	cont "I got."
 	done
 	
 BrilloMartDoorAsm:

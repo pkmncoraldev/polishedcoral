@@ -75,6 +75,13 @@ Special_FindThatSpecies: ; c276
 	farcall _FindThatSpecies
 	jr z, FoundNone
 	jr FoundOne
+	
+Special_FindThatSpeciesSpecificTrainerID:
+	ld a, [wScriptVar]
+	ld b, a
+	farcall _FindThatSpeciesSpecificTrainerID
+	jr z, FoundNone
+	jr FoundOne
 
 Special_FindThatSpeciesYourTrainerID: ; c284
 	ld a, [wScriptVar]

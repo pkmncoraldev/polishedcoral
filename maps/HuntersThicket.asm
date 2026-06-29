@@ -35,7 +35,7 @@ HuntersThicket_MapScriptHeader:
 	person_event SPRITE_COOLTRAINER_F, 12, 51, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_GENERICTRAINER, 3, TrainerHunters_6, -1
 	person_event SPRITE_BUG_CATCHER, 12, 61, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 1, TrainerHunters_7, -1
 	person_event SPRITE_ICESKATER_VARIABLE, 15, 51, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, HuntersThicketRanger, EVENT_LEDIAN_RANGER_GONE
-	itemball_event  51, 15, FIVESTARHELM, 1, EVENT_GOT_FIVESTARHELM
+	person_event SPRITE_BALL_CUT_FRUIT, 15, 51, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, HuntersThicketFiveStarBall, EVENT_HUNTERS_THICKET_FIVE_STAR_BALL
 
 
 	const_def 1 ; object constants
@@ -61,6 +61,14 @@ HuntersThicket_MapScriptHeader:
 	const HUNTERS_THICKET_HELM_ITEMBALL
 
 HuntersThicketCallback:
+	checkevent EVENT_LEDIAN_DOLL_DAY_COOLDOWN
+	iftrue .skip
+	checkevent EVENT_UNIQUE_ENCOUNTER_LEDIAN_RANGER
+	iffalse .skip
+	checkevent EVENT_DECO_LEDIAN_DOLL
+	iftrue .skip
+	clearevent EVENT_HUNTERS_THICKET_FIVE_STAR_BALL
+.skip
 	variablesprite SPRITE_ICESKATER_VARIABLE, SPRITE_LEDIAN_RANGER_MASK
 	callasm HuntersThicketLoadDisguise
 	if_equal 1, .one
@@ -188,6 +196,40 @@ Movement_HuntersThicketNPCWalkRight:
 	step_right
 	step_end
 
+HuntersThicketFiveStarBall:
+	checkevent EVENT_GOT_FIVESTARHELM
+	iftrue .doll
+	loadvar wCurItemBallContents, FIVESTARHELM
+	loadvar wCurItemBallQuantity, 1
+	farscall FindItemInBallScript
+	iffalse .end
+	setevent EVENT_GOT_FIVESTARHELM
+	setevent EVENT_LEDIAN_DOLL_DAY_COOLDOWN
+	jump .end
+.doll
+	setevent EVENT_DECO_LEDIAN_DOLL
+	disappear LAST_TALKED
+	opentext
+	writetext GiveLedianDollText
+	playsound SFX_ITEM
+	waitsfx
+	writetext PutAwayLedianDollText
+	waitbutton
+	closetext
+.end
+	end
+
+GiveLedianDollText:
+	text "<PLAYER> found"
+	line "LEDIAN DOLL!"
+	done
+	
+PutAwayLedianDollText:
+	text "LEDIAN DOLL was"
+	line "sent to the PC in"
+	cont "<PLAYER>'s room."
+	done
+
 HuntersThicketRanger:
 	waitsfx
 	playmusic MUSIC_ENCOUNTER_GYM_LEADER
@@ -242,7 +284,7 @@ HuntersThicketRanger:
 	closetext
 	scall LedianRangerPoseEnd
 	pause 10
-	clearevent EVENT_GOT_FIVESTARHELM
+	clearevent EVENT_HUNTERS_THICKET_FIVE_STAR_BALL
 	faceplayer
 	opentext TEXTBOX_LEDIAN_RANGER
 	writetext HuntersThicketRangerText12
@@ -282,7 +324,9 @@ HuntersThicketRanger:
 	opentext
 	verbosegiveitem FIVESTARHELM
 	iffalse .NoRoom
+	setevent EVENT_HUNTERS_THICKET_FIVE_STAR_BALL
 	setevent EVENT_GOT_FIVESTARHELM
+	setevent EVENT_LEDIAN_DOLL_DAY_COOLDOWN
 	changetextboxspeaker TEXTBOX_LEDIAN_RANGER
 	writetext HuntersThicketRangerText9
 	waitbutton

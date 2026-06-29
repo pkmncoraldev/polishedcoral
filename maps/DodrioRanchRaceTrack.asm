@@ -222,7 +222,9 @@ RanchRideRaceFinishLine:
 .skip_2nd_track
 	checkevent EVENT_FINISHED_RANCH_RACE_TWICE
 	iffalse .secondtime
-	writetext RanchRideRaceTimeTextThirdTime
+	checkevent EVENT_FINISHED_RANCH_RACE_THRICE
+	iffalse .thirdtime
+	writetext RanchRideRaceTimeTextThirdTime	;same for 4ht time and on
 	waitbutton
 	checkcode VAR_WEEKDAY
 	if_equal SUNDAY, .ranchsunday
@@ -299,6 +301,20 @@ RanchRideRaceFinishLine:
 	waitbutton
 	closetext
 	setevent EVENT_RANCH_GOT_DODUO
+	setflag ENGINE_DONE_RANCH_RACE_TODAY
+	callasm DodrioRanchRaceTrackResetTimerAsm
+	end
+.thirdtime
+	writetext RanchRideRaceTimeTextThirdTime
+	waitbutton
+	setevent EVENT_FINISHED_RANCH_RACE_THRICE
+	setevent EVENT_DECO_DODUO_DOLL
+	writetext GiveDoduoDollText
+	playsound SFX_ITEM
+	waitsfx
+	writetext PutAwayDoduoDollText
+	waitbutton
+	closetext
 	setflag ENGINE_DONE_RANCH_RACE_TODAY
 	callasm DodrioRanchRaceTrackResetTimerAsm
 	end
@@ -541,6 +557,17 @@ RanchRideReturnGirl:
 	waitbutton
 	closetext
 	end
+	
+GiveDoduoDollText:
+	text "<PLAYER> received"
+	line "DODUO DOLL!"
+	done
+	
+PutAwayDoduoDollText:
+	text "DODUO DOLL was"
+	line "sent to the PC in"
+	cont "<PLAYER>'s room."
+	done
 	
 RanchRideRaceText1:
 	text "Hey hey!"

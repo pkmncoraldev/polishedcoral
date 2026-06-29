@@ -38,14 +38,28 @@ LusterSewersThroneRoom_MapScriptHeader:
 	
 LusterSewerThroneRoomNidokingLeader:
 	faceplayer
-	opentext
-	writetext LusterSewerThroneRoomNidokingLeaderText
+	opentext TEXTBOX_PUNK_BOSS
+	checkevent EVENT_DECO_NIDOKING_DOLL
+	iftrue .done_doll
+	writetext LusterSewerThroneRoomNidokingLeaderText1
+	waitbutton
+	changetextboxspeaker
+	setevent EVENT_DECO_NIDOKING_DOLL
+	writetext GiveNidokingDollText
+	playsound SFX_ITEM
+	waitsfx
+	writetext PutAwayNidokingDollText
 	waitbutton
 	closetext
 	spriteface LUSTERSEWERSTHRONEROOM_NIDO_LEADER, DOWN
 	end
+.done_doll
+	writetext LusterSewerThroneRoomNidokingLeaderText2
+	waitbutton
+	closetext
+	end
 	
-LusterSewerThroneRoomNidokingLeaderText:
+LusterSewerThroneRoomNidokingLeaderText1:
 	text "Ya showed up!"
 	
 	para "Make yourself at"
@@ -54,7 +68,12 @@ LusterSewerThroneRoomNidokingLeaderText:
 	para "You're one of us"
 	line "now, kid!"
 	
-	para "I'm sure those"
+	para "I want you to"
+	line "have this."
+	done
+	
+LusterSewerThroneRoomNidokingLeaderText2:
+	text "I'm sure those"
 	line "BUNEARYS are"
 	cont "plottin' their"
 	cont "revenge as we"
@@ -64,6 +83,17 @@ LusterSewerThroneRoomNidokingLeaderText:
 	line "ready when they"
 	cont "show their faces"
 	cont "again."
+	done
+	
+GiveNidokingDollText:
+	text "<PLAYER> received"
+	line "NIDOKING DOLL!"
+	done
+	
+PutAwayNidokingDollText:
+	text "NIDOKING DOLL was"
+	line "sent to the PC in"
+	cont "<PLAYER>'s room."
 	done
 	
 LusterSewerThroneRoomNidokingGirl:

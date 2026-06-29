@@ -126,6 +126,24 @@ BrilloMartClerk:
 	jump .menu
 	
 .secret
+	checkevent EVENT_GOT_PLUME_FOSSIL
+	iffalse .not_cover
+	checkevent EVENT_GOT_COVER_FOSSIL
+	iftrue .normal
+	callasm BrilloMartClerkSecretAsmCover
+	writetext BrilloMartClerkText4
+	waitbutton
+	closetext
+	end
+.not_cover
+	checkevent EVENT_GOT_COVER_FOSSIL
+	iffalse .normal
+	callasm BrilloMartClerkSecretAsmPlume
+	writetext BrilloMartClerkText4
+	waitbutton
+	closetext
+	end
+.normal
 	callasm BrilloMartClerkSecretAsm
 	writetext BrilloMartClerkText4
 	waitbutton
@@ -287,7 +305,27 @@ BrilloMartClerkSellAsm:
 BrilloMartClerkSecretAsm:
 	ld a, MARTTYPE_COIN_MART
 	ld c, a
-	ld a, MART_COINS
+	ld a, MART_COINS_CAPSULE
+	ld e, a
+	ld d, 0
+	ld a, [wScriptBank]
+	ld b, a
+	farjp OpenMartDialog
+	
+BrilloMartClerkSecretAsmCover:
+	ld a, MARTTYPE_COIN_MART
+	ld c, a
+	ld a, MART_COINS_COVER
+	ld e, a
+	ld d, 0
+	ld a, [wScriptBank]
+	ld b, a
+	farjp OpenMartDialog
+	
+BrilloMartClerkSecretAsmPlume:
+	ld a, MARTTYPE_COIN_MART
+	ld c, a
+	ld a, MART_COINS_PLUME
 	ld e, a
 	ld d, 0
 	ld a, [wScriptBank]

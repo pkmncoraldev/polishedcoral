@@ -88,6 +88,7 @@ StarglowCavernFossilRoomCoverFossil:
 	takeitem COVER_FOSSIL
 	disappear STARGLOWCAVERNCOVERFOSSIL
 	setevent EVENT_GOT_FOSSIL
+	setevent EVENT_GOT_COVER_FOSSIL
 	verbosegiveitem COVER_FOSSIL
 	closetext
 	pause 5
@@ -118,6 +119,7 @@ StarglowCavernFossilRoomPlumeFossil:
 	takeitem PLUME_FOSSIL
 	disappear STARGLOWCAVERNPLUMEFOSSIL
 	setevent EVENT_GOT_FOSSIL
+	setevent EVENT_GOT_PLUME_FOSSIL
 	verbosegiveitem PLUME_FOSSIL
 	closetext
 	pause 5

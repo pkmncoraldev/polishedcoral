@@ -30,7 +30,9 @@ Marts: ; 160a9
 	dw ShimmerMart
 	dw BrilloMart
 	dw BrilloMart
-	dw CoinsMart
+	dw CoinsMart1
+	dw CoinsMart2
+	dw CoinsMart3
 	dw RadiantMart
 	dw DuskMart
 	dw KomoreMart
@@ -450,22 +452,58 @@ BrilloMart:
 	db X_SPCL_DEF
 	db -1
 	
-CoinsMart:
+CoinsMart1:
 	db 14 ; # items
-	dbw ABILITY_CAP,  2000
-	dbw THICK_CLUB,  1500
-	dbw LUCKY_PUNCH,  500
-	dbw TOXIC_ORB, 1000
-	dbw FLAME_ORB, 1000
-	dbw CHOICE_BAND, 1000
-	dbw CHOICE_SCARF, 1000
-	dbw CHOICE_SPECS, 1000
-	dbw HP_UP,  200
-	dbw PROTEIN,  200
-	dbw IRON,  200
-	dbw CARBOS,  200
-	dbw CALCIUM,  200
-	dbw ZINC,  200
+	dbw PLUME_FOSSIL,  1500
+	dbw THICK_CLUB,  100
+	dbw LUCKY_PUNCH,  250
+	dbw TOXIC_ORB, 500
+	dbw FLAME_ORB, 500
+	dbw CHOICE_BAND, 500
+	dbw CHOICE_SCARF, 500
+	dbw CHOICE_SPECS, 500
+	dbw HP_UP,  50
+	dbw PROTEIN,  50
+	dbw IRON,  50
+	dbw CARBOS,  50
+	dbw CALCIUM,  50
+	dbw ZINC,  50
+	db -1
+	
+CoinsMart2:
+	db 14 ; # items
+	dbw COVER_FOSSIL,  1500
+	dbw THICK_CLUB,  100
+	dbw LUCKY_PUNCH,  250
+	dbw TOXIC_ORB, 500
+	dbw FLAME_ORB, 500
+	dbw CHOICE_BAND, 500
+	dbw CHOICE_SCARF, 500
+	dbw CHOICE_SPECS, 500
+	dbw HP_UP,  50
+	dbw PROTEIN,  50
+	dbw IRON,  50
+	dbw CARBOS,  50
+	dbw CALCIUM,  50
+	dbw ZINC,  50
+	db -1
+	
+CoinsMart3:
+	db 14 ; # items
+	dbw ABILITY_CAP,  1500
+	dbw THICK_CLUB,  100
+	dbw LUCKY_PUNCH,  250
+	dbw TOXIC_ORB, 500
+	dbw FLAME_ORB, 500
+	dbw CHOICE_BAND, 500
+	dbw CHOICE_SCARF, 500
+	dbw CHOICE_SPECS, 500
+	dbw HP_UP,  50
+	dbw PROTEIN,  50
+	dbw IRON,  50
+	dbw CARBOS,  50
+	dbw CALCIUM,  50
+	dbw ZINC,  50
 	db -1
 	
 RadiantMart:

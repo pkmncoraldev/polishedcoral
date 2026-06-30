@@ -58,6 +58,7 @@ DecorationAttributes:
 	decoration DECO_DOLL,     GROWLITHE,         SET_UP_DOLL,        EVENT_DECO_GROWLITHE_DOLL,         SPRITE_MON_DOLL_1
 	decoration DECO_DOLL,     BUIZEL,            SET_UP_DOLL,        EVENT_DECO_BUIZEL_DOLL,            SPRITE_MON_DOLL_1
 	decoration DECO_DOLL,     DITTO,             SET_UP_DOLL,        EVENT_DECO_DITTO_DOLL,             SPRITE_MON_DOLL_1
+	decoration DECO_DOLL,     CORSOLA,           SET_UP_DOLL,        EVENT_DECO_CORSOLA_DOLL,           SPRITE_MON_DOLL_1
 	decoration DECO_DOLL,     BULBASAUR,         SET_UP_DOLL,        EVENT_DECO_BULBASAUR_DOLL,         SPRITE_MON_DOLL_1
 	decoration DECO_DOLL,     CHARMANDER,        SET_UP_DOLL,        EVENT_DECO_CHARMANDER_DOLL,        SPRITE_MON_DOLL_1
 	decoration DECO_DOLL,     SQUIRTLE,          SET_UP_DOLL,        EVENT_DECO_SQUIRTLE_DOLL,          SPRITE_MON_DOLL_1

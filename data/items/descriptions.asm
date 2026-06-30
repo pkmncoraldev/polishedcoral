@@ -1293,6 +1293,7 @@ DecoDescriptions:
 	dw GrowlitheDollDesc
 	dw BuizelDollDesc
 	dw DittoDollDesc
+	dw CorsolaDollDesc
 	
 NoDecoDesc:
 	db   "@"
@@ -1423,3 +1424,7 @@ BuizelDollDesc:
 DittoDollDesc:
 	db   "An adorable"
 	next "DITTO doll.@"
+	
+CorsolaDollDesc:
+	db   "An adorable"
+	next "CORSOLA doll.@"

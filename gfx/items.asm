@@ -299,4 +299,4 @@ CottoneeBuyMonIcon:     		INCBIN "gfx/icons/cottonee.2bpp"
 GrowlitheBuyMonIcon:     		INCBIN "gfx/icons/growlithe.2bpp"
 BuizelBuyMonIcon:     			INCBIN "gfx/icons/buizel.2bpp"
 DittoBuyMonIcon:     			INCBIN "gfx/icons/ditto.2bpp"
-
+CorsolaBuyMonIcon:     			INCBIN "gfx/icons/corsola.2bpp"

@@ -121,6 +121,7 @@ DEF __enum__ = 0
 	deco  GROWLITHE_DOLL
 	deco  BUIZEL_DOLL
 	deco  DITTO_DOLL
+	deco  CORSOLA_DOLL
 ;above dolls sold at store	
 	deco  BULBASAUR_DOLL
 	deco  CHARMANDER_DOLL
@@ -194,3 +195,4 @@ DEF __enum__ = 0
 	const GROWLITHE_DOLL_BUY
 	const BUIZEL_DOLL_BUY
 	const DITTO_DOLL_BUY
+	const CORSOLA_DOLL_BUY

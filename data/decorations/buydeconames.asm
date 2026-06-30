@@ -42,3 +42,4 @@ DecoNames::
 	db "GROWLITHE@"
 	db "BUIZEL@"
 	db "DITTO@"
+	db "CORSOLA@"

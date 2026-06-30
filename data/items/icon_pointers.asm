@@ -323,3 +323,4 @@ DecosIconPointers:
 	dba GrowlitheBuyMonIcon
 	dba BuizelBuyMonIcon
 	dba DittoBuyMonIcon
+	dba CorsolaBuyMonIcon

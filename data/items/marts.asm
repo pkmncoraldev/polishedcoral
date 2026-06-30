@@ -657,8 +657,9 @@ LusterMallPosters:
 	db -1
 	
 LusterMallDoll:
-	db 14 ; # items
+	db 15 ; # items
 	dbw DITTO_DOLL_BUY, 		6000
+	dbw CORSOLA_DOLL_BUY, 		6000
 	dbw PIKACHU_DOLL_BUY, 		3000
 	dbw EEVEE_DOLL_BUY, 		3000
 	dbw CLEFAIRY_DOLL_BUY, 		3000

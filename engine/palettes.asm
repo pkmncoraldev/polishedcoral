@@ -1746,7 +1746,7 @@ DecosIconPalettes:
 ; PIKACHU DOLL
 	RGB 00, 00, 00
 	RGB 31, 19, 10
-	RGB 31, 05, 00
+	RGB 15, 10, 03
 	RGB 00, 00, 00
 ; EEVEE DOLL
 	RGB 00, 00, 00
@@ -1802,6 +1802,11 @@ DecosIconPalettes:
 	RGB 00, 00, 00
 	RGB 31, 19, 10
 	RGB 21, 06, 21
+	RGB 00, 00, 00
+; CORSOLA DOLL
+	RGB 00, 00, 00
+	RGB 31, 19, 10
+	RGB 31, 12, 13
 	RGB 00, 00, 00
 	
 ClothesIconPalettes:

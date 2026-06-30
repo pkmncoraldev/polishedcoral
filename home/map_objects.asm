@@ -29,7 +29,7 @@ GetSpriteVTile:: ; 180e
 	; (SPRITE_BIG_GYARADOS has more than 12 tiles, and SPRITE_SAILBOAT
 	; needs to be in VRAM1)
 	ldh a, [hUsedSpriteIndex]
-	cp SPRITE_BIG_GYARADOS
+	cp SPRITE_BIG_DOLL
 	jr z, .use_last_struct
 	cp SPRITE_BIG_MUK
 	jr z, .use_last_struct

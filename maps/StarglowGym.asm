@@ -116,6 +116,17 @@ StarglowGymRodneyRematch:
 	startbattle
 	reloadmapafterbattle
 	opentext TEXTBOX_RODNEY
+	checkevent EVENT_DECO_BIG_GYARADOS_DOLL
+	iftrue .skip_doll
+	writetext StarglowGymRodneyTextDoll
+	waitbutton
+	setevent EVENT_DECO_BIG_GYARADOS_DOLL
+	writetext GiveGyaradosDollText
+	playsound SFX_ITEM
+	waitsfx
+	writetext PutAwayGyaradosDollText
+	waitbutton
+.skip_doll
 	writetext StarglowGymRodneyTextLoop
 	waitbutton
 	closetext
@@ -383,9 +394,25 @@ StarglowGymRodneyTextLoop:
 	line "rematch tomorrow!"
 	done
 	
+StarglowGymRodneyTextDoll:
+	text "Have this for"
+	line "another great win!"
+	done
+	
 StarglowGymRodneyTextNoRematch:
 	text "Don't be so wishy-"
 	line "washy!"
+	done
+	
+GiveGyaradosDollText:
+	text "<PLAYER> received"
+	line "BIG GYARADOS DOLL!"
+	done
+	
+PutAwayGyaradosDollText:
+	text "BIG GYARADOS DOLL"
+	line "sent to the PC in"
+	cont "<PLAYER>'s room."
 	done
 	
 StarglowGymGuyText:

@@ -161,6 +161,17 @@ LusterGymPollyRematch:
 	startbattle
 	reloadmapafterbattle
 	opentext TEXTBOX_POLLY
+	checkevent EVENT_DECO_WOOPER_DOLL
+	iftrue .skip_doll
+	writetext LusterGymPollyTextDoll
+	waitbutton
+	setevent EVENT_DECO_WOOPER_DOLL
+	writetext GiveWooperDollText
+	playsound SFX_ITEM
+	waitsfx
+	writetext PutAwayWooperDollText
+	waitbutton
+.skip_doll
 	writetext LusterGymPollyTextLoop
 	waitbutton
 	closetext
@@ -304,8 +315,26 @@ LusterGymPollyTextLoop:
 	cont "a rematch!"
 	done
 	
+LusterGymPollyTextDoll:
+	text "I get so excited"
+	line "when I battle you!"
+	
+	para "I got you this!"
+	done
+	
 LusterGymPollyTextNoRematch:
 	text "Aw, <WAIT_S>come on!"
+	done
+	
+GiveWooperDollText:
+	text "<PLAYER> received"
+	line "WOOPER DOLL!"
+	done
+	
+PutAwayWooperDollText:
+	text "WOOPER DOLL was"
+	line "sent to the PC in"
+	cont "<PLAYER>'s room."
 	done
 	
 Text_ReceivedFifthBadge:

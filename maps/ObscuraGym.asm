@@ -193,6 +193,17 @@ ObscuraGymRockyRematch:
 	startbattle
 	reloadmapafterbattle
 	opentext TEXTBOX_ROCKY
+	checkevent EVENT_DECO_SUDOWOODO_DOLL
+	iftrue .skip_doll
+	writetext ObscuraGymRockyTextDoll
+	waitbutton
+	setevent EVENT_DECO_SUDOWOODO_DOLL
+	writetext GiveSudowoodoDollText
+	playsound SFX_ITEM
+	waitsfx
+	writetext PutAwaySudowoodoDollText
+	waitbutton
+.skip_doll
 	writetext ObscuraGymRockyTextLoop
 	waitbutton
 	closetext
@@ -259,6 +270,12 @@ ObscuraGymRockyTextLoop:
 	para "I'll be waiting."
 	done
 	
+ObscuraGymRockyTextDoll:
+	text "Well done."
+	
+	para "Here. For you."
+	done
+	
 Text_ReceivedSeventhBadge:
 	text "<PLAYER> received"
 	line "the GEOBADGE."
@@ -306,6 +323,17 @@ ObscuraGymRockyTextWinRematch:
 	
 	para "As expected of the"
 	line "“chosen one”." 
+	done
+	
+GiveSudowoodoDollText:
+	text "<PLAYER> received"
+	line "SUDOWOODO DOLL!"
+	done
+	
+PutAwaySudowoodoDollText:
+	text "SUDOWOODO DOLL was"
+	line "sent to the PC in"
+	cont "<PLAYER>'s room."
 	done
 	
 ObscuraGymRockyCallText1:

@@ -196,6 +196,17 @@ RadiantGymLeilaniRematch:
 	startbattle
 	reloadmapafterbattle
 	opentext TEXTBOX_LEILANI
+	checkevent EVENT_DECO_SUNFLORA_DOLL
+	iftrue .skip_doll
+	writetext RadiantGymLeilaniTextDoll
+	waitbutton
+	setevent EVENT_DECO_SUNFLORA_DOLL
+	writetext GiveSunfloraDollText
+	playsound SFX_ITEM
+	waitsfx
+	writetext PutAwaySunfloraDollText
+	waitbutton
+.skip_doll
 	writetext RadiantGymLeilaniTextLoop
 	waitbutton
 	closetext
@@ -348,9 +359,28 @@ RadiantGymLeilaniTextLoop:
 	cont "tion!"
 	done
 	
+RadiantGymLeilaniTextDoll:
+	text "Wonderful job,"
+	line "sweetie!"
+	
+	para "GRAMMA has some-"
+	line "thing for you."
+	done
+	
 RadiantGymLeilaniTextNoRematch:
 	text "Don't keep GRAMMA"
 	line "waiting, now!"
+	done
+	
+GiveSunfloraDollText:
+	text "<PLAYER> received"
+	line "SUNFLORA DOLL!"
+	done
+	
+PutAwaySunfloraDollText:
+	text "SUNFLORA DOLL was"
+	line "sent to the PC in"
+	cont "<PLAYER>'s room."
 	done
 	
 Text_ReceivedSixthBadge:

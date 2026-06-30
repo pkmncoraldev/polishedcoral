@@ -317,6 +317,17 @@ EventideGymWendyRematch:
 	startbattle
 	reloadmapafterbattle
 	opentext TEXTBOX_WENDY
+	checkevent EVENT_DECO_SWABLU_DOLL
+	iftrue .skip_doll
+	writetext EventideGymWendyTextDoll
+	waitbutton
+	setevent EVENT_DECO_SWABLU_DOLL
+	writetext GiveSwabluDollText
+	playsound SFX_ITEM
+	waitsfx
+	writetext PutAwaySwabluDollText
+	waitbutton
+.skip_doll
 	writetext EventideGymWendyTextLoop
 	waitbutton
 	closetext
@@ -471,6 +482,12 @@ EventideGymWendyTextLoop:
 	line "there!"
 	done
 	
+EventideGymWendyTextDoll:
+	text "Way to go!"
+	
+	para "Have this!"
+	done
+	
 EventideGymWendyTextBeforeBattle1Rematch:
 	text "Hi, <PLAYER>."
 	
@@ -486,6 +503,17 @@ EventideGymWendyTextBeforeBattle2Rematch:
 EventideGymWendyTextNoRematch:
 	text "That takes the"
 	line "wind outta me…"
+	done
+	
+GiveSwabluDollText:
+	text "<PLAYER> received"
+	line "SWABLU DOLL!"
+	done
+	
+PutAwaySwabluDollText:
+	text "SWABLU DOLL was"
+	line "sent to the PC in"
+	cont "<PLAYER>'s room."
 	done
 	
 EventideGymTrainer1:

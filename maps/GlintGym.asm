@@ -167,6 +167,17 @@ GlintGymStanleyRematch:
 	startbattle
 	reloadmapafterbattle
 	opentext TEXTBOX_STANLEY
+	checkevent EVENT_DECO_SMEARGLE_DOLL
+	iftrue .skip_doll
+	writetext GlintGymStanleyTextDoll
+	waitbutton
+	setevent EVENT_DECO_SMEARGLE_DOLL
+	writetext GiveSmeargleDollText
+	playsound SFX_ITEM
+	waitsfx
+	writetext PutAwaySmeargleDollText
+	waitbutton
+.skip_doll
 	writetext GlintGymStanleyTextLoop
 	waitbutton
 	closetext
@@ -410,6 +421,14 @@ GlintGymStanleyTextLoop:
 	
 	para "I'll be waiting!"
 	done
+	
+GlintGymStanleyTextDoll:
+	text "Well, you already"
+	line "have my GYM BADGE,"
+	
+	para "so take this"
+	line "instead."
+	done
 
 GlintGymStanleyTextBeforeBattle1Rematch:
 	text "You came back!"
@@ -420,6 +439,17 @@ GlintGymStanleyTextBeforeBattle1Rematch:
 	
 GlintGymStanleyTextNoRematch:
 	text "Oh, <WAIT_S>I see."
+	done
+	
+GiveSmeargleDollText:
+	text "<PLAYER> received"
+	line "SMEARGLE DOLL!"
+	done
+	
+PutAwaySmeargleDollText:
+	text "SMEARGLE DOLL was"
+	line "sent to the PC in"
+	cont "<PLAYER>'s room."
 	done
 	
 GlintGymGuyText:

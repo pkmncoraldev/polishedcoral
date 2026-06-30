@@ -116,6 +116,17 @@ TwinkleGymCharlieRematch:
 	startbattle
 	reloadmapafterbattle
 	opentext TEXTBOX_CHARLIE
+	checkevent EVENT_DECO_CUBONE_DOLL
+	iftrue .skip_doll
+	writetext TwinkleGymCharlieTextDoll
+	waitbutton
+	setevent EVENT_DECO_CUBONE_DOLL
+	writetext GiveCuboneDollText
+	playsound SFX_ITEM
+	waitsfx
+	writetext PutAwayCuboneDollText
+	waitbutton
+.skip_doll
 	writetext TwinkleGymCharlieTextLoop
 	waitbutton
 	closetext
@@ -261,6 +272,14 @@ TwinkleGymCharlieTextLoop:
 	cont "rematch!"
 	done
 	
+TwinkleGymCharlieTextDoll:
+	text "You got me again,"
+	line "kid!"
+	
+	para "You should have"
+	line "this."
+	done
+	
 TwinkleGymCharlieTextBeforeBattle1Rematch:
 	text "Haha!"
 	
@@ -284,4 +303,15 @@ TwinkleGymCharlieTextBeforeBattle2Rematch:
 	
 TwinkleGymCharlieTextNoRematch:
 	text "No way!"
+	done
+	
+GiveCuboneDollText:
+	text "<PLAYER> received"
+	line "CUBONE DOLL!"
+	done
+	
+PutAwayCuboneDollText:
+	text "CUBONE DOLL was"
+	line "sent to the PC in"
+	cont "<PLAYER>'s room."
 	done

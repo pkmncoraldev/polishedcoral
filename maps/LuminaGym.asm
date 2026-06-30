@@ -157,6 +157,17 @@ LuminaGymDarcyRematch:
 	dotrigger $3
 	playmapmusic
 	opentext TEXTBOX_DARCY
+	checkevent EVENT_DECO_NATU_DOLL
+	iftrue .skip_doll
+	writetext LuminaGymDarcyTextDoll
+	waitbutton
+	setevent EVENT_DECO_NATU_DOLL
+	writetext GiveNatuDollText
+	playsound SFX_ITEM
+	waitsfx
+	writetext PutAwayNatuDollText
+	waitbutton
+.skip_doll
 	writetext LuminaGymDarcyTextLoop
 	waitbutton
 	closetext
@@ -550,6 +561,22 @@ LuminaGymDarcyTextLoop2:
 	line "TRAINER worthy of"
 	cont "making the DRAGON"
 	cont "appear for real!"
+	done
+	
+LuminaGymDarcyTextDoll:
+	text "You should take"
+	line "this with you."
+	done
+	
+GiveNatuDollText:
+	text "<PLAYER> received"
+	line "NATU DOLL!"
+	done
+	
+PutAwayNatuDollText:
+	text "NATU DOLL was"
+	line "sent to the PC in"
+	cont "<PLAYER>'s room."
 	done
 	
 Movement_LuminaGymPlayer1:

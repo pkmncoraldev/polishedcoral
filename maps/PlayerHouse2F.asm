@@ -77,7 +77,7 @@ PlayerHouse2F_MapScriptHeader:
 	object_event  3,  2, SPRITE_BIG_DOLL, SPRITEMOVEDATA_NO_RENDER, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, BigDoll, EVENT_KRISS_HOUSE_2F_BIG_DOLL
 	object_event -5, -5, SPRITE_MUSEUM_STANDEE, SPRITEMOVEDATA_TILE_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
 	object_event -5, -5, SPRITE_MINA_PAINTING, SPRITEMOVEDATA_TILE_DOWN, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
-	itemball_event  5,  1, TAPE_PLAYER, 1, EVENT_GOT_TAPE_PLAYER
+	itemball_event  7,  4, TAPE_PLAYER, 1, EVENT_GOT_TAPE_PLAYER
 	
 
 	const_def 1 ; object constants

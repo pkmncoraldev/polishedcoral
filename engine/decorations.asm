@@ -304,9 +304,16 @@ FindOwnedConsoles: ; 26910
 	db -1
 ; 2691d
 
-DecoOrnamentMenu: ; 2691d
+DecoOrnamentMenu:
+	eventflagcheck EVENT_GOT_TAPE_PLAYER
+	jr z, .tape_player
 	call FindOwnedOrnaments
 	call PopulateDecoCategoryMenu
+	xor a
+	ret
+.tape_player
+	ld hl, DecoText_GrabTapePlayer
+	call MenuTextBoxBackup
 	xor a
 	ret
 
@@ -332,6 +339,7 @@ FindOwnedOrnaments: ; 26925
 	db DECO_JIGGLYPUFF_DOLL
 	db DECO_SMEARGLE_DOLL
 	db DECO_DITTO_DOLL
+	db DECO_CORSOLA_DOLL
 	db DECO_PIKACHU_DOLL
 	db DECO_NIDOKING_DOLL
 	db DECO_MAREEP_DOLL
@@ -987,6 +995,10 @@ MenuData2_0x26eb3: ; 0x26eb3
 	db "RIGHT SIDE@"
 	db "CANCEL@"
 ; 0x26ed1
+
+DecoText_GrabTapePlayer:
+	text_jump UnknownText_GrabTapePlayer
+	db "@"
 
 DecoText_PutAwayTheDeco: ; 0x26ed1
 	; Put away the @ .

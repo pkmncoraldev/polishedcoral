@@ -30,13 +30,7 @@ Inn3F_MapScriptHeader:
 	warp_event 22,  2, ROUTE_1, 1
 	warp_event 31, 11, INN_VENT, 5
 
-	db 7 ; coord events
-	coord_event 24,  5, 0, Inn3F301Unlock
-	coord_event 25,  5, 0, Inn3F301Unlock
-	coord_event  6,  5, 0, Inn3F303Unlock
-	coord_event  7,  5, 0, Inn3F303Unlock
-	coord_event  0,  5, 0, Inn3F304Unlock
-	coord_event  1,  5, 0, Inn3F304Unlock
+	db 1 ; coord events
 	coord_event 18,  4, 1, Inn3FKageStop
 
 	db 18 ; bg events
@@ -66,7 +60,7 @@ Inn3F_MapScriptHeader:
 	person_event SPRITE_INVISIBLE, 11, 11, SPRITEMOVEDATA_NO_RENDER, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, Inn1FLockedElevator, EVENT_ELEVATOR_OPEN
 	person_event SPRITE_INVISIBLE, 11, 15, SPRITEMOVEDATA_NO_RENDER, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, Inn3F302Door, EVENT_INN_3F_302_OPEN
 	person_event SPRITE_INVISIBLE, 11, 19, SPRITEMOVEDATA_NO_RENDER, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, Inn1FLockedDoor, EVENT_INN_3F_301_OPEN
-	person_event SPRITE_INVISIBLE, 11, 21, SPRITEMOVEDATA_NO_RENDER, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, Inn3FServiceDoor, EVENT_INN_3F_SERVICE_DOOR_OPEN
+	person_event SPRITE_INVISIBLE, 11, 21, SPRITEMOVEDATA_NO_RENDER, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, Inn3FServiceDoor, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_8
 	person_event SPRITE_SNARE, 12,  7, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, Inn3FSnareNPC, EVENT_INN_3F_SNARE_HALLWAY
 	person_event SPRITE_BALL_CUT_FRUIT,  3,  8, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, Inn3FClothes, EVENT_INN_3F_CLOTHES
 	person_event SPRITE_PONYTAIL,  2, 24, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 3, Inn3FCustomer1, -1
@@ -501,18 +495,6 @@ Inn3FCustomer1Text:
 	para "Get out of my"
 	line "room!"
 	done
-	
-Inn3F301Unlock:
-	setevent EVENT_INN_3F_301_OPEN
-	end
-	
-Inn3F303Unlock:
-	setevent EVENT_INN_3F_303_OPEN
-	end
-	
-Inn3F304Unlock:
-	setevent EVENT_INN_3F_304_OPEN
-	end
 	
 Inn3FTrigger0:
 Inn3FTrigger1:

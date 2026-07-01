@@ -205,6 +205,7 @@ Inn2FBall:
 	farscall FindItemInBallScript
 	iffalse .end
 	disappear INN_2F_POKEBALL
+	appear INN_2F_DOOR_LOCK_5
 .end
 	loadvar wScriptVar, 0
 	end

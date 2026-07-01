@@ -251,13 +251,21 @@ Inn1FKageScene:
 	special Special_FadeOutMusic
 	pause 25
 	playnewmapmusic
+	appear INN_1F_DOOR_LOCK_2
 	disappear INN_1F_DOOR_LOCK_3
+	appear INN_1F_DOOR_LOCK_4
 	setevent EVENT_INN_SNARE_GONE
 	setevent EVENT_INN_2F_SNARE_HALLWAY
 	setevent EVENT_INN_3F_SNARE_HALLWAY
 	setevent EVENT_INN_1F_LOBBY_SNARE
 	setevent EVENT_INN_1F_ROOM_SNARE
 	setevent EVENT_INN_1F_SNARE_GIRL
+	clearevent EVENT_INN_2F_201_OPEN
+	clearevent EVENT_INN_2F_204_OPEN
+	clearevent EVENT_INN_3F_301_OPEN
+	clearevent EVENT_INN_3F_302_OPEN
+	clearevent EVENT_INN_3F_303_OPEN
+	clearevent EVENT_INN_3F_304_OPEN
 	setevent EVENT_ALWAYS_SET
 	spriteface INN_1F_CUSTOMER_1, DOWN
 	dotrigger $0

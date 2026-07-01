@@ -882,11 +882,11 @@ TM27Text:
 	prompt
 
 TM28Text:
-	text "It's on a dry,"
-	line "desert route, but…"
+	text "It's in a cave that"
+	line "glows like stars."
 	
-	para "how do you get up"
-	line "there?"
+	para "You'll need to find"
+	line "an second entrance."
 	prompt
 
 TM29Text:
@@ -966,12 +966,11 @@ TM36Text:
 	prompt
 
 TM37Text:
-	text "It's in a desert"
-	line "town."
+	text "It's on a dry,"
+	line "desert route, but…"
 	
-	para "Just climb the"
-	line "rocks, and it's"
-	cont "yours."
+	para "how do you get up"
+	line "there?"
 	prompt
 
 TM38Text:

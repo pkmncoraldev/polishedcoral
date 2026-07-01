@@ -19,7 +19,7 @@ StarglowCavern2F_MapScriptHeader:
 	person_event SPRITE_POKEMANIAC, 12, 21, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, StarglowCavern2FNPC1, -1
 	tmhmball_event  9, 22, TM_MUD_SLAP, EVENT_TM10
 	itemball_event 23, 16, ETHER, 1, EVENT_STARGLOW_CAVERN_2F_POKE_BALL2
-	itemball_event 25,  6, RARE_CANDY, 1, EVENT_STARGLOW_CAVERN_2F_POKE_BALL3
+	tmhmball_event 25,  6, TM_DIG, EVENT_TM28
 	
 StarglowCavern2FNPC1:
 	jumptextfaceplayer StarglowCavern2FNPC1Text

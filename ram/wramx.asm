@@ -885,8 +885,6 @@ wVariableSprites:: ds $100 - SPRITE_VARS
 
 wEnteredMapFromContinue:: ds 1
 
-;	ds 2
-
 wTimeOfDayPal:: ds 1
 
 wTimeOfDayPalFlags:: ds 1
@@ -974,7 +972,9 @@ wMinaFlags::
 	; 5 - route 10
 	ds 1
 
-ds 6
+wWellItem:: ds 1
+
+ds 5
 
 wPokegearFlags::
 ; bit 0: map

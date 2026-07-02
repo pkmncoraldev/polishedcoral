@@ -149,8 +149,8 @@
 	const KEY_CARD_R   ; 7f
 	const KEY_CARD_B   ; 80
 	const KEY_CARD_Y   ; 81
-	const UNUSED5      ; 82 - replace
-	const UNUSED6      ; 83 - replace
+	const GOLD_COIN    ; 82
+	const SILVER_COIN  ; 83
 	const UNUSED7      ; 84 - replace
 	const RARE_BONE    ; 85
 	const COMET_SHARD  ; 86
@@ -299,7 +299,7 @@
 	const NAM_DUBIOUS_DOG  ; 02
 	const NAM_AMULET_COIN  ; 03
 	const NAM_ANTIDOTE     ; 04
-	const NAM_UNUSED5      ; 05
+	const NAM_GOLD_COIN      ; 05
 	const NAM_BLOSSOM_TEA  ; 06
 	const NAM_POLLEN_POUCH   ; 07
 	const NAM_ASPEAR_BERRY ; 08
@@ -388,7 +388,7 @@
 	const NAM_ICY_ROCK     ; 5b
 	const NAM_IRON         ; 5c
 	const NAM_ITEMFINDER   ; 5d
-	const NAM_UNUSED6      ; 5e
+	const NAM_SILVER_COIN      ; 5e
 	const NAM_UNUSED8      ; 5f
 	const NAM_KINGS_ROCK   ; 60
 	const NAM_LEAF_STONE   ; 61

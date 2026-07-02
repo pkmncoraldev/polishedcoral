@@ -128,8 +128,8 @@ ItemIconPointers:
 	dba KeyCardIcon
 	dba KeyCardIcon
 	dba KeyCardIcon
-	dba NoItemIcon
-	dba NoItemIcon
+	dba OldCoinIcon
+	dba OldCoinIcon
 	dba NoItemIcon
 	dba RareBoneIcon
 	dba CometShardIcon

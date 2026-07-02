@@ -261,6 +261,7 @@ MiracleTonicIcon:  				INCBIN "gfx/items/miracle_tonic.2bpp"
 RockCandyIcon:  				INCBIN "gfx/items/rock_candy.2bpp"
 DragonStoneIcon:  				INCBIN "gfx/items/dragon_stone.2bpp"
 IDCardIcon:  					INCBIN "gfx/items/id_card.2bpp"
+OldCoinIcon:  					INCBIN "gfx/items/old_coin.2bpp"
 
 ClothesIconBoy:        			INCBIN "gfx/items/misc/clothes_boy.2bpp"
 ClothesIconGirl:       			INCBIN "gfx/items/misc/clothes_girl.2bpp"

@@ -148,8 +148,8 @@ ItemNameOrder:
 	db NAM_KEY_CARD_R ; 4a
 	db NAM_KEY_CARD_B  ; ca
 	db NAM_KEY_CARD_Y ; a0
-	db NAM_UNUSED5 ; 05
-	db NAM_UNUSED6 ; 5e
+	db NAM_GOLD_COIN ; 05
+	db NAM_SILVER_COIN ; 5e
 	db NAM_UNUSED7  ; c5
 	db NAM_UNUSED8   ; 5f
 	db NAM_COMET_SHARD ; 77

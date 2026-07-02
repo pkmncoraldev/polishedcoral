@@ -128,8 +128,8 @@ ItemDescriptions:
 	dw KeyCardDesc
 	dw KeyCardDesc
 	dw KeyCardDesc
-	dw TeruSamaDesc
-	dw TeruSamaDesc
+	dw GoldCoinDesc
+	dw SilverCoinDesc
 	dw TeruSamaDesc
 	dw RareBoneDesc
 	dw CometShardDesc
@@ -731,6 +731,11 @@ SerpsprillaDesc:
 KeyCardDesc:
 	db   "Opens a door in"
 	line "the NETT BUILDING.@" 
+	
+GoldCoinDesc:
+SilverCoinDesc:
+	db   "Tarnished coin."
+	line "Good for tossing!@" 
 	
 TeruSamaDesc:
 	db   "?@"

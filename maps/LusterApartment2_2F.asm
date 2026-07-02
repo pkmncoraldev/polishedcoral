@@ -9,18 +9,19 @@ LusterApartment2_2F_MapScriptHeader:
 
 	db 0 ; coord events
 
-	db 4 ; bg events
+	db 5 ; bg events
 	signpost  2,  6, SIGNPOST_IFNOTSET, LusterApartment2_2FPainting
 	signpost  5,  7, SIGNPOST_IFNOTSET, LusterApartment2_2FJournal
 	signpost  3,  7, SIGNPOST_IFNOTSET, LusterApartment2_2FShelf
 	signpost  7,  6, SIGNPOST_IFNOTSET, LusterApartment2_2FFlowers
+	signpost  4,  7, SIGNPOST_IFNOTSET, LusterApartment2_2F_Luggage
 
 	db 6 ; object events
-	person_event SPRITE_MISC_BAGGAGE,  4,  7, SPRITEMOVEDATA_TILE_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, LusterApartment2_2F_Luggage, EVENT_MINA_APARTMENT_EMPTY
+	person_event SPRITE_MISC_BAGGAGE,  4,  7, SPRITEMOVEDATA_TILE_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_MINA_APARTMENT_EMPTY
 	person_event SPRITE_VALVE_1,  3,  4, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, LusterApartment2_2F_Easel2, EVENT_MINA_APARTMENT_EMPTY
 	person_event SPRITE_LEAVES,  3,  4, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, LusterApartment2_2F_Easel, EVENT_MINA_APARTMENT_EMPTY
 	person_event SPRITE_LEAVES,  5,  2, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, LusterApartment2_2F_Easel, EVENT_MINA_APARTMENT_EMPTY
-	person_event SPRITE_LEAVES,  2,  6, SPRITEMOVEDATA_TILE_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, LusterApartment2_2F_Luggage, EVENT_MINA_APARTMENT_EMPTY
+	person_event SPRITE_LEAVES,  2,  6, SPRITEMOVEDATA_TILE_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_MINA_APARTMENT_EMPTY
 	person_event SPRITE_MINA,  6,  4, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, LusterApartment2_2F_Mina, EVENT_MINA_NOT_AT_HOME
 
 
@@ -481,6 +482,24 @@ LusterApartment2_2FPainting:
 	jumptext LusterApartment2_2FPaintingText
 	
 LusterApartment2_2F_Luggage:
+	dw EVENT_MINA_APARTMENT_EMPTY
+	checkevent EVENT_MUSIC_MINA
+	iftrue .got_tape
+	opentext
+	writetext LusterApartment2_2F_LuggageText2
+	yesorno
+	iftrue .yes
+	closetext
+	end
+.yes
+	loadvar wCurItemBallQuantity, 1
+	loadvar wCurItemBallContents, MUSIC_MINA
+	farscall FindTapeInBallScript
+	iffalse .end
+	setevent EVENT_MUSIC_MINA
+.end
+	end
+.got_tape
 	jumptext LusterApartment2_2F_LuggageText
 	
 LusterApartment2_2FShelf:
@@ -497,8 +516,15 @@ LusterApartment2_2FPaintingText:
 	done
 	
 LusterApartment2_2F_LuggageText:
+	text "A messy suitcase."
+	done
+	
+LusterApartment2_2F_LuggageText2:
 	text "A neatly packed"
 	line "suitcase."
+	
+	para "Rummage through"
+	line "it?"
 	done
 	
 LusterApartment2_2F_EaselText:

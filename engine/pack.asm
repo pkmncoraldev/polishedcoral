@@ -654,7 +654,7 @@ CheckMurkrowWell:
 	cp $19
 	jr nz, .no
 	ld a, [wYCoord]
-	cp $21
+	cp $05
 	jr z, .yes
 	jr .no
 .left
@@ -662,7 +662,7 @@ CheckMurkrowWell:
 	cp $1a
 	jr nz, .no
 	ld a, [wYCoord]
-	cp $20
+	cp $04
 	jr z, .yes
 	jr .no
 .right
@@ -670,7 +670,7 @@ CheckMurkrowWell:
 	cp $18
 	jr nz, .no
 	ld a, [wYCoord]
-	cp $20
+	cp $04
 	jr nz, .no
 .yes
 	ld a, 1

@@ -93,6 +93,8 @@ Pointers445f: ; 445f
 	dw SetFacingColbyFall1,			   SetFacingColbyFall1		  ; PERSON_ACTION_COLBY_FALL_1
 	dw SetFacingColbyFall2,			   SetFacingColbyFall2		  ; PERSON_ACTION_COLBY_FALL_2
 	dw SetFacingSnubbullShrink,		   SetFacingSnubbullShrink	  ; PERSON_ACTION_SNUBBULL_SHRINK
+	dw SetFacingNettBallL,		 	   SetFacingNettBallL	 	  ; PERSON_ACTION_NETT_BALL_L
+	dw SetFacingNettBallR,		 	   SetFacingNettBallR	 	  ; PERSON_ACTION_NETT_BALL_R
 	
 ; 44a3
 
@@ -758,6 +760,14 @@ SetFacingCasino1:
 	
 SetFacingCasino2:
 	ld a, FACING_CASINO_2
+	jp SetFixedFacing
+	
+SetFacingNettBallL:
+	ld a, FACING_NETT_BALL_L
+	jp SetFixedFacing
+	
+SetFacingNettBallR:
+	ld a, FACING_NETT_BALL_R
 	jp SetFixedFacing
 	
 SetFacingSnubbullShrink:

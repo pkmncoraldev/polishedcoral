@@ -129,6 +129,8 @@ Facings:
 	dw FacingColbyFall11
 	dw FacingColbyFall12
 	dw FacingColbyFall13
+	dw FacingNettBallL
+	dw FacingNettBallR
 FacingsEnd: dw 0
 
 DEF NUM_FACINGS EQU (FacingsEnd - Facings) / 2
@@ -1192,3 +1194,13 @@ FacingColbyFall13:
 	db  0,  8, 0, $0d
 	db  8,  0, 2, $0e
 	db  8,  8, 2, $0f
+	
+FacingNettBallL:
+	db 2 ; #
+	db  12,  0, 2, $0a
+	db  12,  8, 2, $0b
+	
+FacingNettBallR:
+	db 2 ; #
+	db  12,  0, 2 | X_FLIP, $0b
+	db  12,  8, 2 | X_FLIP, $0a

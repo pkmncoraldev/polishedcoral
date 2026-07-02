@@ -668,6 +668,8 @@ MapObjectMovementPattern:
 	dw .MovementBillboard1R
 	dw .MovementBillboard2L
 	dw .MovementBillboard2R
+	dw .MovementNettBallL
+	dw .MovementNettBallR
 
 .RandomWalkY:
 	call Random
@@ -1143,6 +1145,14 @@ MapObjectMovementPattern:
 	
 .MovementBillboard2R
 	ld a, PERSON_ACTION_BILLBOARD_2_R
+	jp ._ActionA_StepType04
+	
+.MovementNettBallL
+	ld a, PERSON_ACTION_NETT_BALL_L
+	jp ._ActionA_StepType04
+	
+.MovementNettBallR
+	ld a, PERSON_ACTION_NETT_BALL_R
 	jp ._ActionA_StepType04
 	
 .MovementTileUpDown:

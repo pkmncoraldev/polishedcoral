@@ -266,6 +266,7 @@ INCLUDE "maps/TwinkleGymRedRoom.asm"
 INCLUDE "maps/Route10.asm"
 INCLUDE "maps/Route10RestHouse.asm"
 INCLUDE "maps/Route10MoveReminderHouse.asm"
+INCLUDE "maps/LusterMallFurniture.asm"
 
 SECTION "Luster City Scripts", ROMX
 
@@ -290,7 +291,6 @@ INCLUDE "maps/LusterMallHerbShop.asm"
 INCLUDE "maps/LusterMallStoneShop.asm"
 INCLUDE "maps/LusterMallBallShop.asm"
 INCLUDE "maps/LusterMallClothesShop.asm"
-INCLUDE "maps/LusterMallFurniture.asm"
 INCLUDE "maps/LusterSkyscraperB1F.asm"
 
 SECTION "Nett Building Scripts", ROMX

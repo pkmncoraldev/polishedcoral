@@ -138,7 +138,7 @@
 	tilecoll WALL, WALL, FLOOR, FLOOR ; 89
 	tilecoll DOOR, WALL, FLOOR, FLOOR ; 8a
 	tilecoll FLOOR, FLOOR, WALL, ROCK_CLIMB ; 8b
-	tilecoll FLOOR, WALL, FLOOR, FLOOR ; 8c
+	tilecoll WALL, FLOOR, FLOOR, FLOOR ; 8c
 	tilecoll WALL, WALL, WALL, WALL ; 8d
 	tilecoll WALL, WALL, WALL, WALL ; 8e
 	tilecoll FLOOR, FLOOR, WALL, FLOOR ; 8f

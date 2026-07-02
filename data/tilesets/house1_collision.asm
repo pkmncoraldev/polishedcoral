@@ -230,7 +230,7 @@
 	tilecoll WALL, WALL, FLOOR, FLOOR ; e5
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; e6
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; e7
-	tilecoll FLOOR, FLOOR, FLOOR, WALL ; e8
+	tilecoll FLOOR, WALL, FLOOR, WALL ; e8
 	tilecoll FLOOR, WALL, WALL, WALL ; e9
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; ea
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; eb

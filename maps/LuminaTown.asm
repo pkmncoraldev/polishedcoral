@@ -16,8 +16,8 @@ LuminaTown_MapScriptHeader:
 	db 0 ; coord events
 
 	db 14 ; bg events
-	signpost 20, 19, SIGNPOST_JUMPTEXT, LuminaTownSignText
-	signpost 16, 39, SIGNPOST_JUMPTEXT, LuminaTownElderHouseSignText
+	signpost 20, 20, SIGNPOST_JUMPTEXT, LuminaTownSignText
+	signpost 16, 38, SIGNPOST_JUMPTEXT, LuminaTownElderHouseSignText
 	signpost  7, 16, SIGNPOST_JUMPTEXT, LuminaTownSmallStatueText
 	signpost  7, 19, SIGNPOST_JUMPTEXT, LuminaTownSmallStatueText
 	signpost  9, 44, SIGNPOST_JUMPTEXT, LuminaTownSmallStatueText
@@ -31,8 +31,10 @@ LuminaTown_MapScriptHeader:
 	signpost 16, 25, SIGNPOST_JUMPTEXT, LuminaTownBarrelsText
 	signpost 17, 25, SIGNPOST_JUMPTEXT, LuminaTownBarrelsText
 
-	db 2 ; object events
-	
+	db 3 ; object events
+	person_event SPRITE_GRANNY, 20, 17, SPRITEMOVEDATA_WANDER, 0, 1, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, LuminaTownNPC, -1
+	person_event SPRITE_POKEFAN_M, 11, 17, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, LuminaTownNPCWoman, -1
+	person_event SPRITE_CHILD, 13, 24, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, LuminaTownNPCKid, -1
 	itemball_event 14,  9, DRAGON_FANG, 1, EVENT_LUMINA_TOWN_ITEMBALL
 	tmhmball_event 37,  3, TM_DRAGON_PULSE, EVENT_TM59
 	
@@ -41,6 +43,68 @@ LuminaTownFlyPoint:
 	setflag ENGINE_FLYPOINT_LUMINA
 	setevent EVENT_REACHED_LUMINA
 	return
+	
+LuminaTownNPCWoman:
+	jumptextfaceplayer LuminaTownNPCWomanText
+	
+LuminaTownNPCWomanText:
+	text "This is a good"
+	line "place to raise a"
+	cont "child."
+	
+	para "Then again, my"
+	line "son sure is shy"
+	cont "for his age."
+	
+	para "I wonder, is a bit"
+	line "of excitement is"
+	cont "important for a"
+	cont "kid's development?"
+	done
+	
+LuminaTownNPCKid:
+	jumptextfaceplayer LuminaTownNPCKidText
+	
+LuminaTownNPCKidText:
+	text "…<WAIT_L>Hi."
+	
+	para "I wanna train a"
+	line "#MON just like"
+	cont "you!"
+	done
+	
+LuminaTownNPC:
+	checkevent EVENT_PLAYER_IS_FEMALE
+	iftrue .girl
+	jumptextfaceplayer LuminaTownNPCText1_boy
+.girl
+	jumptextfaceplayer LuminaTownNPCText1_girl
+	
+LuminaTownNPCText1_boy:
+	text "We almost never"
+	line "see strangers,"
+	cont "but you're the"
+	cont "second one now."
+	
+	para "First that other"
+	line "boy, and now you."
+	
+	para "What's the"
+	line "occassion?"
+	done
+	
+LuminaTownNPCText1_girl:
+	text "We almost never"
+	line "see strangers,"
+	cont "but you're the"
+	cont "second one now."
+	
+	para "First that boy,"
+	line "and now you."
+	
+	para "What's the"
+	line "occassion?"
+	done
 	
 LuminaTownNPC1:
 	checkevent EVENT_LUMINA_TOWN_UNDER_ATTACK

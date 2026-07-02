@@ -13,14 +13,46 @@ LusterMallFurniture_MapScriptHeader:
 	bg_event  1,  1, SIGNPOST_JUMPTEXT, LusterMallFurnitureDollsText
 	bg_event  1,  2, SIGNPOST_JUMPTEXT, LusterMallFurnitureDollsText
 
-	db 7 ; object events
+	db 9 ; object events
 	person_event SPRITE_FAT_GUY,  1,  6, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, LusterMallFurnitureClerk1, -1
 	person_event SPRITE_FAT_GUY,  1,  5, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, LusterMallFurnitureClerk2, -1
 	person_event SPRITE_PONYTAIL,  1,  2, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, LusterMallFurnitureClerk3, -1
-	object_event  1,  0, SPRITE_MON_ICON, SPRITEMOVEDATA_TILE_DOWN, 0, CLEFAIRY, -1, -1, PAL_NPC_PINK, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
+	object_event  1,  0, SPRITE_MON_ICON, SPRITEMOVEDATA_TILE_DOWN, 0, CLEFAIRY, -1, -1, PAL_NPC_RED, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
 	object_event  3,  0, SPRITE_MON_ICON, SPRITEMOVEDATA_STANDING_DOWN, 0, TEDDIURSA, -1, -1, PAL_NPC_BROWN, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
 	object_event  1,  1, SPRITE_MON_ICON, SPRITEMOVEDATA_TILE_DOWN, 0, MINCCINO, -1, -1, PAL_NPC_BROWN, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
 	object_event  0,  0, SPRITE_MON_ICON, SPRITEMOVEDATA_STANDING_DOWN, 0, MARILL, -1, -1, PAL_NPC_BLUE, PERSONTYPE_SCRIPT, 0, LusterMallFurnitureDolls, -1
+	person_event SPRITE_COOL_DUDE,  8,  7, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, LusterMallFurnitureNPC1, -1
+	person_event SPRITE_TWIN,  4,  0, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, LusterMallFurnitureNPC2, -1
+	
+	
+LusterMallFurnitureNPC1:
+	jumptextfaceplayer LusterMallFurnitureNPC1Text
+	
+LusterMallFurnitureNPC1Text:
+	text "The furniture sold"
+	line "here is for your"
+	cont "room at home."
+	
+	para "You can display it"
+	line "using the PC in"
+	cont "your room."
+	done
+	
+LusterMallFurnitureNPC2:
+	jumptextfaceplayer LusterMallFurnitureNPC2Text
+	
+LusterMallFurnitureNPC2Text:
+	text "There are dolls"
+	line "that they don't"
+	cont "sell here."
+	
+	para "You can find them"
+	line "by exploring the"
+	cont "world."
+	
+	para "See if you can"
+	line "find them all!"
+	done
 	
 LusterMallFurnitureDolls:
 	jumptext LusterMallFurnitureDollsText

@@ -603,8 +603,10 @@ UseItem: ; 10311
 
 TossMenu: ; 10364
 	call CheckMurkrowWell
-	and a
-	jr nz, .well
+	cp 1
+	jr z, .well
+	cp 2
+	jr z, .lumina
 	ld hl, Text_ThrowAwayHowMany
 	call Pack_PrintTextNoScroll
 	farcall SelectQuantityToToss
@@ -633,52 +635,39 @@ TossMenu: ; 10364
 	ld a, $f ; Pack_QuitCloseMenu
 	ld [wJumptableIndex], a
 	ret
+.lumina
+	ld a, 1
+	ld [wAlways0Trigger], a
+	ld a, $f ; Pack_QuitCloseMenu
+	ld [wJumptableIndex], a
+	ret
+	ret
 
 CheckMurkrowWell:
 	ld a, [wMapGroup]
 	cp GROUP_AUREOLE_MOUNTAIN_OUTSIDE
 	jr nz, .no
 	ld a, [wMapNumber]
+	cp MAP_LUMINA_TOWN
+	jr z, .lumina
 	cp MAP_AUREOLE_MOUNTAIN_OUTSIDE
 	jr nz, .no
-	ld a, [wPlayerDirection]
-	cp $4	;up
-	jr z, .up
-	cp $8	;left
-	jr z, .left
-	cp $c	;right
-	jr z, .right
-	jr .no
-.up
-	ld a, [wXCoord]
-	cp $19
+	callba GetFacingObjectSprite
+	ld a, d
+	cp SPRITE_CORY_NPC
 	jr nz, .no
-	ld a, [wYCoord]
-	cp $05
-	jr z, .yes
-	jr .no
-.left
-	ld a, [wXCoord]
-	cp $1a
-	jr nz, .no
-	ld a, [wYCoord]
-	cp $04
-	jr z, .yes
-	jr .no
-.right
-	ld a, [wXCoord]
-	cp $18
-	jr nz, .no
-	ld a, [wYCoord]
-	cp $04
-	jr nz, .no
-.yes
 	ld a, 1
+	ret
+.lumina
+	callba GetFacingObjectSprite
+	ld a, d
+	cp SPRITE_CORY_NPC
+	jr nz, .no
+	ld a, 2
 	ret
 .no
 	xor a
 	ret
-
 
 RegisterItem: ; 103c2
 	farcall CheckSelectableItem

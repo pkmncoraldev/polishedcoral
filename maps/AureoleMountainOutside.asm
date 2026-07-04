@@ -25,11 +25,12 @@ AureoleMountainOutside_MapScriptHeader:
 	signpost  5, 27, SIGNPOST_JUMPTEXT, AureoleMountainOutsideBarrelText
 	signpost  4, 25, SIGNPOST_READ, AureoleMountainOutsideWell
 
-	db 4 ; object events
+	db 5 ; object events
 	object_event 25,  6, SPRITE_BALL_CUT_FRUIT, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, AureoleMountainOutsideItemBall, EVENT_WELL_ITEM_GONE
 	object_event 25,  4, SPRITE_SPARKLE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_ALWAYS_SET
 	object_event 25,  4, SPRITE_SPARKLE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_ALWAYS_SET
 	object_event 25,  6, SPRITE_BALL_CUT_FRUIT, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, AureoleMountainOutsideTapeBall, EVENT_WELL_TAPE_GONE
+	object_event 25,  4, SPRITE_CORY_NPC, SPRITEMOVEDATA_NO_RENDER, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
 
 
 AureoleMountainOutsideTrigger0:

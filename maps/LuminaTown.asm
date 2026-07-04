@@ -1,5 +1,7 @@
 LuminaTown_MapScriptHeader:
-	db 0 ; scene scripts
+	db 2 ; scene scripts
+	scene_script LuminaTownTrigger0
+	scene_script LuminaTownTrigger1
 
 	db 1 ; callbacks
 	callback MAPCALLBACK_NEWMAP, LuminaTownFlyPoint
@@ -31,46 +33,96 @@ LuminaTown_MapScriptHeader:
 	signpost 16, 25, SIGNPOST_JUMPTEXT, LuminaTownBarrelsText
 	signpost 17, 25, SIGNPOST_JUMPTEXT, LuminaTownBarrelsText
 
-	db 3 ; object events
+	db 6 ; object events
 	person_event SPRITE_GRANNY, 20, 17, SPRITEMOVEDATA_WANDER, 0, 1, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, LuminaTownNPC, -1
 	person_event SPRITE_POKEFAN_M, 11, 17, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, LuminaTownNPCWoman, -1
 	person_event SPRITE_CHILD, 13, 24, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, LuminaTownNPCKid, -1
 	itemball_event 14,  9, DRAGON_FANG, 1, EVENT_LUMINA_TOWN_ITEMBALL
 	tmhmball_event 37,  3, TM_DRAGON_PULSE, EVENT_TM59
+	object_event 26, 13, SPRITE_CORY_NPC, SPRITEMOVEDATA_NO_RENDER, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, LuminaTownWell, -1
 	
+	
+LuminaTownTrigger0:
+	end
+	
+LuminaTownTrigger1:
+	priorityjump LuminaTownWellEvent
+	end
 	
 LuminaTownFlyPoint:
 	setflag ENGINE_FLYPOINT_LUMINA
 	setevent EVENT_REACHED_LUMINA
 	return
 	
+LuminaTownWellEvent:
+	setlasttalked 3
+	playsound SFX_PAY_DAY
+	faceplayer
+	showemote EMOTE_SHOCK, LAST_TALKED, 15
+	opentext
+	writetext LuminaTownNPCKidText2
+	waitbutton
+	closetext
+	dotrigger $0
+	end
+	
+LuminaTownWell:
+	jumptext LuminaTownWellText
+	
+LuminaTownWellText:
+	text "The town well."
+	
+	para "Looks like it's"
+	line "still in use."
+	done
+	
 LuminaTownNPCWoman:
 	jumptextfaceplayer LuminaTownNPCWomanText
 	
 LuminaTownNPCWomanText:
-	text "This is a good"
-	line "place to raise a"
-	cont "child."
+	text "More and more our"
+	line "young people have"
+	cont "chosen to leave"
+	cont "the village."
 	
-	para "Then again, my"
-	line "son sure is shy"
-	cont "for his age."
+	para "As soon as they"
+	line "come of age, they"
+	cont "take off."
 	
-	para "I wonder, is a bit"
-	line "of excitement is"
-	cont "important for a"
-	cont "kid's development?"
+	para "The only ones left"
+	line "are my son and"
+	cont "DARCY, the ELDER's"
+	cont "granddaughter."
 	done
 	
 LuminaTownNPCKid:
 	jumptextfaceplayer LuminaTownNPCKidText
 	
 LuminaTownNPCKidText:
-	text "…<WAIT_L>Hi."
+	text "Tossing stuff down"
+	line "the dried-out well"
+	cont "is fun!"
 	
-	para "I wanna train a"
-	line "#MON just like"
-	cont "you!"
+	para "I think something"
+	line "lives down there."
+	
+	para "Sometimes it"
+	line "throws stuff"
+	cont "back up."
+	done
+	
+LuminaTownNPCKidText2:
+	text "No!<WAIT_S>"
+	line "Not this well!"
+	
+	para "The dried-out one"
+	line "down the mountain!"
+	
+	para "If you toss stuff"
+	line "down this well,"
+	
+	para "the adults'll get"
+	line "mad and blame me!"
 	done
 	
 LuminaTownNPC:

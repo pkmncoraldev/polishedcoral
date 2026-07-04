@@ -121,6 +121,7 @@ StarglowGymRodneyRematch:
 	writetext StarglowGymRodneyTextDoll
 	waitbutton
 	setevent EVENT_DECO_BIG_GYARADOS_DOLL
+	setevent EVENT_DECO_GYARADOS_DOLL
 	writetext GiveGyaradosDollText
 	playsound SFX_ITEM
 	waitsfx

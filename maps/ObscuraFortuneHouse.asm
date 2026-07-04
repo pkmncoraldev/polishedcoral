@@ -125,6 +125,7 @@ ObscuraFortuneHouseTeller:
 	scall ObscuraFortuneHouseTellerCutscene
 	callasm ObscuraFortuneHouseTellerSetupTapesAsm
 	if_equal $69, .no_more
+	if_equal $70, .no_more2
 	waitbutton
 	closetext
 	end
@@ -138,6 +139,7 @@ ObscuraFortuneHouseTeller:
 	scall ObscuraFortuneHouseTellerCutscene
 	callasm ObscuraFortuneHouseTellerSetupDecosAsm
 	if_equal $69, .no_more
+	if_equal $70, .no_more2
 	waitbutton
 	closetext
 	end
@@ -151,6 +153,7 @@ ObscuraFortuneHouseTeller:
 	scall ObscuraFortuneHouseTellerCutscene
 	callasm ObscuraFortuneHouseTellerSetupUniqueEncountersAsm
 	if_equal $69, .no_more
+	if_equal $70, .no_more2
 	waitbutton
 	closetext
 	end
@@ -186,7 +189,7 @@ ObscuraFortuneHouseTeller:
 
 .ObscuraFortuneHouseTellerMenuData
 	db $40 ; flags
-	db 04, 00 ; start coords
+	db 03, 00 ; start coords
 	db 11, 19 ; end coords
 	dw .MenuDataObscuraFortuneHouseTeller
 	db 1 ; default option
@@ -399,7 +402,7 @@ ObscuraFortuneHouseTellerSetupTapesAsm:
 	jr ObscuraFortuneHouseTellerAsm
 
 ObscuraFortuneHouseTellerSetupDecosAsm:
-	ld a, 4 ;number of tracked decos + 1
+	ld a, 28 ;number of tracked decos + 1
 	ld hl, DECO_FLAGS_START
 	jr ObscuraFortuneHouseTellerAsm
 	
@@ -456,7 +459,7 @@ ObscuraFortuneHouseTellerAsm:
 	ld a, [wCurBattleMon]
 	cp 63 ;number of tracked TMHMs + 1
 	jr z, .tms
-	cp 4 ;number of tracked decos + 1
+	cp 28 ;number of tracked decos + 1
 	jr z, .decos
 	cp NUM_TAPE_PLAYER_SONGS
 	jr z, .tape
@@ -514,6 +517,11 @@ ObscuraFortuneHouseTellerAsm:
 	ld c, 12
 	call DelayFrames
 	ld hl, TellerTapeText
+	push hl
+	call ObscuraFortuneHouseCheckLuminaTapes
+	pop hl
+	cp -1
+	jr z, .no_more2
 	jr .finish
 	
 .decos
@@ -540,23 +548,35 @@ ObscuraFortuneHouseTellerAsm:
 	ld hl, TellerEndText
 	jp PrintText
 	
-ObscuraFortuneHouseCheckLuminaTMs:
-	cp $1f ;POWER GEM
-	jr z, .check
-	cp $2c ;DARK PULSE
-	jr z, .check
-	cp $2d ;ENDURE
-	jr z, .check
-	cp $2e ;DRAGON PULSE
-	jr z, .check
-	cp $39 ;SIGNAL BEAM
-	jr z, .check
-.can_give_hint
+ObscuraFortuneHouseCheckLuminaTapes:
+	ld a, [wCurTMHM]
+	cp $42 ;AUREOLE MOUNTAIN
+	jr z, ObscuraFortuneHouseCheckLumina
+	cp $43 ;LUMINA TOWN
+	jr z, ObscuraFortuneHouseCheckLumina
 	xor a
 	ret
-.check
+	
+ObscuraFortuneHouseCheckLuminaTMs:
+	cp $1f ;POWER GEM
+	jr z, ObscuraFortuneHouseCheckLumina
+	cp $2c ;DARK PULSE
+	jr z, ObscuraFortuneHouseCheckLumina
+	cp $2d ;ENDURE
+	jr z, ObscuraFortuneHouseCheckLumina
+	cp $2e ;DRAGON PULSE
+	jr z, ObscuraFortuneHouseCheckLumina
+	cp $39 ;SIGNAL BEAM
+	jr z, ObscuraFortuneHouseCheckLumina
+	xor a
+	ret
+	
+ObscuraFortuneHouseCheckLumina:
 	eventflagcheck EVENT_REACHED_LUMINA
-	jr nz, .can_give_hint
+	jr z, .cant_give_hint
+	xor a
+	ret
+.cant_give_hint
 	ld a, -1
 	ret
 	
@@ -809,7 +829,7 @@ TM13Text:
 	prompt
 
 TM14Text:
-   text "It's somewhere in"
+	text "It's somewhere in"
 	line "the snow."
 	
 	para "It's in a place"
@@ -990,6 +1010,9 @@ TM39Text:
 	
 	para "Wherever it is,"
 	line "it's dark and wet!"
+	
+	para "I can hear rushing"
+	line "water."
 	prompt
 
 TM42Text:
@@ -1188,8 +1211,13 @@ TM72Text:
 	prompt
 	
 TM73Text:
-	text "TM73"
-	line "TODO"
+	text "It's on Route 11."
+	
+	para "Wherever it is, it"
+	line "sure is dark."
+	
+	para "Maybe it's…<WAIT_S>"
+	line "under the bridge?"
 	prompt
 	
 TM75Text:
@@ -1807,8 +1835,13 @@ Music_Route28Text:
 	prompt
 	
 Music_MinasThemeText:
- 	text "MINAS THEME"
-	line "TODO"
+ 	text "It's in the room"
+	line "of an artist in"
+	cont "LUSTER CITY."
+	
+	para "You must snoop"
+	line "where you probably"
+	cont "shouldn't."
 	prompt
 	
 Music_ObscuraText:
@@ -1835,13 +1868,21 @@ Music_UnderwaterText:
 	prompt
 	
 Music_AureoleMountainText:
-	text "AUREOLE MOUNTAIN"
-	line "TODO"
+	text "It currently sits"
+	line "at the bottom of"
+	cont "a well…"
+	
+	para "You must offer"
+	line "something silver."
 	prompt
 	
 Music_LuminaText:
-	text "LUMINA TOWN"
-	line "TODO"
+	text "It currently sits"
+	line "at the bottom of"
+	cont "a well…"
+	
+	para "You must offer"
+	line "something gold."
 	prompt
 	
 Music_DragonShrine:
@@ -1865,221 +1906,411 @@ Music_Unused:
 	prompt
 	
 TellerDecosText:
+	dw BulbasaurDollText
+	dw CharmanderDollText
+	dw SquirtleDollText
+	dw ChikoritaDollText
+	dw CyndaquilDollText
+	dw TotodileDollText
+	dw TogepiDollText
 	dw MareepDollText
 	dw GirafarigDollText
+	dw DrowzeeDollText
+	dw MunchlaxDollText
+	dw BunearyDollText
+	dw NidokingDollText
+	dw LedianDollText
+	dw SpiritombDollText
+	dw DoduoDollText
+	dw MiltankDollText
+	dw MaractusDollText
+	dw SmeargleDollText
+	dw SwabluDollText
+	dw CuboneDollText
+	dw WooperDollText
+	dw SunfloraDollText
+	dw SudowoodoDollText
+	dw NatuDollText
 	dw MuseumPhotoText
+	dw GyaradosDollText
+	
+BulbasaurDollText:
+CharmanderDollText:
+SquirtleDollText:
+ChikoritaDollText:
+CyndaquilDollText:
+TotodileDollText:
+	text "There's a lady on"
+	line "SUNBEAM ISLAND."
+	
+	para "You have to show"
+	line "her a specific"
+	cont "#MON."
+	prompt
+	
+TogepiDollText:
+	text "A little girl in"
+	line "STARGLOW VALLEY"
+	cont "entrusts you her"
+	cont "precious #MON."
+	
+	para "Show her how well"
+	line "it's doing!"
+	prompt
 	
 MareepDollText:
-	text "MAREEP DOLL"
-	line "TODO"
+	text "The lighthouse…"
+	
+	para "I see something"
+	line "at the top."
+	
+	para "Maybe you could"
+	line "find a way up."
 	prompt
 	
 GirafarigDollText:
-	text "GIRAFARIG DOLL"
-	line "TODO"
+	text "There's a man in"
+	line "KOMORE VILLAGE"
+	cont "who loves a"
+	cont "certain #MON."
+	
+	para "Indulge him,"
+	line "won't you?"
+	prompt
+	
+DrowzeeDollText:
+	text "The clerk at the"
+	line "CROSSROADS INN…"
+	
+	para "Over the counter"
+	line "he only talks"
+	cont "business."
+	
+	para "Maybe try the"
+	line "back door?"
+	prompt
+	
+MunchlaxDollText:
+	text "The PROF's little"
+	line "assistant sure"
+	cont "likes to sleep."
+	
+	para "Time to wake up!"
+	prompt
+	
+BunearyDollText:
+	text "I see it in"
+	line "LUSTER CITY."
+	
+	para "You force her and"
+	line "her bunnies out"
+	cont "of their hideout."
+	
+	para "Hop over to their"
+	line "new one and see"
+	cont "what she says."
+	prompt
+	
+NidokingDollText:
+	text "You…<WAIT_M> join a gang"
+	line "in LUSTER CITY?"
+	
+	para "The something-"
+	line "KINGs?"
+	
+	para "Give them a visit"
+	line "once all is said"
+	cont "and done."
+	prompt
+	
+LedianDollText:
+	text "It's EAST of"
+	line "STARGLOW VALLEY."
+	
+	para "Try heading up"
+	line "the river nearby."
+	
+	para "There's a curious"
+	line "character there."
+	
+	para "Try going back"
+	cont "later."
+	prompt
+	
+SpiritombDollText:
+	text "Deep in EVENTIDE"
+	line "FOREST…"
+	
+	para "There is a big"
+	line "house."
+	
+	para "After you take"
+	line "care of the one"
+	cont "there, try going"
+	cont "back later."
+	prompt
+	
+DoduoDollText:
+	text "The DODRIO RANCH"
+	line "has many prizes."
+	
+	para "Try visiting"
+	line "everyday."
+	prompt
+	
+MiltankDollText:
+	text "The bar by the"
+	line "ROUTE 22 highway…"
+	
+	para "They offer a bonus"
+	line "for those who buy"
+	cont "a lot of milk."
+	
+	para "Try buying 12"
+	line "bottles at once!"
+	prompt
+	
+MaractusDollText:
+	text "Have you been to"
+	line "the GAME CORNER?"
+	
+	para "It's somewhere in"
+	line "a desert town."
+	
+	para "If you trade in"
+	line "your COINs, you"
+	cont "may get a bonus!"
+	prompt
+	
+MaractusDollText2:
+	text "The MART where"
+	line "the GAME CORNER"
+	cont "used to be…"
+	
+	para "Check the shelves."
+	prompt
+	
+SmeargleDollText:
+GyaradosDollText:
+SwabluDollText:
+CuboneDollText:
+WooperDollText:
+SunfloraDollText:
+SudowoodoDollText:
+NatuDollText:
+	text "Have you rematched"
+	line "the GYM LEADERS?"
+	
+	para "You might get a"
+	line "little surprise."
 	prompt
 	
 MuseumPhotoText:
-	text "MUSEUM PHOTO"
-	line "TODO"
+	text "There's a fun"
+	line "campaign at the"
+	cont "MUSEUM."
+	
+	para "You can get your"
+	line "photo taken with"
+	cont "the mascot!"
 	prompt
 	
 TellerUniqueEncounterText:
-	dw UniqueEncounterTeacherText
-	dw UniqueEncounterMinaGlintGroveText
-	dw UniqueEncounterLedianBossText
-	dw UniqueEncounterDisguiseMasterMtOnwaText
-	dw UniqueEncounterMagmarBossText
-	dw UniqueEncounterElectabuzzBossText
-	dw UniqueEncounterSudowoodoBossText
-	dw UniqueEncounterSpiritombBossText
-	dw UniqueEncounterMamoswineBossText
-	dw UniqueEncounterMinaJournalText
-	dw UniqueEncounterMinaMtOnwaText
-	dw UniqueEncounterMinaRoute6Text
-	dw UniqueEncounterMinaRoute11Text
-	dw UniqueEncounterMinaRadiantFieldText
-	dw UniqueEncounterMinaRoute29Text
-	dw UniqueEncounterMinaRoute10Text
-	dw UniqueEncounterMallCopText
-	dw UniqueEncounterDisguiseMasterLusterSewerText
-	dw UniqueEncounterFrankieText
-	dw UniqueEncounterMukBossText
-	dw UniqueEncounterPorygonBossText
-	dw UniqueEncounterPatchesText
-	dw UniqueEncounterDisguiseMasterHuntersThicketText
-	dw UniqueEncounterLedianRangerText
-	dw UniqueEncounterClefableBossText
-	dw UniqueEncounterLaprasBossText
-	dw UniqueEncounterDrakloakBossText
-	dw UniqueEncounterDisguiseMasterRoute18Text
-	dw UniqueEncounterVolcaronaBossText
-	dw UniqueEncounterCursolaBossText
-	dw UniqueEncounterErikaText
-	dw UniqueEncounterMimikyuBossText
-	dw UniqueEncounterDittoBossText
-	dw UniqueEncounterNoivernBossText
-	dw UniqueEncounterMarowakBossText
-	dw UniqueEncounterVileplumeBossText
-	dw UniqueEncounterDisguiseMasterAureoleMountainText
+	; dw UniqueEncounterTeacherText
+	; dw UniqueEncounterMinaGlintGroveText
+	; dw UniqueEncounterLedianBossText
+	; dw UniqueEncounterDisguiseMasterMtOnwaText
+	; dw UniqueEncounterMagmarBossText
+	; dw UniqueEncounterElectabuzzBossText
+	; dw UniqueEncounterSudowoodoBossText
+	; dw UniqueEncounterSpiritombBossText
+	; dw UniqueEncounterMamoswineBossText
+	; dw UniqueEncounterMinaJournalText
+	; dw UniqueEncounterMinaMtOnwaText
+	; dw UniqueEncounterMinaRoute6Text
+	; dw UniqueEncounterMinaRoute11Text
+	; dw UniqueEncounterMinaRadiantFieldText
+	; dw UniqueEncounterMinaRoute29Text
+	; dw UniqueEncounterMinaRoute10Text
+	; dw UniqueEncounterMallCopText
+	; dw UniqueEncounterDisguiseMasterLusterSewerText
+	; dw UniqueEncounterFrankieText
+	; dw UniqueEncounterMukBossText
+	; dw UniqueEncounterPorygonBossText
+	; dw UniqueEncounterPatchesText
+	; dw UniqueEncounterDisguiseMasterHuntersThicketText
+	; dw UniqueEncounterLedianRangerText
+	; dw UniqueEncounterClefableBossText
+	; dw UniqueEncounterLaprasBossText
+	; dw UniqueEncounterDrakloakBossText
+	; dw UniqueEncounterDisguiseMasterRoute18Text
+	; dw UniqueEncounterVolcaronaBossText
+	; dw UniqueEncounterCursolaBossText
+	; dw UniqueEncounterErikaText
+	; dw UniqueEncounterMimikyuBossText
+	; dw UniqueEncounterDittoBossText
+	; dw UniqueEncounterNoivernBossText
+	; dw UniqueEncounterMarowakBossText
+	; dw UniqueEncounterVileplumeBossText
+	; dw UniqueEncounterDisguiseMasterAureoleMountainText
 	
-UniqueEncounterTeacherText:
-	text "TEACHER"
-	done
+; UniqueEncounterTeacherText:
+	; text "TEACHER"
+	; done
 	
-UniqueEncounterMinaGlintGroveText:
-	text "MINA"
-	line "GLINT GROVE"
-	done
+; UniqueEncounterMinaGlintGroveText:
+	; text "MINA"
+	; line "GLINT GROVE"
+	; done
 	
-UniqueEncounterLedianBossText:
-	text "LEDIAN BOSS"
-	done
+; UniqueEncounterLedianBossText:
+	; text "LEDIAN BOSS"
+	; done
 	
-UniqueEncounterDisguiseMasterMtOnwaText:
-	text "DISGUISE MASTER"
-	line "MT OWNA"
-	done
+; UniqueEncounterDisguiseMasterMtOnwaText:
+	; text "DISGUISE MASTER"
+	; line "MT OWNA"
+	; done
 	
-UniqueEncounterMagmarBossText:
-	text "MAGMAR BOSS"
-	done
+; UniqueEncounterMagmarBossText:
+	; text "MAGMAR BOSS"
+	; done
 	
-UniqueEncounterElectabuzzBossText:
-	text "ELECTABUZZ BOSS"
-	done
+; UniqueEncounterElectabuzzBossText:
+	; text "ELECTABUZZ BOSS"
+	; done
 	
-UniqueEncounterSudowoodoBossText:
-	text "SUDOWOODO BOSS"
-	done
+; UniqueEncounterSudowoodoBossText:
+	; text "SUDOWOODO BOSS"
+	; done
 	
-UniqueEncounterSpiritombBossText:
-	text "SPIRITOMB BOSS"
-	done
+; UniqueEncounterSpiritombBossText:
+	; text "SPIRITOMB BOSS"
+	; done
 	
-UniqueEncounterMamoswineBossText:
-	text "MAMOSWINE BOSS"
-	done
+; UniqueEncounterMamoswineBossText:
+	; text "MAMOSWINE BOSS"
+	; done
 	
-UniqueEncounterMinaJournalText:
-	text "MINA"
-	line "JOURNAL"
-	done
+; UniqueEncounterMinaJournalText:
+	; text "MINA"
+	; line "JOURNAL"
+	; done
 	
-UniqueEncounterMinaMtOnwaText:
-	text "MINA"
-	line "MT ONWA"
-	done
+; UniqueEncounterMinaMtOnwaText:
+	; text "MINA"
+	; line "MT ONWA"
+	; done
 	
-UniqueEncounterMinaRoute6Text:
-	text "MINA"
-	line "ROUTE 6"
-	done
+; UniqueEncounterMinaRoute6Text:
+	; text "MINA"
+	; line "ROUTE 6"
+	; done
 	
-UniqueEncounterMinaRoute11Text:
-	text "MINA"
-	line "ROUTE 11"
-	done
+; UniqueEncounterMinaRoute11Text:
+	; text "MINA"
+	; line "ROUTE 11"
+	; done
 	
-UniqueEncounterMinaRadiantFieldText:
-	text "MINA"
-	line "RADIANT FIELD"
-	done
+; UniqueEncounterMinaRadiantFieldText:
+	; text "MINA"
+	; line "RADIANT FIELD"
+	; done
 	
-UniqueEncounterMinaRoute29Text:
-	text "MINA"
-	line "ROUTE 31"
-	done
+; UniqueEncounterMinaRoute29Text:
+	; text "MINA"
+	; line "ROUTE 31"
+	; done
 	
-UniqueEncounterMinaRoute10Text:
-	text "MINA"
-	line "ROUTE 10"
-	done
+; UniqueEncounterMinaRoute10Text:
+	; text "MINA"
+	; line "ROUTE 10"
+	; done
 	
-UniqueEncounterMallCopText:
-	text "MALL COP"
-	done
+; UniqueEncounterMallCopText:
+	; text "MALL COP"
+	; done
 	
-UniqueEncounterDisguiseMasterLusterSewerText:
-	text "DISGUISE MASTER"
-	line "LUSTER SEWER"
-	done
+; UniqueEncounterDisguiseMasterLusterSewerText:
+	; text "DISGUISE MASTER"
+	; line "LUSTER SEWER"
+	; done
 	
-UniqueEncounterFrankieText:
-	text "FRANKIE"
-	done
+; UniqueEncounterFrankieText:
+	; text "FRANKIE"
+	; done
 	
-UniqueEncounterMukBossText:
-	text "MUK BOSS"
-	done
+; UniqueEncounterMukBossText:
+	; text "MUK BOSS"
+	; done
 	
-UniqueEncounterPorygonBossText:
-	text "PORYGON BOSS"
-	done
+; UniqueEncounterPorygonBossText:
+	; text "PORYGON BOSS"
+	; done
 	
-UniqueEncounterPatchesText:
-	text "PATCHES"
-	done
+; UniqueEncounterPatchesText:
+	; text "PATCHES"
+	; done
 	
-UniqueEncounterDisguiseMasterHuntersThicketText:
-	text "DISGUISE MASTER"
-	line "HUNTERS THICKET"
-	done
+; UniqueEncounterDisguiseMasterHuntersThicketText:
+	; text "DISGUISE MASTER"
+	; line "HUNTERS THICKET"
+	; done
 	
-UniqueEncounterLedianRangerText:
-	text "LEDIAN RANGER"
-	done
+; UniqueEncounterLedianRangerText:
+	; text "LEDIAN RANGER"
+	; done
 	
-UniqueEncounterClefableBossText:
-	text "CLEFABLE BOSS"
-	done
+; UniqueEncounterClefableBossText:
+	; text "CLEFABLE BOSS"
+	; done
 	
-UniqueEncounterLaprasBossText:
-	text "LAPRAS BOSS"
-	done
+; UniqueEncounterLaprasBossText:
+	; text "LAPRAS BOSS"
+	; done
 	
-UniqueEncounterDrakloakBossText:
-	text "DRAKLOAK BOSS"
-	done
+; UniqueEncounterDrakloakBossText:
+	; text "DRAKLOAK BOSS"
+	; done
 	
-UniqueEncounterDisguiseMasterRoute18Text:
-	text "DISGUISE MASTER"
-	line "ROUTE 18"
-	done
+; UniqueEncounterDisguiseMasterRoute18Text:
+	; text "DISGUISE MASTER"
+	; line "ROUTE 18"
+	; done
 	
-UniqueEncounterVolcaronaBossText:
-	text "VOLCARONA BOSS"
-	done
+; UniqueEncounterVolcaronaBossText:
+	; text "VOLCARONA BOSS"
+	; done
 	
-UniqueEncounterCursolaBossText:
-	text "CURSOLA BOSS"
-	done
+; UniqueEncounterCursolaBossText:
+	; text "CURSOLA BOSS"
+	; done
 	
-UniqueEncounterErikaText:
-	text "ERIKA"
-	done
+; UniqueEncounterErikaText:
+	; text "ERIKA"
+	; done
 	
-UniqueEncounterMimikyuBossText:
-	text "MIMIKYU BOSS"
-	done
+; UniqueEncounterMimikyuBossText:
+	; text "MIMIKYU BOSS"
+	; done
 	
-UniqueEncounterDittoBossText:
-	text "DITTO BOSS"
-	done
+; UniqueEncounterDittoBossText:
+	; text "DITTO BOSS"
+	; done
 	
-UniqueEncounterNoivernBossText:
-	text "NOIVERN BOSS"
-	done
+; UniqueEncounterNoivernBossText:
+	; text "NOIVERN BOSS"
+	; done
 
-UniqueEncounterMarowakBossText:
-	text "MAROWAK BOSS"
-	done
+; UniqueEncounterMarowakBossText:
+	; text "MAROWAK BOSS"
+	; done
 	
-UniqueEncounterVileplumeBossText:
-	text "VILEPLUME BOSS"
-	done
+; UniqueEncounterVileplumeBossText:
+	; text "VILEPLUME BOSS"
+	; done
 	
-UniqueEncounterDisguiseMasterAureoleMountainText:
-	text "DISGUISE MASTER"
-	line "AUREOLE MOUNTAIN"
-	done
+; UniqueEncounterDisguiseMasterAureoleMountainText:
+	; text "DISGUISE MASTER"
+	; line "AUREOLE MOUNTAIN"
+	; done

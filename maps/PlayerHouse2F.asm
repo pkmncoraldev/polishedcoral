@@ -309,7 +309,6 @@ PlayerHouseDebugPoster:
 	setevent EVENT_DECO_POSTER_6
 	setevent EVENT_DECO_POSTER_7
 	setevent EVENT_DECO_POSTER_8
-	setevent EVENT_DECO_POSTER_9
 	setevent EVENT_DECO_SNES
 	setevent EVENT_DECO_N64
 	setevent EVENT_DECO_BIG_SNORLAX_DOLL
@@ -349,6 +348,8 @@ PlayerHouseDebugPoster:
 	setevent EVENT_DECO_LEDIAN_DOLL
 	setevent EVENT_DECO_SPIRITOMB_DOLL
 	setevent EVENT_DECO_DODUO_DOLL
+	setevent EVENT_DECO_MILTANK_DOLL
+	setevent EVENT_DECO_MARACTUS_DOLL
 	setevent EVENT_DECO_SMEARGLE_DOLL
 	setevent EVENT_DECO_SWABLU_DOLL
 	setevent EVENT_DECO_CUBONE_DOLL
@@ -356,6 +357,8 @@ PlayerHouseDebugPoster:
 	setevent EVENT_DECO_SUNFLORA_DOLL
 	setevent EVENT_DECO_SUDOWOODO_DOLL
 	setevent EVENT_DECO_NATU_DOLL
+	setevent EVENT_DECO_POSTER_9
+	setevent EVENT_DECO_GYARADOS_DOLL
 	jump .return
 .Sfx
 	closewindow

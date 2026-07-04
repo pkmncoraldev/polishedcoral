@@ -20,17 +20,16 @@ AureoleMountainOutside_MapScriptHeader:
 	coord_event  4, 11, 1, AureoleMountainOutsideBridgeDown
 	coord_event  5, 11, 1, AureoleMountainOutsideBridgeDown
 
-	db 3 ; bg events
+	db 2 ; bg events
 	signpost  4, 27, SIGNPOST_JUMPTEXT, AureoleMountainOutsideBarrelText
 	signpost  5, 27, SIGNPOST_JUMPTEXT, AureoleMountainOutsideBarrelText
-	signpost  4, 25, SIGNPOST_READ, AureoleMountainOutsideWell
 
 	db 5 ; object events
 	object_event 25,  6, SPRITE_BALL_CUT_FRUIT, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, AureoleMountainOutsideItemBall, EVENT_WELL_ITEM_GONE
 	object_event 25,  4, SPRITE_SPARKLE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_ALWAYS_SET
 	object_event 25,  4, SPRITE_SPARKLE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_ALWAYS_SET
 	object_event 25,  6, SPRITE_BALL_CUT_FRUIT, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, AureoleMountainOutsideTapeBall, EVENT_WELL_TAPE_GONE
-	object_event 25,  4, SPRITE_CORY_NPC, SPRITEMOVEDATA_NO_RENDER, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
+	object_event 25,  4, SPRITE_CORY_NPC, SPRITEMOVEDATA_NO_RENDER, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, AureoleMountainOutsideWell, -1
 
 
 AureoleMountainOutsideTrigger0:
@@ -79,17 +78,22 @@ AureoleMountainOutsideWellEvent:
 	callasm AureoleMountainOutsideWellAsm1
 	if_equal GOLD_COIN, .gold_coin
 	if_equal SILVER_COIN, .silver_coin
-	jump .normal
+	jump .done_load_item
 .gold_coin
 	checkevent EVENT_MUSIC_LUMINA_TOWN
 	iftrue .normal
-	setevent EVENT_GET_MUSIC_LUMINA_TOWN
-	jump .normal
+	setevent EVENT_GET_WELL_MUSIC_BALL
+	loadvar wWellItem, MUSIC_LUMINA_TOWN
+	jump .done_load_item
 .silver_coin
 	checkevent EVENT_MUSIC_AUREOLE_MOUNTAIN
 	iftrue .normal
-	setevent EVENT_GET_MUSIC_AUREOLE_MOUNTAIN
+	setevent EVENT_GET_WELL_MUSIC_BALL
+	loadvar wWellItem, MUSIC_AUREOLE_MOUNTAIN
+	jump .done_load_item
 .normal
+	callasm AureoleMountainOutsideWellAsm2
+.done_load_item
 	writetext AureoleMountainOutsideWellText2
 	playsound SFX_KINESIS
 	pause 20
@@ -127,9 +131,7 @@ AureoleMountainOutsideWellEvent:
 	special FadeInPalettes
 	pause 15
 	playsound SFX_CHANGE_DEX_MODE
-	checkevent EVENT_GET_MUSIC_LUMINA_TOWN
-	iftrue .tape
-	checkevent EVENT_GET_MUSIC_AUREOLE_MOUNTAIN
+	checkevent EVENT_GET_WELL_MUSIC_BALL
 	iftrue .tape
 ;item
 	moveperson 1, 25, 4
@@ -146,47 +148,7 @@ AureoleMountainOutsideWellEvent:
 	setlasttalked 4
 .done_ball_appear
 	pause 5
-	checkcode VAR_FACING
-	if_equal LEFT, .YouAreFacingLeft
-	if_equal RIGHT, .YouAreFacingRight
-	jump .done_move
-.YouAreFacingLeft
-	applymovement PLAYER, Movement_AureoleMountainOutsideWellPlayerLeft
-	jump .done_move
-.YouAreFacingRight
-	applymovement PLAYER, Movement_AureoleMountainOutsideWellPlayerRight
-.done_move
-	applyonemovement PLAYER, turn_step_down
-	applyonemovement PLAYER, remove_fixed_facing
-	pause 10
-	checkevent EVENT_GET_MUSIC_LUMINA_TOWN
-	iftrue .lumina
-	checkevent EVENT_GET_MUSIC_AUREOLE_MOUNTAIN
-	iftrue .aureole
-;item
-	callasm AureoleMountainOutsideWellAsm2
-	callasm AureoleMountainOutsideWellLoadItemIntoWellItemRamAsm
-	callasm AureoleMountainOutsideWellRamIntoCurItemBallContents
-	farscall FindItemInBallScript
-	jump .done_get_item
-.lumina
-	clearevent EVENT_GET_MUSIC_LUMINA_TOWN
-	loadvar wCurItemBallQuantity, 1
-	loadvar wCurItemBallContents, MUSIC_LUMINA_TOWN
-	loadvar wWellItem, MUSIC_LUMINA_TOWN
-	farscall FindTapeInBallScript
-	iffalse .done_get_item
-	setevent EVENT_MUSIC_LUMINA_TOWN
-	jump .done_get_item
-.aureole
-	clearevent EVENT_GET_MUSIC_AUREOLE_MOUNTAIN
-	loadvar wCurItemBallQuantity, 1
-	loadvar wCurItemBallContents, MUSIC_AUREOLE_MOUNTAIN
-	loadvar wWellItem, MUSIC_AUREOLE_MOUNTAIN
-	farscall FindTapeInBallScript
-	iffalse .done_get_item
-	setevent EVENT_MUSIC_AUREOLE_MOUNTAIN
-.done_get_item
+
 	callasm AureoleMountainOutsideCheckMurkrowAsm
 	if_not_equal 3, .end
 	pause 10
@@ -225,11 +187,6 @@ AureoleMountainOutsideWellRamIntoCurItemBallContents:
 	ld [wCurItemBallContents], a
 	ld a, 1
 	ld [wCurItemBallQuantity], a
-	ret
-	
-AureoleMountainOutsideWellLoadItemIntoWellItemRamAsm:
-	ld a, [wCurItem]
-	ld [wWellItem], a
 	ret
 	
 AureoleMountainOutsideCheckMurkrowAsm:
@@ -326,8 +283,7 @@ AureoleMountainOutsideWellAsm2:
 	ld hl, WellItemTrades
 	add hl, de
 	ld a, [hl]
-	ld [wScriptVar], a
-	ld [wCurItem], a
+	ld [wWellItem], a
 	ret
 
 AureoleMountainOutsideBarrelText:

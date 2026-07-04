@@ -170,6 +170,7 @@ ResetDailyEventFlags:
 	eventflagreset EVENT_DAILY_MINA_PAINTING_DONE
 	eventflagreset EVENT_LEDIAN_DOLL_DAY_COOLDOWN
 	eventflagreset EVENT_SPIRITOMB_DOLL_DAY_COOLDOWN
+	eventflagreset EVENT_DAILY_GOT_COIN
 	call CheckRanchSecondRace
 	eventflagcheck EVENT_BEAT_STANLEY
 	jr z, .done_stanley

@@ -403,7 +403,7 @@ ObscuraFortuneHouseTellerSetupTapesAsm:
 
 ObscuraFortuneHouseTellerSetupDecosAsm:
 	ld a, 28 ;number of tracked decos + 1
-	ld hl, DECO_FLAGS_START
+	ld hl, DECO_FLAGS_START + 46 ;number of untracked decos
 	jr ObscuraFortuneHouseTellerAsm
 	
 ObscuraFortuneHouseTellerSetupUniqueEncountersAsm:

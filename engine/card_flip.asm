@@ -1809,7 +1809,7 @@ MoogooMankey_InitAttrPals:
 
 	hlcoord 0, 1, wAttrMap
 	lb bc, 4, 4
-	ld a, $1
+	ld a, $4
 	call CardFlip_FillBox
 
 	hlcoord 4, 1, wAttrMap
@@ -1824,7 +1824,7 @@ MoogooMankey_InitAttrPals:
 
 	hlcoord 12, 1, wAttrMap
 	lb bc, 4, 4
-	ld a, $4
+	ld a, $1
 	call CardFlip_FillBox
 
 	hlcoord 16, 1, wAttrMap
@@ -1834,7 +1834,7 @@ MoogooMankey_InitAttrPals:
 	
 	hlcoord 0, 7, wAttrMap
 	lb bc, 5, 4
-	ld a, $1
+	ld a, $4
 	call CardFlip_FillBox
 
 	hlcoord 4, 7, wAttrMap
@@ -1849,7 +1849,7 @@ MoogooMankey_InitAttrPals:
 
 	hlcoord 12, 7, wAttrMap
 	lb bc, 5, 4
-	ld a, $4
+	ld a, $1
 	call CardFlip_FillBox
 
 	hlcoord 16, 7, wAttrMap
@@ -1915,14 +1915,14 @@ MoogooMankey_InitAttrPals:
 	RGB 31, 00, 00
 	RGB 06, 19, 08
 	RGB 00, 00, 00
-
+	
 	RGB 31, 31, 31
 	RGB 29, 25, 00
 	RGB 06, 19, 08
 	RGB 00, 00, 00
 
 	RGB 31, 31, 31
-	RGB 31, 13, 30
+	RGB 31, 09, 00
 	RGB 06, 19, 08
 	RGB 00, 00, 00
 
@@ -1937,7 +1937,7 @@ MoogooMankey_InitAttrPals:
 	RGB 00, 00, 00
 
 	RGB 31, 31, 31
-	RGB 17, 07, 31
+	RGB 20, 12, 31
 	RGB 06, 19, 08
 	RGB 00, 00, 00
 
@@ -2947,6 +2947,7 @@ DealPlayerCard1:
 	hlcoord 3, 13, wAttrMap
 	lb bc, 5, 4
 	ld a, [wMoogooPlayerCard1Suit]
+	call MoogooGetSuitColor
 	call CardFlip_FillBox
 	hlcoord 4, 14, wAttrMap
 	lb bc, 1, 2
@@ -2973,6 +2974,7 @@ DealPlayerCard2:
 	hlcoord 6, 13, wAttrMap
 	lb bc, 5, 4
 	ld a, [wMoogooPlayerCard2Suit]
+	call MoogooGetSuitColor
 	call CardFlip_FillBox
 	hlcoord 7, 14, wAttrMap
 	lb bc, 1, 2
@@ -2999,6 +3001,7 @@ DealPlayerCard3:
 	hlcoord 9, 13, wAttrMap
 	lb bc, 5, 4
 	ld a, [wMoogooPlayerCard3Suit]
+	call MoogooGetSuitColor
 	call CardFlip_FillBox
 	hlcoord 10, 14, wAttrMap
 	lb bc, 1, 2
@@ -3025,6 +3028,7 @@ DealPlayerCard4:
 	hlcoord 12, 13, wAttrMap
 	lb bc, 5, 4
 	ld a, [wMoogooPlayerCard4Suit]
+	call MoogooGetSuitColor
 	call CardFlip_FillBox
 	hlcoord 13, 14, wAttrMap
 	lb bc, 1, 2
@@ -3045,6 +3049,7 @@ DealPlayerCard5:
 	hlcoord 15, 13, wAttrMap
 	lb bc, 5, 4
 	ld a, [wMoogooPlayerCard5Suit]
+	call MoogooGetSuitColor
 	call CardFlip_FillBox
 	hlcoord 16, 14, wAttrMap
 	lb bc, 1, 2
@@ -3115,6 +3120,18 @@ UpdatePlayerCard5:
 	lb bc, PRINTNUM_LEFTALIGN | 1, 2
 	call PrintNum
 	jp ApplyTilemapInVBlank
+	
+MoogooGetSuitColor:
+	cp 1
+	jr z, .green
+	cp 4
+	ret nz
+;.yellow
+	ld a, 1
+	ret
+.green
+	ld a, 4
+	ret
 	
 MoogooMankey_UpdateScores:
 ;	call DebugDrawCPUCards

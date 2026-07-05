@@ -540,8 +540,8 @@ PlaceCardMoogoo5: ; e03c1
 	jp CardFlip_CopyToBox
 
 .Tilemap: ; e03ce
-	db $3e, $3f
-	db $40, $41
+	db $4e, $4f
+	db $50, $51
 
 CardFlip_DisplayCardFaceUp: ; e03ec
 	xor a

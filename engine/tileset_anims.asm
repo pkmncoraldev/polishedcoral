@@ -248,11 +248,14 @@ TilesetGateAnim::
 	
 TilesetMall1Anim::
 	dw VTiles2 tile $08, WriteTileToBuffer
-	dw wTileAnimBuffer, ScrollTileUp2
+	dw wTileAnimBuffer, ScrollTileUp
+	dw wTileAnimBuffer, ScrollTileUp
 	dw VTiles2 tile $08, WriteTileFromBuffer
 	dw VTiles2 tile $09, WriteTileToBuffer
+	dw wTileAnimBuffer, ScrollTileDown
 	dw wTileAnimBuffer, ScrollTileDown2
 	dw VTiles2 tile $09, WriteTileFromBuffer
+	dw MallWaterFrames, AnimateWaterfallTiles
 	dw NULL,  DoneTileAnimation
 	
 TilesetHouse2Anim::
@@ -1351,6 +1354,10 @@ CaveWaterFrames: dw VTiles2 tile $01, WaterTiles
 WaterFrames: dw VTiles2 tile $13, WaterTiles
 
 WaterTiles: INCBIN "gfx/tilesets/water/water.2bpp"
+
+MallWaterFrames: dw VTiles2 tile $4e, MallWaterTiles
+
+MallWaterTiles: INCBIN "gfx/tilesets/water/mall.2bpp"
 
 SeaweedFrames: dw VTiles2 tile $12, SeaweedTiles
 

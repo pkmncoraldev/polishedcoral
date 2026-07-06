@@ -4176,7 +4176,6 @@ ConsiderCurCPUChips:
 	ld a, 1
 	ld [wPlaceBallsY], a
 	call CheckCanBetOnSuit
-	ld a, 0
 	jr c, .suit2
 	ld a, [hl]
 	inc a

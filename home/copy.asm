@@ -11,6 +11,9 @@ LoadStandardFont:: ; e51
 
 Load1bppFont:: ; e51
 	farjp _Load1bppFont
+	
+LoadInverted1bppFont::
+	farjp _LoadInverted1bppFont
 
 LoadFontsBattleExtra:: ; e58
 	farjp _LoadFontsBattleExtra

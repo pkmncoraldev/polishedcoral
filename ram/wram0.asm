@@ -826,6 +826,7 @@ wMoogooCurrentCardSuit:: ds 1
 wMoogooRetiredSuit1:: ds 1
 wMoogooRetiredSuit2:: ds 1
 wMoogooCardsWithLowestValue:: ds 1
+wMoogooTurnNumber:: ds 1
 wMoogooEnd::
 
 NEXTU

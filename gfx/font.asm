@@ -11,6 +11,8 @@ FontCheckMark:
 INCBIN "gfx/font/check.2bpp"
 FontChinese:
 INCBIN "gfx/font/chinese_text.2bpp"
+FontInverted1bpp:
+INCBIN "gfx/font/inverted.1bpp"
 
 Frames:
 INCBIN "gfx/frames/1.2bpp"
@@ -134,6 +136,16 @@ _Load1bppFont::
 	ld de, FontNormal1bpp
 	ld hl, VTiles0 tile "A"
 	lb bc, BANK(FontNormal1bpp), 111
+	call Get1bpp
+	ld de, FontCommon1bpp
+	ld hl, VTiles0 tile "▷"
+	lb bc, BANK(FontCommon1bpp), 10
+	jp Get1bpp
+	
+_LoadInverted1bppFont::
+	ld de, FontInverted1bpp
+	ld hl, VTiles0 tile "A"
+	lb bc, BANK(FontInverted1bpp), 111
 	call Get1bpp
 	ld de, FontCommon1bpp
 	ld hl, VTiles0 tile "▷"

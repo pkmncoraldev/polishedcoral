@@ -8,8 +8,12 @@ _CardFlip: ; e00ee (38:40ee)
 	call ClearBGPalettes
 	call ClearTileMap
 	call ClearSprites
-;	ld de, MUSIC_NONE
-;	call PlayMusic
+	ld a, [wTapePlayerActive]
+	and a
+	jr nz, .skip_music
+	ld de, MUSIC_NONE
+	call PlayMusic
+.skip_music
 	call DelayFrame
 	call DisableLCD
 	call Load1bppFont
@@ -48,16 +52,11 @@ _CardFlip: ; e00ee (38:40ee)
 	ld [wCardFlipCursorY], a
 	ld [wCardFlipCursorX], a
 
-;	ld de, MUSIC_NONE
-;	ld a, [wMapGroup]
-;	cp GROUP_GOLDENROD_GAME_CORNER
-;	jr nz, .celadon_game_corner
-;	ld a, [wMapNumber]
-;	cp MAP_GOLDENROD_GAME_CORNER
-;	jr nz, .celadon_game_corner
-;	ld de, MUSIC_NONE_DPPT
-;.celadon_game_corner
-;	call PlayMusic
+	ld a, [wTapePlayerActive]
+	and a
+	jr nz, .MasterLoop
+	ld de, MUSIC_GSC_GAME_CORNER
+	call PlayMusic
 
 .MasterLoop:
 	ld a, [wJumptableIndex]
@@ -73,7 +72,8 @@ _CardFlip: ; e00ee (38:40ee)
 	call ClearBGPalettes
 	ld hl, wOptions1
 	res NO_TEXT_SCROLL, [hl]
-	ret
+	ld de, MUSIC_NONE
+	jp PlayMusic
 
 .CardFlip: ; e0191 (38:4191)
 	ld a, [wJumptableIndex]
@@ -651,7 +651,7 @@ CardFlip_InitTilemap: ; e04c1 (38:44c1)
 	ldh [hBGMapMode], a
 	hlcoord 0, 0
 	ld bc, SCREEN_HEIGHT * SCREEN_WIDTH
-	ld a, $07
+	ld a, $29
 	call ByteFill
 	hlcoord 9, 0
 	ld de, CardFlipTilemap
@@ -670,8 +670,12 @@ MoogooMankey_InitTilemap:
 	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
 	rst CopyBytes
 	
-CardFlip_FillGreenBox: ; e04e5
+MoogooMankey_FillGreenBox:
 	ld a, $07
+	jr CardFlip_FillBox
+	
+CardFlip_FillGreenBox: ; e04e5
+	ld a, $29
 
 CardFlip_FillBox: ; e04e7 (38:44e7)
 .row
@@ -1878,7 +1882,7 @@ MoogooMankey_InitAttrPals:
 	ldh [rSVBK], a
 	ld hl, .palettes
 	ld de, wUnknBGPals
-	ld bc, 9 palettes
+	ld bc, 11 palettes
 	rst CopyBytes
 	pop af
 	ldh [rSVBK], a
@@ -1926,10 +1930,23 @@ MoogooMankey_InitAttrPals:
 	RGB 00, 00, 00
 	RGB 06, 19, 08
 
+MoogooRedPal:
 	RGB 31, 31, 31
 	RGB 31, 31, 31
 	RGB 31, 00, 00
 	RGB 31, 00, 00
+	
+MoogooYellowPal:
+	RGB 31, 31, 31
+	RGB 31, 31, 31
+	RGB 29, 25, 00
+	RGB 29, 25, 00
+	
+MoogooBluePal:
+	RGB 31, 31, 31
+	RGB 31, 31, 31
+	RGB 08, 17, 30
+	RGB 08, 17, 30
 	
 MoogooMankey_InitAttrPalsRound2:
 	hlcoord 0, 7, wAttrMap
@@ -1958,25 +1975,31 @@ MoogooMankey_InitAttrPalsRound2:
 	call CardFlip_FillBox
 	ret
 
-CardFlipLZ03: ; e0cdb
+CardFlipLZ03:
 INCBIN "gfx/card_flip/0e0cdb.2bpp.lz"
 
-CardFlipOffButtonGFX: ; e0cf6
+CardFlipOffButtonGFX:
 INCBIN "gfx/card_flip/off_button.2bpp"
 
-CardFlipOnButtonGFX: ; e0d06
+CardFlipOnButtonGFX:
 INCBIN "gfx/card_flip/on_button.2bpp"
 
-CardFlipLZ01: ; e0d16
+CardFlipLZ01:
 INCBIN "gfx/card_flip/0e0d16.2bpp.lz"
 
-CardFlipLZ02: ; e0ea8
+CardFlipLZ02:
 INCBIN "gfx/card_flip/0e0ea8.2bpp.lz"
 
-MoogooLZ01: ; e0d16
-INCBIN "gfx/card_flip/0e0d162.2bpp.lz"
+MoogooLZ01:
+INCBIN "gfx/card_flip/moogoo1.2bpp.lz"
 
-CardFlipTilemap: ; e110c
+MoogooLZ02:
+INCBIN "gfx/card_flip/moogoo2.2bpp.lz"
+
+MoogooLZ03:
+INCBIN "gfx/card_flip/moogoo3.2bpp.lz"
+
+CardFlipTilemap:
 	db CARDFLIP_LIGHT_OFF, $15, $27, $2a, $2a, $06, $27, $2a, $2a, $06, $27
 	db CARDFLIP_LIGHT_OFF, $07, $27, $3e, $3f, $42, $43, $46, $47, $4a, $4b
 	db CARDFLIP_LIGHT_OFF, $17, $26, $40, $41, $44, $45, $48, $49, $4c, $4d
@@ -2009,8 +2032,12 @@ _MoogooMankey:
 	call ClearBGPalettes
 	call ClearTileMap
 	call ClearSprites
+	ld a, [wTapePlayerActive]
+	and a
+	jr nz, .skip_music
 	ld de, MUSIC_NONE
 	call PlayMusic
+.skip_music
 	call DelayFrame
 	call DisableLCD
 	call LoadInverted1bppFont
@@ -2019,10 +2046,10 @@ _MoogooMankey:
 	ld hl, MoogooLZ01
 	ld de, VTiles2 tile $00
 	call Decompress
-	ld hl, CardFlipLZ02
+	ld hl, MoogooLZ02
 	ld de, VTiles2 tile $3e
 	call Decompress
-	ld hl, CardFlipLZ03
+	ld hl, MoogooLZ03
 	ld de, VTiles0 tile $00
 	call Decompress
 	ld hl, CardFlipOffButtonGFX
@@ -2065,9 +2092,15 @@ _MoogooMankey:
 ;	hlcoord 16, 0
 ;	call PlaceCardMoogoo5
 ;	call ApplyTilemapInVBlank
-	
+	ld a, [wTapePlayerActive]
+	and a
+	jr nz, .skip_music2
+	ld de, MUSIC_GSC_GAME_CORNER
+	call PlayMusic
+.skip_music2
 	ld c, 20
 	call DelayFrames
+		
 .MasterLoop:
 	ld a, [wMoogooTurn]
 	cp 69
@@ -2113,7 +2146,8 @@ _MoogooMankey:
 	ld hl, wOptions1
 	res NO_TEXT_SCROLL, [hl]
 	call MoogooShowCursor
-	ret
+	ld de, MUSIC_NONE
+	jp PlayMusic
 	
 .MoogooMankey:
 	ld a, [wJumptableIndex]
@@ -2319,7 +2353,7 @@ _MoogooMankey:
 	hlcoord 0, 0
 	ld de, .Clear
 	call PlaceString
-	ld de, SFX_READ_TEXT
+	ld de, SFX_SWITCH_POKEMON
 	call PlaySFX
 	call WaitSFX
 .cpu_betdone
@@ -2448,30 +2482,24 @@ endr
 	call JoyTextDelay
 	ldh a, [hJoyLast]
 	and A_BUTTON
-	jr nz, .playcard_done
+	jr nz, .skip_cpu_random_time
 	call ChooseSurvivor_HandleJoypad
 	call PickCard_UpdateCursorOAM
 	call DelayFrame
 	call MoogooShowCursor
 	jr .playcardloop
-.playcard_done
-	ld de, SFX_READ_TEXT
-	call PlaySFX
-	ld c, 20
-	jr .skip_cpu_random_time
 .playcard_cpu
 	ld c, 20
 	ld a, 41
 	call RandomRange
 	add c
 	ld c, a
-.skip_cpu_random_time
 	call DelayFrames
+.skip_cpu_random_time
 	call CheckWhichCard
 	call GiveNewCardHL
 	call PlaceCard
 ;	call DebugDrawCPUCards
-	call ApplyTilemapInVBlank
 	call MoogooHideCursor
 	call WaitSFX
 	
@@ -3043,66 +3071,6 @@ DealPlayerCard5:
 	call PrintNum
 	jp ApplyAttrAndTilemapInVBlank
 	
-UpdatePlayerCard1:
-	hlcoord 3, 13
-	call PlaceCardMoogooBorderLeft
-	hlcoord 4, 15
-	ld a, [wMoogooPlayerCard1Suit]
-	call PlaceCardMoogooSuit
-	hlcoord 5, 14
-	ld de, wMoogooPlayerCard1Value
-	lb bc, PRINTNUM_LEFTALIGN | 1, 1
-	call PrintNum
-	jp ApplyTilemapInVBlank
-	
-UpdatePlayerCard2:
-	hlcoord 6, 13
-	call PlaceCardMoogooBorderMiddle
-	hlcoord 7, 15
-	ld a, [wMoogooPlayerCard2Suit]
-	call PlaceCardMoogooSuit
-	hlcoord 8, 14
-	ld de, wMoogooPlayerCard2Value
-	lb bc, PRINTNUM_LEFTALIGN | 1, 1
-	call PrintNum
-	jp ApplyTilemapInVBlank
-
-UpdatePlayerCard3:
-	hlcoord 9, 13
-	call PlaceCardMoogooBorderMiddle
-	hlcoord 10, 15
-	ld a, [wMoogooPlayerCard3Suit]
-	call PlaceCardMoogooSuit
-	hlcoord 11, 14
-	ld de, wMoogooPlayerCard3Value
-	lb bc, PRINTNUM_LEFTALIGN | 1, 1
-	call PrintNum
-	jp ApplyTilemapInVBlank
-
-UpdatePlayerCard4:
-	hlcoord 12, 13
-	call PlaceCardMoogooBorderMiddle
-	hlcoord 13, 15
-	ld a, [wMoogooPlayerCard4Suit]
-	call PlaceCardMoogooSuit
-	hlcoord 14, 14
-	ld de, wMoogooPlayerCard4Value
-	lb bc, PRINTNUM_LEFTALIGN | 1, 1
-	call PrintNum
-	jp ApplyTilemapInVBlank
-
-UpdatePlayerCard5:
-	hlcoord 15, 13
-	call PlaceCardMoogooBorderRight
-	hlcoord 16, 15
-	ld a, [wMoogooPlayerCard5Suit]
-	call PlaceCardMoogooSuit
-	hlcoord 17, 14
-	ld de, wMoogooPlayerCard5Value
-	lb bc, PRINTNUM_LEFTALIGN | 1, 1
-	call PrintNum
-	jp ApplyTilemapInVBlank
-	
 MoogooGetSuitColor:
 	cp 1
 	jr z, .green
@@ -3339,15 +3307,41 @@ DiscardCurPlayerCard:
 	
 PlaceCard:
 	ld a, [wMoogooTurn]
-	cp 2
-	jr z, .placecard_cpu2
-	cp 1
-	jr z, .placecard_cpu1
+	cp 0
+	jr nz, .cpu
 	call DiscardCurPlayerCard
-	jr .cont
-.placecard_cpu2
-.placecard_cpu1
-.cont
+.cpu
+	call PlaceCardFinish
+	ld de, SFX_SHINE
+	call PlaySFX
+	ld hl, PickCard_OAM
+	ld de, wSprites
+	ld bc, 56
+	call CopyBytes
+	ld a, [wMoogooCurrentCardSuit]
+	dec a
+	ld b, 32
+	ld c, 14
+	call MoogooDetermineCursorXPos
+	ld b, 56
+	ld c, 14
+	call MoogooDetermineCursorYPos
+	ld a, [wMoogooTurn]
+	ld b, a
+	ld c, 14
+	call MoogooDetermineCursorPal
+	call DelayFrame
+rept 4
+	call MoogooShowCursor
+	ld c, 4
+	call DelayFrames
+	call MoogooHideCursor
+	ld c, 4
+	call DelayFrames
+endr
+	ret
+
+PlaceCardFinish:
 	ld a, [wMoogooCurrentCardSuit]
 	cp 5
 	jr z, .five
@@ -3356,7 +3350,7 @@ PlaceCard:
 	cp 3
 	jr z, .three
 	cp 2
-	jr z, .two
+	jp z, .two
 .one
 	hlcoord $0, $7
 	call PlaceCardMoogooBorderSingle
@@ -3368,7 +3362,7 @@ PlaceCard:
 	call PrintNum
 	ld a, [wMoogooCurrentCardValue]
 	ld [wMoogooCard1Value], a
-	ret
+	jp ApplyTilemapInVBlank
 .five
 	hlcoord $10, $7
 	call PlaceCardMoogooBorderSingle
@@ -3380,7 +3374,7 @@ PlaceCard:
 	call PrintNum
 	ld a, [wMoogooCurrentCardValue]
 	ld [wMoogooCard5Value], a
-	ret
+	jp ApplyTilemapInVBlank
 .four
 	hlcoord $c, $7
 	call PlaceCardMoogooBorderSingle
@@ -3392,7 +3386,7 @@ PlaceCard:
 	call PrintNum
 	ld a, [wMoogooCurrentCardValue]
 	ld [wMoogooCard4Value], a
-	ret
+	jp ApplyTilemapInVBlank
 .three
 	hlcoord $8, $7
 	call PlaceCardMoogooBorderSingle
@@ -3404,7 +3398,7 @@ PlaceCard:
 	call PrintNum
 	ld a, [wMoogooCurrentCardValue]
 	ld [wMoogooCard3Value], a
-	ret
+	jp ApplyTilemapInVBlank
 .two
 	hlcoord $4, $7
 	call PlaceCardMoogooBorderSingle
@@ -3416,7 +3410,7 @@ PlaceCard:
 	call PrintNum
 	ld a, [wMoogooCurrentCardValue]
 	ld [wMoogooCard2Value], a
-	ret
+	jp ApplyTilemapInVBlank
 
 CheckCanBetOnSuit:
 	xor a
@@ -3535,53 +3529,117 @@ ChooseSurvivor_HandleJoypad: ; e089c
 	ret
 	
 ChooseSurvivor_UpdateCursorOAM:
-	ld a, [wPlaceBallsY]
-	cp 1
-	jr z, .one
-	cp 2
-	jr z, .two
-	cp 3
-	jr z, .three
-	cp 4
-	jr z, .four
-	
-.five
-	ld hl, ChooseSurvivor_OAM05
-	ld de, wSprites
-	ld bc, 54
-	jp CopyBytes
-
-.one
+	call ClearSprites
 	ld hl, ChooseSurvivor_OAM01
 	ld de, wSprites
-	ld bc, 54
-	jp CopyBytes
-	
-.two
-	ld hl, ChooseSurvivor_OAM02
-	ld de, wSprites
-	ld bc, 54
-	jp CopyBytes
-	
-.three
-	ld hl, ChooseSurvivor_OAM03
-	ld de, wSprites
-	ld bc, 54
-	jp CopyBytes
-	
-.four
-	ld hl, ChooseSurvivor_OAM04
-	ld de, wSprites
-	ld bc, 54
-	jp CopyBytes
+	ld bc, 48
+	call CopyBytes
+	ld a, [wPlaceBallsY]
+	dec a
+	ld b, 32
+	ld c, 12
+	call MoogooDetermineCursorXPos
+	ld b, 8
+	ld c, 8
+	jp MoogooDetermineCursorYPos
 	
 ChooseSurvivor_OAM01:
 ;y pos, x pos, tile, palette
-	dsprite  3,  0, 1,  0, $04, $0 | PRIORITY
-	dsprite  3,  0, 2,  0, $06, $0 | PRIORITY
-	dsprite  3,  0, 3,  0, $06, $0 | PRIORITY
-	dsprite  3,  0, 4,  0, $04, $0 | X_FLIP | PRIORITY
+	dsprite  2,  0, 1,  0, $04, $0 | PRIORITY
+	dsprite  2,  0, 2,  0, $06, $0 | PRIORITY
+	dsprite  2,  0, 3,  0, $06, $0 | PRIORITY
+	dsprite  2,  0, 4,  0, $04, $0 | X_FLIP | PRIORITY
 	
+	dsprite  3,  0, 1,  0, $05, $0 | PRIORITY
+	dsprite  3,  0, 4,  0, $05, $0 | X_FLIP | PRIORITY
+	dsprite  4,  0, 1,  0, $05, $0 | PRIORITY
+	dsprite  4,  0, 4,  0, $05, $0 | X_FLIP | PRIORITY
+	
+	dsprite  6,  0, 1,  0, $04, $0 | Y_FLIP | PRIORITY
+	dsprite  6,  0, 2,  0, $06, $0 | Y_FLIP | PRIORITY
+	dsprite  6,  0, 3,  0, $06, $0 | Y_FLIP | PRIORITY
+	dsprite  6,  0, 4,  0, $00, $0 | PRIORITY
+	
+PickCard_UpdateCursorOAM:
+	ld hl, PickCard_OAM
+	ld de, wSprites
+	ld bc, 56
+	call CopyBytes
+	ld a, [wPlaceBallsY]
+	ld b, 24
+	ld c, 14
+	call MoogooDetermineCursorXPos
+	ld b, 104
+	ld c, 14
+	call MoogooDetermineCursorYPos
+	ld a, [wPlaceBallsY]
+	cp 5
+	jr z, .five
+	cp 4
+	jr z, .four
+	cp 3
+	jr z, .three
+	cp 2
+	jr z, .two
+;.one
+	hlcoord 3, 13
+	call PlaceCardMoogooBorderLeft
+	hlcoord 4, 15
+	ld a, [wMoogooPlayerCard1Suit]
+	call PlaceCardMoogooSuit
+	hlcoord 5, 14
+	ld de, wMoogooPlayerCard1Value
+	jr .end
+.two
+	hlcoord 6, 13
+	call PlaceCardMoogooBorderMiddle
+	hlcoord 7, 15
+	ld a, [wMoogooPlayerCard2Suit]
+	call PlaceCardMoogooSuit
+	hlcoord 8, 14
+	ld de, wMoogooPlayerCard2Value
+	jr .end
+.three
+	hlcoord 9, 13
+	call PlaceCardMoogooBorderMiddle
+	hlcoord 10, 15
+	ld a, [wMoogooPlayerCard3Suit]
+	call PlaceCardMoogooSuit
+	hlcoord 11, 14
+	ld de, wMoogooPlayerCard3Value
+	jr .end
+.four
+	hlcoord 12, 13
+	call PlaceCardMoogooBorderMiddle
+	hlcoord 13, 15
+	ld a, [wMoogooPlayerCard4Suit]
+	call PlaceCardMoogooSuit
+	hlcoord 14, 14
+	ld de, wMoogooPlayerCard4Value
+	jr .end
+.five
+	hlcoord 15, 13
+	call PlaceCardMoogooBorderRight
+	hlcoord 16, 15
+	ld a, [wMoogooPlayerCard5Suit]
+	call PlaceCardMoogooSuit
+	hlcoord 17, 14
+	ld de, wMoogooPlayerCard5Value
+.end
+	lb bc, PRINTNUM_LEFTALIGN | 1, 1
+	call PrintNum
+	jp ApplyTilemapInVBlank
+	
+	
+PickCard_OAM:
+;y pos, x pos, tile, palette
+	dsprite  2,  0, 1,  0, $04, $0 | PRIORITY
+	dsprite  2,  0, 2,  0, $06, $0 | PRIORITY
+	dsprite  2,  0, 3,  0, $06, $0 | PRIORITY
+	dsprite  2,  0, 4,  0, $04, $0 | X_FLIP | PRIORITY
+	
+	dsprite  3,  0, 1,  0, $05, $0 | PRIORITY
+	dsprite  3,  0, 4,  0, $05, $0 | X_FLIP | PRIORITY
 	dsprite  4,  0, 1,  0, $05, $0 | PRIORITY
 	dsprite  4,  0, 4,  0, $05, $0 | X_FLIP | PRIORITY
 	dsprite  5,  0, 1,  0, $05, $0 | PRIORITY
@@ -3590,226 +3648,7 @@ ChooseSurvivor_OAM01:
 	dsprite  6,  0, 1,  0, $04, $0 | Y_FLIP | PRIORITY
 	dsprite  6,  0, 2,  0, $06, $0 | Y_FLIP | PRIORITY
 	dsprite  6,  0, 3,  0, $06, $0 | Y_FLIP | PRIORITY
-	dsprite  6,  0, 4,  0, $04, $0 | X_FLIP | Y_FLIP | PRIORITY
-	dsprite  0,  0, 0,  0, $00, $0
-	dsprite  0,  0, 0,  0, $00, $0
-	
-ChooseSurvivor_OAM02:
-;y pos, x pos, tile, palette
-	dsprite  3,  0, 5,  0, $04, $0 | PRIORITY
-	dsprite  3,  0, 6,  0, $06, $0 | PRIORITY
-	dsprite  3,  0, 7,  0, $06, $0 | PRIORITY
-	dsprite  3,  0, 8,  0, $04, $0 | X_FLIP | PRIORITY
-	
-	dsprite  4,  0, 5,  0, $05, $0 | PRIORITY
-	dsprite  4,  0, 8,  0, $05, $0 | X_FLIP | PRIORITY
-	dsprite  5,  0, 5,  0, $05, $0 | PRIORITY
-	dsprite  5,  0, 8,  0, $05, $0 | X_FLIP | PRIORITY
-	
-	dsprite  6,  0, 5,  0, $04, $0 | Y_FLIP | PRIORITY
-	dsprite  6,  0, 6,  0, $06, $0 | Y_FLIP | PRIORITY
-	dsprite  6,  0, 7,  0, $06, $0 | Y_FLIP | PRIORITY
-	dsprite  6,  0, 8,  0, $04, $0 | X_FLIP | Y_FLIP | PRIORITY
-	dsprite  0,  0, 0,  0, $00, $0
-	dsprite  0,  0, 0,  0, $00, $0
-	
-ChooseSurvivor_OAM03:
-;y pos, x pos, tile, palette
-	dsprite  3,  0, 9,  0, $04, $0 | PRIORITY
-	dsprite  3,  0, 10,  0, $06, $0 | PRIORITY
-	dsprite  3,  0, 11,  0, $06, $0 | PRIORITY
-	dsprite  3,  0, 12,  0, $04, $0 | X_FLIP | PRIORITY
-	
-	dsprite  4,  0, 9,  0, $05, $0 | PRIORITY
-	dsprite  4,  0, 12,  0, $05, $0 | X_FLIP | PRIORITY
-	dsprite  5,  0, 9,  0, $05, $0 | PRIORITY
-	dsprite  5,  0, 12,  0, $05, $0 | X_FLIP | PRIORITY
-	
-	dsprite  6,  0, 9,  0, $04, $0 | Y_FLIP | PRIORITY
-	dsprite  6,  0, 10,  0, $06, $0 | Y_FLIP | PRIORITY
-	dsprite  6,  0, 11,  0, $06, $0 | Y_FLIP | PRIORITY
-	dsprite  6,  0, 12,  0, $04, $0 | X_FLIP | Y_FLIP | PRIORITY
-	dsprite  0,  0, 0,  0, $00, $0
-	dsprite  0,  0, 0,  0, $00, $0
-	
-ChooseSurvivor_OAM04:
-;y pos, x pos, tile, palette
-	dsprite  3,  0, 13,  0, $04, $0 | PRIORITY
-	dsprite  3,  0, 14,  0, $06, $0 | PRIORITY
-	dsprite  3,  0, 15,  0, $06, $0 | PRIORITY
-	dsprite  3,  0, 16,  0, $04, $0 | X_FLIP | PRIORITY
-	
-	dsprite  4,  0, 13,  0, $05, $0 | PRIORITY
-	dsprite  4,  0, 16,  0, $05, $0 | X_FLIP | PRIORITY
-	dsprite  5,  0, 13,  0, $05, $0 | PRIORITY
-	dsprite  5,  0, 16,  0, $05, $0 | X_FLIP | PRIORITY
-	
-	dsprite  6,  0, 13,  0, $04, $0 | Y_FLIP | PRIORITY
-	dsprite  6,  0, 14,  0, $06, $0 | Y_FLIP | PRIORITY
-	dsprite  6,  0, 15,  0, $06, $0 | Y_FLIP | PRIORITY
-	dsprite  6,  0, 16,  0, $04, $0 | X_FLIP | Y_FLIP | PRIORITY
-	dsprite  0,  0, 0,  0, $00, $0
-	dsprite  0,  0, 0,  0, $00, $0
-	
-ChooseSurvivor_OAM05:
-;y pos, x pos, tile, palette
-	dsprite  3,  0, 17,  0, $04, $0 | PRIORITY
-	dsprite  3,  0, 18,  0, $06, $0 | PRIORITY
-	dsprite  3,  0, 19,  0, $06, $0 | PRIORITY
-	dsprite  3,  0, 20,  0, $04, $0 | X_FLIP | PRIORITY
-	
-	dsprite  4,  0, 17,  0, $05, $0 | PRIORITY
-	dsprite  4,  0, 20,  0, $05, $0 | X_FLIP | PRIORITY
-	dsprite  5,  0, 17,  0, $05, $0 | PRIORITY
-	dsprite  5,  0, 20,  0, $05, $0 | X_FLIP | PRIORITY
-	
-	dsprite  6,  0, 17,  0, $04, $0 | Y_FLIP | PRIORITY
-	dsprite  6,  0, 18,  0, $06, $0 | Y_FLIP | PRIORITY
-	dsprite  6,  0, 19,  0, $06, $0 | Y_FLIP | PRIORITY
-	dsprite  6,  0, 20,  0, $04, $0 | X_FLIP | Y_FLIP | PRIORITY
-	dsprite  0,  0, 0,  0, $00, $0
-	dsprite  0,  0, 0,  0, $00, $0
-	
-PickCard_UpdateCursorOAM:
-	ld a, [wPlaceBallsY]
-	cp 1
-	jr z, .one
-	cp 2
-	jr z, .two
-	cp 3
-	jr z, .three
-	cp 4
-	jr z, .four
-	
-.five
-	call UpdatePlayerCard5
-	ld hl, PickCard_OAM05
-	ld de, wSprites
-	ld bc, 54
-	jp CopyBytes
-
-.one
-	call UpdatePlayerCard1
-	ld hl, PickCard_OAM01
-	ld de, wSprites
-	ld bc, 54
-	jp CopyBytes
-	
-.two
-	call UpdatePlayerCard2
-	ld hl, PickCard_OAM02
-	ld de, wSprites
-	ld bc, 54
-	jp CopyBytes
-	
-.three
-	call UpdatePlayerCard3
-	ld hl, PickCard_OAM03
-	ld de, wSprites
-	ld bc, 54
-	jp CopyBytes
-	
-.four
-	call UpdatePlayerCard4
-	ld hl, PickCard_OAM04
-	ld de, wSprites
-	ld bc, 55
-	jp CopyBytes
-	
-PickCard_OAM01:
-;y pos, x pos, tile, palette
-	dsprite  15,  0, 4,  0, $04, $0 | PRIORITY
-	dsprite  15,  0, 5,  0, $06, $0 | PRIORITY
-	dsprite  15,  0, 6,  0, $06, $0 | PRIORITY
-	dsprite  15,  0, 7,  0, $04, $0 | X_FLIP | PRIORITY
-	
-	dsprite  16,  0, 4,  0, $05, $0 | PRIORITY
-	dsprite  16,  0, 7,  0, $05, $0 | X_FLIP | PRIORITY
-	dsprite  17,  0, 4,  0, $05, $0 | PRIORITY
-	dsprite  17,  0, 7,  0, $05, $0 | X_FLIP | PRIORITY
-	dsprite  18,  0, 4,  0, $05, $0 | PRIORITY
-	dsprite  18,  0, 7,  0, $05, $0 | X_FLIP | PRIORITY
-	
-	dsprite  19,  0, 4,  0, $04, $0 | Y_FLIP | PRIORITY
-	dsprite  19,  0, 5,  0, $06, $0 | Y_FLIP | PRIORITY
-	dsprite  19,  0, 6,  0, $06, $0 | Y_FLIP | PRIORITY
-	dsprite  19,  0, 7,  0, $00, $0 | PRIORITY
-	
-PickCard_OAM02:
-;y pos, x pos, tile, palette
-	dsprite  15,  0, 7,  0, $04, $0 | PRIORITY
-	dsprite  15,  0, 8,  0, $06, $0 | PRIORITY
-	dsprite  15,  0, 9,  0, $06, $0 | PRIORITY
-	dsprite  15,  0, 10,  0, $04, $0 | X_FLIP | PRIORITY
-	
-	dsprite  16,  0, 7,  0, $05, $0 | PRIORITY
-	dsprite  16,  0, 10,  0, $05, $0 | X_FLIP | PRIORITY
-	dsprite  17,  0, 7,  0, $05, $0 | PRIORITY
-	dsprite  17,  0, 10,  0, $05, $0 | X_FLIP | PRIORITY
-	dsprite  18,  0, 7,  0, $05, $0 | PRIORITY
-	dsprite  18,  0, 10,  0, $05, $0 | X_FLIP | PRIORITY
-	
-	dsprite  19,  0, 7,  0, $04, $0 | Y_FLIP | PRIORITY
-	dsprite  19,  0, 8,  0, $06, $0 | Y_FLIP | PRIORITY
-	dsprite  19,  0, 9,  0, $06, $0 | Y_FLIP | PRIORITY
-	dsprite  19,  0, 10,  0, $00, $0 | PRIORITY
-	
-PickCard_OAM03:
-;y pos, x pos, tile, palette
-	dsprite  15,  0, 10,  0, $04, $0 | PRIORITY
-	dsprite  15,  0, 11,  0, $06, $0 | PRIORITY
-	dsprite  15,  0, 12,  0, $06, $0 | PRIORITY
-	dsprite  15,  0, 13,  0, $04, $0 | X_FLIP | PRIORITY
-	
-	dsprite  16,  0, 10,  0, $05, $0 | PRIORITY
-	dsprite  16,  0, 13,  0, $05, $0 | X_FLIP | PRIORITY
-	dsprite  17,  0, 10,  0, $05, $0 | PRIORITY
-	dsprite  17,  0, 13,  0, $05, $0 | X_FLIP | PRIORITY
-	dsprite  18,  0, 10,  0, $05, $0 | PRIORITY
-	dsprite  18,  0, 13,  0, $05, $0 | X_FLIP | PRIORITY
-	
-	dsprite  19,  0, 10,   0, $04, $0 | Y_FLIP | PRIORITY
-	dsprite  19,  0, 11,  0, $06, $0 | Y_FLIP | PRIORITY
-	dsprite  19,  0, 12,  0, $06, $0 | Y_FLIP | PRIORITY
-	dsprite  19,  0, 13,  0, $00, $0 | PRIORITY
-	
-PickCard_OAM04:
-;y pos, x pos, tile, palette
-	dsprite  15,  0, 13,  0, $04, $0 | PRIORITY
-	dsprite  15,  0, 14,  0, $06, $0 | PRIORITY
-	dsprite  15,  0, 15,  0, $06, $0 | PRIORITY
-	dsprite  15,  0, 16,  0, $04, $0 | X_FLIP | PRIORITY
-	
-	dsprite  16,  0, 13,  0, $05, $0 | PRIORITY
-	dsprite  16,  0, 16,  0, $05, $0 | X_FLIP | PRIORITY
-	dsprite  17,  0, 13,  0, $05, $0 | PRIORITY
-	dsprite  17,  0, 16,  0, $05, $0 | X_FLIP | PRIORITY
-	dsprite  18,  0, 13,  0, $05, $0 | PRIORITY
-	dsprite  18,  0, 16,  0, $05, $0 | X_FLIP | PRIORITY
-	
-	dsprite  19,  0, 13,  0, $04, $0 | Y_FLIP | PRIORITY
-	dsprite  19,  0, 14,  0, $06, $0 | Y_FLIP | PRIORITY
-	dsprite  19,  0, 15,  0, $06, $0 | Y_FLIP | PRIORITY
-	dsprite  19,  0, 16,  0, $00, $0 | PRIORITY
-	
-PickCard_OAM05:
-;y pos, x pos, tile, palette
-	dsprite  15,  0, 16,  0, $04, $0 | PRIORITY
-	dsprite  15,  0, 17,  0, $06, $0 | PRIORITY
-	dsprite  15,  0, 18,  0, $06, $0 | PRIORITY
-	dsprite  15,  0, 19,  0, $04, $0 | X_FLIP | PRIORITY
-	
-	dsprite  16,  0, 16,  0, $05, $0 | PRIORITY
-	dsprite  16,  0, 19,  0, $05, $0 | X_FLIP | PRIORITY
-	dsprite  17,  0, 16,  0, $05, $0 | PRIORITY
-	dsprite  17,  0, 19,  0, $05, $0 | X_FLIP | PRIORITY
-	dsprite  18,  0, 16,  0, $05, $0 | PRIORITY
-	dsprite  18,  0, 19,  0, $05, $0 | X_FLIP | PRIORITY
-	
-	dsprite  19,  0, 16,  0, $04, $0 | Y_FLIP | PRIORITY
-	dsprite  19,  0, 17,  0, $06, $0 | Y_FLIP | PRIORITY
-	dsprite  19,  0, 18,  0, $06, $0 | Y_FLIP | PRIORITY
-	dsprite  19,  0, 19,  0, $00, $0 | PRIORITY
+	dsprite  6,  0, 4,  0, $00, $0 | PRIORITY
 	
 MoogooIncreaseCardsWithLowestValue:
 	ld a, [wMoogooCardsWithLowestValue]
@@ -3988,7 +3827,7 @@ MoogooCrossOutSuit:
 	
 	hlcoord 3, $d
 	lb bc, 5, 16
-	call CardFlip_FillGreenBox
+	call MoogooMankey_FillGreenBox
 	call MoogooMankey_UpdateScores
 	call ApplyAttrAndTilemapInVBlank
 	ret
@@ -4363,63 +4202,42 @@ MoogooCompareAIBuffers:
 	inc a
 	ret
 
-
-
-
-
-	ld a, [wBuffer1]
-	ld b, a
-	ld a, [wBuffer2]
-	cp b
-	jr nc, .buffer2
-	ld a, [wBuffer3]
-	cp b
-	jr nc, .buffer3
-	ld a, [wBuffer4]
-	cp b
-	jr nc, .buffer4
-	ld a, [wBuffer5]
-	cp b
-	jr nc, .buffer5
-	ld a, 1
-	ret
-.buffer2
-	ld a, [wBuffer2]
-	ld b, a
-	ld a, [wBuffer3]
-	cp b
-	jr nc, .buffer3
-	ld a, [wBuffer4]
-	cp b
-	jr nc, .buffer4
-	ld a, [wBuffer5]
-	cp b
-	jr nc, .buffer5
-	ld a, 2
-	ret
-.buffer3
-	ld a, [wBuffer3]
-	ld b, a
-	ld a, [wBuffer4]
-	cp b
-	jr nc, .buffer4
-	ld a, [wBuffer5]
-	cp b
-	jr nc, .buffer5
-	ld a, 3
-	ret
-.buffer4
-	ld a, [wBuffer4]
-	ld b, a
-	ld a, [wBuffer5]
-	cp b
-	jr nc, .buffer5
-	ld a, 4
-	ret
-.buffer5
-	ld a, 5
-	ret
+MoogooDetermineCursorXPos:
+	cp 0
+	ret z
+	ld hl, wSprites - 3
+	push bc
+	push af
+	call MoogooCursorPorpertiesLoop
+	pop af
+	pop bc
+	dec a
+	jr MoogooDetermineCursorXPos
 	
+MoogooDetermineCursorYPos:
+	ld hl, wSprites - 4
+	jp MoogooCursorPorpertiesLoop
+	
+MoogooDetermineCursorPal:
+	ld hl, wSprites - 1
+	jp MoogooCursorPorpertiesLoop
+	
+MoogooCursorPorpertiesLoop:
+	inc hl
+	inc hl
+	inc hl
+	inc hl
+	ld a, [hl]
+	add b
+	ld [hl], a
+	ld a, c
+	dec a
+	ld c, a
+	cp 0
+	jr nz, MoogooCursorPorpertiesLoop
+	ret
+
+
 DebugGetSuitLetter:
 	cp 1
 	jr z, .g

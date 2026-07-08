@@ -136,6 +136,7 @@ BrilloGameCornerMoogooMankey:
 	pause 10
 	closetext
 	special Special_MoogooMankey
+	playmapmusic
 	if_equal $1, .win
 	if_equal $2, .tie
 .lose
@@ -257,6 +258,7 @@ BrilloGameCornerCardFlip:
 	endtext
 .yes
 	special Special_CardFlip
+	playmapmusic
 	endtext
 .rules
 	writetext BrilloGameCornerCardFlipTextRules

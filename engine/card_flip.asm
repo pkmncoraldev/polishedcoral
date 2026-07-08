@@ -3240,16 +3240,18 @@ CheckWhichCard:
 	call ResetAIBuffer
 ;	call PlaceCardAI
 ;	call MoogooCompareAIBuffers
-	ld a, 5
+	ld a, 5										;TODO: Card AI. Currently random.
 	call RandomRange							;TODO: Card AI. Currently random.
+	inc a										;TODO: Card AI. Currently random.
 	ld hl, wMoogooCPU2Card1Suit - 2
 	jr .loop
 .CPU1Turn
 	call ResetAIBuffer
 ;	call PlaceCardAI
 ;	call MoogooCompareAIBuffers
-	ld a, 5							;TODO: Card AI. Currently random.
-	call RandomRange
+	ld a, 5										;TODO: Card AI. Currently random.
+	call RandomRange							;TODO: Card AI. Currently random.
+	inc a										;TODO: Card AI. Currently random.
 	ld hl, wMoogooCPU1Card1Suit - 2
 .loop
 	inc hl
@@ -4146,14 +4148,14 @@ MoogooCheckTotalOfAllScores:
 ResetAIBuffer:
 	ld hl, wBuffer1
 	ld bc, 5
-	ld a, 0
+	ld a, 10
 	call ByteFill
 	ret
 	
 PlaceBetAI:
 ;CPU Players place chips using a scoring system that takes into account
 ;amount of chips they have on a suit and the value of any cards in their
-;hand that match the suit. A random value between 0 and 2 is applied as well.
+;hand that match the suit. A random value between 0 and 1 is applied as well.
 ;Any score on a suit that can't be bet on anymore is reduced to 0.
 	call ResetAIBuffer
 	call DebugDrawCPUCards
@@ -4168,60 +4170,34 @@ PlaceBetAI:
 	ret
 	
 ConsiderCurCPUChips:
+	ld de, wBuffer1
+	ld c, 5
 	ld a, [wMoogooTurn]
 	cp 2
 	jr z, .cpu2
 ;.cpu1
 	ld hl, wMoogooCard1ChipsB
-	jr .got_cpu
+	jr .got_cpu_loop
 .cpu2
 	ld hl, wMoogooCard1ChipsC
-.got_cpu
-;suit1
+.got_cpu_loop	
 	ld a, [hli]
-	sla a
+	cp 1
+	jr z, .skip_halve
+	srl a
+.skip_halve
 	inc hl
 	inc hl
 	ld b, a
-	ld a, [wBuffer1]
+	ld a, [de]
 	add b
-	ld [wBuffer1], a
-;suit2
-	ld a, [hli]
-	sla a
-	inc hl
-	inc hl
-	ld b, a
-	ld a, [wBuffer2]
-	add b
-	ld [wBuffer2], a
-;suit3
-	ld a, [hli]
-	sla a
-	inc hl
-	inc hl
-	ld b, a
-	ld a, [wBuffer3]
-	add b
-	ld [wBuffer3], a
-;suit4
-	ld a, [hli]
-	sla a
-	inc hl
-	inc hl
-	ld b, a
-	ld a, [wBuffer4]
-	add b
-	ld [wBuffer4], a
-;suit5
-	ld a, [hli]
-	sla a
-	inc hl
-	inc hl
-	ld b, a
-	ld a, [wBuffer5]
-	add b
-	ld [wBuffer5], a
+	ld [de], a
+	inc de
+	ld a, c
+	dec a
+	ld c, a
+	cp 0
+	jr nz, .got_cpu_loop
 	ret
 	
 ConsiderCardValuesInPlay:
@@ -4287,10 +4263,18 @@ ConsiderCardValuesInHand:
 	ld h, d
 	ld l, e
 	ld a, [wBuffer6]
+	cp 4
+	jr nc, .add
+.subtract_loop
 	ld b, a
 	ld a, [hl]
-	add b
+	dec a
 	ld [hl], a
+	ld a, b
+	dec a
+	cp 0
+	jr nz, .subtract_loop
+.done_math
 	pop bc
 	pop hl
 	
@@ -4300,6 +4284,14 @@ ConsiderCardValuesInHand:
 	cp 6
 	jr nz, .loop1
 	ret
+	
+.add
+	sub 3
+	ld b, a
+	ld a, [hl]
+	add b
+	ld [hl], a
+	jr .done_math
 	
 MoogooAIApplyRandomness:
 	ld hl, wBuffer1 - 1
@@ -4311,7 +4303,7 @@ MoogooAIApplyRandomness:
 	ld b, a
 	push bc
 	dec e
-	ld a, 3
+	ld a, 2
 	call RandomRange
 	pop bc
 	add b

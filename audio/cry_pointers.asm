@@ -22,7 +22,7 @@ Cries:
 	dba Cry_Pidgeotto
 	dba Cry_Weedle
 	dba Cry_Pikipek
-	dba Cry_Minccino
+	dba Cry_Ekans
 	dba Cry_Shellder
 	dba Cry_Clefairy
 	dba Cry_Venonat
@@ -95,6 +95,8 @@ Cries:
 	dba Cry_Buneary
 	dba Cry_Lopunny
 	dba Cry_Spiritomb
+	dba Cry_Snover
+	dba Cry_Abomasnow
 	dba Cry_Leafeon
 	dba Cry_Glaceon
 	dba Cry_PorygonZ
@@ -105,8 +107,14 @@ Cries:
 	dba Cry_Venipede
 	dba Cry_Whirlipede
 	dba Cry_Scolipede
+	dba Cry_Cottonee
+	dba Cry_Whimsicott
 	dba Cry_Scraggy
 	dba Cry_Scrafty
+	dba Cry_Minccino
+	dba Cry_Cinccino
+	dba Cry_Joltik
+	dba Cry_Galvantula
 	dba Cry_Litwick
 	dba Cry_Lampent
 	dba Cry_Chandelure
@@ -116,6 +124,8 @@ Cries:
 	dba Cry_Volcarona
 ; gen 6
 	dba Cry_Sylveon
+	dba Cry_Phantump
+	dba Cry_Trevenant
 	dba Cry_Noibat
 	dba Cry_Noivern
 	dba Cry_Comfey

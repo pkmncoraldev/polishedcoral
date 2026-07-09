@@ -468,8 +468,8 @@ CryHeaders2::
 	mon_cry CRY_BULBASAUR,   $080,  $081 	; Munchlax - PLACEHOLDER
 	mon_cry CRY_BULBASAUR,   $080,  $081	; Croagunk - PLACEHOLDER
 	mon_cry CRY_BULBASAUR,   $080,  $081	; Toxicroak - PLACEHOLDER
-	mon_cry CRY_BULBASAUR,   $080,  $081 	; Snover - PLACEHOLDER
-	mon_cry CRY_BULBASAUR,   $080,  $081	; Abomasnow - PLACEHOLDER
+	mon_cry CRY_SNOVER,       170,   128 	; Snover
+	mon_cry CRY_ABOMASNOW,    255,   192	; Abomasnow
 	mon_cry CRY_BULBASAUR,   $080,  $081 	; Weavile - PLACEHOLDER
 	mon_cry CRY_BULBASAUR,   $080,  $081 	; Magnezone - PLACEHOLDER
 	mon_cry CRY_BULBASAUR,   $080,  $081 	; Electivire - PLACEHOLDER
@@ -480,14 +480,14 @@ CryHeaders2::
 	mon_cry CRY_BULBASAUR,   $080,  $081 	; Gliscor - PLACEHOLDER
 	mon_cry CRY_BULBASAUR,   $080,  $081 	; Mamoswine - PLACEHOLDER
 	mon_cry CRY_PORYGONZ,       0,   384 	; PorygonZ
-	mon_cry CRY_FROSLASS,      143,  384 	; Froslass
-	mon_cry CRY_DRILBUR,       255,  200	; Drilbur
-	mon_cry CRY_EXCADRILL,      88,  264	; Excadrill
-	mon_cry CRY_VENIPEDE,      150,  384 	; Venipede
-	mon_cry CRY_WHIRLIPEDE,    150,  384	; Whirlipede
-	mon_cry CRY_SCOLIPEDE,       0,  457	; Scolipede
-	mon_cry CRY_BULBASAUR,   $080,  $081 	; Cottonee - PLACEHOLDER
-	mon_cry CRY_BULBASAUR,   $080,  $081	; Whimsicott - PLACEHOLDER
+	mon_cry CRY_FROSLASS,     143,   384 	; Froslass
+	mon_cry CRY_DRILBUR,      255,   200	; Drilbur
+	mon_cry CRY_EXCADRILL,     88,   264	; Excadrill
+	mon_cry CRY_VENIPEDE,     150,   384 	; Venipede
+	mon_cry CRY_WHIRLIPEDE,   150,   384	; Whirlipede
+	mon_cry CRY_SCOLIPEDE,      0,   457	; Scolipede
+	mon_cry CRY_COTTONEE,     162,   228 	; Cottonee
+	mon_cry CRY_WHIMSICOTT,    32,   196	; Whimsicott
 	mon_cry CRY_BULBASAUR,   $080,  $081	; Maractus - PLACEHOLDER
 	mon_cry CRY_BULBASAUR,   $080,  $081 	; Dwebble - PLACEHOLDER
 	mon_cry CRY_BULBASAUR,   $080,  $081 	; Crustle - PLACEHOLDER
@@ -497,10 +497,10 @@ CryHeaders2::
 	mon_cry CRY_BULBASAUR,   $080,  $081 	; Carracosta - PLACEHOLDER
 	mon_cry CRY_BULBASAUR,   $080,  $081	; Archen - PLACEHOLDER
 	mon_cry CRY_BULBASAUR,   $080,  $081	; Archeops - PLACEHOLDER
-	mon_cry CRY_SLOWPOKE,    $1CD,  $140  	; Minccino
-	mon_cry CRY_PSYDUCK,     $265,  $170	; Cinccino
-	mon_cry CRY_BULBASAUR,   $080,  $081 	; Joltik - PLACEHOLDER
-	mon_cry CRY_BULBASAUR,   $080,  $081 	; Galvantula - PLACEHOLDER
+	mon_cry CRY_MINCCINO,     255,   128  	; Minccino
+	mon_cry CRY_CINCCINO,     128,   256	; Cinccino
+	mon_cry CRY_JOLTIK,         0,   256 	; Joltik
+	mon_cry CRY_GALVANTULA,     0,   220 	; Galvantula
 	mon_cry CRY_LITWICK,        0,   256 	; Litwick
 	mon_cry CRY_LAMPENT,        0,   384 	; Lampent
 	mon_cry CRY_CHANDELURE,   255,   384	; Chandelure
@@ -509,8 +509,8 @@ CryHeaders2::
 	mon_cry CRY_LARVESTA,       0,   328 	; Larvesta
 	mon_cry CRY_VOLCARONA,    195,   256 	; Volcarona
 	mon_cry CRY_SYLVEON,        0,   664 	; Sylveon
-	mon_cry CRY_BULBASAUR,   $080,  $081	; Phantump - PLACEHOLDER
-	mon_cry CRY_BULBASAUR,   $080,  $081	; Trevenant - PLACEHOLDER
+	mon_cry CRY_PHANTUMP,      119,  220	; Phantump
+	mon_cry CRY_TREVENANT,       0,  220	; Trevenant
 	mon_cry CRY_NOIBAT,        167,  132 	; Noibat
 	mon_cry CRY_NOIVERN,        74,  132 	; Noivern
 	mon_cry CRY_BULBASAUR,   $080,  $081 	; Pikipek - PLACEHOLDER

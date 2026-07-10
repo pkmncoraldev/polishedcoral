@@ -479,6 +479,8 @@ PlaceCardMoogooBorderRight:
 	db $24, $0e, $0e, $0f
 	
 PlaceCardMoogooSuit:
+	cp 6
+	jp z, PlaceCardMoogoo6
 	cp 5
 	jp z, PlaceCardMoogoo5
 	cp 4
@@ -488,7 +490,7 @@ PlaceCardMoogooSuit:
 	cp 2
 	jp z, PlaceCardMoogoo2
 	
-PlaceCardMoogoo1: ; e03c1
+PlaceCardMoogoo1:
 	xor a
 	ldh [hBGMapMode], a
 	ld de, .Tilemap
@@ -499,7 +501,7 @@ PlaceCardMoogoo1: ; e03c1
 	db $3e, $3f
 	db $40, $41
 	
-PlaceCardMoogoo2: ; e03c1
+PlaceCardMoogoo2:
 	xor a
 	ldh [hBGMapMode], a
 	ld de, .Tilemap
@@ -510,7 +512,7 @@ PlaceCardMoogoo2: ; e03c1
 	db $42, $43
 	db $44, $45
 	
-PlaceCardMoogoo3: ; e03c1
+PlaceCardMoogoo3:
 	xor a
 	ldh [hBGMapMode], a
 	ld de, .Tilemap
@@ -521,7 +523,7 @@ PlaceCardMoogoo3: ; e03c1
 	db $46, $47
 	db $48, $49
 	
-PlaceCardMoogoo4: ; e03c1
+PlaceCardMoogoo4:
 	xor a
 	ldh [hBGMapMode], a
 	ld de, .Tilemap
@@ -532,7 +534,7 @@ PlaceCardMoogoo4: ; e03c1
 	db $4a, $4b
 	db $4c, $4d
 	
-PlaceCardMoogoo5: ; e03c1
+PlaceCardMoogoo5:
 	xor a
 	ldh [hBGMapMode], a
 	ld de, .Tilemap
@@ -542,6 +544,17 @@ PlaceCardMoogoo5: ; e03c1
 .Tilemap: ; e03ce
 	db $4e, $4f
 	db $50, $51
+	
+PlaceCardMoogoo6:
+	xor a
+	ldh [hBGMapMode], a
+	ld de, .Tilemap
+	lb bc, 2, 2
+	jp CardFlip_CopyToBox
+
+.Tilemap: ; e03ce
+	db $52, $53
+	db $54, $55
 
 CardFlip_DisplayCardFaceUp: ; e03ec
 	xor a
@@ -1813,57 +1826,37 @@ MoogooMankey_InitAttrPals:
 
 	hlcoord 0, 1, wAttrMap
 	lb bc, 4, 4
-	ld a, $4
+	ld a, $0
 	call CardFlip_FillBox
 
 	hlcoord 4, 1, wAttrMap
 	lb bc, 4, 4
-	ld a, $2
+	ld a, $1
 	call CardFlip_FillBox
 
 	hlcoord 8, 1, wAttrMap
 	lb bc, 4, 4
-	ld a, $3
+	ld a, $2
 	call CardFlip_FillBox
 
 	hlcoord 12, 1, wAttrMap
 	lb bc, 4, 4
-	ld a, $1
+	ld a, $3
 	call CardFlip_FillBox
 
 	hlcoord 16, 1, wAttrMap
 	lb bc, 4, 4
-	ld a, $5
-	call CardFlip_FillBox
-	
-	hlcoord 0, 7, wAttrMap
-	lb bc, 5, 4
 	ld a, $4
 	call CardFlip_FillBox
 
-	hlcoord 4, 7, wAttrMap
-	lb bc, 5, 4
-	ld a, $2
-	call CardFlip_FillBox
-
-	hlcoord 8, 7, wAttrMap
-	lb bc, 5, 4
-	ld a, $3
-	call CardFlip_FillBox
-
-	hlcoord 12, 7, wAttrMap
-	lb bc, 5, 4
-	ld a, $1
-	call CardFlip_FillBox
-
-	hlcoord 16, 7, wAttrMap
-	lb bc, 5, 4
-	ld a, $5
+	hlcoord 0, 14, wAttrMap
+	lb bc, 1, 1
+	ld a, 1
 	call CardFlip_FillBox
 
 	hlcoord 0, 15, wAttrMap
 	lb bc, 1, 1
-	ld a, 1
+	ld a, 2
 	call CardFlip_FillBox
 	
 	hlcoord 0, 16, wAttrMap
@@ -1874,6 +1867,37 @@ MoogooMankey_InitAttrPals:
 	hlcoord 1, 14, wAttrMap
 	lb bc, 3, 2
 	ld a, 7
+	call CardFlip_FillBox
+	
+	hlcoord 1, 5, wAttrMap
+	lb bc, 2, 18
+	ld a, $6
+	call CardFlip_FillBox
+	
+MoogooMankey_InitAttrPalsRound2:
+	hlcoord 0, 7, wAttrMap
+	lb bc, 5, 4
+	ld a, $0
+	call CardFlip_FillBox
+
+	hlcoord 4, 7, wAttrMap
+	lb bc, 5, 4
+	ld a, $1
+	call CardFlip_FillBox
+
+	hlcoord 8, 7, wAttrMap
+	lb bc, 5, 4
+	ld a, $2
+	call CardFlip_FillBox
+
+	hlcoord 12, 7, wAttrMap
+	lb bc, 5, 4
+	ld a, $3
+	call CardFlip_FillBox
+
+	hlcoord 16, 7, wAttrMap
+	lb bc, 5, 4
+	ld a, $4
 	call CardFlip_FillBox
 	
 	ldh a, [rSVBK]
@@ -1891,7 +1915,17 @@ MoogooMankey_InitAttrPals:
 
 .palettes ; e0c93
 	RGB 31, 31, 31
+	RGB 08, 31, 08
+	RGB 06, 19, 08
+	RGB 00, 00, 00
+
+	RGB 31, 31, 31
 	RGB 31, 00, 00
+	RGB 06, 19, 08
+	RGB 00, 00, 00
+	
+	RGB 31, 31, 31
+	RGB 08, 17, 30
 	RGB 06, 19, 08
 	RGB 00, 00, 00
 	
@@ -1899,19 +1933,9 @@ MoogooMankey_InitAttrPals:
 	RGB 29, 25, 00
 	RGB 06, 19, 08
 	RGB 00, 00, 00
-
+	
 	RGB 31, 31, 31
-	RGB 31, 09, 00
-	RGB 06, 19, 08
-	RGB 00, 00, 00
-
-	RGB 31, 31, 31
-	RGB 08, 17, 30
-	RGB 06, 19, 08
-	RGB 00, 00, 00
-
-	RGB 31, 31, 31
-	RGB 08, 31, 08
+	RGB 31, 13, 30
 	RGB 06, 19, 08
 	RGB 00, 00, 00
 
@@ -1920,60 +1944,38 @@ MoogooMankey_InitAttrPals:
 	RGB 06, 19, 08
 	RGB 00, 00, 00
 
+	RGB 06, 19, 08
+	RGB 06, 19, 08
+	RGB 06, 19, 08
+	RGB 06, 19, 08
+
+	RGB 31, 31, 31
 	RGB 00, 00, 00
 	RGB 00, 00, 00
 	RGB 06, 19, 08
-	RGB 31, 31, 31
 
-	RGB 31, 31, 31
-	RGB 00, 00, 00
-	RGB 00, 00, 00
-	RGB 06, 19, 08
-
-MoogooRedPal:
+;obj
 	RGB 31, 31, 31
 	RGB 31, 31, 31
 	RGB 31, 00, 00
 	RGB 31, 00, 00
 	
-MoogooYellowPal:
-	RGB 31, 31, 31
-	RGB 31, 31, 31
-	RGB 29, 25, 00
-	RGB 29, 25, 00
-	
-MoogooBluePal:
 	RGB 31, 31, 31
 	RGB 31, 31, 31
 	RGB 08, 17, 30
 	RGB 08, 17, 30
 	
-MoogooMankey_InitAttrPalsRound2:
-	hlcoord 0, 7, wAttrMap
-	lb bc, 5, 4
-	ld a, $4
-	call CardFlip_FillBox
-
-	hlcoord 4, 7, wAttrMap
-	lb bc, 5, 4
-	ld a, $2
-	call CardFlip_FillBox
-
-	hlcoord 8, 7, wAttrMap
-	lb bc, 5, 4
-	ld a, $3
-	call CardFlip_FillBox
-
-	hlcoord 12, 7, wAttrMap
-	lb bc, 5, 4
-	ld a, $1
-	call CardFlip_FillBox
-
-	hlcoord 16, 7, wAttrMap
-	lb bc, 5, 4
-	ld a, $5
-	call CardFlip_FillBox
-	ret
+	RGB 31, 31, 31
+	RGB 31, 31, 31
+	RGB 29, 25, 00
+	RGB 29, 25, 00
+	
+MoogooBlackPal:
+	RGB 00, 00, 00
+	RGB 00, 00, 00
+	RGB 06, 19, 08
+	RGB 00, 00, 00
+	
 
 CardFlipLZ03:
 INCBIN "gfx/card_flip/0e0cdb.2bpp.lz"
@@ -2183,7 +2185,7 @@ _MoogooMankey:
 	
 .PlaceBet:
 	call MoogooCheckIfCanStillPlaceBets
-	jr nz, .PlaceBet_normal
+	jr nc, .PlaceBet_normal
 
 ;.skip_bet
 	hlcoord 0, 0
@@ -2297,7 +2299,7 @@ _MoogooMankey:
 	
 .CPUNormalBet:
 	call MoogooCheckIfCanStillPlaceBets
-	jp z, .cpu_betdone
+	jp c, .cpu_betdone
 	call PlaceBetAI
 	call MoogooCompareAIBuffers
 
@@ -2362,6 +2364,10 @@ _MoogooMankey:
 .Shuffling
 	ld a, 1
 	ld [wOnSkateboard], a
+	call MoogooCheckIfCanStillPlaceBets
+	jr nc, .no_bet_blackout2
+	call MoogooSetNoMoreBets
+.no_bet_blackout2
 	ld a, [wPlaceBallsX]
 	inc a
 	ld [wPlaceBallsX], a
@@ -2379,6 +2385,11 @@ endr
 	ld de, .Dealing
 	call PlaceString
 	
+	ld a, [wMoogooTurn]
+	ld c, a
+	push bc
+	ld a, 0
+	ld [wMoogooTurn], a
 	ld hl, wMoogooPlayerCard1Suit
 	ld a, 15
 .loop
@@ -2391,6 +2402,8 @@ endr
 	ld [hli], a
 	ld a, e
 	dec a
+	cp 10
+	jr z, .switch_turn_back_and_loop
 	cp 0
 	jr nz, .loop
 	
@@ -2430,6 +2443,13 @@ endr
 	ld [wOnSkateboard], a
 ;	call DebugDrawCPUCards
 	jp .Increment
+.switch_turn_back_and_loop
+	pop bc
+	push af
+	ld a, c
+	ld [wMoogooTurn], a
+	pop af
+	jr .loop
 .Clear
 	db "                    @"
 	
@@ -2498,6 +2518,38 @@ endr
 .skip_cpu_random_time
 	call CheckWhichCard
 	call GiveNewCardHL
+	ld a, [wMoogooTurn]
+	cp 0
+	jr nz, .cpu
+	call DiscardCurPlayerCard
+	ld a, [wPlaceBallsY]
+	push af
+.cpu
+	ld a, [wMoogooCurrentCardSuit]
+	cp 6
+	jr nz, .not_ditto
+.ditto_loop
+	call JoyTextDelay
+	ldh a, [hJoyLast]
+	and A_BUTTON
+	jr nz, .ditto_a
+	call ChooseSurvivor_HandleJoypad
+	call ChooseSurvivor_UpdateCursorOAM
+	ld a, [wPlaceBallsY]
+	ld [wMoogooCurrentCardSuit], a
+	call DelayFrame
+	call MoogooShowCursor
+	jr .ditto_loop
+.ditto_a
+	ld a, [wMoogooRetiredSuit1]
+	ld c, a
+	ld a, [wPlaceBallsY]
+	cp c
+	jr nz, .not_ditto
+	ld de, SFX_WRONG
+	call PlaySFX
+	jp .ditto_loop
+.not_ditto
 	call PlaceCard
 ;	call DebugDrawCPUCards
 	call MoogooHideCursor
@@ -2510,6 +2562,8 @@ endr
 	cp 0
 	jr nz, .playcard_cpu_done
 	
+	pop af
+	ld [wPlaceBallsY], a
 	call ReplacePlayerCard
 .playcard_cpu_done
 	hlcoord 0, 0
@@ -2518,6 +2572,13 @@ endr
 	jp .Increment
 	
 .ChangeTurn
+	ld a, [wMoogooTurnNumber]
+	inc a
+	ld [wMoogooTurnNumber], a
+	call MoogooCheckIfCanStillPlaceBets
+	jr nc, .no_bet_blackout
+	call MoogooSetNoMoreBets
+.no_bet_blackout
 	ld a, [wMoogooTurn]
 	cp 2
 	jr nz, .inc_turn
@@ -2647,7 +2708,6 @@ endr
 .placebet5_0
 	hlcoord $11, $5, wAttrMap
 	call ColorChip
-	hlcoord $11, $5
 	call PlaceChip
 	call MoogooMankey_UpdateScores
 	jr .placebet5end
@@ -2655,7 +2715,6 @@ endr
 .placebet5_1
 	hlcoord $12, $5, wAttrMap
 	call ColorChip
-	hlcoord $12, $5
 	call PlaceChip
 	call MoogooMankey_UpdateScores
 	jr .placebet5end
@@ -2663,7 +2722,6 @@ endr
 .placebet5_2
 	hlcoord $11, $6, wAttrMap
 	call ColorChip
-	hlcoord $11, $6
 	call PlaceChip
 	call MoogooMankey_UpdateScores
 	jr .placebet5end
@@ -2671,7 +2729,6 @@ endr
 .placebet5_3
 	hlcoord $12, $6, wAttrMap
 	call ColorChip
-	hlcoord $12, $6
 	call PlaceChip
 	call MoogooMankey_UpdateScores
 	jr .placebet5end
@@ -2712,7 +2769,6 @@ endr
 .placebet4_0
 	hlcoord $0d, $5, wAttrMap
 	call ColorChip
-	hlcoord $0d, $5
 	call PlaceChip
 	call MoogooMankey_UpdateScores
 	jr .placebet4end
@@ -2720,7 +2776,6 @@ endr
 .placebet4_1
 	hlcoord $0e, $5, wAttrMap
 	call ColorChip
-	hlcoord $0e, $5
 	call PlaceChip
 	call MoogooMankey_UpdateScores
 	jr .placebet4end
@@ -2728,7 +2783,6 @@ endr
 .placebet4_2
 	hlcoord $0d, $6, wAttrMap
 	call ColorChip
-	hlcoord $0d, $6
 	call PlaceChip
 	call MoogooMankey_UpdateScores
 	jr .placebet4end
@@ -2736,7 +2790,6 @@ endr
 .placebet4_3
 	hlcoord $0e, $6, wAttrMap
 	call ColorChip
-	hlcoord $0e, $6
 	call PlaceChip
 	call MoogooMankey_UpdateScores
 	jr .placebet4end
@@ -2777,7 +2830,6 @@ endr
 .placebet3_0
 	hlcoord $09, $5, wAttrMap
 	call ColorChip
-	hlcoord $09, $5
 	call PlaceChip
 	call MoogooMankey_UpdateScores
 	jr .placebet3end
@@ -2785,7 +2837,6 @@ endr
 .placebet3_1
 	hlcoord $0a, $5, wAttrMap
 	call ColorChip
-	hlcoord $0a, $5
 	call PlaceChip
 	call MoogooMankey_UpdateScores
 	jr .placebet3end
@@ -2793,7 +2844,6 @@ endr
 .placebet3_2
 	hlcoord $09, $6, wAttrMap
 	call ColorChip
-	hlcoord $09, $6
 	call PlaceChip
 	call MoogooMankey_UpdateScores
 	jr .placebet3end
@@ -2801,7 +2851,6 @@ endr
 .placebet3_3
 	hlcoord $0a, $6, wAttrMap
 	call ColorChip
-	hlcoord $0a, $6
 	call PlaceChip
 	call MoogooMankey_UpdateScores
 	jr .placebet3end
@@ -2842,7 +2891,6 @@ endr
 .placebet2_0
 	hlcoord $5, $5, wAttrMap
 	call ColorChip
-	hlcoord $5, $5
 	call PlaceChip
 	call MoogooMankey_UpdateScores
 	jr .placebet2end
@@ -2850,7 +2898,6 @@ endr
 .placebet2_1
 	hlcoord $6, $5, wAttrMap
 	call ColorChip
-	hlcoord $6, $5
 	call PlaceChip
 	call MoogooMankey_UpdateScores
 	jr .placebet2end
@@ -2858,7 +2905,6 @@ endr
 .placebet2_2
 	hlcoord $5, $6, wAttrMap
 	call ColorChip
-	hlcoord $5, $6
 	call PlaceChip
 	call MoogooMankey_UpdateScores
 	jr .placebet2end
@@ -2866,7 +2912,6 @@ endr
 .placebet2_3
 	hlcoord $6, $6, wAttrMap
 	call ColorChip
-	hlcoord $6, $6
 	call PlaceChip
 	call MoogooMankey_UpdateScores
 	jr .placebet2end
@@ -2907,7 +2952,6 @@ endr
 .placebet1_0
 	hlcoord $1, $5, wAttrMap
 	call ColorChip
-	hlcoord $1, $5
 	call PlaceChip
 	call MoogooMankey_UpdateScores
 	jr .placebet1end
@@ -2915,7 +2959,6 @@ endr
 .placebet1_1
 	hlcoord $2, $5, wAttrMap
 	call ColorChip
-	hlcoord $2, $5
 	call PlaceChip
 	call MoogooMankey_UpdateScores
 	jr .placebet1end
@@ -2923,7 +2966,6 @@ endr
 .placebet1_2
 	hlcoord $1, $6, wAttrMap
 	call ColorChip
-	hlcoord $1, $6
 	call PlaceChip
 	call MoogooMankey_UpdateScores
 	jr .placebet1end
@@ -2931,7 +2973,6 @@ endr
 .placebet1_3
 	hlcoord $2, $6, wAttrMap
 	call ColorChip
-	hlcoord $2, $6
 	call PlaceChip
 	call MoogooMankey_UpdateScores
 	jr .placebet1end
@@ -2977,7 +3018,7 @@ DealPlayerCard1:
 	hlcoord 3, 13, wAttrMap
 	lb bc, 5, 4
 	ld a, [wMoogooPlayerCard1Suit]
-	call MoogooGetSuitColor
+	dec a
 	call CardFlip_FillBox
 	hlcoord 5, 14
 	ld de, wMoogooPlayerCard1Value
@@ -3000,7 +3041,7 @@ DealPlayerCard2:
 	hlcoord 6, 13, wAttrMap
 	lb bc, 5, 4
 	ld a, [wMoogooPlayerCard2Suit]
-	call MoogooGetSuitColor
+	dec a
 	call CardFlip_FillBox
 	hlcoord 8, 14
 	ld de, wMoogooPlayerCard2Value
@@ -3023,7 +3064,7 @@ DealPlayerCard3:
 	hlcoord 9, 13, wAttrMap
 	lb bc, 5, 4
 	ld a, [wMoogooPlayerCard3Suit]
-	call MoogooGetSuitColor
+	dec a
 	call CardFlip_FillBox
 	hlcoord 11, 14
 	ld de, wMoogooPlayerCard3Value
@@ -3046,7 +3087,7 @@ DealPlayerCard4:
 	hlcoord 12, 13, wAttrMap
 	lb bc, 5, 4
 	ld a, [wMoogooPlayerCard4Suit]
-	call MoogooGetSuitColor
+	dec a
 	call CardFlip_FillBox
 	hlcoord 14, 14
 	ld de, wMoogooPlayerCard4Value
@@ -3063,25 +3104,13 @@ DealPlayerCard5:
 	hlcoord 15, 13, wAttrMap
 	lb bc, 5, 4
 	ld a, [wMoogooPlayerCard5Suit]
-	call MoogooGetSuitColor
+	dec a
 	call CardFlip_FillBox
 	hlcoord 17, 14
 	ld de, wMoogooPlayerCard5Value
 	lb bc, PRINTNUM_LEFTALIGN | 1, 1
 	call PrintNum
 	jp ApplyAttrAndTilemapInVBlank
-	
-MoogooGetSuitColor:
-	cp 1
-	jr z, .green
-	cp 4
-	ret nz
-;.yellow
-	ld a, 1
-	ret
-.green
-	ld a, 4
-	ret
 	
 MoogooMankey_UpdateScores:
 ;	call DebugDrawCPUCards
@@ -3106,60 +3135,52 @@ GetRandomSuit:
 	ld b, a
 	ld a, [wMoogooRetiredSuit2]
 	ld c, a
-	call Random
-	and $7
+	ld a, 6
+	call RandomRange
 	inc a
-	cp 8
-	jr z, .loop
-	cp 7
-	jr z, .loop
 	cp 6
-	jr z, .loop
+	jr z, .ditto
 	cp b
 	jr z, .loop
 	cp c
 	jr z, .loop
 	pop hl
 	ret
+.ditto
+	ld a, [wMoogooTurn]	;only the player can get a ditto card
+	cp 0
+	jr nz, .loop
+	ld a, 6
+	pop hl
+	ret
 	
 PlaceChip:
 	ld a, [wMoogooTurn]
-	cp 0
-	jr z, .player
 	cp 1
 	jr z, .cpu1
 	cp 2
 	jr z, .cpu2
-.return
-	lb bc, 1, 1
-	ld a, $7d
-	ldh [hGraphicStartTile], a
-	predef PlaceGraphic
-	ret
-.player
+;.player
 	ld a, [wMoogooPlayerScore]
 	inc a
 	ld [wMoogooPlayerScore], a
-	jr .return
+	ret
 .cpu1
 	ld a, [wMoogooCPU1Score]
 	inc a
 	ld [wMoogooCPU1Score], a
-	jr .return
+	ret
 .cpu2
 	ld a, [wMoogooCPU2Score]
 	inc a
 	ld [wMoogooCPU2Score], a
-	jr .return
+	ret
 	
 	
 ColorChip:
 	lb bc, 1, 1
 	ld a, [wMoogooTurn]
-	cp 2
-	jr nz, .colorchipskip
 	inc a
-.colorchipskip
 	call CardFlip_FillBox
 	jp ApplyAttrAndTilemapInVBlank
 	
@@ -3306,11 +3327,6 @@ DiscardCurPlayerCard:
 	db $0f, $07, $07, $07
 	
 PlaceCard:
-	ld a, [wMoogooTurn]
-	cp 0
-	jr nz, .cpu
-	call DiscardCurPlayerCard
-.cpu
 	call PlaceCardFinish
 	ld de, SFX_SHINE
 	call PlaySFX
@@ -3959,20 +3975,39 @@ DebugDrawCPUCards:
 	call WaitPressAorB_BlinkCursor
 	ret
 	
+MoogooSetNoMoreBets:
+	ldh a, [rSVBK]
+	push af
+	ld a, $5
+	ldh [rSVBK], a
+	ld hl, MoogooBlackPal
+	ld de, wUnknBGPals + 6 palettes
+	ld bc, 1 palettes
+	rst CopyBytes
+	pop af
+	ldh [rSVBK], a
+	ld c, 1
+	jp FadePalettes
+	
 MoogooCheckIfCanStillPlaceBets:
+	ld a, [wMoogooTurnNumber]
+	cp 18
+	jr nc, .no_more
 	ld a, [wPlaceBallsX]
-	cp 1
-	jr z, .round1
 	cp 2
 	jr z, .round2
-.round1
-	call MoogooCheckTotalOfAllScores
-	cp 20
+.more
+	xor a
 	ret
 .round2
 	call MoogooCheckTotalOfAllScores
 	cp 16
+	jr c, .more
+.no_more
+	scf
 	ret
+
+
 	
 MoogooCheckTotalOfAllScores:
 	ld a, [wMoogooPlayerScore]

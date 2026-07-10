@@ -311,7 +311,7 @@ BrilloGameCornerSignText:
 	done
 	
 BrilloGameCornerMoogooMankeyText:
-	text "MOOGOO MANKEY."
+	text "MOOGOOMON."
 	
 	para "Play with 50"
 	line "COINs?"
@@ -343,7 +343,7 @@ BrilloGameCornerMoogooMankeyTextRules:
 	
 	para "…"
 	
-	para "MOOGOO MANKEY."
+	para "MOOGOOMON."
 	
 	para "Play with 50"
 	line "COINs?"
@@ -459,7 +459,7 @@ BrilloGameCornerNpc4Text:
 	
 BrilloGameCornerNpc5Text1:
 	text "We need 1 more for"
-	line "MOOGOO MANKEY."
+	line "MOOGOOMON."
 	
 	para "Please go to the"
 	line "other side of the"

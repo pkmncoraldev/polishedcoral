@@ -318,42 +318,24 @@ BrilloGameCornerMoogooMankeyText:
 	done
 	
 BrilloGameCornerMoogooMankeyTextRules:
-	text "NOTE: THIS GAME IS"
-	line "STILL A WIP."
-	
-	para "IT SHOULD WORK,"
-	line "BUT IS UGLY AND "
-	cont "MIGHT BE BUGGY."
-	
-	para "SAVE BEFORE YOU"
-	line "PLAY!"
-	
-	para "…"
-	
-	para "Pick a suit and"
-	line "place a bet."
-	
-	para "Once everyone has"
-	line "placed a bet,"
-	cont "hands are dealt."
-	
-	para "Place another bet"
-	line "on a suit and then"
+	text "Pick a suit and"
+	line "place a bet, then"
 	cont "play a card."
 	
 	para "Once every suit"
 	line "has a card played,"
 	
 	para "the one with the"
-	line "lowest value card"
-	cont "is eliminated, and"
+	line "lowest value is"
+	cont "eliminated, and"
 	cont "the round is over."
 	
 	para "If 2 or more suits"
 	line "are tied for the"
-	cont "lowest, keep play-"
-	cont "ing until the tie"
-	cont "is broken."
+	cont "lowest,"
+	
+	para "keep playing until"
+	line "the tie is broken."
 	
 	para "Whoever has the"
 	line "most points after"
@@ -402,7 +384,17 @@ BrilloGameCornerSlotsText:
 	done
 	
 BrilloGameCornerSlotsTextRules:
-	text "RULES"
+	text "Try and stop the"
+	line "reels to get 3"
+	cont "in a row."
+	
+	para "The more coins you"
+	line "bet, the more ways"
+	cont "to win!"
+	
+	para "…"
+	
+	para "Play SLOTS?"
 	done
 	
 BrilloGameCornerCardFlipText:
@@ -410,7 +402,25 @@ BrilloGameCornerCardFlipText:
 	done
 	
 BrilloGameCornerCardFlipTextRules:
-	text "RULES"
+	text "A card is picked"
+	line "randomly and shown"
+	cont "face down."
+	
+	para "Choose what you"
+	line "think will be the"
+	cont "number, the suit,"
+	cont "or both."
+	
+	para "The more specific"
+	line "your guess, the"
+	cont "higher the payout!"
+	
+	para "After 12 guesses,"
+	line "the game is reset."
+	
+	para "…"
+	
+	para "Play CARD FLIP?"
 	done
 	
 BrilloGameCornerNpc1Text:

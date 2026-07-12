@@ -430,11 +430,11 @@ PlaceCardMoogooBorderSingle:
 	jp CardFlip_CopyToBox
 
 .Tilemap: ; e03ce
-	db $08, $09, $09, $0a
-	db $0b, $26, $26, $0c
-	db $0b, $26, $26, $0c
-	db $0b, $26, $26, $0c
-	db $0d, $0e, $0e, $0f
+	db $00, $01, $01, $02
+	db $03, $1e, $1e, $04
+	db $03, $1e, $1e, $04
+	db $03, $1e, $1e, $04
+	db $05, $06, $06, $07
 	
 PlaceCardMoogooBorderLeft:
 	xor a
@@ -444,11 +444,11 @@ PlaceCardMoogooBorderLeft:
 	jp CardFlip_CopyToBox
 
 .Tilemap: ; e03ce
-	db $08, $09, $09, $21
-	db $0b, $26, $26, $23
-	db $0b, $26, $26, $23
-	db $0b, $26, $26, $23
-	db $0d, $0e, $0e, $25
+	db $00, $01, $01, $19
+	db $03, $1e, $1e, $1b
+	db $03, $1e, $1e, $1b
+	db $03, $1e, $1e, $1b
+	db $05, $06, $06, $1d
 	
 PlaceCardMoogooBorderMiddle:
 	xor a
@@ -458,11 +458,11 @@ PlaceCardMoogooBorderMiddle:
 	jp CardFlip_CopyToBox
 
 .Tilemap: ; e03ce
-	db $20, $09, $09, $21
-	db $22, $26, $26, $23
-	db $22, $26, $26, $23
-	db $22, $26, $26, $23
-	db $24, $0e, $0e, $25
+	db $18, $01, $01, $19
+	db $1a, $1e, $1e, $1b
+	db $1a, $1e, $1e, $1b
+	db $1a, $1e, $1e, $1b
+	db $1c, $06, $06, $1d
 	
 PlaceCardMoogooBorderRight:
 	xor a
@@ -472,11 +472,11 @@ PlaceCardMoogooBorderRight:
 	jp CardFlip_CopyToBox
 
 .Tilemap: ; e03ce
-	db $20, $09, $09, $0a
-	db $22, $26, $26, $0c
-	db $22, $26, $26, $0c
-	db $22, $26, $26, $0c
-	db $24, $0e, $0e, $0f
+	db $18, $01, $01, $02
+	db $1a, $1e, $1e, $04
+	db $1a, $1e, $1e, $04
+	db $1a, $1e, $1e, $04
+	db $1c, $06, $06, $07
 	
 PlaceCardMoogooSuit:
 	cp 6
@@ -498,8 +498,8 @@ PlaceCardMoogoo1:
 	jp CardFlip_CopyToBox
 
 .Tilemap: ; e03ce
-	db $3e, $3f
-	db $40, $41
+	db $20, $21
+	db $22, $23
 	
 PlaceCardMoogoo2:
 	xor a
@@ -509,8 +509,8 @@ PlaceCardMoogoo2:
 	jp CardFlip_CopyToBox
 
 .Tilemap: ; e03ce
-	db $42, $43
-	db $44, $45
+	db $24, $25
+	db $26, $27
 	
 PlaceCardMoogoo3:
 	xor a
@@ -520,8 +520,8 @@ PlaceCardMoogoo3:
 	jp CardFlip_CopyToBox
 
 .Tilemap: ; e03ce
-	db $46, $47
-	db $48, $49
+	db $28, $29
+	db $2a, $2b
 	
 PlaceCardMoogoo4:
 	xor a
@@ -531,8 +531,8 @@ PlaceCardMoogoo4:
 	jp CardFlip_CopyToBox
 
 .Tilemap: ; e03ce
-	db $4a, $4b
-	db $4c, $4d
+	db $2c, $2d
+	db $2e, $2f
 	
 PlaceCardMoogoo5:
 	xor a
@@ -542,8 +542,8 @@ PlaceCardMoogoo5:
 	jp CardFlip_CopyToBox
 
 .Tilemap: ; e03ce
-	db $4e, $4f
-	db $50, $51
+	db $30, $31
+	db $32, $33
 	
 PlaceCardMoogoo6:
 	xor a
@@ -553,8 +553,8 @@ PlaceCardMoogoo6:
 	jp CardFlip_CopyToBox
 
 .Tilemap: ; e03ce
-	db $52, $53
-	db $54, $55
+	db $34, $35
+	db $36, $37
 
 CardFlip_DisplayCardFaceUp: ; e03ec
 	xor a
@@ -684,7 +684,7 @@ MoogooMankey_InitTilemap:
 	rst CopyBytes
 	
 MoogooMankey_FillGreenBox:
-	ld a, $07
+	ld a, $1f
 	jr CardFlip_FillBox
 	
 CardFlip_FillGreenBox: ; e04e5
@@ -2049,17 +2049,13 @@ _MoogooMankey:
 	ld de, VTiles2 tile $00
 	call Decompress
 	ld hl, MoogooLZ02
-	ld de, VTiles2 tile $3e
+	ld de, VTiles2 tile $20
 	call Decompress
 	ld hl, MoogooLZ03
 	ld de, VTiles0 tile $00
 	call Decompress
-	ld hl, CardFlipOffButtonGFX
-	ld de, VTiles1 tile (CARDFLIP_LIGHT_OFF - $80)
-	ld bc, 1 tiles
-	rst CopyBytes
-	ld hl, CardFlipOnButtonGFX
-	ld de, VTiles1 tile (CARDFLIP_LIGHT_ON - $80)
+	ld hl, CardFlipOffButtonGFX + 1 tiles
+	ld de, VTiles2 tile $7f
 	ld bc, 1 tiles
 	rst CopyBytes
 
@@ -3310,25 +3306,25 @@ DiscardCurPlayerCard:
 	jp CardFlip_CopyToBox
 	
 .TilemapLeft:
-	db $07, $07, $07, $08
-	db $07, $07, $07, $0b
-	db $07, $07, $07, $0b
-	db $07, $07, $07, $0b
-	db $07, $07, $07, $0d
+	db $1f, $1f, $1f, $00
+	db $1f, $1f, $1f, $03
+	db $1f, $1f, $1f, $03
+	db $1f, $1f, $1f, $03
+	db $1f, $1f, $1f, $05
 	
 .TilemapMid:
-	db $0a, $07, $07, $08
-	db $0c, $07, $07, $0b
-	db $0c, $07, $07, $0b
-	db $0c, $07, $07, $0b
-	db $0f, $07, $07, $0d
+	db $02, $1f, $1f, $00
+	db $04, $1f, $1f, $03
+	db $04, $1f, $1f, $03
+	db $04, $1f, $1f, $03
+	db $07, $1f, $1f, $05
 	
 .TilemapRight:
-	db $0a, $07, $07, $07
-	db $0c, $07, $07, $07
-	db $0c, $07, $07, $07
-	db $0c, $07, $07, $07
-	db $0f, $07, $07, $07
+	db $02, $1f, $1f, $1f
+	db $04, $1f, $1f, $1f
+	db $04, $1f, $1f, $1f
+	db $04, $1f, $1f, $1f
+	db $07, $1f, $1f, $1f
 	
 PlaceCard:
 	call PlaceCardFinish
@@ -3854,12 +3850,12 @@ MoogooCrossOutSuit:
 	
 	
 .Tilemap:
+	db $08, $09, $0a, $0b
+	db $0c, $0d, $0e, $0f	
 	db $10, $11, $12, $13
 	db $14, $15, $16, $17
-	db $18, $19, $1a, $1b
-	db $1c, $1d, $1e, $1f
-	db $07, $07, $07, $07
-	db $07, $07, $07, $07
+	db $1f, $1f, $1f, $1f
+	db $1f, $1f, $1f, $1f
 	
 DebugDrawCPUCards:
 ;Only works in Debug Mode
@@ -4571,11 +4567,11 @@ MoogooDrawEmptyCard:
 	jp CardFlip_CopyToBox
 	
 .Tilemap
-	db $72, $73, $73, $74
-	db $75, $72, $74, $76
-	db $75, $75, $76, $76
-	db $75, $77, $79, $76
-	db $77, $78, $78, $79
+	db $38, $39, $39, $3a
+	db $3b, $38, $3a, $3c
+	db $3b, $3b, $3c, $3c
+	db $3b, $3d, $3f, $3c
+	db $3d, $3e, $3e, $3f
 	
 MoogooHideCursor:
 	ldh a, [rLCDC]

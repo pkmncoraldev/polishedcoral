@@ -2407,6 +2407,10 @@ endr
 	cp 0
 	jr nz, .loop
 	
+	pop bc
+	ld a, c
+	ld [wMoogooTurn], a
+	
 	ld a, $1
 	ldh [hBGMapMode], a
 	ld c, 20
@@ -2444,12 +2448,11 @@ endr
 ;	call DebugDrawCPUCards
 	jp .Increment
 .switch_turn_back_and_loop
-	pop bc
 	push af
-	ld a, c
+	ld a, 1
 	ld [wMoogooTurn], a
 	pop af
-	jr .loop
+	jp .loop
 .Clear
 	db "                    @"
 	
@@ -2516,6 +2519,7 @@ endr
 	ld c, a
 	call DelayFrames
 .skip_cpu_random_time
+	call WaitSFX
 	call CheckWhichCard
 	call GiveNewCardHL
 	ld a, [wMoogooTurn]
@@ -2528,6 +2532,10 @@ endr
 	ld a, [wMoogooCurrentCardSuit]
 	cp 6
 	jr nz, .not_ditto
+	ld a, 1
+	ld [wPlaceBallsY], a
+	ld de, SFX_READ_TEXT
+	call PlaySFX
 .ditto_loop
 	call JoyTextDelay
 	ldh a, [hJoyLast]
@@ -3150,6 +3158,10 @@ GetRandomSuit:
 	ld a, [wMoogooTurn]	;only the player can get a ditto card
 	cp 0
 	jr nz, .loop
+	ld a, 3		;less likely than a normal suit
+	call RandomRange
+	cp 0
+	jr nz, .loop
 	ld a, 6
 	pop hl
 	ret
@@ -3226,21 +3238,13 @@ CheckWhichCard:
 	ld a, [wPlaceBallsY]
 	jr .loop
 .CPU2Turn
-	call ResetAIBuffer
-;	call PlaceCardAI
-;	call MoogooCompareAIBuffers
-	ld a, 5										;TODO: Card AI. Currently random.
-	call RandomRange							;TODO: Card AI. Currently random.
-	inc a										;TODO: Card AI. Currently random.
+	call PlaceCardAI
+	call MoogooCompareAIBuffers
 	ld hl, wMoogooCPU2Card1Suit - 2
 	jr .loop
 .CPU1Turn
-	call ResetAIBuffer
-;	call PlaceCardAI
-;	call MoogooCompareAIBuffers
-	ld a, 5										;TODO: Card AI. Currently random.
-	call RandomRange							;TODO: Card AI. Currently random.
-	inc a										;TODO: Card AI. Currently random.
+	call PlaceCardAI
+	call MoogooCompareAIBuffers
 	ld hl, wMoogooCPU1Card1Suit - 2
 .loop
 	inc hl
@@ -3858,9 +3862,16 @@ MoogooCrossOutSuit:
 	db $07, $07, $07, $07
 	
 DebugDrawCPUCards:
+;Only works in Debug Mode
 	ld a, [wOptions1]
 	bit DEBUG_MODE, a
 	ret z
+	
+	hlcoord 0, 3	;ai mode
+	ld a, c
+	call DebugGetAIModeLetter
+	ld [hl], a
+	
 	hlcoord 0, 1
 	ld [hl], "1"
 	hlcoord 2, 1
@@ -4028,11 +4039,15 @@ ResetAIBuffer:
 	
 PlaceBetAI:
 ;CPU Players place chips using a scoring system that takes into account
-;amount of chips they have on a suit and the value of any cards in their
-;hand that match the suit. A random value between 0 and 1 is applied as well.
+;whether a suir is empty, the amount of chips they have on a suit, and
+;the value of any cards in their hand that match the suit. 
+;A random value between 0 and 1 is applied as well.
 ;Any score on a suit that can't be bet on anymore is reduced to 0.
 	call ResetAIBuffer
 	call DebugDrawCPUCards
+	call ConsiderEmptySuits
+	call DebugDrawCPUCards
+	call GetCurCPUChips
 	call ConsiderCurCPUChips
 	call DebugDrawCPUCards
 	call ConsiderCardValuesInHand
@@ -4040,24 +4055,258 @@ PlaceBetAI:
 	call MoogooAIApplyRandomness
 	call DebugDrawCPUCards
 	call CheckCanBetOnSuit
+	jp DebugDrawCPUCards
+	
+PlaceCardAI:
+;CPU Players place cards using a scoring system with 2 different modes.
+;They randomly decide to enter either the attack of defense mode.
+;In the attack mode, they pick a target suit based on how many chips
+;are on the suit that aren't their color.
+;In the defense mode, they consider how many chips of their color are
+;on a suit instead.
+;Once they have their target suit, the consider the cards in their hand.
+;In attack mode they look for a card lower than the current card on the
+;target suit, and in the defense mode they look for a card higher than
+;the current card.
+;If they come to a tied conclusion in attack mode, then they
+;switch to defense mode.
+;If they come to a tied conclusion in defense mode, they pick a suit
+;at random.
+	ld a, 2
+	call RandomRange
+	inc a
+	ld [wMoogooAIMode], a
+.got_ai_mode
+	cp 2
+	jr z, .atk
+	cp 1
+	jr z, .def
+.finish
+	xor a
+	ld [wMoogooAIMode], a
+	jp DebugDrawCPUCards
+.atk
+	call ResetAIBuffer
 	call DebugDrawCPUCards
+	call MoogooCPUPickAttackTarget
+	call DebugDrawCPUCards
+	jr .loop
+.def
+	call ResetAIBuffer
+	call DebugDrawCPUCards
+	call GetCurCPUChips
+	call ConsiderCurCPUChips
+	call DebugDrawCPUCards
+.loop
+	call MoogooCompareAIBuffers
+	ld [wPlaceBallsY], a
+	call CheckCurBufferHasScore
+	jr c, .change_ai_mode
+	call DebugDrawCPUCards
+	call ConsiderChosenSuitValueInPlay
+	jr c, .finish
+	call DebugDrawCPUCards
+	jr .loop
+.change_ai_mode
+	ld a, [wMoogooAIMode]
+	dec a
+	ld [wMoogooAIMode], a
+	jr .got_ai_mode
+	
+MoogooCPUPickAttackTarget:
+	call GetCurCPUChips
+	ld de, wBuffer1
+	ld b, 1
+	ld a, b
+.loop
+	push bc
+	push hl
+	call CheckTotalPointofSuitA
+	pop hl
+	ld c, a
+	ld a, [de]
+	add c
+;	ld [de], a
+	ld c, [hl]
+	sla c
+;	ld a, [de]
+	sub c
+	ld [de], a
+	inc hl
+	inc hl
+	inc hl
+	inc de
+	pop bc
+	inc b
+	ld a, b
+	cp 6
+	jr nz, .loop
 	ret
 	
-ConsiderCurCPUChips:
+
+	ld a, [wMoogooTurn]
+	ld c, a
+	ld a, 3
+	call RandomRange
+	cp c
+	jr z, MoogooCPUPickAttackTarget
+	cp 0
+	jr z, .player
+	cp 1
+	jr z, .cpu1
+;.cpu2
+	ld hl, wMoogooCard1ChipsC
+	ret
+.cpu1
+	ld hl, wMoogooCard1ChipsB
+	ret
+.player
+	ld hl, wMoogooCard1ChipsA
+	ret
+	
+MoogooGetABuffer:
+	ld hl, wBuffer1
+	push af
+.loop
+	pop af
+	dec a
+	cp 0
+	ret z
+	push af
+	ld a, [hli]
+	jr .loop
+	
+CheckCurBufferHasScore:
+	ld a, [wPlaceBallsY]
+	call MoogooGetABuffer
+	ld a, [hl]
+	sub 10
+	and a
+	jr z, .abandon_def_start_attack
+	xor a
+	ret
+.abandon_def_start_attack
+	scf
+	ret
+	
+ConsiderChosenSuitValueInPlay:
+	ld a, [wPlaceBallsY]
+	ld hl, wMoogooCard1Value
+	push af
+.loop1
+	pop af
+	dec a
+	cp 0
+	push af
+	ld a, [hli]
+	jr nz, .loop1
+	pop hl
+	cp 0
+	jr nz, .not_blank
+	ld a, 3		;a blank suit registers as a value of 3
+.not_blank
+	push af
+	ld b, 0
+	ld a, [wMoogooTurn]
+	cp 2
+	jr z, .cpu2
+;.cpu1
+	ld hl, wMoogooCPU1Card1Suit
+	jr .loop2
+.cpu2
+	ld hl, wMoogooCPU2Card1Suit
+.loop2
+	inc b
+	ld a, b
+	cp 6
+	jr z, .none
+	ld a, [hli]
+	ld c, a
+	ld a, [wPlaceBallsY]
+	cp c
+	jr z, .same_suit
+	inc hl
+	jr .loop2
+.same_suit
+	ld a, [wMoogooAIMode]
+	cp 2		;attack mode
+	jr z, .look_for_lower
+	ld a, [hli]
+	ld c, a
+	pop af
+	cp c
+	jr c, .found_goal
+	push af
+	jr .loop2
+.look_for_lower
+	ld a, [hli]
+	ld c, a
+	pop af
+	dec a
+	cp c
+	jr nc, .found_goal
+	push af
+	jr .loop2
+.found_goal
+	ld a, b
+	call MoogooGetABuffer
+	ld a, [hl]
+	add 10
+	ld [hl], a
+	scf
+	ret
+.none
+	pop af
+	ld a, [wPlaceBallsY]
+	call MoogooGetABuffer
+	ld a, 10
+	ld [hl], a
+	xor a
+	ret
+	
+ConsiderEmptySuits:
 	ld de, wBuffer1
-	ld c, 5
+	ld b, 1
+	ld a, b
+.loop
+	push bc
+	call CheckTotalPointofSuitA
+	pop bc
+	cp 0
+	call z, .boost
+	inc de
+	inc b
+	ld a, b
+	cp 6
+	jr nz, .loop
+	ret
+	
+.boost
+	ld a, [de]
+	inc a
+	ld [de], a
+	ret
+	
+	
+GetCurCPUChips:
 	ld a, [wMoogooTurn]
 	cp 2
 	jr z, .cpu2
 ;.cpu1
 	ld hl, wMoogooCard1ChipsB
-	jr .got_cpu_loop
+	ret
 .cpu2
 	ld hl, wMoogooCard1ChipsC
-.got_cpu_loop	
+	ret
+	
+ConsiderCurCPUChips:
+	ld de, wBuffer1
+	ld c, 5
+.loop	
 	ld a, [hli]
 	cp 1
 	jr z, .skip_halve
+	inc a
 	srl a
 .skip_halve
 	inc hl
@@ -4071,7 +4320,7 @@ ConsiderCurCPUChips:
 	dec a
 	ld c, a
 	cp 0
-	jr nz, .got_cpu_loop
+	jr nz, .loop
 	ret
 	
 ConsiderCardValuesInPlay:
@@ -4200,8 +4449,8 @@ MoogooCompareAIBuffers:
 	jr z, .both_same
 	jr nc, .second_bigger
 .first_bigger
-	xor a
-	ld [hl], a
+;	xor a
+;	ld [hl], a
 	inc hl
 	ld a, c
 	dec a
@@ -4215,8 +4464,8 @@ MoogooCompareAIBuffers:
 	jr z, .first_bigger
 ;fallthru
 .second_bigger
-	xor a
-	ld [de], a
+;	xor a
+;	ld [de], a
 	ld d, h
 	ld e, l
 	inc hl
@@ -4272,6 +4521,20 @@ MoogooCursorPorpertiesLoop:
 	jr nz, MoogooCursorPorpertiesLoop
 	ret
 
+DebugGetAIModeLetter:
+	ld a, [wMoogooAIMode]
+	cp 2
+	jr z, .a
+	cp 1
+	jr z, .d
+	ld a, "-"
+	ret
+.a
+	ld a, "a"
+	ret
+.d
+	ld a, "d"
+	ret
 
 DebugGetSuitLetter:
 	cp 1

@@ -2112,7 +2112,8 @@ _MoogooMankey:
 	call PlaceString
 	ld de, SFX_QUIT_SLOTS
 	call PlaySFX
-	call DelayFrame
+	ld c, 110
+	call DelayFrames
 	ld hl, wMoogooPlayerScore
 	call CheckIfYouWon
 	cp 0
@@ -4241,6 +4242,7 @@ ConsiderChosenSuitValueInPlay:
 	dec a
 	cp c
 	jr nc, .found_goal
+	inc a
 	push af
 	jr .loop2
 .found_goal
@@ -4589,7 +4591,6 @@ CheckIfYouWon:
 	ld a, [hli]
 	cp [hl]
 	jr c, .lost
-	jr z, .tie
 	inc hl
 	cp [hl]
 	jr c, .lost

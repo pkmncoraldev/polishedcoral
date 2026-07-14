@@ -124,7 +124,7 @@
 	db 10 percent ; encounter rate
 	db 43, POLIWHIRL	;30%
 	db 43, QUAGSIRE		;30%
-	db 43, FLITTLE		;20%
+	db 43, MARILL		;20%
 	db 43, MARILL		;10%
 	db 43, AZUMARILL	;5%
 	db 43, AZUMARILL	;4%

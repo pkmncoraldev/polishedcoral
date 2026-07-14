@@ -158,7 +158,7 @@ RiverRapidsDisplayScore:
 	hlcoord 1, 10
 	ld de, .GoodString
 	call PlaceString
-	hlcoord 6, 10
+	hlcoord 5, 10
 	lb bc, 1, 1
 	ld de, wMoogooCard2Value	;good value
 	ld a, [de]
@@ -174,7 +174,7 @@ RiverRapidsDisplayScore:
 	hlcoord 9, 8
 	ld de, .GreatString
 	call PlaceString
-	hlcoord 15, 8
+	hlcoord 14, 8
 	lb bc, 1, 1
 	ld de, wMoogooCard3Value	;great value
 	ld a, [de]
@@ -225,8 +225,12 @@ RiverRapidsDisplayScore:
 	ld de, wRiverRapidsRecordCentiseconds
 	call PrintNum
 	ld a, [wRiverRapidsScoreMinutes]
-	cp 1
+	cp 0
+	jr nz, .lost
+	ld a, [wRiverRapidsScoreSeconds]
+	cp 45
 	jr c, .goal
+.lost
 	call RiverRapidsDisplayScoreSfx
 	ld a, 1
 	ld [wAlways0Trigger], a
@@ -265,10 +269,10 @@ RiverRapidsDisplayScore:
 	db "MISS×@"
 	
 .GoodString
-	db "GOOD×@"
+	db "BAD×@"
 	
 .GreatString
-	db "GREAT×@"
+	db "GOOD×@"
 	
 .PerfectString
 	db "PERFECT×@"
@@ -478,7 +482,7 @@ RiverRapidsRockDown:
 	
 RiverRapidMiss:
 	playsound SFX_EGG_BOMB
-	earthquake 50
+	earthquake 100
 	thisasm
 	ld a, [wMoogooCard1Value]
 	cp $a
@@ -489,7 +493,7 @@ RiverRapidMiss:
 	
 RiverRapidsGood:
 	playsound SFX_RAZOR_WIND
-	earthquake 6
+	earthquake 25
 	thisasm
 	ld a, [wMoogooCard2Value]
 	cp $a

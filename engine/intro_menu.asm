@@ -250,9 +250,10 @@ endr
 	ld [wRoamMon2Species], a
 	ld [wRoamMon3Species], a
 	
+	ld a, 45
 	ld [wRiverRapidsRecordSeconds], a
+	xor a
 	ld [wRiverRapidsRecordCentiseconds], a
-	ld a, 1
 	ld [wRiverRapidsRecordMinutes], a
 
 DEF START_ITEM_TRIGGER_BALANCE EQU 2300

@@ -68,6 +68,7 @@ RiverRapidsHouseNewRecord:
 	setevent EVENT_TM53
 	changetextboxspeaker TEXTBOX_LAKE
 	writetext RiverRapidsHouseLadyText13
+	waitbutton
 	farwritetext StdBlankText
 	pause 6
 .cont
@@ -276,7 +277,7 @@ RiverRapidsHouseLadyText1_8:
 	cont "friends here."
 	
 	para "If you can win in"
-	line "under a minute,"
+	line "under 45 seconds,"
 	cont "I'll give you a"
 	cont "little treasure."
 	
@@ -292,7 +293,7 @@ RiverRapidsHouseLadyText2:
 	line "play my game?"
 	
 	para "If you can win in"
-	line "under a minute,"
+	line "under 45 seconds,"
 	cont "I'll give you a"
 	cont "little treasure."
 	
@@ -372,7 +373,7 @@ RiverRapidsHouseLadyText8:
 	line "BREEZE."
 	
 	para "You took longer"
-	line "than a minute."
+	line "than 45 seconds."
 	
 	para "You can always try"
 	line "again if you like."
@@ -381,8 +382,8 @@ RiverRapidsHouseLadyText8:
 RiverRapidsHouseLadyText9:
 	text "Ahhh!"
 	
-	para "You got under a"
-	line "minute again!"
+	para "You got under"
+	line "45 seconds again!"
 	
 	para "Good job little,"
 	line "BREEZE."

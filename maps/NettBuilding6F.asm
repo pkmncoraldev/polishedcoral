@@ -19,15 +19,14 @@ NettBuilding6F_MapScriptHeader:
 	db 1 ; bg events
 	signpost  0, 19, SIGNPOST_JUMPTEXT, NettBuilding6FSignText
 
-	db 4 ; object events
+	db 3 ; object events
 	itemball_event 11,  4, KEY_CARD_R, 1, EVENT_GOT_RED_KEY_CARD
 	person_event SPRITE_SNARE,  8,  3, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 1, TrainerNettBuilding6F_1, -1
 	person_event SPRITE_SNARE_GIRL, 15,  7, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 1, TrainerNettBuilding6F_2, -1
-	person_event SPRITE_SNARE,  1,  9, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 1, TrainerNettBuilding6F_3, -1
-	
+		
 	
 TrainerNettBuilding6F_1:
-	generictrainer GRUNTM, NETT_GRUNTM_12, EVENT_BEAT_NETT_BUILDING_TRAINER_19, .SeenText, .BeatenText
+	generictrainer GRUNTM, NETT_GRUNTM_10, EVENT_BEAT_NETT_BUILDING_TRAINER_17, .SeenText, .BeatenText
 
 	text "NORMAL TEXT"
 	done
@@ -41,21 +40,7 @@ TrainerNettBuilding6F_1:
 	done
 	
 TrainerNettBuilding6F_2:
-	generictrainer GRUNTM, NETT_GRUNTM_13, EVENT_BEAT_NETT_BUILDING_TRAINER_20, .SeenText, .BeatenText
-
-	text "NORMAL TEXT"
-	done
-
-.SeenText:
-	text "SEEN TEXT"
-	done
-
-.BeatenText:
-	text "YOU WIN"
-	done
-	
-TrainerNettBuilding6F_3:
-	generictrainer GRUNTM, NETT_GRUNTM_14, EVENT_BEAT_NETT_BUILDING_TRAINER_21, .SeenText, .BeatenText
+	generictrainer GRUNTM, NETT_GRUNTM_11, EVENT_BEAT_NETT_BUILDING_TRAINER_18, .SeenText, .BeatenText
 
 	text "NORMAL TEXT"
 	done

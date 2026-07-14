@@ -38,7 +38,7 @@ NettBuildingSpinnerRoom_MapScriptHeader:
 	person_event SPRITE_SPINNER, 13, 28, SPRITEMOVEDATA_TILE_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
 	person_event SPRITE_SPINNER, 13, 29, SPRITEMOVEDATA_TILE_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
 	person_event SPRITE_SPINNER, 12, 12, SPRITEMOVEDATA_TILE_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
-	itemball_event  6, 20, EMPLOYEE_ID, 1, EVENT_GOT_EMPLOYEE_ID
+	itemball_event  6, 18, EMPLOYEE_ID, 1, EVENT_GOT_EMPLOYEE_ID
 	
 	
 NettBuildingSpinnerRoomTeleporter1:

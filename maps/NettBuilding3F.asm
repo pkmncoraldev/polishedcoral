@@ -37,7 +37,7 @@ NettBuilding3FCallback:
 	return
 
 TrainerNettBuilding3F_1:
-	generictrainer GRUNTM, NETT_GRUNTM_4, EVENT_BEAT_NETT_BUILDING_TRAINER_5, .SeenText, .BeatenText
+	generictrainer GRUNTM, NETT_GRUNTM_2, EVENT_BEAT_NETT_BUILDING_TRAINER_3, .SeenText, .BeatenText
 
 	text "NORMAL TEXT"
 	done
@@ -51,7 +51,7 @@ TrainerNettBuilding3F_1:
 	done
 	
 TrainerNettBuilding3F_2:
-	generictrainer GRUNTM, NETT_GRUNTM_5, EVENT_BEAT_NETT_BUILDING_TRAINER_6, .SeenText, .BeatenText
+	generictrainer GRUNTM, NETT_GRUNTM_3, EVENT_BEAT_NETT_BUILDING_TRAINER_4, .SeenText, .BeatenText
 
 	text "NORMAL TEXT"
 	done
@@ -65,7 +65,7 @@ TrainerNettBuilding3F_2:
 	done
 	
 TrainerNettBuilding3F_3:
-	generictrainer GRUNTM, NETT_GRUNTM_6, EVENT_BEAT_NETT_BUILDING_TRAINER_7, .SeenText, .BeatenText
+	generictrainer GRUNTM, NETT_GRUNTM_4, EVENT_BEAT_NETT_BUILDING_TRAINER_5, .SeenText, .BeatenText
 
 	text "NORMAL TEXT"
 	done
@@ -79,7 +79,7 @@ TrainerNettBuilding3F_3:
 	done
 	
 TrainerNettBuilding3F_4:
-	generictrainer GRUNTM, NETT_GRUNTM_7, EVENT_BEAT_NETT_BUILDING_TRAINER_8, .SeenText, .BeatenText
+	generictrainer GRUNTM, NETT_GRUNTM_5, EVENT_BEAT_NETT_BUILDING_TRAINER_6, .SeenText, .BeatenText
 
 	text "NORMAL TEXT"
 	done
@@ -93,7 +93,7 @@ TrainerNettBuilding3F_4:
 	done
 	
 TrainerNettBuilding3F_5:
-	generictrainer GRUNTF, NETT_GRUNTF_2, EVENT_BEAT_NETT_BUILDING_TRAINER_9, .SeenText, .BeatenText
+	generictrainer GRUNTF, NETT_GRUNTF_2, EVENT_BEAT_NETT_BUILDING_TRAINER_7, .SeenText, .BeatenText
 
 	text "NORMAL TEXT"
 	done

@@ -55,7 +55,7 @@ NettBuilding5F_MapScriptHeader:
 	person_event SPRITE_SLOWPOKETAIL,  7, 16, SPRITEMOVEDATA_TILE_UP_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, 0, -1
 	person_event SPRITE_SLOWPOKETAIL,  7, 20, SPRITEMOVEDATA_TILE_UP_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, 0, -1
 	person_event SPRITE_SNARE,  7,  4, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 3, TrainerNettBuilding5F_1, -1
-	person_event SPRITE_SNARE, 13,  2, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 5, TrainerNettBuilding5F_2, -1
+	person_event SPRITE_SNARE, 13,  3, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 5, TrainerNettBuilding5F_2, -1
 	person_event SPRITE_SNARE_GIRL, 11, 12, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 5, TrainerNettBuilding5F_3, -1
 	person_event SPRITE_SNARE,  4, 10, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 1, TrainerNettBuilding5F_4, -1
 	person_event SPRITE_SNARE_GIRL,  1,  6, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 3, TrainerNettBuilding5F_5, -1
@@ -63,7 +63,7 @@ NettBuilding5F_MapScriptHeader:
 
 
 TrainerNettBuilding5F_1:
-	generictrainer GRUNTM, NETT_GRUNTM_8, EVENT_BEAT_NETT_BUILDING_TRAINER_13, .SeenText, .BeatenText
+	generictrainer GRUNTM, NETT_GRUNTM_6, EVENT_BEAT_NETT_BUILDING_TRAINER_11, .SeenText, .BeatenText
 
 	text "NORMAL TEXT"
 	done
@@ -77,7 +77,7 @@ TrainerNettBuilding5F_1:
 	done
 
 TrainerNettBuilding5F_2:
-	generictrainer GRUNTM, NETT_GRUNTM_9, EVENT_BEAT_NETT_BUILDING_TRAINER_14, .SeenText, .BeatenText
+	generictrainer GRUNTM, NETT_GRUNTM_7, EVENT_BEAT_NETT_BUILDING_TRAINER_12, .SeenText, .BeatenText
 
 	text "NORMAL TEXT"
 	done
@@ -91,7 +91,7 @@ TrainerNettBuilding5F_2:
 	done
 
 TrainerNettBuilding5F_3:
-	generictrainer GRUNTF, SHAUNA, EVENT_BEAT_NETT_BUILDING_TRAINER_15, .SeenText, .BeatenText
+	generictrainer GRUNTF, NETT_GRUNTF_6, EVENT_BEAT_NETT_BUILDING_TRAINER_13, .SeenText, .BeatenText
 
 	text "NORMAL TEXT"
 	done
@@ -105,7 +105,7 @@ TrainerNettBuilding5F_3:
 	done
 
 TrainerNettBuilding5F_4:
-	generictrainer GRUNTM, NETT_GRUNTM_10, EVENT_BEAT_NETT_BUILDING_TRAINER_16, .SeenText, .BeatenText
+	generictrainer GRUNTM, NETT_GRUNTM_8, EVENT_BEAT_NETT_BUILDING_TRAINER_14, .SeenText, .BeatenText
 
 	text "NORMAL TEXT"
 	done
@@ -119,7 +119,7 @@ TrainerNettBuilding5F_4:
 	done
 
 TrainerNettBuilding5F_5:
-	generictrainer GRUNTF, NETT_GRUNTF_6, EVENT_BEAT_NETT_BUILDING_TRAINER_17, .SeenText, .BeatenText
+	generictrainer GRUNTF, NETT_GRUNTF_7, EVENT_BEAT_NETT_BUILDING_TRAINER_15, .SeenText, .BeatenText
 
 	text "NORMAL TEXT"
 	done
@@ -133,7 +133,7 @@ TrainerNettBuilding5F_5:
 	done
 	
 TrainerNettBuilding5F_6:
-	generictrainer GRUNTM, NETT_GRUNTM_11, EVENT_BEAT_NETT_BUILDING_TRAINER_18, .SeenText, .BeatenText
+	generictrainer GRUNTM, NETT_GRUNTM_9, EVENT_BEAT_NETT_BUILDING_TRAINER_16, .SeenText, .BeatenText
 
 	text "NORMAL TEXT"
 	done

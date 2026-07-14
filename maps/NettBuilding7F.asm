@@ -36,7 +36,7 @@ NettBuilding7FCallback:
 	return
 
 TrainerNettBuilding7F:
-	generictrainer GRUNTM, NETT_GRUNTM_15, EVENT_BEAT_NETT_BUILDING_TRAINER_22, .SeenText, .BeatenText
+	generictrainer GRUNTM, NETT_GRUNTM_12, EVENT_BEAT_NETT_BUILDING_TRAINER_19, .SeenText, .BeatenText
 
 	text "You have to find"
 	line "a way to get over"
@@ -73,12 +73,12 @@ NettBuilding7FBarrierText:
 
 NettBuilding7FCardReader:
 	opentext
+.return
 	playsound SFX_CHOOSE_PC_OPTION
 	checkevent EVENT_NETT_BARRIER_DOWN
 	iftrue .down
 	writetext NettBuilding7FCardReaderText1
 	waitbutton
-.return
 	checkitem KEY_CARD_R
 	iftrue .red
 	checkitem KEY_CARD_B

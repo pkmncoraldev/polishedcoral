@@ -29,7 +29,7 @@ NettBuilding4F_MapScriptHeader:
 	person_event SPRITE_SNARE_GIRL, 12, 10, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 3, TrainerNettBuilding4F_3, -1
 
 TrainerNettBuilding4F_1:
-	generictrainer GRUNTF, NETT_GRUNTF_3, EVENT_BEAT_NETT_BUILDING_TRAINER_10, .SeenText, .BeatenText
+	generictrainer GRUNTF, NETT_GRUNTF_3, EVENT_BEAT_NETT_BUILDING_TRAINER_8, .SeenText, .BeatenText
 
 	text "NORMAL TEXT"
 	done
@@ -43,7 +43,7 @@ TrainerNettBuilding4F_1:
 	done
 	
 TrainerNettBuilding4F_2:
-	generictrainer GRUNTF, NETT_GRUNTF_4, EVENT_BEAT_NETT_BUILDING_TRAINER_11, .SeenText, .BeatenText
+	generictrainer GRUNTF, NETT_GRUNTF_4, EVENT_BEAT_NETT_BUILDING_TRAINER_9, .SeenText, .BeatenText
 
 	text "NORMAL TEXT"
 	done
@@ -57,7 +57,7 @@ TrainerNettBuilding4F_2:
 	done
 	
 TrainerNettBuilding4F_3:
-	generictrainer GRUNTF, NETT_GRUNTF_5, EVENT_BEAT_NETT_BUILDING_TRAINER_12, .SeenText, .BeatenText
+	generictrainer GRUNTF, NETT_GRUNTF_5, EVENT_BEAT_NETT_BUILDING_TRAINER_10, .SeenText, .BeatenText
 
 	text "NORMAL TEXT"
 	done

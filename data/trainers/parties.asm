@@ -2382,31 +2382,6 @@ GruntMGroup:
 	db -1 ; end
 	
 ; ================
-
-	; NETT_GRUNTM_13
-	db "GRUNT@"
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
-	db -1 ; end
-	
-; ================
-
-	; NETT_GRUNTM_14
-	db "GRUNT@"
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
-	db -1 ; end
-	
-; ================
-
-	; NETT_GRUNTM_15
-	db "GRUNT@"
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
-	db -1 ; end
 ; ================================
 
 
@@ -2579,6 +2554,14 @@ GruntFGroup:
 ; ================
 
 	; NETT_GRUNTF_6
+	db "GRUNT@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+; ================
+
+	; NETT_GRUNTF_7
 	db "GRUNT@"
 	db TRAINERTYPE_NORMAL
 	; party

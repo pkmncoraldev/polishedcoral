@@ -327,7 +327,7 @@ NettBuildingTopFloorKageText3:
 	text "HOW DO YOU KEEP"
 	line "DOING THIS!?"
 	
-	para "I JUST TO STOMP"
+	para "JUST LET ME STOMP"
 	line "YOU INTO THE DIRT,"
 	cont "YOU LITTLE WHELP!"
 	done

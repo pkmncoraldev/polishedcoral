@@ -309,3 +309,56 @@ MainMenu_Continue: ; 49eee
 
 ;MainMenu_MusicPlayer:
 ;	farjp MusicPlayer
+
+NettBuildingOfficeClockAsm::
+	ld a, [wInitHourBuffer]
+	push af
+	hlcoord 3, 8
+	lb bc, 2, 15
+	call TextBox
+	call ApplyTilemap
+	hlcoord 11, 8
+	ld [hl], "▲"
+	hlcoord 11, 11
+	ld [hl], "▼"
+	hlcoord 4, 10
+	push hl
+	ld a, 0
+	ld [wInitHourBuffer], a
+	ld c, a
+	ld e, l
+	ld d, h
+	farcall PrintHour
+	inc hl
+	ld de, NettBuildingOfficeString_oclock
+	call PlaceString
+	pop hl
+	ld c, 10
+	call DelayFrames
+
+.SetHourLoop:
+	call JoyTextDelay
+	farcall SetHour
+	jr nc, .SetHourLoop
+	ld a, [wInitHourBuffer]
+	cp 12
+	jr c, .skip
+	sub 12
+.skip
+	ld c, a
+	ld a, [wNettBuildingOfficeTrigger]
+	add c
+	ld [wNettBuildingOfficeTrigger], a
+	pop af
+	ld [wInitHourBuffer], a
+	ret
+	
+NettBuildingOfficeClockMenuDataHeader:
+	db $40 ; flags
+	db 3, 8 ; start coords
+	db 11, 19 ; end coords
+	dw NULL
+	db 1 ; default option
+	
+NettBuildingOfficeString_oclock:
+	db "o'clock@"

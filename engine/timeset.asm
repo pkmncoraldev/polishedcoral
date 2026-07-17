@@ -48,14 +48,14 @@ endc
 .loop
 	ld hl, Text_WhatTimeIsIt
 	call PrintText
-	hlcoord 3, 7
+	hlcoord 3, 8
 	lb bc, 2, 15
 	call TextBox
-	hlcoord 11, 7
+	hlcoord 11, 8
 	ld [hl], "▲"
-	hlcoord 11, 10
+	hlcoord 11, 11
 	ld [hl], "▼"
-	hlcoord 4, 9
+	hlcoord 4, 10
 	call DisplayHourOClock
 	ld c, 10
 	call DelayFrames
@@ -78,14 +78,14 @@ endc
 .HourIsSet:
 	ld hl, Text_HowManyMinutes
 	call PrintText
-	hlcoord 11, 7
+	hlcoord 11, 8
 	lb bc, 2, 7
 	call TextBox
-	hlcoord 15, 7
+	hlcoord 15, 8
 	ld [hl], "▲"
-	hlcoord 15, 10
+	hlcoord 15, 11
 	ld [hl], "▼"
-	hlcoord 12, 9
+	hlcoord 12, 10
 	call DisplayMinutesWithMinString
 	ld c, 10
 	call DelayFrames
@@ -125,7 +125,7 @@ endc
 	ldh [hBGMapMode], a
 	ret
 
-SetHour: ; 90795 (24:4795)
+SetHour:: ; 90795 (24:4795)
 	ldh a, [hJoyPressed]
 	and A_BUTTON
 	jr nz, .Confirm
@@ -163,11 +163,11 @@ SetHour: ; 90795 (24:4795)
 	ld [hl], a
 
 .okay
-	hlcoord 4, 9
+	hlcoord 4, 10
 	ld a, " "
 	ld bc, 15
 	call ByteFill
-	hlcoord 4, 9
+	hlcoord 4, 10
 	call DisplayHourOClock
 	call ApplyTilemapInVBlank
 	and a
@@ -227,11 +227,11 @@ SetMinutes: ; 90810 (24:4810)
 	inc a
 	ld [hl], a
 .finish_dpad
-	hlcoord 12, 9
+	hlcoord 12, 10
 	ld a, " "
 	ld bc, 7
 	call ByteFill
-	hlcoord 12, 9
+	hlcoord 12, 10
 	call DisplayMinutesWithMinString
 	call ApplyTilemapInVBlank
 	and a
@@ -586,6 +586,9 @@ PrintHour: ; 90b3e (24:4b3e)
 	jp PrintTwoDigitNumberRightAlign
 
 GetTimeOfDayString: ; 90b58 (24:4b58)
+	ld a, [wMapGroup]
+	cp GROUP_NETT_BUILDING_OFFICE
+	jr z, .none
 	ld a, c
 	cp MORN_HOUR
 	jr c, .nite
@@ -607,13 +610,15 @@ GetTimeOfDayString: ; 90b58 (24:4b58)
 .dusk
 	ld de, .DUSK
 	ret
-; 90b71 (24:4b71)
+.none
+	ld de, .NONE
+	ret
 
 .NITE: db "NITE@"
 .MORN: db "MORN@"
 .DAY: db "DAY@"
 .DUSK: db "DUSK@"
-; 90b7f
+.NONE: db " @"
 
 AdjustHourForAMorPM:
 ; Convert the hour stored in c (0-23) to a 1-12 value

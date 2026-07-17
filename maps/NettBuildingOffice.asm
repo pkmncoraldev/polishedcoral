@@ -15,11 +15,10 @@ NettBuildingOffice_MapScriptHeader:
 	coord_event  5,  8, 1, NettBuildingOfficeNettCutsceneL
 	coord_event  6,  8, 1, NettBuildingOfficeNettCutsceneR
 
-	db 11 ; bg events
+	db 10 ; bg events
 	signpost  4,  6, SIGNPOST_READ, NettBuildingOfficeNewton
 	signpost  5,  5, SIGNPOST_READ, NettBuildingOfficeNett
-	signpost  2,  0, SIGNPOST_READ, NettBuildingOfficeBookshelf
-	signpost  2,  1, SIGNPOST_READ, NettBuildingOfficeBookshelf
+	signpost  2,  1, SIGNPOST_UP, NettBuildingOfficeBookshelf
 	signpost  8,  9, SIGNPOST_READ, NettBuildingOfficeStatue
 	signpost  9,  9, SIGNPOST_READ, NettBuildingOfficeStatue
 	signpost  2,  9, SIGNPOST_READ, NettBuildingOfficeClock
@@ -172,7 +171,88 @@ NettBuildingOfficeSetUpSpruceBirdCall:
 	ret
 	
 NettBuildingOfficeClock:
+	checkevent EVENT_NETT_BUILDING_DUNGEON
+	iffalse .nett_in_room
+	opentext
+	writetext NettBuildingOfficeClockText
+	buttonsound
+	farwritetext StdBlankText
+	pause 6
+	scall GetNettOfficeClockTime
+	buttonsound
+	farwritetext StdBlankText
+	pause 6
+	writetext NettBuildingOfficeClockTextMove
+	yesorno
+	iffalse .no
+	dotrigger $4
+	writetext NettBuildingOfficeClockTextWhatTime
+	callasm NettBuildingOfficeClockAsm
+	closetext
+	pause 10
+	opentext
+	scall GetNettOfficeClockTime
+	waitbutton
+.no
+	closetext
+	end
+.nett_in_room
 	jumptext NettBuildingOfficeClockText
+	
+GetNettOfficeClockTime:
+	callasm GetNettOfficeClockTimeAsm
+	if_equal 1, .one
+	if_equal 2, .two
+	if_equal 3, .three
+	if_equal 4, .four
+	if_equal 5, .five
+	if_equal 6, .six
+	if_equal 7, .seven
+	if_equal 8, .eight
+	if_equal 9, .nine
+	if_equal 10, .ten
+	if_equal 11, .eleven
+	writetext NettBuildingOfficeClockText12
+	end
+.eleven
+	writetext NettBuildingOfficeClockText11
+	end
+.ten
+	writetext NettBuildingOfficeClockText10
+	end
+.nine
+	writetext NettBuildingOfficeClockText9
+	end
+.eight
+	writetext NettBuildingOfficeClockText8
+	end
+.seven
+	writetext NettBuildingOfficeClockText7
+	end
+.six
+	writetext NettBuildingOfficeClockText6
+	end
+.five
+	writetext NettBuildingOfficeClockText5
+	end
+.four
+	writetext NettBuildingOfficeClockText4
+	end
+.three
+	writetext NettBuildingOfficeClockText3
+	end
+.two
+	writetext NettBuildingOfficeClockText2
+	end
+.one
+	writetext NettBuildingOfficeClockText1
+	end
+		
+GetNettOfficeClockTimeAsm:
+	ld a, [wNettBuildingOfficeTrigger]
+	sub 4
+	ld [wScriptVar], a
+	ret
 	
 NettBuildingOfficeRoseBushes:
 	jumptext NettBuildingOfficeRoseBushesText
@@ -181,7 +261,23 @@ NettBuildingOfficeStatue:
 	jumptext NettBuildingOfficeStatueText
 	
 NettBuildingOfficeBookshelf:
+	checkevent EVENT_NETT_BUILDING_DUNGEON
+	iffalse .nett_in_room
 	jumptext NettBuildingOfficeBookshelfText
+.nett_in_room
+	pause 5
+	spriteface NETT_OFFICE_NETT, LEFT
+	changeblock $4, $2, $af
+	callasm GenericFinishBridge
+	opentext TEXTBOX_ELI
+	writetext NettBuildingOfficeBookshelfText2
+	waitbutton
+	closetext
+	changeblock $4, $2, $ad
+	spriteface NETT_OFFICE_NETT, DOWN
+	callasm GenericFinishBridge
+	closetext
+	end
 	
 NettBuildingOfficeTrophySilver:
 	jumptext NettBuildingOfficeTrophySilverText
@@ -201,10 +297,12 @@ NettBuildingOfficeNewton:
 	playmusic MUSIC_NONE
 	setevent EVENT_NEWTON_OFF
 	changeblock $6, $4, $36
-	changeblock $0, $0, $5f
+	changeblock $0, $0, $09
 	changeblock $0, $2, $3b
 	callasm GenericFinishBridge
 	pause 35
+	checkscene
+	if_not_equal 7, .nothing_happened	;3 from the clock + 4 because thats what you enter the room with initally
 	playsound SFX_PAY_DAY
 	spriteface PLAYER, LEFT
 	showemote EMOTE_SHOCK, PLAYER, 15
@@ -217,6 +315,21 @@ NettBuildingOfficeNewton:
 	waitbutton
 	closetext
 	end
+.nothing_happened
+	pause 35
+	opentext
+	writetext NettBuildingOfficeNewtonText5
+	waitbutton
+	closetext
+	waitsfx
+	playmusic MUSIC_NONE
+	clearevent EVENT_NEWTON_OFF
+	changeblock $6, $4, $a6
+	changeblock $0, $0, $ac
+	changeblock $0, $2, $ab
+	callasm GenericFinishBridge
+	end
+	
 .turnon
 	writetext NettBuildingOfficeNewtonText2
 	yesorno
@@ -502,13 +615,86 @@ NettBuildingOfficeNewtonText4:
 	line "moved!"
 	done
 	
+NettBuildingOfficeNewtonText5:
+	text "Nothing happened…"
+	done
+	
 NettBuildingOfficeNewtonTextNo:
 	text "Better not…"
 	done
 	
 NettBuildingOfficeClockText:
 	text "An old grandfather"
-	line "clock!"
+	line "clock."
+	done
+	
+NettBuildingOfficeClockText1:	
+	text "It reads"
+	line "1 o'clock."
+	done
+	
+NettBuildingOfficeClockText2:	
+	text "It reads"
+	line "2 o'clock."
+	done
+	
+NettBuildingOfficeClockText3:	
+	text "It reads"
+	line "3 o'clock."
+	done
+	
+NettBuildingOfficeClockText4:	
+	text "It reads"
+	line "4 o'clock."
+	done
+	
+NettBuildingOfficeClockText5:	
+	text "It reads"
+	line "5 o'clock."
+	done
+	
+NettBuildingOfficeClockText6:	
+	text "It reads"
+	line "6 o'clock."
+	done
+	
+NettBuildingOfficeClockText7:	
+	text "It reads"
+	line "7 o'clock."
+	done
+	
+NettBuildingOfficeClockText8:	
+	text "It reads"
+	line "8 o'clock."
+	done
+	
+NettBuildingOfficeClockText9:	
+	text "It reads"
+	line "9 o'clock."
+	done
+	
+NettBuildingOfficeClockText10:	
+	text "It reads"
+	line "10 o'clock."
+	done
+	
+NettBuildingOfficeClockText11:	
+	text "It reads"
+	line "11 o'clock."
+	done
+	
+NettBuildingOfficeClockText12:	
+	text "It reads"
+	line "12 o'clock."
+	done
+	
+NettBuildingOfficeClockTextMove:
+	text "Move the hour"
+	line "hand?"
+	done
+	
+NettBuildingOfficeClockTextWhatTime:
+	text "What time?"
 	done
 	
 NettBuildingOfficeRoseBushesText:
@@ -519,11 +705,26 @@ NettBuildingOfficeRoseBushesText:
 NettBuildingOfficeStatueText:
 	text "A statue of a"
 	line "#MON."
+	
+	para "Its mirror-like"
+	line "eyes reflect the"
+	cont "room in reverse."
 	done
 	
 NettBuildingOfficeBookshelfText:
-	text "None of the books"
-	line "will budge."
+	text "There's a book here"
+	line "that reads:"
+	
+	para "“The clock watcher"
+	line "sees all in reverse."
+	
+	para "When his eyes see"
+	line "9 o'clock, all"
+	cont "must fall still.”"
+	done
+	
+NettBuildingOfficeBookshelfText2:
+	text "Please don't snoop."
 	done
 	
 Movement_NettBuildingOfficePlayerCutscene1:

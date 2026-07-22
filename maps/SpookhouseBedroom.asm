@@ -41,6 +41,11 @@ SpookhouseBedroom_MapScriptHeader:
 	const SPOOKHOUSE_BEDROOM_GIRL
 	
 SpookhouseBedroomCallback:
+	checkevent EVENT_BEDROOM_TRACKING_PAINTING
+	iffalse .skip
+	disappear SPOOKHOUSE_BEDROOM_PAINTING
+	appear SPOOKHOUSE_BEDROOM_PAINTING_2
+.skip
 	checkevent EVENT_SPOOKHOUSE_GOT_BALL
 	iftrue .end
 	checkevent EVENT_SPOOKHOUSE_BALL_LEFT_GONE
@@ -137,10 +142,9 @@ PaintingPoison:
 SpookHouseJournal:
 	checkevent EVENT_SPOOKHOUSE_BEATEN
 	iftrue .no_scary
-	checkevent EVENT_SCARY_PAINTING_GONE
+	checkevent EVENT_BEDROOM_TRACKING_PAINTING
 	iftrue .no_scary
 	appear SPOOKHOUSE_BEDROOM_GIRL
-	appear SPOOKHOUSE_BEDROOM_PAINTING_2
 	spriteface SPOOKHOUSE_BEDROOM_PAINTING_2, UP
 	opentext
 	writetext SpookHouseJournalText1
@@ -165,14 +169,12 @@ SpookHouseJournal:
 	buttonsound
 	farwritetext StdBlankText
 	pause 6
-	spriteface SPOOKHOUSE_BEDROOM_PAINTING, RIGHT
-	spriteface SPOOKHOUSE_BEDROOM_PAINTING_2, RIGHT
 	writetext SpookHouseJournalText8
 	waitbutton
 	closetext
 	pause 2
 	disappear SPOOKHOUSE_BEDROOM_GIRL
-	disappear SPOOKHOUSE_BEDROOM_PAINTING
+	setevent EVENT_BEDROOM_TRACKING_PAINTING
 	end
 .no_scary
 	opentext

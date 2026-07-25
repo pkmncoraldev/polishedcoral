@@ -39,17 +39,17 @@ TreeMonsGlint:
 	
 TreeMonsGrove:
 	db 50, CHERUBI,		10
+	db 15, CHERUBI,		10
 	db 15, VENIPEDE,	10
-	db 15, VENIPEDE,	10
-	db 10, VENIPEDE,	10
+	db 10, CHERUBI,		10
 	db  5, VENIPEDE,	10
 	db  5, VENIPEDE,	10
 	db -1
 	; rare
 	db 50, CHERUBI,		15
 	db 15, VENIPEDE,	15
-	db 15, VENIPEDE,	15
-	db 10, VENIPEDE,	15
+	db 15, CHERUBI,		15
+	db 10, CHERUBI,		15
 	db  5, VENIPEDE,	15
 	db  5, VENIPEDE,	15
 	db -1

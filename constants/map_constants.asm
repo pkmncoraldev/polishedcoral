@@ -252,6 +252,7 @@ DEF MAP_NONE   EQU 0
 	map_const EAST_TRAIN_CABOOSE,						   2,  2 ; 4
 	map_const LUSTER_CITY_BUSINESS,					      25, 24 ; 5
 	map_const WEST_TRAIN_CABOOSE,						   2,  2 ; 6
+	map_const NETT_BUILDING_TOP,						  13, 10 ; 7
 	
 	newgroup													 ; 13
 	

@@ -46,6 +46,14 @@ TilesetIceCaveAnim::
 	dw NULL,  WaitTileAnimation
 	dw NULL,  DoneTileAnimation
 	
+TilesetNettTopAnim::
+	dw NULL,  WaitTileAnimation
+	dw NettTopFanFrames, AnimateWaterfallTiles
+	dw NULL,  StandingTileFrame
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  DoneTileAnimation
+	
 TilesetSnowAnim::
 	dw NULL,  StandingTileFrame
 	dw NULL,  WaitTileAnimation
@@ -1370,6 +1378,10 @@ TreeWindTiles: INCBIN "gfx/tilesets/forest-tree/1.2bpp"
 CandleFrames: dw VTiles2 tile $62, CandleTiles
 
 CandleTiles: INCBIN "gfx/tilesets/candles/1.2bpp"
+
+NettTopFanFrames: dw VTiles2 tile $09, NettTopFanTiles
+
+NettTopFanTiles: INCBIN "gfx/tilesets/fan/nett_top.2bpp"
 
 	
 WriteTwoTiles:

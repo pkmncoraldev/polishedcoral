@@ -11,9 +11,10 @@ NettBuildingOffice_MapScriptHeader:
 	warp_event  5,  9, NETT_BUILDING_TOP_FLOOR, 3
 	warp_event  6,  9, NETT_BUILDING_TOP_FLOOR, 4
 
-	db 2 ; coord events
+	db 3 ; coord events
 	coord_event  5,  8, 1, NettBuildingOfficeNettCutsceneL
 	coord_event  6,  8, 1, NettBuildingOfficeNettCutsceneR
+	coord_event  1,  2, -1, NettBuildingOfficeTeleporter
 
 	db 10 ; bg events
 	signpost  4,  6, SIGNPOST_READ, NettBuildingOfficeNewton
@@ -56,6 +57,10 @@ NettBuildingOfficeCallback:
 	changeblock $0, $2, $3b
 .skip
 	return
+	
+NettBuildingOfficeTeleporter:
+	teleporter NETT_BUILDING_TOP, 8, 13
+	end
 	
 NettBuildingOfficeNettCutsceneL:
 	applymovement PLAYER, Movement_NettBuildingOfficePlayerCutscene1

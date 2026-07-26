@@ -183,6 +183,8 @@ LoadMapPals::
 	jp z, .snow
 	cp TILESET_LUSTER
 	jp z, .luster
+	cp TILESET_NETT_TOP
+	jp z, .nett_top
 	cp TILESET_MALL_1
 	jp z, .lustermall
 	cp TILESET_MALL_2
@@ -470,7 +472,6 @@ LoadMapPals::
 .copy_single_pal_to_pal_7
 	call LoadSingleOBPalLinePal7
 	jp FarCopyWRAM
-	
 .nett
 	ld a, [wMapGroup]
 	cp GROUP_NETT_BUILDING_1F
@@ -481,9 +482,7 @@ LoadMapPals::
 	call .normal
 	ld hl, MapObjectPalsNett
 	call LoadSingleOBPalLinePal7
-	jp FarCopyWRAM
-	
-	
+	jp FarCopyWRAM	
 .nett2
 	eventflagcheck EVENT_NETT_OFFICE_DARK
 	jr nz, .nett2_dark
@@ -491,12 +490,15 @@ LoadMapPals::
 	ld hl, MapObjectPalsNett2
 	call LoadSingleOBPalLinePal7
 	jp FarCopyWRAM
-	
 .nett2_dark
 	ld hl, MapObjectPalsNettDark
 	ld de, wUnknOBPals
 	ld bc, 8 palettes
 	ld a, $5 ; BANK(UnknOBPals)
+	jp FarCopyWRAM
+.nett_top
+	ld hl, MapObjectPalsNettTop
+	call LoadSingleOBTimeofDayPalLinePal7
 	jp FarCopyWRAM
 	
 .playerroom
@@ -1470,6 +1472,9 @@ INCLUDE "maps/palettes/obpals/nettdark.pal"
 
 MapObjectPalsPlayerRoom::
 INCLUDE "maps/palettes/obpals/playerroom.pal"
+
+MapObjectPalsNettTop::
+INCLUDE "maps/palettes/obpals/netttop.pal"
 
 MapObjectPalsComputer::
 INCLUDE "maps/palettes/obpals/computer.pal"

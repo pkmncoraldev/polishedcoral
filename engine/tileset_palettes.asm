@@ -113,6 +113,8 @@ LoadSpecialMapPalette: ; 494ac
 	jp z, .train
 	cp TILESET_LUSTER
 	jp z, .luster
+	cp TILESET_NETT_TOP
+	jp z, .nett_top
 	cp TILESET_PARK
 	jp z, .park
 	cp TILESET_AIRPORT
@@ -786,12 +788,16 @@ LoadSpecialMapPalette: ; 494ac
 .luster
 	ld a, [wMapNumber]
 	cp MAP_LUSTER_CITY_BUSINESS
-	jp z, .lusterbusiness
+	jr z, .lusterbusiness
 	ld hl, OutsideLusterPalette
 	jp LoadSevenTimeOfDayBGPalettes
 	
 .lusterbusiness
 	ld hl, OutsideLusterBusinessPalette
+	jp LoadSevenTimeOfDayBGPalettes
+	
+.nett_top
+	ld hl, NettTopPalette
 	jp LoadSevenTimeOfDayBGPalettes
 	
 .park
@@ -1324,6 +1330,9 @@ INCLUDE "maps/palettes/bgpals/traingraveyardwindows.pal"
 
 LuminaPalette::
 INCLUDE "maps/palettes/bgpals/lumina.pal"
+
+NettTopPalette::
+INCLUDE "maps/palettes/bgpals/netttop.pal"	
 
 LightningPalette:
 	RGB 00, 00, 00

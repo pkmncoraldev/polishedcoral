@@ -865,6 +865,24 @@ INCBIN "data/tilesets/dragon_shrine_attributes.bin.lz"
 TilesetDragonShrineColl::
 INCLUDE "data/tilesets/dragon_shrine_collision.asm"
 
+SECTION "Tileset Data - nett top", ROMX
+
+TilesetNettTopGFX0::
+INCBIN "gfx/tilesets/nett_top.2bpp.lz"
+
+DEF TilesetNettTopGFX1 EQU 0
+
+DEF TilesetNettTopGFX2 EQU 0
+
+TilesetNettTopMeta::
+INCBIN "data/tilesets/nett_top_metatiles.bin.lz"
+
+TilesetNettTopAttr::
+INCBIN "data/tilesets/nett_top_attributes.bin.lz"
+
+TilesetNettTopColl::
+INCLUDE "data/tilesets/nett_top_collision.asm"
+
 SECTION "Tileset Headers", ROMX
 
 macro tileset
@@ -919,3 +937,4 @@ Tilesets::
 	tileset TilesetSouthBuildings
 	tileset TilesetLavaCave
 	tileset TilesetDragonShrine
+	tileset TilesetNettTop

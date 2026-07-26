@@ -57,7 +57,7 @@
 	tilecoll FLOOR, FLOOR, WALL, WALL ; 38
 	tilecoll WINDOW, FLOOR, TRASH_CAN, FLOOR ; 39
 	tilecoll WINDOW, FLOOR, WINDOW, FLOOR ; 3a
-	tilecoll WALL, LADDER, FLOOR, FLOOR ; 3b
+	tilecoll WALL, FLOOR, FLOOR, FLOOR ; 3b
 	tilecoll FLOOR, FLOOR, WALL, FLOOR ; 3c
 	tilecoll WALL, WALL, WALL, WALL ; 3d
 	tilecoll FLOOR, SPIN_RIGHT, WALL, FLOOR ; 3e

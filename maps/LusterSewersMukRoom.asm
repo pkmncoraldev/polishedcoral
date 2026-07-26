@@ -91,13 +91,6 @@ LusterSewersMukRoomTrigger0:
 	changeblock $06, $04, $09
 	changeblock $08, $04, $09
 	callasm GenericFinishBridge
-	pause 20
-	checkevent EVENT_LUSTER_SEWERS_MUK_RIGHT
-	iftrue .right2
-	applymovement PLAYER, Movement_LusterSewersMukRoomPlayer5
-.return3
-	spriteface PLAYER, UP
-	applyonemovement PLAYER, show_person
 	pause 40
 	playsound SFX_SLUDGE_BOMB
 	applymovement LUSTER_SEWERS_MUK, Movement_LusterSewersMukRoomMuk2
@@ -106,7 +99,13 @@ LusterSewersMukRoomTrigger0:
 	playsound SFX_SLUDGE_BOMB
 	applymovement LUSTER_SEWERS_MUK, Movement_LusterSewersMukRoomMuk2
 	applymovement LUSTER_SEWERS_MUK, Movement_LusterSewersMukRoomMuk3
-	pause 20
+	pause 40
+	checkevent EVENT_LUSTER_SEWERS_MUK_RIGHT
+	iftrue .right2
+	applymovement PLAYER, Movement_LusterSewersMukRoomPlayer5
+.return3
+	spriteface PLAYER, UP
+	applyonemovement PLAYER, show_person
 	disappear LUSTER_SEWERS_MUK_CUTSCENE
 	opentext TEXTBOX_POKEMON, MUK
 	writetext LusterSewersMukRoomMukText2

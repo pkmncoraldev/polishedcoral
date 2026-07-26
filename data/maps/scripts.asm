@@ -115,6 +115,9 @@ INCLUDE "maps/Route3East.asm"
 INCLUDE "maps/Route3FriendshipHouse.asm"
 INCLUDE "maps/Route5.asm"
 INCLUDE "maps/Route5Deep.asm"
+
+SECTION "Routes Scripts 2", ROMX
+
 INCLUDE "maps/Route6.asm"
 INCLUDE "maps/Route7.asm"
 INCLUDE "maps/Route8Gate.asm"
@@ -122,8 +125,8 @@ INCLUDE "maps/Route8EncounterHouse.asm"
 INCLUDE "maps/Route14.asm"
 INCLUDE "maps/Route15.asm"
 
+SECTION "Routes Scripts 3", ROMX
 
-SECTION "Routes Scripts2", ROMX
 INCLUDE "maps/Route5Gate1F.asm"
 INCLUDE "maps/Route5Gate2F.asm"
 INCLUDE "maps/Route8Garden.asm"
@@ -131,6 +134,9 @@ INCLUDE "maps/Route10East.asm"
 INCLUDE "maps/Route10Tent.asm"
 INCLUDE "maps/Route17.asm"
 INCLUDE "maps/Route18North.asm"
+
+SECTION "Routes Scripts 4", ROMX
+
 INCLUDE "maps/DesertWastelandOasis.asm"
 INCLUDE "maps/Route18Trailer.asm"
 INCLUDE "maps/Route3StarglowCavernTop.asm"
@@ -138,13 +144,17 @@ INCLUDE "maps/Route19.asm"
 INCLUDE "maps/Route20.asm"
 INCLUDE "maps/Route13.asm"
 
-SECTION "Routes Scripts3", ROMX
+SECTION "Routes Scripts 5", ROMX
+
 INCLUDE "maps/Route16.asm"
 INCLUDE "maps/Route21.asm"
 INCLUDE "maps/Route22.asm"
 INCLUDE "maps/Route22_2.asm"
 INCLUDE "maps/DuskTurnpike.asm"
 INCLUDE "maps/Crossroads.asm"
+
+SECTION "Routes Scripts 6", ROMX
+
 INCLUDE "maps/FakeRoute1.asm"
 INCLUDE "maps/FakeSunsetBay.asm"
 INCLUDE "maps/FakeSunsetCape.asm"
@@ -161,6 +171,9 @@ INCLUDE "maps/SunsetCaptainsHouse.asm"
 INCLUDE "maps/SunsetWaterGrassHouse.asm"
 INCLUDE "maps/PlayerHouse1F.asm"
 INCLUDE "maps/PlayerHouse2F.asm"
+
+SECTION "Sunset Bay Scripts 2", ROMX
+
 INCLUDE "maps/SunsetGengarHouse.asm"
 INCLUDE "maps/SunsetLegendsHouse.asm"
 INCLUDE "maps/SunsetCafe.asm"
@@ -488,6 +501,7 @@ INCLUDE "maps/Route31Meadow.asm"
 INCLUDE "maps/Route32.asm"
 INCLUDE "maps/Route30OttosTent.asm"
 INCLUDE "maps/Route4.asm"
+
 
 SECTION "Obscura Scripts", ROMX
 INCLUDE "maps/ObscuraCity.asm"

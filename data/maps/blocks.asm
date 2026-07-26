@@ -360,6 +360,8 @@ EastTrainCaboose_BlockData:
 WestTrainCaboose_BlockData:
 	INCBIN "maps/WestTrainCaboose.ablk.lz"
 	
+SECTION "Map Blockdata 2", ROMX
+	
 LusterCityResidential_BlockData:
 	INCBIN "maps/LusterCityResidential.ablk.lz"
 	
@@ -558,7 +560,7 @@ MtOnwa2F_BlockData:
 	INCBIN "maps/MtOnwa2F.ablk.lz"
 	
 	
-SECTION "Map Blockdata 2", ROMX
+SECTION "Map Blockdata 3", ROMX
 	
 MtOnwaB2F_BlockData:
 	INCBIN "maps/MtOnwaB2F.ablk.lz"
@@ -790,6 +792,8 @@ FakeRoute1_BlockData:
 FakeRoute2_BlockData:
 	INCBIN "maps/FakeRoute2.ablk.lz"
 	
+SECTION "Map Blockdata 4", ROMX
+	
 DesertTemple1_BlockData:
 	INCBIN "maps/DesertTemple1.ablk.lz"
 	
@@ -927,7 +931,7 @@ GreenGrotto1F_BlockData:
 GreenGrottoB1F_BlockData:
 	INCBIN "maps/GreenGrottoB1F.ablk.lz"
 	
-SECTION "Map Blockdata 3", ROMX
+SECTION "Map Blockdata 5", ROMX
 
 MtOnwaB1F_BlockData:
 	INCBIN "maps/MtOnwaB1F.ablk.lz"

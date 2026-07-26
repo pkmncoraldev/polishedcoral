@@ -1668,12 +1668,15 @@ PokedexDataPointerTable: ; 0x44378
 INCLUDE "data/pokemon/dex_entry_pointers.asm"
 
 
+SECTION "Tileset Palettes", ROMX
+
+INCLUDE "engine/tileset_palettes.asm"
+
 SECTION "Code 11", ROMX
 
 INCLUDE "engine/main_menu.asm"
 INCLUDE "engine/search.asm"
 INCLUDE "engine/events/celebi.asm"
-INCLUDE "engine/tileset_palettes.asm"
 
 Special_MoveTutor: ; 4925b
 	call FadeToMenu
@@ -4526,6 +4529,8 @@ SECTION "Code 26", ROMX
 
 INCLUDE "engine/events/halloffame.asm"
 INCLUDE "engine/copy_tilemap_at_once.asm"
+
+SECTION "Ability Stuff", ROMX
 
 PrintAbility:
 ; Print ability b at hl.

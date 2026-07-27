@@ -503,7 +503,6 @@ INCLUDE "maps/Route32.asm"
 INCLUDE "maps/Route30OttosTent.asm"
 INCLUDE "maps/Route4.asm"
 
-
 SECTION "Obscura Scripts", ROMX
 INCLUDE "maps/ObscuraCity.asm"
 INCLUDE "maps/ObscuraGate.asm"

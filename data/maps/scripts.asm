@@ -337,7 +337,6 @@ INCLUDE "maps/NettBuilding5F.asm"
 INCLUDE "maps/NettBuilding6F.asm"
 INCLUDE "maps/NettBuilding7F.asm"
 INCLUDE "maps/NettBuildingSpinnerRoom.asm"
-INCLUDE "maps/NettBuildingTop.asm"
 
 SECTION "Route 12 Scripts", ROMX
 INCLUDE "maps/Route11.asm"
@@ -553,10 +552,13 @@ INCLUDE "maps/Route11Gate.asm"
 INCLUDE "maps/Route12.asm"
 
 SECTION "Misc Map Scripts 4", ROMX
-INCLUDE "maps/ObscuraFortuneHouse.asm"
 INCLUDE "maps/LuminaHouse1.asm"
 INCLUDE "maps/LuminaRussHouse.asm"
 INCLUDE "maps/LuminaAdminHouse.asm"
+INCLUDE "maps/NettBuildingTop.asm"
+
+SECTION "Misc Map Scripts 5", ROMX
+INCLUDE "maps/ObscuraFortuneHouse.asm"
 
 SECTION "Aureole Scripts", ROMX
 INCLUDE "maps/AureoleTown.asm"

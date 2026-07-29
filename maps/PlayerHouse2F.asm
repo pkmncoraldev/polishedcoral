@@ -454,6 +454,7 @@ PlayerHouseDebugPoster:
 	setevent EVENT_NETT_BUILDING_DUNGEON
 	setevent EVENT_NETT_ELEVATOR_BROKEN
 	setevent EVENT_NETT_OFFICER_MOVED
+	setevent EVENT_NETT_OFFICE_ELI_GONE
 	domaptrigger NETT_BUILDING_TOP_FLOOR, $3
 	jump .return
 .end

@@ -404,8 +404,7 @@ SnareBoss_FinalPkmnText:
 	
 	para "My legacy…"
 	
-	para "…"
-	
-	para "You WILL fall!"
+	para "It can't end like"
+	line "this!"
 	prompt
 	

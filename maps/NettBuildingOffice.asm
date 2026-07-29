@@ -16,10 +16,11 @@ NettBuildingOffice_MapScriptHeader:
 	coord_event  6,  8, 1, NettBuildingOfficeNettCutsceneR
 	coord_event  1,  2, -1, NettBuildingOfficeTeleporter
 
-	db 10 ; bg events
+	db 11 ; bg events
 	signpost  4,  6, SIGNPOST_READ, NettBuildingOfficeNewton
 	signpost  5,  5, SIGNPOST_READ, NettBuildingOfficeNett
-	signpost  2,  1, SIGNPOST_UP, NettBuildingOfficeBookshelf
+	signpost  2,  1, SIGNPOST_IFNOTSET, NettBuildingOfficeBookshelf
+	signpost  2,  0, SIGNPOST_IFSET, NettBuildingOfficeBookshelf
 	signpost  8,  9, SIGNPOST_READ, NettBuildingOfficeStatue
 	signpost  9,  9, SIGNPOST_READ, NettBuildingOfficeStatue
 	signpost  2,  9, SIGNPOST_READ, NettBuildingOfficeClock
@@ -29,7 +30,7 @@ NettBuildingOffice_MapScriptHeader:
 	signpost  9,  7, SIGNPOST_READ, NettBuildingOfficeRoseBushes
 
 	db 4 ; object events
-	person_event SPRITE_ELI,  3,  5, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, NettBuildingOfficeNett, EVENT_NETT_BUILDING_DUNGEON
+	person_event SPRITE_ELI,  3,  5, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, NettBuildingOfficeNett, EVENT_NETT_OFFICE_ELI_GONE
 	person_event SPRITE_PLAYER_CUTSCENE,  6,  5, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, -1, EVENT_PLAYER_CUTSCENE_SILVER
 	person_event SPRITE_GOLD_TROPHY,  4,  0, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, NettBuildingOfficeTrophySilver, -1
 	person_event SPRITE_GOLD_TROPHY,  5,  0, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, NettBuildingOfficeTrophyGold, -1
@@ -45,15 +46,18 @@ NettBuildingOfficeTrigger2:
 	end
 	
 NettBuildingOfficeCallback:
+	checkevent EVENT_NETT_TOP_ELI_GONE
+	iftrue .snare_done
 	checkevent EVENT_NETT_BUILDING_DUNGEON
 	iffalse .skip
+.snare_done
 	changeblock $4, $2, $ae
 	setevent EVENT_NETT_OFFICE_DARK
 	setevent EVENT_NETT_OFFICE_MUSIC_OFF
 	checkevent EVENT_NEWTON_OFF
 	iffalse .skip
 	changeblock $6, $4, $36
-	changeblock $0, $0, $5f
+	changeblock $0, $0, $09
 	changeblock $0, $2, $3b
 .skip
 	return
@@ -266,6 +270,7 @@ NettBuildingOfficeStatue:
 	jumptext NettBuildingOfficeStatueText
 	
 NettBuildingOfficeBookshelf:
+	dw EVENT_NEWTON_OFF
 	checkevent EVENT_NETT_BUILDING_DUNGEON
 	iffalse .nett_in_room
 	jumptext NettBuildingOfficeBookshelfText
@@ -421,7 +426,7 @@ NettBuildingOfficeNettText1:
 	done
 	
 NettBuildingOfficeNettText2:
-	text "You know, I never"
+	text "You know, <WAIT_S>I never"
 	line "get tired of the"
 	cont "view from up here…"
 	
@@ -506,8 +511,8 @@ NettBuildingOfficeNettText3:
 	line "always so simple,"
 	
 	para "and sometimes"
-	line "sacrifices need to"
-	cont "be made."
+	line "sacrifices need"
+	cont "to be made."
 	done
 	
 NettBuildingOfficeNettText4:
@@ -721,7 +726,7 @@ NettBuildingOfficeBookshelfText:
 	line "that reads:"
 	
 	para "“The clock watcher"
-	line "sees all in reverse."
+	line "sees in reverse."
 	
 	para "When his eyes see"
 	line "9 o'clock, all"

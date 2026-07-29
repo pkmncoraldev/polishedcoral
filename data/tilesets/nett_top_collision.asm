@@ -24,7 +24,7 @@
 	tilecoll RIGHT_WALL, FLOOR, WALL, FLOOR ; 17
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 18
 	tilecoll RIGHT_WALL, STAIRS, FLOOR, FLOOR ; 19
-	tilecoll STAIRS, LEFT_WALL, FLOOR, FLOOR ; 1a
+	tilecoll WALL, FLOOR, FLOOR, FLOOR ; 1a
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 1b
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 1c
 	tilecoll WALL, WALL, FLOOR, FLOOR ; 1d

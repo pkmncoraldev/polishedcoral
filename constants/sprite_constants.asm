@@ -217,6 +217,7 @@
 	const SPRITE_SPINNER
 	const SPRITE_ELI
 	const SPRITE_MANNEQUIN
+	const SPRITE_RUSS
 	
 	const_def $ed
 DEF SPRITE_POKEMON EQU const_value

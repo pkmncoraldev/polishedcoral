@@ -12,7 +12,7 @@ LuminaRussHouse_MapScriptHeader:
 	db 0 ; bg events
 
 	db 1 ; object events
-	object_event  2,  3, SPRITE_GENTLEMAN, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, LuminaRussHouseRuss, EVENT_RUSS_NOT_HOME
+	object_event  2,  3, SPRITE_RUSS, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, LuminaRussHouseRuss, EVENT_RUSS_NOT_HOME
 	
 LuminaRussHouseRuss:
 	faceplayer

@@ -10,12 +10,13 @@ LuminaHealerHouse_MapScriptHeader:
 
 	db 0 ; coord events
 
-	db 15 ; bg events
+	db 16 ; bg events
 	signpost  3,  2, SIGNPOST_JUMPTEXT, LuminaHealerHouseFireplaceText
 	signpost  3,  3, SIGNPOST_JUMPTEXT, LuminaHealerHouseFireplaceText
 	signpost  3,  0, SIGNPOST_JUMPTEXT, LuminaHealerHouseWoodText
 	signpost  3,  1, SIGNPOST_JUMPTEXT, LuminaHealerHouseWoodText
-	signpost  3,  4, SIGNPOST_JUMPTEXT, LuminaHealerHousePlatesText
+	signpost  3,  4, SIGNPOST_JUMPTEXT, LuminaHealerHouseWoodText
+	signpost  3,  6, SIGNPOST_JUMPTEXT, LuminaHealerHousePlatesText
 	signpost  3,  5, SIGNPOST_JUMPTEXT, LuminaHealerHousePlatesText
 	signpost  6,  0, SIGNPOST_JUMPTEXT, LuminaHealerHouseBarrelsText
 	signpost  7,  0, SIGNPOST_JUMPTEXT, LuminaHealerHouseBarrelsText
@@ -124,13 +125,14 @@ LuminaHealerHouseRuss:
 	waitbutton
 	closetext
 	pause 5
-	checkcode VAR_FACING
-	if_equal RIGHT, .YouAreFacingRight
-	applymovement 3, Movement_RussLeave1
-	jump .end
-.YouAreFacingRight
+	applyonemovement 3, turn_step_down
+	applyonemovement PLAYER, remove_fixed_facing
+	opentext TEXTBOX_RUSS
+	writetext LuminaHealerHouseRussText5
+	waitbutton
+	closetext
+	applymovement PLAYER, Movement_RussLeave1
 	applymovement 3, Movement_RussLeave2
-.end
 	pause 5
 	playsound SFX_EXIT_BUILDING
 	disappear 3
@@ -140,17 +142,13 @@ LuminaHealerHouseRuss:
 	writetext LuminaHealerHouseRussText4
 	waitbutton
 	closetext
+	clearevent EVENT_RUSS_NOT_HOME
 	end
 	
 Movement_RussLeave1:
-	slow_step_left
-	step_down
-	step_down
-	step_down
-	step_down
-	step_left
-	step_down
-	step_down
+	fix_facing
+	slow_step_down
+	remove_fixed_facing
 	step_end
 	
 Movement_RussLeave2:
@@ -197,6 +195,10 @@ LuminaHealerHouseRussText4:
 	
 	para "Just who are you"
 	line "anyway, stranger?"
+	done
+	
+LuminaHealerHouseRussText5:
+	text "Out of my way!"
 	done
 	
 LuminaHealerHouseNPC1:

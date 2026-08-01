@@ -483,6 +483,7 @@ StartMenu_Pack: ; 1295b
 .just_close
 	call EnableSpriteUpdates2
 	call ExitAllMenus
+	ld a, 1
 	ret
 
 StartMenu_Pokemon: ; 12976

@@ -78,7 +78,7 @@ AureoleMountainOutsideWellEvent:
 	callasm AureoleMountainOutsideWellAsm1
 	if_equal GOLD_COIN, .gold_coin
 	if_equal SILVER_COIN, .silver_coin
-	jump .done_load_item
+	jump .normal
 .gold_coin
 	checkevent EVENT_MUSIC_LUMINA_TOWN
 	iftrue .normal

@@ -641,7 +641,6 @@ TossMenu: ; 10364
 	ld a, $f ; Pack_QuitCloseMenu
 	ld [wJumptableIndex], a
 	ret
-	ret
 
 CheckMurkrowWell:
 	ld a, [wMapGroup]

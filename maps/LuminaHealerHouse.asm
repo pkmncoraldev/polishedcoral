@@ -15,8 +15,8 @@ LuminaHealerHouse_MapScriptHeader:
 	signpost  3,  3, SIGNPOST_JUMPTEXT, LuminaHealerHouseFireplaceText
 	signpost  3,  0, SIGNPOST_JUMPTEXT, LuminaHealerHouseWoodText
 	signpost  3,  1, SIGNPOST_JUMPTEXT, LuminaHealerHouseWoodText
-	signpost  3,  4, SIGNPOST_JUMPTEXT, LuminaHealerHouseWoodText
-	signpost  3,  6, SIGNPOST_JUMPTEXT, LuminaHealerHousePlatesText
+	signpost  3,  6, SIGNPOST_JUMPTEXT, LuminaHealerHouseBarrelsText
+	signpost  3,  4, SIGNPOST_JUMPTEXT, LuminaHealerHousePlatesText
 	signpost  3,  5, SIGNPOST_JUMPTEXT, LuminaHealerHousePlatesText
 	signpost  6,  0, SIGNPOST_JUMPTEXT, LuminaHealerHouseBarrelsText
 	signpost  7,  0, SIGNPOST_JUMPTEXT, LuminaHealerHouseBarrelsText

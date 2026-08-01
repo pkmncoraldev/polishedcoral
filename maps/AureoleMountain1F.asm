@@ -5,7 +5,7 @@ AureoleMountain1F_MapScriptHeader:
 	callback MAPCALLBACK_TILES, AureoleMountain1FCallback
 
 	db 10 ; warp events
-	warp_def 47, 19, 3, ROUTE_32
+	warp_def 47, 13, 3, ROUTE_32
 	warp_def 29,  9, 1, AUREOLE_MOUNTAIN_2F
 	warp_def 39, 25, 4, AUREOLE_MOUNTAIN_1F
 	warp_def  9, 33, 3, AUREOLE_MOUNTAIN_1F
@@ -23,7 +23,7 @@ AureoleMountain1F_MapScriptHeader:
 	bg_event 15, 29, SIGNPOST_ITEM + PP_UP, EVENT_AUREOLE_MOUNTAIN_1F_HIDDEN_ITEM_2
 	bg_event  3, 31, SIGNPOST_ITEM + SUPER_REPEL, EVENT_AUREOLE_MOUNTAIN_1F_HIDDEN_ITEM_3
 
-	db 10 ; object events
+	db 11 ; object events
 	person_event SPRITE_SUPER_NERD, 38,  8, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_GENERICTRAINER, 3, AureoleMountain1F_Trainer_1, -1
 	person_event SPRITE_POKEMANIAC, 19,  9, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 2, AureoleMountain1F_Trainer_2, -1
 	person_event SPRITE_POKEMANIAC, 22, 30, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 3, AureoleMountain1F_Trainer_3, -1
@@ -32,6 +32,7 @@ AureoleMountain1F_MapScriptHeader:
 	person_event SPRITE_COOLTRAINER_F, 31, 24, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_GENERICTRAINER, 3, AureoleMountain1F_Trainer_6, -1
 	tapeball_event 33, 41, MUSIC_TRAINER_VICTORY, 2, MUSIC_TRAINER_VICTORY
 	itemball_event 11, 32, EXPERT_BELT, 1, EVENT_AUREOLE_MOUNTAIN_1F_ITEM
+	strengthboulder_event 18, 44, -1
 
 
 AureoleMountain1FCallback:

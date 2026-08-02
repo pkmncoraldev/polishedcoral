@@ -25,49 +25,76 @@ NettBuilding4F_MapScriptHeader:
 	person_event SPRITE_SLOWPOKETAIL,  3,  4, SPRITEMOVEDATA_TILE_UP_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, 0, -1
 	person_event SPRITE_SLOWPOKETAIL, 11,  6, SPRITEMOVEDATA_TILE_UP_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, 0, -1
 	person_event SPRITE_SNARE_GIRL,  3,  6, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 4, TrainerNettBuilding4F_1, -1
-	person_event SPRITE_SNARE_GIRL,  3, 15, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 6, TrainerNettBuilding4F_2, -1
+	person_event SPRITE_SNARE_GIRL,  3, 16, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 6, TrainerNettBuilding4F_2, -1
 	person_event SPRITE_SNARE_GIRL, 12, 10, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 3, TrainerNettBuilding4F_3, -1
 
 TrainerNettBuilding4F_1:
 	generictrainer GRUNTF, NETT_GRUNTF_3, EVENT_BEAT_NETT_BUILDING_TRAINER_8, .SeenText, .BeatenText
 
-	text "NORMAL TEXT"
+	text "Just because I"
+	line "work here,"
+	
+	para "doesn't mean I"
+	line "know how things"
+	cont "here work!"
 	done
 
 .SeenText:
-	text "SEEN TEXT"
+	text "What do all these"
+	line "big machines do?"
+	
+	para "No really.<WAIT_S>"
+	line "I'm asking."
 	done
 
 .BeatenText:
-	text "YOU WIN"
+	text "Darn!"
 	done
 	
 TrainerNettBuilding4F_2:
 	generictrainer GRUNTF, NETT_GRUNTF_4, EVENT_BEAT_NETT_BUILDING_TRAINER_9, .SeenText, .BeatenText
 
-	text "NORMAL TEXT"
+	text "Please, don't tell"
+	line "my friends and"
+	cont "family I'm with"
+	cont "TEAM SNARE."
+	
+	para "I just need the"
+	line "money!"
 	done
 
 .SeenText:
-	text "SEEN TEXT"
+	text "You know our boss's"
+	line "secret identity?"
+	
+	para "Does that mean you"
+	line "my identity too!?"
 	done
 
 .BeatenText:
-	text "YOU WIN"
+	text "This mask is"
+	line "useless!"
 	done
 	
 TrainerNettBuilding4F_3:
 	generictrainer GRUNTF, NETT_GRUNTF_5, EVENT_BEAT_NETT_BUILDING_TRAINER_10, .SeenText, .BeatenText
 
-	text "NORMAL TEXT"
+	text "I was so sure I'd"
+	line "be the one to stop"
+	cont "you."
 	done
 
 .SeenText:
-	text "SEEN TEXT"
+	text "Aha!"
+	
+	para "I've got you right"
+	line "where I want you!"
+	
+	para "No getting away!"
 	done
 
 .BeatenText:
-	text "YOU WIN"
+	text "Noo!"
 	done
 
 NettBuilding4FTeleporter1:

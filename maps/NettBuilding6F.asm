@@ -28,29 +28,45 @@ NettBuilding6F_MapScriptHeader:
 TrainerNettBuilding6F_1:
 	generictrainer GRUNTM, NETT_GRUNTM_10, EVENT_BEAT_NETT_BUILDING_TRAINER_17, .SeenText, .BeatenText
 
-	text "NORMAL TEXT"
+	text "TEAM SNARE's goal?"
+	
+	para "To cause waton"
+	line "mayhem of course!"
 	done
 
 .SeenText:
-	text "SEEN TEXT"
+	text "You want to know"
+	line "TEAM SNARE's goal?"
+	
+	para "Beat me, and I'll"
+	line "tell you."
 	done
 
 .BeatenText:
-	text "YOU WIN"
+	text "Ok, I'll tell you."
 	done
 	
 TrainerNettBuilding6F_2:
 	generictrainer GRUNTM, NETT_GRUNTM_11, EVENT_BEAT_NETT_BUILDING_TRAINER_18, .SeenText, .BeatenText
 
-	text "NORMAL TEXT"
+	text "Alright, just move"
+	line "on already."
+	
+	para "It's too stuffy in"
+	line "this tiny hallway!"
 	done
 
 .SeenText:
-	text "SEEN TEXT"
+	text "Kinda cramped in"
+	line "this hallway, huh?"
+	
+	para "Time for some"
+	line "close quarters"
+	cont "combat!"
 	done
 
 .BeatenText:
-	text "YOU WIN"
+	text "Ok, fine."
 	done
 	
 NettBuilding6FTeleporter1:

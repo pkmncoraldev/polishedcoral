@@ -15,6 +15,54 @@ WendyPhoneText1:
 	para "Talk to you"
 	line "later!"
 	prompt
+	
+WendyPhoneText2:
+	text "Hi, <PLAYER>!"
+	
+	para "It's been a while."
+	
+	para "What's up?"
+	
+	para "You qualified for"
+	line "the #MON LEAGUE"
+	cont "TOURNAMENT?"
+	
+	para "That's great,"
+	line "<PLAYER>!"
+	
+	para "You know, as a"
+	line "GYM LEADER, I'll be"
+	cont "going myself."
+	
+	para "Do you need a"
+	line "ride?"
+	
+	para "Meet me at the"
+	line "ONWA INTL. AIRPORT"
+	cont "if you do."
+	
+	para "We'll take my"
+	line "plane to the KEYS."
+	
+	para "See you there."
+	prompt
+	
+WendyPhoneText2Repeat:
+	text "Hi, <PLAYER>!"
+	
+	para "Do you need a"
+	line "ride to the"
+	cont "tournament?"
+	
+	para "Meet me at the"
+	line "ONWA INTL. AIRPORT"
+	cont "if you do."
+	
+	para "We'll take my"
+	line "plane to the KEYS."
+	
+	para "See you there."
+	prompt
 
 WendyVoicemailText:
 	text "This is WENDY's"

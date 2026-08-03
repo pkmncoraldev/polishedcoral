@@ -321,6 +321,10 @@ OnwaIntlAirportNPC6Text:
 	line "#MON LEAGUE is"
 	cont "on an island?"
 	
+	para "It's in a place"
+	line "called the"
+	cont "ONWA KEYS."
+	
 	para "I think the only"
 	line "way there is by"
 	cont "airplane."

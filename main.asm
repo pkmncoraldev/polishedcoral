@@ -4850,13 +4850,12 @@ SECTION "Unused 4", ROMX
 
 
 
-SECTION "Unused 5", ROMX
-
+SECTION "Mom Phone Text", ROMX
+INCLUDE "data/phone/text/mom.asm"
 
 
 SECTION "Phone Text", ROMX
 
-INCLUDE "data/phone/text/mom.asm"
 INCLUDE "data/phone/text/spruce.asm"
 INCLUDE "data/phone/text/extra.asm"
 

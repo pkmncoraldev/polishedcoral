@@ -146,6 +146,7 @@ NettBuildingTopEli:
 	clearevent EVENT_NETT_BUILDING_DUNGEON
 	clearevent EVENT_NETT_OFFICER_MOVED
 	clearevent EVENT_NETT_ELEVATOR_BROKEN
+	specialphonecall SPECIALCALL_POKEMONLEAGUETIME
 	end
 	
 Movement_NettBuildingTopPlayerLeft:

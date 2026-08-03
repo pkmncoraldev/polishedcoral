@@ -17,3 +17,4 @@ SpecialPhoneCallList:
 	specialcall SpecialCallWhereverYouAre, 	PHONE_UNKNOWN, SpamCallPhoneScript  ; SPECIALCALL_SPAMCALL
 	specialcall SpecialCallOnlyWhenOutside, PHONE_MOM,	   MomPhoneScript       ; SPECIALCALL_MOMCALLABOUTBANKCARD
 	specialcall SpecialCallOnlyWhenOutside, PHONE_SPRUCE,  SprucePhoneScript    ; SPECIALCALL_SPRUCEICETEMPLECALL
+	specialcall SpecialCallOnlyWhenOutside, PHONE_MOM,	   MomPhoneScript 	    ; SPECIALCALL_POKEMONLEAGUETIME

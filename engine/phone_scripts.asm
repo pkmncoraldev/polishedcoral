@@ -125,12 +125,23 @@ DecSpamCall:
 	ret
 
 WendyPhoneScript:
+	checkevent EVENT_CAN_CALL_WENDY_ABOUT_RIDE
+	iftrue .ride_to_league
 	checkevent EVENT_MADE_IT_TO_SOUTH_ONWA
 	iftrue .south
 	farwritetext WendyPhoneText1
 	end
 .south
 	farwritetext WendyVoicemailText
+	end
+.ride_to_league
+	checkevent EVENT_CALLED_WENDY_ABOUT_RIDE
+	iftrue .ride_repeat
+	farwritetext WendyPhoneText2
+	setevent EVENT_CALLED_WENDY_ABOUT_RIDE
+	end
+.ride_repeat
+	farwritetext WendyPhoneText2Repeat
 	end
 
 AutoPhoneScript:
@@ -170,11 +181,14 @@ CallingMomCheckPlayerRoomAsm:
 
 MomPhoneScript: ; 0xbceaa
 	checkcode VAR_SPECIALPHONECALL
+	if_equal SPECIALCALL_POKEMONLEAGUETIME, .league
 	if_equal SPECIALCALL_MOMCALLABOUTBANKCARD, .comegetbankcard
 	if_equal SPECIALCALL_MOMCOMEGETTRAINERCARD, .comegettrainercard1
 	if_equal SPECIALCALL_MOMCALLABOUTTEAMSNARE, .teamsnare
 	callasm CallingMomCheckPlayerRoomAsm
 	iftrue .upstairs
+	checkevent EVENT_MOM_REPEAT_LEAGUE_CALL
+	iftrue .repeat_league
 	checkevent EVENT_POST_8_BADGE_PRE_LEAGUE_CALLS
 	iftrue .all_badges
 	checkevent EVENT_MOM_CAN_GET_BANK_CARD
@@ -206,7 +220,31 @@ MomPhoneScript: ; 0xbceaa
 	end
 	
 .all_badges
+	checkevent EVENT_POST_8_BADGE_PRE_LEAGUE_CALLS_DONE
+	iftrue .all_badges_repeat
 	farwritetext MomPhoneAllBadgesText
+	setevent EVENT_POST_8_BADGE_PRE_LEAGUE_CALLS_DONE
+	end
+.all_badges_repeat
+	farwritetext MomPhoneAllBadgesTextRepeat
+	end
+	
+.repeat_league
+	farwritetext MomLeagueTextRepeat
+	end
+	
+.league
+	checkevent EVENT_POST_8_BADGE_PRE_LEAGUE_CALLS_DONE
+	iftrue .momknowsaboutbadges
+	farwritetext MomLeagueText
+	jump .league_cont
+.momknowsaboutbadges
+	farwritetext MomLeagueText2
+.league_cont
+	setevent EVENT_CAN_CALL_WENDY_ABOUT_RIDE
+	setevent EVENT_MOM_REPEAT_LEAGUE_CALL
+	clearevent EVENT_POST_8_BADGE_PRE_LEAGUE_CALLS
+	specialphonecall SPECIALCALL_NONE
 	end
 	
 .teamsnare

@@ -248,6 +248,136 @@ MomPhoneAllBadgesText:
 	
 	para "I'm so proud of"
 	line "you, <PLAYER>!"
-	done
+	prompt
 	
+MomPhoneAllBadgesTextRepeat:
+	text "Hello?"
 	
+	para "Oh, hi, sweetie."
+	
+	para "We still have some"
+	line "time before the"
+	cont "tourney starts,"
+	
+	para "so don't you worry"
+	line "about that."
+	
+	para "I'm so proud of"
+	line "you, <PLAYER>!"
+	prompt
+	
+MomLeagueText:
+	text "Hi, sweetie!"
+	line "It's MOM!"
+	
+	para "It's time for the"
+	line "#MON LEAGUE"
+	cont "TOURNAMENT!"
+	
+	para "Did you qualify?"
+	
+	para "You did?<WAIT_M>"
+	line "That's great!"
+	
+	para "I'm so happy"
+	line "for you!"
+	
+	para "The tournament is"
+	line "held on an island"
+	cont "in the ONWA KEYS."
+	
+	para "I think the only"
+	line "way to get there"
+	cont "is by airplane."
+	
+	para "But, can you get"
+	line "a flight on such"
+	cont "short notice?"
+	
+	para "We really should"
+	line "have planned for"
+	cont "this better…"
+	
+	para "Hmm…"
+	
+	para "Isn't there anyone"
+	line "you know that you"
+	cont "can call for a"
+	cont "favor?"
+	
+	para "You must have met"
+	line "someone like that"
+	cont "on your travels."
+	
+	para "I'll be rooting"
+	line "for you, sweetie!"
+	prompt
+	
+MomLeagueText2:
+	text "Hi, sweetie!"
+	line "It's MOM!"
+	
+	para "It's time for the"
+	line "#MON LEAGUE"
+	cont "TOURNAMENT!"
+	
+	para "You got all eight"
+	line "GYM BADGES, so"
+	cont "you qualify!"
+	
+	para "I'm so happy"
+	line "for you!"
+	
+	para "The tournament is"
+	line "held on an island"
+	cont "in the ONWA KEYS."
+	
+	para "I think the only"
+	line "way to get there"
+	cont "is by airplane."
+	
+	para "But, can you get"
+	line "a flight on such"
+	cont "short notice?"
+	
+	para "We really should"
+	line "have planned for"
+	cont "this better…"
+	
+	para "Hmm…"
+	
+	para "Isn't there anyone"
+	line "you know that you"
+	cont "can call for a"
+	cont "favor?"
+	
+	para "You must have met"
+	line "someone like that"
+	cont "on your travels."
+	
+	para "I'll be rooting"
+	line "for you, sweetie!"
+	prompt
+	
+MomLeagueTextRepeat:
+	text "Hello?"
+	
+	para "Oh, hi, sweetie."
+	
+	para "The tournament is"
+	line "held on an island"
+	cont "in the ONWA KEYS."
+	
+	para "I think the only"
+	line "way to get there"
+	cont "is by airplane."
+	
+	para "Isn't there anyone"
+	line "you know that you"
+	cont "can call for a"
+	cont "favor?"
+	
+	para "You must have met"
+	line "someone like that"
+	cont "on your travels."
+	prompt

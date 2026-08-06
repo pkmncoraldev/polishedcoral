@@ -321,6 +321,7 @@ HuntersThicketRanger:
 	waitsfx
 	pause 20
 	setevent EVENT_UNIQUE_ENCOUNTER_LEDIAN_RANGER
+	setevent EVENT_TOURNEY_LEDIAN_RANGER
 	opentext
 	verbosegiveitem FIVESTARHELM
 	iffalse .NoRoom

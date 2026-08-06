@@ -465,6 +465,7 @@ FightingDojoMaster:
 	iftrue .got_tape
 	writetext FightingDojoMasterTestsTapeText1
 	waitbutton
+	setevent EVENT_TOURNEY_DOJO_MASTER
 	callasm GiveFightingDojoTapeAsm
 	iffalse .no_player
 	changetextboxspeaker

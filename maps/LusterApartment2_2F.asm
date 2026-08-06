@@ -40,6 +40,7 @@ LusterApartment2_2F_Mina:
 	opentext TEXTBOX_MINA
 	checkevent EVENT_GOT_LUCKY_EGG
 	iftrue .already_got_lucky_egg
+	setevent EVENT_TOURNEY_MINA
 	writetext LusterApartment2_2F_MinaText1
 	waitbutton
 	changetextboxspeaker

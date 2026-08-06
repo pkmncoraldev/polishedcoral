@@ -214,6 +214,7 @@ BrilloPoliceBackRoomTrigger0:
 	closetext
 	pause 10
 	setevent EVENT_ROUTE_17_COPS_GONE
+	setevent EVENT_TOURNEY_ARMSTRONG
 	clearevent EVENT_COOPERATED_WITH_BRILLO_POLICE
 	special FadeOutPalettes
 	playsound SFX_EXIT_BUILDING

@@ -154,6 +154,7 @@ RadiantOrphanage1FErika:
 	reloadmapafterbattle
 	setevent EVENT_BEAT_ERIKA
 	setevent EVENT_UNIQUE_ENCOUNTER_ERIKA
+	setevent EVENT_TOURNEY_ERIKA
 	jumptextfaceplayer TEXTBOX_ERIKA, RadiantOrphanage1FErikaText4
 .no
 	writetext RadiantOrphanage1FErikaNoText

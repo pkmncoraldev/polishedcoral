@@ -30,16 +30,6 @@ INCLUDE "audio/music/healpokemon.asm"
 INCLUDE "audio/music/trainervictory.asm"
 INCLUDE "audio/music/rivalbattle.asm"
 INCLUDE "audio/music/evolution.asm"
-INCLUDE "audio/music/gym.asm"
-INCLUDE "audio/music/gymbattle.asm"
-INCLUDE "audio/music/gymleadervictory.asm"
-INCLUDE "audio/music/halloffame.asm"
-INCLUDE "audio/music/credits.asm"
-INCLUDE "audio/music/postcredits.asm"
-INCLUDE "audio/music/sprucelab.asm"
-INCLUDE "audio/music/clefairydance.asm"
-INCLUDE "audio/music/crystalball.asm"
-INCLUDE "audio/music/spambuilding.asm"
 
 
 SECTION "Music 2", ROMX
@@ -53,15 +43,6 @@ INCLUDE "audio/music/daybreakgrotto.asm"
 INCLUDE "audio/music/snareinvasion.asm"
 INCLUDE "audio/music/starglowvalley.asm"
 INCLUDE "audio/music/eventide.asm"
-INCLUDE "audio/music/clown.asm"
-INCLUDE "audio/music/minibossbattle.asm"
-INCLUDE "audio/music/shimmercity.asm"
-INCLUDE "audio/music/fakeroute1.asm"
-INCLUDE "audio/music/autumn.asm"
-INCLUDE "audio/music/dojo.asm"
-INCLUDE "audio/music/underwater.asm"
-INCLUDE "audio/music/route28.asm"
-INCLUDE "audio/music/minastheme.asm"
 
 
 SECTION "Music 3", ROMX
@@ -112,6 +93,37 @@ INCLUDE "audio/music/wildbattleold.asm"
 INCLUDE "audio/music/gymbattleold.asm"
 INCLUDE "audio/music/rbywildbattle.asm"
 INCLUDE "audio/music/rivalbattle2.asm"
+
+
+SECTION "Music 6", ROMX
+INCLUDE "audio/music/gym.asm"
+INCLUDE "audio/music/gymbattle.asm"
+INCLUDE "audio/music/gymleadervictory.asm"
+INCLUDE "audio/music/halloffame.asm"
+INCLUDE "audio/music/credits.asm"
+INCLUDE "audio/music/postcredits.asm"
+INCLUDE "audio/music/sprucelab.asm"
+INCLUDE "audio/music/clefairydance.asm"
+INCLUDE "audio/music/crystalball.asm"
+INCLUDE "audio/music/spambuilding.asm"
+
+
+SECTION "Music 7", ROMX
+INCLUDE "audio/music/clown.asm"
+
+
+SECTION "Music 8", ROMX
+INCLUDE "audio/music/minibossbattle.asm"
+INCLUDE "audio/music/shimmercity.asm"
+INCLUDE "audio/music/fakeroute1.asm"
+INCLUDE "audio/music/autumn.asm"
+INCLUDE "audio/music/dojo.asm"
+INCLUDE "audio/music/underwater.asm"
+INCLUDE "audio/music/route28.asm"
+INCLUDE "audio/music/minastheme.asm"
+
+
+SECTION "Music 9", ROMX
 INCLUDE "audio/music/erika.asm"
 INCLUDE "audio/music/obscura.asm"
 INCLUDE "audio/music/fakesunsetbay.asm"
@@ -119,26 +131,6 @@ INCLUDE "audio/music/luminatown.asm"
 INCLUDE "audio/music/dragonshrine.asm"
 INCLUDE "audio/music/aureole.asm"
 INCLUDE "audio/music/cycling.asm"
-
-
-SECTION "Music 6", ROMX
-
-
-
-
-SECTION "Music 7", ROMX
-
-
-
-
-SECTION "Music 8", ROMX
-
-
-
-
-SECTION "Music 9", ROMX
-
-
 
 
 SECTION "Music 10", ROMX

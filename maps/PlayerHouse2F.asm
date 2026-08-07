@@ -126,6 +126,12 @@ PlayerHouseDebugPoster:
 	if_equal $3, .Sfx
 	if_equal $4, .flags
 	closewindow
+.page3
+	loadmenu .PlayerHouseDebugMenu3Data
+	verticalmenu
+	iffalse .end
+	if_equal $1, .tourney
+	closewindow
 	jump .page1
 .Mons
 	closewindow
@@ -371,6 +377,12 @@ PlayerHouseDebugPoster:
 	farwritetext StdBlankText
 	callasm PlayerRoomEventFlagTest
 	jump .return
+.tourney
+	closewindow
+	farwritetext StdBlankText
+	callasm DetermineTourneyBracket
+	callasm DrawTourneyBracket
+	jump .return
 .mina
 	closewindow
 	writetext PlayerHouseDebug2MinaText
@@ -461,7 +473,7 @@ PlayerHouseDebugPoster:
 	closetext
 	end
 	
-.PlayerHouseDebugMenuData: ; 0x48dfc
+.PlayerHouseDebugMenuData:
 	db $40 ; flags
 	db 00, 00 ; start coords
 	db 11, 19 ; end coords
@@ -469,7 +481,7 @@ PlayerHouseDebugPoster:
 	db 1 ; default option
 ; 0x48e04
 
-.MenuData2PlayerHouseDebug: ; 0x48e04
+.MenuData2PlayerHouseDebug:
 	db $a0 ; flags
 	db 5 ; items
 	db "#MON@"
@@ -478,7 +490,7 @@ PlayerHouseDebugPoster:
 	db "TMs/HMs@"
 	db "PAGE 2@"
 	
-.PlayerHouseDebugMenu2Data: ; 0x48dfc
+.PlayerHouseDebugMenu2Data:
 	db $40 ; flags
 	db 00, 00 ; start coords
 	db 11, 19 ; end coords
@@ -486,13 +498,27 @@ PlayerHouseDebugPoster:
 	db 1 ; default option
 ; 0x48e04
 
-.MenuData2PlayerHouseDebug2: ; 0x48e04
+.MenuData2PlayerHouseDebug2:
 	db $a0 ; flags
 	db 5 ; items
 	db "DECORATIONS@"
 	db "QUESTS@"
 	db "SFX TEST@"
 	db "EVENT FLAGS@"
+	db "PAGE 3@"
+	
+.PlayerHouseDebugMenu3Data:
+	db $40 ; flags
+	db 00, 00 ; start coords
+	db 11, 19 ; end coords
+	dw .MenuData2PlayerHouseDebug3
+	db 1 ; default option
+; 0x48e04
+
+.MenuData2PlayerHouseDebug3:
+	db $a0 ; flags
+	db 2 ; items
+	db "TOURNEY TEST@"
 	db "PAGE 1@"
 	
 PlayerHouseDebug2BadgeText:

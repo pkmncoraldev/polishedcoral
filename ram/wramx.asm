@@ -1169,7 +1169,24 @@ wRiverRapidsRecordMinutes:: ds 1
 
 wObscuraFortunePsychicTmCount:: ds 1
 
-	ds 43 ; unused
+wTourneyBracketSize:: ds 1
+wTourneyBracket1:: ds 1
+wTourneyBracket2:: ds 1
+wTourneyBracket3:: ds 1
+wTourneyBracket4:: ds 1
+wTourneyBracket5:: ds 1
+wTourneyBracket6:: ds 1
+wTourneyBracket7:: ds 1
+wTourneyBracket8:: ds 1
+wTourneyBracket9:: ds 1
+wTourneyBracket10:: ds 1
+wTourneyBracket11:: ds 1
+wTourneyBracket12:: ds 1
+wTourneyBracket13:: ds 1
+wTourneyBracket14:: ds 1
+wTourneyBracket15:: ds 1
+
+	ds 27 ; unused
 	
 wSkateparkCurTrick:: ds 1
 wSkateparkComboTimer:: ds 1

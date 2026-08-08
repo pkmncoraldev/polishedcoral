@@ -230,3 +230,6 @@ SFX:
 	dba Sfx_Thunderbolt
 	dba Sfx_Gravity
 	dba Sfx_FinishRiverRapids
+	dba Sfx_TourneyBracket1
+	dba Sfx_TourneyBracket2
+	dba Sfx_TourneyBracket3

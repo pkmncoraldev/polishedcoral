@@ -225,5 +225,8 @@
 	const SFX_THUNDERBOLT                 ; db
 	const SFX_GRAVITY                     ; dc
 	const SFX_FINISH_RIVER_RAPIDS		  ; dd
+	const SFX_TOURNEY_BRACKET_1			  ; de
+	const SFX_TOURNEY_BRACKET_2			  ; df
+	const SFX_TOURNEY_BRACKET_3			  ; e0
 
 DEF NUM_SFX EQU const_value - 1

@@ -235,3 +235,54 @@ Sfx_TempleRumble_Ch8:
 	loopchannel 0, Sfx_TempleRumble_Ch8
 	endchannel
 	
+Sfx_TourneyBracket1:
+	musicheader 1, 5, Sfx_TourneyBracket1_Ch5
+	
+Sfx_TourneyBracket1_Ch5:
+	dutycycle $0
+	soundinput $e7
+	sound __,  9, $a8, $05b0
+	sound __,  9, $a8, $05c8
+	sound __,  9, $a8, $05e0
+	sound __,  9, $a8, $05f8
+	sound __,  9, $a8, $0610
+	sound __,  9, $a8, $0628
+	sound __,  9, $a8, $0640
+	sound __,  9, $a8, $0658
+	sound C_,  1, $a8, $0670
+	soundinput $8
+	endchannel
+	
+Sfx_TourneyBracket2:
+	musicheader 1, 5, Sfx_TourneyBracket2_Ch5
+	
+Sfx_TourneyBracket2_Ch5:
+	dutycycle $0
+	soundinput $e7
+	sound __,  9, $a8, $0628
+	sound __,  9, $a8, $0640
+	sound __,  9, $a8, $0658
+	sound __,  9, $a8, $0670
+	sound __,  9, $a8, $0688
+	sound __,  9, $a8, $06a0
+	sound __,  9, $a8, $06c8
+	sound __,  9, $a8, $06e0
+	sound C_,  1, $a8, $0708
+	soundinput $8
+	endchannel
+	
+Sfx_TourneyBracket3:
+	musicheader 1, 5, Sfx_TourneyBracket3_Ch5
+
+Sfx_TourneyBracket3_Ch5:
+	dutycycle $0
+	soundinput $e7
+	sound __,  9, $a8, $06e0
+	sound __,  9, $a8, $06f8
+	sound __,  9, $a8, $0710
+	sound __,  9, $a8, $0728
+	sound __,  9, $a8, $0740
+	sound __,  9, $a8, $0758
+	sound C_,  1, $a8, $0770
+	soundinput $8
+	endchannel

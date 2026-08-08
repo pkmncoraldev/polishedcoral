@@ -1456,6 +1456,7 @@ PlayerRoomSfxTest:
 	ld a, [wPlaceBallsX]
 	inc a
 	ld [wPlaceBallsX], a
+	dec a
 	cp NUM_SFX
 	jr c, .drawnumbers
 	xor a

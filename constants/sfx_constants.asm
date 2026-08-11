@@ -228,5 +228,6 @@
 	const SFX_TOURNEY_BRACKET_1			  ; de
 	const SFX_TOURNEY_BRACKET_2			  ; df
 	const SFX_TOURNEY_BRACKET_3			  ; e0
+	const SFX_TOURNEY_BRACKET_4			  ; e1
 
 DEF NUM_SFX EQU const_value - 1

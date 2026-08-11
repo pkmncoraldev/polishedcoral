@@ -241,15 +241,15 @@ Sfx_TourneyBracket1:
 Sfx_TourneyBracket1_Ch5:
 	dutycycle $0
 	soundinput $e7
-	sound __,  9, $a8, $05b0
-	sound __,  9, $a8, $05c8
-	sound __,  9, $a8, $05e0
-	sound __,  9, $a8, $05f8
-	sound __,  9, $a8, $0610
-	sound __,  9, $a8, $0628
-	sound __,  9, $a8, $0640
-	sound __,  9, $a8, $0658
-	sound C_,  1, $a8, $0670
+	sound __,  10, $a8, $0550
+	sound __,  10, $a8, $0568
+	sound __,  10, $a8, $0580
+	sound __,  10, $a8, $0598
+	sound __,  10, $a8, $05b0
+	sound __,  10, $a8, $05c8
+	sound __,  10, $a8, $05e0
+	sound __,  10, $a8, $05f8
+	sound C_,  1, $a8, $0610
 	soundinput $8
 	endchannel
 	
@@ -259,15 +259,15 @@ Sfx_TourneyBracket2:
 Sfx_TourneyBracket2_Ch5:
 	dutycycle $0
 	soundinput $e7
-	sound __,  9, $a8, $0628
-	sound __,  9, $a8, $0640
-	sound __,  9, $a8, $0658
-	sound __,  9, $a8, $0670
-	sound __,  9, $a8, $0688
-	sound __,  9, $a8, $06a0
-	sound __,  9, $a8, $06c8
-	sound __,  9, $a8, $06e0
-	sound C_,  1, $a8, $0708
+	sound __,  10, $a8, $05b0
+	sound __,  10, $a8, $05c8
+	sound __,  10, $a8, $05e0
+	sound __,  10, $a8, $05f8
+	sound __,  10, $a8, $0610
+	sound __,  10, $a8, $0628
+	sound __,  10, $a8, $0640
+	sound __,  10, $a8, $0658
+	sound C_,  1, $a8, $0670
 	soundinput $8
 	endchannel
 	
@@ -277,12 +277,33 @@ Sfx_TourneyBracket3:
 Sfx_TourneyBracket3_Ch5:
 	dutycycle $0
 	soundinput $e7
-	sound __,  9, $a8, $06e0
-	sound __,  9, $a8, $06f8
-	sound __,  9, $a8, $0710
-	sound __,  9, $a8, $0728
-	sound __,  9, $a8, $0740
-	sound __,  9, $a8, $0758
-	sound C_,  1, $a8, $0770
+	sound __,  10, $a8, $0610
+	sound __,  10, $a8, $0628
+	sound __,  10, $a8, $0640
+	sound __,  10, $a8, $0658
+	sound __,  10, $a8, $0670
+	sound __,  10, $a8, $0688
+	sound __,  10, $a8, $06a0
+	sound __,  10, $a8, $06c8
+	sound __,  10, $a8, $06e0
+	sound __,  10, $a8, $0708
+	sound __,  10, $a8, $0720
+	sound C_,  1, $a8, $0738
+	soundinput $8
+	endchannel
+	
+Sfx_TourneyBracket4:
+	musicheader 1, 5, Sfx_TourneyBracket4_Ch5
+
+Sfx_TourneyBracket4_Ch5:
+	dutycycle $0
+	soundinput $e7
+	sound __,  10, $a8, $0688
+	sound __,  10, $a8, $06a0
+	sound __,  10, $a8, $06c8
+	sound __,  10, $a8, $06e0
+	sound __,  10, $a8, $06f8
+	sound __,  10, $a8, $0710
+	sound C_,  1, $a8, $0728
 	soundinput $8
 	endchannel

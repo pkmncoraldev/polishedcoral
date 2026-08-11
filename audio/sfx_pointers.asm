@@ -233,3 +233,4 @@ SFX:
 	dba Sfx_TourneyBracket1
 	dba Sfx_TourneyBracket2
 	dba Sfx_TourneyBracket3
+	dba Sfx_TourneyBracket4

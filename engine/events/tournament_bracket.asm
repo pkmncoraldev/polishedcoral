@@ -145,6 +145,11 @@ TourneyRoundWinnersTiles:
 	cp 0
 	jp z, .end
 	call TourneyRound2WinnersTiles
+;.round_3
+	ld a, [wTourneyRound23Results]
+	and %00000011
+	jr z, .end
+	call TourneyRound3WinnersTiles
 .end
 	call ApplyAttrAndTilemapInVBlank
 	call ClearSprites

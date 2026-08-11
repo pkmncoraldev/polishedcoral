@@ -1186,7 +1186,9 @@ wTourneyBracket13:: ds 1
 wTourneyBracket14:: ds 1
 wTourneyBracket15:: ds 1
 
-	ds 27 ; unused
+wTourneyRound1Results:: ds 1
+wTourneyRound23Results:: ds 1
+	ds 25 ; unused
 	
 wSkateparkCurTrick:: ds 1
 wSkateparkComboTimer:: ds 1

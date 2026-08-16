@@ -43,13 +43,13 @@ DrawTourneyBracket::
 	ld de, MUSIC_NONE
 	call PlayMusic
 	lb bc, BANK(TourneyBracketGFX), $30
-	ld de, TourneyBracketGFX
-	ld hl, VTiles2 tile $00
-	call Request2bpp
+	ld hl, TourneyBracketGFX
+	ld de, VTiles2 tile $00
+	call DecompressRequest2bpp
 	lb bc, BANK(TourneyBracketGFX2), $24
-	ld de, TourneyBracketGFX2
-	ld hl, VTiles0 tile $40
-	call Request2bpp
+	ld hl, TourneyBracketGFX2
+	ld de, VTiles0 tile $40
+	call DecompressRequest2bpp
 	ldh a, [rSVBK]
 	push af
 	ld a, $5
@@ -1487,10 +1487,10 @@ TourneyClearSprites:
 	ret
 
 TourneyBracketGFX:
-INCBIN "gfx/tourney/tourney.2bpp"
+INCBIN "gfx/tourney/tourney.2bpp.lz"
 
 TourneyBracketGFX2:
-INCBIN "gfx/tourney/anim_bracket.2bpp"
+INCBIN "gfx/tourney/anim_bracket.2bpp.lz"
 
 TourneyBracketTilemap:
 INCBIN "gfx/tourney/bracket.tilemap"

@@ -3968,15 +3968,15 @@ BattleAnim_Growth:
 BattleAnim_Smokescreen:
 	anim_3gfx ANIM_GFX_HAZE, ANIM_GFX_EGG, ANIM_GFX_SMOKE
 	anim_sound 6, 2, SFX_THROW_BALL
-	anim_obj ANIM_OBJ_BALL_POOF, 108, 70, $10
+	anim_obj ANIM_OBJ_SMOKESCREEN, 64, 92, $6c
 	anim_wait 24
-	anim_incobj  1
+	anim_incobj 1
 	anim_sound 0, 1, SFX_BALL_POOF
 	anim_obj ANIM_OBJ_BALL_POOF, 108, 70, $10
 	anim_wait 8
 .loop
 	anim_sound 0, 1, SFX_MENU
-	anim_obj ANIM_OBJ_STRENGTH, 64, 104, $1
+	anim_obj ANIM_OBJ_SMOKE, 132, 60, $20
 	anim_wait 8
 	anim_loop 5, .loop
 	anim_wait 128

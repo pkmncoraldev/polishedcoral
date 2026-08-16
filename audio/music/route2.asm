@@ -328,7 +328,7 @@ Music_Route2_branch_efcf6: ; efcf6
 ; efd5f
 
 Music_Route2_Ch3: ; efd5f
-	notetype $c, $14
+	note_type 12, 2, 7
 	octave 3
 	note C#, 2
 	note __, 4

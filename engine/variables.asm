@@ -63,7 +63,7 @@ _GetVarAction:: ; 80648 (20:4648)
 	dwb .CountPokemonJournals,          RETVAR_EXECUTE
 	dwb .CountTrainerStars,             RETVAR_EXECUTE
 	dwb wPlayerGender,                  RETVAR_ADDR_DE
-;	dwb wPlayerPalette,					RETVAR_ADDR_DE
+	dwb wPlayerPalette,					RETVAR_ADDR_DE
 	dwb wScriptVar,						RETVAR_ADDR_DE
 	dwb wMonJustCaught,					RETVAR_ADDR_DE
 	dwb wRanchRaceSeconds,   		    RETVAR_STRBUF2

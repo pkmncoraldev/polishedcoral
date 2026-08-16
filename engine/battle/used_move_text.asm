@@ -111,7 +111,7 @@
 ;;	db TRI_ATTACK
 ;;	db SLASH
 ;;	db SUBSTITUTE
-;
+;;
 ;;; Gen 2
 ;;	db MEAN_LOOK_BLOCK_SPIDER_WEB
 ;;	db LOCK_ON_MIND_READER
@@ -144,7 +144,7 @@
 ;;	db FURY_CUTTER
 ;;	db STEEL_WING
 ;;	db ATTRACT
-;;	db HEAL_BELL
+;;	db HEAL_BELL_AROMA
 ;;	db RETURN
 ;;	db SAFEGUARD
 ;;	db MAGNITUDE
@@ -155,122 +155,122 @@
 ;;	db ENCORE
 ;;	db PURSUIT
 ;;	db RAPID_SPIN
-;;	db IRON_TAIL
-;;	db METAL_CLAW
-;;	db SYNTHESIS_MOONLIGHT_MORNING_SUN
-;;	db CROSS_CHOP
-;;	db TWISTER
-;;	db RAIN_DANCE
-;;	db SUNNY_DAY
-;;	db CRUNCH
-;;	db EXTREMESPEED
-;;	db ANCIENTPOWER
-;;	db SHADOW_BALL
+;	db IRON_TAIL
+;	db METAL_CLAW
+;	db SYNTHESIS_MOONLIGHT_MORNING_SUN
+;	db CROSS_CHOP
+;	db TWISTER
+;	db RAIN_DANCE
+;	db SUNNY_DAY
+;	db CRUNCH
+;	db EXTREMESPEED
+;	db ANCIENTPOWER
+;	db SHADOW_BALL
 ;	db FUTURE_SIGHT  ; update anim
-;;	db ROCK_SMASH
+;	db ROCK_SMASH
 ;
-;;; Gen 3
-;;	db FAKE_OUT
-;;	db HAIL
-;;	db WILL_O_WISP
-;;	db TAUNT
-;;	db WISH
-;;	db SUPERPOWER
-;;	db BRICK_BREAK
-;;	db KNOCK_OFF
-;;	db DIVE
-;;	db HYPER_VOICE
-;;	db POISON_FANG
-;;	db WEATHER_BALL
-;;	db COSMIC_POWER
-;;	db SIGNAL_BEAM
-;;	db BULLET_SEED
-;;	db DRAGON_CLAW
-;;	db BULK_UP
-;;	db CALM_MIND
-;;	db DRAGON_DANCE
-;;	db ROCK_BLAST
-;;	db SHOCK_WAVE
+;; Gen 3
+;	db FAKE_OUT
+;	db HAIL
+;	db WILL_O_WISP
+;	db TAUNT
+;	db WISH
+;	db SUPERPOWER
+;	db BRICK_BREAK
+;	db KNOCK_OFF
+;	db DIVE
+;	db HYPER_VOICE
+;	db POISON_FANG
+;	db WEATHER_BALL
+;	db COSMIC_POWER
+;	db SIGNAL_BEAM
+;	db BULLET_SEED
+;	db DRAGON_CLAW
+;	db BULK_UP
+;	db CALM_MIND
+;	db DRAGON_DANCE
+;	db ROCK_BLAST
+;	db SHOCK_WAVE
 ;
-;;; Gen 4
-;;	db ROOST
-;;	db SUCKER_PUNCH
-;;	db TOXIC_SPIKES
-;;	db FLARE_BLITZ
-;;	db AURA_SPHERE
-;;	db POISON_JAB
-;;	db DARK_PULSE
-;;	db NIGHT_SLASH
-;;	db AQUA_TAIL
-;;	db AIR_SLASH
-;;	db X_SCISSOR
-;;	db BUG_BUZZ
-;;	db DRAGON_PULSE
-;;	db POWER_GEM
-;;	db DRAIN_PUNCH
-;;	db FOCUS_BLAST
-;;	db ENERGY_BALL
-;;	db BRAVE_BIRD
-;;	db EARTH_POWER
-;;	db GIGA_IMPACT
-;;	db NASTY_PLOT
-;;	db BULLET_PUNCH
-;;	db ICE_SHARD
-;;	db SHADOW_CLAW
-;;	db THUNDER_FANG
-;;	db ICE_FANG
-;;	db FIRE_FANG
-;;	db ZEN_HEADBUTT
-;;	db FLASH_CANNON
-;;	db ROCK_CLIMB
-;;	db ROCK_WRECKER
-;;	db GUNK_SHOT
-;;	db STONE_EDGE
-;;	db WOOD_HAMMER
-;;	db AQUA_JET
-;;	db DOUBLE_HIT
-;;	db OMINOUS_WIND
+;; Gen 4
+;	db ROOST
+;	db SUCKER_PUNCH
+;	db TOXIC_SPIKES
+;	db FLARE_BLITZ
+;	db AURA_SPHERE
+;	db POISON_JAB
+;	db DARK_PULSE
+;	db NIGHT_SLASH
+;	db AQUA_TAIL
+;	db AIR_SLASH
+;	db X_SCISSOR
+;	db BUG_BUZZ
+;	db DRAGON_PULSE
+;	db POWER_GEM
+;	db DRAIN_PUNCH
+;	db FOCUS_BLAST
+;	db ENERGY_BALL
+;	db BRAVE_BIRD
+;	db EARTH_POWER
+;	db GIGA_IMPACT
+;	db NASTY_PLOT
+;	db BULLET_PUNCH
+;	db ICE_SHARD
+;	db SHADOW_CLAW
+;	db THUNDER_FANG
+;	db ICE_FANG
+;	db FIRE_FANG
+;	db ZEN_HEADBUTT
+;	db FLASH_CANNON
+;	db ROCK_CLIMB
+;	db ROCK_WRECKER
+;	db GUNK_SHOT
+;	db STONE_EDGE
+;	db WOOD_HAMMER
+;	db AQUA_JET
+;	db DOUBLE_HIT
+;	db OMINOUS_WIND
 ;
-;;; Gen 5
-;;	db PSYSHOCK
-;;	db VENOSHOCK
-;;	db FLAME_BURST
-;;	db QUIVER_DANCE
-;;	db ELECTRO_BALL ; being cut
-;;	db FLAME_CHARGE
-;;	db CLEAR_SMOG
-;;	db SCALD
-;;	db SHELL_SMASH
-;;	db HEX
-;;	db ACROBATICS
-;;	db BULLDOZE
-;;	db WILD_CHARGE
-;;	db HORN_LEECH
-;;	db COTTON_GUARD
-;;	db HURRICANE
-;;	db FIERY_DANCE
-;;	db ICICLE_CRASH
+;; Gen 5
+;	db PSYSHOCK
+;	db VENOSHOCK
+;	db FLAME_BURST
+;	db QUIVER_DANCE
+;	db ELECTRO_BALL ; being cut
+;	db FLAME_CHARGE
+;	db CLEAR_SMOG
+;	db SCALD
+;	db SHELL_SMASH
+;	db HEX
+;	db ACROBATICS
+;	db BULLDOZE
+;	db WILD_CHARGE
+;	db HORN_LEECH
+;	db COTTON_GUARD
+;	db HURRICANE
+;	db FIERY_DANCE
+;	db ICICLE_CRASH
 ;
-;;; Gen 6
-;;	db PETAL_BLIZZARD
-;;	db FAIRY_WIND
-;;	db DAZZLINGLEAM
-;;	db PLAY_ROUGH
-;;	db MOONBLAST
+;; Gen 6
+;	db PETAL_BLIZZARD
+;	db FAIRY_WIND
+;	db DAZZLINGLEAM
+;	db PLAY_ROUGH
+;	db MOONBLAST
 ;
-;;; Gen 7
-;;	db DRAGONHAMMER
-;;	db SHADOW_BONE
+;; Gen 7
+;	db DRAGONHAMMER
+;	db SHADOW_BONE
 ;
-;;; Gen 8
-;;	db DRAGON_DARTS
+;; Gen 8
+;	db DRAGON_DARTS
 ;	db PSYSHIELD_BASH
 ;
-;;; Gen 9
+;; Gen 9
 ;	db LUMINA_CRASH
-;;	db TWIN_BEAM
+;	db TWIN_BEAM
 ;
-;;; Misc
+;; Misc
 ;	db UNUSED
 ;	db 0
 
@@ -291,9 +291,9 @@ DisplayUsedMoveText:
 ;	farcall AnimateCurrentMove
 ;	pop de
 ;	pop hl
+;	call WaitPressAorB_BlinkCursor
 ;	jr .loop
-
-; battle command 03
+;.do_it
 
 	ldh a, [hBattleTurn]
 	and a

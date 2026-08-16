@@ -25,11 +25,6 @@ INCLUDE "audio/music/devmessageend.asm"
 INCLUDE "audio/music/mom.asm"
 INCLUDE "audio/music/wildpokemonvictory.asm" ; shares with successfulcapture.asm
 INCLUDE "audio/music/successfulcapture.asm" ; shares with wildpokemonvictory.asm
-INCLUDE "audio/music/pokemoncenter.asm"
-INCLUDE "audio/music/healpokemon.asm"
-INCLUDE "audio/music/trainervictory.asm"
-INCLUDE "audio/music/rivalbattle.asm"
-INCLUDE "audio/music/evolution.asm"
 
 
 SECTION "Music 2", ROMX
@@ -75,11 +70,6 @@ INCLUDE "audio/music/brillosongbad.asm"
 INCLUDE "audio/music/oasis.asm"
 INCLUDE "audio/music/bar.asm"
 INCLUDE "audio/music/darkness.asm"
-INCLUDE "audio/music/starglowold.asm"
-INCLUDE "audio/music/wildbattleold.asm"
-INCLUDE "audio/music/gymbattleold.asm"
-INCLUDE "audio/music/rbywildbattle.asm"
-INCLUDE "audio/music/rivalbattle2.asm"
 
 
 SECTION "Music 6", ROMX
@@ -144,12 +134,20 @@ INCLUDE "audio/music/eventidevillage.asm"
 
 
 SECTION "Music 12", ROMX
-
+INCLUDE "audio/music/starglowold.asm"
+INCLUDE "audio/music/wildbattleold.asm"
+INCLUDE "audio/music/gymbattleold.asm"
+INCLUDE "audio/music/rbywildbattle.asm"
+INCLUDE "audio/music/rivalbattle2.asm"
 
 
 
 SECTION "Music 13", ROMX
-
+INCLUDE "audio/music/pokemoncenter.asm"
+INCLUDE "audio/music/healpokemon.asm"
+INCLUDE "audio/music/trainervictory.asm"
+INCLUDE "audio/music/rivalbattle.asm"
+INCLUDE "audio/music/evolution.asm"
 
 
 SECTION "Music 14", ROMX

@@ -54,12 +54,7 @@ INCLUDE "audio/music/lava.asm"
 INCLUDE "audio/music/sunbeamisland.asm"
 INCLUDE "audio/music/route10.asm"
 INCLUDE "audio/music/lustercity.asm"
-INCLUDE "audio/music/lustersewer.asm"
-INCLUDE "audio/music/wildbattle.asm"
-INCLUDE "audio/music/wildbattle2.asm"
-INCLUDE "audio/music/trainerbattle.asm"
-INCLUDE "audio/music/dodriorace.asm"
-INCLUDE "audio/music/encountergymleader.asm"
+
 
 
 SECTION "Music 4", ROMX
@@ -70,15 +65,7 @@ INCLUDE "audio/music/snareadminbattle.asm"
 INCLUDE "audio/music/snareleaderbattle.asm"
 INCLUDE "audio/music/train.asm"
 INCLUDE "audio/music/trainstartup.asm"
-INCLUDE "audio/music/snaretheme.asm"
-INCLUDE "audio/music/twinkletown.asm"
-INCLUDE "audio/music/waterroute.asm"
-INCLUDE "audio/music/eventidevillage.asm"
-INCLUDE "audio/music/snarevictory.asm"
-INCLUDE "audio/music/tvstatic.asm"
-INCLUDE "audio/music/wildboss.asm"
-INCLUDE "audio/music/flickerstation.asm"
-INCLUDE "audio/music/route12.asm"
+
 
 
 SECTION "Music 5", ROMX
@@ -110,6 +97,11 @@ INCLUDE "audio/music/spambuilding.asm"
 
 SECTION "Music 7", ROMX
 INCLUDE "audio/music/clown.asm"
+INCLUDE "audio/music/snarevictory.asm"
+INCLUDE "audio/music/tvstatic.asm"
+INCLUDE "audio/music/wildboss.asm"
+INCLUDE "audio/music/flickerstation.asm"
+INCLUDE "audio/music/route12.asm"
 
 
 SECTION "Music 8", ROMX
@@ -134,12 +126,20 @@ INCLUDE "audio/music/cycling.asm"
 
 
 SECTION "Music 10", ROMX
-
+INCLUDE "audio/music/lustersewer.asm"
+INCLUDE "audio/music/wildbattle.asm"
+INCLUDE "audio/music/wildbattle2.asm"
+INCLUDE "audio/music/trainerbattle.asm"
+INCLUDE "audio/music/dodriorace.asm"
+INCLUDE "audio/music/encountergymleader.asm"
 
 
 
 SECTION "Music 11", ROMX
-
+INCLUDE "audio/music/snaretheme.asm"
+INCLUDE "audio/music/twinkletown.asm"
+INCLUDE "audio/music/waterroute.asm"
+INCLUDE "audio/music/eventidevillage.asm"
 
 
 

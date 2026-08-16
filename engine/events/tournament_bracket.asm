@@ -3,16 +3,120 @@ DrawTourneyBracket::
 	call ClearBGPalettes
 	call ClearSprites
 	call ClearTileMap
+	
+	call DisableLCD
+	ld a, 144
+	ldh [hSCX], a
+	ldh a, [rVBK]
+	push af
+	xor a
+	ldh [rVBK], a
+	ld hl, TourneyBlankTilemap
+	call LoadTourneyBracketTilemap
+	
+	pop af
+	ldh [rVBK], a
+	call EnableLCD
+
+	hlcoord 0, 0
+	ld bc, SCREEN_HEIGHT * SCREEN_WIDTH
+	ld a, 3
+	call ByteFill
+	
+	ld de, TourneyLogoTilemap
+	hlcoord 6, 0
+	lb bc, 2, 9
+	call TourneyBracket_CopyToBox
+	
+	hlcoord 0, 0, wAttrMap
+	ld bc, SCREEN_HEIGHT * SCREEN_WIDTH
+	ld a, 7
+	call ByteFill
+	
+	ld hl, Tourney_BallOAM
+	ld de, wSprites + 136
+	ld bc, 24
+	call CopyBytes
+	
+	call ApplyAttrAndTilemapInVBlank
+	
 	ld de, MUSIC_NONE
 	call PlayMusic
-	lb bc, BANK(TourneyBracketGFX), $0e
+	lb bc, BANK(TourneyBracketGFX), $30
 	ld de, TourneyBracketGFX
 	ld hl, VTiles2 tile $00
 	call Request2bpp
-	lb bc, BANK(TourneyBracketGFX2), $12
+	lb bc, BANK(TourneyBracketGFX2), $24
 	ld de, TourneyBracketGFX2
 	ld hl, VTiles0 tile $40
 	call Request2bpp
+	ldh a, [rSVBK]
+	push af
+	ld a, $5
+	ldh [rSVBK], a
+	ld hl, TourneyBracketPals1
+	ld de, wUnknBGPals
+	ld bc, 11 palettes
+	rst CopyBytes
+	
+	pop af
+	ldh [rSVBK], a
+	farcall FadeInPalettes
+	call WaitPressAorB_BlinkCursor
+	ld de, SFX_TITLE_SCREEN_ENTRANCE
+	call PlaySFX
+	ld c, 10
+	call DelayFrames
+	
+.scroll_loop
+	call DelayFrame
+	call TourneyScrollBall
+	ldh a, [hSCX]
+	add 8
+	ldh [hSCX], a
+	cp 0
+	jr nz, .scroll_loop
+	
+	ld c, 10
+	call DelayFrames
+	
+;fix ball oam
+	ld hl, wSprites + 136
+	ld bc, 8
+	xor a
+	call ByteFill
+	
+	ld hl, wSprites + 150
+	ld bc, 1
+	ld a, $56
+	call ByteFill
+	ld hl, wSprites + 158
+	ld bc, 1
+	ld a, $57
+	call ByteFill
+	
+	ld c, 50
+	call DelayFrames
+	
+	ld hl, Tourney_BorderOAM
+	ld de, wSprites
+	ld bc, 144
+	call CopyBytes
+	
+	ld c, 8
+.borders_loop
+	push bc
+	call TourneyScrollBorders
+	call DelayFrame
+	pop bc
+	dec c
+	ld a, c
+	cp 0
+	jr nz, .borders_loop
+	
+	ld c, 50
+	call DelayFrames
+
 	xor a
 	ldh [hBGMapMode], a
 	call FillBracketTilemap
@@ -21,18 +125,99 @@ DrawTourneyBracket::
 	call GetTourneyCompetetorSpriteColors
 	call TourneyRoundWinnersTiles	; ApplyAttrAndTilemapInVBlank is run here
 	
+	ld de, SFX_SCRATCH
+	call PlaySFX
 ; palettes
 	ldh a, [rSVBK]
 	push af
 	ld a, $5
 	ldh [rSVBK], a
-	ld hl, TourneyBracketPals
+	
+	ld hl, TourneyBracketPalsSwoosh1
+	ld de, wUnknBGPals + 6 palettes
+	ld bc, 1 palettes
+	rst CopyBytes
+	ld c, 1
+	call FadePalettes
+	ld c, 2
+	call DelayFrames
+	
+	ld hl, TourneyBracketPalsSwoosh2
+	ld de, wUnknBGPals + 6 palettes
+	ld bc, 1 palettes
+	rst CopyBytes
+	ld c, 1
+	call FadePalettes
+	ld c, 2
+	call DelayFrames
+	
+	ld hl, TourneyBracketPalsSwoosh3
+	ld de, wUnknBGPals + 6 palettes
+	ld bc, 1 palettes
+	rst CopyBytes
+	ld c, 1
+	call FadePalettes
+	ld c, 100
+	call DelayFrames
+	
+	ld a, 5
+	hlcoord 0, 0, wAttrMap
+	lb bc, 18, 1
+	call TourneyBracket_FillBox2
+	
+	ld a, $25
+	hlcoord 19, 0, wAttrMap
+	lb bc, 18, 1
+	call TourneyBracket_FillBox2
+	call ApplyAttrAndTilemapInVBlank
+	
+	call TourneyClearSprites
+	
+	ld de, SFX_DAMAGE
+	call PlaySFX	
+	ld hl, Tourney_Round1OAM
+	ld de, wSprites + 120
+	ld bc, 24
+	call CopyBytes
+	
+	ld c, 125
+	call DelayFrames
+	
+	ld hl, TourneyBracketPals2 + 7 palettes
+	ld de, wUnknBGPals + 7 palettes
+	ld bc, 1 palettes
+	rst CopyBytes
+	ld c, 10
+	call FadePalettes
+	ld c, 25
+	call DelayFrames
+	
+	ld a, 7
+	hlcoord 0, 0, wAttrMap
+	lb bc, 18, 1
+	call TourneyBracket_FillBox2
+	
+	ld a, $27
+	hlcoord 19, 0, wAttrMap
+	lb bc, 18, 1
+	call TourneyBracket_FillBox2
+	call ApplyAttrAndTilemapInVBlank
+	
+	ld de, VTiles2 tile $30
+	ld hl, CorySpriteGFX
+	lb bc, BANK(CorySpriteGFX), $04
+	call DecompressRequest2bpp
+	
+	ld hl, TourneyBracketPals2
 	ld de, wUnknBGPals
-	ld bc, 9 palettes
+	ld bc, 11 palettes
 	rst CopyBytes
 	pop af
 	ldh [rSVBK], a
 	farcall FadeInPalettes
+	ld de, MUSIC_EVOLUTION
+	call PlayMusic
+	call TourneyClearSprites
 .loop
 	call UpdateTime
 	call JoyTextDelay
@@ -152,7 +337,6 @@ TourneyRoundWinnersTiles:
 	call TourneyRound3WinnersTiles
 .end
 	call ApplyAttrAndTilemapInVBlank
-	call ClearSprites
 	ret
 	
 AnimateTourneyBracketRound1:
@@ -241,7 +425,7 @@ TourneyRound1WinnersTiles:
 	lb bc, 2, 3
 	call TourneyBracket_CopyToBox
 	call ApplyAttrAndTilemapInVBlank
-	call ClearSprites
+	call TourneyClearSprites
 	ret
 	
 AnimateTourneyBracketRound2:
@@ -303,7 +487,7 @@ TourneyRound2WinnersTiles:
 	call TourneyBracket_CopyToBox
 
 	call ApplyAttrAndTilemapInVBlank
-	call ClearSprites
+	call TourneyClearSprites
 	ret
 	
 AnimateTourneyBracketRound3:
@@ -344,7 +528,7 @@ TourneyRound3WinnersTiles:
 	call TourneyBracket_CopyToBox
 	
 	call ApplyAttrAndTilemapInVBlank
-	call ClearSprites
+	call TourneyClearSprites
 	ret
 	
 AnimateTourneyBracketRound4:
@@ -1074,6 +1258,7 @@ GetCurTourneyCompetetorSpriteColor:
 	
 TourneyBracket_FillBox:
 	lb bc, 2, 2
+TourneyBracket_FillBox2:
 .row
 	push bc
 	push hl
@@ -1110,12 +1295,8 @@ TourneyBracket_CopyToBox:
 GetTourneyCompetetorSprites:
 	ld de, VTiles0 tile $04
 	call GetTourneyCompetetorSprites2
-	ld de, VTiles2 tile $14
-	call GetTourneyCompetetorSprites2
-	ld de, VTiles2 tile $10
-	ld hl, CorySpriteGFX
-	lb bc, BANK(CorySpriteGFX), $04
-	jp DecompressRequest2bpp
+	ld de, VTiles2 tile $34
+	jp GetTourneyCompetetorSprites2
 
 GetTourneyCompetetorSprites2:
 	ld a, 15
@@ -1165,6 +1346,63 @@ GetCurTourneyCompetetorSprite:
 	ld c, 4
 	call DecompressRequest2bpp
 	pop de
+	ret
+	
+TourneyScrollBall:
+	ld hl, wSprites + 137
+	ld b, 4
+	ld a, [hl]
+	sub 8
+	ld [hl], a
+	inc hl
+	inc hl
+	inc hl
+	inc hl
+	ld a, [hl]
+	sub 8
+	ld [hl], a
+.loop
+	inc hl
+	inc hl
+	inc hl
+	inc hl
+	ld a, [hl]
+	add 8
+	ld [hl], a
+	dec b
+	ld a, b
+	cp 0
+	jr nz, .loop
+	ret
+	
+TourneyScrollBorders:
+	ld hl, wSprites + 1
+	ld b, 18
+.loop
+	ld a, [hl]
+	inc a
+	ld [hl], a
+	inc hl
+	inc hl
+	inc hl
+	inc hl
+	dec b
+	ld a, b
+	cp 0
+	jr nz, .loop
+	ld b, 18
+.loop2
+	ld a, [hl]
+	dec a
+	ld [hl], a
+	inc hl
+	inc hl
+	inc hl
+	inc hl
+	dec b
+	ld a, b
+	cp 0
+	jr nz, .loop2
 	ret
 
 TourneyCompetetorSprites:
@@ -1219,6 +1457,35 @@ TourneyCompetetorSpriteColors:
 	db PAL_OW_SILVER
 	db -1
 
+LoadTourneyBracketTilemap:
+	debgcoord 0, 0
+	ld bc, BG_MAP_WIDTH * BG_MAP_HEIGHT
+.copy
+	ld a, 0
+	ldh [rVBK], a
+	ld a, [hli]
+	ld [de], a
+	ld a, 1
+	ldh [rVBK], a
+	ld a, [hli]
+	ld [de], a
+	inc de
+	dec bc
+	ld a, b
+	or c
+	jr nz, .copy
+	ret
+	
+TourneyClearSprites:
+	ld hl, wSprites
+	ld b, wSpritesEnd - (wSprites + 32)
+	xor a
+.loop
+	ld [hli], a
+	dec b
+	jr nz, .loop
+	ret
+
 TourneyBracketGFX:
 INCBIN "gfx/tourney/tourney.2bpp"
 
@@ -1228,8 +1495,14 @@ INCBIN "gfx/tourney/anim_bracket.2bpp"
 TourneyBracketTilemap:
 INCBIN "gfx/tourney/bracket.tilemap"
 
+TourneyBlankTilemap:
+INCBIN "gfx/tourney/blank.tilemap"
+
 TourneyBracketAttrmap:
 INCBIN "gfx/tourney/bracket.attrmap"
+
+TourneyLogoTilemap:
+INCBIN "gfx/tourney/logo.tilemap"
 
 Tourney_BracketTilemapRound1_L_T_1:
 	db $08, $09, $03
@@ -1297,13 +1570,13 @@ Tourney_BracketTilemapRound2_R_T_2:
 	db $03, $09
 	db $08, $0b
 	db $03, $01
-	db $03, $01
+	db $2d, $01
 	
 Tourney_BracketTilemapRound2_R_B_2:
 	db $03, $01
 	db $08, $0a
 	db $03, $09
-	db $03, $09
+	db $2d, $09
 	
 Tourney_BracketTilemapRound3_T:
 	db $09
@@ -1325,7 +1598,6 @@ Tourney_BracketTilemapRound3_B:
 	db $09
 	db $09
 	
-
 Tourney_BracketOAMRound1_L_T:
 	;y pos, x pos, tile, palette
 	dsprite  5, 0, 4, 0, $40, $0
@@ -1421,57 +1693,205 @@ Tourney_BracketOAMRound4:
 	dsprite 11, 7,10, 0, $40, $0
 	dsprite 11, 1,10, 7, $49, $0 | Y_FLIP
 	
+Tourney_BallOAM:
+	dsprite 2, 5, 21, 1, $58, $2 | PRIORITY
+	dsprite 2, 5, 22, 1, $59, $2 | PRIORITY
+	dsprite 2, 1, -8, 2, $52, $1 | PRIORITY
+	dsprite 2, 1, -7, 2, $53, $1 | PRIORITY
+	dsprite 3, 1, -8, 2, $54, $1 | PRIORITY
+	dsprite 3, 1, -7, 2, $55, $1 | PRIORITY
+	
+Tourney_BorderOAM:
+	dsprite 2, 0, 0, 0, $5a, $0
+	dsprite 3, 0, 0, 0, $5a, $0
+	dsprite 4, 0, 0, 0, $5a, $0
+	dsprite 5, 0, 0, 0, $5a, $0
+	dsprite 6, 0, 0, 0, $5a, $0
+	dsprite 7, 0, 0, 0, $5a, $0
+	dsprite 8, 0, 0, 0, $5a, $0
+	dsprite 9, 0, 0, 0, $5a, $0
+	dsprite 10, 0, 0, 0, $5a, $0
+	dsprite 11, 0, 0, 0, $5a, $0
+	dsprite 12, 0, 0, 0, $5a, $0
+	dsprite 13, 0, 0, 0, $5a, $0
+	dsprite 14, 0, 0, 0, $5a, $0
+	dsprite 15, 0, 0, 0, $5a, $0
+	dsprite 16, 0, 0, 0, $5a, $0
+	dsprite 17, 0, 0, 0, $5a, $0
+	dsprite 18, 0, 0, 0, $5a, $0
+	dsprite 19, 0, 0, 0, $5a, $0
+	
+	dsprite 2, 0, 21, 0, $5a, $0 | X_FLIP
+	dsprite 3, 0, 21, 0, $5a, $0 | X_FLIP
+	dsprite 4, 0, 21, 0, $5a, $0 | X_FLIP
+	dsprite 5, 0, 21, 0, $5a, $0 | X_FLIP
+	dsprite 6, 0, 21, 0, $5a, $0 | X_FLIP
+	dsprite 7, 0, 21, 0, $5a, $0 | X_FLIP
+	dsprite 8, 0, 21, 0, $5a, $0 | X_FLIP
+	dsprite 9, 0, 21, 0, $5a, $0 | X_FLIP
+	dsprite 10, 0, 21, 0, $5a, $0 | X_FLIP
+	dsprite 11, 0, 21, 0, $5a, $0 | X_FLIP
+	dsprite 12, 0, 21, 0, $5a, $0 | X_FLIP
+	dsprite 13, 0, 21, 0, $5a, $0 | X_FLIP
+	dsprite 14, 0, 21, 0, $5a, $0 | X_FLIP
+	dsprite 15, 0, 21, 0, $5a, $0 | X_FLIP
+	dsprite 16, 0, 21, 0, $5a, $0 | X_FLIP
+	dsprite 17, 0, 21, 0, $5a, $0 | X_FLIP
+	dsprite 18, 0, 21, 0, $5a, $0 | X_FLIP
+	dsprite 19, 0, 21, 0, $5a, $0 | X_FLIP
+	
+Tourney_Round1OAM:
+	dsprite 18, 0, 7, 5, $5b, $0
+	dsprite 18, 0, 8, 5, $5c, $0
+	dsprite 18, 0, 9, 5, $5d, $0
+	dsprite 18, 0, 10, 5, $5e, $0
+Tourney_Round1OAM2:
+	dsprite 18, 0, 11, 5, $5f, $0
+	dsprite 18, 0, 13, 0, $60, $2
 
-TourneyBracketPals:
+TourneyBracketPals1:
 ; Red
-	RGB 31, 31, 31
+	RGB 08, 07, 13
+	RGB 08, 07, 13
+	RGB 08, 07, 13
+	RGB 08, 07, 13
+
+; Blue
+	RGB 08, 07, 13
+	RGB 08, 07, 13
+	RGB 08, 07, 13
+	RGB 08, 07, 13
+
+; Green
+	RGB 08, 07, 13
+	RGB 08, 07, 13
+	RGB 08, 07, 13
+	RGB 08, 07, 13
+
+; Brown
+	RGB 08, 07, 13
+	RGB 08, 07, 13
+	RGB 08, 07, 13
+	RGB 08, 07, 13
+
+; Purple
+	RGB 08, 07, 13
+	RGB 08, 07, 13
+	RGB 08, 07, 13
+	RGB 08, 07, 13
+
+; Teal
+	RGB 08, 07, 13
+	RGB 28, 28, 28
+	RGB 31, 25, 02
+	RGB 00, 00, 00
+	
+; Pink
+	RGB 08, 07, 13
+	RGB 08, 07, 13
+	RGB 08, 07, 13
+	RGB 08, 07, 13
+	
+; Silver
+	RGB 08, 07, 13
+	RGB 08, 07, 13
+	RGB 31, 25, 02
+	RGB 00, 00, 00
+	
+	RGB 08, 07, 13
+	RGB 28, 28, 28
+	RGB 31, 25, 02
+	RGB 00, 00, 00
+	
+	RGB 08, 07, 13
+	RGB 28, 28, 28
+	RGB 31, 05, 00
+	RGB 00, 00, 00
+	
+	RGB 08, 07, 13
+	RGB 08, 07, 13
+	RGB 08, 07, 13
+	RGB 08, 07, 13
+	
+TourneyBracketPals2:
+; Red
+	RGB 08, 07, 13
 	RGB 31, 19, 10
 	RGB 31, 05, 00
 	RGB 00, 00, 00
 
 ; Blue
-	RGB 31, 31, 31
+	RGB 08, 07, 13
 	RGB 31, 19, 10
 	RGB 10, 09, 31
 	RGB 00, 00, 00
 
 ; Green
-	RGB 31, 31, 31
+	RGB 08, 07, 13
 	RGB 31, 19, 10
 	RGB 07, 21, 02
 	RGB 00, 00, 00
 
 ; Brown
-	RGB 31, 31, 31
+	RGB 08, 07, 13
 	RGB 31, 19, 10
 	RGB 15, 10, 03
 	RGB 00, 00, 00
 
 ; Purple
-	RGB 31, 31, 31
+	RGB 08, 07, 13
 	RGB 31, 19, 10
 	RGB 21, 06, 21
 	RGB 00, 00, 00
 
 ; Teal
-	RGB 31, 31, 31
+	RGB 08, 07, 13
 	RGB 31, 19, 10
 	RGB 03, 21, 19
 	RGB 00, 00, 00
 	
 ; Pink
-	RGB 31, 31, 31
-	RGB 31, 19, 10
-	RGB 31, 12, 13
-	RGB 00, 00, 00
+	RGB 08, 07, 13
+	RGB 31, 25, 02
+	RGB 30, 17, 11
+	RGB 29, 12, 17
 	
 ; Silver
-	RGB 31, 31, 31
-	RGB 26, 26, 26
-	RGB 13, 13, 13
+	RGB 08, 07, 13
+	RGB 28, 28, 28
+	RGB 31, 25, 02
 	RGB 00, 00, 00
 	
-	RGB 31, 00, 00
-	RGB 31, 00, 00
-	RGB 31, 00, 00
-	RGB 31, 00, 00
+	RGB 08, 07, 13
+	RGB 28, 28, 28
+	RGB 31, 25, 02
+	RGB 00, 00, 00
+	
+	RGB 08, 07, 13
+	RGB 28, 28, 28
+	RGB 31, 05, 00
+	RGB 00, 00, 00
+	
+	RGB 08, 07, 13
+	RGB 08, 07, 13
+	RGB 08, 07, 13
+	RGB 08, 07, 13
+
+TourneyBracketPalsSwoosh1:
+	RGB 08, 07, 13
+	RGB 08, 07, 13
+	RGB 08, 07, 13
+	RGB 31, 25, 02
+	
+TourneyBracketPalsSwoosh2:
+	RGB 08, 07, 13
+	RGB 08, 07, 13
+	RGB 31, 25, 02
+	RGB 30, 17, 11
+	
+TourneyBracketPalsSwoosh3:
+	RGB 08, 07, 13
+	RGB 31, 25, 02
+	RGB 30, 17, 11
+	RGB 29, 12, 17
+	

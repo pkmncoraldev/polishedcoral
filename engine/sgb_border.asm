@@ -55,15 +55,22 @@ SGBDelayCycles:
 	ret
 
 InitSGBBorder::
-	; ldh a, [hCGB]
-	; and a
-	; ret nz
+	ldh a, [hCGB]
+	and a
+	ret nz
+	
+	
 
 	di
 	ld a, [wInputFlags]
 	push af
 	set 7, a
 	ld [wInputFlags], a
+
+;	ld c, 200
+;	call DelayFrames
+;	ld c, 165
+;	call DelayFrames
 
 	xor a
 	ldh [rJOYP], a

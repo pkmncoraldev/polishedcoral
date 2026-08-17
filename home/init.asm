@@ -123,6 +123,10 @@ Init:: ; 17d
 	ld a, 7
 	ldh [hWX], a
 	ldh [rWX], a
+	
+	farcall InitSGBBorder
+
+	farcall InitCGBPals
 
 	ld a, %11100011
 	; LCD on
@@ -138,9 +142,7 @@ Init:: ; 17d
 	ld a, CONNECTION_NOT_ESTABLISHED
 	ldh [hSerialConnectionStatus], a
 
-	farcall InitSGBBorder
-
-	farcall InitCGBPals
+	
 
 	ld a, VBGMap1 / $100
 	ldh [hBGMapAddress + 1], a

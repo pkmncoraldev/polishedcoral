@@ -40,6 +40,7 @@ TilesetPokeCenterAnim::
 TilesetLibraryAnim::
 TilesetMall2Anim::
 TilesetIceCaveAnim::
+TilesetLeagueAnim::
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation

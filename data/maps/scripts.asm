@@ -137,10 +137,6 @@ SECTION "Routes Scripts 3", ROMX
 INCLUDE "maps/Route5Gate1F.asm"
 INCLUDE "maps/Route5Gate2F.asm"
 INCLUDE "maps/Route8Garden.asm"
-INCLUDE "maps/Route10East.asm"
-INCLUDE "maps/Route10Tent.asm"
-INCLUDE "maps/Route17.asm"
-INCLUDE "maps/Route18North.asm"
 
 SECTION "Routes Scripts 4", ROMX
 
@@ -168,6 +164,13 @@ INCLUDE "maps/FakeSunsetCape.asm"
 INCLUDE "maps/FakePlayersHouse1F.asm"
 INCLUDE "maps/FakePlayersHouse2F.asm"
 INCLUDE "maps/FakeNorthSouthGate.asm"
+
+SECTION "Routes Scripts 7", ROMX
+
+INCLUDE "maps/Route10East.asm"
+INCLUDE "maps/Route10Tent.asm"
+INCLUDE "maps/Route17.asm"
+INCLUDE "maps/Route18North.asm"
 
 
 SECTION "Sunset Bay Scripts", ROMX
@@ -450,6 +453,9 @@ INCLUDE "maps/DesertWasteland6.asm"
 INCLUDE "maps/DesertWasteland7.asm"
 INCLUDE "maps/DesertWasteland8.asm"
 INCLUDE "maps/DesertWasteland9.asm"
+
+SECTION "Desert Temple Scripts", ROMX
+
 INCLUDE "maps/DesertTempleOutside.asm"
 INCLUDE "maps/DesertTemple1.asm"
 INCLUDE "maps/DesertTempleTopLeft.asm"
@@ -478,6 +484,9 @@ INCLUDE "maps/KomoreCommunityCenter.asm"
 INCLUDE "maps/KomoreCommunityCenterLeft.asm"
 INCLUDE "maps/KomoreCommunityCenterMiddle.asm"
 INCLUDE "maps/KomoreCommunityCenterRight.asm"
+
+SECTION "Komore Village Scripts 2", ROMX
+
 INCLUDE "maps/KomoreHouse1.asm"
 INCLUDE "maps/KomoreHouse2.asm"
 INCLUDE "maps/KomoreHouse3.asm"

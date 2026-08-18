@@ -883,6 +883,26 @@ INCBIN "data/tilesets/nett_top_attributes.bin.lz"
 TilesetNettTopColl::
 INCLUDE "data/tilesets/nett_top_collision.asm"
 
+SECTION "Tileset Data - league", ROMX
+
+TilesetLeagueGFX0::
+INCBIN "gfx/tilesets/league.2bpp.vram0.lz"
+
+TilesetLeagueGFX1::
+INCBIN "gfx/tilesets/league.2bpp.vram1.lz"
+
+TilesetLeagueGFX2::
+INCBIN "gfx/tilesets/league.2bpp.vram2.lz"
+
+TilesetLeagueMeta::
+INCBIN "data/tilesets/league_metatiles.bin.lz"
+
+TilesetLeagueAttr::
+INCBIN "data/tilesets/league_attributes.bin.lz"
+
+TilesetLeagueColl::
+INCLUDE "data/tilesets/league_collision.asm"
+
 SECTION "Tileset Headers", ROMX
 
 macro tileset
@@ -938,3 +958,4 @@ Tilesets::
 	tileset TilesetLavaCave
 	tileset TilesetDragonShrine
 	tileset TilesetNettTop
+	tileset TilesetLeague

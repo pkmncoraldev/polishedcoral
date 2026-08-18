@@ -234,6 +234,30 @@ ROMX $39
 	org $4000
 	"Variant Pic Pointers"
 	
+ROMX $da
+	org $4000
+	"DED 38"
+	
+ROMX $db
+	org $4000
+	"DED 37"
+	
+ROMX $dc
+	org $4000
+	"DED 36"
+	
+ROMX $dd
+	org $4000
+	"DED 35"
+	
+ROMX $de
+	org $4000
+	"DED 34"
+	
+ROMX $df
+	org $4000
+	"DED 33"
+	
 ROMX $e0
 	org $4000
 	"DED 1"

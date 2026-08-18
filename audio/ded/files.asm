@@ -153,9 +153,7 @@ SECTION "DED 33", ROMX
 CursolaDEDData:: INCBIN "audio/ded/cursola.ded"
 WyrdeerDEDData:: INCBIN "audio/ded/wyrdeer.ded"
 
-
 SECTION "DED 34", ROMX
-
 CherubiDEDData:: INCBIN "audio/ded/cherubi.ded"
 CherrimDEDData:: INCBIN "audio/ded/cherrim.ded"
 

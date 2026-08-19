@@ -50,7 +50,7 @@ SprucePhoneComeToIslandText:
 	
 	para "Before you move"
 	line "on, why not stop"
-	line "by my LAB on"
+	cont "by my LAB on"
 	cont "SUNBEAM ISLAND?"
 	
 	para "I'll give you the"

@@ -693,8 +693,8 @@ LakeNpc1Text:
 	cont "travel across the"
 	cont "water,"
 	
-	para "you'll have"
-	cont "to take a boat."
+	para "you'll have to"
+	line "take a boat."
 	done
 
 LakeNpc2Text:

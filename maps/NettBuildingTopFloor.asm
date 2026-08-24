@@ -464,6 +464,7 @@ Movement_NettBuildingTopFloorStop:
 NettBuildingTopFloor_NPC_2:
 	checkitem TRAIN_PASS
 	iftrue .got_pass
+	dotrigger $1
 	jumptextfaceplayer NettBuildingTopFloor_NPC_2_Text1
 .got_pass
 	jumptextfaceplayer NettBuildingTopFloor_NPC_2_Text2

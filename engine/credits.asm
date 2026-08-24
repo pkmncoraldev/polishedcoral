@@ -1092,7 +1092,7 @@ CreditsStrings:
 .coraldev:		  db "      coraldev@"
 
 .polished:		  db "  Polished Engine@"
-.rangi:			  db "        Rangi@"
+.rangi:			  db "        Rangi42@"
 .fiq:			  db "         FIQ@"
 
 .programming:	  db "     Programing@"

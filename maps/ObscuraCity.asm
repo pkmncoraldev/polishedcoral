@@ -635,7 +635,7 @@ ObscuraCityCallback:
 ObscuraCitySign:
 	text "OBSCURA CITY"
 	
-	para "ONWA's beacon of"
+	para "ONWA's portal of"
 	line "knowledge."
 	done
 	

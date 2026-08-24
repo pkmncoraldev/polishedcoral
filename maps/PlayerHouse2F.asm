@@ -7,7 +7,7 @@ PlayerHouse2F_MapScriptHeader:
 	callback MAPCALLBACK_NEWMAP, PlayerHouse2FInitializeRoom
 	callback MAPCALLBACK_TILES, PlayerHouse2FSetSpawn
 
-	db 26 ; warp events
+	db 27 ; warp events
 	warp_event  9,  0, PLAYER_HOUSE_1F, 3
 	warp_event  5, 10, SUNSET_BAY, 1
 	warp_event  7, 10, DAYBREAK_VILLAGE, 1
@@ -33,12 +33,13 @@ PlayerHouse2F_MapScriptHeader:
 	warp_event 17, 18, ROUTE_11_2, 2
 	warp_event 19, 18, LUMINA_TOWN, 1
 	warp_event  5, 22, NETT_BUILDING_TOP_FLOOR, 1
+	warp_event  7, 22, BEACON_ATOLL, 1
 	warp_event 19, 22, AUREOLE_TOWN, 1
 
 	db 1 ; coord events
 	xy_trigger 0, 10, 17, 0, SunbeamWarp, 0, 0
 
-	db 28 ; bg events
+	db 29 ; bg events
 	bg_event  4,  1, SIGNPOST_UP, PlayerHousePC
 	bg_event  8,  0, SIGNPOST_IFSET, PlayersHousePoster
 ;	powergap
@@ -68,6 +69,7 @@ PlayerHouse2F_MapScriptHeader:
 	bg_event 16, 18, SIGNPOST_JUMPTEXT, PlayerHouseRoute32
 	bg_event 18, 18, SIGNPOST_JUMPTEXT, PlayerHouseLumina
 	bg_event  4, 22, SIGNPOST_JUMPTEXT, PlayerHouseNett
+	bg_event  6, 22, SIGNPOST_JUMPTEXT, PlayerHouseBeacon
 
 	db 9 ; object events
 	object_event  6,  2, SPRITE_CONSOLE, SPRITEMOVEDATA_DOLL, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, GameConsole, EVENT_KRISS_HOUSE_2F_CONSOLE
@@ -1658,6 +1660,10 @@ PlayerHouseLumina:
 PlayerHouseNett:
 	text "NETT BUILDING"
 	line "TOP FLOOR"
+	done
+	
+PlayerHouseBeacon:
+	text "BEACON ATOLL"
 	done
 	
 PlayerHouse2FInitializeRoom:

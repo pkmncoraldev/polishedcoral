@@ -93,6 +93,7 @@ Landmarks: ; 0x1ca8c3
 	landmark 124, 108, Route17Name
 	landmark 132,  96, Route18Name
 	landmark 132,  84, DesertWastelandName
+	landmark 0, 0, BeaconAtollName
 	
 	
 	landmark -16, -16, GateName
@@ -175,6 +176,7 @@ Route32Name:		   db "ROUTE 32@"
 BoneCavernName:	   	   db "BONE¯CAVERNS@"
 AureoleMountainName:   db "AUREOLE¯MOUNTAIN@"
 LuminaTownName:	   	   db "LUMINA¯TOWN@"
+BeaconAtollName:	   db "BEACON¯ATOLL@" 	   	
 
 LusterStationName:	   db "LUSTER¯CITY@"
 ResidentialName:	   db "HOUSING¯DISTRICT@"

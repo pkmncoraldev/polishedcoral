@@ -169,4 +169,5 @@ MapTriggers::
 	scene_var DRAGON_SHRINE_TOP,					  wAlways0Trigger
 	scene_var LUSTER_MALL_CLOTHES_SHOP,				  wAlways0Trigger
 	scene_var LUMINA_TOWN,							  wAlways0Trigger
+	scene_var BEACON_ATOLL,							  wAlways0Trigger
 	db -1

@@ -44,6 +44,7 @@
 	const TILESET_LAVA_CAVE
 	const TILESET_DRAGON_SHRINE
 	const TILESET_NETT_TOP
+	const TILESET_BEACON
 	
 
 	const_def

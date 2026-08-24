@@ -586,3 +586,6 @@ INCLUDE "maps/InnVent.asm"
 INCLUDE "maps/Route25Gate.asm"
 INCLUDE "maps/Route11UnderBridge.asm"
 
+SECTION "League Scripts", ROMX
+INCLUDE "maps/BeaconAtoll.asm"
+

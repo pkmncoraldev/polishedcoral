@@ -32,6 +32,7 @@ DEF SOUTH_ONWA_FLYPOINT EQU const_value
 DEF _ONWA_KEYS_FLYPOINT EQU const_value
 
 	flypoint BRILLO,			BRILLO_TOWN
+	flypoint BEACON,			BEACON_ATOLL
 	
 	flypoint LASTFLYPOINT,		SHIMMER_CITY
 	db -1

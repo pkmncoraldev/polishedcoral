@@ -163,6 +163,8 @@ LoadSpecialMapPalette: ; 494ac
 	jp z, .lightning
 	cp TILESET_SOUTH_BUILDINGS
 	jp z, .south_buildings
+	cp TILESET_BEACON
+	jp z, .beacon
 	call DiveSpotMapPals
 	jp nc, .do_nothing
 	ld hl, DiveSpotsPalette
@@ -893,7 +895,26 @@ LoadSpecialMapPalette: ; 494ac
 .museum_1f
 	ld hl, MuseumPalette2
 	jp LoadBGPal6
-	jr .do_nothing
+	jp .do_nothing
+	
+.beacon
+	ld a, [wMapGroup]
+	cp GROUP_BEACON_ATOLL
+	jp nz, .do_nothing
+	ld a, [wMapNumber]
+	cp MAP_BEACON_ATOLL
+	jp nz, .do_nothing
+	ld a, [wXCoord]
+	cp $11
+	jp nc, .do_nothing
+	ld a, [wYCoord]
+	cp $0f
+	jp c, .beacon_bottom
+	ld hl, AirportFencePalette
+	jp LoadTimeofDayBGPal1
+.beacon_bottom
+	ld hl, AirportFencePalette2
+	jp LoadTimeofDayBGPal1
 	
 .playerhouse
 	ld a, [wMapGroup]
@@ -984,28 +1005,27 @@ DiveSpotMapPals:
 	scf
 	ret
 	
-LoadTimeofDayBGPal3:
-	ld a, [wTimeOfDayPal]
-	and 3
-	ld bc, 1 palettes
-	rst AddNTimes
-	ld a, $5
 LoadBGPal3:
 	ld de, wUnknBGPals + 3 palettes
-	ld bc, 1 palettes
-	ld a, $5
-	call FarCopyWRAM
-	scf
-	ret
-	
+	jr LoadSingleBGPal
+LoadBGPal6:
+	ld de, wUnknBGPals + 6 palettes
+	jr LoadSingleBGPal
+LoadTimeofDayBGPal1:
+	ld de, wUnknBGPals + 1 palettes
+	jr LoadSingleTimeOfDayBGPal
+LoadTimeofDayBGPal3:
+	ld de, wUnknBGPals + 3 palettes
+	jr LoadSingleTimeOfDayBGPal
 LoadTimeofDayBGPal6:
+	ld de, wUnknBGPals + 6 palettes
+LoadSingleTimeOfDayBGPal:
 	ld a, [wTimeOfDayPal]
 	and 3
 	ld bc, 1 palettes
 	rst AddNTimes
 	ld a, $5
-LoadBGPal6:
-	ld de, wUnknBGPals + 6 palettes
+LoadSingleBGPal:
 	ld bc, 1 palettes
 	ld a, $5
 	call FarCopyWRAM
@@ -1273,6 +1293,9 @@ INCLUDE "maps/palettes/bgpals/brillo.pal"
 
 AirportFencePalette:
 INCLUDE "maps/palettes/bgpals/airportfence.pal"
+
+AirportFencePalette2:
+INCLUDE "maps/palettes/bgpals/airportfence2.pal"
 
 HighwayPalette:
 INCLUDE "maps/palettes/bgpals/highway.pal"

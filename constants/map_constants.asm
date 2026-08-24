@@ -529,6 +529,9 @@ DEF MAP_NONE   EQU 0
 	newgroup													 ; 30
 	map_const DRAGON_SHRINE_TOP,						  10, 22 ; 1
 	
+	newgroup
+	map_const BEACON_ATOLL,								  12, 15 ; 1
+	
 	newgroup													 ; EVO LOCATIONS GROUP
 	map_const ICE_CAVE_ICE_ROCK_ROOM,					   5,  5 ; 1
 	map_const FLICKER_MOSS_ROCK_ROOM,           		   5,  5 ; 2

@@ -1127,3 +1127,6 @@ NettBuildingSpinnerRoom_BlockData:
 NettBuildingTop_BlockData:
 	INCBIN "maps/NettBuildingTop.ablk.lz"
 	
+BeaconAtoll_BlockData:
+	INCBIN "maps/BeaconAtoll.ablk.lz"
+	

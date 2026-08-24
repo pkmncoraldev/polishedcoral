@@ -476,7 +476,7 @@ TwinkleTownMartSign:
 TwinkleTownSignText:
 	text "TWINKLE TOWN"
 	
-	para "A shining beacon"
+	para "A safe haven"
 	line "in the storm."
 	done
 	

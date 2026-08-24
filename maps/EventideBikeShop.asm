@@ -18,6 +18,7 @@ EventideBikeShop_MapScriptHeader:
 
 
 EventideBikeShopOwner:
+	faceplayer
 	opentext
 	checkitem BICYCLE
 	iftrue .havebike

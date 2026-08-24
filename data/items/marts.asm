@@ -163,7 +163,7 @@ TwinkleMart:
 	db X_DEFEND
 	db X_SPEED
 	db X_SPCL_ATK
-;	db X_SPCL_DEF
+	db X_SPCL_DEF
 	db -1
 	
 LusterMart:

@@ -405,6 +405,7 @@ MoldBreakerSuppressedAbilities:
 	db -1
 
 ContactMoves::
+	db SUCKER_PUNCH
 	db FAKE_OUT
 	db AQUA_JET
 	db AQUA_TAIL

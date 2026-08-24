@@ -178,8 +178,8 @@ MomTeamSnareText:
 	line "never used to"
 	cont "happen…"
 	
-	para "Maybe I should get"
-	line "a #MON of my own"
+	para "Maybe I'll get a"
+	line "#MON of my own"
 	cont "for protection!"
 	
 	para "Stay safe out"

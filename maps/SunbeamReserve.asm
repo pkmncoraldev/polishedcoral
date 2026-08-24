@@ -57,7 +57,9 @@ SunbeamReserveTrigger0:
 	opentext TEXTBOX_SPRUCE
 	writetext SunbeamReserveSpruceText3
 	waitbutton
-	changetextboxspeaker  TEXTBOX_POKEMON, DONPHAN
+	closetext
+	pause 5
+	opentext TEXTBOX_POKEMON, DONPHAN
 	writetext SunbeamReserveDonphanText
 	cry DONPHAN
 	waitbutton
@@ -76,7 +78,9 @@ SunbeamReserveTrigger0:
 	opentext TEXTBOX_SPRUCE
 	writetext SunbeamReserveSpruceText5
 	waitbutton
-	changetextboxspeaker  TEXTBOX_POKEMON, NIDOQUEEN
+	closetext
+	pause 5
+	opentext TEXTBOX_POKEMON, NIDOQUEEN
 	writetext SunbeamReserveNidoqueenText
 	cry NIDOQUEEN
 	waitbutton
@@ -222,7 +226,7 @@ SunbeamReserveSpruceText1:
 	cont "MON researcher,"
 	
 	para "in my old age I"
-	cont "instead run this"
+	line "instead run this"
 	cont "#MON reserve."
 	done
 	

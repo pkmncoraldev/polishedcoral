@@ -2484,18 +2484,20 @@ _FlyMap: ; 91af3
 .switch_to_south
 	ld a, 1
 	ld [wWarpNumber], a
-	call ClearBGPalettes
-	call ClearTileMap
+	ld de, SFX_SWITCH_POCKETS
+	call PlaySFX
 	call ClearSprites
+	call ClearBGPalettesPokeGearMapSwap
 	xor a
 	ldh [hBGMapMode], a
 	jr _FlyMap.cont2
 .switch_to_north
 	xor a
 	ld [wWarpNumber], a
-	call ClearBGPalettes
-	call ClearTileMap
+	ld de, SFX_UNKNOWN_61
+	call PlaySFX
 	call ClearSprites
+	call ClearBGPalettesPokeGearMapSwap
 	xor a
 	ldh [hBGMapMode], a
 	jr _FlyMap.cont2
@@ -2504,9 +2506,10 @@ _FlyMap: ; 91af3
 	jr z, .switch_to_north
 	ld a, 2
 	ld [wWarpNumber], a
-	call ClearBGPalettes
-	call ClearTileMap
+	ld de, SFX_SWITCH_POCKETS
+	call PlaySFX
 	call ClearSprites
+	call ClearBGPalettesPokeGearMapSwap
 	xor a
 	ldh [hBGMapMode], a
 	jp _FlyMap.cont2
@@ -2538,7 +2541,21 @@ _FlyMap: ; 91af3
 	ld e, a
 	ret
 
-; 91b73
+ClearBGPalettesPokeGearMapSwap:
+	ldh a, [rSVBK]
+	push af
+	ld a, $5
+	ldh [rSVBK], a
+	
+	ld hl, PokeGearMapBlankPal
+	ld de, wUnknBGPals + 2 palettes
+	ld bc, 6 palettes
+	rst CopyBytes
+	ld c, 1
+	call FadePalettes
+	pop af
+	ldh [rSVBK], a
+	ret
 
 FlyMapScroll: ; 91b73
 	ld a, [wStartFlypoint]
@@ -2797,6 +2814,9 @@ FlyMap: ; 91c90
 .MapHud:
 	eventflagcheck EVENT_UNLOCKED_SOUTH_FLY_MAP
 	jr z, .cant_switch
+	call GetCurrentLandmark
+	cp ONWA_KEYS_LANDMARK
+	jr nc, .cant_switch
 	hlcoord $1, $10
 	ld de, .String_Select
 	call PlaceString
@@ -3539,11 +3559,9 @@ LoadTownMapGFX: ; 91ff2
 
 NorthOnwaMap: ; 91fff
 INCBIN "gfx/town_map/north_onwa.bin"
-; 92168
 
 SouthOnwaMap: ; 92168
 INCBIN "gfx/town_map/south_onwa.bin"
-; 922d1
 
 OnwaKeysMap:
 INCBIN "gfx/town_map/onwa_keys.bin"
@@ -3559,3 +3577,34 @@ INCBIN "gfx/pokegear/tape1.2bpp.lz"
 
 RadioGFX2:
 INCBIN "gfx/pokegear/tape2.2bpp"
+
+PokeGearMapBlankPal:
+	RGB 07, 07, 07
+	RGB 07, 07, 07
+	RGB 07, 07, 07
+	RGB 07, 07, 07
+	
+	RGB 07, 07, 07
+	RGB 07, 07, 07
+	RGB 07, 07, 07
+	RGB 07, 07, 07
+	
+	RGB 07, 07, 07
+	RGB 07, 07, 07
+	RGB 07, 07, 07
+	RGB 07, 07, 07
+	
+	RGB 07, 07, 07
+	RGB 07, 07, 07
+	RGB 07, 07, 07
+	RGB 07, 07, 07
+	
+	RGB 07, 07, 07
+	RGB 07, 07, 07
+	RGB 07, 07, 07
+	RGB 07, 07, 07
+	
+	RGB 07, 07, 07
+	RGB 07, 07, 07
+	RGB 07, 07, 07
+	RGB 07, 07, 07

@@ -425,7 +425,15 @@ NamingScreen_ApplyTextInputMode: ; 118ca
 	jr nz, .row
 	ret
 
-; 11915
+ClearCursor:
+	ld hl, wSprites + 16
+	ld b, 40
+	xor a
+.loop
+	ld [hli], a
+	dec b
+	jr nz, .loop
+	ret
 
 NamingScreenJoypadLoop: ; 11915
 	call JoyTextDelay
@@ -441,7 +449,7 @@ NamingScreenJoypadLoop: ; 11915
 
 .quit
 	farcall ClearSpriteAnims
-;	call ClearSprites
+	call ClearCursor
 	xor a
 	ldh [hSCX], a
 	ldh [hSCY], a

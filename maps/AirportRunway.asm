@@ -7,14 +7,15 @@ AirportRunway_MapScriptHeader:
 
 	db 0 ; coord events
 
-	db 2 ; bg events
+	db 3 ; bg events
 	bg_event 17,  7, SIGNPOST_ITEM + NUGGET, EVENT_AIRPORT_HIDDEN_ITEM_1
 	bg_event 29,  8, SIGNPOST_ITEM + ELIXIR, EVENT_AIRPORT_HIDDEN_ITEM_2
+	bg_event 33, 15, SIGNPOST_JUMPTEXT, OnwaIntlAirportNPC1Text2
 
 	db 17 ; object events
 	person_event SPRITE_POKEMANIAC, 16, 33, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, OnwaIntlAirportNPC1, -1
 	person_event SPRITE_FAT_GUY, 19, 26, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, OnwaIntlAirportNPC2, -1
-	person_event SPRITE_POKEFAN_F, 18, 17, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, OnwaIntlAirportNPC5, -1
+	person_event SPRITE_POKEFAN_F, 18, 19, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, OnwaIntlAirportNPC5, -1
 	tmhmball_event 33, 14, TM_STEEL_WING, EVENT_TM47
 	itemball_event 12,  4, PP_UP, 1, EVENT_AIRPORT_POKE_BALL_2
 	itemball_event 27,  9, SMOKE_BALL, 1, EVENT_AIRPORT_POKE_BALL_3

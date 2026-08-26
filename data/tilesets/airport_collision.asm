@@ -231,7 +231,7 @@
 	tilecoll FLOOR, FLOOR, NO_OLLIE, NO_OLLIE ; e6
 	tilecoll SKATE, GRIND, STAIRS, GRIND ; e7
 	tilecoll SKATE, UP_WALL, SKATE, SKATE ; e8
-	tilecoll UP_WALL, SKATE, SKATE, SKATE ; e9
+	tilecoll UP_WALL, TRASH_CAN, SKATE, SKATE ; e9
 	tilecoll FLOOR, FLOOR, WALL, WALL ; ea
 	tilecoll WALL, WALL, WALL, WALL ; eb
 	tilecoll WALL, WALL, WALL, WALL ; ec

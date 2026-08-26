@@ -35,7 +35,7 @@ OnwaIntlAirport_MapScriptHeader:
 	person_event SPRITE_FAT_GUY,  3, 26, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, OnwaIntlAirportNPC2, -1
 	person_event SPRITE_BEAUTY,  4, 26, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, OnwaIntlAirportNPC3, -1
 	person_event SPRITE_SKATER,  5, 22, SPRITEMOVEDATA_WANDER, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, OnwaIntlAirportNPC4, -1
-	person_event SPRITE_POKEFAN_F,  2, 17, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, OnwaIntlAirportNPC5, -1
+	person_event SPRITE_POKEFAN_F,  2, 19, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, OnwaIntlAirportNPC5, -1
 	person_event SPRITE_POKEFAN_M, 16, 34, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, OnwaIntlAirportNPC6, -1
 	person_event SPRITE_PONYTAIL,  4, 31, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, OnwaIntlAirportNPC7, -1
 	person_event SPRITE_SUPER_NERD, 12, 43, SPRITEMOVEDATA_WANDER, 2, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, OnwaIntlAirportNPC8, -1
@@ -347,17 +347,13 @@ OnwaIntlAirportNPC7Text2:
 	done
 	
 OnwaIntlAirportNPC8Text:
-	text "Are you from"
-	line "around here?"
-	
-	para "I just flew in"
+	text "I just flew in"
 	line "today."
 	
 	para "The plane was"
 	line "super crowded,"
-	
-	para "but the pilot sure"
-	line "was pretty."
+	cont "but the pilot sure"
+	cont "was pretty."
 	done
 	
 OnwaIntlAirportXatuText1:

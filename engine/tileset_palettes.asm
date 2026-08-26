@@ -904,6 +904,16 @@ LoadSpecialMapPalette: ; 494ac
 	ld a, [wMapNumber]
 	cp MAP_BEACON_ATOLL
 	jp nz, .do_nothing
+	
+	ld hl, OutsideLusterBusinessPalette + 3 palettes
+	ld de, wUnknBGPals + 3 palettes
+	ld a, [wTimeOfDayPal]
+	and 3
+	ld bc, 8 palettes
+	rst AddNTimes
+	ld a, $5
+	call LoadSingleBGPal
+	
 	ld a, [wXCoord]
 	cp $11
 	jp nc, .do_nothing
@@ -911,10 +921,10 @@ LoadSpecialMapPalette: ; 494ac
 	cp $0f
 	jp c, .beacon_bottom
 	ld hl, AirportFencePalette
-	jp LoadTimeofDayBGPal1
+	jp LoadTimeofDayBGPal4
 .beacon_bottom
 	ld hl, AirportFencePalette2
-	jp LoadTimeofDayBGPal1
+	jp LoadTimeofDayBGPal4
 	
 .playerhouse
 	ld a, [wMapGroup]
@@ -1011,8 +1021,8 @@ LoadBGPal3:
 LoadBGPal6:
 	ld de, wUnknBGPals + 6 palettes
 	jr LoadSingleBGPal
-LoadTimeofDayBGPal1:
-	ld de, wUnknBGPals + 1 palettes
+LoadTimeofDayBGPal4:
+	ld de, wUnknBGPals + 4 palettes
 	jr LoadSingleTimeOfDayBGPal
 LoadTimeofDayBGPal3:
 	ld de, wUnknBGPals + 3 palettes

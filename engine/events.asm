@@ -755,6 +755,9 @@ OWPlayerInput: ; 96974
 ; 96999
 
 CheckAPressOW: ; 96999
+	ld a, [wSkateboardGrinding]
+	cp 0
+	ret nz
 	ldh a, [hJoyPressed]
 	and A_BUTTON
 	ret z

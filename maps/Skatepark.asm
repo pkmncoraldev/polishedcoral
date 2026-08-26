@@ -505,7 +505,7 @@ SkateparkTimesUp::
 	clearevent EVENT_SKATEPARK_NPCS_GONE
 	clearevent EVENT_CANT_HEADBUTT
 	dotrigger $3	
-	warp2 UP, SKATEPARK, $10, $19
+	warp2 UP, SKATEPARK, $10, $1b
 	end
 
 SkateparkTMNPCText1:

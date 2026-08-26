@@ -925,9 +925,11 @@ Battle_EnemyFirst: ; 3c5fe
 	ld [wEnemyGoesFirst], a
 	farcall AI_SwitchOrTryItem
 	jr c, .switch_item
+	call SwitchTurn
 	ld a, [wCalculatingEnemyStats]
 	sub $80
 	call PriortyAbilityText
+	call SwitchTurn
 	call EnemyTurn_EndOpponentProtectEndureDestinyBond
 	ld a, [wBattleEnded]
 	and a

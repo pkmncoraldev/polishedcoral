@@ -31,7 +31,7 @@ ShimmerHarbor_MapScriptHeader:
 	signpost 17,  9, SIGNPOST_READ, ShimmerContainers2
 	signpost 18,  8, SIGNPOST_READ, ShimmerContainers2
 	signpost 18,  4, SIGNPOST_READ, ShimmerContainers2
-	signpost 18,  7, SIGNPOST_READ, ShimmerContainers
+	signpost 17,  4, SIGNPOST_READ, ShimmerContainers
 	signpost 22,  6, SIGNPOST_READ, ShimmerContainers
 	signpost -1, -1, SIGNPOST_READ, ShimmerContainers
 	signpost 20, 11, SIGNPOST_READ, ShimmerContainers
@@ -51,7 +51,7 @@ ShimmerHarbor_MapScriptHeader:
 	person_event SPRITE_INVISIBLE, 19, 17, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, ShimmerHarborLockedDoor, EVENT_SHIMMER_BOAT_GUY_AT_WORK
 	person_event SPRITE_SAILOR,  8, 12, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ShimmerHarborNPC2, -1
 	person_event SPRITE_SAILOR, 20,  6, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ShimmerHarborNPC3, -1
-	person_event SPRITE_SAILOR, 18,  5, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ShimmerHarborNPC4, -1
+	person_event SPRITE_SAILOR, 18,  7, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ShimmerHarborNPC4, -1
 	itemball_event  9, 18, LURE_BALL, 1, EVENT_SHIMMER_HARBOR_POKE_BALL
 	itemball_event  6, 16, DIRE_HIT, 1, EVENT_SHIMMER_HARBOR_POKE_BALL_2
 

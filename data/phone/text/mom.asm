@@ -283,8 +283,10 @@ MomLeagueText:
 	line "for you!"
 	
 	para "The tournament is"
-	line "held on an island"
-	cont "in the ONWA KEYS."
+	line "on BEACON ATOLL."
+	
+	para "It's an island in"
+	line "the ONWA KEYS."
 	
 	para "I think the only"
 	line "way to get there"

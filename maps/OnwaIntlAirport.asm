@@ -317,13 +317,12 @@ OnwaIntlAirportNPC6Text:
 	text "Are you taking the"
 	line "GYM CHALLENGE?"
 	
-	para "Did you know the"
-	line "#MON LEAGUE is"
-	cont "on an island?"
+	para "The #MON LEAGUE"
+	line "is on an island in"
+	cont "the ONWA KEYS."
 	
-	para "It's in a place"
-	line "called the"
-	cont "ONWA KEYS."
+	para "It's called"
+	line "BEACON ATOLL."
 	
 	para "I think the only"
 	line "way there is by"

@@ -940,8 +940,8 @@ BrilloSailboatText:
 	
 BrilloJustRodeBoatText:
 	text "Here we are,<WAIT_S>"
-	line "PUEBLO BRILLO"
-	cont "in the ONWA KEYS."
+	line "PUEBLO BRILLO in"
+	cont "the ONWA KEYS."
 	
 	para "That's “BREE-O”,"
 	line "not “BRILL-O”."

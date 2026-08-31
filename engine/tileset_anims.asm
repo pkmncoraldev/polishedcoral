@@ -40,7 +40,6 @@ TilesetPokeCenterAnim::
 TilesetLibraryAnim::
 TilesetMall2Anim::
 TilesetIceCaveAnim::
-TilesetBeaconAnim::
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
@@ -598,6 +597,28 @@ TilesetHauntedTVAnim::
 	dw NULL,  FlickeringTVPalette
 	dw NULL,  FlickeringTVPalette
 	dw NULL,  FlickeringTVPalette
+	dw NULL,  DoneTileAnimation
+	
+TilesetBeaconAnim::
+	dw NULL,  StandingTileFrame
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  AnimateFlowerTile
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw WaterFrames, AnimateWaterfallTiles2
+	dw NULL,  WaitTileAnimation
+	dw ShorelineFrames,  AnimateWaterfallTiles2
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
 	dw NULL,  DoneTileAnimation
 
 DoneTileAnimation: ; fc2fb
@@ -2041,39 +2062,3 @@ TileAnimationPaletteCasino: ; fc6d7
 	pop af
 	ldh [rSVBK], a
 	ret
-
-SproutPillarTilePointer1:  dw VTiles2 tile $2c, SproutPillarTile1
-SproutPillarTilePointer2:  dw VTiles2 tile $2d, SproutPillarTile1
-SproutPillarTilePointer3:  dw VTiles2 tile $2e, SproutPillarTile1
-SproutPillarTilePointer4:  dw VTiles2 tile $2f, SproutPillarTile1
-SproutPillarTilePointer5:  dw VTiles2 tile $3c, SproutPillarTile1
-SproutPillarTilePointer6:  dw VTiles2 tile $3d, SproutPillarTile1
-SproutPillarTilePointer7:  dw VTiles2 tile $3e, SproutPillarTile1
-SproutPillarTilePointer8:  dw VTiles2 tile $3f, SproutPillarTile1
-SproutPillarTilePointer9:  dw VTiles2 tile $7f, SproutPillarTile9
-SproutPillarTilePointer10: dw VTiles2 tile $7f, SproutPillarTile10
-
-SproutPillarTile1:  INCBIN "gfx/tilesets/sprout-pillar/1.2bpp"
-SproutPillarTile2:  INCBIN "gfx/tilesets/sprout-pillar/2.2bpp"
-SproutPillarTile3:  INCBIN "gfx/tilesets/sprout-pillar/3.2bpp"
-SproutPillarTile4:  INCBIN "gfx/tilesets/sprout-pillar/4.2bpp"
-SproutPillarTile5:  INCBIN "gfx/tilesets/sprout-pillar/5.2bpp"
-SproutPillarTile6:  INCBIN "gfx/tilesets/sprout-pillar/6.2bpp"
-SproutPillarTile7:  INCBIN "gfx/tilesets/sprout-pillar/7.2bpp"
-SproutPillarTile8:  INCBIN "gfx/tilesets/sprout-pillar/8.2bpp"
-SproutPillarTile9:  INCBIN "gfx/tilesets/sprout-pillar/9.2bpp"
-SproutPillarTile10: INCBIN "gfx/tilesets/sprout-pillar/10.2bpp"
-; fca98
-
-
-WhirlpoolFrames1: dw VTiles2 tile $32, WhirlpoolTiles1
-WhirlpoolFrames2: dw VTiles2 tile $33, WhirlpoolTiles2
-WhirlpoolFrames3: dw VTiles2 tile $42, WhirlpoolTiles3
-WhirlpoolFrames4: dw VTiles2 tile $43, WhirlpoolTiles4
-; fcaa8
-
-WhirlpoolTiles1: INCBIN "gfx/tilesets/whirlpool/1.2bpp"
-WhirlpoolTiles2: INCBIN "gfx/tilesets/whirlpool/2.2bpp"
-WhirlpoolTiles3: INCBIN "gfx/tilesets/whirlpool/3.2bpp"
-WhirlpoolTiles4: INCBIN "gfx/tilesets/whirlpool/4.2bpp"
-; fcba8

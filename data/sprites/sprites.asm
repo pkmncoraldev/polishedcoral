@@ -222,6 +222,7 @@ SpriteHeaders:
 	overworld_sprite EliSpriteGFX, WALKING_SPRITE, PAL_OW_GREEN
 	overworld_sprite MannequinSpriteGFX, STANDING_SPRITE, PAL_OW_BROWN
 	overworld_sprite RussSpriteGFX, WALKING_SPRITE, PAL_OW_BROWN
+	overworld_sprite MiscPalmSpriteGFX, STANDING_SPRITE, PAL_OW_SILVER
 
 SpriteHeadersPlayers:
 	overworld_sprite CorySpriteGFX, WALKING_SPRITE, PAL_OW_RED

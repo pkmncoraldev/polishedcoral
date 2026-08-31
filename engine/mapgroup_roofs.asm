@@ -40,6 +40,8 @@ CheckIfTilesetHasRoof::
 	jr z, .load_roof
 	cp TILESET_MOUNTAIN
 	jr z, .load_roof
+	cp TILESET_BEACON
+	jr z, .load_roof
 	xor a
 	ret
 .load_roof

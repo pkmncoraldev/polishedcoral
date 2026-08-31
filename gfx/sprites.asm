@@ -47,6 +47,7 @@ CasinoSpriteGFX::      	  	   INCBIN "gfx/sprites/casino.2bpp.lz"
 CopScrubSpriteGFX::      	   INCBIN "gfx/sprites/cop_scrub.2bpp.lz"
 FortuneTellerSpriteGFX::       INCBIN "gfx/sprites/fortune_teller.2bpp.lz"
 MannequinSpriteGFX::      	   INCBIN "gfx/sprites/mannequin.2bpp.lz"
+MiscPalmSpriteGFX::      	   INCBIN "gfx/sprites/misc_palm.2bpp.lz"
 
 
 SECTION "Overworld Sprites 2", ROMX

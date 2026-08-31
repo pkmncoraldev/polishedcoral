@@ -914,17 +914,30 @@ LoadSpecialMapPalette: ; 494ac
 	ld a, $5
 	call LoadSingleBGPal
 	
+	ld a, [wYCoord]
+	cp $16
+	jp c, .beacon_water
+	
 	ld a, [wXCoord]
 	cp $11
 	jp nc, .do_nothing
 	ld a, [wYCoord]
-	cp $0f
+	cp $2f
 	jp c, .beacon_bottom
 	ld hl, AirportFencePalette
 	jp LoadTimeofDayBGPal4
 .beacon_bottom
 	ld hl, AirportFencePalette2
 	jp LoadTimeofDayBGPal4
+.beacon_water
+	ld hl, OutsideGrovePalette + 3 palettes
+	ld de, wUnknBGPals + 4 palettes
+	ld a, [wTimeOfDayPal]
+	and 3
+	ld bc, 8 palettes
+	rst AddNTimes
+	ld a, $5
+	jp LoadSingleBGPal
 	
 .playerhouse
 	ld a, [wMapGroup]

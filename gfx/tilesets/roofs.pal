@@ -154,10 +154,10 @@
 	RGB 00, 00, 00
 	RGB 00, 00, 00
 ;31 - Beacon Atoll
-	RGB 31, 16, 08
-	RGB 23, 13, 06
-	RGB 13, 09, 11
-	RGB 11, 05, 04
+	RGB 31, 16, 14
+	RGB 31, 13, 11
+	RGB 15, 07, 15
+	RGB 15, 06, 14
 ;last - Evo Locations
 	RGB 27, 21, 10
 	RGB 21, 12, 01

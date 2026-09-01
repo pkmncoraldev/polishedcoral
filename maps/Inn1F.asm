@@ -795,6 +795,8 @@ Inn1FCallback:
 	ifnotequal $3, .skip
 	moveperson INN_1F_UNFORTUNATE_CUSTOMER, -5, -5
 .skip
+	copybytetovar wXCoord	;hacky solution to skip reloading sprite walking frames while using PC
+	if_equal $16, .end
 	checkevent EVENT_PLAYER_IS_CORA
 	iftrue .playerfemale
 	checkevent EVENT_PLAYER_IS_PIPPI
@@ -808,6 +810,7 @@ Inn1FCallback:
 	return
 .playerfemale
 	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_PONYTAIL
+.end
 	loadvar wScriptVar, 0
 	return
 	

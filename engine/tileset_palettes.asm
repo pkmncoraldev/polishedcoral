@@ -899,12 +899,17 @@ LoadSpecialMapPalette: ; 494ac
 	
 .beacon
 	ld a, [wMapGroup]
+	cp GROUP_OBSCURA_CITY
+	jr z, .league_outside
 	cp GROUP_BEACON_ATOLL
 	jp nz, .do_nothing
 	ld a, [wMapNumber]
 	cp MAP_BEACON_ATOLL
 	jp nz, .do_nothing
 	
+	ld a, [wXCoord]
+	cp $19
+	jp nc, .beacon_cont
 	ld hl, OutsideLusterBusinessPalette + 3 palettes
 	ld de, wUnknBGPals + 3 palettes
 	ld a, [wTimeOfDayPal]
@@ -913,22 +918,28 @@ LoadSpecialMapPalette: ; 494ac
 	rst AddNTimes
 	ld a, $5
 	call LoadSingleBGPal
-	
-	ld a, [wYCoord]
-	cp $16
-	jp c, .beacon_water
-	
+.beacon_cont
 	ld a, [wXCoord]
 	cp $11
 	jp nc, .do_nothing
 	ld a, [wYCoord]
-	cp $2f
+	cp $0f
 	jp c, .beacon_bottom
 	ld hl, AirportFencePalette
 	jp LoadTimeofDayBGPal4
 .beacon_bottom
 	ld hl, AirportFencePalette2
 	jp LoadTimeofDayBGPal4
+.league_outside
+	ld hl, OutsideLusterBusinessPalette + 3 palettes
+	ld de, wUnknBGPals + 4 palettes
+	ld a, [wTimeOfDayPal]
+	and 3
+	ld bc, 8 palettes
+	rst AddNTimes
+	ld a, $5
+	jp LoadSingleBGPal
+	
 .beacon_water
 	ld hl, OutsideGrovePalette + 3 palettes
 	ld de, wUnknBGPals + 4 palettes

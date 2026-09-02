@@ -489,7 +489,8 @@ DEF MAP_NONE   EQU 0
 	map_const OBSCURA_MART,								   6,  4 ; 9
 	map_const OBSCURA_MACHO_BRACE_HOUSE,				   4,  4 ; 10
 	map_const OBSCURA_GYM_SPEECH_HOUSE,					   4,  4 ; 11
-	map_const OBSCURA_MUSICIAN_HOUSE,					   4,  4 ; 1
+	map_const OBSCURA_MUSICIAN_HOUSE,					   4,  4 ; 12
+	map_const POKEMON_LEAGUE_OUTSIDE,					  21, 16 ; 13
 	
 	newgroup													 ; 25
 	map_const AUREOLE_TOWN,								  20, 23 ; 1
@@ -530,7 +531,8 @@ DEF MAP_NONE   EQU 0
 	map_const DRAGON_SHRINE_TOP,						  10, 22 ; 1
 	
 	newgroup
-	map_const BEACON_ATOLL,								  21, 31 ; 1
+	map_const BEACON_ATOLL,								  21, 15 ; 1
+	map_const ROUTE_33,									  20, 20 ; 2
 	
 	newgroup													 ; EVO LOCATIONS GROUP
 	map_const ICE_CAVE_ICE_ROCK_ROOM,					   5,  5 ; 1

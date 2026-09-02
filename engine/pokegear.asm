@@ -1066,7 +1066,7 @@ TownMap_GetSouthOnwaLandmarkLimits: ; 910e8
 	ret
 
 TownMap_GetOnwaKeysLandmarkLimits:
-	lb de, DESERT_WASTELAND, BRILLO_TOWN
+	lb de, ROUTE_33, BRILLO_TOWN
 	ret
 
 ; 910f9

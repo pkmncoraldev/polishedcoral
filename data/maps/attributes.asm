@@ -514,7 +514,15 @@ ENDM
 	connection south, Crossroads, CROSSROADS, 0
 	connection west, Route11_2, ROUTE_11_2, -30
 	
-	map_attributes BeaconAtoll, BEACON_ATOLL, $0, 0
+	map_attributes BeaconAtoll, BEACON_ATOLL, $0, NORTH | SOUTH
+	connection north, PokemonLeagueOutside, POKEMON_LEAGUE_OUTSIDE, 0
+	connection south, Route33, ROUTE_33, 6
+	
+	map_attributes Route33, ROUTE_33, $0, NORTH
+	connection north, BeaconAtoll, BEACON_ATOLL, -6
+	
+	map_attributes PokemonLeagueOutside, POKEMON_LEAGUE_OUTSIDE, $0, SOUTH
+	connection south, BeaconAtoll, BEACON_ATOLL, 0
 	
 	map_attributes LusterSpamBuilding_2F, LUSTER_SPAM_BUILDING_2F, 0, NORTH | SOUTH | WEST | EAST
 	connection north, LusterSpamBuilding_2F, LUSTER_SPAM_BUILDING_2F, 0

@@ -588,4 +588,6 @@ INCLUDE "maps/Route11UnderBridge.asm"
 
 SECTION "League Scripts", ROMX
 INCLUDE "maps/BeaconAtoll.asm"
+INCLUDE "maps/Route33.asm"
+INCLUDE "maps/PokemonLeagueOutside.asm"
 

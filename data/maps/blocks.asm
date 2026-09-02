@@ -1130,3 +1130,9 @@ NettBuildingTop_BlockData:
 BeaconAtoll_BlockData:
 	INCBIN "maps/BeaconAtoll.ablk.lz"
 	
+Route33_BlockData:
+	INCBIN "maps/Route33.ablk.lz"
+	
+PokemonLeagueOutside_BlockData:
+	INCBIN "maps/PokemonLeagueOutside.ablk.lz"
+	

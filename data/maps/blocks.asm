@@ -1136,3 +1136,14 @@ Route33_BlockData:
 PokemonLeagueOutside_BlockData:
 	INCBIN "maps/PokemonLeagueOutside.ablk.lz"
 	
+BorealIslet_BlockData:
+	INCBIN "maps/BorealIslet.ablk.lz"
+
+TempestIslet_BlockData:
+	INCBIN "maps/TempestIslet.ablk.lz"
+
+EmberIslet_BlockData:
+	INCBIN "maps/EmberIslet.ablk.lz"
+	
+Route33Underwater_BlockData:
+	INCBIN "maps/Route33Underwater.ablk.lz"

@@ -590,4 +590,8 @@ SECTION "League Scripts", ROMX
 INCLUDE "maps/BeaconAtoll.asm"
 INCLUDE "maps/Route33.asm"
 INCLUDE "maps/PokemonLeagueOutside.asm"
+INCLUDE "maps/BorealIslet.asm"
+INCLUDE "maps/TempestIslet.asm"
+INCLUDE "maps/EmberIslet.asm"
+INCLUDE "maps/Route33Underwater.asm"
 

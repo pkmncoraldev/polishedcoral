@@ -438,6 +438,7 @@ DEF MAP_NONE   EQU 0
 	map_const UNDERWATER_TEMPLE_1,						  17, 22 ; 6
 	map_const UNDERWATER_TEMPLE_2,						  15, 17 ; 7
 	map_const RIVER_RAPIDS,			       		          13, 44 ; 8
+	map_const ROUTE_33_UNDERWATER,						  32, 11 ; 9
 	
 	newgroup													 ; 22
 	
@@ -533,6 +534,9 @@ DEF MAP_NONE   EQU 0
 	newgroup
 	map_const BEACON_ATOLL,								  21, 15 ; 1
 	map_const ROUTE_33,									  20, 20 ; 2
+	map_const BOREAL_ISLET,								  10, 15 ; 3
+	map_const TEMPEST_ISLET,							  10, 15 ; 4
+	map_const EMBER_ISLET,								  10, 15 ; 5
 	
 	newgroup													 ; EVO LOCATIONS GROUP
 	map_const ICE_CAVE_ICE_ROCK_ROOM,					   5,  5 ; 1

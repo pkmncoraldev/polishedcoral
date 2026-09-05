@@ -3,7 +3,7 @@ Route33_MapScriptHeader:
 
 	db 0 ; callbacks
 
-	db 12 ; warp events
+	db 13 ; warp events
 	warp_event 36, 18, ROUTE_33_UNDERWATER, 13
 	warp_event 37, 18, ROUTE_33_UNDERWATER, 14
 	warp_event 36, 19, ROUTE_33_UNDERWATER, 15
@@ -16,6 +16,7 @@ Route33_MapScriptHeader:
 	warp_event 15, 36, ROUTE_33_UNDERWATER, 22
 	warp_event 14, 37, ROUTE_33_UNDERWATER, 23
 	warp_event 15, 37, ROUTE_33_UNDERWATER, 24
+	warp_event  9,  7, ROUTE_33_HOUSE, 1
 
 	db 0 ; coord events
 

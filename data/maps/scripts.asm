@@ -594,4 +594,4 @@ INCLUDE "maps/BorealIslet.asm"
 INCLUDE "maps/TempestIslet.asm"
 INCLUDE "maps/EmberIslet.asm"
 INCLUDE "maps/Route33Underwater.asm"
-
+INCLUDE "maps/Route33House.asm"

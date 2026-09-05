@@ -518,7 +518,7 @@ ENDM
 	connection north, PokemonLeagueOutside, POKEMON_LEAGUE_OUTSIDE, 0
 	connection south, Route33, ROUTE_33, 6
 	
-	map_attributes Route33, ROUTE_33, $0, NORTH
+	map_attributes Route33, ROUTE_33, $8a, NORTH
 	connection north, BeaconAtoll, BEACON_ATOLL, -6
 	
 	map_attributes PokemonLeagueOutside, POKEMON_LEAGUE_OUTSIDE, $0, SOUTH
@@ -600,10 +600,11 @@ ENDM
 	map_attributes BoneCavernB1F, BONE_CAVERN_B1F, $09, 0
 	map_attributes BoneCavernB2F, BONE_CAVERN_B2F, $09, 0
 	map_attributes BoneCavernMarowakRoom, BONE_CAVERN_MAROWAK_ROOM, $09, 0
-	map_attributes BorealIslet, BOREAL_ISLET, $09, 0
-	map_attributes TempestIslet, TEMPEST_ISLET, $09, 0
-	map_attributes EmberIslet, EMBER_ISLET, $09, 0
+	map_attributes BorealIslet, BOREAL_ISLET, $8a, 0
+	map_attributes TempestIslet, TEMPEST_ISLET, $8a, 0
+	map_attributes EmberIslet, EMBER_ISLET, $8a, 0
 	map_attributes Route33Underwater, ROUTE_33_UNDERWATER, $09, 0
+	map_attributes Route33House, ROUTE_33_HOUSE, 0, 0
 	
 	map_attributes DesertTemple1, DESERT_TEMPLE_1, 0, 0
 	map_attributes DesertTempleTopLeft, DESERT_TEMPLE_TOP_LEFT, 0, 0

@@ -537,6 +537,7 @@ DEF MAP_NONE   EQU 0
 	map_const BOREAL_ISLET,								  10, 15 ; 3
 	map_const TEMPEST_ISLET,							  10, 15 ; 4
 	map_const EMBER_ISLET,								  10, 15 ; 5
+	map_const ROUTE_33_HOUSE,			  		       	   4,  4 ; 6
 	
 	newgroup													 ; EVO LOCATIONS GROUP
 	map_const ICE_CAVE_ICE_ROCK_ROOM,					   5,  5 ; 1

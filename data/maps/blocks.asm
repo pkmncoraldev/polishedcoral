@@ -125,6 +125,7 @@ GlintRivalHouse_BlockData:
 DaybreakMarcusHouse_BlockData:
 EventideGymSpeechHouse_BlockData:
 EventideSootheBellHouse_BlockData:
+Route33House_BlockData:
 	INCBIN "maps/RusticHouse.ablk.lz"
 	
 TwinkleRockHouse_BlockData:

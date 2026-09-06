@@ -1,4 +1,3 @@
-
 _Diploma: ; 1dd702
 	call ClearBGPalettes
 	call ClearTileMap

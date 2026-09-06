@@ -6349,3 +6349,4 @@ SECTION "Coral Data 8", ROMX
 	
 SECTION "Coral Data 9", ROMX
 	INCLUDE "engine/events/tournament_bracket.asm"
+	INCLUDE "engine/events/island_cutscene.asm"

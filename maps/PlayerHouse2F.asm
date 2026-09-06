@@ -133,6 +133,7 @@ PlayerHouseDebugPoster:
 	verticalmenu
 	iffalse .end
 	if_equal $1, .tourney
+	if_equal $2, .island
 	closewindow
 	jump .page1
 .Mons
@@ -385,6 +386,11 @@ PlayerHouseDebugPoster:
 	callasm DetermineTourneyBracket
 	callasm DrawTourneyBracket
 	jump .return
+.island
+	closewindow
+	farwritetext StdBlankText
+	callasm FlyToIslandCutscene
+	jump .return
 .mina
 	closewindow
 	writetext PlayerHouseDebug2MinaText
@@ -519,8 +525,9 @@ PlayerHouseDebugPoster:
 
 .MenuData2PlayerHouseDebug3:
 	db $a0 ; flags
-	db 2 ; items
+	db 3 ; items
 	db "TOURNEY TEST@"
+	db "ISLAND TEST@"
 	db "PAGE 1@"
 	
 PlayerHouseDebug2BadgeText:

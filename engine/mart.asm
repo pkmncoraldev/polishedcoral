@@ -1599,7 +1599,7 @@ BuyPokemonMenuLoop: ; 15cef
 	ld a, [wMenuJoypad]
 	cp B_BUTTON
 	jp z, MartMenuLoop_SetCarry
-	call ClothesMartAskPurchaseQuantity
+	call PokemonMartAskPurchaseQuantity
 	jp c, .cancel
 	call ClothesMartConfirmPurchase
 	jp c, .cancel
@@ -1842,6 +1842,11 @@ TMMartAskPurchaseQuantity:
 	text_jump AlreadyHaveTMText
 	db "@"
 	
+PokemonMartAskPurchaseQuantity:
+	ld a, [wCurTMHM]
+	dec a
+	ld e, a
+	jr ClothesMartAskPurchaseQuantity.cont
 ClothesMartAskPurchaseQuantity:
 	ld a, [wCurTMHM]
 	dec a
@@ -1849,7 +1854,7 @@ ClothesMartAskPurchaseQuantity:
 	ld a, [wPlayerPalette]
 	cp e
 	jr z, .AlreadyHaveClothes
-
+.cont
 	ld a, 1
 	ld [wItemQuantityChangeBuffer], a
 	ld a, [wMartItemID]

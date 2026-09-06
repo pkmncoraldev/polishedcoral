@@ -52,6 +52,8 @@ IsSnareTrainer:
 	ret
 	
 IsSetOrderTrainerTrainer:
+	eventflagcheck EVENT_USED_ROAR
+	ret nz
 	ld a, [wOtherTrainerClass]
 	cp DELINQUENT_M
 	jr nz, .not_beau

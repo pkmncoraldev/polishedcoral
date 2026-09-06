@@ -41,6 +41,9 @@ AI_SwitchOrTryItem: ; 38000
 	ld a, [wEnemyWrapCount]
 	and a
 	jr nz, DontSwitch
+	
+	farcall IsSetOrderTrainerTrainer
+	jr c, DontSwitch
 
 .can_switch
 	ld hl, TrainerClassAttributes + TRNATTR_AI_ITEM_SWITCH

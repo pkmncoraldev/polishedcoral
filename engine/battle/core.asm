@@ -3502,8 +3502,6 @@ LoadEnemyPkmnToSwitchTo:
 	farcall IsSetOrderTrainerTrainer
 	pop bc
 	jr nc, .done_set_order
-	eventflagcheck EVENT_USED_ROAR
-	jr nz, .done_set_order
 	ld a, [wCurOTMon]
 	inc a
 	ld b, a

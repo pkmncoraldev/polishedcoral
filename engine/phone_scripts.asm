@@ -383,16 +383,19 @@ SprucePhoneScript: ; 0xbd081
 ;.moltres
 	farwritetext SprucePhoneMoltresText
 	setevent EVENT_MOLTRES_ACTIVE
+	setevent EVENT_MOLTRES_GONE
 	special InitRoamMoltres
 	end
 .zapdos
 	farwritetext SprucePhoneZapdosText
 	setevent EVENT_ZAPDOS_ACTIVE
+	setevent EVENT_ZAPDOS_GONE
 	special InitRoamZapdos
 	end
 .articuno
 	farwritetext SprucePhoneArticunoText
 	setevent EVENT_ARTICUNO_ACTIVE
+	setevent EVENT_ARTICUNO_GONE
 	special InitRoamArticuno
 	end
 .pokerus

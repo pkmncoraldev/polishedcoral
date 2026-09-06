@@ -31,6 +31,9 @@ PlayBattleMusic: ; 2ee6c
 	jr .done
 
 .legendary
+	ld a, [wMapGroup]
+	cp GROUP_ROUTE_33
+	jr z, .roaming2
 	ld de, MUSIC_WILD_BOSS_BATTLE
 	jr .done
 	
@@ -41,6 +44,7 @@ PlayBattleMusic: ; 2ee6c
 	ld a, [wMapNumber]
 	ld [wRoamMon1MapNumber], a
 	call ResetBirdEncounterCounter
+.roaming2
 	ld de, MUSIC_RBY_WILD_BATTLE
 	jr .done
 	

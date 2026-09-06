@@ -503,6 +503,7 @@ INCLUDE "maps/CoralReef.asm"
 INCLUDE "maps/UnderwaterTempleOutside.asm"
 INCLUDE "maps/UnderwaterTemple1.asm"
 INCLUDE "maps/UnderwaterTemple2.asm"
+INCLUDE "maps/Route33Underwater.asm"
 
 SECTION "Brightburg Scripts", ROMX
 INCLUDE "maps/Brightburg.asm"
@@ -593,5 +594,4 @@ INCLUDE "maps/PokemonLeagueOutside.asm"
 INCLUDE "maps/BorealIslet.asm"
 INCLUDE "maps/TempestIslet.asm"
 INCLUDE "maps/EmberIslet.asm"
-INCLUDE "maps/Route33Underwater.asm"
 INCLUDE "maps/Route33House.asm"

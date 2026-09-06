@@ -74,6 +74,7 @@ WhiteoutHandleEvents:
 	clearevent EVENT_SANDSTORM_HAPPENING
 	clearevent EVENT_AIRPORT_FENCE
 	clearevent EVENT_DONT_CHANGE_EMOTE_COLOR
+	clearevent EVENT_TORCH_LIT
 	loadvar wTimeOfDayPalFlags, $40 | 0
 	domaptrigger SUNSET_CAPE, $0
 	domaptrigger ROUTE_10, $0
@@ -88,6 +89,7 @@ WhiteoutHandleEvents:
 	domaptrigger SHIMMER_HARBOR, $0
 	domaptrigger ROUTE_29, $0
 	domaptrigger BRILLO_TOWN, $0
+	domaptrigger ICE_TEMPLE_B1F_1, $0
 	clearevent EVENT_ON_DODRIO_RANCH
 	clearevent EVENT_AT_AIRPORT
 	clearevent EVENT_SET_ROUTE_29
@@ -102,6 +104,7 @@ WhiteoutHandleEvents:
 	loadvar wJukeboxSong, 0
 	loadvar wRanchRaceFrames, 0
 	loadvar wRanchRaceSeconds, 0
+	loadvar wTorchSteps, 0
 	checkevent EVENT_SNARE_GONE_FROM_MUSEUM
 	iftrue .skip2
 	clearevent EVENT_MUSEUM_COLBY_GONE

@@ -14,7 +14,7 @@ BoneCavernB2F_MapScriptHeader:
 
 	db 7 ; bg events
 	bg_event  2, 16, SIGNPOST_READ, BoneCavernB2FBone1
-	bg_event  6, 26, SIGNPOST_READ, BoneCavernB2FBone2
+	bg_event  8, 26, SIGNPOST_READ, BoneCavernB2FBone2
 	bg_event 22, 24, SIGNPOST_READ, BoneCavernB2FBone3
 	bg_event 18,  4, SIGNPOST_READ, BoneCavernB1FBone4
 	bg_event 24, 10, SIGNPOST_READ, BoneCavernB1FBone4

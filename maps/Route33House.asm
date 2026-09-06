@@ -31,10 +31,32 @@ Route33HouseCallback:
 	moveperson 3, 5, 4
 	return
 	
+Route33HouseCheckCaughtAllThree:
+	ld a, ARTICUNO
+	dec a
+	call CheckCaughtMon
+	jr z, .no
+	ld a, ZAPDOS
+	dec a
+	call CheckCaughtMon
+	jr z, .no
+	ld a, MOLTRES
+	dec a
+	call CheckCaughtMon
+	jr z, .no
+	ld a, $1
+	ld [wScriptVar], a
+	ret
+.no
+	xor a
+	ld [wScriptVar], a
+	ret
 	
 Route33HouseNPCArticuno:
 	faceplayer
 	opentext
+	callasm Route33HouseCheckCaughtAllThree
+	iftrue Route33HouseNPCDone
 	checkevent EVENT_PRESENTED_LEGENDARY_BIRD
 	iftrue .showed_articuno
 	writetext Route33HouseNPCIntroText
@@ -73,6 +95,8 @@ Route33HouseNPCArticuno:
 Route33HouseNPCZapdos:
 	faceplayer
 	opentext
+	callasm Route33HouseCheckCaughtAllThree
+	iftrue Route33HouseNPCDone
 	checkevent EVENT_PRESENTED_LEGENDARY_BIRD
 	iftrue .showed_zapdos
 	writetext Route33HouseNPCIntroText
@@ -111,6 +135,8 @@ Route33HouseNPCZapdos:
 Route33HouseNPCMoltres:
 	faceplayer
 	opentext
+	callasm Route33HouseCheckCaughtAllThree
+	iftrue Route33HouseNPCDone
 	checkevent EVENT_PRESENTED_LEGENDARY_BIRD
 	iftrue .showed_moltres
 	writetext Route33HouseNPCIntroText
@@ -145,6 +171,50 @@ Route33HouseNPCMoltres:
 	waitbutton
 	closetext
 	end
+	
+Route33HouseNPCDone:
+	checkevent EVENT_MUSIC_RBY_WILD_BATTLE
+	iftrue .done
+	writetext Route33HouseNPCDoneText1
+	waitbutton
+	callasm GiveBirdsTapeAsm
+	iffalse .no_player
+	writetext Route33HouseNPCTapeText1
+	playsound SFX_ITEM
+	waitsfx
+	writetext Route33HouseNPCTapeText2
+	buttonsound
+	writetext Route33HouseNPCTapeText3
+	waitbutton
+.done
+	writetext Route33HouseNPCDoneText2
+	waitbutton
+	closetext
+	end
+.no_player
+	writetext Route33HouseNPCTapeText4
+	waitbutton
+	closetext
+	end
+	
+GiveBirdsTapeAsm:
+	ld de, EVENT_GOT_TAPE_PLAYER
+	farcall CheckEventFlag
+	jr z, .no_player
+	ld a, MUSIC_RBY_WILD_BATTLE
+	ld c, a
+	ld hl, wUnlockedSongs
+	ld b, SET_FLAG
+	ld d, 0
+	predef FlagPredef
+	ld a, $1
+	ld [wScriptVar], a
+	ret
+	
+.no_player
+	xor a
+	ld [wScriptVar], a
+	ret
 	
 ArticunoItem:
 	checkitem POTION ;TODO blue item
@@ -410,4 +480,53 @@ Route33HouseNPCArticunoText3:
 	para "You might find"
 	line "something ARTICUNO"
 	cont "left behind."
+	done
+
+Route33HouseNPCTapeText1:
+	text "<PLAYER> recieved"
+	line "AUDIO CASSETTE 72!"
+	done
+	
+Route33HouseNPCTapeText2:
+	text "“BATTLE!"
+	line "LEGENDARY BIRD”"
+	cont "is written on the"
+	cont "label."
+	done
+	
+Route33HouseNPCTapeText3:
+	text "<PLAYER> put the"
+	line "cassette in the"
+	cont "TAPE PLAYER."
+	done
+	
+Route33HouseNPCTapeText4:
+	text "But you don't have"
+	line "a TAPE PLAYER."
+	
+	para "Come back with"
+	line "one."
+	done
+	
+Route33HouseNPCDoneText1:
+	text "You've done it,"
+	line "haven't you?"
+	
+	para "You've tamed all"
+	line "three of the great"
+	cont "bird #MON!"
+	
+	para "To think such a"
+	line "young child would"
+	cont "be such a great"
+	cont "TRAINER!"
+	
+	para "Here, take this"
+	line "as commemoration."
+	done
+	
+Route33HouseNPCDoneText2:
+	text "You're welcome"
+	line "back anytime,"
+	cont "kiddo."
 	done

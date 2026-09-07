@@ -52,8 +52,8 @@ Route15_MapScriptHeader:
 	warp_event 84, 37, CORAL_REEF, 3
 	warp_event 85, 37, CORAL_REEF, 4
 	warp_event 30, 12, ROUTE_14_15_UNDERWATER, 59
-	warp_event 30, 13, ROUTE_14_15_UNDERWATER, 60
-	warp_event 31, 12, ROUTE_14_15_UNDERWATER, 61
+	warp_event 31, 12, ROUTE_14_15_UNDERWATER, 60
+	warp_event 30, 13, ROUTE_14_15_UNDERWATER, 61
 	warp_event 31, 13, ROUTE_14_15_UNDERWATER, 62
 	warp_event 72, 36, ROUTE_14_15_UNDERWATER, 63
 	warp_event 72, 37, ROUTE_14_15_UNDERWATER, 64
@@ -62,17 +62,17 @@ Route15_MapScriptHeader:
 
 	db 0 ; coord events
 
-	db 1 ; bg events
-	signpost  9, 38, SIGNPOST_ITEM + DIVE_BALL, EVENT_ROUTE_15_DIVE_BALL
+	db 0 ; bg events
 
-	db 7 ; object events
-	person_event SPRITE_SAILOR, 14, 45, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 1, TrainerRoute15_1, -1
+	db 8 ; object events
+	person_event SPRITE_SAILOR, 15, 22, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 1, TrainerRoute15_1, -1
 	person_event SPRITE_SWIMMER_GIRL,  6,  8, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 4, TrainerRoute15_2, -1
 	person_event SPRITE_SWIMMER_GIRL, 18,  6, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 4, TrainerRoute15_3, -1
-	person_event SPRITE_SWIMMER_GUY, 16, 17, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 4, TrainerRoute15_4, -1
+	person_event SPRITE_SWIMMER_GUY, 22, 34, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 4, TrainerRoute15_4, -1
 	person_event SPRITE_SWIMMER_GUY, 15, 67, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 3, TrainerRoute15_5, -1
-	person_event SPRITE_SWIMMER_GIRL, 28, 19, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 4, TrainerRoute15_6, -1
+	person_event SPRITE_SWIMMER_GIRL, 27, 19, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 4, TrainerRoute15_6, -1
 	tapeball_event 60, 18, MUSIC_UNDERWATER, 1, EVENT_MUSIC_UNDERWATER
+	itemball_event 28, 13, DIVE_BALL, 1, EVENT_ROUTE_15_DIVE_BALL
 	
 TrainerRoute15_1:
 	generictrainer SAILOR, RANDALL, EVENT_BEAT_ROUTE_15_TRAINER_1, .SeenText, .BeatenText
@@ -83,11 +83,6 @@ TrainerRoute15_1:
 	cont "would you?"
 	
 	para "Sigh…"
-	
-	para "I hope my wife in"
-	line "in PORT SHIMMER"
-	cont "doesn't think I've"
-	cont "run off!"
 	done
 
 .SeenText:

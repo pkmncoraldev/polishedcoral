@@ -18,7 +18,7 @@ BoneCavernMarowakRoom_MapScriptHeader:
 
 	db 1 ; object events
 	object_event  7,  3, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, MAROWAK, -1, -1, (1 << 3) | PAL_NPC_TEAL, PERSONTYPE_SCRIPT, ALOLAN_FORM, BoneCavernMarowak, EVENT_BONE_CAVERN_MAROWAK_GONE
-	itemball_event 27,  5, RARE_BONE, 1, EVENT_BONE_CAVERN_RARE_BONE
+	itemball_event 11,  4, RARE_BONE, 1, EVENT_BONE_CAVERN_RARE_BONE
 	
 	
 BoneCavernMarowak:

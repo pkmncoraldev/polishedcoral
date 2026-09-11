@@ -237,9 +237,9 @@ ItemNameOrder:
 	db NAM_BLACK_SLUDGE ; 15
 
 	db NAM_MACHO_BRACE  ; 74
-	db NAM_POWER_WEIGHT ; ae
-	db NAM_POWER_BRACER ; ab
-	db NAM_POWER_BELT   ; aa
+	db NAM_ARTICUNO_ITEM ; ae
+	db NAM_ZAPDOS_ITEM ; ab
+	db NAM_MOLTRES_ITEM   ; aa
 	db NAM_POWER_LENS   ; ad
 	db NAM_POWER_BAND   ; a9
 	db NAM_POWER_ANKLET ; a8

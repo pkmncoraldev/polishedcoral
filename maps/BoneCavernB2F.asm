@@ -23,7 +23,7 @@ BoneCavernB2F_MapScriptHeader:
 
 	db 4 ; object events
 	smashrock_event 14, 28
-	itemball_event 27,  5, RARE_BONE, 1, EVENT_BONE_CAVERN_B2F_ITEM_1
+	person_event SPRITE_BALL_CUT_FRUIT,  5, 27, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, BoneCavernB2FItemBall, EVENT_BONE_CAVERN_BIRD_ITEM
 	tmhmball_event 15, 25, TM_HEADBUTT, EVENT_TM02
 	person_event SPRITE_SCIENTIST,  4, 17, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 3, BoneCavernB2FTrainer1, -1
 	
@@ -45,6 +45,19 @@ BoneCavernB2FCallback:
 	changeblock $16, $18, $9d
 .skip3
 	return
+	
+BoneCavernB2FItemBall:
+	loadvar wCurItemBallQuantity, 1
+	checkevent EVENT_MOLTRES_ACTIVE
+	iftrue .change
+	loadvar wCurItemBallContents, MOLTRES_ITEM
+	jump .end
+.change
+	loadvar wCurItemBallContents, ZAPDOS_ITEM
+.end
+	farscall FindItemInBallScript
+	disappear 2
+	end
 	
 BoneCavernB2FTrainer1:
 	generictrainer SCIENTIST, MARTIN, EVENT_BEAT_BONE_CAVERN_B2F_TRAINER_1, .SeenText, .BeatenText

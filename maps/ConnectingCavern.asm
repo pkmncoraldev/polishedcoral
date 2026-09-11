@@ -32,7 +32,7 @@ ConnectingCavern_MapScriptHeader:
 	person_event SPRITE_SWIMMER_GUY, 41, 19, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 3, TrainerConnectingCavern_7, -1
 	person_event SPRITE_JUGGLER, 21,  7, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 4, TrainerConnectingCavern_8, -1
 	person_event SPRITE_BLACK_BELT, 12, 32, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_GENERICTRAINER, 1, TrainerConnectingCavern_9, -1
-	itemball_event 30, 15, EXP_SHARE, 1, EVENT_CONNECTING_CAVERN_EXP_SHARE
+	person_event SPRITE_BALL_CUT_FRUIT,  15, 30, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, ConnectingCavernItemBall, EVENT_CONNECTING_CAVERN_BIRD_ITEM
 	itemball_event  4, 13, MAX_REVIVE, 1, EVENT_CONNECTING_CAVERN_MAX_REVIVE
 	itemball_event 21, 29, RARE_CANDY, 1, EVENT_CONNECTING_CAVERN_RARE_CANDY
 	tapeball_event 27, 14, MUSIC_DARKNESS, 1, EVENT_MUSIC_DARKNESS
@@ -74,6 +74,19 @@ ConnectingCavernOverBridge:
 	changeblock $1e, $12, $f9
 	callasm GenericFinishBridge
 	dotrigger $1
+	end
+	
+ConnectingCavernItemBall:
+	loadvar wCurItemBallQuantity, 1
+	checkevent EVENT_ARTICUNO_ACTIVE
+	iftrue .change
+	loadvar wCurItemBallContents, ARTICUNO_ITEM
+	jump .end
+.change
+	loadvar wCurItemBallContents, ZAPDOS_ITEM
+.end
+	farscall FindItemInBallScript
+	disappear 10
 	end
 	
 TrainerConnectingCavern_1:

@@ -222,9 +222,9 @@ ItemEffects: ; e73c
 	dw NoEffect         ; TOXIC_ORB
 	dw NoEffect         ; BLACK_SLUDGE
 	dw NoEffect         ; MACHO_BRACE
-	dw NoEffect         ; POWER_WEIGHT
-	dw NoEffect         ; POWER_BRACER
-	dw NoEffect         ; POWER_BELT
+	dw NoEffect         ; ARTICUNO_ITEM
+	dw NoEffect         ; ZAPDOS_ITEM
+	dw NoEffect         ; MOLTRES_ITEM
 	dw NoEffect         ; POWER_LENS
 	dw NoEffect         ; POWER_BAND
 	dw NoEffect         ; POWER_ANKLET

@@ -610,32 +610,33 @@ GetParentAddr:
 	ret
 
 DoPowerItemInheritance:
-	ld hl, PowerItems
-	ld e, 0
-.loop
-	ld a, [hli]
-	cp -1
-	ret z
-	call CheckParentItem
-	jr z, .next
-	push hl
-	ld hl, wBreedMon1DVs
-	call GetParentAddr
-	call InheritDV
-	pop hl
-.next
-	inc e
-	jr .loop
+	ret
+	; ld hl, PowerItems
+	; ld e, 0
+; .loop
+	; ld a, [hli]
+	; cp -1
+	; ret z
+	; call CheckParentItem
+	; jr z, .next
+	; push hl
+	; ld hl, wBreedMon1DVs
+	; call GetParentAddr
+	; call InheritDV
+	; pop hl
+; .next
+	; inc e
+	; jr .loop
 
-PowerItems:
-; Ordered in HP/Atk/Def/Speed/SpAtk/SpDef, doesn't care about actual order
-	db POWER_WEIGHT
-	db POWER_BRACER
-	db POWER_BELT
-	db POWER_ANKLET
-	db POWER_LENS
-	db POWER_BAND
-	db -1
+; PowerItems:
+; ; Ordered in HP/Atk/Def/Speed/SpAtk/SpDef, doesn't care about actual order
+	; db POWER_WEIGHT
+	; db POWER_BRACER
+	; db POWER_BELT
+	; db POWER_ANKLET
+	; db POWER_LENS
+	; db POWER_BAND
+	; db -1
 
 InheritDV:
 ; Inherit DV e (0=HP, 1=Atk, 2=Def, 3=Speed, 4=Sp.Atk, 5=Sp.Def)

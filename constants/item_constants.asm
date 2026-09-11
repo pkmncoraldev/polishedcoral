@@ -238,9 +238,9 @@
 	const BLACK_SLUDGE ; cf
 
 	const MACHO_BRACE  ; d0
-	const POWER_WEIGHT ; d1 - replace
-	const POWER_BRACER ; d2 - replace
-	const POWER_BELT   ; d3 - replace
+	const ARTICUNO_ITEM ; d1 - replace
+	const ZAPDOS_ITEM ; d2 - replace
+	const MOLTRES_ITEM   ; d3 - replace
 	const POWER_LENS   ; d4 - replace
 	const POWER_BAND   ; d5 - replace
 	const POWER_ANKLET ; d6 - replace
@@ -464,11 +464,11 @@
 	const NAM_POTION       ; a7
 	const NAM_POWER_ANKLET ; a8
 	const NAM_POWER_BAND   ; a9
-	const NAM_POWER_BELT   ; aa
-	const NAM_POWER_BRACER ; ab
+	const NAM_MOLTRES_ITEM   ; aa
+	const NAM_ZAPDOS_ITEM ; ab
 	const NAM_POWER_HERB   ; ac
 	const NAM_POWER_LENS   ; ad
-	const NAM_POWER_WEIGHT ; ae
+	const NAM_ARTICUNO_ITEM ; ae
 	const NAM_PP_MAX       ; af
 	const NAM_PP_UP        ; b0
 	const NAM_PREMIER_BALL ; b1

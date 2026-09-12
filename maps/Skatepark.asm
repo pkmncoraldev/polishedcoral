@@ -104,7 +104,14 @@ SkateparkTrigger3:
 	playmapmusic
 	pause 20
 	opentext
-	writetext SkateparkTMNPCText2	;TODO let the player lose
+	writetext SkateparkTMNPCText12
+	callasm SkateparkCompareTimeAsm
+	iffalse .lose
+	if_equal 2, .tie
+	playsound SFX_LEVEL_UP
+	waitsfx
+	waitbutton
+	writetext SkateparkTMNPCText2
 	waitbutton
 	verbosegivetmhm TM_RAPID_SPIN
 	setevent EVENT_TM67
@@ -112,7 +119,20 @@ SkateparkTrigger3:
 	waitbutton
 	closetext
 	setevent EVENT_DONE_SKATEBOARD_CONTEST_ONCE
-	setevent EVENT_DONE_SKATEBOARD_CONTEST_TODAY	;TODO daily event
+	dotrigger $0
+	end
+.lose
+	waitbutton
+	writetext SkateparkTMNPCText10
+	waitbutton
+	closetext
+	dotrigger $0
+	end
+.tie
+	waitbutton
+	writetext SkateparkTMNPCText11
+	waitbutton
+	closetext
 	dotrigger $0
 	end
 	
@@ -440,10 +460,10 @@ SkateparkTrickAsm:
 SkateparkTMNpc:
 	faceplayer
 	opentext
-	checkevent EVENT_DONE_SKATEBOARD_CONTEST_TODAY
-	iftrue .done_today
 	checkevent EVENT_SKATEPARK_CONTEST_TIMER
 	iftrue .contest_happening
+	checkevent EVENT_DONE_SKATEBOARD_CONTEST_ONCE
+	iftrue .done_once
 	checkevent EVENT_SKATEPARK_SAID_NO
 	iftrue .talked
 	writetext SkateparkTMNPCText1
@@ -460,6 +480,8 @@ SkateparkTMNpc:
 	writetext SkateparkTMNPCText6
 	jump .ask_understand
 .rules_done
+	callasm SkateparkGetTimeToBeatAsm
+	RAM2MEM $0
 	writetext SkateparkTMNPCText7
 	waitbutton
 	closetext
@@ -484,11 +506,12 @@ SkateparkTMNpc:
 	waitbutton
 	closetext
 	end
-.done_today
+.done_once
 	writetext SkateparkTMNPCText9
-	waitbutton
-	closetext
-	end
+	yesorno
+	iffalse .no
+	writetext SkateparkTMNPCText13
+	jump .ask_understand
 	
 SkateparkTimesUp::
 	clearevent EVENT_SKATEPARK_CONTEST_TIMER
@@ -507,6 +530,32 @@ SkateparkTimesUp::
 	dotrigger $3	
 	warp2 UP, SKATEPARK, $10, $1b
 	end
+	
+SkateparkGetTimeToBeatAsm:
+	ld a, [wSkateparkHighScore]
+	ld [wScriptVar], a
+	ret
+	
+SkateparkCompareTimeAsm:
+	ld a, [wSkateparkHighScore]
+	ld e, a
+	ld a, [wSkateparkScore]
+	cp e
+	jr z, .tie
+	jr c, .lose
+;.win
+	ld [wSkateparkHighScore], a
+	ld a, 1
+	ld [wScriptVar], a
+	ret
+.lose
+	ld a, 0
+	ld [wScriptVar], a
+	ret
+.tie
+	ld a, 2
+	ld [wScriptVar], a
+	ret
 
 SkateparkTMNPCText1:
 	text "So you got past"
@@ -533,8 +582,10 @@ SkateparkTMNPCText1:
 	done
 	
 SkateparkTMNPCText2:
-	text "YOU WIN!"
-	line "PLACEHOLDER TEXT"
+	text "You…<WAIT_M> beat my"
+	line "score?"
+	
+	para "…"
 	
 	para "Alright, alright."
 	
@@ -605,10 +656,7 @@ SkateparkTMNPCText5:
 	done
 	
 SkateparkTMNPCText6:
-	text "I'll say it one"
-	line "more time."
-	
-	para "You get 60 seconds"
+	text "You get 60 seconds"
 	line "to nail as many"
 	cont "tricks as you can."
 	
@@ -642,6 +690,11 @@ SkateparkTMNPCText6:
 SkateparkTMNPCText7:
 	text "Good."
 	
+	para "Your score to beat"
+	line "is @"
+	text_from_ram wStringBuffer3
+	text " points."
+	
 	para "I'll tell you"
 	line "your score when"
 	cont "you're done."
@@ -665,28 +718,24 @@ SkateparkTMNPCText8:
 	cont "the field of any"
 	cont "hazards!"
 	
-	para "Come back tomorrow"
-	line "if you want to do"
-	cont "another round."
-	
-	para "You might get"
-	line "something good if"
-	cont "you tear it up!"
+	para "Come back if you"
+	line "want to do another"
+	cont "round."
 	done
 	
 SkateparkTMNPCText9:
-	text "Come back tomorrow"
-	line "if you want to do"
-	cont "another round."
+	text "Hey, <PLAYER>."
 	
-	para "You might get"
-	line "something good if"
-	cont "you tear it up!"
+	para "No one's been"
+	line "able to beat your"
+	cont "high score."
+	
+	para "You wanna give it"
+	line "a shot?"
 	done
 	
 SkateparkTMNPCText10:
-	text "YOU LOSE"
-	line "PLACEHOLDER TEXT"
+	text "You lose!"
 	
 	para "Ha! <WAIT_S> I knew you"
 	line "were a poser."
@@ -699,9 +748,42 @@ SkateparkTMNPCText10:
 	line "run home to mommy?"
 	done
 	
+SkateparkTMNPCText11:
+	text "A tie huh?"
+	
+	para "You're good, but"
+	line "not good enough."
+	
+	para "Tell you what, I'll"
+	line "give you another"
+	cont "shot."
+	
+	para "Or are you gonna"
+	line "run home to mommy?"
+	done
+	
+SkateparkTMNPCText12:
+	text "Alright,"
+	line "your score was…<WAIT_L><WAIT_L>"
+	
+	para "@"
+	text_from_ram wStringBuffer3
+	text " points."
+	done
+	
+SkateparkTMNPCText13:
+	text "Alright!"
+	
+	para "It's on like"
+	line "KANGASKHAN!"
+	
+	para "You need me to"
+	line "explain the rules"
+	cont "again?"
+	done
+	
 SkateparkTMNpcTextNo:
-	text "Well, at least you"
-	line "know your place."
+	text "Whatever."
 	done
 	
 SkateparkDoneText:

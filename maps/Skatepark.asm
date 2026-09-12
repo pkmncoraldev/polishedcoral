@@ -104,6 +104,8 @@ SkateparkTrigger3:
 	playmapmusic
 	pause 20
 	opentext
+	callasm SkateparkCurTimeAsm
+	RAM2MEM $0
 	writetext SkateparkTMNPCText12
 	callasm SkateparkCompareTimeAsm
 	iffalse .lose
@@ -536,6 +538,11 @@ SkateparkGetTimeToBeatAsm:
 	ld [wScriptVar], a
 	ret
 	
+SkateparkCurTimeAsm:
+	ld a, [wSkateparkScore]
+	ld [wScriptVar], a
+	ret
+	
 SkateparkCompareTimeAsm:
 	ld a, [wSkateparkHighScore]
 	ld e, a
@@ -737,7 +744,7 @@ SkateparkTMNPCText9:
 SkateparkTMNPCText10:
 	text "You lose!"
 	
-	para "Ha! <WAIT_S> I knew you"
+	para "Ha! <WAIT_S>I knew you"
 	line "were a poser."
 	
 	para "Tell you what, I'll"

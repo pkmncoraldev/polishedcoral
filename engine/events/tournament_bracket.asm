@@ -877,18 +877,35 @@ CalcTourneyRound3Results:
 	ld de, wTourneyBracket3
 	ld a, [de]
 	cp $80
-	jr c, .cont
+	jr c, .cont1
 	ld de, wTourneyBracket10
 	ld a, [de]
 	cp $80
-	jr c, .cont
+	jr c, .cont1
 	ld de, wTourneyBracket4
 	ld a, [de]
 	cp $80
-	jr c, .cont
+	jr c, .cont1
 	ld de, wTourneyBracket11
 	ld a, [de]
-.cont
+.cont1
+	add $80
+	ld [de], a
+	ld de, wTourneyBracket5
+	ld a, [de]
+	cp $80
+	jr c, .cont1
+	ld de, wTourneyBracket12
+	ld a, [de]
+	cp $80
+	jr c, .cont1
+	ld de, wTourneyBracket6
+	ld a, [de]
+	cp $80
+	jr c, .cont1
+	ld de, wTourneyBracket13
+	ld a, [de]
+.cont2
 	add $80
 	ld [de], a
 	ld de, wTourneyBracket11
@@ -902,7 +919,7 @@ CalcTourneyRound3Results:
 	pop de
 	ld a, [de]
 	cp $80
-	jr c, .cont2
+	jr c, .cont3
 	push de
 	pop hl
 	ld bc, 7
@@ -914,18 +931,18 @@ CalcTourneyRound3Results:
 	jr nc, .loop
 	push de
 	pop hl
-.cont2
+.cont3
 	ld bc, -6
 	add hl, bc
 	ld a, [hl]
 	cp $80
-	jr c, .cont3
+	jr c, .cont4
 	ld bc, 7
 	add hl, bc
 	ld a, [hl]
 	cp $80
-	jr nc, .cont2
-.cont3
+	jr nc, .cont3
+.cont4
 	push hl
 	pop bc
 ; top in de

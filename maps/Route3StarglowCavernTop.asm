@@ -123,6 +123,7 @@ Route3StarglowCavernTopPatches:
 	callasm PatchesPutContestInParty
 	ifequal $0, .turn_off_patches_mode
 	ifequal $2, .no_room_in_box
+	ifequal $3, .turn_off_patches_mode
 	farwritetext ContestResults_PartyFullText
 	jump .turn_off_patches_mode
 .no_room_in_box

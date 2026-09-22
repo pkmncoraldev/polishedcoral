@@ -218,6 +218,7 @@ DrawTourneyBracket::
 	ld de, MUSIC_EVOLUTION
 	call PlayMusic
 	call TourneyClearSprites
+	call TourneyFindNextOpp
 .loop
 	call UpdateTime
 	call JoyTextDelay
@@ -240,6 +241,7 @@ DrawTourneyBracket::
 	ld de, SFX_TOURNEY_BRACKET_1
 	call PlaySFX
 	call AnimateTourneyBracketRound1
+	call TourneyFindNextOpp
 .loop2
 	call UpdateTime
 	call JoyTextDelay
@@ -262,6 +264,7 @@ DrawTourneyBracket::
 	ld de, SFX_TOURNEY_BRACKET_2
 	call PlaySFX
 	call AnimateTourneyBracketRound2
+	call TourneyFindNextOpp
 .loop3
 	call UpdateTime
 	call JoyTextDelay
@@ -284,6 +287,7 @@ DrawTourneyBracket::
 	ld de, SFX_TOURNEY_BRACKET_3
 	call PlaySFX
 	call AnimateTourneyBracketRound3
+	call TourneyFindNextOpp
 .loop4
 	call UpdateTime
 	call JoyTextDelay
@@ -771,6 +775,87 @@ LoadRound3OAM:
 	ld hl, Tourney_BracketOAMRound3_R_B
 	ret
 	
+TourneyFindNextOpp:
+	ld a, [wTourneyRound1Results]
+	cp 0
+	jr z, TourneyFindRound1Opp
+	ld a, [wTourneyRound23Results]
+	cp 0
+	jr z, TourneyFindRound2Opp
+	ld a, [wTourneyRound23Results]
+	ld d, %00000010
+	and d
+	cp 0
+	jr z, TourneyFindRound3Opp
+; fallthru
+TourneyFindRound4Opp::
+	ld hl, wTourneyBracket5
+	ld a, 4
+	call TourneyFindOpp
+	ret c
+	ld hl, wTourneyBracket12
+	ld a, 4
+	call TourneyFindOpp
+	ret
+	
+TourneyFindRound1Opp::
+	ld hl, wTourneyBracket1
+	ld a, 1
+	call TourneyFindOpp
+	ret
+	
+TourneyFindRound2Opp::
+	ld hl, wTourneyBracket2
+	ld a, 1
+	call TourneyFindOpp
+	ret c
+	ld hl, wTourneyBracket9
+	ld a, 1
+	call TourneyFindOpp
+	ret
+
+TourneyFindRound3Opp::
+	ld hl, wTourneyBracket3
+	ld a, 2
+	call TourneyFindOpp
+	ret c
+	ld hl, wTourneyBracket10
+	ld a, 2
+	call TourneyFindOpp
+	ret
+	
+TourneyFindOpp:
+	ld c, a
+.loop
+	ld a, [hl]
+	cp $80
+	ret c
+	inc hl
+	dec c
+	ld a, c
+	cp 0
+	jr nz, .loop
+	xor a
+	ret
+	
+TourneyFindOpp2:
+	ld c, a
+.loop
+	ld a, l
+	cp e
+	jr z, .skip
+	ld a, [hl]
+	cp $80
+	ret c
+.skip
+	inc hl
+	dec c
+	ld a, c
+	cp 0
+	jr nz, .loop
+	xor a
+	ret
+	
 TourneyFindResultsOfBattle:
 ; a = round results
 ; d = battle mask
@@ -874,91 +959,53 @@ CalcTourneyRound3Results:
 	ld hl, wTourneyRound23Results
 	ld b, %00000010
 	call AddRoundResults
-	ld de, wTourneyBracket3
-	ld a, [de]
-	cp $80
-	jr c, .cont1
-	ld de, wTourneyBracket10
-	ld a, [de]
-	cp $80
-	jr c, .cont1
-	ld de, wTourneyBracket4
-	ld a, [de]
-	cp $80
-	jr c, .cont1
-	ld de, wTourneyBracket11
-	ld a, [de]
-.cont1
-	add $80
-	ld [de], a
-	ld de, wTourneyBracket5
-	ld a, [de]
-	cp $80
-	jr c, .cont1
-	ld de, wTourneyBracket12
-	ld a, [de]
-	cp $80
-	jr c, .cont1
-	ld de, wTourneyBracket6
-	ld a, [de]
-	cp $80
-	jr c, .cont1
-	ld de, wTourneyBracket13
-	ld a, [de]
-.cont2
-	add $80
-	ld [de], a
-	ld de, wTourneyBracket11
-	push hl
-.loop
-	push de
-	pop hl
-	ld bc, -6
-	add hl, bc
-	push hl
-	pop de
-	ld a, [de]
-	cp $80
-	jr c, .cont3
-	push de
-	pop hl
-	ld bc, 7
-	add hl, bc
-	push hl
-	pop de
-	ld a, [de]
-	cp $80
-	jr nc, .loop
-	push de
-	pop hl
-.cont3
-	ld bc, -6
-	add hl, bc
+	
+	ld hl, wTourneyBracket1
+	ld a, 4
+	call TourneyFindOpp
+	jr c, .got_player_opp
+	ld hl, wTourneyBracket9
+	ld a, 4
+	ld c, a
+	call TourneyFindOpp
+.got_player_opp
 	ld a, [hl]
-	cp $80
-	jr c, .cont4
-	ld bc, 7
-	add hl, bc
-	ld a, [hl]
-	cp $80
-	jr nc, .cont3
-.cont4
-	push hl
-	pop bc
-; top in de
-; bottom in bc
-	pop hl
+	add $80
+	ld [hl], a	
+	
+	ld hl, wTourneyBracket5
+	ld a, 4
+	call TourneyFindOpp
+	jr c, .got_first
+	ld hl, wTourneyBracket12
+	ld a, 4
+	ld c, a
+	call TourneyFindOpp
+.got_first
+	ld d, h
+	ld e, l
+	
+	ld hl, wTourneyBracket5
+	ld a, 4
+	call TourneyFindOpp2
+	jr c, .got_second
+	ld hl, wTourneyBracket12
+	ld a, 4
+	ld c, a
+	call TourneyFindOpp2
+.got_second
 	call Random
 	cp 50 percent + 1
 	jr nc, .bottom_won
-	ld a, [bc]
+	ld a, [hl]
 	add $80
-	ld [bc], a
+	ld [hl], a
 	ret
 .bottom_won
 	ld a, [de]
 	add $80
 	ld [de], a
+	ld hl, wTourneyRound23Results
 	ld b, %00000001
 	call AddRoundResults
 	ret

@@ -488,15 +488,15 @@ CryHeaders2::
 	mon_cry CRY_SCOLIPEDE,      0,   457	; Scolipede
 	mon_cry CRY_COTTONEE,     162,   228 	; Cottonee
 	mon_cry CRY_WHIMSICOTT,    32,   196	; Whimsicott
-	mon_cry CRY_BULBASAUR,   $080,  $081	; Maractus - PLACEHOLDER
-	mon_cry CRY_BULBASAUR,   $080,  $081 	; Dwebble - PLACEHOLDER
-	mon_cry CRY_BULBASAUR,   $080,  $081 	; Crustle - PLACEHOLDER
+	mon_cry CRY_MARACTUS,     238,   128	; Maractus
+	mon_cry CRY_DWEBBLE,      153,   184 	; Dwebble
+	mon_cry CRY_CRUSTLE,       32,   256 	; Crustle
 	mon_cry CRY_SCRAGGY,      223,   192 	; Scraggy
 	mon_cry CRY_SCRAFTY,       97,   300 	; Scrafty
-	mon_cry CRY_BULBASAUR,   $080,  $081	; Tirtouga - PLACEHOLDER
-	mon_cry CRY_BULBASAUR,   $080,  $081 	; Carracosta - PLACEHOLDER
-	mon_cry CRY_BULBASAUR,   $080,  $081	; Archen - PLACEHOLDER
-	mon_cry CRY_BULBASAUR,   $080,  $081	; Archeops - PLACEHOLDER
+	mon_cry CRY_TIRTOUGA,     192,   204	; Tirtouga
+	mon_cry CRY_CARRACOSTA,    35,   204 	; Carracosta
+	mon_cry CRY_ARCHEN,       206,   204	; Archen
+	mon_cry CRY_ARCHEOPS,     188,   140	; Archeops
 	mon_cry CRY_MINCCINO,     255,   128  	; Minccino
 	mon_cry CRY_CINCCINO,     128,   256	; Cinccino
 	mon_cry CRY_JOLTIK,         0,   256 	; Joltik
@@ -525,8 +525,8 @@ CryHeaders2::
 	mon_cry CRY_DRAKLOAK,      61,   264	; Drakloak
 	mon_cry CRY_DRAGAPULT,    128,   264	; Dragapult
 	mon_cry CRY_BULBASAUR,   $080,  $081	; Wyrdeer - PLACEHOLDER
-	mon_cry CRY_BULBASAUR,   $080,  $081 	; Flittle - PLACEHOLDER
-	mon_cry CRY_BULBASAUR,   $080,  $081 	; Espathra - PLACEHOLDER
+	mon_cry CRY_FLITTLE,       32,   148	; Flittle
+	mon_cry CRY_ESPATHRA,     200,   300 	; Espathra
 	mon_cry CRY_WOOPER,     -$0c6,  $140 	; Clodsire - PLACEHOLDER
 	mon_cry CRY_PORYGON2,    $041,  $200	; Farigiraf - PLACEHOLDER
 	mon_cry CRY_NIDORAN_M,      0,     0 	; Egg

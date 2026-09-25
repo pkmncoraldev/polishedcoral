@@ -113,8 +113,15 @@
 	const CRY_SCOLIPEDE
 	const CRY_COTTONEE
 	const CRY_WHIMSICOTT
+	const CRY_MARACTUS
+	const CRY_DWEBBLE
+	const CRY_CRUSTLE
 	const CRY_SCRAGGY
 	const CRY_SCRAFTY
+	const CRY_TIRTOUGA
+	const CRY_CARRACOSTA
+	const CRY_ARCHEN
+	const CRY_ARCHEOPS	
 	const CRY_MINCCINO
 	const CRY_CINCCINO
 	const CRY_JOLTIK
@@ -139,4 +146,5 @@
 	const CRY_DRAKLOAK
 	const CRY_DRAGAPULT
 ; gen 9
-	
+	const CRY_FLITTLE
+	const CRY_ESPATHRA

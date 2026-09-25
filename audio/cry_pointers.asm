@@ -109,8 +109,15 @@ Cries:
 	dba Cry_Scolipede
 	dba Cry_Cottonee
 	dba Cry_Whimsicott
+	dba Cry_Maractus
+	dba Cry_Dwebble
+	dba Cry_Crustle
 	dba Cry_Scraggy
 	dba Cry_Scrafty
+	dba Cry_Tirtouga
+	dba Cry_Carracosta
+	dba Cry_Archen
+	dba Cry_Archeops
 	dba Cry_Minccino
 	dba Cry_Cinccino
 	dba Cry_Joltik
@@ -135,3 +142,5 @@ Cries:
 	dba Cry_Drakloak
 	dba Cry_Dragapult
 ; gen 9
+	dba Cry_Flittle
+	dba Cry_Espathra

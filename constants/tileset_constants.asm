@@ -45,6 +45,7 @@
 	const TILESET_DRAGON_SHRINE
 	const TILESET_NETT_TOP
 	const TILESET_BEACON
+	const TILESET_LEAGUE
 	
 
 	const_def

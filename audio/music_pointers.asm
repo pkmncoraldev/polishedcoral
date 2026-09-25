@@ -72,6 +72,7 @@ Music:
 	dba Music_RivalEncounter2
 	dba Music_SnareLeaderBattle
 	dba Music_RBYWildBattle
+	dba Music_PokemonLeague
 	
 	dba Music_SpamBuilding
 	dba Music_CrystalBall

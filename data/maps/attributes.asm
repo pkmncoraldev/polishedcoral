@@ -885,3 +885,5 @@ ENDM
 	map_attributes LuminaTownCave, LUMINA_TOWN_CAVE, $9, 0
 	map_attributes Route11UnderBridge, ROUTE_11_UNDER_BRIDGE, 0, 0
 	map_attributes Route11Padding, ROUTE_11_PADDING, 0, 0
+	map_attributes PokemonLeagueInside, POKEMON_LEAGUE_INSIDE, 0, 0
+	map_attributes PokemonLeagueArena, POKEMON_LEAGUE_ARENA, 0, 0

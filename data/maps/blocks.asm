@@ -1137,6 +1137,12 @@ Route33_BlockData:
 PokemonLeagueOutside_BlockData:
 	INCBIN "maps/PokemonLeagueOutside.ablk.lz"
 	
+PokemonLeagueInside_BlockData:
+	INCBIN "maps/PokemonLeagueInside.ablk.lz"
+	
+PokemonLeagueArena_BlockData:
+	INCBIN "maps/PokemonLeagueArena.ablk.lz"
+	
 BorealIslet_BlockData:
 	INCBIN "maps/BorealIslet.ablk.lz"
 

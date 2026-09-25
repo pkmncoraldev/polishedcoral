@@ -23,8 +23,9 @@ DEF NUM_MP_EDIT_FIELDS EQU const_value
 
 	const_def
 	const ORIGIN_NONE    ; 00
-	const ORIGIN_GSC     ; 01
-	const ORIGIN_SUMO    ; 02
+	const ORIGIN_RBY     ; 01
+	const ORIGIN_GSC     ; 02
+	const ORIGIN_SUMO    ; 03
 
 	const_def
 	const COMPOSER_NONE                          ; 00

@@ -165,6 +165,10 @@ LoadSpecialMapPalette: ; 494ac
 	jp z, .south_buildings
 	cp TILESET_BEACON
 	jp z, .beacon
+	cp TILESET_POKECENTER
+	jp z, .center
+	cp TILESET_LEAGUE
+	jp z, .league
 	call DiveSpotMapPals
 	jp nc, .do_nothing
 	ld hl, DiveSpotsPalette
@@ -882,6 +886,34 @@ LoadSpecialMapPalette: ; 494ac
 	ld hl, SunbeamViewPalette
 	jp LoadForceSevenTimeOfDayBGPalettes
 	
+.league
+	ld hl, PokemonLeagueArenaPalette
+	ld a, $5
+	ld de, wUnknBGPals
+	ld bc, 7 palettes
+	call FarCopyWRAM
+	
+	farcall TourneyFindNextOpp
+	ld hl, PokemonLeagueArenaScreenPalette
+	ld bc, 4
+	call AddNTimes
+	ld de, wUnknBGPals + 6 palettes + 2
+	ld bc, 4
+	ld a, $5
+	call FarCopyWRAM
+	
+	ld a, [wPlayerInitialPalette]
+	ld hl, PokemonLeagueArenaScreenPalette + 8 palettes
+	ld bc, 4
+	call AddNTimes
+	ld de, wUnknBGPals + 5 palettes + 2
+	ld bc, 4
+	ld a, $5
+	call FarCopyWRAM
+	
+	scf
+	ret
+	
 .south_buildings
 	ld a, [wMapGroup]
 	cp GROUP_OBSCURA_MUSEUM_2F
@@ -896,7 +928,12 @@ LoadSpecialMapPalette: ; 494ac
 	ld hl, MuseumPalette2
 	jp LoadBGPal6
 	jp .do_nothing
-	
+.center
+	ld a, [wMapGroup]
+	cp GROUP_POKEMON_LEAGUE_INSIDE
+	jp nz, .do_nothing
+	ld hl, PokemonLeagueLobbyPalette
+	jp LoadSevenBGPalettes
 .beacon
 	ld a, [wMapGroup]
 	cp GROUP_OBSCURA_CITY
@@ -1389,7 +1426,16 @@ LuminaPalette::
 INCLUDE "maps/palettes/bgpals/lumina.pal"
 
 NettTopPalette::
-INCLUDE "maps/palettes/bgpals/netttop.pal"	
+INCLUDE "maps/palettes/bgpals/netttop.pal"
+
+PokemonLeagueLobbyPalette::
+INCLUDE "maps/palettes/bgpals/leaguelobby.pal"
+
+PokemonLeagueArenaPalette::
+INCLUDE "maps/palettes/bgpals/leaguearena.pal"
+
+PokemonLeagueArenaScreenPalette::
+INCLUDE "maps/palettes/bgpals/leaguescreen.pal"
 
 LightningPalette:
 	RGB 00, 00, 00

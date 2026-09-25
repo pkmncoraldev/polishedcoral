@@ -530,6 +530,8 @@ DEF MAP_NONE   EQU 0
 	
 	newgroup													 ; 30
 	map_const DRAGON_SHRINE_TOP,						  10, 22 ; 1
+	map_const POKEMON_LEAGUE_INSIDE,					   8, 10 ; 2
+	map_const POKEMON_LEAGUE_ARENA,						  13,  8 ; 3
 	
 	newgroup
 	map_const BEACON_ATOLL,								  21, 15 ; 1

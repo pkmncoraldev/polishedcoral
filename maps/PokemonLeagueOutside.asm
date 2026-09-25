@@ -3,7 +3,9 @@ PokemonLeagueOutside_MapScriptHeader:
 
 	db 0 ; callbacks
 
-	db 0 ; warp events
+	db 2 ; warp events
+	warp_def  4, 29, 1, POKEMON_LEAGUE_INSIDE
+	warp_def  4, 30, 2, POKEMON_LEAGUE_INSIDE
 
 	db 0 ; coord events
 

@@ -775,7 +775,7 @@ LoadRound3OAM:
 	ld hl, Tourney_BracketOAMRound3_R_B
 	ret
 	
-TourneyFindNextOpp:
+TourneyFindNextOpp::
 	ld a, [wTourneyRound1Results]
 	cp 0
 	jr z, TourneyFindRound1Opp
@@ -788,7 +788,7 @@ TourneyFindNextOpp:
 	cp 0
 	jr z, TourneyFindRound3Opp
 ; fallthru
-TourneyFindRound4Opp::
+TourneyFindRound4Opp:
 	ld hl, wTourneyBracket5
 	ld a, 4
 	call TourneyFindOpp
@@ -798,13 +798,13 @@ TourneyFindRound4Opp::
 	call TourneyFindOpp
 	ret
 	
-TourneyFindRound1Opp::
+TourneyFindRound1Opp:
 	ld hl, wTourneyBracket1
 	ld a, 1
 	call TourneyFindOpp
 	ret
 	
-TourneyFindRound2Opp::
+TourneyFindRound2Opp:
 	ld hl, wTourneyBracket2
 	ld a, 1
 	call TourneyFindOpp
@@ -814,7 +814,7 @@ TourneyFindRound2Opp::
 	call TourneyFindOpp
 	ret
 
-TourneyFindRound3Opp::
+TourneyFindRound3Opp:
 	ld hl, wTourneyBracket3
 	ld a, 2
 	call TourneyFindOpp
@@ -1313,6 +1313,7 @@ GetTourneyCompetetorSpriteColors:
 GetCurTourneyCompetetorSpriteColor:
 	ld a, [hl]
 	and $7f
+GetCurTourneyCompetetorSpriteColor2::
 	ld e, a
 	ld d, 0
 	ld hl, TourneyCompetetorSpriteColors

@@ -170,4 +170,5 @@ MapTriggers::
 	scene_var LUSTER_MALL_CLOTHES_SHOP,				  wAlways0Trigger
 	scene_var LUMINA_TOWN,							  wAlways0Trigger
 	scene_var BEACON_ATOLL,							  wAlways0Trigger
+	scene_var POKEMON_LEAGUE_ARENA,					  wAlways0Trigger
 	db -1

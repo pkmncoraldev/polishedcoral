@@ -220,16 +220,63 @@ LoadMapPals::
 	cp TILESET_DIVE
 	jp z, .underwater
 	cp TILESET_BAR
-	jr z, .bar
+	jp z, .bar
 	cp TILESET_AUTUMN
 	jp z, .autumn
 	cp TILESET_GROVE
-	jr z, .grove
+	jp z, .grove
 	cp TILESET_SOUTH_BUILDINGS
 	jp z, .south_buildings
 	cp TILESET_GREEN_CAVE
-	jp z, .green_cave
+	jr z, .green_cave
+	cp TILESET_LEAGUE
+	jr z, .league
 	jp .normal
+.league
+	ld a, [wMapNumber]
+	cp MAP_POKEMON_LEAGUE_ARENA
+	jp nz, .normal
+	ld hl, MapObjectPalsPokemonLeagueArenaDark
+	ld de, wUnknOBPals
+	ld bc, 6 palettes
+	ld a, $5 ; BANK(UnknOBPals)
+	call FarCopyWRAM
+	
+	ld hl, MapObjectPalsPokemonLeagueArenaDark
+	ld de, wUnknOBPals + 6 palettes
+	ld bc, 1 palettes
+	ld a, [wXCoord]
+	cp $15
+	jr nc, .league_cont
+	cp $05
+	jr c, .league_cont
+	ld hl, MapObjectPals
+	ld a, 1
+	ld bc, 8 palettes
+	call AddNTimes
+.league_cont
+	ld a, [wPlayerInitialPalette]
+	ld bc, 1 palettes
+	call AddNTimes
+	ld a, $5 ; BANK(UnknOBPals)
+	call FarCopyWRAM
+	
+	ld hl, MapObjectPals
+	ld a, 1
+	ld bc, 8 palettes
+	call AddNTimes
+	push hl
+	farcall TourneyFindNextOpp
+	farcall GetCurTourneyCompetetorSpriteColor2
+	pop hl
+	ld bc, 1 palettes
+	call AddNTimes
+	ld de, wUnknOBPals + 7 palettes
+	ld bc, 1 palettes
+	ld a, $5
+	call FarCopyWRAM
+	ret
+	
 .green_cave
 	ld a, [wMapNumber]
 	cp MAP_GLINT_GROVE_DEEP
@@ -1576,6 +1623,9 @@ INCLUDE "maps/palettes/obpals/coralshards.pal"
 MapObjectPalsCrystalBall:
 INCLUDE "maps/palettes/obpals/crystalball.pal"
 
+MapObjectPalsPokemonLeagueArenaDark:
+INCLUDE "maps/palettes/obpals/arenadark.pal"
+
 RoofPals::
 INCLUDE "maps/palettes/roofpals/roof.pal"
 
@@ -1584,4 +1634,3 @@ INCLUDE "maps/palettes/roofpals/roofdusk.pal"
 
 StandardGrassPalette::
 INCLUDE "maps/palettes/obpals/grass.pal"
-

@@ -52,8 +52,8 @@ FlyToIslandCutscene::
 	ret
 	
 IslandCutscene_City_OAM:
-	dsprite 9, 0, 10, 0, $00, $0
-	dsprite 9, 0, 11, 0, $01, $0
+	dsprite 9, 3, 9, 6, $00, $0
+	dsprite 9, 3, 10, 6, $01, $0
 	
 IslandCutscene_Plane_OAM:
 	dsprite 2, 0, 11, 0, $07, $1

@@ -148,6 +148,7 @@ INCLUDE "audio/music/healpokemon.asm"
 INCLUDE "audio/music/trainervictory.asm"
 INCLUDE "audio/music/rivalbattle.asm"
 INCLUDE "audio/music/evolution.asm"
+INCLUDE "audio/music/pokemonleague.asm"
 
 
 SECTION "Music 14", ROMX

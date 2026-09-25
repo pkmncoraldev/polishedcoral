@@ -46,6 +46,25 @@ TilesetIceCaveAnim::
 	dw NULL,  WaitTileAnimation
 	dw NULL,  DoneTileAnimation
 	
+	
+TilesetLeagueAnim::
+	dw NULL,  StandingTileFrame
+	dw NULL,  WaitTileAnimation
+	dw Crowd1Frames, AnimateWaterfallTiles3
+	dw Crowd2Frames, AnimateWaterfallTiles3
+	dw Crowd3Frames, AnimateWaterfallTiles3
+	dw Crowd4Frames, AnimateWaterfallTiles3
+	dw Crowd5Frames, AnimateWaterfallTiles3
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  DoneTileAnimation
+	
 TilesetNettTopAnim::
 	dw NULL,  WaitTileAnimation
 	dw NettTopFanFrames, AnimateWaterfallTiles
@@ -117,7 +136,7 @@ TilesetDiveAnim::
 	
 TilesetDragonShrineAnim::
 	dw NULL,  StandingTileFrame
-	dw CandleFrames, AnimateWaterfallTiles
+	dw CandleFrames, AnimateWaterfallTiles3
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
@@ -1404,6 +1423,26 @@ CandleTiles: INCBIN "gfx/tilesets/candles/1.2bpp"
 NettTopFanFrames: dw VTiles2 tile $09, NettTopFanTiles
 
 NettTopFanTiles: INCBIN "gfx/tilesets/fan/nett_top.2bpp"
+
+Crowd1Frames: dw VTiles2 tile $10, Crowd1Tiles
+
+Crowd1Tiles: INCBIN "gfx/tilesets/crowd/1.2bpp"
+
+Crowd2Frames: dw VTiles2 tile $14, Crowd2Tiles
+
+Crowd2Tiles: INCBIN "gfx/tilesets/crowd/2.2bpp"
+
+Crowd3Frames: dw VTiles2 tile $18, Crowd3Tiles
+
+Crowd3Tiles: INCBIN "gfx/tilesets/crowd/3.2bpp"
+
+Crowd4Frames: dw VTiles2 tile $20, Crowd4Tiles
+
+Crowd4Tiles: INCBIN "gfx/tilesets/crowd/4.2bpp"
+
+Crowd5Frames: dw VTiles2 tile $24, Crowd5Tiles
+
+Crowd5Tiles: INCBIN "gfx/tilesets/crowd/5.2bpp"
 
 	
 WriteTwoTiles:

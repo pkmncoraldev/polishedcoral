@@ -83,6 +83,7 @@ INCLUDE "audio/music/sprucelab.asm"
 INCLUDE "audio/music/clefairydance.asm"
 INCLUDE "audio/music/crystalball.asm"
 INCLUDE "audio/music/spambuilding.asm"
+INCLUDE "audio/music/tourneybracket.asm"
 
 
 SECTION "Music 7", ROMX

@@ -74,6 +74,7 @@ Music:
 	dba Music_RBYWildBattle
 	dba Music_PokemonLeague
 	
+	dba Music_TourneyBracket
 	dba Music_SpamBuilding
 	dba Music_CrystalBall
 	dba Music_ClefairyDance

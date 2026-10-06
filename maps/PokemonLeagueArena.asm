@@ -6,7 +6,7 @@ PokemonLeagueArena_MapScriptHeader:
 	callback MAPCALLBACK_TILES, PokemonLeagueArenaCallback
 
 	db 1 ; warp events
-	warp_def  8, 12, 1, POKEMON_LEAGUE_INSIDE
+	warp_def  5, 12, 1, POKEMON_LEAGUE_INSIDE
 
 	db 0 ; coord events
 
@@ -16,8 +16,25 @@ PokemonLeagueArena_MapScriptHeader:
 
 
 PokemonLeagueArenaTrigger0:
-	special Special_UpdatePalsInstant
+;	special Special_UpdatePalsInstant
+	priorityjump ArenaEntryScene
+	
 	end
+
+ArenaEntryScene:
+	applyonemovement PLAYER, hide_person
+	callasm LoadMapPals
+	special FadeInPalettes
+	pause 100
+	special FadeOutPalettesBlack
+	warp_stealth UP, POKEMON_LEAGUE_ARENA, 12, 5
+	applyonemovement PLAYER, hide_person
+	closetext
+	callasm LoadMapPals
+	special FadeInPalettes
+	pause 25
+	end
+	
 
 PokemonLeagueArenaCallback:
 	writebyte (1 << 7) | (PAL_OW_PINK << 4)
@@ -95,3 +112,30 @@ PokemonLeagueArenaFindNextOppAsm:
 	farcall TourneyFindNextOpp
 	ld [wScriptVar], a
 	ret
+	
+Movement_ArenaMoveToScreen:
+	big_step_left
+	big_step_left
+	big_step_left
+	big_step_left
+	big_step_left
+	big_step_left
+	big_step_left
+	big_step_left
+	big_step_left
+	big_step_left
+	big_step_left
+	big_step_left
+	big_step_left
+	big_step_left
+	big_step_left
+	big_step_left
+	big_step_left
+	big_step_left
+	big_step_left
+	big_step_left
+	big_step_left
+	big_step_left
+	big_step_left
+	big_step_left
+	step_end

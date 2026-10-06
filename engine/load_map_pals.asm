@@ -242,38 +242,46 @@ LoadMapPals::
 	ld a, $5 ; BANK(UnknOBPals)
 	call FarCopyWRAM
 	
-	ld hl, MapObjectPalsPokemonLeagueArenaDark
 	ld de, wUnknOBPals + 6 palettes
 	ld bc, 1 palettes
 	ld a, [wXCoord]
 	cp $15
-	jr nc, .league_cont
+	jr nc, .league_cont1
 	cp $05
-	jr c, .league_cont
+	jr c, .league_cont1
 	ld hl, MapObjectPals
 	ld a, 1
 	ld bc, 8 palettes
 	call AddNTimes
-.league_cont
+.league_cont1
 	ld a, [wPlayerInitialPalette]
 	ld bc, 1 palettes
 	call AddNTimes
 	ld a, $5 ; BANK(UnknOBPals)
 	call FarCopyWRAM
 	
+	ld hl, MapObjectPalsPokemonLeagueArenaDark
+	ld de, wUnknOBPals + 7 palettes
+	ld bc, 1 palettes
+	ld a, [wXCoord]
+	cp $15
+	jr nc, .league_cont2
+	cp $05
+	jr c, .league_cont2
 	ld hl, MapObjectPals
 	ld a, 1
 	ld bc, 8 palettes
 	call AddNTimes
+.league_cont2
 	push hl
+	push de
 	farcall TourneyFindNextOpp
 	farcall GetCurTourneyCompetetorSpriteColor2
+	pop de
 	pop hl
 	ld bc, 1 palettes
 	call AddNTimes
-	ld de, wUnknOBPals + 7 palettes
-	ld bc, 1 palettes
-	ld a, $5
+	ld a, $5 ; BANK(UnknOBPals)
 	call FarCopyWRAM
 	ret
 	

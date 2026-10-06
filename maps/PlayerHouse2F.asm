@@ -384,7 +384,7 @@ PlayerHouseDebugPoster:
 	closewindow
 	farwritetext StdBlankText
 	callasm DetermineTourneyBracket
-	callasm DrawTourneyBracket
+	callasm DrawTourneyBracketRound1
 	jump .return
 .island
 	closewindow

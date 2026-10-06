@@ -6,7 +6,7 @@ PokemonLeagueInside_MapScriptHeader:
 	db 4 ; warp events
 	warp_def 19,  7, 1, POKEMON_LEAGUE_OUTSIDE
 	warp_def 19,  8, 2, POKEMON_LEAGUE_OUTSIDE
-	warp_def  3, 12, 1, POKEMON_LEAGUE_ARENA
+	warp_def  5, 10, 1, POKEMON_LEAGUE_ARENA
 	warp_def  3, 13, 1, POKEMON_LEAGUE_ARENA
 
 	db 0 ; coord events
@@ -19,4 +19,15 @@ PokemonLeagueInside_MapScriptHeader:
 
 PokemonLeagueInsideTest:
 	callasm DetermineTourneyBracket
+	end
+	special FadeOutPalettes
+	special Special_FadeOutMusic
+	applyonemovement PLAYER, hide_person
+	changeblock 10, 5, 34
+	special Special_FadeOutMusic
+	warpcheck
+	refreshscreen
+	callasm DetermineTourneyBracket
+	callasm DrawTourneyBracketRound1
+	special Special_FadeOutMusic
 	end

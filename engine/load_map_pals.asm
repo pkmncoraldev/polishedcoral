@@ -228,7 +228,7 @@ LoadMapPals::
 	cp TILESET_SOUTH_BUILDINGS
 	jp z, .south_buildings
 	cp TILESET_GREEN_CAVE
-	jr z, .green_cave
+	jp z, .green_cave
 	cp TILESET_LEAGUE
 	jr z, .league
 	jp .normal
@@ -246,13 +246,16 @@ LoadMapPals::
 	ld bc, 1 palettes
 	ld a, [wXCoord]
 	cp $15
-	jr nc, .league_cont1
+	jr nc, .league_dark1
 	cp $05
-	jr c, .league_cont1
+	jr c, .league_dark1
 	ld hl, MapObjectPals
 	ld a, 1
 	ld bc, 8 palettes
 	call AddNTimes
+	jr .league_cont1
+.league_dark1
+	ld hl, MapObjectPalsPokemonLeagueArenaDark
 .league_cont1
 	ld a, [wPlayerInitialPalette]
 	ld bc, 1 palettes
@@ -260,18 +263,20 @@ LoadMapPals::
 	ld a, $5 ; BANK(UnknOBPals)
 	call FarCopyWRAM
 	
-	ld hl, MapObjectPalsPokemonLeagueArenaDark
 	ld de, wUnknOBPals + 7 palettes
 	ld bc, 1 palettes
 	ld a, [wXCoord]
 	cp $15
-	jr nc, .league_cont2
+	jr nc, .league_dark2
 	cp $05
-	jr c, .league_cont2
+	jr c, .league_dark2
 	ld hl, MapObjectPals
 	ld a, 1
 	ld bc, 8 palettes
 	call AddNTimes
+	jr .league_cont2
+.league_dark2
+	ld hl, MapObjectPalsPokemonLeagueArenaDark
 .league_cont2
 	push hl
 	push de

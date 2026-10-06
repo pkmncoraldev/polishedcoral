@@ -42,21 +42,14 @@ DrawTourneyBracketRound1::
 	
 	ld de, MUSIC_NONE
 	call PlayMusic
-	lb bc, BANK(TourneyBracketGFX), $30
-	ld hl, TourneyBracketGFX
-	ld de, VTiles2 tile $00
-	call DecompressRequest2bpp
-	lb bc, BANK(TourneyBracketGFX2), $24
-	ld hl, TourneyBracketGFX2
-	ld de, VTiles0 tile $40
-	call DecompressRequest2bpp
+	call TourneyBracketLoadGfx
 	ldh a, [rSVBK]
 	push af
 	ld a, $5
 	ldh [rSVBK], a
 	ld hl, TourneyBracketPals1
 	ld de, wUnknBGPals
-	ld bc, 11 palettes
+	ld bc, 12 palettes
 	rst CopyBytes
 	
 	pop af
@@ -124,7 +117,7 @@ DrawTourneyBracketRound1::
 	call FillBracketAttrmap
 	call GetTourneyCompetetorSprites
 	call GetTourneyCompetetorSpriteColors
-	call TourneyRoundWinnersTiles	; ApplyAttrAndTilemapInVBlank is run here
+	call ApplyAttrAndTilemapInVBlank
 ; palettes
 	ldh a, [rSVBK]
 	push af
@@ -193,7 +186,7 @@ DrawTourneyBracketRound1::
 	
 	ld hl, TourneyBracketPals2
 	ld de, wUnknBGPals
-	ld bc, 11 palettes
+	ld bc, 12 palettes
 	rst CopyBytes
 	call TourneyGetPlayerPal
 	pop af
@@ -212,6 +205,15 @@ DrawTourneyBracketRound2::
 	ld de, SFX_TOURNEY_BRACKET_1
 	call PlaySFX
 	call AnimateTourneyBracketRound1
+	ld hl, Tourney_EndOfBarOAM1
+	ld de, wSprites
+	ld bc, 32
+	call CopyBytes
+	ld hl, wSprites + 2
+	ld b, 8
+	ld c, 1
+	ld a, 4
+	call AnimateTourneyBracketTile
 	ld c, 100
 	call DelayFrames
 ; palettes
@@ -249,6 +251,15 @@ DrawTourneyBracketRound3::
 	ld de, SFX_TOURNEY_BRACKET_2
 	call PlaySFX
 	call AnimateTourneyBracketRound2
+	ld hl, Tourney_EndOfBarOAM2
+	ld de, wSprites
+	ld bc, 16
+	call CopyBytes
+	ld hl, wSprites + 2
+	ld b, 4
+	ld c, 1
+	ld a, 4
+	call AnimateTourneyBracketTile
 	ld c, 100
 	call DelayFrames
 ; palettes
@@ -287,6 +298,15 @@ DrawTourneyBracketRound4::
 	ld de, SFX_TOURNEY_BRACKET_3
 	call PlaySFX
 	call AnimateTourneyBracketRound3
+	ld hl, Tourney_EndOfBarOAM3
+	ld de, wSprites
+	ld bc, 8
+	call CopyBytes
+	ld hl, wSprites + 2
+	ld b, 2
+	ld c, 1
+	ld a, 4
+	call AnimateTourneyBracketTile
 	ld c, 100
 	call DelayFrames
 ; palettes
@@ -325,6 +345,15 @@ DrawTourneyBracketRound5::
 	ld de, SFX_TOURNEY_BRACKET_4
 	call PlaySFX
 	call AnimateTourneyBracketRound4
+	ld hl, Tourney_EndOfBarOAM4
+	ld de, wSprites
+	ld bc, 4
+	call CopyBytes
+	ld hl, wSprites + 2
+	ld b, 1
+	ld c, 1
+	ld a, 4
+	call AnimateTourneyBracketTile
 	ld c, 100
 	call DelayFrames
 ; palettes
@@ -399,21 +428,14 @@ DrawTourneyBracketNoIntro:
 	
 	ld de, MUSIC_NONE
 	call PlayMusic
-	lb bc, BANK(TourneyBracketGFX), $30
-	ld hl, TourneyBracketGFX
-	ld de, VTiles2 tile $00
-	call DecompressRequest2bpp
-	lb bc, BANK(TourneyBracketGFX2), $24
-	ld hl, TourneyBracketGFX2
-	ld de, VTiles0 tile $40
-	call DecompressRequest2bpp
+	call TourneyBracketLoadGfx
 	ldh a, [rSVBK]
 	push af
 	ld a, $5
 	ldh [rSVBK], a
 	ld hl, TourneyBracketPals2
 	ld de, wUnknBGPals
-	ld bc, 11 palettes
+	ld bc, 12 palettes
 	rst CopyBytes
 	ld hl, TourneyBracketPalsSwoosh0
 	ld de, wUnknBGPals + 6 palettes
@@ -446,25 +468,6 @@ TourneyBracketLoop:
 	xor a
 	ret
 	
-TourneyRoundWinnersTiles:
-	ld a, [wTourneyRound1Results]
-	cp 0
-	jp z, .check_round_2
-	call TourneyRound1WinnersTiles
-.check_round_2
-	ld a, [wTourneyRound23Results]
-	cp 0
-	jp z, .end
-	call TourneyRound2WinnersTiles
-;.round_3
-	ld a, [wTourneyRound23Results]
-	and %00000011
-	jr z, .end
-	call TourneyRound3WinnersTiles
-.end
-	call ApplyAttrAndTilemapInVBlank
-	ret
-	
 AnimateTourneyBracketRound1:
 	ld hl, Tourney_BracketOAMRound1_L_T
 	ld de, wSprites
@@ -492,6 +495,7 @@ AnimateTourneyBracketRound1:
 	call AnimateTourneyBracketTile
 	ld de, SFX_HIT_END_OF_EXP_BAR
 	call PlaySFX
+	
 TourneyRound1WinnersTiles:
 ; replace with tiles
 ; player has to have won to be here
@@ -675,6 +679,16 @@ AnimateTourneyBracketRound4:
 	call AnimateTourneyBracketTile
 	ld de, SFX_HIT_END_OF_EXP_BAR
 	call PlaySFX
+TourneyRound4WinnersTiles:
+; replace with tiles
+; player has to have won to be here
+	ld de, Tourney_BracketTilemapRound4
+	hlcoord 8, 9
+	lb bc, 1, 3
+	call TourneyBracket_CopyToBox
+	
+	call ApplyAttrAndTilemapInVBlank
+	call TourneyClearSprites
 	ret
 	
 TourneySwoosh:
@@ -1641,6 +1655,21 @@ TourneyScrollBorders:
 	cp 0
 	jr nz, .loop2
 	ret
+	
+TourneyBracketLoadGfx:
+	lb bc, BANK(TourneyBracketGFX), $30
+	ld hl, TourneyBracketGFX
+	ld de, VTiles2 tile $00
+	call DecompressRequest2bpp
+	lb bc, BANK(TourneyBracketGFX2), $24
+	ld hl, TourneyBracketGFX2
+	ld de, VTiles0 tile $40
+	call DecompressRequest2bpp
+	lb bc, BANK(TourneyBracketGFX3), $4
+	ld hl, TourneyBracketGFX3
+	ld de, VTiles0 tile $70
+	call DecompressRequest2bpp
+	ret
 
 TourneyCompetetorSprites:
 	dba InvisibleSpriteGFX
@@ -1728,6 +1757,9 @@ INCBIN "gfx/tourney/tourney.2bpp.lz"
 
 TourneyBracketGFX2:
 INCBIN "gfx/tourney/anim_bracket.2bpp.lz"
+
+TourneyBracketGFX3:
+INCBIN "gfx/tourney/bar_end.2bpp.lz"
 
 TourneyBracketTilemap:
 INCBIN "gfx/tourney/bracket.tilemap"
@@ -1825,8 +1857,8 @@ Tourney_BracketTilemapRound3_T:
 	db $09
 	db $09
 	db $09
-	db $09
-	db $02
+	db $0c
+	db $01
 	db $01
 	db $01
 	db $01
@@ -1840,6 +1872,10 @@ Tourney_BracketTilemapRound3_B:
 	db $09
 	db $09
 	db $09
+	
+Tourney_BracketTilemapRound4:
+	db $0b, $0f, $2f
+	
 	
 Tourney_BracketOAMRound1_L_T:
 	;y pos, x pos, tile, palette
@@ -1932,9 +1968,9 @@ Tourney_BracketOAMRound3_R_B:
 	dsprite 12, 0, 12, 0, $49, $0 | X_FLIP | Y_FLIP
 	
 Tourney_BracketOAMRound4:
-	dsprite 11, 7, 9, 0, $40, $0
-	dsprite 11, 7,10, 0, $40, $0
-	dsprite 11, 1,10, 7, $49, $0 | Y_FLIP
+	dsprite 11, 6, 9, 0, $40, $0
+	dsprite 11, 6,10, 0, $40, $0
+	dsprite 11, 0,10, 7, $49, $0 | Y_FLIP
 	
 Tourney_BallOAM:
 	dsprite 2, 5, 21, 1, $58, $2 | PRIORITY
@@ -2003,6 +2039,29 @@ Tourney_Round3OAM:
 	dsprite 18, 0, 13, 0, $62, $2
 Tourney_Round4OAM:
 	dsprite 18, 0, 13, 0, $63, $2
+	
+Tourney_EndOfBarOAM1:
+	dsprite 5, 4, 6, 5, $70, $3
+	dsprite 9, 3, 6, 5, $70, $3
+	dsprite 13, 4, 6, 5, $70, $3
+	dsprite 17, 3, 6, 5, $70, $3
+	dsprite 5, 4, 14, 4, $70, $3
+	dsprite 9, 3, 14, 4, $70, $3
+	dsprite 13, 4, 14, 4, $70, $3
+	dsprite 17, 3, 14, 4, $70, $3
+	
+Tourney_EndOfBarOAM2:
+	dsprite 7, 4, 8, 5, $70, $3
+	dsprite 15, 3, 8, 5, $70, $3
+	dsprite 7, 4, 12, 4, $70, $3
+	dsprite 15, 3, 12, 4, $70, $3
+	
+Tourney_EndOfBarOAM3:
+	dsprite 11, 4, 8, 5, $70, $3
+	dsprite 11, 4, 12, 4, $70, $3
+	
+Tourney_EndOfBarOAM4:
+	dsprite 10, 4, 10, 4, $70, $3
 
 TourneyBracketPals1:
 ; Red
@@ -2068,6 +2127,11 @@ TourneyBracketPals1:
 	RGB 08, 07, 13
 	RGB 08, 07, 13
 	
+	RGB 31, 27, 18
+	RGB 31, 27, 18
+	RGB 31, 27, 18
+	RGB 31, 27, 18
+	
 TourneyBracketPals2:
 ; Red
 	RGB 08, 07, 13
@@ -2131,6 +2195,11 @@ TourneyBracketPals2:
 	RGB 08, 07, 13
 	RGB 08, 07, 13
 	RGB 08, 07, 13
+	
+	RGB 31, 27, 18
+	RGB 31, 27, 18
+	RGB 31, 27, 18
+	RGB 31, 27, 18
 
 TourneyBracketPalsSwoosh0:
 	RGB 08, 07, 13

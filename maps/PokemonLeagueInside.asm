@@ -27,6 +27,6 @@ PokemonLeagueInsideTest:
 	warpcheck
 	refreshscreen
 	callasm DetermineTourneyBracket
-	callasm DrawTourneyBracketRound2
+	callasm DrawTourneyBracketRound1
 	special Special_FadeOutMusic
 	end

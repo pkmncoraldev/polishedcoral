@@ -19,7 +19,6 @@ PokemonLeagueInside_MapScriptHeader:
 
 PokemonLeagueInsideTest:
 	callasm DetermineTourneyBracket
-	end
 	special FadeOutPalettes
 	special Special_FadeOutMusic
 	applyonemovement PLAYER, hide_person
@@ -28,6 +27,6 @@ PokemonLeagueInsideTest:
 	warpcheck
 	refreshscreen
 	callasm DetermineTourneyBracket
-	callasm DrawTourneyBracketRound1
+	callasm DrawTourneyBracketRound2
 	special Special_FadeOutMusic
 	end

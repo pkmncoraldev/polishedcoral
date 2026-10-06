@@ -182,10 +182,20 @@ DrawTourneyBracketRound1::
 	call TourneyBracket_FillBox2
 	call ApplyAttrAndTilemapInVBlank
 	
+	ld hl, TourneyBracketPalsSwoosh0
+	ld de, wUnknBGPals + 5 palettes
+	ld bc, 1 palettes
+	rst CopyBytes
+	ld c, 1
+	call FadePalettes
+	
+	call TourneyDrawPlayer
+	
 	ld hl, TourneyBracketPals2
 	ld de, wUnknBGPals
 	ld bc, 11 palettes
 	rst CopyBytes
+	call TourneyGetPlayerPal
 	pop af
 	ldh [rSVBK], a
 	farcall FadeInPalettes
@@ -382,6 +392,7 @@ DrawTourneyBracketNoIntro:
 	
 	call FillBracketTilemap
 	call FillBracketAttrmap
+	call TourneyDrawPlayer
 	call GetTourneyCompetetorSprites
 	call GetTourneyCompetetorSpriteColors
 	call ApplyAttrAndTilemapInVBlank
@@ -408,7 +419,7 @@ DrawTourneyBracketNoIntro:
 	ld de, wUnknBGPals + 6 palettes
 	ld bc, 1 palettes
 	rst CopyBytes
-	
+	call TourneyGetPlayerPal
 	pop af
 	ldh [rSVBK], a
 	ret
@@ -1364,7 +1375,7 @@ CheckTourneyEvent:
 	ret
 	
 GetTourneyCompetetorSpriteColors:
-	ld a, [wPlayerPalette]
+	ld a, 5
 	hlcoord 1, 2, wAttrMap
 	call TourneyBracket_FillBox
 
@@ -1492,9 +1503,31 @@ TourneyBracket_CopyToBox:
 	jr nz, .row
 	ret
 	
+TourneyDrawPlayer:
+	ld de, TourneyPlayerTilemap
+	hlcoord 1, 2
+	lb bc, 2, 2
+	call TourneyBracket_CopyToBox
+	call ApplyAttrAndTilemapInVBlank
+	
+TourneyGetPlayerPal:
+	ld a, [wPlayerInitialPalette]
+	ld hl, TourneyPlayerPals
+	ld bc, 1 palettes
+	call AddNTimes
+	ld de, wUnknBGPals + 5 palettes
+	ld bc, 1 palettes
+	rst CopyBytes
+	ret
+	
 GetTourneyCompetetorSprites:
-	ld de, VTiles2 tile $30
 	ld hl, CorySpriteGFX
+	ld a, [wPlayerGender]
+	cp 0
+	jr z, .got_gender
+	ld hl, CoraSpriteGFX
+.got_gender
+	ld de, VTiles2 tile $30
 	lb bc, BANK(CorySpriteGFX), $04
 	call DecompressRequest2bpp
 	ld de, VTiles0 tile $04
@@ -1626,13 +1659,13 @@ TourneyCompetetorSprites:
 	dba LedianRangerSpriteGFX
 	dba SpaWorkerSpriteGFX
 	dba MasterSpriteGFX
-	dba ColbySpriteGFX
-	dba ColbySpriteGFX
-	dba ColbySpriteGFX
-	dba ColbySpriteGFX
-	dba ColbySpriteGFX
-	dba ColbySpriteGFX
-	dba ColbySpriteGFX
+	dba GentlemanSpriteGFX
+	dba PokemaniacSpriteGFX
+	dba CoolTrainerFSpriteGFX
+	dba ShaolinSpriteGFX
+	dba BeautySpriteGFX
+	dba CoolTrainerMSpriteGFX
+	dba AromaLadySpriteGFX
 	db -1
 	
 TourneyCompetetorSpriteColors:
@@ -1652,13 +1685,13 @@ TourneyCompetetorSpriteColors:
 	db PAL_OW_RED
 	db PAL_OW_BLUE
 	db PAL_OW_BROWN
-	db PAL_OW_SILVER
-	db PAL_OW_SILVER
-	db PAL_OW_SILVER
-	db PAL_OW_SILVER
-	db PAL_OW_SILVER
-	db PAL_OW_SILVER
-	db PAL_OW_SILVER
+	db PAL_OW_BROWN
+	db PAL_OW_BLUE
+	db PAL_OW_RED
+	db PAL_OW_RED
+	db PAL_OW_BLUE
+	db PAL_OW_RED
+	db PAL_OW_GREEN
 	db -1
 
 LoadTourneyBracketTilemap:
@@ -1710,6 +1743,9 @@ INCBIN "gfx/tourney/logo.tilemap"
 
 TourneyRoundWordTilemap:
 INCBIN "gfx/tourney/round.tilemap"
+
+TourneyPlayerTilemap:
+INCBIN "gfx/tourney/player.tilemap"
 
 Tourney_BracketTilemapRound1_L_T_1:
 	db $08, $09, $03
@@ -2120,3 +2156,45 @@ TourneyBracketPalsSwoosh3:
 	RGB 30, 17, 11
 	RGB 29, 12, 17
 	
+TourneyPlayerPals:
+; Red
+	RGB 08, 07, 13
+	RGB 31, 19, 10
+	RGB 31, 05, 00
+	RGB 00, 00, 00
+
+; Blue
+	RGB 08, 07, 13
+	RGB 31, 19, 10
+	RGB 10, 09, 31
+	RGB 00, 00, 00
+
+; Green
+	RGB 08, 07, 13
+	RGB 31, 19, 10
+	RGB 07, 21, 02
+	RGB 00, 00, 00
+
+; Brown
+	RGB 08, 07, 13
+	RGB 31, 19, 10
+	RGB 15, 10, 03
+	RGB 00, 00, 00
+
+; Purple
+	RGB 08, 07, 13
+	RGB 31, 19, 10
+	RGB 21, 06, 21
+	RGB 00, 00, 00
+
+; Teal
+	RGB 08, 07, 13
+	RGB 31, 19, 10
+	RGB 03, 21, 19
+	RGB 00, 00, 00
+	
+; Pink
+	RGB 08, 07, 13
+	RGB 31, 19, 10
+	RGB 31, 12, 13
+	RGB 00, 00, 00

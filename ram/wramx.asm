@@ -1101,8 +1101,9 @@ wRoute3EastTrigger:: ds 1
 wRoute11Trigger:: ds 1
 wRoute22_2Trigger:: ds 1
 wLuminaGymTrigger:: ds 1
-wAureoleMountainOutside:: ds 1
-ds 15
+wAureoleMountainOutsideTrigger:: ds 1
+wPokemonLeagueArenaTrigger:: ds 1
+ds 14
 
 wAmpharosFood:: ds 1
 

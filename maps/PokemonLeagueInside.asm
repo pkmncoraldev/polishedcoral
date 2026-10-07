@@ -28,5 +28,6 @@ PokemonLeagueInsideTest:
 	refreshscreen
 	callasm DetermineTourneyBracket
 	callasm DrawTourneyBracketRound1
+	domaptrigger POKEMON_LEAGUE_ARENA, $1
 	special Special_FadeOutMusic
 	end

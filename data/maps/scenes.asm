@@ -162,13 +162,13 @@ MapTriggers::
 	scene_var ROUTE_24,								  wAlways0Trigger
 	scene_var LUMINA_ELDERS_HOUSE,					  wLuminaGymTrigger
 	scene_var LUMINA_GYM,							  wLuminaGymTrigger
-	scene_var AUREOLE_MOUNTAIN_OUTSIDE,				  wAureoleMountainOutside
+	scene_var AUREOLE_MOUNTAIN_OUTSIDE,				  wAureoleMountainOutsideTrigger
 	scene_var AUREOLE_MOUNTAIN_2F,					  wAlways0Trigger
-	scene_var AUREOLE_MOUNTAIN_4F,				 	  wAureoleMountainOutside
+	scene_var AUREOLE_MOUNTAIN_4F,				 	  wAureoleMountainOutsideTrigger
 	scene_var NETT_BUILDING_TOP_FLOOR,				  wNettBuildingOfficeTrigger
 	scene_var DRAGON_SHRINE_TOP,					  wAlways0Trigger
 	scene_var LUSTER_MALL_CLOTHES_SHOP,				  wAlways0Trigger
 	scene_var LUMINA_TOWN,							  wAlways0Trigger
 	scene_var BEACON_ATOLL,							  wAlways0Trigger
-	scene_var POKEMON_LEAGUE_ARENA,					  wAlways0Trigger
+	scene_var POKEMON_LEAGUE_ARENA,					  wPokemonLeagueArenaTrigger
 	db -1

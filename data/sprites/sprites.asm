@@ -319,3 +319,18 @@ SpriteHeadersPlayers:
 	overworld_sprite InvisibleSpriteGFX, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite SnareSpriteGFX, WALKING_SPRITE, PAL_OW_GREEN
 	overworld_sprite SnareGirlSpriteGFX, WALKING_SPRITE, PAL_OW_GREEN
+	overworld_sprite StanleySpriteGFX, WALKING_SPRITE, PAL_OW_BLUE
+	overworld_sprite RodneySpriteGFX, WALKING_SPRITE, PAL_OW_BLUE
+	overworld_sprite WendySpriteGFX, WALKING_SPRITE, PAL_OW_BROWN
+	overworld_sprite CharlieSpriteGFX, WALKING_SPRITE, PAL_OW_BROWN
+	overworld_sprite PollySpriteGFX, WALKING_SPRITE, PAL_OW_PINK
+	overworld_sprite LeilaniSpriteGFX, WALKING_SPRITE, PAL_OW_GREEN
+	overworld_sprite RockySpriteGFX, WALKING_SPRITE, PAL_OW_BROWN
+	overworld_sprite DarcySpriteGFX, WALKING_SPRITE, PAL_OW_PURPLE
+	overworld_sprite MinaSpriteGFX, WALKING_SPRITE, PAL_OW_PINK
+	overworld_sprite ErikaSpriteGFX, WALKING_SPRITE, PAL_OW_GREEN
+	overworld_sprite DisguiseMasterGFX, WALKING_SPRITE, PAL_OW_RED
+	overworld_sprite FrankieSpriteGFX, WALKING_SPRITE, PAL_OW_BROWN
+	overworld_sprite LedianRangerSpriteGFX, STANDING_SPRITE, PAL_OW_RED
+	overworld_sprite SpaWorkerSpriteGFX, WALKING_SPRITE, PAL_OW_RED
+	overworld_sprite MasterSpriteGFX, WALKING_SPRITE, PAL_OW_BLUE

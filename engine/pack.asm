@@ -631,7 +631,7 @@ TossMenu: ; 10364
 	
 .well
 	ld a, 3
-	ld [wAureoleMountainOutside], a
+	ld [wAureoleMountainOutsideTrigger], a
 	ld a, $f ; Pack_QuitCloseMenu
 	ld [wJumptableIndex], a
 	ret

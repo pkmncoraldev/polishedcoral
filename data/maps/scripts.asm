@@ -480,20 +480,17 @@ INCLUDE "maps/KomoreVillage.asm"
 INCLUDE "maps/Route25.asm"
 INCLUDE "maps/Route26North.asm"
 INCLUDE "maps/Route26South.asm"
+INCLUDE "maps/Route27.asm"
+INCLUDE "maps/Route28.asm"
+INCLUDE "maps/Route29.asm"
 INCLUDE "maps/KomoreCommunityCenter.asm"
 INCLUDE "maps/KomoreCommunityCenterLeft.asm"
 INCLUDE "maps/KomoreCommunityCenterMiddle.asm"
 INCLUDE "maps/KomoreCommunityCenterRight.asm"
-
-SECTION "Komore Village Scripts 2", ROMX
-
 INCLUDE "maps/KomoreHouse1.asm"
 INCLUDE "maps/KomoreHouse2.asm"
 INCLUDE "maps/KomoreHouse3.asm"
 INCLUDE "maps/KomoreTeaHouse.asm"
-INCLUDE "maps/Route27.asm"
-INCLUDE "maps/Route28.asm"
-INCLUDE "maps/Route29.asm"
 
 SECTION "Underwater Scripts", ROMX
 INCLUDE "maps/Route14_15Underwater.asm"

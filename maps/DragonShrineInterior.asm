@@ -186,11 +186,13 @@ DragonShrineInteriorBigStatueLegendText4:
 	line "the great dragon."
 	
 	para "The boy approached"
-	line "it, not with the"
+	line "it."
+
+	para "He showed not the"
 	cont "malice so common"
 	cont "to man,"
 	
-	para "but with grace and"
+	para "but instead grace"
 	line "and compassion."
 	
 	para "Seeing this, the"
@@ -261,10 +263,10 @@ DragonShrineInteriorBigStatueLegendText7:
 	para "He searched for"
 	line "his friend,"
 	
-	para "but he was nowhere"
+	para "but it was nowhere"
 	line "to be seen."
 	
-	para "In his place, the"
+	para "In its place, the"
 	line "boy found only a"
 	cont "small jade pearl."
 	
@@ -292,7 +294,8 @@ DragonShrineInteriorBigStatueLegendText8:
 	line "spoke to the boy:"
 	
 	para "“You loved my son,"
-	line "and he loved you,"
+	line "and my son loved"
+	cont "you,"
 	
 	para "despite your"
 	line "cowardice."
@@ -301,8 +304,8 @@ DragonShrineInteriorBigStatueLegendText8:
 	line "your village."
 	
 	para "Cherish that stone"
-	line "as you would his"
-	cont "life."
+	line "as you would the"
+	cont "life of my son."
 	
 	para "When the best of"
 	line "your kind returns"

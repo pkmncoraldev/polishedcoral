@@ -73,6 +73,7 @@ Music:
 	dba Music_SnareLeaderBattle
 	dba Music_RBYWildBattle
 	dba Music_PokemonLeague
+	dba Music_EliteFourBattle
 	
 	dba Music_TourneyBracket
 	dba Music_SpamBuilding

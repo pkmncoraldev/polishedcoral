@@ -60,6 +60,7 @@ INCLUDE "audio/music/snareadminbattle.asm"
 INCLUDE "audio/music/snareleaderbattle.asm"
 INCLUDE "audio/music/train.asm"
 INCLUDE "audio/music/trainstartup.asm"
+INCLUDE "audio/music/elitefourbattle.asm"
 
 
 

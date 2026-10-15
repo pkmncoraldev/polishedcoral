@@ -11,4 +11,5 @@ SongArtists:
 	db "MINAKO ADACHI@"
 	db "MUDSTEP@"
 	db "MUDSTEP<LNBRK>coraldev@"
+	db "coraldev<LNBRK>CCCP@"
 	

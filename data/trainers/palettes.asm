@@ -109,6 +109,13 @@ SnareBossPalette:	 	 INCLUDE "gfx/trainers/snare_boss.pal"
 	INCLUDE "gfx/trainers/leilani.pal"
 	INCLUDE "gfx/trainers/rocky.pal"
 	INCLUDE "gfx/trainers/darcy.pal"
+	INCLUDE "gfx/trainers/mina.pal"
+	INCLUDE "gfx/trainers/erika.pal"
+	INCLUDE "gfx/trainers/player1.pal"
+	INCLUDE "gfx/trainers/frankie.pal"
+	INCLUDE "gfx/trainers/ledian_ranger.pal"
+	INCLUDE "gfx/trainers/police_captain.pal"
+	INCLUDE "gfx/trainers/dojo_master.pal"
 TowerTycoonPalette:
 
 

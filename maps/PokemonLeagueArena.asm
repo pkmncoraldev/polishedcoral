@@ -57,6 +57,10 @@ ArenaEntryScene:
 	special Special_UpdatePalsInstant
 	applymovement PLAYER, Movement_ArenaWalk1_2
 	pause 25
+	opentext
+	writetext ArenaText2
+	waitbutton
+	closetext
 	special FadeOutPalettesBlack
 	warp_stealth LEFT, POKEMON_LEAGUE_ARENA, 25, 10
 	refreshscreen
@@ -79,19 +83,15 @@ ArenaEntryScene:
 	applyonemovement PLAYER, remove_fixed_facing
 	applyonemovement PLAYER, hide_person
 	applyonemovement PLAYER, slow_step_left
-;	spriteface PLAYER, RIGHT
 	writecode VAR_MOVEMENT, PLAYER_NORMAL
 	special MapCallbackSprites_LoadUsedSpritesGFX
 	writebyte (1 << 7) | (PAL_OW_PINK << 4)
 	special Special_SetPlayerPalette
-;	applyonemovement PLAYER, show_person
-;	applyonemovement PLAYER, remove_fixed_facing
-;	disappear 1
-;	setlasttalked 2
 	opentext
-	writetext ArenaText2
+	callasm TourneyLoadTrainerData
 	waitbutton
 	closetext
+	waitsfx
 	applymovement PLAYER, Movement_ArenaWalk3
 	pause 25
 	opentext
@@ -100,11 +100,6 @@ ArenaEntryScene:
 	closetext
 	waitsfx
 	setevent EVENT_BIG_OW_MON_BATTLE
-	opentext
-	callasm TourneyLoadTrainerData
-	waitbutton
-	closetext
-	waitsfx
 	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
 	special Special_RestorePlayerPalette
 	startbattle
@@ -620,7 +615,7 @@ Movement_ArenaWalk2_2:
 	
 Movement_ArenaWalk3:
 	slow_step_up
-	slow_step_up
+;	slow_step_up
 	slow_step_up
 	slow_step_up
 	step_end

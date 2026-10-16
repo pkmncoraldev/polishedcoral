@@ -577,6 +577,8 @@ StartTrainerBattle_LoadPokeBallGraphics: ; 8c5dc (23:45dc)
 	ldh [hBGMapMode], a
 
 	ld a, [wOtherTrainerClass]
+	cp STANLEY_TOURNEY	;first tourney trainer
+	jr nc, .colors
 	ld de, 1
 	ld hl, .SnareTrainerClasses
 	call IsInArray
@@ -635,7 +637,7 @@ StartTrainerBattle_LoadPokeBallGraphics: ; 8c5dc (23:45dc)
 	dec b
 	jr nz, .loop2
 
-	
+.colors
 	ld a, [wOtherTrainerClass]
 	ld de, 1
 	ld hl, .SnareTrainerClasses
@@ -687,6 +689,16 @@ StartTrainerBattle_LoadPokeBallGraphics: ; 8c5dc (23:45dc)
 	call .copy
 	ld de, wUnknBGPals palette PAL_BG_TEXT
 	call .copy
+	
+	ldh a, [rSVBK]
+	push af
+	ld a, 0
+	ldh [rSVBK], a
+	ld a, [wOtherTrainerClass]
+	cp STANLEY_TOURNEY	;first tourney trainer
+	jr nc, .finished
+	pop af
+	ldh [rSVBK], a
 	ld de, wUnknOBPals palette PAL_OW_SILVER
 	call .copy
 	
@@ -720,7 +732,11 @@ StartTrainerBattle_LoadPokeBallGraphics: ; 8c5dc (23:45dc)
 	rst CopyBytes
 	pop hl
 	ret
-; 8c6a1 (23:46a1)
+
+.finished
+	pop af
+	ldh [rSVBK], a
+	ret
 
 .SnareTrainerClasses
 	db GRUNTM

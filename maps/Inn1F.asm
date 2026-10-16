@@ -642,7 +642,7 @@ Inn1FClerkBattleinterrupt3:
 	done
 	
 Inn1FFakeBattleStart:
-	ld a, $69
+	ld a, $fe
 	ld [wOtherTrainerClass], a
 	predef Predef_StartBattle
 	ret

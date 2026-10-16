@@ -179,7 +179,7 @@ StartTrainerBattle_DetermineWhichAnimation: ; 8c365 (23:4365)
 	ld de, 0
 
 	ld a, [wOtherTrainerClass]
-	cp $69
+	cp $fe
 	jr z, .fake
 	and a
 	jr z, .wild
@@ -744,7 +744,7 @@ StartTrainerBattle_LoadPokeBallGraphics: ; 8c5dc (23:45dc)
 	db KAGE
 	db LOCKE
 	db RIVAL_S
-	db $69
+	db $fe
 	db -1
 
 .timepals

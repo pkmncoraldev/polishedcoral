@@ -648,7 +648,7 @@ Music_EliteFourBattle_Ch1_loop:
 	loopchannel 0, Music_EliteFourBattle_Ch1_loop
 
 Music_EliteFourBattle_Ch2:
-	dutycycle 2
+	dutycycle 1
 	octave 3
 	notetype $C, $a7
 	vibrato $08, $23

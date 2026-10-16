@@ -40,6 +40,10 @@ MACRO dbwww
 	dw \2, \3, \4
 ENDM
 
+MACRO dww
+	dw \1, \2
+ENDM
+
 ;dbbwww: MACRO
 ;	db \1, \2
 ;	dw \3, \4, \5

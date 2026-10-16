@@ -100,8 +100,11 @@ ArenaEntryScene:
 	closetext
 	waitsfx
 	setevent EVENT_BIG_OW_MON_BATTLE
-	winlosstext ArenaText3, ArenaText3
-	loadtrainer MINA_TOURNEY, 1
+	opentext
+	callasm TourneyLoadTrainerData
+	waitbutton
+	closetext
+	waitsfx
 	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
 	special Special_RestorePlayerPalette
 	startbattle
@@ -114,6 +117,298 @@ ArenaEntryScene:
 	reloadmapafterbattle
 	callasm ArenaIncTrigger
 	end
+	
+TourneyLoadTrainerData:
+	farcall TourneyFindNextOpp
+	dec a
+	push af
+	ld hl, TourneyOppWinLossText
+.loop
+	dec a
+	cp 0
+	inc hl
+	inc hl
+	inc hl
+	inc hl
+	jr nz, .loop
+	ld d, h
+	ld e, l
+	ld hl, wWinTextPointer
+	ld a, [de]
+	ld [hli], a
+	inc de
+	ld a, [de]
+	ld [hli], a
+	inc de
+	ld a, [de]
+	ld [hli], a
+	inc de
+	ld a, [de]
+	ld [hli], a
+	
+	ld a, (1 << 7) | 1
+	ld [wBattleScriptFlags], a
+	pop af
+	push af
+	
+	add 100 ;number of trainer classes before the tourney classes
+	ld [wOtherTrainerClass], a
+	ld a, 1
+	ld [wOtherTrainerID], a
+	pop af
+	push af
+	ld hl, TourneyOppTextboxSpeakers
+.loop2
+	dec a
+	cp 0
+	inc hl
+	jr nz, .loop2
+	ld a, [hl]
+	ld [wTextBoxSpeaker], a	
+	
+	pop af
+	ld hl, TourneyOppPreBattleText
+.loop3
+	dec a
+	cp 0
+	inc hl
+	inc hl
+	jr nz, .loop3
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	jp BattleTextBox
+	
+TourneyOppPreBattleText:
+	dw StanleyTourneyText
+	dw RodneyTourneyText
+	dw WendyTourneyText
+	dw CharlieTourneyText
+	dw PollyTourneyText
+	dw LeilaniTourneyText
+	dw RockyTourneyText
+	dw DarcyTourneyText
+	dw MinaTourneyText
+	dw ErikaTourneyText
+	dw DisguiseManTourneyText
+	dw FrankieTourneyText
+	dw LedianRangerTourneyText
+	dw ArmstrongTourneyText
+	dw MasterTourneyText
+	
+StanleyTourneyText:
+	text "STANLEY TEXT"
+	done
+	
+RodneyTourneyText:
+	text "RODNEY TEXT"
+	done
+	
+WendyTourneyText:
+	text "WENDY TEXT"
+	done
+	
+CharlieTourneyText:
+	text "CHARLIE TEXT"
+	done
+	
+PollyTourneyText:
+	text "POLLY TEXT"
+	done
+	
+LeilaniTourneyText:
+	text "LEILANI TEXT"
+	done
+	
+RockyTourneyText:
+	text "ROCKY TEXT"
+	done
+	
+DarcyTourneyText:
+	text "DARCY TEXT"
+	done
+	
+MinaTourneyText:
+	text "MINA TEXT"
+	done
+	
+ErikaTourneyText:
+	text "ERIKA TEXT"
+	done
+	
+DisguiseManTourneyText:
+	text "DISGUISE TEXT"
+	done
+	
+FrankieTourneyText:
+	text "FRANKIE TEXT"
+	done
+	
+LedianRangerTourneyText:
+	text "LEDIAN TEXT"
+	done
+	
+ArmstrongTourneyText:
+	text "ARMSTRONG TEXT"
+	done
+	
+MasterTourneyText:
+	text "MASTER TEXT"
+	done
+	
+TourneyOppWinLossText:
+	dww StanleyTourneyWinText, StanleyTourneyLossText
+	dww RodneyTourneyWinText, RodneyTourneyLossText
+	dww WendyTourneyWinText, WendyTourneyLossText
+	dww CharlieTourneyWinText, CharlieTourneyLossText
+	dww PollyTourneyWinText, PollyTourneyLossText
+	dww LeilaniTourneyWinText, LeilaniTourneyLossText
+	dww RockyTourneyWinText, RockyTourneyLossText
+	dww DarcyTourneyWinText, DarcyTourneyLossText
+	dww MinaTourneyWinText, MinaTourneyLossText
+	dww ErikaTourneyWinText, ErikaTourneyLossText
+	dww DisguiseManTourneyWinText, DisguiseManTourneyLossText
+	dww FrankieTourneyWinText, FrankieTourneyLossText
+	dww LedianRangerTourneyWinText, LedianRangerTourneyLossText
+	dww ArmstrongTourneyWinText, ArmstrongTourneyLossText
+	dww MasterTourneyWinText, MasterTourneyLossText
+	
+StanleyTourneyWinText:
+	text "STANLEY WIN"
+	done
+	
+StanleyTourneyLossText:
+	text "STANLEY LOSE"
+	done
+	
+RodneyTourneyWinText:
+	text "RODNEY WIN"
+	done
+	
+RodneyTourneyLossText:
+	text "RODNEY LOSE"
+	done
+	
+WendyTourneyWinText:
+	text "WENDY WIN"
+	done
+	
+WendyTourneyLossText:
+	text "WENDY LOSE"
+	done
+	
+CharlieTourneyWinText:
+	text "CHARLIE WIN"
+	done
+	
+CharlieTourneyLossText:
+	text "CHARLIE LOSE"
+	done
+	
+PollyTourneyWinText:
+	text "POLLY WIN"
+	done
+	
+PollyTourneyLossText:
+	text "POLLY LOSE"
+	done
+	
+LeilaniTourneyWinText:
+	text "LEILANI WIN"
+	done
+	
+LeilaniTourneyLossText:
+	text "LEILANI LOSE"
+	done
+	
+RockyTourneyWinText:
+	text "ROCKY WIN"
+	done
+	
+RockyTourneyLossText:
+	text "ROCKY LOSE"
+	done
+	
+DarcyTourneyWinText:
+	text "DARCY WIN"
+	done
+	
+DarcyTourneyLossText:
+	text "DARCY LOSE"
+	done
+	
+MinaTourneyWinText:
+	text "MINA WIN"
+	done
+	
+MinaTourneyLossText:
+	text "MINA LOSE"
+	done
+	
+ErikaTourneyWinText:
+	text "ERIKA WIN"
+	done
+	
+ErikaTourneyLossText:
+	text "ERIKA LOSE"
+	done
+	
+DisguiseManTourneyWinText:
+	text "DISGUISE WIN"
+	done
+	
+DisguiseManTourneyLossText:
+	text "DISGUISE LOSE"
+	done
+	
+FrankieTourneyWinText:
+	text "FRANKIE WIN"
+	done
+	
+FrankieTourneyLossText:
+	text "FRANKIE LOSE"
+	done
+	
+LedianRangerTourneyWinText:
+	text "LEDIAN WIN"
+	done
+	
+LedianRangerTourneyLossText:
+	text "LEDIAN LOSE"
+	done
+	
+ArmstrongTourneyWinText:
+	text "ARMSTRONG WIN"
+	done
+	
+ArmstrongTourneyLossText:
+	text "ARMSTRONG LOSE"
+	done
+	
+MasterTourneyWinText:
+	text "MASTER WIN"
+	done
+	
+MasterTourneyLossText:
+	text "MASTER LOSE"
+	done
+	
+TourneyOppTextboxSpeakers:
+	db TEXTBOX_STANLEY
+	db TEXTBOX_RODNEY
+	db TEXTBOX_WENDY
+	db TEXTBOX_CHARLIE
+	db TEXTBOX_POLLY
+	db TEXTBOX_LEILANI
+	db TEXTBOX_ROCKY
+	db TEXTBOX_DARCY
+	db TEXTBOX_MINA
+	db TEXTBOX_ERIKA
+	db TEXTBOX_DISGUISEMAN
+	db TEXTBOX_FRANKIE
+	db TEXTBOX_LEDIAN_RANGER
+	db TEXTBOX_ARMSTRONG
+	db TEXTBOX_MASTER
 
 PokemonLeagueArenaCallback:
 	writebyte (1 << 7) | (PAL_OW_PINK << 4)

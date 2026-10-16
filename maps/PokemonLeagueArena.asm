@@ -115,7 +115,6 @@ ArenaEntryScene:
 	
 TourneyLoadTrainerData:
 	farcall TourneyFindNextOpp
-	dec a
 	push af
 	ld hl, TourneyOppWinLossText
 .loop
@@ -145,7 +144,7 @@ TourneyLoadTrainerData:
 	ld [wBattleScriptFlags], a
 	pop af
 	push af
-	
+	dec a
 	add 100 ;number of trainer classes before the tourney classes
 	ld [wOtherTrainerClass], a
 	ld a, 1
@@ -175,6 +174,7 @@ TourneyLoadTrainerData:
 	jp BattleTextBox
 	
 TourneyOppPreBattleText:
+	dw -1
 	dw StanleyTourneyText
 	dw RodneyTourneyText
 	dw WendyTourneyText
@@ -252,6 +252,7 @@ MasterTourneyText:
 	done
 	
 TourneyOppWinLossText:
+	dww -1, -1
 	dww StanleyTourneyWinText, StanleyTourneyLossText
 	dww RodneyTourneyWinText, RodneyTourneyLossText
 	dww WendyTourneyWinText, WendyTourneyLossText
@@ -389,6 +390,7 @@ MasterTourneyLossText:
 	done
 	
 TourneyOppTextboxSpeakers:
+	db -1
 	db TEXTBOX_STANLEY
 	db TEXTBOX_RODNEY
 	db TEXTBOX_WENDY

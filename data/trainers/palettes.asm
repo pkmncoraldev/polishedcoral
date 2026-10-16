@@ -101,6 +101,14 @@ MuseuemGuidePalette:	 INCLUDE "gfx/trainers/museum_guide_blue.pal"
 MuseuemGuide2Palette:	 INCLUDE "gfx/trainers/museum_guide_red.pal"
 BusinessmanPalette:	 	 INCLUDE "gfx/trainers/businessman.pal"
 SnareBossPalette:	 	 INCLUDE "gfx/trainers/snare_boss.pal"
+	INCLUDE "gfx/trainers/stanley.pal"
+	INCLUDE "gfx/trainers/rodney.pal"
+	INCLUDE "gfx/trainers/wendy.pal"
+	INCLUDE "gfx/trainers/charlie.pal"
+	INCLUDE "gfx/trainers/polly.pal"
+	INCLUDE "gfx/trainers/leilani.pal"
+	INCLUDE "gfx/trainers/rocky.pal"
+	INCLUDE "gfx/trainers/darcy.pal"
 TowerTycoonPalette:
 
 

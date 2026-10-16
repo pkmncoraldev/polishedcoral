@@ -594,6 +594,96 @@ TrainerClassAttributes: ; 3959c
 	dw AI_BASIC + AI_SETUP + AI_TYPES + AI_OPPORTUNIST + AI_AGGRESSIVE + AI_CAUTIOUS + AI_STATUS + AI_RISKY
 	dw CONTEXT_USE + SWITCH_SOMETIMES
 	
+; Stanley2
+	db 0, 0 ; items
+	db 25 ; base reward
+	dw AI_BASIC + AI_SMART + AI_STATUS + AI_SETUP + AI_TYPES
+	dw CONTEXT_USE
+
+; Rodney2
+	db FULL_HEAL, 0 ; items
+	db 25 ; base reward
+	dw AI_BASIC + AI_SMART + AI_STATUS + AI_SETUP + AI_TYPES
+	dw CONTEXT_USE
+
+; Wendy2
+	db 0, 0 ; items
+	db 25 ; base reward
+	dw AI_BASIC + AI_SMART + AI_SETUP + AI_TYPES + AI_OPPORTUNIST + AI_CAUTIOUS + AI_STATUS + AI_RISKY
+	dw CONTEXT_USE
+
+; Charlie2
+	db HYPER_POTION, 0 ; items
+	db 25 ; base reward
+	dw AI_BASIC + AI_SMART + AI_STATUS + AI_SETUP + AI_TYPES
+	dw CONTEXT_USE
+
+; Polly2
+	db FULL_HEAL, 0 ; items
+	db 25 ; base reward
+	dw AI_BASIC + AI_SETUP + AI_TYPES + AI_OPPORTUNIST + AI_AGGRESSIVE + AI_STATUS + AI_RISKY + AI_SMART
+	dw CONTEXT_USE
+
+; Leilani2
+	db SUNSHINE_TEA, 0 ; items
+	db 25 ; base reward
+	dw AI_BASIC + AI_SMART + AI_SETUP + AI_TYPES + AI_OPPORTUNIST + AI_AGGRESSIVE + AI_STATUS
+	dw CONTEXT_USE
+
+; Rocky2
+	db MAX_POTION, 0 ; items
+	db 25 ; base reward
+	dw AI_BASIC + AI_SMART + AI_SETUP + AI_TYPES + AI_OPPORTUNIST + AI_AGGRESSIVE + AI_CAUTIOUS + AI_STATUS
+	dw CONTEXT_USE + SWITCH_SOMETIMES
+
+; Darcy2
+	db FULL_HEAL, SERPSPARILLA ; items
+	db 25 ; base reward
+	dw AI_BASIC + AI_SETUP + AI_TYPES + AI_OPPORTUNIST + AI_AGGRESSIVE + AI_CAUTIOUS + AI_STATUS + AI_RISKY
+	dw CONTEXT_USE + SWITCH_SOMETIMES
+	
+; Mina2
+	db 0, 0 ; items
+	db 15 ; base reward
+	dw AI_BASIC + AI_SETUP + AI_TYPES + AI_OPPORTUNIST + AI_AGGRESSIVE + AI_CAUTIOUS + AI_STATUS + AI_RISKY
+	dw CONTEXT_USE + SWITCH_SOMETIMES
+	
+; Erika2
+	db 0, 0 ; items
+	db 15 ; base reward
+	dw AI_BASIC + AI_SMART + AI_SETUP + AI_TYPES + AI_AGGRESSIVE + AI_STATUS + AI_RISKY
+	dw CONTEXT_USE + SWITCH_SOMETIMES
+	
+;DisguiseMan2
+	db 0, 0 ; items
+	db 20 ; base reward
+	dw AI_BASIC + AI_SETUP + AI_TYPES + AI_AGGRESSIVE + AI_CAUTIOUS + AI_STATUS + AI_RISKY
+	dw CONTEXT_USE + SWITCH_SOMETIMES
+	
+;Frankie2
+	db FULL_HEAL, SODA_POP ; items
+	db 30 ; base reward
+	dw AI_BASIC + AI_SETUP + AI_TYPES + AI_OPPORTUNIST + AI_AGGRESSIVE + AI_CAUTIOUS + AI_STATUS + AI_RISKY
+	dw CONTEXT_USE + SWITCH_SOMETIMES
+	
+; Ledian Ranger2
+	db 0, 0 ; items
+	db 15 ; base reward
+	dw AI_BASIC + AI_SMART + AI_SETUP + AI_TYPES
+	dw CONTEXT_USE
+	
+; Police Captain2
+	db FULL_RESTORE, FULL_RESTORE ; items
+	db 25 ; base reward
+	dw AI_BASIC + AI_SMART + AI_SETUP + AI_TYPES + AI_OPPORTUNIST + AI_CAUTIOUS + AI_STATUS
+	dw CONTEXT_USE
+	
+; Dojo Master2
+	db 0, 0 ; items
+	db 25 ; base reward
+	dw AI_BASIC + AI_SMART + AI_SETUP + AI_TYPES + AI_OPPORTUNIST + AI_CAUTIOUS + AI_STATUS + AI_RISKY
+	dw CONTEXT_USE + SWITCH_SOMETIMES
+	
 ; TowerTycoon
 	db FULL_HEAL, FULL_RESTORE ; items
 	db 25 ; base reward

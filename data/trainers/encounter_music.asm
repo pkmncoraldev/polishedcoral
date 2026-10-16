@@ -99,4 +99,19 @@ TrainerEncounterMusic: ; e9027
 	db MUSIC_NONE					; museumguide2
 	db MUSIC_HIKER_ENCOUNTER		; businessman
 	db MUSIC_NONE			 		; snareboss
+	db MUSIC_NONE					; stanley2
+	db MUSIC_NONE					; rodney2
+	db MUSIC_NONE					; wendy2
+	db MUSIC_NONE					; charlie2
+	db MUSIC_NONE					; polly2
+	db MUSIC_NONE					; leilani2
+	db MUSIC_NONE					; rocky2
+	db MUSIC_NONE					; darcy2
+	db MUSIC_NONE					; mina2
+	db MUSIC_NONE					; erika2
+	db MUSIC_NONE					; disguise2
+	db MUSIC_NONE					; frankie2
+	db MUSIC_NONE					; ledianranger2
+	db MUSIC_NONE					; armstrong2
+	db MUSIC_NONE					; master2
 	db MUSIC_NONE			 		; towertycoon

@@ -100,4 +100,19 @@ TrainerGroups: ; 0x39999
 	dba MuseumGuide2Group
 	dba BusinessmanGroup
 	dba SnareBossGroup
+	dba StanleyGroup2
+	dba RodneyGroup2
+	dba WendyGroup2
+	dba CharlieGroup2
+	dba PollyGroup2
+	dba LeilaniGroup2
+	dba RockyGroup2
+	dba DarcyGroup2
+	dba MinaGroup2
+	dba ErikaGroup2
+	dba DisguiseGroup2
+	dba FrankieGroup2
+	dba LedianRangerGroup2
+	dba PoliceCaptainGroup2
+	dba DojoMasterGroup2
 	dba TowerTycoonGroup

@@ -98,5 +98,20 @@ TrainerClassNames::
 	db "MUSEUM@"		   ; MUSEUM_GUIDE_2
 	db "OFFICE@"	 	   ; BUSINESSMAN
 	db "SNARE BOSS@"	   ; SNARE_BOSS
+	db "STANLEY@"          ; STANLEY_TOURNEY
+	db "RODNEY@"           ; RODNEY_TOURNEY
+	db "WENDY@"            ; WENDY_TOURNEY
+	db "CHARLIE@"          ; CHARLIE_TOURNEY
+	db "POLLY@"            ; POLLY_TOURNEY
+	db "LEILANI@"          ; LEILANI_TOURNEY
+	db "ROCKY@"            ; ROCKY_TOURNEY
+	db "DARCY@"            ; DARCY_TOURNEY
+	db "MINA@"		 	   ; MINA_TOURNEY
+	db "ERIKA@" 		   ; ERIKA_TOURNEY
+	db "MASTER OF@"		   ; DISGUISEMAN_TOURNEY
+	db "FRANKIE@"	       ; FRANKIE_TOURNEY
+	db "THE LEDIAN@"	   ; LEDIAN_RANGER_TOURNEY
+	db "CAPTAIN@"		   ; POLICE_CAPTAIN_TOURNEY
+	db "THE@"		   	   ; DOJO_MASTER
 	db "TYCOON@"		   ; TOWERTYCOON
 	

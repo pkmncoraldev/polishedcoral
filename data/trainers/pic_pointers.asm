@@ -98,5 +98,20 @@ TrainerPicPointers::
 	dba MuseumGuide2Pic
 	dba BusinessmanPic
 	dba SnareBossPic
+	dba StanleyPic
+	dba RodneyPic
+	dba WendyPic
+	dba CharliePic
+	dba PollyPic
+	dba LeilaniPic
+	dba RockyPic
+	dba DarcyPic
+	dba MinaPic
+	dba ErikaPic
+	dba DisguiseManPic
+	dba FrankiePic
+	dba LedianRangerPic
+	dba PoliceCaptainPic
+	dba DojoMasterPic
 	dba TowerTycoonPic
 	

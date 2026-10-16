@@ -101,7 +101,7 @@ ArenaEntryScene:
 	waitsfx
 	setevent EVENT_BIG_OW_MON_BATTLE
 	winlosstext ArenaText3, ArenaText3
-	loadtrainer STANLEY, 1
+	loadtrainer MINA_TOURNEY, 1
 	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
 	special Special_RestorePlayerPalette
 	startbattle

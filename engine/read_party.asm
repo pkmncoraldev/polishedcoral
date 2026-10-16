@@ -30,8 +30,11 @@ ReadTrainerParty: ; 39771
 	ret z
 	push af
 	ld a, [wOtherTrainerClass]
+	cp MINA_TOURNEY
+	jr z, .mina
 	cp MINA
 	jr nz, .not_mina
+.mina
 	pop af
 	call CheckMinaMons
 	jr z, .loop2

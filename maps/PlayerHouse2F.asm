@@ -27,7 +27,7 @@ PlayerHouse2F_MapScriptHeader:
 	warp_event  5, 18, DUSK_TURNPIKE, 1
 	warp_event  7, 18, CROSSROADS, 1
 	warp_event  9, 18, KOMORE_VILLAGE, 6
-	warp_event 11, 18, BRIGHTBURG, 1
+	warp_event 11, 18, ROUTE_28, 1
 	warp_event 13, 18, OBSCURA_CITY, 1
 	warp_event 15, 18, UNDERWATER_TEMPLE_2, 9
 	warp_event 17, 18, ROUTE_11_2, 2

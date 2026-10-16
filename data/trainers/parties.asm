@@ -5869,6 +5869,218 @@ SnareBossGroup:
 	db -1 ; end
 
 ; ================
+; ================================
+
+StanleyGroup2:
+; ================================
+; ================
+
+	db "@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+; ================================
+
+RodneyGroup2:
+; ================================
+; ================
+
+	db "@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+; ================================
+
+WendyGroup2:
+; ================================
+; ================
+
+	db "@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+; ================================
+
+CharlieGroup2:
+; ================================
+; ================
+
+	db "@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+; ================================
+
+PollyGroup2:
+; ================================
+; ================
+
+	db "@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+; ================================
+
+LeilaniGroup2:
+; ================================
+; ================
+
+	db "@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+; ================================
+
+RockyGroup2:
+; ================================
+; ================
+
+	db "@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+; ================================
+
+DarcyGroup2:
+; ================================
+; ================
+
+	db "@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+; ================================
+
+MinaGroup2:
+; ================================
+; ================
+
+	; all previous Mina encounters are mandatory for this, so add 28 levels
+	db "@"
+	db TRAINERTYPE_ITEM | TRAINERTYPE_DVS | TRAINERTYPE_PERSONALITY | TRAINERTYPE_MOVES
+	; party
+	db 26, GRANBULL, NO_ITEM, $cc, $cc, $cc, ABILITY_1 | IMPISH, MALE
+		db PLAY_ROUGH, CHARM_FEATHER_DANCE, HEADBUTT, 0
+	db 28, SMEARGLE, PAINTBRUSH, FAKE_PERFECT_DVS, HIDDEN_ABILITY | HARDY, FEMALE | PINK_FORM
+		db FIRE_BLAST, BLIZZARD, THUNDER, HYPER_BEAM
+	db MINA_MON_MT_ONWA, 27, ALTARIA, NO_ITEM, $cc, $cc, $cc, ABILITY_1 | HARDY, FEMALE
+		db SING_HYPNOSIS, DAZZLINGLEAM, DRAGON_PULSE, 0
+	db MINA_MON_ROUTE_6, 27, COMFEY, NO_ITEM, $cc, $cc, $cc, ABILITY_1 | HARDY, FEMALE
+		db PETAL_DANCE, GIGA_DRAIN, HEAL_BELL_AROMA, LEECH_SEED
+	db MINA_MON_ROUTE_11, 27, MIMIKYU, NO_ITEM, $cc, $cc, $cc, ABILITY_1 | HARDY, FEMALE | PLAIN_FORM
+		db SHADOW_CLAW, SWORDS_DANCE, PLAY_ROUGH, PERISH_SONG
+	db MINA_MON_RADIANT_FIELD, 28, CHERRIM, NO_ITEM, $cc, $cc, $cc, ABILITY_1 | HARDY, FEMALE | PLAIN_FORM
+		db SUNNY_DAY, SOLAR_BEAM, WORK_UP_GROWTH, SYNTHESIS_MOONLIGHT_MORNING_SUN
+	db MINA_MON_ROUTE_29, 28, ESPATHRA, NO_ITEM, $cc, $cc, $cc, ABILITY_1 | HARDY, FEMALE
+		db ROOST, HYPER_VOICE, DAZZLINGLEAM, LUMINA_CRASH
+	db MINA_MON_ROUTE_10, 28, WIGGLYTUFF, NO_ITEM, $cc, $cc, $cc, ABILITY_1 | HARDY, FEMALE
+		db FIRE_PUNCH, PLAY_ROUGH, ATTRACT, HYPER_VOICE
+	db -1 ; end
+
+; ================
+; ================================
+
+ErikaGroup2:
+; ================================
+; ================
+
+	db "@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+; ================================
+
+DisguiseGroup2:
+; ================================
+; ================
+
+	db "DISGUISE@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+; ================================
+
+FrankieGroup2:
+; ================================
+; ================
+
+	db "@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+; ================================
+
+LedianRangerGroup2:
+; ================================
+; ================
+
+	db "RANGER@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+; ================================
+
+PoliceCaptainGroup2:
+; ================================
+; ================
+
+	db "ARMSTRONG@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+; ================================
+
+DojoMasterGroup2:
+; ================================
+; ================
+
+	db "MASTER@"
+	db TRAINERTYPE_NORMAL
+	; party
+	db 1, BULBASAUR
+	db -1 ; end
+
+; ================
+; ================================
 
 TowerTycoonGroup:
 ; ================================

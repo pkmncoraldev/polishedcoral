@@ -674,6 +674,36 @@ DEF PLAYER_F EQU __enum__
 	trainerclass BUSINESSMAN
 	
 	trainerclass SNARE_BOSS
+	
+	trainerclass STANLEY_TOURNEY
+
+	trainerclass RODNEY_TOURNEY
+
+	trainerclass WENDY_TOURNEY
+
+	trainerclass CHARLIE_TOURNEY
+
+	trainerclass POLLY_TOURNEY
+
+	trainerclass LEILANI_TOURNEY
+
+	trainerclass ROCKY_TOURNEY
+
+	trainerclass DARCY_TOURNEY
+	
+	trainerclass MINA_TOURNEY
+	
+	trainerclass ERIKA_TOURNEY
+	
+	trainerclass DISGUISE_TOURNEY
+	
+	trainerclass FRANKIE_TOURNEY
+	
+	trainerclass LEDIAN_RANGER_TOURNEY
+	
+	trainerclass POLICE_CAPTAIN_TOURNEY
+	
+	trainerclass DOJO_MASTER_TOURNEY
 
 	trainerclass TOWERTYCOON ; 1
 

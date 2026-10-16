@@ -1706,7 +1706,7 @@ TourneyCompetetorSpriteColors:
 	db PAL_OW_PURPLE
 	db PAL_OW_GREEN
 	db PAL_OW_BROWN
-	db PAL_OW_RED
+	db PAL_OW_BROWN
 	db PAL_OW_RED
 	db PAL_OW_BLUE
 	db PAL_OW_RED

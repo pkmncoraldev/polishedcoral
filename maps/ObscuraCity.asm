@@ -62,7 +62,6 @@ ObscuraCity_MapScriptHeader:
 	const OBSCURA_CITY_SNARE_1
 	const OBSCURA_CITY_SNARE_2
 	const OBSCURA_CITY_ROCKY
-	const OBSCURA_CITY_DARCY
 	
 ObscuraCityTrigger0:
 	end

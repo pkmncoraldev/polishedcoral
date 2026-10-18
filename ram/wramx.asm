@@ -1104,7 +1104,8 @@ wLuminaGymTrigger:: ds 1
 wAureoleMountainOutsideTrigger:: ds 1
 wPokemonLeagueArenaTrigger:: ds 1
 wLuminaHealerHouseTrigger:: ds 1
-ds 13
+wDragonShrineTopTrigger:: ds 1
+ds 12
 
 wAmpharosFood:: ds 1
 

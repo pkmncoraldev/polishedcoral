@@ -338,19 +338,18 @@ WestTrainCabLockeText3:
 WestTrainCabLockeText4:
 	text "I can't believe it!"
 	
-	para "How did you take"
-	line "everyone down?"
-	
-	para "How did you take"
-	line "ME down?"
-	
 	para "You're just one"
 	line "kid!"
 	
-	para "This is a"
-	line "nightmare!"
+	para "…<WAIT_L>Well, whatever."
 	
-	para "…<WAIT_L>Forget this!"
+	para "We may not have"
+	line "gotten away with"
+	cont "anyone's #MON,"
+	
+	para "but we still"
+	line "accomplished our"
+	cont "goal here!"
 	done
 	
 WestTrainCabLockeText5:
@@ -371,10 +370,12 @@ WestTrainCabLockeText5:
 	done
 	
 WestTrainCabLockeText6:
-	text "This isn't over!"
+	text "You haven't won."
 	
-	para "We'll get our"
-	line "revenge!"
+	para "You can't stop us"
+	line "from striking fear"
+	cont "into the hearts of"
+	cont "the people!"
 	done
 	
 WestTrainCabLockeTextMove:

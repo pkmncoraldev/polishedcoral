@@ -376,13 +376,12 @@ SunbeamJungleSnare3:
 SunbeamJungleSnare4:
 	generictrainer GRUNTM, SUNBEAM_GRUNTM_3, EVENT_BEAT_SUNBEAM_JUNGLE_SNARE_4, .SeenText, .BeatenText
 
-	text "We're here taking"
-	line "#MON, duh!"
+	text "We're gonna terror-"
+	line "ize the people of"
+	cont "this island!"
 	
-	para "There's a lot of"
-	line "money in the"
-	cont "exotic #MON"
-	cont "around here!"
+	para "They'll fear us"
+	line "for sure!"
 	done
 
 .SeenText:
@@ -424,19 +423,18 @@ SunbeamJungleSnare5:
 SunbeamJungleSnare6:
 	generictrainer GRUNTF, SUNBEAM_GRUNTF_2, EVENT_BEAT_SUNBEAM_JUNGLE_SNARE_6, .SeenText, .BeatenText
 
-	text "Us taking #MON"
-	line "is no worse then"
-	cont "a TRAINER catching"
-	cont "them."
+	text "If we're just here"
+	line "to take #MON,"
 	
-	para "We just do it for"
-	line "profit!"
+	para "why don't we just"
+	line "catch some here"
+	cont "in the jungle?"
 	done
 
 .SeenText:
 	text "Do I feel bad"
 	line "about just taking"
-	cont "#MON?"
+	cont "people's #MON?"
 	
 	para "No way!"
 	done
@@ -452,22 +450,28 @@ SunbeamJungleBigWaterfallText:
 	done
 
 SunbeamJungleKageText1:
-	text "After we wrap up"
-	line "here, we can hit"
-	cont "the reserve at"
-	cont "the #MON LAB."
+	text "We're almost"
+	line "ready."
+
+	para "First we'll hit the"
+	line "reserve at the"
+	cont "#MON LAB."
 
 	para "There should only"
-	line "be an old man and"
-	cont "a MUNCHLAX to deal"
-	cont "with,"
+	line "be an old man with"
+	cont "a MUNCHLAX in our"
+	cont "way there,"
 
 	para "so we should be"
 	line "able to handle it"
-	cont "without any issue."
+	cont "without issue."
 
-	para "This job needs to"
-	line "go smoothly or…"
+	para "Then, we'll move on"
+	line "to the rest of the"
+	cont "island."
+	
+	para "Think of the panic"
+	line "we'll cause!"
 	done
 
 SunbeamJungleKageText2:
@@ -477,7 +481,7 @@ SunbeamJungleKageText2:
 
 	para "Probably lost."
 
-	para "Take care of it."
+	para "Handle it."
 	done
 
 SunbeamJungleKageText3:

@@ -73,9 +73,8 @@ RadiantPokeCenterNPC2Text:
 	
 	para "What a sweetheart."
 	
-	para "…<WAIT_M>and she was"
-	line "quite the looker,"
-	cont "too!"
+	para "…<WAIT_M>and she was quite"
+	line "the looker, too!"
 	
 	para "Heh heh heh!"
 	done

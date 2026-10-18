@@ -162,12 +162,14 @@ LuminaEldersHouseScene:
 	closetext
 	follow 2, 1
 	applymovement 2, Movement_LuminaEldersHouse2
+	applyonemovement PLAYER, remove_fixed_facing
 	stopfollow
 	pause 5
 	playsound SFX_EXIT_BUILDING
 	disappear 2
 	pause 5
-	applyonemovement 1, step_down
+	applymovement 1, Movement_LuminaEldersHouse4
+	applyonemovement PLAYER, remove_fixed_facing
 	stopfollow
 	pause 5
 	playsound SFX_EXIT_BUILDING
@@ -249,15 +251,11 @@ LuminaEldersHouseSceneElderText1:
 	cont "the #MON LEAGUE"
 	cont "TOURNAMENT?"
 	
-	para "That's coming up"
-	line "very soon, isn't"
-	cont "it?"
+	para "Has it really been"
+	line "five years since"
+	cont "the last one?"
 	
-	para "Have five years"
-	line "really passed"
-	cont "already?"
-	
-	para "My how the time"
+	para "My, how the time"
 	line "flies…"
 	
 	para "You know, the last"
@@ -362,7 +360,7 @@ Movement_LuminaEldersHouse1:
 	step_up
 	step_right
 	step_right
-	step_up
+	turn_step_up
 	step_end
 	
 Movement_LuminaEldersHouse2:
@@ -371,13 +369,18 @@ Movement_LuminaEldersHouse2:
 	step_left
 	step_left
 	step_left
-	step_down
+	turn_step_down
 	step_end
 	
 Movement_LuminaEldersHouse3:
 	turn_step_left
 	turn_step_left
 	turn_step_left
+	step_end
+	
+Movement_LuminaEldersHouse4:
+	step_left
+	turn_step_down
 	step_end
 	
 LuminaEldersHouseElder:

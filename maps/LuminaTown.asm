@@ -234,12 +234,14 @@ LuminaTownNPC2Text1:
 	done
 	
 LuminaTownNPC2Text2:
-	text "The dragon did"
-	line "not apprear when"
-	cont "offered the stone?"
+	text "The ELDER has"
+	line "requested to see"
+	cont "you at once!"
 	
-	para "But what of our"
-	line "legend?"
+	para "He's waiting for"
+	line "you at the SALOON."
+	
+	para "Hurry along, now."
 	done
 	
 LuminaTownBarrelsText:

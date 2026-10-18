@@ -171,4 +171,5 @@ MapTriggers::
 	scene_var LUMINA_TOWN,							  wAlways0Trigger
 	scene_var BEACON_ATOLL,							  wAlways0Trigger
 	scene_var POKEMON_LEAGUE_ARENA,					  wPokemonLeagueArenaTrigger
+	scene_var LUMINA_HEALER_HOUSE,					  wLuminaHealerHouseTrigger
 	db -1

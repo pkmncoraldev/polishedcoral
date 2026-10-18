@@ -28,17 +28,15 @@ LuminaGym_MapScriptHeader:
 	signpost 10,  6, SIGNPOST_JUMPTEXT, LuminaTownBarrelsText
 	signpost 10,  7, SIGNPOST_JUMPTEXT, LuminaTownBarrelsText
 
-	db 9 ; object events
+	db 7 ; object events
 	person_event SPRITE_DARCY,  5, 10, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, LuminaGymDarcy, EVENT_LUMINA_GYM_DARCY_GONE
 	person_event SPRITE_ELDER,  5,  9, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, LuminaGymElder, EVENT_LUMINA_GYM_ELDER_GONE
 	person_event SPRITE_ELDER,  8,  7, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, LuminaGymElder, EVENT_LUMINA_GYM_ELDER_2_GONE
 	person_event SPRITE_GRANNY,  7, 23, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, LuminaTownNPC1, EVENT_LUMINA_LADIES_1_GONE
 	person_event SPRITE_GRANNY,  7, 24, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, LuminaTownNPC1, EVENT_LUMINA_LADIES_1_GONE
-	person_event SPRITE_GRANNY,  8, 22, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, LuminaTownNPC2, EVENT_LUMINA_LADIES_2_GONE
-	person_event SPRITE_GRANNY,  8, 25, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, LuminaTownNPC2, EVENT_LUMINA_LADIES_2_GONE
-	person_event SPRITE_DARCY,  9, 23, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_LUMINA_GYM_CUTSCENE
-	person_event SPRITE_ELDER,  9, 24, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_LUMINA_GYM_CUTSCENE
-
+	person_event SPRITE_GRANNY,  6, 22, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, LuminaTownNPC2, EVENT_LUMINA_LADIES_2_GONE
+	person_event SPRITE_GRANNY,  6, 25, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, LuminaTownNPC2, EVENT_LUMINA_LADIES_2_GONE
+	
 
 LuminaGymTrigger0:
 LuminaGymTrigger1:
@@ -628,153 +626,21 @@ LuminaGymSign:
 	done
 	
 LuminaGymPostDragonShrine:
-	applymovement PLAYER, Movement_LuminaGymCutscene1
-	pause 10
+	applyonemovement PLAYER, step_down
+	pause 20
 	playsound SFX_PAY_DAY
-	spriteface 8, UP
-	showemote EMOTE_SHOCK, 8, 15
+	showemote EMOTE_SHOCK, 6, 15
 	dotrigger $2
 	playnewmapmusic
-	spriteface 9, UP
-	applymovement 8, Movement_LuminaGymCutscene2
-	opentext TEXTBOX_DARCY
-	writetext LuminaGymPostDragonShrineDarcyText1
-	waitbutton
-	changetextboxspeaker
-	writetext LuminaGymPostDragonShrineGiveText
-	takeitem DRAGON_STONE
-	playsound SFX_LEVEL_UP 
-	waitsfx
-	closetext
-	pause 5
-	applyonemovement 8, turn_step_down
-	opentext TEXTBOX_DARCY
-	writetext LuminaGymPostDragonShrineDarcyText2
+	spriteface PLAYER, LEFT
+	opentext
+	writetext LuminaTownNPC2Text2
 	waitbutton
 	closetext
-	pause 5
-	applymovement 9, Movement_LuminaGymCutscene3
-	spriteface 9, LEFT
-	pause 5
-	spriteface PLAYER, RIGHT
-	opentext TEXTBOX_ELDER
-	writetext LuminaGymPostDragonShrineElderText1
-	waitbutton
-	closetext
-	pause 5
-	playsound SFX_PAY_DAY
-	showemote EMOTE_SHOCK, 8, 15
-	applymovement 8, Movement_LuminaGymCutscene4
-	pause 5
-	opentext TEXTBOX_DARCY
-	writetext LuminaGymPostDragonShrineDarcyText3
-	waitbutton
-	closetext
-	pause 25
-	opentext TEXTBOX_ELDER
-	writetext LuminaGymPostDragonShrineElderText2
-	waitbutton
-	closetext
-	pause 15
-	applyonemovement 8, turn_step_right
-	applyonemovement PLAYER, remove_fixed_facing
-	pause 10
-	opentext TEXTBOX_DARCY
-	writetext LuminaGymPostDragonShrineDarcyText4
-	waitbutton
-	closetext
-	pause 35
-	spriteface 9, DOWN
-	pause 15
-	opentext TEXTBOX_ELDER
-	writetext LuminaGymPostDragonShrineElderText3
-	waitbutton
-	closetext
-;	special Special_FadeOutMusic
-	pause 45
-	opentext TEXTBOX_ELDER
-	writetext LuminaGymPostDragonShrineElderText4
-	waitbutton
-	closetext
-	pause 25
-	applyonemovement 8, turn_step_right
-	applyonemovement PLAYER, remove_fixed_facing
-	pause 5
-	opentext TEXTBOX_DARCY
-	writetext LuminaGymPostDragonShrineDarcyText5
-	waitbutton
-	closetext
-	pause 5
-	applyonemovement 9, slow_step_down
-	spriteface PLAYER, DOWN
-	pause 25
-	opentext TEXTBOX_ELDER
-	writetext LuminaGymPostDragonShrineElderText5
-	waitbutton
-	closetext
-	pause 5
-	spriteface 9, LEFT
-	opentext TEXTBOX_ELDER
-	writetext LuminaGymPostDragonShrineElderText6
-	waitbutton
-	closetext
-	pause 25
-	applyonemovement 8, turn_step_right
-	applyonemovement PLAYER, remove_fixed_facing
-	pause 5
-	opentext TEXTBOX_DARCY
-	writetext LuminaGymPostDragonShrineDarcyText6
-	waitbutton
-	closetext
-	pause 20
-	spriteface 8, UP
-	opentext TEXTBOX_DARCY
-	writetext LuminaGymPostDragonShrineDarcyText7
-	waitbutton
-	changetextboxspeaker
-	verbosegiveitem DRAGON_STONE
-	closetext
-	pause 5
-	applyonemovement 9, turn_step_left
-	opentext TEXTBOX_ELDER
-	writetext LuminaGymPostDragonShrineElderText7
-	waitbutton
-	closetext
-	spriteface 8, DOWN
-	pause 5
-	applymovement 9, Movement_LuminaGymCutscene5
-	disappear 9
-	pause 5
-	
-	playsound SFX_PAY_DAY
-	showemote EMOTE_SHOCK, 8, 15
-	applymovement 8, Movement_LuminaGymCutscene4
-	pause 5
-	spriteface PLAYER, DOWN
-	opentext TEXTBOX_DARCY
-	writetext LuminaGymPostDragonShrineDarcyText8
-	waitbutton
-	closetext
-	pause 5
-	applymovement 8, Movement_LuminaGymCutscene6
-	opentext TEXTBOX_DARCY
-	writetext LuminaGymPostDragonShrineDarcyText9
-	waitbutton
-	closetext
-	applyonemovement 8, step_up
-	opentext TEXTBOX_DARCY
-	writetext LuminaGymPostDragonShrineDarcyText10
-	waitbutton
-	closetext
-	pause 5
-	applymovement 8, Movement_LuminaGymCutscene7
-	disappear 8
-	setevent EVENT_LUMINA_GYM_CUTSCENE
-	setevent EVENT_NETT_BUILDING_DUNGEON
-	setevent EVENT_NETT_ELEVATOR_BROKEN
-	setevent EVENT_NETT_OFFICER_MOVED
-	setevent EVENT_NETT_OFFICE_ELI_GONE
-	end
+	domaptrigger LUMINA_HEALER_HOUSE, $1
+	clearevent EVENT_SALOON_DARCY_GONE
+	clearevent EVENT_SALOON_ELDER_GONE
+	end	
 	
 LuminaGymPostDragonShrineDarcyText1:
 	text "<PLAYER>!"
@@ -856,11 +722,10 @@ LuminaGymPostDragonShrineDarcyText9:
 	done
     
 LuminaGymPostDragonShrineDarcyText10:
-    text "He said they take"
-    line "orders from the"
-    cont "CEO of NETT CORP.?"
+    text "He said their boss"
+    line "is MR. ELI?"
     
-    para "That big company"
+    para "CEO of NETT CORP."
     line "in LUSTER CITY?"
     
     para "Why would someone"
@@ -868,7 +733,7 @@ LuminaGymPostDragonShrineDarcyText10:
     cont "ing with thugs"
     cont "like TEAM SNARE?"
 	
-	para "Well, either way,"
+	para "Well,<WAIT_S> either way,"
 	line "something's gotta"
 	cont "be done about"
 	cont "those guys."
@@ -882,8 +747,8 @@ LuminaGymPostDragonShrineDarcyText10:
     done
 	
 LuminaGymPostDragonShrineElderText1:
-	text "The child who took"
-	line "the stone…"
+	text "…<WAIT_L>And the child who"
+	line "took the stone…"
 	
 	para "Where is he?"
 	done
@@ -892,11 +757,6 @@ LuminaGymPostDragonShrineElderText2:
 	text "<PLAYER>?"
 	
 	para "…"
-	
-	para "…<WAIT_L><WAIT_L>I see…"
-	
-	para "This didn't have"
-	line "to happen…"
 	done
 	
 LuminaGymPostDragonShrineElderText3:
@@ -984,6 +844,13 @@ LuminaGymPostDragonShrineElderText7:
 	para "I'll be on my way."
 	done
 	
+LuminaGymPostDragonShrineElderText8:
+	text "I see…"
+	
+	para "This didn't have"
+	line "to happen…"
+	done
+	
 LuminaGymPostDragonShrineGiveText:
 	text "<PLAYER> handed over"
 	line "DRAGON STONE."
@@ -995,15 +862,15 @@ Movement_LuminaGymCutscene1:
 	step_end
 	
 Movement_LuminaGymCutscene2:
-	turn_step_up
-	turn_step_up
-	turn_step_up
-	run_step_up
+	turn_step_down
+	turn_step_down
+	turn_step_down
 	step_end
 	
 Movement_LuminaGymCutscene3:
-	slow_step_up
-	slow_step_up
+	step_up
+	step_up
+	step_right
 	step_end
 	
 Movement_LuminaGymCutscene4:
@@ -1013,14 +880,9 @@ Movement_LuminaGymCutscene4:
 	step_end
 	
 Movement_LuminaGymCutscene5:
+	slow_step_left
 	slow_step_down
 	slow_step_down
-	slow_step_left
-	slow_step_left
-	slow_step_left
-	slow_step_left
-	slow_step_left
-	slow_step_left
 	step_end
 	
 Movement_LuminaGymCutscene6:
@@ -1033,11 +895,19 @@ Movement_LuminaGymCutscene6:
 	step_end
 	
 Movement_LuminaGymCutscene7:
+	step_left
+	step_left
 	step_down
 	step_down
-	step_left
-	step_left
-	step_left
-	step_left
-	step_left
+	step_end
+
+Movement_LuminaGymCutscene8:
+	step_up
+	step_right
+	step_end
+	
+Movement_LuminaGymCutscene9:
+	slow_step_left
+	slow_step_down
+	slow_step_down
 	step_end

@@ -1,5 +1,7 @@
 LuminaHealerHouse_MapScriptHeader:
-	db 0 ; scene scripts
+	db 2 ; scene scripts
+	scene_script LuminaHealerHouseTrigger0
+	scene_script LuminaHealerHouseTrigger1
 
 	db 1 ; callbacks
 	callback MAPCALLBACK_TILES, LuminaHealerHouseCallback
@@ -26,17 +28,35 @@ LuminaHealerHouse_MapScriptHeader:
 	signpost  9,  2, SIGNPOST_JUMPTEXT, LuminaHealerHouseBarrelsText
 	signpost  9,  8, SIGNPOST_JUMPTEXT, LuminaHealerHouseBarrelsText
 	signpost  9,  9, SIGNPOST_JUMPTEXT, LuminaHealerHouseBarrelsText
-	signpost  7,  9, SIGNPOST_JUMPTEXT, LuminaHealerHouseBarrelsText
+	signpost -1, -1, SIGNPOST_JUMPTEXT, LuminaHealerHouseBarrelsText
 
-	db 5 ; object events
+	db 9 ; object events
 	person_event SPRITE_COOL_DUDE,  5,  5, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, LuminaHealerHouseHealer, -1
 	person_event SPRITE_DAISY,  6,  2, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, LuminaHealerHouseClerk, -1
 	person_event SPRITE_RUSS,  3,  7, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, LuminaHealerHouseRuss, EVENT_RUSS_GONE
-	person_event SPRITE_POKEFAN_M,  6,  7, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, LuminaHealerHouseNPC1, -1
+	person_event SPRITE_POKEFAN_M,  7,  9, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, LuminaHealerHouseNPC1, -1
 	person_event SPRITE_SAILOR,  4,  9, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, LuminaHealerHouseBartender, -1
+	person_event SPRITE_DARCY,  7,  7, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, LuminaGymDarcy, EVENT_SALOON_DARCY_GONE
+	person_event SPRITE_ELDER,  5,  7, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, LuminaGymElder, EVENT_SALOON_ELDER_GONE
+	person_event SPRITE_COOL_DUDE,  5,  5, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, LuminaHealerHouseHealer, EVENT_ALWAYS_SET
+	person_event SPRITE_DAISY,  6,  2, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, LuminaHealerHouseClerk, EVENT_ALWAYS_SET
 	
+	
+LuminaHealerHouseTrigger0:
+	end
+	
+LuminaHealerHouseTrigger1:
+	priorityjump LuminaHealerHouseScene
+	end
 	
 LuminaHealerHouseCallback:
+	checkscene
+	if_not_equal $1, .skip
+	moveperson 1, -5, -5
+	moveperson 2, -5, -5
+	appear 8
+	appear 9
+.skip
 	blackoutmod LUMINA_TOWN
 	return
 	
@@ -65,6 +85,176 @@ LuminaHealerHouseBarrelsText:
 	
 	para "Smells tasty!"
 	done
+	
+LuminaHealerHouseScene:
+	waitsfx
+	spriteface 6, DOWN
+	playsound SFX_PAY_DAY
+	showemote EMOTE_SHOCK, 6, 15
+	spriteface 7, DOWN
+	applymovement 6, Movement_LuminaGymCutscene2
+	opentext TEXTBOX_DARCY
+	writetext LuminaGymPostDragonShrineDarcyText1
+	waitbutton
+	closetext
+	pause 5
+	applymovement PLAYER, Movement_LuminaGymCutscene3
+	spriteface 6, LEFT
+	opentext
+	writetext LuminaGymPostDragonShrineGiveText
+	takeitem DRAGON_STONE
+	playsound SFX_LEVEL_UP 
+	waitsfx
+	closetext
+	pause 5
+	applyonemovement 6, turn_step_down
+	opentext TEXTBOX_DARCY
+	writetext LuminaGymPostDragonShrineDarcyText2
+	waitbutton
+	closetext
+	pause 10
+	applymovement PLAYER, Movement_LuminaGymCutscene8
+	pause 35
+	opentext TEXTBOX_ELDER
+	writetext LuminaGymPostDragonShrineElderText1
+	waitbutton
+	closetext
+	pause 5
+	playsound SFX_PAY_DAY
+	showemote EMOTE_SHOCK, 6, 15
+	applymovement 6, Movement_LuminaGymCutscene4
+	pause 5
+	opentext TEXTBOX_DARCY
+	writetext LuminaGymPostDragonShrineDarcyText3
+	waitbutton
+	closetext
+	pause 50
+	opentext TEXTBOX_ELDER
+	writetext LuminaGymPostDragonShrineElderText2
+	waitbutton
+	closetext
+	pause 30
+	spriteface 7, LEFT
+	applyonemovement PLAYER, remove_fixed_facing
+	pause 10
+	opentext TEXTBOX_ELDER
+	writetext LuminaGymPostDragonShrineElderText8
+	waitbutton
+	closetext
+	applyonemovement 3, turn_step_right
+	applyonemovement PLAYER, remove_fixed_facing
+	pause 15
+	applyonemovement 6, turn_step_down
+	applyonemovement PLAYER, remove_fixed_facing
+	pause 10
+	opentext TEXTBOX_DARCY
+	writetext LuminaGymPostDragonShrineDarcyText4
+	waitbutton
+	closetext
+	pause 35
+	spriteface 7, DOWN
+	pause 15
+	opentext TEXTBOX_ELDER
+	writetext LuminaGymPostDragonShrineElderText3
+	waitbutton
+	closetext
+	spriteface 6, UP
+;	special Special_FadeOutMusic
+	pause 25
+	spriteface PLAYER, UP
+	pause 35
+	spriteface 7, RIGHT
+	opentext TEXTBOX_ELDER
+	writetext LuminaGymPostDragonShrineElderText4
+	waitbutton
+	closetext
+	pause 25
+	applyonemovement 6, turn_step_up
+	applyonemovement PLAYER, remove_fixed_facing
+	pause 5
+	opentext TEXTBOX_DARCY
+	writetext LuminaGymPostDragonShrineDarcyText5
+	waitbutton
+	closetext
+	pause 5
+	spriteface 7, DOWN
+	pause 25
+	opentext TEXTBOX_ELDER
+	writetext LuminaGymPostDragonShrineElderText5
+	waitbutton
+	closetext
+	pause 5
+	applymovement 7, Movement_LuminaGymCutscene9
+	spriteface 7, RIGHT
+	spriteface PLAYER, DOWN
+	opentext TEXTBOX_ELDER
+	writetext LuminaGymPostDragonShrineElderText6
+	waitbutton
+	closetext
+	pause 25
+	applyonemovement 6, turn_step_left
+	applyonemovement PLAYER, remove_fixed_facing
+	pause 5
+	opentext TEXTBOX_DARCY
+	writetext LuminaGymPostDragonShrineDarcyText6
+	waitbutton
+	closetext
+	pause 20
+	spriteface 6, UP
+	opentext TEXTBOX_DARCY
+	writetext LuminaGymPostDragonShrineDarcyText7
+	waitbutton
+	changetextboxspeaker
+	verbosegiveitem DRAGON_STONE
+	closetext
+	pause 5
+	applyonemovement 7, turn_step_right
+	opentext TEXTBOX_ELDER
+	writetext LuminaGymPostDragonShrineElderText7
+	waitbutton
+	closetext
+	spriteface 6, DOWN
+	pause 5
+	applymovement 7, Movement_LuminaGymCutscene5
+	pause 5
+	playsound SFX_EXIT_BUILDING
+	disappear 7
+	pause 35
+	
+	playsound SFX_PAY_DAY
+	showemote EMOTE_SHOCK, 6, 15
+	applymovement 6, Movement_LuminaGymCutscene4
+	pause 5
+	spriteface PLAYER, DOWN
+	opentext TEXTBOX_DARCY
+	writetext LuminaGymPostDragonShrineDarcyText8
+	waitbutton
+	closetext
+	pause 5
+	applymovement 6, Movement_LuminaGymCutscene6
+	opentext TEXTBOX_DARCY
+	writetext LuminaGymPostDragonShrineDarcyText9
+	waitbutton
+	closetext
+	applyonemovement 6, step_up
+	pause 10
+	opentext TEXTBOX_DARCY
+	writetext LuminaGymPostDragonShrineDarcyText10
+	waitbutton
+	closetext
+	pause 5
+	applymovement 6, Movement_LuminaGymCutscene7
+	pause 5
+	playsound SFX_EXIT_BUILDING
+	disappear 6
+	setevent EVENT_LUMINA_GYM_CUTSCENE
+	setevent EVENT_NETT_BUILDING_DUNGEON
+	setevent EVENT_NETT_ELEVATOR_BROKEN
+	setevent EVENT_NETT_OFFICER_MOVED
+	setevent EVENT_NETT_OFFICE_ELI_GONE
+	setevent EVENT_ALWAYS_SET
+	dotrigger $2
+	end
 	
 LuminaHealerHouseBartender:
 	faceplayer
@@ -214,7 +404,7 @@ LuminaHealerHouseNPC1:
 .end
 	waitbutton
 	closetext
-	spriteface 4, RIGHT
+	spriteface 4, UP
 	end
 	
 LuminaHealerHouseNPC1Text1:

@@ -1103,7 +1103,8 @@ wRoute22_2Trigger:: ds 1
 wLuminaGymTrigger:: ds 1
 wAureoleMountainOutsideTrigger:: ds 1
 wPokemonLeagueArenaTrigger:: ds 1
-ds 14
+wLuminaHealerHouseTrigger:: ds 1
+ds 13
 
 wAmpharosFood:: ds 1
 

@@ -11,13 +11,12 @@ RadiantPokeCenter_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 5 ; object events
+	db 4 ; object events
 	pc_nurse_event  5, 1
 	person_event SPRITE_CHANSEY,  1, 6, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, RadiantPokeCenterChansey, -1
 	person_event SPRITE_COOL_DUDE,  5,  2, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, RadiantPokeCenterNPC1, -1
 	person_event SPRITE_GRAMPS,  3, 11, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, RadiantPokeCenterNPC2, -1
-	object_event  9,  6, SPRITE_PONYTAIL, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_COMMAND, trade, TRADE_WITH_BEV_FOR_VOLTORB, -1
-	
+		
 RadiantPokeCenterChansey:
 	opentext
 	writetext RadiantPokeCenterChanseyText1
@@ -72,12 +71,11 @@ RadiantPokeCenterNPC2Text:
 	line "orphanage here"
 	cont "many years ago."
 	
-	para "She's always been"
-	line "a sweetheart."
+	para "What a sweetheart."
 	
-	para "…<WAIT_M>and back then"
-	line "she was quite a"
-	cont "looker, too!"
+	para "…<WAIT_M>and she was"
+	line "quite the looker,"
+	cont "too!"
 	
-	para "Oh ho ho!"
+	para "Heh heh heh!"
 	done

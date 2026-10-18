@@ -15,8 +15,8 @@ ShimmerPokeCenter_MapScriptHeader:
 	pc_nurse_event  5, 1
 	pc_chansey_event  6, 1
 	person_event SPRITE_POKEMANIAC,  4, 11, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, ShimmerPokeCenterNpc1, -1
-	person_event SPRITE_GAMEBOY_KID,  6,  9, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, ShimmerPokeCenterNpc2, -1
-	person_event SPRITE_CUTE_GIRL,  4,  3, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ShimmerPokeCenterNpc3, -1
+	person_event SPRITE_CUTE_GIRL,  4,  3, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ShimmerPokeCenterNpc2, -1
+	object_event  9,  6, SPRITE_PONYTAIL, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_COMMAND, trade, TRADE_WITH_BEV_FOR_VOLTORB, -1
 	
 ShimmerPokeCenterNpc1:
 	jumptextfaceplayer ShimmerPokeCenterNpc1Text
@@ -32,33 +32,14 @@ ShimmerPokeCenterNpc1Text:
 	done
 	
 ShimmerPokeCenterNpc2:
-	faceplayer
-	opentext
-	writetext ShimmerPokeCenterNpc2Text
-	waitbutton
-	closetext
-	spriteface 4, DOWN
-	end
+	jumptextfaceplayer ShimmerPokeCenterNpc2Text
 	
 ShimmerPokeCenterNpc2Text:
-	text "Some people like"
-	line "to look up all the"
-	cont "stats, info, and"
+	text "PORT SHIMMER has"
+	line "no GYM."
 	
-	para "techniques in a"
-	line "game before they"
-	cont "even play it!"
-	
-	para "Where's the fun"
-	line "in that, huh?"
-	done
-	
-ShimmerPokeCenterNpc3:
-	jumptextfaceplayer ShimmerPokeCenterNpc3Text
-	
-ShimmerPokeCenterNpc3Text:
-	text "SOUTH ONWA isn't as"
-	line "big as NORTH ONWA,"
-	cont "but there's plenty"
-	cont "to see and do!"
+	para "I think there is"
+	line "one in the town"
+	cont "to the SOUTHEAST,"
+	cont "though."
 	done

@@ -11,18 +11,43 @@ ShimmerHouse2_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 1 ; object events
+	db 2 ; object events
 	person_event SPRITE_PONYTAIL,  4,  2, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, ShimmerHouse2NPC, -1
+	object_event 6, 3, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, WEEZING, -1, -1, PAL_NPC_PURPLE, PERSONTYPE_SCRIPT, 0, ShimmerHouse2Weezing, -1
 	
 ShimmerHouse2NPC:
 	jumptextfaceplayer ShimmerHouse2NPCText
 	
 ShimmerHouse2NPCText:
-	text "My husband shipped"
-	line "off one day and"
-	cont "never returned."
+	text "Have you seen all"
+	line "the scary stuff on"
+	cont "the news?"
 	
-	para "I wonder if he's"
-	line "really out there"
-	cont "somewhere…"
+	para "I've started to"
+	line "train my WEEZING,"
+	cont "just in case."
+	
+	para "What if we have to"
+	line "defend ourselves?"
+	done
+	
+ShimmerHouse2Weezing:
+	opentext TEXTBOX_POKEMON, WEEZING
+	writetext ShimmerHouse2WeezingText1
+	cry WEEZING
+	waitsfx
+	buttonsound
+	changetextboxspeaker
+	writetext ShimmerHouse2WeezingText2
+	waitbutton
+	closetext
+	end
+	
+ShimmerHouse2WeezingText1:
+	text "We-HEEE-zing!"
+	done
+	
+ShimmerHouse2WeezingText2:
+	text "WEEZING looks"
+	line "worried…"
 	done

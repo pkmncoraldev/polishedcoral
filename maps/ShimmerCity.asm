@@ -50,23 +50,22 @@ ShimmerCity_MapScriptHeader:
 	signpost 11, 27, SIGNPOST_ITEM + BOTTLE_CAP, EVENT_SHIMMER_CITY_HIDDEN_BOTTLE_CAP_1
 	signpost 15, 14, SIGNPOST_ITEM + BOTTLE_CAP, EVENT_SHIMMER_CITY_HIDDEN_BOTTLE_CAP_2
 
-	db 20 ; object events
+	db 19 ; object events
 	person_event SPRITE_SAILOR, 16, 18, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ShimmerCityNpc1, -1
 	person_event SPRITE_POKEFAN_F, 19, 18, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, ShimmerCityNpc2, -1
 	person_event SPRITE_REDS_MOM, 18, 23, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, ShimmerCityNpc3, -1
 	person_event SPRITE_CHILD, 21, 27, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, ShimmerCityNpc4, -1
-	person_event SPRITE_FAT_GUY, 20, 14, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, ShimmerCityNpc5, -1
+	person_event SPRITE_GAMEBOY_KID, 20, 14, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, ShimmerCityNpc5, -1
 	person_event SPRITE_PONYTAIL, 12, 18, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ShimmerCityNpc6, -1
 	person_event SPRITE_YOUNGSTER,  7, 10, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, ShimmerCityNpc7, -1
 	person_event SPRITE_CUTE_GIRL, 13, 10, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ShimmerCityNpc8, -1
 	person_event SPRITE_SUPER_NERD, 11,  7, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, ShimmerCityNpc9, -1
-	person_event SPRITE_HIKER, 18, 40, SPRITEMOVEDATA_WANDER, 1, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, ShimmerCityNpc10, -1
+	person_event SPRITE_HIKER, 22, 37, SPRITEMOVEDATA_WANDER, 1, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, ShimmerCityNpc10, -1
 	person_event SPRITE_MATRON, 26, 21, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, ShimmerCityNpc11, -1
 	person_event SPRITE_POKEFAN_F, 26, 22, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, ShimmerCityNpc12, -1
 	person_event SPRITE_POKEMANIAC, 17,  9, SPRITEMOVEDATA_WANDER, 1, 2, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, ShimmerCityNpc13, -1
-	person_event SPRITE_COOLTRAINER_M, 22, 37, SPRITEMOVEDATA_WANDER, 3, 3, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, ShimmerCityNpc14, -1
-	person_event SPRITE_POKEFAN_M, 29, 11, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ShimmerCityNpc15, -1
-	person_event SPRITE_BURGLAR, 15, 25, SPRITEMOVEDATA_SPINRANDOM_SLOW, 2, 2, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, ShimmerCityNpc16, -1
+	person_event SPRITE_POKEFAN_M, 29, 11, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ShimmerCityNpc14, -1
+	person_event SPRITE_BURGLAR, 15, 25, SPRITEMOVEDATA_SPINRANDOM_SLOW, 2, 2, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, ShimmerCityNpc15, -1
 	person_event SPRITE_CHEF,  8,  8, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, ShimmerCityHotDogGuy, -1
 	person_event SPRITE_PICNIC,  7,  9, SPRITEMOVEDATA_TILE_UP_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, -1, -1
 	person_event SPRITE_BALLOONS, 17, 20, SPRITEMOVEDATA_BALLOONS_2, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, 0, -1
@@ -89,7 +88,6 @@ ShimmerCity_MapScriptHeader:
 	const SHIIMER_CITY_NPC_13
 	const SHIIMER_CITY_NPC_14
 	const SHIIMER_CITY_NPC_15
-	const SHIIMER_CITY_NPC_16
 	const SHIIMER_CITY_HOT_DOG_GUY
 	
 	
@@ -407,9 +405,13 @@ ShimmerCityNpc9Text:
 	done
 	
 ShimmerCityNpc10:
-	jumptextfaceplayer ShimmerCityNpc10Text
+	checkevent EVENT_LOST_GIRLS_QUEST_ACTIVE
+	iftrue .lost_girl
+	jumptextfaceplayer ShimmerCityNpc10Text1
+.lost_girl
+	jumptextfaceplayer ShimmerCityNpc10Text2
 	
-ShimmerCityNpc10Text:
+ShimmerCityNpc10Text1:
 	text "Have you been to"
 	line "a town called"
 	cont "STARGLOW VALLEY"
@@ -423,6 +425,16 @@ ShimmerCityNpc10Text:
 	line "you travel up the"
 	cont "river EAST of the"
 	cont "town."
+	done
+	
+ShimmerCityNpc10Text2:
+	text "A little kid?"
+	
+	para "Yeah, I saw a girl"
+	line "run by earlier."
+	
+	para "She was headed"
+	line "toward the beach."
 	done
 	
 ShimmerCityNpc11:
@@ -440,14 +452,17 @@ ShimmerCityNpc11:
 	end
 	
 ShimmerCityNpc11Text:
-	text "The lady in that"
-	line "house over there"
-	cont "thinks her husband"
-	cont "was lost at sea."
+	text "You know the"
+	line "hot dog stand guy?"
 	
-	para "I heard he really"
-	line "just ran away with"
-	cont "another woman!"
+	para "I heard he pays"
+	line "regular visits to"
+	cont "the fisherman's"
+	cont "market stall."
+	
+	para "What could he need"
+	line "with that many"
+	cont "fish #MON?"
 	done
 	
 ShimmerCityNpc11Text2:
@@ -495,44 +510,11 @@ ShimmerCityNpc13Text:
 	para "but it's also a"
 	line "bit dangerous!"
 	done
-	
-ShimmerCityNpc14:
-	checkevent EVENT_LOST_GIRLS_QUEST_ACTIVE
-	iftrue .lost_girl
-	jumptextfaceplayer ShimmerCityNpc14Text1
-.lost_girl
-	jumptextfaceplayer ShimmerCityNpc14Text2
-	
-ShimmerCityNpc14Text1:
-	text "I prefer to spend"
-	line "time on this side"
-	cont "of town."
-	
-	para "Far away from the"
-	line "hustle and bustle"
-	cont "of the market or"
-	cont "the boardwalk."
-	
-	para "And closer to the"
-	line "hustle and bustle"
-	cont "of the #MART"
-	cont "or #MON CENTER!"
-	done
-	
-ShimmerCityNpc14Text2:
-	text "A little kid?"
-	
-	para "Yeah, I saw a girl"
-	line "run by earlier."
-	
-	para "She was headed"
-	line "toward the beach."
-	done
 
-ShimmerCityNpc15:
-	jumptextfaceplayer ShimmerCityNpc15Text
+ShimmerCityNpc14:
+	jumptextfaceplayer ShimmerCityNpc14Text
 	
-ShimmerCityNpc15Text:
+ShimmerCityNpc14Text:
 	text "Ancient temples!<WAIT_S>"
 	line "Buried treasure!"
 	
@@ -545,10 +527,10 @@ ShimmerCityNpc15Text:
 	cont "up to be!"
 	done
 	
-ShimmerCityNpc16:
-	jumptextfaceplayer ShimmerCityNpc16Text
+ShimmerCityNpc15:
+	jumptextfaceplayer ShimmerCityNpc15Text
 	
-ShimmerCityNpc16Text:
+ShimmerCityNpc15Text:
 	text "Those hot dogs"
 	line "they sell on the"
 	cont "boardwalk taste"
@@ -696,20 +678,16 @@ ShimmerCityNpc4Text9:
 	done
 	
 ShimmerCityNpc5Text:
-	text "The guy at the"
-	line "blue stall buys"
-	cont "and sells #MON."
+	text "Some people like"
+	line "to look up all the"
+	cont "stats, info, and"
 	
-	para "I once saw the"
-	line "hot dog guy visit"
-	cont "his stall around"
-	cont "closing time."
+	para "techniques in a"
+	line "game before they"
+	cont "even play it!"
 	
-	para "I'm sure he was"
-	line "just looking for"
-	cont "a new pet…"
-	
-	para "…<WAIT_L>right?"
+	para "Where's the fun"
+	line "in that?"
 	done
 	
 ShimmerCityNpc6Text1:

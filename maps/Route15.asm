@@ -90,9 +90,8 @@ TrainerRoute15_1:
 	line "on this little"
 	cont "island for months!"
 	
-	para "My wife in PORT"
-	line "SHIMMER must be"
-	cont "worried sick!"
+	para "My wife and child"
+	line "must be so worried!"
 	done
 
 .BeatenText:

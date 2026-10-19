@@ -544,13 +544,13 @@ ShimmerLabFossilNpcText:
 	done
 
 ShimmerLabHandOverCover:
-	text "<PLAYER> handed over"
-	line "the COVER FOSSIL."
+	text "<PLAYER> handed"
+	line "over COVER FOSSIL."
 	done
 	
 ShimmerLabHandOverPlume:
-	text "<PLAYER> handed over"
-	line "the PLUME FOSSIL."
+	text "<PLAYER> handed"
+	line "over PLUME FOSSIL."
 	done
 	
 ShimmerLabFossilCutsceneText1:

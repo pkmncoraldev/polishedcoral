@@ -139,8 +139,8 @@ ObscuraMusicianHouseNPCText5:
 	done
 	
 ObscuraMusicianHouseNPCTextGive:
-	text "<PLAYER> handed over"
-	line "#FLUTE."
+	text "<PLAYER> handed"
+	line "over #FLUTE."
 	done
 	
 ObscuraMusicianHouseNPCTextNo1:

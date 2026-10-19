@@ -318,7 +318,7 @@ GlintRivalText3:
 	done
 	
 GlintGroveEntranceGiveText:
-	text "<PLAYER> handed over"
+	text "<PLAYER> gave back"
 	line "<RIVAL>'s #DEX."
 	done
 	

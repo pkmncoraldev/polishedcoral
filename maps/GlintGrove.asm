@@ -1003,8 +1003,8 @@ GlintGroveMinaTextNo:
 	done
 	
 GlintGroveMinaGiveText:
-	text "<PLAYER> handed over"
-	line "BLOSSOM TEA."
+	text "<PLAYER> handed"
+	line "over BLOSSOM TEA."
 	done
 
 GlintGroveMinaRockSmashText:

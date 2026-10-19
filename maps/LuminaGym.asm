@@ -850,8 +850,8 @@ LuminaGymPostDragonShrineElderText8:
 	done
 	
 LuminaGymPostDragonShrineGiveText:
-	text "<PLAYER> handed over"
-	line "DRAGON STONE."
+	text "<PLAYER> handed"
+	line "over DRAGON STONE."
 	done
 	
 Movement_LuminaGymCutscene1:

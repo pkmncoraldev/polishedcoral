@@ -565,8 +565,8 @@ BrilloPoliceStationCaptainText9:
 	done
 	
 BrilloPoliceStationCaptainText10:
-	text "<PLAYER> handed over"
-	line "COIN CUP."
+	text "<PLAYER> handed"
+	line "over COIN CUP."
 	done
 	
 BrilloPoliceStationCaptainText11:

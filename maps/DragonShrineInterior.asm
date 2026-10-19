@@ -189,7 +189,7 @@ DragonShrineInteriorBigStatueLegendText4:
 	line "it."
 
 	para "He showed not the"
-	cont "malice so common"
+	line "malice so common"
 	cont "to man,"
 	
 	para "but instead grace"

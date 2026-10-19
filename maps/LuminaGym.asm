@@ -798,8 +798,6 @@ LuminaGymPostDragonShrineElderText4:
 	
 	para "Our traditions…"
 	
-	para "and that legend…"
-	
 	para "They're all we"
 	line "have left."
 	

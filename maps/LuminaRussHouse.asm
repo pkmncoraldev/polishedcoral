@@ -115,10 +115,10 @@ LuminaRussHouseRussText1:
 	line "to persue strength"
 	cont "once again."
 	
-	para "Last I heard, he"
-	line "had done it."
+	para "And, he did it."
 	
-	para "He was CHAMPION."
+	para "He became"
+	line "CHAMPION."
 	
 	para "Knowing him, even"
 	line "that wasn't enough."
@@ -129,7 +129,7 @@ LuminaRussHouseRussText1:
 	line "stepped in with"
 	cont "<RIVAL>."
 	
-	para "Told him that"
+	para "And told him that"
 	line "whatever he was"
 	cont "trying to prove…"
 	

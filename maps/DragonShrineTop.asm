@@ -412,8 +412,6 @@ DragonShrineTopRivalSceneText8:
 	
 	para "You win, <PLAYER>."
 	
-	para "I lose."
-	
 	para "Are you happy?"
 	done
 	
@@ -433,29 +431,15 @@ DragonShrineTopRivalSceneText10:
 	done
 	
 DragonShrineTopRivalSceneText11:
-	text "MR. ELI sought me"
-	line "out himself."
+	text "He sought me out"
+	line "himself."
 	
-	para "He called me to"
-	line "the NETT BUILDING"
-	cont "in LUSTER CITY."
+	para "He told me you'd"
+	line "been getting in"
+	cont "his way."
 	
-	para "There he told me"
-	line "how he'd started"
-	cont "TEAM SNARE,"
-	
-	para "and how he was"
-	line "using them to"
-	cont "solve all of his"
-	cont "problems."
-	
-	para "He told me about"
-	line "how you'd been"
-	cont "getting in their"
-	cont "way,"
-	
-	para "and that you were"
-	line "our common enemy."
+	para "That you were our"
+	line "common enemy."
 	
 	para "He must have known"
 	line "how important the"
@@ -466,17 +450,16 @@ DragonShrineTopRivalSceneText11:
 	line "me the full force"
 	cont "of TEAM SNARE."
 	
-	para "And all he asked"
-	line "in return is that"
-	cont "I don't let him"
-	cont "down."
+	para "All he asked in"
+	line "return is that I"
+	cont "don't let him down."
 	
 	para "But I did…"
 	
 	para "…"
 	
 	para "Take the stupid"
-	line "stone back!"
+	line "rock back!"
 	
 	para "It's useless to"
 	line "me now!"
@@ -487,7 +470,7 @@ DragonShrineTopRivalSceneText12:
 	line "left anymore…"
 	
 	para "I know what I"
-	line "must do."
+	line "have to do."
 	
 	para "You won't be seeing"
 	line "me again."

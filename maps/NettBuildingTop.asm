@@ -180,6 +180,7 @@ Movement_NettBuildingEliLeaves:
 	slow_step_down
 	slow_step_down
 	slow_step_down
+	slow_step_down
 	step_end
 	
 NettBuildingTopEliWinText:
@@ -202,9 +203,6 @@ NettBuildingTopEliText1:
 	para "You made it past"
 	line "the others…"
 	
-	para "I figured you"
-	line "would."
-	
 	para "It was inevitable,"
 	line "really."
 	
@@ -224,9 +222,8 @@ NettBuildingTopEliText3:
 	text "All of that out"
 	line "there."
 	
-	para "I don't just mean"
-	line "LUSTER CITY, but"
-	cont "all of ONWA."
+	para "Not just the city."
+	line "All of ONWA."
 	
 	para "Its people and"
 	line "its #MON."
@@ -280,22 +277,16 @@ NettBuildingTopEliText5:
 	cont "TRAINERS, treat it"
 	cont "like a game."
 	
-	para "That's not how it"
-	line "should be."
-	
 	para "Humans and #MON"
 	line "are meant to be"
 	cont "partners, not"
-	cont "friends."
+	cont "friends!"
 	
 	para "The less serious"
 	line "TRAINERS around,"
 	
 	para "the less need for"
 	line "our products."
-	
-	para "I will not let"
-	line "this company die!"
 	done
 	
 NettBuildingTopEliText6:
@@ -315,8 +306,7 @@ NettBuildingTopEliText6:
 	para "They wouldn't want"
 	line "some crazed thugs"
 	cont "taking their"
-	cont "precious #MON,"
-	cont "now would they?"
+	cont "precious #MON."
 	
 	para "Thus, TEAM SNARE"
 	line "was born."
@@ -346,8 +336,6 @@ NettBuildingTopEliText7:
 	para "The natural order"
 	line "is being restored!"
 	
-	para "It's a good thing!"
-	
 	para "Can't you see that"
 	line "TEAM SNARE is a"
 	cont "necessity?"
@@ -362,9 +350,6 @@ NettBuildingTopEliText8:
 	para "Well, it doesn't"
 	line "matter either way."
 	
-	para "This is the path"
-	line "I chose."
-	
 	para "And now that you"
 	line "know the truth,"
 	cont "I can't let you"
@@ -378,29 +363,23 @@ NettBuildingTopEliText8:
 NettBuildingTopEliText9:
 	text "It's over."
 	
-	para "TEAM SNARE has"
-	line "been thoroughly"
-	cont "bested."
+	para "You've beaten me,"
 	
-	para "You've beaten KAGE"
+	para "you've beaten KAGE"
 	line "and LOCKE,"
-	
-	para "you've beaten me,"
 	
 	para "you've even beaten"
 	line "our whizkid,"
 	cont "<RIVAL>."
 	
-	para "I really AM sorry"
-	line "about what"
-	cont "happened to him…"
+	para "…"
 	
-	para "I recruited him"
-	line "because I knew he"
-	cont "was the only one"
-	cont "who stood a chance"
-	cont "against you."
-		
+	para "He had such"
+	line "potential."
+	
+	para "Enough to surpass"
+	line "you, <PLAYER>."
+	
 	para "He was clearly in"
 	line "desperate need of"
 	cont "a father figure,"
@@ -409,15 +388,11 @@ NettBuildingTopEliText9:
 	line "took advantage of"
 	cont "that."
 	
-	para "Of course, I never"
-	line "bought into his"
-	cont "“DRAGON STONE”"
-	cont "fairytale,"
-	
-	para "but I figured it"
-	line "would give him the"
-	cont "drive he needed to"
-	cont "take you down."
+	para "I hoped his little"
+	line "“DRAGON STONE”"
+	cont "fairy tale would"
+	cont "drive him to take"
+	cont "you down."
 	
 	para "That was a common"
 	line "goal for us both."
@@ -426,7 +401,7 @@ NettBuildingTopEliText9:
 	line "to end up doing"
 	cont "something so…"
 	
-	para "…<WAIT_L>hasty."
+	para "…<WAIT_L>impulsive."
 	
 	para "…"
 

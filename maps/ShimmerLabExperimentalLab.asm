@@ -74,7 +74,7 @@ ShimmerLabExperimentalLabBook:
 	farwritetext StdBlankText
 	pause 6
 	writetext ShimmerLabExperimentalLabBookTextWhich
-	loadmenudata ShimmerLabExperimentalLabBookMenuData
+	loadmenudata CoverDomeMenuDataHeader
 	verticalmenu
 	closewindow
 	if_equal $1, .cover
@@ -99,21 +99,6 @@ ShimmerLabExperimentalLabBook:
 	end
 .cancel
 	closetext
-	end
-	
-ShimmerLabExperimentalLabBookMenuData:
-	db $40 ; flags
-	db 00, 00 ; start coords
-	db 12, 14 ; end coords
-	dw .MenuData
-	db 1 ; default option
-
-.MenuData:
-	db $80 ; flags
-	db 3 ; items
-	db "COVER FOSSIL@"
-	db "PLUME FOSSIL@"
-	db "CANCEL@"
 	end
 	
 ShimmerLabExperimentalLabBookText1:

@@ -4163,8 +4163,8 @@ TirtougaEvosAttacks:
 	db 11, PROTECT
 	db 15, AQUA_JET
 	db 18, ANCIENTPOWER
-	db 21, CRUNCH
-	db 28, REVERSAL
+	db 21, REVERSAL
+	db 28, CRUNCH
 	db 31, BODY_SLAM
 	db 35, CURSE
 	db 38, SHELL_SMASH
@@ -4183,8 +4183,8 @@ CarracostaEvosAttacks:
 	db 11, PROTECT
 	db 15, AQUA_JET
 	db 18, ANCIENTPOWER
-	db 21, CRUNCH
-	db 28, REVERSAL
+	db 21, REVERSAL
+	db 28, CRUNCH
 	db 31, BODY_SLAM
 	db 35, CURSE
 	db 40, SHELL_SMASH

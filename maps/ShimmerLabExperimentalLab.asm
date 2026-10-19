@@ -116,12 +116,12 @@ ShimmerLabFossilCutscene:
 	opentext
 	writetext ShimmerLabFossilCutsceneText1
 	buttonsound
-	farwritetext StdBlankText
-	pause 6
 	checkitem COVER_FOSSIL
 	iftrue .own_cover
 	checkitem PLUME_FOSSIL
 	iftrue .own_plume
+	farwritetext StdBlankText
+	pause 6
 	writetext NoFossilsText
 	waitbutton
 	closetext
@@ -131,6 +131,8 @@ ShimmerLabFossilCutscene:
 .own_cover
 	checkitem PLUME_FOSSIL
 	iftrue .own_cover_and_plume
+	farwritetext StdBlankText
+	pause 6
 	writetext AskCoverFossilText
 	yesorno
 	iffalse .maybe_later
@@ -140,6 +142,8 @@ ShimmerLabFossilCutscene:
 	jump .maybe_later
 
 .own_plume
+	farwritetext StdBlankText
+	pause 6
 	writetext AskPlumeFossilText
 	yesorno
 	iffalse .maybe_later
@@ -472,13 +476,13 @@ endr
 	writetext ShimmerLabTirtougaText
 	playsound SFX_CAUGHT_MON
 	waitsfx
-	givepoke TIRTOUGA, 36
+	givepoke TIRTOUGA, 25
 	jump .end
 .archen
 	writetext ShimmerLabArchenText
 	playsound SFX_CAUGHT_MON
 	waitsfx
-	givepoke ARCHEN, 36
+	givepoke ARCHEN, 25
 .end
 	writetext ShimmerLabFossilCutsceneText10
 	waitbutton

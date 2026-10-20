@@ -93,7 +93,6 @@ RadiantGymLeilanicont:
 	writetext Text_ReceivedSixthBadge
 	playsound SFX_GET_BADGE
 	waitsfx
-	setevent EVENT_BEAT_LEILANI_FIRST_TIME
 	setflag ENGINE_SIXTHBADGE
 	setevent EVENT_CAN_FIGHT_ERIKA
 	checkcode VAR_BADGES
@@ -103,7 +102,6 @@ RadiantGymLeilanicont:
 .FightDone:	
 	checkevent EVENT_TM46
 	iftrue .GotTMFromLeilani
-	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	setevent EVENT_BEAT_RADIANT_GYM_ROSE
 	setevent EVENT_BEAT_RADIANT_GYM_LILY
 	setevent EVENT_BEAT_RADIANT_GYM_IRIS
@@ -124,13 +122,6 @@ RadiantGymLeilanicont:
 	end
 
 .GotTMFromLeilani:
-	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
-	iftrue LeilaniTextLoop
-	checkevent EVENT_BEAT_LEILANI_FIRST_TIME
-	iftrue LeilaniTextLoop
-	checkevent EVENT_CAN_REMATCH_LEILANI
-	iftrue RadiantGymLeilaniRematch
-LeilaniTextLoop:
 	writetext RadiantGymLeilaniTextLoop
 	waitbutton
 	closetext
@@ -141,86 +132,6 @@ RadiantGymLeilaniFacingRight:
 	writetext RadiantOrphanage1FLeilaniTextWrongSide
 	waitbutton
 	closetext
-	end
-	
-RadiantGymLeilaniRematch:
-	writetext RadiantGymLeilaniTextBeforeBattleRematch
-	yesorno
-	iffalse .end
-	closetext
-	appear RADIANT_GYM_LEILANI
-	appear RADIANT_GYM_LEILANI_CHAIR_2
-	checkcode VAR_FACING
-	if_equal UP, .YouAreFacingUp
-	applyonemovement PLAYER, step_down
-	spriteface PLAYER, UP
-	disappear RADIANT_GYM_LEILANI_2
-	disappear RADIANT_GYM_LEILANI_CHAIR
-	spriteface RADIANT_GYM_LEILANI, RIGHT
-	variablesprite SPRITE_LEILANI_VARIABLE, SPRITE_LEILANI
-	special MapCallbackSprites_LoadUsedSpritesGFX
-	playsound SFX_JUMP_OVER_LEDGE
-	applyonemovement RADIANT_GYM_LEILANI, slow_step_right
-	spriteface RADIANT_GYM_LEILANI, DOWN
-	jump .cont
-.YouAreFacingUp
-	disappear RADIANT_GYM_LEILANI_2
-	disappear RADIANT_GYM_LEILANI_CHAIR
-	spriteface RADIANT_GYM_LEILANI, RIGHT
-	variablesprite SPRITE_LEILANI_VARIABLE, SPRITE_LEILANI
-	special MapCallbackSprites_LoadUsedSpritesGFX
-	playsound SFX_JUMP_OVER_LEDGE
-	applyonemovement RADIANT_GYM_LEILANI, slow_step_right
-	spriteface RADIANT_GYM_LEILANI, DOWN
-	applyonemovement PLAYER, step_right
-	spriteface PLAYER, UP
-	
-.cont
-	opentext TEXTBOX_LEILANI
-	writetext RadiantGymLeilaniTextBeforeBattle2
-	waitbutton
-	closetext
-	waitsfx
-	winlosstext RadiantGymLeilaniTextWinRematch, RadiantGymLeilaniTextLoss
-	checkcode VAR_BADGES
-	ifequal 8, .eightbadges
-	ifequal 7, .sevenbadges
-	loadtrainer LEILANI, 1
-	jump .cont2
-.sevenbadges
-	loadtrainer LEILANI, 2
-	jump .cont2
-.eightbadges
-	loadtrainer LEILANI, 3
-.cont2
-	startbattle
-	reloadmapafterbattle
-	opentext TEXTBOX_LEILANI
-	checkevent EVENT_DECO_SUNFLORA_DOLL
-	iftrue .skip_doll
-	writetext RadiantGymLeilaniTextDoll
-	waitbutton
-	setevent EVENT_DECO_SUNFLORA_DOLL
-	writetext GiveSunfloraDollText
-	playsound SFX_ITEM
-	waitsfx
-	writetext PutAwaySunfloraDollText
-	waitbutton
-.skip_doll
-	writetext RadiantGymLeilaniTextLoop
-	waitbutton
-	closetext
-	clearevent EVENT_CAN_REMATCH_LEILANI
-	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
-	setevent EVENT_ALWAYS_SET
-	end
-.end
-	disappear RADIANT_GYM_LEILANI
-	disappear RADIANT_GYM_LEILANI_CHAIR_2
-	writetext RadiantGymLeilaniTextNoRematch
-	waitbutton
-	closetext
-	setevent EVENT_ALWAYS_SET
 	end
 	
 RadiantGymAutoShopStepsAsm:
@@ -271,11 +182,6 @@ RadiantGymLeilaniTextBeforeBattle2:
 	line "losing."
 	done
 	
-RadiantGymLeilaniTextBeforeBattleRematch:
-	text "Well, <WAIT_S>are you ready"
-	line "for our rematch?"
-	done
-	
 RadiantGymLeilaniTextAfterBattle:
 	text "That badge will"
 	line "let you use the"
@@ -314,9 +220,6 @@ RadiantGymLeilaniTextTMSpeech:
 	line "GRAMMA again some-"
 	cont "time, won't you?"
 	
-	para "I'd love to give"
-	cont "you a rematch!"
-	
 	para "Oh, and do say"
 	line "goodbye to ERIKA"
 	cont "before you leave."
@@ -333,11 +236,6 @@ RadiantGymLeilaniTextWin:
 	
 	para "It's the #MON"
 	line "LEAGUE PETALBADGE."
-	done
-	
-RadiantGymLeilaniTextWinRematch:
-	text "Well done, dear!"
-	line "Very well done!"
 	done
 	
 RadiantGymLeilaniTextLoss:
@@ -357,30 +255,6 @@ RadiantGymLeilaniTextLoop:
 	para "I'm so hopeful for"
 	line "the next genera-"
 	cont "tion!"
-	done
-	
-RadiantGymLeilaniTextDoll:
-	text "Wonderful job,"
-	line "sweetie!"
-	
-	para "GRAMMA has some-"
-	line "thing for you."
-	done
-	
-RadiantGymLeilaniTextNoRematch:
-	text "Don't keep GRAMMA"
-	line "waiting, now!"
-	done
-	
-GiveSunfloraDollText:
-	text "<PLAYER> received"
-	line "SUNFLORA DOLL!"
-	done
-	
-PutAwaySunfloraDollText:
-	text "SUNFLORA DOLL was"
-	line "sent to the PC in"
-	cont "<PLAYER>'s room."
 	done
 	
 Text_ReceivedSixthBadge:

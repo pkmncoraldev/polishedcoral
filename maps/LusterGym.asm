@@ -104,7 +104,6 @@ LusterGymPolly:
 .FightDone:	
 	checkevent EVENT_TM09
 	iftrue .GotTMFromPolly
-	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	setevent EVENT_BEAT_LUSTER_GYM_TRAINER_1
 	setevent EVENT_BEAT_LUSTER_GYM_TRAINER_2
 	setevent EVENT_BEAT_LUSTER_GYM_TRAINER_3
@@ -124,63 +123,7 @@ LusterGymPolly:
 	end
 
 .GotTMFromPolly:
-	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
-	iftrue PollyTextLoop
-	checkevent EVENT_CAN_REMATCH_POLLY
-	iftrue LusterGymPollyRematch
-PollyTextLoop:
 	writetext LusterGymPollyTextLoop
-	waitbutton
-	closetext
-	end
-	
-LusterGymPollyRematch:
-	writetext LusterGymPollyTextBeforeBattleRematch
-	yesorno
-	iffalse .end
-	writetext LusterGymPollyTextBeforeBattle
-	waitbutton
-	closetext
-	waitsfx
-	winlosstext LusterGymPollyTextWinRematch, LusterGymPollyTextLoss
-	checkcode VAR_BADGES
-	ifequal 8, .eightbadges
-	ifequal 7, .sevenbadges
-	ifequal 6, .sixbadges
-	loadtrainer POLLY, 1
-	jump .cont
-.sixbadges
-	loadtrainer POLLY, 2
-	jump .cont
-.sevenbadges
-	loadtrainer POLLY, 3
-	jump .cont
-.eightbadges
-	loadtrainer POLLY, 4
-.cont
-	startbattle
-	reloadmapafterbattle
-	opentext TEXTBOX_POLLY
-	checkevent EVENT_DECO_WOOPER_DOLL
-	iftrue .skip_doll
-	writetext LusterGymPollyTextDoll
-	waitbutton
-	setevent EVENT_DECO_WOOPER_DOLL
-	writetext GiveWooperDollText
-	playsound SFX_ITEM
-	waitsfx
-	writetext PutAwayWooperDollText
-	waitbutton
-.skip_doll
-	writetext LusterGymPollyTextLoop
-	waitbutton
-	closetext
-	clearevent EVENT_CAN_REMATCH_POLLY
-	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
-	spriteface LUSTER_GYM_POLLY, DOWN
-	end
-.end
-	writetext LusterGymPollyTextNoRematch
 	waitbutton
 	closetext
 	end
@@ -206,22 +149,6 @@ LusterGymPollyTextBeforeBattle:
 	para "Let's get this over"
 	line "with so I can get"
 	cont "back to the MALL!"
-	done
-	
-LusterGymPollyTextBeforeBattleRematch:
-	text "Oh, it's you!"
-	
-	para "I haven't been"
-	line "hanging out at the"
-	cont "MALL much lately…"
-	
-	para "Ever since our"
-	line "last battle, I've"
-	cont "been training like"
-	cont "crazy!"
-	
-	para "You want a"
-	line "rematch?"
 	done
 	
 LusterGymPollyTextAfterBattle:
@@ -266,10 +193,6 @@ LusterGymPollyTextTMSpeech:
 	cont "while."
 	
 	para "The MALL can wait!"
-	
-	para "You should come"
-	line "back sometime for"
-	cont "a rematch!"
 	done
 	
 LusterGymPollyTextWin:
@@ -283,10 +206,6 @@ LusterGymPollyTextWin:
 	
 	para "It's the #MON"
 	line "LEAGUE BANEBADGE."
-	done
-	
-LusterGymPollyTextWinRematch:
-	text "You win again!"
 	done
 	
 LusterGymPollyTextLoss:
@@ -309,32 +228,6 @@ LusterGymPollyTextLoop:
 	cont "while."
 	
 	para "The MALL can wait!"
-	
-	para "You should come"
-	line "back sometime for"
-	cont "a rematch!"
-	done
-	
-LusterGymPollyTextDoll:
-	text "I get so excited"
-	line "when I battle you!"
-	
-	para "I got you this!"
-	done
-	
-LusterGymPollyTextNoRematch:
-	text "Aw, <WAIT_S>come on!"
-	done
-	
-GiveWooperDollText:
-	text "<PLAYER> received"
-	line "WOOPER DOLL!"
-	done
-	
-PutAwayWooperDollText:
-	text "WOOPER DOLL was"
-	line "sent to the PC in"
-	cont "<PLAYER>'s room."
 	done
 	
 Text_ReceivedFifthBadge:

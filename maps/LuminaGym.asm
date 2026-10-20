@@ -99,7 +99,6 @@ LuminaGymDarcy:
 	writetext LuminaGymDarcyTextAfterBattle
 	buttonsound
 	changetextboxspeaker
-	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	verbosegivetmhm TM_DARK_PULSE
 	setevent EVENT_TM57
 	setevent EVENT_GOT_TM_FROM_DARCY
@@ -120,11 +119,6 @@ LuminaGymDarcy:
 	end
 	
 .FightDone:	
-	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
-	iftrue DarcyTextLoop
-	checkevent EVENT_CAN_REMATCH_DARCY
-	iftrue LuminaGymDarcyRematch
-DarcyTextLoop:
 	checkevent EVENT_DRAGON_SHRINE_DONE
 	iftrue .shrine_done
 	writetext LuminaGymDarcyTextLoop
@@ -138,83 +132,11 @@ DarcyTextLoop:
 	closetext
 	end
 	
-LuminaGymDarcyRematch:
-	writetext LuminaGymDarcyTextBeforeBattleRematch
-	yesorno
-	iffalse .end
-	writetext LuminaGymDarcyTextBeforeBattleRematch2
-	waitbutton
-	closetext
-	waitsfx
-	dotrigger $2
-	winlosstext LuminaGymDarcyTextWinRematch, LuminaGymDarcyTextLossRematch
-	loadtrainer DARCY, 1
-	startbattle
-	dontrestartmapmusic
-	reloadmapafterbattle
-	dotrigger $3
-	playmapmusic
-	opentext TEXTBOX_DARCY
-	checkevent EVENT_DECO_NATU_DOLL
-	iftrue .skip_doll
-	writetext LuminaGymDarcyTextDoll
-	waitbutton
-	setevent EVENT_DECO_NATU_DOLL
-	writetext GiveNatuDollText
-	playsound SFX_ITEM
-	waitsfx
-	writetext PutAwayNatuDollText
-	waitbutton
-.skip_doll
-	writetext LuminaGymDarcyTextLoop
-	waitbutton
-	closetext
-	clearevent EVENT_CAN_REMATCH_DARCY
-	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
-	spriteface 1, DOWN
-	end
-.end
-	writetext LuminaGymDarcyTextNoRematch
-	waitbutton
-	closetext
-	end
-	
 LuminaGymDarcyPreSceneText:
 	text "Good. <WAIT_S>You're here."
 	
 	para "Let's get this"
 	line "done!"
-	done
-	
-LuminaGymDarcyTextBeforeBattleRematch:
-	text "I know why youre"
-	cont "here again."
-	
-	para "A rematch, right?"	
-	done
-	
-LuminaGymDarcyTextBeforeBattleRematch2:
-	text "Ok, <PLAYER>!"
-	
-	para "Here we go."
-	
-	para "I won't hold"
-	line "anything back!"
-	done
-	
-LuminaGymDarcyTextWinRematch:
-	text "As expected."
-	
-	para "I still have a"
-	line "lot to learn."
-	done
-	
-LuminaGymDarcyTextLossRematch:
-	text "Am I improving?"
-	done
-	
-LuminaGymDarcyTextNoRematch:
-	text "I see."
 	done
 	
 LuminaGymElder:
@@ -559,22 +481,6 @@ LuminaGymDarcyTextLoop2:
 	line "TRAINER worthy of"
 	cont "making the DRAGON"
 	cont "appear for real!"
-	done
-	
-LuminaGymDarcyTextDoll:
-	text "You should take"
-	line "this with you."
-	done
-	
-GiveNatuDollText:
-	text "<PLAYER> received"
-	line "NATU DOLL!"
-	done
-	
-PutAwayNatuDollText:
-	text "NATU DOLL was"
-	line "sent to the PC in"
-	cont "<PLAYER>'s room."
 	done
 	
 Movement_LuminaGymPlayer1:

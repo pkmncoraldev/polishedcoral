@@ -92,7 +92,6 @@ ObscuraGymRocky:
 .FightDone:
 	checkevent EVENT_GOT_TM_FROM_ROCKY
 	iftrue .GotTMFromRocky
-	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	writetext ObscuraGymRockyTextAfterBattle
 	buttonsound
 	changetextboxspeaker
@@ -158,61 +157,13 @@ ObscuraGymRocky:
 
 .GotTMFromRocky:
 	checkevent EVENT_LUMINA_TOWN_UNDER_ATTACK
-	iftrue RockyTextLoop.underattack
-	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
-	iftrue RockyTextLoop
-	checkevent EVENT_CAN_REMATCH_ROCKY
-	iftrue ObscuraGymRockyRematch
-RockyTextLoop:
+	iftrue .underattack
 	writetext ObscuraGymRockyTextLoop
 	waitbutton
 	closetext
 	end
 .underattack
 	writetext ObscuraGymRockyTextLoop2
-	waitbutton
-	closetext
-	end
-	
-ObscuraGymRockyRematch:
-	writetext ObscuraGymRockyTextBeforeBattleRematch
-	yesorno
-	iffalse .end
-	writetext ObscuraGymRockyTextBeforeBattleRematch2
-	waitbutton
-	closetext
-	waitsfx
-	winlosstext ObscuraGymRockyTextWinRematch, ObscuraGymRockyTextLoss
-	checkcode VAR_BADGES
-	ifequal 8, .eightbadges
-	loadtrainer ROCKY, 1
-	jump .cont
-.eightbadges
-	loadtrainer ROCKY, 2
-.cont
-	startbattle
-	reloadmapafterbattle
-	opentext TEXTBOX_ROCKY
-	checkevent EVENT_DECO_SUDOWOODO_DOLL
-	iftrue .skip_doll
-	writetext ObscuraGymRockyTextDoll
-	waitbutton
-	setevent EVENT_DECO_SUDOWOODO_DOLL
-	writetext GiveSudowoodoDollText
-	playsound SFX_ITEM
-	waitsfx
-	writetext PutAwaySudowoodoDollText
-	waitbutton
-.skip_doll
-	writetext ObscuraGymRockyTextLoop
-	waitbutton
-	closetext
-	clearevent EVENT_CAN_REMATCH_ROCKY
-	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
-	spriteface OBSCURA_GYM_ROCKY, DOWN
-	end
-.end
-	writetext ObscuraGymRockyTextNoRematch
 	waitbutton
 	closetext
 	end
@@ -258,16 +209,10 @@ ObscuraGymRockyTextTMSpeech:
 	done
 	
 ObscuraGymRockyTextLoop:
-	text "Well, “chosen one”"
-	line "or not, you're"
-	cont "one serious"
-	cont "TRAINER."
-	
-	para "Come back tomorrow"
-	line "if you want a"
-	cont "rematch."
-	
-	para "I'll be waiting."
+	text "Thanks for your"
+	line "help with things"
+	cont "here and at the"
+	cont "DRAGON SHRINE."
 	done
 	
 ObscuraGymRockyTextDoll:
@@ -281,33 +226,6 @@ Text_ReceivedSeventhBadge:
 	line "the GEOBADGE."
 	done
 	
-ObscuraGymRockyTextBeforeBattleRematch:
-	text "Look who's back."
-	
-	para "The dragon's"
-	line "“chosen one”."
-	
-	para "I hope you didn't"
-	line "really buy into"
-	cont "that legend."
-	
-	para "Anyway, you must"
-	line "be here for a"
-	cont "rematch."
-	done
-	
-ObscuraGymRockyTextBeforeBattleRematch2:
-	text "Let's not waste"
-	cont "time."
-	
-	para "Show me what you"
-	line "can do."
-	done
-	
-ObscuraGymRockyTextNoRematch:
-	text "Your choice."
-	done
-	
 ObscuraGymRockyTextWin:
 	text "Excellent."
 	
@@ -316,24 +234,6 @@ ObscuraGymRockyTextWin:
 	
 ObscuraGymRockyTextLoss:
 	text "How disappointing."
-	done
-	
-ObscuraGymRockyTextWinRematch:
-	text "Heh…"
-	
-	para "As expected of the"
-	line "“chosen one”." 
-	done
-	
-GiveSudowoodoDollText:
-	text "<PLAYER> received"
-	line "SUDOWOODO DOLL!"
-	done
-	
-PutAwaySudowoodoDollText:
-	text "SUDOWOODO DOLL was"
-	line "sent to the PC in"
-	cont "<PLAYER>'s room."
 	done
 	
 ObscuraGymRockyCallText1:

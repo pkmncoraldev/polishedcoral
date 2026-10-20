@@ -93,7 +93,6 @@ GlintGymStanley:
 	iftrue .GotTMFromStanley
 	setevent EVENT_BEAT_GLINT_GYM_TRAINER_1
 	setevent EVENT_BEAT_GLINT_GYM_TRAINER_2
-	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	writetext GlintGymStanleyTextAfterBattle
 	buttonsound
 	changetextboxspeaker
@@ -108,85 +107,7 @@ GlintGymStanley:
 	end
 
 .GotTMFromStanley:
-	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
-	iftrue StanleyTextLoop
-	checkevent EVENT_CAN_REMATCH_STANLEY
-	iftrue GlintGymStanleyRematch
-StanleyTextLoop:
 	writetext GlintGymStanleyTextLoop
-	waitbutton
-	closetext
-	end
-	
-GlintGymStanleyRematch:
-	writetext GlintGymStanleyTextBeforeBattle1Rematch
-	yesorno
-	iffalse .end
-	closetext
-	applymovement PLAYER, Movement_GlintGymMovePlayer
-	spriteface PLAYER, RIGHT
-	applymovement GLINTGYM_STANLEY, Movement_GlintGymMoveStanley
-	faceplayer
-	opentext TEXTBOX_STANLEY
-	writetext GlintGymStanleyTextBeforeBattle2
-	waitbutton
-	closetext
-	waitsfx
-	winlosstext GlintGymStanleyTextWinRematch, GlintGymStanleyTextLoss
-	checkcode VAR_BADGES
-	ifequal 8, .eightbadges
-	ifequal 7, .sevenbadges
-	ifequal 6, .sixbadges
-	ifequal 5, .fivebadges
-	ifequal 4, .fourbadges
-	ifequal 3, .threebadges
-	ifequal 2, .twobadges
-	loadtrainer STANLEY, 1
-	jump .cont
-.twobadges
-	loadtrainer STANLEY, 2
-	jump .cont
-.threebadges
-	loadtrainer STANLEY, 3
-	jump .cont
-.fourbadges
-	loadtrainer STANLEY, 4
-	jump .cont
-.fivebadges
-	loadtrainer STANLEY, 5
-	jump .cont
-.sixbadges
-	loadtrainer STANLEY, 6
-	jump .cont
-.sevenbadges
-	loadtrainer STANLEY, 7
-	jump .cont
-.eightbadges
-	loadtrainer STANLEY, 8
-.cont
-	startbattle
-	reloadmapafterbattle
-	opentext TEXTBOX_STANLEY
-	checkevent EVENT_DECO_SMEARGLE_DOLL
-	iftrue .skip_doll
-	writetext GlintGymStanleyTextDoll
-	waitbutton
-	setevent EVENT_DECO_SMEARGLE_DOLL
-	writetext GiveSmeargleDollText
-	playsound SFX_ITEM
-	waitsfx
-	writetext PutAwaySmeargleDollText
-	waitbutton
-.skip_doll
-	writetext GlintGymStanleyTextLoop
-	waitbutton
-	closetext
-	clearevent EVENT_CAN_REMATCH_STANLEY
-	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
-	applymovement GLINTGYM_STANLEY, Movement_GlintGymMoveStanley2
-	end
-.end
-	writetext GlintGymStanleyTextNoRematch
 	waitbutton
 	closetext
 	end
@@ -324,13 +245,6 @@ GlintGymStanleyTextWin:
 	line "LEAGUE STARKBADGE."
 	done
 	
-GlintGymStanleyTextWinRematch:
-	text "I guess your stra-"
-	line "tegy trumped mine."
-	
-	para "Good job!"
-	done
-	
 GlintGymStanleyTextLoss:
 	text "It seems your"
 	line "skills aren't up"
@@ -401,11 +315,8 @@ GlintGymStanleyTextTMSpeech:
 	para "I'll study and"
 	line "train harder."
 	
-	para "Come back tomorrow"
-	line "if you want a"
-	cont "rematch."
-	
-	para "I'll be waiting!"
+	para "Someday we'll meet"
+	line "again!"
 	done
 	
 GlintGymStanleyTextLoop:
@@ -415,41 +326,8 @@ GlintGymStanleyTextLoop:
 	para "I'll study and"
 	line "train harder."
 	
-	para "Come back tomorrow"
-	line "if you want a"
-	cont "rematch."
-	
-	para "I'll be waiting!"
-	done
-	
-GlintGymStanleyTextDoll:
-	text "Well, you already"
-	line "have my GYM BADGE,"
-	
-	para "so take this"
-	line "instead."
-	done
-
-GlintGymStanleyTextBeforeBattle1Rematch:
-	text "You came back!"
-	
-	para "Does that mean you"
-	line "want a rematch!"
-	done
-	
-GlintGymStanleyTextNoRematch:
-	text "Oh, <WAIT_S>I see."
-	done
-	
-GiveSmeargleDollText:
-	text "<PLAYER> received"
-	line "SMEARGLE DOLL!"
-	done
-	
-PutAwaySmeargleDollText:
-	text "SMEARGLE DOLL was"
-	line "sent to the PC in"
-	cont "<PLAYER>'s room."
+	para "Someday we'll meet"
+	line "again!"
 	done
 	
 GlintGymGuyText:

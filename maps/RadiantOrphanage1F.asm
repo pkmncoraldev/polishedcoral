@@ -287,17 +287,9 @@ RadiantOrphanage1FLeilani:
 	clearevent EVENT_RADIANT_GYM_INACTIVE
 	opentext TEXTBOX_LEILANI
 	checkevent EVENT_BEAT_LEILANI
-	iftrue .rematch
+	iftrue .beat
 	writetext RadiantOrphanage1FLeilaniText1
 	waitbutton
-	jump .cont
-.rematch
-	checkevent EVENT_CAN_REMATCH_LEILANI
-	iffalse .no
-	writetext RadiantOrphanage1FLeilaniText4
-	yesorno
-	iffalse .no
-.cont
 	closetext
 	spriteface PLAYER, DOWN
 	applyonemovement PLAYER, fix_facing
@@ -406,7 +398,7 @@ RadiantOrphanage1FLeilani:
 	changeblock $8, $2, $39
 	callasm GenericFinishBridge
 	end
-.no
+.beat
 	disappear RADIANT_ORPHANAGE_1F_LEILANI_2
 	disappear RADIANT_ORPHANAGE_1F_LEILANI_CHAIR_2
 	setevent EVENT_ALWAYS_SET

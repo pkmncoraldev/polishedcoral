@@ -49,7 +49,6 @@ TwinkleGymCharlie:
 .FightDone:	
 	checkevent EVENT_TM11
 	iftrue .GotTMFromCharlie
-	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	setevent EVENT_BEAT_TWINKLE_GYM_BLUE_ROOM_TRAINER
 	setevent EVENT_BEAT_TWINKLE_GYM_BLUE_ROOM_LEADER
 	setevent EVENT_BEAT_TWINKLE_GYM_YELLOW_ROOM_TRAINER_1
@@ -71,70 +70,7 @@ TwinkleGymCharlie:
 	end
 
 .GotTMFromCharlie:
-	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
-	iftrue CharlieTextLoop
-	checkevent EVENT_CAN_REMATCH_CHARLIE
-	iftrue TwinkleGymCharlieRematch
-CharlieTextLoop:
 	writetext TwinkleGymCharlieTextLoop
-	waitbutton
-	closetext
-	end
-	
-TwinkleGymCharlieRematch:
-	writetext TwinkleGymCharlieTextBeforeBattle1Rematch
-	yesorno
-	iffalse .end
-	writetext TwinkleGymCharlieTextBeforeBattle2Rematch
-	waitbutton
-	closetext
-	waitsfx
-	winlosstext TwinkleGymCharlieTextWinRematch, TwinkleGymCharlieTextLoss
-	checkcode VAR_BADGES
-	ifequal 8, .eightbadges
-	ifequal 7, .sevenbadges
-	ifequal 6, .sixbadges
-	ifequal 5, .fivebadges
-	ifequal 4, .fourbadges
-	loadtrainer CHARLIE, 1
-	jump .cont
-.fourbadges
-	loadtrainer CHARLIE, 2
-	jump .cont
-.fivebadges
-	loadtrainer CHARLIE, 3
-	jump .cont
-.sixbadges
-	loadtrainer CHARLIE, 4
-	jump .cont
-.sevenbadges
-	loadtrainer CHARLIE, 5
-	jump .cont
-.eightbadges
-	loadtrainer CHARLIE, 6
-.cont
-	startbattle
-	reloadmapafterbattle
-	opentext TEXTBOX_CHARLIE
-	checkevent EVENT_DECO_CUBONE_DOLL
-	iftrue .skip_doll
-	writetext TwinkleGymCharlieTextDoll
-	waitbutton
-	setevent EVENT_DECO_CUBONE_DOLL
-	writetext GiveCuboneDollText
-	playsound SFX_ITEM
-	waitsfx
-	writetext PutAwayCuboneDollText
-	waitbutton
-.skip_doll
-	writetext TwinkleGymCharlieTextLoop
-	waitbutton
-	closetext
-	clearevent EVENT_CAN_REMATCH_CHARLIE
-	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
-	end
-.end
-	writetext TwinkleGymCharlieTextNoRematch
 	waitbutton
 	closetext
 	end
@@ -189,14 +125,6 @@ TwinkleGymCharlieTextWin:
 	line "BURNBADGE!"
 	done
 	
-TwinkleGymCharlieTextWinRematch:
-	text "You're on fire,"
-	line "kid!"
-	
-	para "Another great"
-	line "battle!"
-	done
-	
 TwinkleGymCharlieTextLoss:
 	text "Tough luck!"
 	
@@ -247,10 +175,6 @@ TwinkleGymCharlieTextTMSpeech:
 	
 	para "Never let that"
 	line "flame die!"
-	
-	para "You're welcome back"
-	line "anytime you want a"
-	cont "rematch!"
 	done
 	
 TwinkleGymCharlieTextLoop:
@@ -266,52 +190,4 @@ TwinkleGymCharlieTextLoop:
 	
 	para "Never let that"
 	line "flame die!"
-	
-	para "You're welcome back"
-	line "anytime you want a"
-	cont "rematch!"
-	done
-	
-TwinkleGymCharlieTextDoll:
-	text "You got me again,"
-	line "kid!"
-	
-	para "You should have"
-	line "this."
-	done
-	
-TwinkleGymCharlieTextBeforeBattle1Rematch:
-	text "Haha!"
-	
-	para "You came back,"
-	line "kid."
-	
-	para "That means you"
-	line "want a rematch,"
-	cont "right?"
-	done
-	
-TwinkleGymCharlieTextBeforeBattle2Rematch:
-	text "If you think you"
-	line "can stand up to"
-	cont "my white hot"
-	cont "#MON,"
-	
-	para "then let's get"
-	line "this started!"
-	done
-	
-TwinkleGymCharlieTextNoRematch:
-	text "No way!"
-	done
-	
-GiveCuboneDollText:
-	text "<PLAYER> received"
-	line "CUBONE DOLL!"
-	done
-	
-PutAwayCuboneDollText:
-	text "CUBONE DOLL was"
-	line "sent to the PC in"
-	cont "<PLAYER>'s room."
 	done

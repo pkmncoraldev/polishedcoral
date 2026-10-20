@@ -253,7 +253,6 @@ EventideGymWendy:
 .FightDone:	
 	checkevent EVENT_TM56
 	iftrue .GotTMFromWendy
-	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	setevent EVENT_BEAT_EVENTIDE_GYM_TRAINER_1
 	setevent EVENT_BEAT_EVENTIDE_GYM_TRAINER_2
 	setevent EVENT_BEAT_EVENTIDE_GYM_TRAINER_3
@@ -272,70 +271,7 @@ EventideGymWendy:
 	end
 
 .GotTMFromWendy:
-	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
-	iftrue WendyTextLoop
-	checkevent EVENT_CAN_REMATCH_WENDY
-	iftrue EventideGymWendyRematch
-WendyTextLoop:
 	writetext EventideGymWendyTextLoop
-	waitbutton
-	closetext
-	end
-	
-EventideGymWendyRematch:
-	writetext EventideGymWendyTextBeforeBattle1Rematch
-	yesorno
-	iffalse .end
-	writetext EventideGymWendyTextBeforeBattle2Rematch
-	waitbutton
-	closetext
-	waitsfx
-	winlosstext EventideGymWendyTextWinRematch, EventideGymWendyTextLoss
-	checkcode VAR_BADGES
-	ifequal 8, .eightbadges
-	ifequal 7, .sevenbadges
-	ifequal 6, .sixbadges
-	ifequal 5, .fivebadges
-	ifequal 4, .fourbadges
-	loadtrainer WENDY, 1
-	jump .cont
-.fourbadges
-	loadtrainer WENDY, 2
-	jump .cont
-.fivebadges
-	loadtrainer WENDY, 3
-	jump .cont
-.sixbadges
-	loadtrainer WENDY, 4
-	jump .cont
-.sevenbadges
-	loadtrainer WENDY, 5
-	jump .cont
-.eightbadges
-	loadtrainer WENDY, 6
-.cont
-	startbattle
-	reloadmapafterbattle
-	opentext TEXTBOX_WENDY
-	checkevent EVENT_DECO_SWABLU_DOLL
-	iftrue .skip_doll
-	writetext EventideGymWendyTextDoll
-	waitbutton
-	setevent EVENT_DECO_SWABLU_DOLL
-	writetext GiveSwabluDollText
-	playsound SFX_ITEM
-	waitsfx
-	writetext PutAwaySwabluDollText
-	waitbutton
-.skip_doll
-	writetext EventideGymWendyTextLoop
-	waitbutton
-	closetext
-	clearevent EVENT_CAN_REMATCH_WENDY
-	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
-	end
-.end
-	writetext EventideGymWendyTextNoRematch
 	waitbutton
 	closetext
 	end
@@ -396,11 +332,6 @@ EventideGymWendyTextWin:
 	line "So graceful!"
 	done
 	
-EventideGymWendyTextWinRematch:
-	text "So fierce!<WAIT_M>"
-	line "So graceful!"
-	done
-	
 EventideGymWendyTextLoss:
 	text "I'm blown away!"
 	done
@@ -452,13 +383,6 @@ EventideGymWendyTextTMSpeech:
 	
 	para "Now go spread your"
 	line "wings!"
-	
-	para "Come back tomorrow"
-	line "if you want a"
-	cont "rematch."
-	
-	para "Good luck out"
-	line "there!"
 	done
 	
 EventideGymWendyTextLoop:
@@ -473,47 +397,6 @@ EventideGymWendyTextLoop:
 	
 	para "Now go spread your"
 	line "wings!"
-	
-	para "Come back tomorrow"
-	line "if you want a"
-	cont "rematch."
-	
-	para "Good luck out"
-	line "there!"
-	done
-	
-EventideGymWendyTextDoll:
-	text "Way to go!"
-	
-	para "Have this!"
-	done
-	
-EventideGymWendyTextBeforeBattle1Rematch:
-	text "Hi, <PLAYER>."
-	
-	para "Do you want a"
-	line "rematch?"
-	done
-	
-EventideGymWendyTextBeforeBattle2Rematch:
-	text "Are you ready to"
-	line "earn your wings?"
-	done
-	
-EventideGymWendyTextNoRematch:
-	text "That takes the"
-	line "wind outta me…"
-	done
-	
-GiveSwabluDollText:
-	text "<PLAYER> received"
-	line "SWABLU DOLL!"
-	done
-	
-PutAwaySwabluDollText:
-	text "SWABLU DOLL was"
-	line "sent to the PC in"
-	cont "<PLAYER>'s room."
 	done
 	
 EventideGymTrainer1:

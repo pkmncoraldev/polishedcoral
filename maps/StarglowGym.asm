@@ -47,7 +47,6 @@ StarglowGymRodneyScript:
 .FightDone:	
 	checkevent EVENT_TM18
 	iftrue .GotTMFromRodney
-	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	setevent EVENT_BEAT_STARGLOW_GYM_TRAINER_1
 	setevent EVENT_BEAT_STARGLOW_GYM_TRAINER_2
 	setevent EVENT_BEAT_STARGLOW_GYM_TRAINER_3
@@ -66,76 +65,7 @@ StarglowGymRodneyScript:
 	end
 
 .GotTMFromRodney:
-	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
-	iftrue RodneyTextLoop
-	checkevent EVENT_CAN_REMATCH_RODNEY
-	iftrue StarglowGymRodneyRematch
-RodneyTextLoop:
 	writetext StarglowGymRodneyTextLoop
-	waitbutton
-	closetext
-	end
-
-	
-StarglowGymRodneyRematch:
-	writetext StarglowGymRodneyTextBeforeBattle1Rematch
-	yesorno
-	iffalse .end
-	writetext StarglowGymRodneyTextBeforeBattle2Rematch
-	waitbutton
-	closetext
-	waitsfx
-	winlosstext StarglowGymRodneyTextWinRematch, StarglowGymRodneyTextLoss
-	checkcode VAR_BADGES
-	ifequal 8, .eightbadges
-	ifequal 7, .sevenbadges
-	ifequal 6, .sixbadges
-	ifequal 5, .fivebadges
-	ifequal 4, .fourbadges
-	ifequal 3, .threebadges
-	loadtrainer RODNEY, 1
-	jump .cont
-.threebadges
-	loadtrainer RODNEY, 2
-	jump .cont
-.fourbadges
-	loadtrainer RODNEY, 3
-	jump .cont
-.fivebadges
-	loadtrainer RODNEY, 4
-	jump .cont
-.sixbadges
-	loadtrainer RODNEY, 5
-	jump .cont
-.sevenbadges
-	loadtrainer RODNEY, 6
-	jump .cont
-.eightbadges
-	loadtrainer RODNEY, 7
-.cont
-	startbattle
-	reloadmapafterbattle
-	opentext TEXTBOX_RODNEY
-	checkevent EVENT_DECO_BIG_GYARADOS_DOLL
-	iftrue .skip_doll
-	writetext StarglowGymRodneyTextDoll
-	waitbutton
-	setevent EVENT_DECO_BIG_GYARADOS_DOLL
-	setevent EVENT_DECO_GYARADOS_DOLL
-	writetext GiveGyaradosDollText
-	playsound SFX_ITEM
-	waitsfx
-	writetext PutAwayGyaradosDollText
-	waitbutton
-.skip_doll
-	writetext StarglowGymRodneyTextLoop
-	waitbutton
-	closetext
-	clearevent EVENT_CAN_REMATCH_RODNEY
-	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
-	end
-.end
-	writetext StarglowGymRodneyTextNoRematch
 	waitbutton
 	closetext
 	end
@@ -305,13 +235,6 @@ StarglowGymRodneyTextWin:
 	para "You've earned this."
 	done
 	
-StarglowGymRodneyTextWinRematch:
-	text "Amazing!"
-	
-	para "You're still the"
-	line "real deal!"
-	done
-	
 StarglowGymRodneyTextLoss:
 	text "Washed away by"
 	line "the waves!"
@@ -371,9 +294,6 @@ StarglowGymRodneyTextTMSpeech:
 	para "Go out and be the"
 	line "best TRAINER you"
 	cont "can be!"
-	
-	para "Come back for a"
-	line "rematch tomorrow!"
 	done
 	
 StarglowGymRodneyTextLoop:
@@ -390,30 +310,6 @@ StarglowGymRodneyTextLoop:
 	para "Go out and be the"
 	line "best TRAINER you"
 	cont "can be!"
-	
-	para "Come back for a"
-	line "rematch tomorrow!"
-	done
-	
-StarglowGymRodneyTextDoll:
-	text "Have this for"
-	line "another great win!"
-	done
-	
-StarglowGymRodneyTextNoRematch:
-	text "Don't be so wishy-"
-	line "washy!"
-	done
-	
-GiveGyaradosDollText:
-	text "<PLAYER> received"
-	line "BIG GYARADOS DOLL!"
-	done
-	
-PutAwayGyaradosDollText:
-	text "BIG GYARADOS DOLL"
-	line "sent to the PC in"
-	cont "<PLAYER>'s room."
 	done
 	
 StarglowGymGuyText:
@@ -447,17 +343,4 @@ StarglowGymGuyWinText:
 	line "you for a second!"
 	
 	para "That's two down!"
-	done
-
-StarglowGymRodneyTextBeforeBattle1Rematch:
-	text "You're back?"
-	
-	para "You must want a"
-	line "rematch!"
-	done
-
-StarglowGymRodneyTextBeforeBattle2Rematch:
-	text "Let me show you"
-	line "the raw power of"
-	cont "the rushing waves!"
 	done

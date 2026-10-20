@@ -492,6 +492,7 @@ DEF MAP_NONE   EQU 0
 	map_const OBSCURA_GYM_SPEECH_HOUSE,					   4,  4 ; 11
 	map_const OBSCURA_MUSICIAN_HOUSE,					   4,  4 ; 12
 	map_const POKEMON_LEAGUE_OUTSIDE,					  21, 16 ; 13
+	map_const OBSCURA_MUSEUM_RESEARCH,					   4,  3 ; 14
 	
 	newgroup													 ; 25
 	map_const AUREOLE_TOWN,								  20, 23 ; 1

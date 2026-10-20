@@ -3,15 +3,16 @@ ObscuraMuseumEmployeeRoom_MapScriptHeader:
 
 	db 0 ; callbacks
 
-	db 4 ; warp events
+	db 5 ; warp events
 	warp_def  5, 12, 3, OBSCURA_CITY
 	warp_def  6, 12, 4, OBSCURA_CITY
 	warp_def 12,  5, 3, OBSCURA_MUSEUM_1F
 	warp_def 12,  6, 3, OBSCURA_MUSEUM_1F
+	warp_def  0,  7, 1, OBSCURA_MUSEUM_RESEARCH
 
 	db 0 ; coord events
 
-	db 14 ; bg events
+	db 15 ; bg events
 	signpost  1,  2, SIGNPOST_UP, ObscuraMuseumEmployeeRoomBooks
 	signpost  1,  3, SIGNPOST_UP, ObscuraMuseumEmployeeRoomBooks
 	signpost  1,  4, SIGNPOST_UP, ObscuraMuseumEmployeeRoomBooks
@@ -26,6 +27,7 @@ ObscuraMuseumEmployeeRoom_MapScriptHeader:
 	signpost  4,  8, SIGNPOST_UP, ObscuraMuseumKeyboard2
 	signpost  8,  2, SIGNPOST_UP, ObscuraMuseumKeyboard3
 	signpost  8,  8, SIGNPOST_UP, ObscuraMuseumKeyboard4
+	signpost  0,  6, SIGNPOST_JUMPTEXT, ObscuraMuseumResearchSign
 
 	db 8 ; object events
 	person_event SPRITE_GENERAL_VARIABLE_1, -5, -5, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_ALWAYS_SET
@@ -41,6 +43,10 @@ ObscuraMuseumEmployeeRoom_MapScriptHeader:
 	const_def 1 ; object constants
 	const OBSCURA_MUSEUM_EMPLOYEE_ROOM_SNARE
 	const OBSCURA_MUSEUM_EMPLOYEE_ROOM_ABIE
+
+ObscuraMuseumResearchSign:
+	text "RESEARCH"
+	done
 
 ObscuraMuseumEmployeeRoomBooks:
 	jumptext ObscuraMuseumEmployeeRoomBooksText

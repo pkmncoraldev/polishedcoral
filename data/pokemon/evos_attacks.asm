@@ -4403,6 +4403,7 @@ LarvestaEvosAttacks:
 	db 0 ; no more level-up moves
 	
 VolcaronaEvosAttacks:
+	db EVOLVE_ONLY_CHANGE_FORM, VOLCARONA
 	db 0 ; no more evolutions
 	db 1, QUIVER_DANCE
 	db 1, EMBER

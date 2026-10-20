@@ -1,4 +1,4 @@
-EvolvePokemon:
+EvolvePokemon::
 	ld hl, wEvolvableFlags
 	xor a
 	ld [hl], a
@@ -75,6 +75,8 @@ EvolveAfterBattle_MasterLoop:
 	jp z, .item_m
 	cp EVOLVE_ITEM_FEMALE
 	jp z, .item_f
+	cp EVOLVE_ONLY_CHANGE_FORM
+	jp z, .form_only
 
 	ld a, [wForceEvolution]
 	and a
@@ -218,6 +220,11 @@ EvolveAfterBattle_MasterLoop:
 	jp nz, .proceed
 	call SetAlolanFormOnEvo
 	jp .proceed
+.form_only
+	ld a, 2
+	ld [wEvoOnlyChangingForms], a
+	call SetAlolanFormOnEvo
+	jp .proceed
 
 .holding_day
 	ld a, [wTimeOfDay]
@@ -324,6 +331,11 @@ endr
 	call GetNick
 	call CopyName1
 	ld hl, Text_WhatEvolving
+	ld a, [wEvoOnlyChangingForms]
+	and a
+	jr z, .got_evo_text
+	ld hl, Text_FormChanging
+.got_evo_text
 	call PrintText
 
 	ld c, 50
@@ -360,6 +372,11 @@ endr
 
 	push hl
 	ld hl, Text_EvolvedIntoPKMN
+	ld a, [wEvoOnlyChangingForms]
+	and a
+	jr z, .got_evo_text_2
+	ld hl, Text_ChangedForms
+.got_evo_text_2
 	call PrintTextBoxText
 
 	ld de, MUSIC_NONE
@@ -423,6 +440,9 @@ endr
 	push de
 	call LearnEvolutionMove
 	call LearnLevelMoves
+	
+	call FormChangeMoves
+	
 	pop de
 	ld l, e
 	ld h, d
@@ -525,8 +545,14 @@ Text_WhatEvolving: ; 0x42482
 	; What? @ is evolving!
 	text_jump UnknownText_0x1c4be3
 	db "@"
-; 0x42487
 
+Text_FormChanging:
+	text_jump UnknownText_0x1c4be32
+	db "@"
+	
+Text_ChangedForms:
+	text_jump UnknownText_0x1c4baf2
+	db "@"
 
 LearnEvolutionMove:
 	; c = species
@@ -867,3 +893,23 @@ SetAlolanFormOnEvo:
 	ld [hl], a
 	pop hl
 	ret
+	
+FormChangeMoves:
+	ld hl, wPartyMon1Moves
+	ld a, [wCurPartyMon]
+	call GetPartyLocation
+	ld d, h
+	ld e, l
+	xor a
+rept NUM_MOVES + -1
+	ld [hli], a
+endr
+	ld [hl], a
+
+	; Fill moves based on level
+	predef FillMoves
+	
+	xor a
+	ld [wEvoOnlyChangingForms], a
+	ret
+	

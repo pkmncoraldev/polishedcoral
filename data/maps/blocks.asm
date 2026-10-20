@@ -970,6 +970,9 @@ ObscuraMuseum3F_BlockData:
 ObscuraMuseumEmployeeRoom_BlockData:
 	INCBIN "maps/ObscuraMuseumEmployeeRoom.ablk.lz"
 	
+ObscuraMuseumResearch_BlockData:
+	INCBIN "maps/ObscuraMuseumResearch.ablk.lz"
+	
 ObscuraGym_BlockData:
 	INCBIN "maps/ObscuraGym.ablk.lz"
 	

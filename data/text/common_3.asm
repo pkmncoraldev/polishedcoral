@@ -235,6 +235,12 @@ UnknownText_0x1c4baf::
 	text_from_ram wStringBuffer1
 	text "!"
 	done
+	
+UnknownText_0x1c4baf2::
+	text ""
+	para "changed to its"
+	line "ancient form!"
+	done
 
 UnknownText_0x1c4bc5::
 	text "Huh? <WAIT_S>@"
@@ -248,6 +254,11 @@ UnknownText_0x1c4be3::
 	text_from_ram wStringBuffer2
 	text ""
 	line "is evolving!"
+	done
+	
+UnknownText_0x1c4be32::
+	text "The transformation"
+	line "is about to begin!"
 	done
 
 UnknownText_0x1c4bfd::

@@ -50,6 +50,10 @@ EvolutionAnimation: ; 4e5e1
 	ld a, [wEvolutionOldSpecies]
 	ld [wCurPartySpecies], a
 	ld [wCurSpecies], a
+	ld a, [wCurForm]
+	push af
+	xor a
+	ld [wCurForm], a
 	call .PlaceFrontpic
 	
 	ld a, $1
@@ -72,6 +76,8 @@ EvolutionAnimation: ; 4e5e1
 	ld a, [wEvolutionNewSpecies]
 	ld [wCurPartySpecies], a
 	ld [wCurSpecies], a
+	pop af
+	ld [wCurForm], a
 	call .LoadFrontpic
 	ld a, [wEvolutionOldSpecies]
 	ld [wCurPartySpecies], a

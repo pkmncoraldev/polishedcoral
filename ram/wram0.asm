@@ -650,10 +650,11 @@ wEnemySwitchItemCheck:: ds 1
 
 wSurfAnimSpeedRegulator:: 
 wCalculatingEnemyStats:: 
-wCuttingRafflesia:: ds 1
+wCuttingRafflesia::
 wHoldOffOnActivationAbilities::
-wOpportunistActivated:: ds 1
-	ds 5
+wOpportunistActivated:: 
+wEvoOnlyChangingForms:: ds 1
+	ds 6
 
 wPlayerFutureSightCount:: ds 1
 wEnemyFutureSightCount:: ds 1

@@ -744,6 +744,17 @@ else
 	MONOCHROME_RGB_FOUR
 endc
 
+EvoChangeFormForEvoAnimation:
+	push hl
+	push af
+	ld hl, wPartyMon1Form
+	ld a, [wCurPartyMon]
+	call GetPartyLocation
+	pop af
+	ld [hl], a
+	pop hl
+	ret
+
 _CGB_Evolution: ; 91e4
 	ld de, wUnknBGPals
 	ld a, c
@@ -760,9 +771,22 @@ _CGB_Evolution: ; 91e4
 	rst AddNTimes
 	ld c, l
 	ld b, h
+	ld a, [wCurForm]
+	push af
+	ld a, [wEvoOnlyChangingForms]
+	cp 2
+	jr nz, .not_form_change_only
+	ld a, 1
+	call EvoChangeFormForEvoAnimation
+	ld a, [wEvoOnlyChangingForms]
+	dec a
+	ld [wEvoOnlyChangingForms], a
+.not_form_change_only
 	ld a, [wPlayerHPPal]
 	call GetPlayerOrMonPalettePointer
 	call LoadPalette_White_Col1_Col2_Black
+	pop af
+	call EvoChangeFormForEvoAnimation
 	; hl = DVs
 ;	ld hl, wPartyMon1DVs
 ;	ld bc, PARTYMON_STRUCT_LENGTH

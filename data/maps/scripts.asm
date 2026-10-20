@@ -529,6 +529,7 @@ INCLUDE "maps/ObscuraMuseum1F.asm"
 INCLUDE "maps/ObscuraMuseum2F.asm"
 INCLUDE "maps/ObscuraMuseum3F.asm"
 INCLUDE "maps/ObscuraMuseumPhoto.asm"
+INCLUDE "maps/ObscuraMuseumResearch.asm"
 
 SECTION "Lumina Scripts", ROMX
 INCLUDE "maps/LuminaTown.asm"

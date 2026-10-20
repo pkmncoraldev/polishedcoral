@@ -173,3 +173,5 @@
 	tilecoll WALL, WALL, WALL, WALL ; ac
 	tilecoll WALL, WALL, WALL, WALL ; ad
 	tilecoll WALL, WALL, WALL, WALL ; ae
+	tilecoll WALL, WALL, PC, TRASH_CAN ; af
+	tilecoll WALL, WALL, WALL, WALL ; b0

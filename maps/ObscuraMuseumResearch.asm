@@ -36,6 +36,7 @@ ObscuraMuseumResearchNPC:
 	iffalse .no
 	writetext ObscuraMuseumResearchNPCText6
 	waitbutton
+	special FadeOutPalettes
 	callasm DoEvoAnimation
 	writetext ObscuraMuseumResearchNPCText7
 	waitbutton

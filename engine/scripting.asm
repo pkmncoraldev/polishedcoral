@@ -2975,6 +2975,7 @@ Script_reloadandreturn:
 	jp Script_end
 
 Script_opentext::
+	call LoadStandardFont
 	call GetScriptByte
 	ld [wTextBoxSpeaker], a
 	call GetScriptByte

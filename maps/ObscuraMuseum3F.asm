@@ -525,7 +525,8 @@ ObscuraMuseumGymSign:
 	line "#MON GYM"
 	cont "LEADER: ROCKFORD"
 
-	para "ERROR!!"		;TODO come up with leader description
+	para "The immovable and"
+	line "unbreakable."
 	done
 	
 ObscuraMuseumDragonStoneSignText:

@@ -331,6 +331,7 @@ SpriteHeadersPlayers:
 	overworld_sprite ErikaSpriteGFX, WALKING_SPRITE, PAL_OW_GREEN
 	overworld_sprite DisguiseMasterGFX, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite FrankieSpriteGFX, WALKING_SPRITE, PAL_OW_BROWN
-	overworld_sprite LedianRangerSpriteGFX, STANDING_SPRITE, PAL_OW_RED
+	overworld_sprite LedianRangerSpriteGFX, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite SpaWorkerSpriteGFX, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite MasterSpriteGFX, WALKING_SPRITE, PAL_OW_BLUE
+	overworld_sprite LedianRangerPoseSpriteGFX, WALKING_SPRITE, PAL_OW_RED

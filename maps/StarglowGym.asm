@@ -191,7 +191,7 @@ TrainerStarglowGym_4:
 StarglowGymRodneyTextBeforeBattle:
 	text "Hahaha!"
 	
-	para "So you came?"
+	para "So, you came?"
 	
 	para "Those thugs were"
 	line "causing quite the"

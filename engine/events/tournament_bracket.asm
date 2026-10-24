@@ -357,22 +357,11 @@ DrawTourneyBracketRound5::
 	ld c, 100
 	call DelayFrames
 ; palettes
-	ldh a, [rSVBK]
-	push af
-	ld a, $5
-	ldh [rSVBK], a
-	call TourneySwoosh
-	pop af
-	ldh [rSVBK], a
 	ld de, SFX_DAMAGE
 	call PlaySFX	
-	ld hl, Tourney_RoundOAM
-	ld de, wSprites + 120
-	ld bc, 20
-	call CopyBytes
-	ld hl, Tourney_Round4OAM
-	ld de, wSprites + 140
-	ld bc, 4
+	ld hl, Tourney_FinalRoundOAM
+	ld de, wSprites + 4
+	ld bc, 44
 	call CopyBytes
 	ld c, 50
 	call DelayFrames
@@ -1661,7 +1650,7 @@ TourneyBracketLoadGfx:
 	ld hl, TourneyBracketGFX
 	ld de, VTiles2 tile $00
 	call DecompressRequest2bpp
-	lb bc, BANK(TourneyBracketGFX2), $24
+	lb bc, BANK(TourneyBracketGFX2), $2a
 	ld hl, TourneyBracketGFX2
 	ld de, VTiles0 tile $40
 	call DecompressRequest2bpp
@@ -2039,6 +2028,21 @@ Tourney_Round3OAM:
 	dsprite 18, 0, 13, 0, $62, $2
 Tourney_Round4OAM:
 	dsprite 18, 0, 13, 0, $63, $2
+	
+Tourney_FinalRoundOAM:
+;grand
+	dsprite 17, 0, 8, 5, $68, $0
+	dsprite 17, 0, 9, 5, $5b, $0
+	dsprite 17, 0, 10, 5, $66, $0
+	dsprite 17, 0, 11, 5, $5e, $0
+	dsprite 17, 0, 12, 5, $5f, $0
+;finals
+	dsprite 18, 0, 8, 1, $64, $0
+	dsprite 18, 0, 9, 1, $65, $0
+	dsprite 18, 0, 10, 1, $5e, $0
+	dsprite 18, 0, 11, 1, $66, $0
+	dsprite 18, 0, 12, 1, $67, $0
+	dsprite 18, 0, 13, 1, $69, $0
 	
 Tourney_EndOfBarOAM1:
 	dsprite 5, 4, 6, 5, $70, $3

@@ -210,6 +210,7 @@ DrawTourneyBracketRound2::
 	ld bc, 32
 	call CopyBytes
 	ld hl, wSprites + 2
+	ld d, 5
 	ld b, 8
 	ld c, 1
 	ld a, 4
@@ -256,10 +257,11 @@ DrawTourneyBracketRound3::
 	ld bc, 16
 	call CopyBytes
 	ld hl, wSprites + 2
+	ld d, 5
 	ld b, 4
 	ld c, 1
 	ld a, 4
-	call AnimateTourneyBracketTile
+	call AnimateTourneyBracketLine
 	ld c, 100
 	call DelayFrames
 ; palettes
@@ -303,10 +305,11 @@ DrawTourneyBracketRound4::
 	ld bc, 8
 	call CopyBytes
 	ld hl, wSprites + 2
+	ld d, 5
 	ld b, 2
 	ld c, 1
 	ld a, 4
-	call AnimateTourneyBracketTile
+	call AnimateTourneyBracketLine
 	ld c, 100
 	call DelayFrames
 ; palettes
@@ -350,10 +353,11 @@ DrawTourneyBracketRound5::
 	ld bc, 4
 	call CopyBytes
 	ld hl, wSprites + 2
+	ld d, 5
 	ld b, 1
 	ld c, 1
 	ld a, 4
-	call AnimateTourneyBracketTile
+	call AnimateTourneyBracketLine
 	ld c, 100
 	call DelayFrames
 ; palettes
@@ -471,17 +475,17 @@ AnimateTourneyBracketRound1:
 	ld hl, wSprites + 2
 	ld b, 8
 	ld c, 2
-	call AnimateTourneyBracketTile
+	call AnimateTourneyBracketLine
 	ld b, 8
 	ld c, 2
-	call AnimateTourneyBracketTile
+	call AnimateTourneyBracketLine
 	ld hl, wSprites + 66
 	ld b, 8
 	ld c, 2
-	call AnimateTourneyBracketTile
+	call AnimateTourneyBracketLine
 	ld b, 8
 	ld c, 2
-	call AnimateTourneyBracketTile
+	call AnimateTourneyBracketLine
 	ld de, SFX_HIT_END_OF_EXP_BAR
 	call PlaySFX
 	
@@ -561,17 +565,17 @@ AnimateTourneyBracketRound2:
 	ld hl, wSprites + 2
 	ld b, 4
 	ld c, 2
-	call AnimateTourneyBracketTile
+	call AnimateTourneyBracketLine
 	ld b, 4
 	ld c, 2
-	call AnimateTourneyBracketTile
+	call AnimateTourneyBracketLine
 	ld hl, wSprites + 34
 	ld b, 4
 	ld c, 2
-	call AnimateTourneyBracketTile
+	call AnimateTourneyBracketLine
 	ld b, 4
 	ld c, 2
-	call AnimateTourneyBracketTile
+	call AnimateTourneyBracketLine
 	ld de, SFX_HIT_END_OF_EXP_BAR
 	call PlaySFX
 TourneyRound2WinnersTiles:
@@ -620,16 +624,16 @@ AnimateTourneyBracketRound3:
 	ld hl, wSprites + 2
 	ld b, 2
 	ld c, 4
-	call AnimateTourneyBracketTile
+	call AnimateTourneyBracketLine
 	ld b, 2
 	ld c, 4
-	call AnimateTourneyBracketTile
+	call AnimateTourneyBracketLine
 	ld b, 2
 	ld c, 4
-	call AnimateTourneyBracketTile
+	call AnimateTourneyBracketLine
 	ld b, 2
 	ld c, 4
-	call AnimateTourneyBracketTile
+	call AnimateTourneyBracketLine
 	ld de, SFX_HIT_END_OF_EXP_BAR
 	call PlaySFX
 TourneyRound3WinnersTiles:
@@ -659,13 +663,13 @@ AnimateTourneyBracketRound4:
 	ld hl, wSprites + 2
 	ld b, 1
 	ld c, 3
-	call AnimateTourneyBracketTile
+	call AnimateTourneyBracketLine
 	ld b, 1
 	ld c, 3
-	call AnimateTourneyBracketTile
+	call AnimateTourneyBracketLine
 	ld b, 1
 	ld c, 3
-	call AnimateTourneyBracketTile
+	call AnimateTourneyBracketLine
 	ld de, SFX_HIT_END_OF_EXP_BAR
 	call PlaySFX
 TourneyRound4WinnersTiles:
@@ -1015,11 +1019,12 @@ TourneyFindResultsOfBattle:
 	scf
 	ret
 	
+AnimateTourneyBracketLine:
+	ld d, 8
 AnimateTourneyBracketTile:
 ; d = frames
 ; b = # of tiles simultaniously animated
 ; c = # of oam slots to advance for next simultaniously animated tile
-	ld d, 8
 .loop1
 	push hl
 	push bc
@@ -2045,27 +2050,27 @@ Tourney_FinalRoundOAM:
 	dsprite 18, 0, 13, 1, $69, $0
 	
 Tourney_EndOfBarOAM1:
-	dsprite 5, 4, 6, 5, $70, $3
-	dsprite 9, 3, 6, 5, $70, $3
-	dsprite 13, 4, 6, 5, $70, $3
-	dsprite 17, 3, 6, 5, $70, $3
-	dsprite 5, 4, 14, 4, $70, $3
-	dsprite 9, 3, 14, 4, $70, $3
-	dsprite 13, 4, 14, 4, $70, $3
-	dsprite 17, 3, 14, 4, $70, $3
+	dsprite 5, 4, 6, 5, $6f, $3
+	dsprite 9, 3, 6, 5, $6f, $3
+	dsprite 13, 4, 6, 5, $6f, $3
+	dsprite 17, 3, 6, 5, $6f, $3
+	dsprite 5, 4, 14, 4, $6f, $3
+	dsprite 9, 3, 14, 4, $6f, $3
+	dsprite 13, 4, 14, 4, $6f, $3
+	dsprite 17, 3, 14, 4, $6f, $3
 	
 Tourney_EndOfBarOAM2:
-	dsprite 7, 4, 8, 5, $70, $3
-	dsprite 15, 3, 8, 5, $70, $3
-	dsprite 7, 4, 12, 4, $70, $3
-	dsprite 15, 3, 12, 4, $70, $3
+	dsprite 7, 4, 8, 5, $6f, $3
+	dsprite 15, 3, 8, 5, $6f, $3
+	dsprite 7, 4, 12, 4, $6f, $3
+	dsprite 15, 3, 12, 4, $6f, $3
 	
 Tourney_EndOfBarOAM3:
-	dsprite 11, 4, 8, 5, $70, $3
-	dsprite 11, 4, 12, 4, $70, $3
+	dsprite 11, 4, 8, 5, $6f, $3
+	dsprite 11, 4, 12, 4, $6f, $3
 	
 Tourney_EndOfBarOAM4:
-	dsprite 10, 4, 10, 4, $70, $3
+	dsprite 10, 4, 10, 4, $6f, $3
 
 TourneyBracketPals1:
 ; Red

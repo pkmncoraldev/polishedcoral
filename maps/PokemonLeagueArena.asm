@@ -34,8 +34,9 @@ PokemonLeagueArenaTrigger1:
 PokemonLeagueArenaTrigger2:
 PokemonLeagueArenaTrigger3:
 PokemonLeagueArenaTrigger4:
-PokemonLeagueArenaTrigger5:
 	priorityjump ArenaEntryScene
+	end
+PokemonLeagueArenaTrigger5:
 	end
 
 ArenaEntryScene:
@@ -159,6 +160,10 @@ ArenaEntryScenePart2:
 	writebyte (1 << 7) | (PAL_OW_PINK << 4)
 	special Special_SetPlayerPalette
 	special FadeOutPalettes
+	callasm PokemonLeagueArenaFindNextOppAsm
+	if_not_equal 13, .skip_ledian2
+	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_LEDIAN_RANGER_MASK
+.skip_ledian2
 	warp_stealth RIGHT, POKEMON_LEAGUE_ARENA, 12, 10
 	clearevent EVENT_BIG_OW_MON_BATTLE
 	dontrestartmapmusic
@@ -172,7 +177,67 @@ ArenaEntryScenePart2:
 	waitbutton
 	closetext
 	callasm ArenaIncTrigger
-	
+	callasm TourneyLoadOppPostBattleText
+	waitbutton
+	closetext
+	waitsfx
+	callasm PokemonLeagueArenaFindNextOppAsm
+	if_equal 11, .disguise
+	if_equal 13, .ledian
+	if_equal 15, .master
+	jump .walk_away
+.disguise
+	applymovement 2, Movement_PokemonLeagueArena_DisguiseMan2
+	disappear 2
+	opentext TEXTBOX_DISGUISEMAN
+	writetext PokemonLeagueArenaDisguiseManText2
+	waitbutton
+	closetext
+	jump .end
+.master
+	playsound SFX_WATER_GUN
+	spriteface 2, UP
+	pause 2
+	disappear 2
+	pause 10
+	playsound SFX_PAY_DAY
+	showemote EMOTE_SHOCK, PLAYER, 15
+	pause 20
+	jump .end
+.ledian
+	spriteface 2, DOWN
+	pause 30
+	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_LEDIAN_RANGER_FACE
+	playsound SFX_WALL_OPEN
+	special MapCallbackSprites_LoadUsedSpritesGFX
+	waitsfx
+	pause 20
+	spriteface 2, LEFT
+	opentext TEXTBOX_LEDIAN_RANGER
+	writetext PokemonLeagueArenaLedianRangerText2
+	waitbutton
+	closetext
+	pause 10
+	spriteface 2, DOWN
+	pause 10
+	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_LEDIAN_RANGER_FACE_POSE
+	special MapCallbackSprites_LoadUsedSpritesGFX
+	pause 6
+	spriteface 2, UP
+	pause 12
+	spriteface 2, LEFT
+	pause 20
+	opentext TEXTBOX_LEDIAN_RANGER
+	writetext PokemonLeagueArenaLedianRangerText3
+	waitbutton
+	closetext
+	spriteface 2, DOWN
+	pause 3
+	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_LEDIAN_RANGER_FACE
+	special MapCallbackSprites_LoadUsedSpritesGFX	
+.walk_away
+	applymovement 2, Movement_ArenaWalkAway
+.end
 	special FadeOutPalettes
 	special Special_FadeOutMusic
 	disappear 1
@@ -275,8 +340,27 @@ ArenaEntrySceneMaster:
 	jump ArenaEntryScenePart2.return
 	
 TourneyLoadOppIntroText:
-	farcall TourneyFindNextOpp
 	ld hl, TourneyOppIntroText
+	call TourneyLoadOppText
+	jp BattleTextBox
+	
+TourneyLoadOppPostBattleText:
+	farcall TourneyFindNextOpp
+	push af
+	call TourneyGetTextBoxSpeaker
+	pop af
+	ld hl, TourneyOppPostBattleText
+	call TourneyLoadOppText
+	push hl
+	call LoadStandardFont
+	call OpenText
+	pop hl
+	jp BattleTextBox
+	
+TourneyLoadOppText:
+	push hl
+	farcall TourneyFindNextOpp
+	pop hl
 .loop3
 	dec a
 	cp 0
@@ -286,7 +370,7 @@ TourneyLoadOppIntroText:
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
-	jp BattleTextBox
+	ret
 	
 TourneyOppIntroText:
 	dw -1
@@ -423,6 +507,11 @@ MasterTourneyIntroText:
 TourneyLoadTrainerData:
 	farcall TourneyFindNextOpp
 	push af
+	
+	call TourneyGetTextBoxSpeaker
+	
+	pop af
+	push af
 	ld hl, TourneyOppWinLossText
 .loop
 	dec a
@@ -442,26 +531,6 @@ TourneyLoadTrainerData:
 	ld [hli], a
 	ld [hl], a
 	
-	ld a, (1 << 7) | 1
-	ld [wBattleScriptFlags], a
-	pop af
-	push af
-	dec a
-	add 100 ;number of trainer classes before the tourney classes
-	ld [wOtherTrainerClass], a
-	ld a, 1
-	ld [wOtherTrainerID], a
-	pop af
-	push af
-	ld hl, TourneyOppTextboxSpeakers
-.loop2
-	dec a
-	cp 0
-	inc hl
-	jr nz, .loop2
-	ld a, [hl]
-	ld [wTextBoxSpeaker], a	
-	
 	pop af
 	ld hl, TourneyOppPreBattleText
 .loop3
@@ -478,6 +547,28 @@ TourneyLoadTrainerData:
 	call OpenText
 	pop hl
 	jp BattleTextBox
+	
+TourneyGetTextBoxSpeaker:
+	push af
+	ld a, (1 << 7) | 1
+	ld [wBattleScriptFlags], a
+	pop af
+	push af
+	dec a
+	add 100 ;number of trainer classes before the tourney classes
+	ld [wOtherTrainerClass], a
+	ld a, 1
+	ld [wOtherTrainerID], a
+	pop af
+	ld hl, TourneyOppTextboxSpeakers
+.loop2
+	dec a
+	cp 0
+	inc hl
+	jr nz, .loop2
+	ld a, [hl]
+	ld [wTextBoxSpeaker], a	
+	ret
 	
 TourneyOppPreBattleText:
 	dw -1
@@ -533,7 +624,7 @@ RodneyTourneyText:
 	done
 	
 WendyTourneyText:
-	text "So, we did end up"
+	text "So, we DID end up"
 	line "meeting in the"
 	cont "bracket, huh?"
 	
@@ -558,8 +649,7 @@ CharlieTourneyText:
 	
 	para "I take it you've"
 	line "gotten better"
-	cont "since last time,"
-	cont "huh?"
+	cont "since last time?"
 	
 	para "Yeah well, me too!"
 	
@@ -593,11 +683,10 @@ LeilaniTourneyText:
 	para "You've made it"
 	line "so far!"
 	
-	para "GRAMMA is so proud"
-	line "of you."
+	para "Good for you,"
+	line "honey!"
 	
-	para "Sorry, though,"
-	line "honey."
+	para "Sorry, though."
 	
 	para "I promised the"
 	line "girls I would win."
@@ -611,18 +700,17 @@ RockyTourneyText:
 	line "the dragon's"
 	cont "“chosen one”."
 	
-	para "Well, “chosen one”"
-	line "or not, you're"
-	cont "one impressive"
-	cont "TRAINER for sure."
-	
 	para "You really came"
 	line "through at both"
 	cont "the museum and"
 	cont "the shrine."
 	
-	para "I'm glad we get"
-	line "a rematch!"
+	para "I should thank"
+	line "you."
+	
+	para "But, don't think"
+	line "that means I'll"
+	cont "let you win!"
 	done
 	
 DarcyTourneyText:
@@ -633,9 +721,7 @@ DarcyTourneyText:
 	para "This isn't going"
 	line "to go well…"
 	
-	para "…"
-	
-	para "No!"
+	para "…<WAIT_L>No!"
 	
 	para "You know what?"
 	
@@ -654,7 +740,8 @@ MinaTourneyText:
 	line "me, <PLAYER>?"
 	
 	para "I didn't come to"
-	line "ONWA just to paint."
+	line "the ONWA REGION"
+	cont "just to paint."
 	
 	para "I was invited to"
 	line "compete in this"
@@ -667,7 +754,7 @@ MinaTourneyText:
 	para "That's like a"
 	line "GYM LEADER!"
 	
-	para "Anyway,<WAIT_M> let's go,"
+	para "Anyway,<WAIT_S> let's go,"
 	line "<PLAYER>!"
 	done
 	
@@ -676,11 +763,11 @@ ErikaTourneyText:
 	
 	para "GRAMMA told me you"
 	line "would be competing"
-	cont "in this tournament."
+	cont "in the tournament."
 	
 	para "When I heard that,"
 	line "I just knew I had"
-	cont "to accept the offer"
+	cont "to take the chance"
 	cont "to compete myself."
 	
 	para "The girls are here"
@@ -698,20 +785,6 @@ DisguiseManTourneyText:
 	
 	para "for this will be"
 	line "our final meeting."
-	
-	para "But do not cry,"
-	line "and do not sob."
-	
-	para "It's been great"
-	line "fun when we've"
-	cont "hobnobbed."
-	
-	para "But all good"
-	line "things must surely"
-	cont "end."
-	
-	para "It's sad, but true,"
-	line "my little friend."
 	
 	para "So, one more fight"
 	line "before I dash."
@@ -750,7 +823,7 @@ LedianRangerTourneyText:
 	
 	para "Fighting for"
 	line "justice in my"
-	cont "name, no doubt."
+	cont "sted, no doubt."
 	
 	para "Though that's"
 	line "surely the case,"
@@ -819,24 +892,20 @@ StanleyTourneyWinText:
 	para "It wasn't enough!"
 	done
 RodneyTourneyWinText:
-	text "Hahaha!"
+	text "Amazing!"
 	
-	para "Way to go,"
-	line "kid!"
+	para "You withstood the"
+	line "waves!"
 	done
 	
 WendyTourneyWinText:
-	text "I never should"
-	line "have flown you"
-	cont "here."
-	
-	para "Hehehe!"
-	line "Just kidding!"
+	text "Well, you shot"
+	line "me down!"
 	done
 	
 CharlieTourneyWinText:
-	text "Your spirit still"
-	line "burns white hot!"
+	text "You didn't even"
+	line "break a sweat!"
 	done
 	
 PollyTourneyWinText:
@@ -858,17 +927,12 @@ RockyTourneyWinText:
 	done
 	
 DarcyTourneyWinText:
-	text "Ohh!"
-	
-	para "One day I'll prove"
-	line "myself against you"
-	cont "for sure!"
+	text "Ohhhh!"
 	done
 	
 MinaTourneyWinText:
-	text "I'm always shocked"
-	line "by your strength,"
-	cont "<PLAYER>!"
+	text "Ah!"
+	line "Of course!"
 	done
 	
 ErikaTourneyWinText:
@@ -906,9 +970,285 @@ ArmstrongTourneyWinText:
 	done
 	
 MasterTourneyWinText:
+	text "…<WAIT_M>!"
+	done
+	
+TourneyOppPostBattleText:
+	dw -1
+	dw StanleyTourneyText2
+	dw RodneyTourneyText2
+	dw WendyTourneyText2
+	dw CharlieTourneyText2
+	dw PollyTourneyText2
+	dw LeilaniTourneyText2
+	dw RockyTourneyText2
+	dw DarcyTourneyText2
+	dw MinaTourneyText2
+	dw ErikaTourneyText2
+	dw DisguiseManTourneyText2
+	dw FrankieTourneyText2
+	dw LedianRangerTourneyText2
+	dw ArmstrongTourneyText2
+	dw MasterTourneyText2
+	
+StanleyTourneyText2:
+	text "Well, you've out-"
+	line "smarted me again."
+	
+	para "I may be top of"
+	line "my class, but"
+	cont "that doesn't mean"
+	cont "I'm the best."
+	
+	para "I'll just have to"
+	line "study and train"
+	cont "even harder!"
+	done
+	
+RodneyTourneyText2:
+	text "Hahaha!"
+	
+	para "Way to go, kid!"
+	
+	para "The way you battle"
+	line "is so fierce!"
+	
+	para "Just ike an"
+	line "unstoppable"
+	cont "tsunami."
+	
+	para "You've really"
+	line "earned my respect!"
+	done
+	
+WendyTourneyText2:
+	text "I never should"
+	line "have given you"
+	cont "a ride here…"
+	
+	para "Hehehe!"
+	line "Just kidding!"
+	
+	para "You've earned your"
+	line "spot this high."
+	
+	para "I'll be rooting for"
+	line "you, so go all the"
+	cont "way to the top!"
+	done
+	
+CharlieTourneyText2:
+	text "Aw yeah!"
+	
+	para "You've still"
+	line "got it!"
+	
+	para "We gave it our"
+	line "best shot, and"
+	cont "you still burned"
+	cont "us out."
+	
+	para "Well, don't relax"
+	line "yet."
+	
+	para "You still got"
+	line "plenty of work"
+	cont "ahead of you!"
+	done
+	
+PollyTourneyText2:
+	text "I thought you"
+	line "might win."
+	
+	para "Nah, actually, I"
+	line "expected it."
+	
+	para "You, like,"
+	line "always beat me."
+	
+	para "I guess it's kinda"
+	line "cool to have a"
+	cont "goal to work to."
+	
+	para "Or whatever…"
+	done
+	
+LeilaniTourneyText2:
+	text "Well, you beat"
+	line "GRAMMA."
+	
+	para "I'm so proud of"
+	line "you, sweetie!"
+	
+	para "Now don't you go"
+	line "losing, you hear?"
+	
+	para "I'll be watching."
+	done
+	
+RockyTourneyText2:
+	text "Well, “chosen one”"
+	line "or not, you're"
+	cont "one impressive"
+	cont "TRAINER for sure."
+	
+	para "I guess I have"
+	line "a lot of catching"
+	cont "up to do."
+	
+	para "At this rate, even"
+	line "my kid sister is"
+	cont "gonna surpass me!"
+	done
+	
+DarcyTourneyText2:
 	text "…"
 	
-	para "Very well…"
+	para "Sigh…"
+	
+	para "Good battle,"
+	line "<PLAYER>."
+	
+	para "One day I'll prove"
+	line "myself against you"
+	cont "for sure!"
+	
+	para "That's what it'll"
+	line "take for me to be"
+	cont "a worthy village"
+	cont "champion!"
+	done
+	
+MinaTourneyText2:
+	text "How many times is"
+	line "that now?"
+	
+	para "Heh heh heh…"
+	
+	para "Some things never"
+	line "change."
+	
+	para "I'm glad we met,"
+	line "<PLAYER>!"
+	
+	para "You made my trip"
+	line "across ONWA some-"
+	cont "thing special."
+	
+	para "I'll be cheering"
+	line "for you, ok?"
+	
+	para "ALOLA!"
+	done
+	
+ErikaTourneyText2:
+	text "Well, that was"
+	line "a delightful"
+	cont "match."
+	
+	para "Losing leaves a"
+	line "bitter aftertaste,"
+	
+	para "but I'll be"
+	line "alright."
+	
+	para "I just hope the"
+	line "girls won't be"
+	cont "too disappointed."
+	done
+	
+DisguiseManTourneyText2:
+	text "I have to say"
+	line "congrats to you."
+	
+	para "And now I leave"
+	line "without ado."
+	
+	para "As all good things"
+	line "must surely end."
+	
+	para "It's sad, but true,"
+	line "my little friend."
+	
+	para "But do not cry,"
+	line "and do not sob."
+	
+	para "It's been great"
+	line "fun when we've"
+	cont "hobnobbed."
+	
+	para "So raise your chin"
+	line "and dry your eyes,"
+	
+	para "for I'm the MASTER"
+	line "OF DISGUISE!"
+	done
+	
+FrankieTourneyText2:
+	text "Beaten by the"
+	line "NIDOKINGS again,"
+	cont "huh?"
+	
+	para "…<WAIT_M>Alright, fine."
+	
+	para "The BUNEARY BOYS"
+	line "will stand down"
+	cont "for now."
+	
+	para "Our new hideout is"
+	line "better anyway."
+	
+	para "Less smelly."
+	
+	para "But don't get it"
+	line "twisted,"
+	
+	para "we'll be back"
+	line "someday!"
+	
+	para "You can't keep the"
+	line "BUNEARY BOYS down!"
+	done
+	
+LedianRangerTourneyText2:
+	text "Done in!"
+	
+	para "And by my own"
+	line "sidekick, no less!"
+	
+	para "Is this the end of"
+	line "the LEDIAN RANGER?"
+	
+	para "…<WAIT_L>Yes.<WAIT_M>"
+	line "Yes it is."
+	
+	para "I don't deserve"
+	line "to wear this"
+	cont "helmet."
+	done
+	
+ArmstrongTourneyText2:
+	text "YOU!"
+	
+	para "YOU!"
+
+	para "DISRESPECTFUL!"
+	
+	para "LITTLE!!"
+	
+	para "WHEEEEEEEELP!!!"
+	
+	para "GRAAAAAAHHH!!!!"
+	
+	para "…"
+	
+	para "Spending time on"
+	line "you ain't good for"
+	cont "my blood pressure…"
+	done
+	
+MasterTourneyText2:
+	text "…<WAIT_L><WAIT_L>Very well…"
 	done
 	
 TourneyOppTextboxSpeakers:
@@ -1078,6 +1418,26 @@ PokemonLeagueArenaLedianRangerText:
 	line "victory!"
 	done
 	
+PokemonLeagueArenaLedianRangerText2:
+	text "Goodbye,"
+	line "KID LEDYBA."
+	
+	para "Now you're the"
+	line "LEDIAN RANGER."
+	
+	para "…<WAIT_L>I think I'm gonna"
+	line "go home and lie"
+	cont "down for a bit…"
+	done
+	
+PokemonLeagueArenaLedianRangerText3:
+	text "Go! <WAIT_S>Go!<WAIT_S>"
+	line "LEDIAN RANGER!"
+	
+	para "COMET PUNCH to"
+	line "depression!"
+	done
+	
 PokemonLeagueArenaDisguiseManText:
 	text "Ohohohoho!"
 	
@@ -1086,6 +1446,10 @@ PokemonLeagueArenaDisguiseManText:
 	
 	para "'Tis I, the MASTER"
 	line "OF DISGUISE!"
+	done
+	
+PokemonLeagueArenaDisguiseManText2:
+	text "Ohohohoho!"
 	done
 	
 PokemonLeagueArenaLedianRangerAnimation:
@@ -1190,6 +1554,14 @@ Movement_ArenaWalk3:
 	slow_step_up
 	step_end
 	
+Movement_ArenaWalkAway:
+	step_right
+	step_right
+	step_right
+	step_right
+	step_right
+	step_end
+	
 Movement_PokemonLeagueArena_DisguiseMan:
 	turn_head_left
 	turn_head_up
@@ -1222,3 +1594,38 @@ Movement_PokemonLeagueArena_DisguiseMan:
 	turn_head_down
 	step_sleep 12
 	step_end
+	
+Movement_PokemonLeagueArena_DisguiseMan2:
+	turn_head_down
+	step_sleep 12
+	turn_head_left
+	step_sleep 6
+	turn_head_up
+	step_sleep 3
+	turn_head_right
+	step_sleep 2
+	turn_head_down
+	step_sleep 2
+	turn_head_left
+	step_sleep 2
+	turn_head_up
+	step_sleep 1
+	turn_head_right
+	step_sleep 1
+	turn_head_down
+	step_sleep 1
+	turn_head_left
+	step_sleep 1
+	turn_head_up
+	turn_head_right
+	turn_head_down
+	turn_head_left
+	turn_head_up
+	turn_head_right
+	turn_head_down
+	turn_head_left
+	turn_head_up
+	turn_head_right
+	turn_head_down
+	step_end
+	

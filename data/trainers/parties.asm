@@ -5650,7 +5650,7 @@ RockyGroup2:
 	db "@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 254, HOUNDOOM
+	db 1, BULBASAUR
 	db -1 ; end
 
 ; ================

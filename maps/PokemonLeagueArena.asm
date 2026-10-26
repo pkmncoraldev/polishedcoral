@@ -10,9 +10,10 @@ PokemonLeagueArena_MapScriptHeader:
 	db 1 ; callbacks
 	callback MAPCALLBACK_TILES, PokemonLeagueArenaCallback
 
-	db 2 ; warp events
+	db 3 ; warp events
+	warp_def  4, 36, 1, POKEMON_LEAGUE_INSIDE
 	warp_def  5, 12, 1, POKEMON_LEAGUE_INSIDE
-	warp_def 10, 12, 1, POKEMON_LEAGUE_ARENA
+	warp_def 10, 12, 2, POKEMON_LEAGUE_ARENA
 
 	db 0 ; coord events
 
@@ -42,9 +43,43 @@ PokemonLeagueArenaTrigger5:
 ArenaEntryScene:
 	variablesprite SPRITE_GENERAL_VARIABLE_1, SPRITE_MISC_PALM
 	applyonemovement PLAYER, hide_person
+	
+
+	checkscene
+	if_equal 1, .round1
+	if_equal 2, .round2
+	if_equal 3, .round3
+	if_equal 4, .round4
+	
+.round1
 	callasm LoadMapPals
 	special FadeInPalettes
-	pause 100
+	pause 70
+	opentext TEXTBOX_PA
+	writetext ArenaIntroText1
+	waitbutton
+	closetext
+	pause 25
+	special FadeOutPalettesBlack
+	warp_stealth RIGHT, POKEMON_LEAGUE_ARENA, 12, 9
+	applyonemovement PLAYER, hide_person
+	closetext
+	
+	scall ArenaTurnOffLights
+	
+	callasm TestLoadTiles
+	
+	callasm LoadMapPals
+	special FadeInPalettes
+	pause 25
+	
+.round2
+.round3
+.round4
+	callasm LoadMapPals
+	special FadeInPalettes
+	
+.round_intro_done
 	opentext
 	writetext ArenaText1
 	waitbutton
@@ -1380,12 +1415,102 @@ PokemonLeagueArenaSetOppSprite:
 	ld [wPlaceBallsY], a
 	ret
 	
-	
 ArenaIncTrigger:
 	ld a, [wPokemonLeagueArenaTrigger]
 	inc a
 	ld [wPokemonLeagueArenaTrigger], a
 	ret
+	
+ArenaTurnOffLights:
+;lights
+	changeblock 8, 2, 88
+	changeblock 8, 4, 92
+	changeblock 8, 6, 96
+	changeblock 16, 2, 89
+	changeblock 16, 4, 93
+	changeblock 16, 6, 97
+;screen
+	changeblock 10, 2, 17
+	changeblock 12, 2, 17
+	changeblock 14, 2, 17
+	changeblock 10, 4, 0
+	changeblock 12, 4, 0
+	changeblock 14, 4, 0
+	changeblock 10, 6, 25
+	changeblock 12, 6, 25
+	changeblock 14, 6, 25
+;floor first row
+	changeblock 6, 8, 90
+	changeblock 8, 8, 67
+	changeblock 10, 8, 76
+	changeblock 12, 8, 77
+	changeblock 14, 8, 78
+	changeblock 16, 8, 71
+	changeblock 18, 8, 91
+;floor second row
+	changeblock 4, 10, 33
+	changeblock 6, 10, 74
+	changeblock 8, 10, 75
+	changeblock 10, 10, 80
+	changeblock 12, 10, 81
+	changeblock 14, 10, 82
+	changeblock 16, 10, 75
+	changeblock 18, 10, 72
+	changeblock 20, 10, 33
+;floor third floor
+	changeblock 6, 12, 79
+	changeblock 8, 12, 84
+	changeblock 10, 12, 75
+	changeblock 12, 12, 85
+	changeblock 14, 12, 75
+	changeblock 16, 12, 86
+	changeblock 18, 12, 83
+	callasm GenericFinishBridge
+	end
+	
+TestLoadTiles:
+	lb bc, BANK(TourneyTestGFX), $30
+	ld hl, TourneyTestGFX
+	ld de, VTiles2 tile $00
+	call DecompressRequest2bpp
+	ret
+	
+TourneyTestGFX:
+	INCBIN "gfx/tourney/tourney.2bpp.lz"
+	
+ArenaIntroText1:
+	text "Ladies and"
+	line "gentleman!"
+	
+	para "Welcome to the"
+	line "ONWA #MON"
+	cont "LEAGUE TOURNAMENT!"
+	done
+	
+ArenaIntroText2:
+	text "The TRAINERS here"
+	line "have proven them-"
+	cont "selves as some of"
+	cont "the best in the"
+	cont "ONWA REGION!"
+	
+	para "They'll be duking"
+	line "it out one-on-one"
+	cont "in four rounds for"
+	cont "the chance to take"
+	cont "on the CHAMPION!"
+	done
+	
+ArenaIntroText3:
+	text "ANDRE!"
+	done
+	
+ArenaIntroText4:
+	text "Without futher"
+	line "ado, let's get"
+	cont "started with"
+	cont "ROUND 1!"
+	done
 	
 ArenaText1:
 	text "First up for"

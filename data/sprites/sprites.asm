@@ -183,7 +183,7 @@ SpriteHeaders:
 	overworld_sprite MinaSpriteGFX, WALKING_SPRITE, PAL_OW_PINK
 	overworld_sprite DittoOwSpriteGFX, STANDING_SPRITE, PAL_OW_PINK
 	overworld_sprite LedianRangerSpriteGFX, STANDING_SPRITE, PAL_OW_RED
-	overworld_sprite LedianRangerFaceSpriteGFX, STANDING_SPRITE, PAL_OW_RED
+	overworld_sprite LedianRangerFaceSpriteGFX, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite LedianRangerPoseSpriteGFX, STANDING_SPRITE, PAL_OW_RED
 	overworld_sprite LedianRangerFacePoseSpriteGFX, STANDING_SPRITE, PAL_OW_RED
 	overworld_sprite SwimmerGirlLandSpriteGFX, WALKING_SPRITE, PAL_OW_GREEN

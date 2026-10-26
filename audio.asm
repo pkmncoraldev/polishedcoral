@@ -151,6 +151,7 @@ INCLUDE "audio/music/trainervictory.asm"
 INCLUDE "audio/music/rivalbattle.asm"
 INCLUDE "audio/music/evolution.asm"
 INCLUDE "audio/music/pokemonleague.asm"
+INCLUDE "audio/music/pokemonleague2.asm"
 
 
 SECTION "Music 14", ROMX

@@ -25,7 +25,7 @@ PokemonLeagueArena_MapScriptHeader:
 	person_event SPRITE_MOM,  7,  2, SPRITEMOVEDATA_TILE_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
 	person_event SPRITE_SPRUCE,  7,  3, SPRITEMOVEDATA_TILE_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
 	person_event SPRITE_MISC_PALM,  1,  9, SPRITEMOVEDATA_TILE_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
-	person_event SPRITE_FAT_GUY,  1,  10, SPRITEMOVEDATA_TILE_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
+	person_event SPRITE_FAT_GUY,  1, 10, SPRITEMOVEDATA_TILE_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
 
 PokemonLeagueArenaTrigger0:
 	special Special_UpdatePalsInstant
@@ -52,8 +52,10 @@ ArenaEntryScene:
 	if_equal 4, .round4
 	
 .round1
+	dotrigger 5
 	callasm LoadMapPals
 	special FadeInPalettes
+	playmusic MUSIC_POKEMON_LEAGUE_2
 	pause 70
 	opentext TEXTBOX_PA
 	writetext ArenaIntroText1
@@ -64,14 +66,49 @@ ArenaEntryScene:
 	warp_stealth RIGHT, POKEMON_LEAGUE_ARENA, 12, 9
 	applyonemovement PLAYER, hide_person
 	closetext
-	
 	scall ArenaTurnOffLights
-	
-	callasm TestLoadTiles
-	
 	callasm LoadMapPals
 	special FadeInPalettes
 	pause 25
+	opentext TEXTBOX_PA
+	writetext ArenaIntroText2
+	waitbutton
+	closetext
+	pause 25
+	applymovement PLAYER, Movement_ArenaWalk3
+	pause 35
+	scall ArenaTurnOnLights
+	pause 25
+	opentext TEXTBOX_PA
+	writetext ArenaIntroText3
+	waitbutton
+	closetext
+	pause 25
+	scall ArenaTurnOnScreen
+	pause 25
+	opentext TEXTBOX_PA
+	writetext ArenaIntroText4
+	waitbutton
+	closetext
+	pause 35
+	changeblock 10, 2, 15
+	changeblock 12, 2, 15
+	changeblock 14, 2, 15
+	changeblock 10, 4, 84
+	changeblock 12, 4, 85
+	changeblock 14, 4, 86
+	changeblock 10, 6, 23
+	changeblock 12, 6, 23
+	changeblock 14, 6, 23
+	callasm GenericFinishBridge
+	pause 10
+	opentext TEXTBOX_PA
+	writetext ArenaIntroText5
+	waitbutton
+	closetext	
+	pause 35
+	dotrigger 1
+	callasm TourneyLoadScreenOppTiles
 	
 .round2
 .round3
@@ -80,7 +117,7 @@ ArenaEntryScene:
 	special FadeInPalettes
 	
 .round_intro_done
-	opentext
+	opentext TEXTBOX_PA
 	writetext ArenaText1
 	waitbutton
 	closetext
@@ -180,8 +217,10 @@ ArenaEntryScenePart2:
 	waitbutton
 	closetext
 .skip_ledian
-	applymovement PLAYER, Movement_ArenaWalk3
-	pause 25
+	applymovement PLAYER, Movement_ArenaWalk5
+	pause 35
+	special Special_FadeOutMusic
+	pause 35
 	opentext TEXTBOX_PA
 	writetext ArenaText2
 	waitbutton
@@ -209,9 +248,11 @@ ArenaEntryScenePart2:
 	farwritetext StdBlankText
 	pause 6
 	writetext TourneyRoundWinText2
-	waitbutton
+	playmusic MUSIC_GYM_VICTORY
+	pause 60
 	closetext
 	callasm ArenaIncTrigger
+	pause 25
 	callasm TourneyLoadOppPostBattleText
 	waitbutton
 	closetext
@@ -1307,92 +1348,47 @@ TourneyOppTextboxSpeakers:
 PokemonLeagueArenaCallback:
 	writebyte (1 << 7) | (PAL_OW_PINK << 4)
 	special Special_SetPlayerPalette
+	changeblock 12, 4, 27
+	changeblock 14, 4, 36
 	checkevent EVENT_PLAYER_IS_FEMALE
 	iftrue .girl
-	changeblock 10, 4, 52
+	changeblock 10, 4, 37
 	jump .cont
 .girl
-	changeblock 10, 4, 53
+	changeblock 10, 4, 38
 .cont
 	checkscene
 	if_equal 1, .round1
 	if_equal 2, .round2
 	if_equal 3, .round3
 	if_equal 4, .round4
-	jump .cont2
+	return
 .round1
-	changeblock 14, 6, 54
-	jump .cont2
+	changeblock 10, 6, 40
+	changeblock 12, 6, 41
+	changeblock 14, 6, 42
+	return
 .round2
-	changeblock 14, 6, 55
+	changeblock 10, 6, 40
+	changeblock 12, 6, 41
+	changeblock 14, 6, 43
 	jump .cont2
 .round3
-	changeblock 14, 6, 58
+	changeblock 10, 6, 40
+	changeblock 12, 6, 41
+	changeblock 14, 6, 46
 	jump .cont2
 .round4
-	changeblock 14, 6, 59
+	changeblock 10, 6, 40
+	changeblock 12, 6, 41
+	changeblock 14, 6, 47
 	jump .cont2
 .cont2
-	callasm PokemonLeagueArenaFindNextOppAsm
-	if_equal 1, .stanley
-	if_equal 2, .rodney
-	if_equal 3, .wendy
-	if_equal 4, .charlie
-	if_equal 5, .polly
-	if_equal 6, .leilani
-	if_equal 7, .rocky
-	if_equal 8, .darcy
-	if_equal 9, .mina
-	if_equal 10, .erika
-	if_equal 11, .disguise
-	if_equal 12, .frankie
-	if_equal 13, .ledian
-	if_equal 14, .armstrong
-	if_equal 15, .master
-.stanley
+	changeblock 10, 6, 40
+	changeblock 12, 6, 41
+	changeblock 12, 4, 27
 	changeblock 14, 4, 36
-	return
-.rodney
-	changeblock 14, 4, 37
-	return
-.wendy
-	changeblock 14, 4, 38
-	return
-.charlie
-	changeblock 14, 4, 39
-	return
-.polly
-	changeblock 14, 4, 40
-	return
-.leilani
-	changeblock 14, 4, 41
-	return
-.rocky
-	changeblock 14, 4, 42
-	return
-.darcy
-	changeblock 14, 4, 43
-	return
-.mina
-	changeblock 14, 4, 44
-	return
-.erika
-	changeblock 14, 4, 45
-	return
-.disguise
-	changeblock 14, 4, 46
-	return
-.frankie
-	changeblock 14, 4, 47
-	return
-.ledian
-	changeblock 14, 4, 48
-	return
-.armstrong
-	changeblock 14, 4, 49
-	return
-.master
-	changeblock 14, 4, 50
+	callasm TourneyLoadScreenOppTiles
 	return
 
 PokemonLeagueArenaFindNextOppAsm:
@@ -1423,12 +1419,12 @@ ArenaIncTrigger:
 	
 ArenaTurnOffLights:
 ;lights
-	changeblock 8, 2, 88
-	changeblock 8, 4, 92
-	changeblock 8, 6, 96
-	changeblock 16, 2, 89
-	changeblock 16, 4, 93
-	changeblock 16, 6, 97
+	changeblock 8, 2, 59
+	changeblock 8, 4, 63
+	changeblock 8, 6, 67
+	changeblock 16, 2, 76
+	changeblock 16, 4, 77
+	changeblock 16, 6, 78
 ;screen
 	changeblock 10, 2, 17
 	changeblock 12, 2, 17
@@ -1440,43 +1436,160 @@ ArenaTurnOffLights:
 	changeblock 12, 6, 25
 	changeblock 14, 6, 25
 ;floor first row
-	changeblock 6, 8, 90
-	changeblock 8, 8, 67
-	changeblock 10, 8, 76
-	changeblock 12, 8, 77
-	changeblock 14, 8, 78
-	changeblock 16, 8, 71
-	changeblock 18, 8, 91
+	changeblock 6, 8, 79
+	changeblock 8, 8, 49
+	changeblock 10, 8, 64
+	changeblock 12, 8, 65
+	changeblock 14, 8, 66
+	changeblock 16, 8, 50
+	changeblock 18, 8, 75
 ;floor second row
 	changeblock 4, 10, 33
-	changeblock 6, 10, 74
-	changeblock 8, 10, 75
-	changeblock 10, 10, 80
-	changeblock 12, 10, 81
-	changeblock 14, 10, 82
-	changeblock 16, 10, 75
-	changeblock 18, 10, 72
+	changeblock 6, 10, 51
+	changeblock 8, 10, 71
+	changeblock 10, 10, 68
+	changeblock 12, 10, 69
+	changeblock 14, 10, 70
+	changeblock 16, 10, 71
+	changeblock 18, 10, 55
 	changeblock 20, 10, 33
 ;floor third floor
-	changeblock 6, 12, 79
-	changeblock 8, 12, 84
-	changeblock 10, 12, 75
-	changeblock 12, 12, 85
-	changeblock 14, 12, 75
-	changeblock 16, 12, 86
-	changeblock 18, 12, 83
+	changeblock 6, 12, 35
+	changeblock 8, 12, 72
+	changeblock 10, 12, 71
+	changeblock 12, 12, 73
+	changeblock 14, 12, 71
+	changeblock 16, 12, 74
+	changeblock 18, 12, 39
 	callasm GenericFinishBridge
 	end
 	
-TestLoadTiles:
-	lb bc, BANK(TourneyTestGFX), $30
-	ld hl, TourneyTestGFX
-	ld de, VTiles2 tile $00
+ArenaTurnOnLights:
+;lights
+	changeblock 8, 2, 16
+	changeblock 8, 4, 20
+	changeblock 8, 6, 24
+	changeblock 16, 2, 18
+	changeblock 16, 4, 22
+	changeblock 16, 6, 26
+	changeblock 10, 6, 80
+	changeblock 12, 6, 80
+	changeblock 14, 6, 80
+;floor first row
+	changeblock 6, 8, 9
+	changeblock 8, 8, 30
+	changeblock 10, 8, 52
+	changeblock 12, 8, 53
+	changeblock 14, 8, 54
+	changeblock 16, 8, 31
+	changeblock 18, 8, 8
+;floor second row
+	changeblock 4, 10, 34
+	changeblock 6, 10, 4
+	changeblock 8, 10, 4
+	changeblock 10, 10, 56
+	changeblock 12, 10, 57
+	changeblock 14, 10, 58
+	changeblock 16, 10, 4
+	changeblock 18, 10, 4
+	changeblock 20, 10, 32
+;floor third floor
+	changeblock 6, 12, 28
+	changeblock 8, 12, 60
+	changeblock 10, 12, 4
+	changeblock 12, 12, 61
+	changeblock 14, 12, 4
+	changeblock 16, 12, 62
+	changeblock 18, 12, 29
+	playsound SFX_BURN
+	callasm GenericFinishBridge
+	end
+	
+ArenaTurnOnScreen:
+;screen
+	changeblock 10, 2, 15
+	changeblock 12, 2, 81
+	changeblock 14, 2, 15
+	changeblock 10, 4, 19
+	changeblock 12, 4, 82
+	changeblock 14, 4, 19
+	changeblock 10, 6, 23
+	changeblock 12, 6, 83
+	changeblock 14, 6, 23
+	playsound SFX_HORN_ATTACK
+	callasm GenericFinishBridge
+	end
+	
+TourneyLoadScreenOppTiles:
+	ld hl, TourneyScreenOppGFX
+	call TourneyLoadOppText
+	lb bc, BANK(StanleyScreenFace), 16
+	ld de, VTiles2 tile $30
 	call DecompressRequest2bpp
 	ret
 	
-TourneyTestGFX:
-	INCBIN "gfx/tourney/tourney.2bpp.lz"
+TourneyScreenOppGFX:
+	dw -1
+	dw StanleyScreenFace
+	dw RodneyScreenFace
+	dw WendyScreenFace
+	dw CharlieScreenFace
+	dw PollyScreenFace
+	dw LeilaniScreenFace
+	dw RockyScreenFace
+	dw DarcyScreenFace
+	dw MinaScreenFace
+	dw ErikaScreenFace
+	dw DisguiseManScreenFace
+	dw FrankieScreenFace
+	dw LedianRangerScreenFace
+	dw ArmstrongScreenFace
+	dw MasterScreenFace
+	
+StanleyScreenFace:
+	INCBIN "gfx/tourney/stanley.2bpp.lz"
+	
+RodneyScreenFace:
+	INCBIN "gfx/tourney/rodney.2bpp.lz"
+	
+WendyScreenFace:
+	INCBIN "gfx/tourney/wendy.2bpp.lz"
+	
+CharlieScreenFace:
+	INCBIN "gfx/tourney/charlie.2bpp.lz"
+	
+PollyScreenFace:
+	INCBIN "gfx/tourney/polly.2bpp.lz"
+	
+LeilaniScreenFace:
+	INCBIN "gfx/tourney/leilani.2bpp.lz"
+	
+RockyScreenFace:
+	INCBIN "gfx/tourney/rocky.2bpp.lz"
+	
+DarcyScreenFace:
+	INCBIN "gfx/tourney/darcy.2bpp.lz"
+	
+MinaScreenFace:
+	INCBIN "gfx/tourney/mina.2bpp.lz"
+	
+ErikaScreenFace:
+	INCBIN "gfx/tourney/erika.2bpp.lz"
+	
+DisguiseManScreenFace:
+	INCBIN "gfx/tourney/disguise.2bpp.lz"
+	
+FrankieScreenFace:
+	INCBIN "gfx/tourney/frankie.2bpp.lz"
+	
+LedianRangerScreenFace:
+	INCBIN "gfx/tourney/ledian.2bpp.lz"
+	
+ArmstrongScreenFace:
+	INCBIN "gfx/tourney/armstrong.2bpp.lz"
+	
+MasterScreenFace:
+	INCBIN "gfx/tourney/master.2bpp.lz"
 	
 ArenaIntroText1:
 	text "Ladies and"
@@ -1493,23 +1606,26 @@ ArenaIntroText2:
 	cont "selves as some of"
 	cont "the best in the"
 	cont "ONWA REGION!"
+	done
 	
-	para "They'll be duking"
+ArenaIntroText3:
+	text "They'll be duking"
 	line "it out one-on-one"
 	cont "in four rounds for"
 	cont "the chance to take"
 	cont "on the CHAMPION!"
 	done
 	
-ArenaIntroText3:
+ArenaIntroText4:
 	text "ANDRE!"
 	done
 	
-ArenaIntroText4:
-	text "Without futher"
-	line "ado, let's get"
-	cont "started with"
-	cont "ROUND 1!"
+ArenaIntroText5:
+	text "And now, without"
+	line "futher ado,"
+	
+	para "let's get started"
+	line "with ROUND 1!"
 	done
 	
 ArenaText1:
@@ -1674,7 +1790,20 @@ Movement_ArenaWalk2_2:
 	
 Movement_ArenaWalk3:
 	slow_step_up
-;	slow_step_up
+	slow_step_up
+	slow_step_up
+	slow_step_up
+	step_end
+	
+Movement_ArenaWalk4:
+	slow_step_down
+	slow_step_down
+	slow_step_down
+	slow_step_down
+	step_end
+	
+Movement_ArenaWalk5:
+	slow_step_up
 	slow_step_up
 	slow_step_up
 	step_end

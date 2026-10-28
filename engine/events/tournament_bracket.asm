@@ -929,6 +929,9 @@ LoadRound3OAM:
 	ret
 	
 TourneyFindNextOpp::
+	ld a, [wPokemonLeagueArenaTrigger]
+	cp 5
+	jr z, .andre
 	ld a, [wTourneyRound1Results]
 	cp 0
 	jr z, TourneyFindRound1Opp
@@ -940,15 +943,9 @@ TourneyFindNextOpp::
 	and d
 	cp 0
 	jr z, TourneyFindRound3Opp
-; fallthru
-TourneyFindRound4Opp:
-	ld hl, wTourneyBracket5
-	ld a, 4
-	call TourneyFindOpp
-	ret c
-	ld hl, wTourneyBracket12
-	ld a, 4
-	call TourneyFindOpp
+	jr TourneyFindRound4Opp
+.andre
+	ld a, 0
 	ret
 	
 TourneyFindRound1Opp:
@@ -974,6 +971,16 @@ TourneyFindRound3Opp:
 	ret c
 	ld hl, wTourneyBracket10
 	ld a, 2
+	call TourneyFindOpp
+	ret
+	
+TourneyFindRound4Opp:
+	ld hl, wTourneyBracket5
+	ld a, 4
+	call TourneyFindOpp
+	ret c
+	ld hl, wTourneyBracket12
+	ld a, 4
 	call TourneyFindOpp
 	ret
 	

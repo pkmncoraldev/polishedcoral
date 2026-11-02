@@ -12,29 +12,6 @@ Music_Cycling_Ch1:
 	duty_cycle 0
 	vibrato 18, 2, 6
 	note_type 12, 12, 2
-	octave 3
-	note G#, 2
-	note B_, 2
-	octave 4
-	note C#, 2
-	octave 4
-	sound_call .sub1
-	sound_call .sub1
-	note E_, 2
-	note C#, 2
-	octave 3
-	note B_, 2
-	octave 4
-	note C#, 2
-	octave 3
-	note B_, 2
-	note G_, 2
-	note F#, 2
-	note G_, 2
-	note E_, 2
-	rest 6
-	octave 4
-	note E_, 2
 	rest 6
 .mainloop:
 	volume_envelope 10, 2
@@ -289,25 +266,6 @@ Music_Cycling_Ch2:
 	vibrato 18, 2, 6
 	note_type 12, 11, 2
 	octave 3
-	note E_, 2
-	note G#, 2
-	note G#, 2
-	octave 4
-	sound_call .sub1
-	sound_call .sub1
-	note B_, 2
-	note G#, 2
-	note F#, 2
-	note G#, 2
-	note F#, 2
-	note D_, 2
-	note C#, 2
-	note D_, 2
-	octave 2
-	note B_, 2
-	rest 6
-	octave 3
-	note B_, 2
 	rest 6
 .mainloop:
 	volume_envelope 11, 2
@@ -633,31 +591,6 @@ Music_Cycling_Ch3:
 	stereo_panning TRUE, TRUE
 	note_type 12, 1, 4
 	vibrato 22, 2, 3
-	octave 3
-	rest 6
-	note E_, 2
-	rest 12
-	octave 2
-	note B_, 2
-	octave 3
-	note E_, 2
-	rest 12
-	octave 2
-	note B_, 2
-	octave 3
-	note E_, 2
-	rest 2
-	note C#, 2
-	rest 2
-	octave 2
-	note B_, 2
-	rest 2
-	note F#, 2
-	rest 2
-	note E_, 2
-	rest 6
-	octave 3
-	note E_, 2
 	rest 6
 .mainloop:
 	stereo_panning FALSE, TRUE
@@ -850,26 +783,9 @@ Music_Cycling_Ch3:
 Music_Cycling_Ch4:
 	toggle_noise 3
 	drum_speed 12
-	rest 6
-	drum_note 11, 2
-	rest 12
-	drum_note 8, 2
-	drum_note 11, 2
-	rest 12
-	drum_note 8, 2
-	drum_note 11, 2
-	drum_note 8, 2
-	drum_note 11, 2
-	drum_note 8, 2
-	drum_note 11, 2
-	drum_note 8, 1
-	drum_note 2, 1
-	drum_note 8, 2
-	drum_note 8, 2
-	drum_note 11, 2
-	rest 6
-	drum_note 3, 2
-	rest 6
+	drum_note 11, 1
+	drum_note 11, 1
+	drum_note 3, 4
 .mainloop:
 .loop0:
 	sound_call .sub1

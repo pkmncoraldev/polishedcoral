@@ -1003,8 +1003,10 @@ wcf57:: ds 4 ; TODO: replace with meaningful label
 wLinkTimeoutFrames:: ds 2
 wcf5d:: ds 2 ; TODO: replace with meaningful label
 
+wIslandPlaneX::
 wMonType:: ds 1
 
+wIslandPlaneY::
 wCurSpecies::
 wCurMove::
 wCreditsSpawn::

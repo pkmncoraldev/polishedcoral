@@ -252,6 +252,10 @@ VBlank3::
 	ldh [rSCX], a
 	ldh a, [hSCY]
 	ldh [rSCY], a
+	ldh a, [hWY]
+	ldh [rWY], a
+	ldh a, [hWX]
+	ldh [rWX], a
 
 	call UpdateCGBPals
 	jr c, VBlank1EntryPoint

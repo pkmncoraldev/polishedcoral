@@ -1,4 +1,4 @@
-DEF ISLAND_CUTSCENE_PART_2_SPRITES EQU 16
+DEF ISLAND_CUTSCENE_PART_2_SPRITES EQU 20
 DEF ISLAND_CUTSCENE_PART_2_COVER_SPRITES EQU 11
 
 FlyToIslandCutscene::
@@ -35,6 +35,7 @@ FlyToIslandCutscene::
 	ld de, wUnknOBPals
 	ld bc, 3 palettes
 	rst CopyBytes
+	farcall IslandCutsceneGetPlayerPal
 	pop af
 	ldh [rSVBK], a
 	
@@ -52,6 +53,19 @@ FlyToIslandCutscene::
 	ld de, VTiles0 tile $00
 	call DecompressRequest2bpp
 	
+	ld a, [wPlayerGender]
+	cp 0
+	jr z, .got_gender
+	lb bc, BANK(IslandCutscenePart2CoraGFX), 4
+	ld hl, IslandCutscenePart2CoraGFX
+	ld de, VTiles0 tile $02
+	call DecompressRequest2bpp
+	lb bc, BANK(IslandCutscenePart2CoraGFX2), 4
+	ld hl, IslandCutscenePart2CoraGFX2
+	ld de, VTiles0 tile $12
+	call DecompressRequest2bpp
+	
+.got_gender
 	xor a
 	ldh [hBGMapMode], a
 	ldh [hSCX], a
@@ -68,9 +82,9 @@ FlyToIslandCutscene::
 	ld hl, wLYOverridesBackup
 	ld bc, wLYOverridesBackupEnd - wLYOverridesBackup
 	call ByteFill
-	ld a, 160
+	ld a, 180
 	ldh [hWX], a
-	ld a, 121
+	ld a, 129
 	ldh [hWY], a
 	ld a, $43
 	ldh [hLCDCPointer], a
@@ -168,7 +182,7 @@ IslandCutscenePart2_Jumptable:
 	
 .Part2
 	ld a, [wMagnetTrainDirection]
-	cp 125
+	cp 141
 	jr z, .next
 	call IslandCutscenePart2_ScrollCloudsFast
 	call IslandCutscenePart2ScrollSpritesX
@@ -304,7 +318,7 @@ IslandCutscenePart2_Jumptable:
 	
 .Part8
 	ld a, [wMagnetTrainDirection]
-	cp 43
+	cp 46
 	jp z, .next
 	call IslandCutscenePart2_ScrollCloudsFast
 	call IslandCutscenePart2ScrollSpritesX
@@ -440,40 +454,54 @@ IslandCutscenePart2_Cover_OAM:
 	dsprite 13, 0, 3, 0, $1f, $0
 
 IslandCutscenePart2_Characters_OAM1:
-	dsprite 19, 2, 24, 1, $00, $2
-	dsprite 19, 2, 25, 1, $01, $2
-	dsprite 20, 2, 24, 1, $10, $2
-	dsprite 20, 2, 25, 1, $11, $2
-	dsprite 19, 0, 19, 5, $04, $1
-	dsprite 19, 0, 20, 5, $05, $1
-	dsprite 20, 0, 19, 5, $14, $1
-	dsprite 20, 0, 20, 5, $15, $1
-	dsprite 21, 0, 19, 5, $06, $1
-	dsprite 21, 0, 20, 5, $07, $1
-	dsprite 22, 0, 19, 5, $16, $1
-	dsprite 22, 0, 20, 5, $17, $1
-	dsprite 23, 0, 19, 4, $15, $1 | X_FLIP | Y_FLIP
-	dsprite 23, 0, 20, 4, $14, $1 | X_FLIP | Y_FLIP
-	dsprite 24, 0, 19, 4, $05, $1 | X_FLIP | Y_FLIP
-	dsprite 24, 0, 20, 4, $04, $1 | X_FLIP | Y_FLIP
+;wendy
+	dsprite 20, 2, 26, 5, $00, $2
+	dsprite 20, 2, 27, 5, $01, $2
+	dsprite 21, 2, 26, 5, $10, $2
+	dsprite 21, 2, 27, 5, $11, $2
+;player
+	dsprite 20, 2, 28, 6, $02, $5
+	dsprite 20, 2, 29, 6, $03, $5
+	dsprite 21, 2, 28, 6, $12, $5
+	dsprite 21, 2, 29, 6, $13, $5
+;propeller
+	dsprite 20, 0, 21, 9, $07, $1
+	dsprite 20, 0, 22, 9, $08, $1
+	dsprite 21, 0, 21, 9, $17, $1
+	dsprite 21, 0, 22, 9, $18, $1
+	dsprite 22, 0, 21, 9, $09, $1
+	dsprite 22, 0, 22, 9, $0a, $1
+	dsprite 23, 0, 21, 9, $19, $1
+	dsprite 23, 0, 22, 9, $1a, $1
+	dsprite 24, 0, 21, 8, $18, $1 | X_FLIP | Y_FLIP
+	dsprite 24, 0, 22, 8, $17, $1 | X_FLIP | Y_FLIP
+	dsprite 25, 0, 21, 8, $08, $1 | X_FLIP | Y_FLIP
+	dsprite 25, 0, 22, 8, $07, $1 | X_FLIP | Y_FLIP
 	
 IslandCutscenePart2_Characters_OAM2:
-	dsprite 19, 2, 24, 1, $00, $2
-	dsprite 19, 2, 25, 1, $01, $2
-	dsprite 20, 2, 24, 1, $10, $2
-	dsprite 20, 2, 25, 1, $0f, $2
-	dsprite 19, 0, 19, 5, $08, $1
-	dsprite 19, 0, 20, 5, $09, $1
-	dsprite 20, 0, 19, 5, $18, $1
-	dsprite 20, 0, 20, 5, $19, $1
-	dsprite 21, 0, 19, 5, $0a, $1
-	dsprite 21, 0, 20, 5, $0b, $1
-	dsprite 22, 0, 19, 5, $1a, $1
-	dsprite 22, 0, 20, 5, $1b, $1
-	dsprite 23, 0, 19, 4, $19, $1 | X_FLIP | Y_FLIP
-	dsprite 23, 0, 20, 4, $18, $1 | X_FLIP | Y_FLIP
-	dsprite 24, 0, 19, 4, $09, $1 | X_FLIP | Y_FLIP
-	dsprite 24, 0, 20, 4, $08, $1 | X_FLIP | Y_FLIP
+;wendy
+	dsprite 20, 2, 26, 5, $00, $2
+	dsprite 20, 2, 27, 5, $01, $2
+	dsprite 21, 2, 26, 5, $10, $2
+	dsprite 21, 2, 27, 5, $0f, $2
+;player
+	dsprite 20, 2, 28, 6, $04, $5
+	dsprite 20, 2, 29, 6, $05, $5
+	dsprite 21, 2, 28, 6, $14, $5
+	dsprite 21, 2, 29, 6, $15, $5
+;propeller
+	dsprite 20, 0, 21, 9, $0b, $1
+	dsprite 20, 0, 22, 9, $0c, $1
+	dsprite 21, 0, 21, 9, $1b, $1
+	dsprite 21, 0, 22, 9, $1c, $1
+	dsprite 22, 0, 21, 9, $0d, $1
+	dsprite 22, 0, 22, 9, $0e, $1
+	dsprite 23, 0, 21, 9, $1d, $1
+	dsprite 23, 0, 22, 9, $1e, $1
+	dsprite 24, 0, 21, 8, $1c, $1 | X_FLIP | Y_FLIP
+	dsprite 24, 0, 22, 8, $1b, $1 | X_FLIP | Y_FLIP
+	dsprite 25, 0, 21, 8, $0c, $1 | X_FLIP | Y_FLIP
+	dsprite 25, 0, 22, 8, $0b, $1 | X_FLIP | Y_FLIP
 
 
 
@@ -595,6 +623,12 @@ INCBIN "gfx/island_cutscene/big_plane.2bpp.lz"
 
 IslandCutscenePart2GFX2:
 INCBIN "gfx/island_cutscene/wendy.2bpp.lz"
+
+IslandCutscenePart2CoraGFX:
+INCBIN "gfx/island_cutscene/cora.2bpp.lz"
+
+IslandCutscenePart2CoraGFX2:
+INCBIN "gfx/island_cutscene/cora2.2bpp.lz"
 
 BigPlaneTilemap:
 INCBIN "gfx/island_cutscene/big_plane.tilemap"

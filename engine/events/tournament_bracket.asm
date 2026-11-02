@@ -1535,6 +1535,16 @@ TourneyGetPlayerPal:
 	rst CopyBytes
 	ret
 	
+IslandCutsceneGetPlayerPal::
+	ld a, [wPlayerInitialPalette]
+	ld hl, TourneyPlayerPals
+	ld bc, 1 palettes
+	call AddNTimes
+	ld de, wUnknOBPals + 5 palettes
+	ld bc, 1 palettes
+	rst CopyBytes
+	ret
+	
 GetTourneyCompetetorSprites:
 	ld hl, CorySpriteGFX
 	ld a, [wPlayerGender]

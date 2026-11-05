@@ -6346,7 +6346,8 @@ SECTION "Coral Data 7", ROMX
 SECTION "Coral Data 8", ROMX
 	INCLUDE "data/trainers/final_text.asm"
 	INCLUDE "data/trainers/bosstrainers.asm"
+	INCLUDE "engine/events/tournament_bracket.asm"
 	
 SECTION "Coral Data 9", ROMX
-	INCLUDE "engine/events/tournament_bracket.asm"
+	
 	INCLUDE "engine/events/island_cutscene.asm"

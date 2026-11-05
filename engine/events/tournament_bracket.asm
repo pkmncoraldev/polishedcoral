@@ -1737,10 +1737,6 @@ TourneyCompetetorSpriteColors:
 LoadTourneyBracketTilemap:
 	debgcoord 0, 0
 	ld bc, BG_MAP_WIDTH * BG_MAP_HEIGHT
-	jr LoadTourneyBracketTilemap2.copy
-LoadTourneyBracketTilemap2:
-	ld de, $9c00
-	ld bc, BG_MAP_WIDTH * BG_MAP_HEIGHT
 .copy
 	ld a, 0
 	ldh [rVBK], a

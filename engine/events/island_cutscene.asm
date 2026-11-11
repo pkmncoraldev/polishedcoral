@@ -34,29 +34,13 @@ FlyToIslandCutscenePart1:
 	ld hl, BigPlaneTilemap
 	call LoadIslandCutsceneTilemap2
 	
-	ldh a, [rSVBK]
-	push af
-	ld a, $5
-	ldh [rSVBK], a
-	ld hl, IslandCutscenePart12BGPals
-	ld de, wUnknBGPals
-	ld bc, 5 palettes
-	rst CopyBytes
-	ld hl, IslandCutscenePart2OBPals
-	ld de, wUnknOBPals
-	ld bc, 5 palettes
-	rst CopyBytes
-	farcall IslandCutsceneGetPlayerPal
-	pop af
-	ldh [rSVBK], a
+	farcall IslandCutscenePart1GetPals
 	
 	pop af
 	ldh [rVBK], a
 	call EnableLCD
 	xor a
 	ldh [hBGMapMode], a
-	ld de, MUSIC_NONE
-	call PlayMusic
 	lb bc, BANK(IslandCutscenePart2GFX), $74
 	ld hl, IslandCutscenePart2GFX
 	ld de, VTiles2 tile $00
@@ -92,6 +76,8 @@ FlyToIslandCutscenePart1:
 	ld a, 15
 	ld [wTitleScreenTimerLo], a
 	ld [wTitleScreenTimerHi], a
+	
+	farcall Special_FadeOutMusic
 	
 .loop
 	ld a, [wJumptableIndex]
@@ -138,8 +124,8 @@ IslandCutscenePart1_Jumptable:
 	ret
 	
 .Start
-	ld de, MUSIC_CYCLING
-	call PlayMusic
+	ld e, SFX_DOUBLE_KICK
+	call PlaySFX
 	call FlyToIslandCutscenePart1PlaneTakeoffY
 	call DelayFrame
 ;fallthru
@@ -155,13 +141,13 @@ IslandCutscenePart1_Jumptable:
 	inc a
 	ld [wMagnetTrainDirection], a
 	cp 50
-	jr z, .next
+	jr z, .startmusic
 	ld hl, IslandCutscenePart1_Plane_OAM
 	ld de, wSprites
 	ld bc, ISLAND_CUTSCENE_PART_1_SPRITES * 4	; # of sprites * 4
 	call CopyBytes
 	ret
-.satrtmusic
+.startmusic
 	ld de, MUSIC_CYCLING
 	call PlayMusic
 	jr .next
@@ -427,16 +413,7 @@ FlyToIslandCutscenePart2:
 	rst CopyBytes
 	call ApplyAttrAndTilemapInVBlank
 	
-	ldh a, [rSVBK]
-	push af
-	ld a, $5
-	ldh [rSVBK], a
-	ld hl, IslandCutscenePart2OBPals
-	ld de, wUnknBGPals + 4 palettes
-	ld bc, 1 palettes
-	rst CopyBytes
-	pop af
-	ldh [rSVBK], a
+	farcall IslandCutscenePart1UpdateBgPal1
 	
 	ld a, [wPlayerGender]
 	cp 0
@@ -938,34 +915,34 @@ LoadIslandCutsceneTilemap2:
 	ret
 	
 IslandCutscenePart1_Plane_OAM:
-	dsprite 10, 0, 7, 5, $64, $4
-	dsprite 11, 0, 7, 5, $6a, $4
+	dsprite 10, 0, 7, 5, $64, $3
+	dsprite 11, 0, 7, 5, $6a, $3
 
 	dsprite 11, 3, 9, 7, $5d, $1
-	dsprite 8, 0, 8, 7, $41, $4
-	dsprite 8, 0, 9, 7, $42, $4
-	dsprite 9, 0, 8, 5, $47, $4
-	dsprite 9, 0, 9, 5, $48, $4
-	dsprite 9, 0, 10, 5, $49, $4
-	dsprite 9, 0, 11, 5, $4a, $4
+	dsprite 8, 0, 8, 7, $41, $3
+	dsprite 8, 0, 9, 7, $42, $3
+	dsprite 9, 0, 8, 5, $47, $3
+	dsprite 9, 0, 9, 5, $48, $3
+	dsprite 9, 0, 10, 5, $49, $3
+	dsprite 9, 0, 11, 5, $4a, $3
 	dsprite 9, 4, 12, 5, $4b, $1
 	dsprite 10, 0, 8, 5, $4d, $1
-	dsprite 10, 0, 9, 5, $4e, $4
-	dsprite 10, 0, 10, 5, $4f, $4
+	dsprite 10, 0, 9, 5, $4e, $3
+	dsprite 10, 0, 10, 5, $4f, $3
 	dsprite 10, 0, 11, 5, $50, $1
 	dsprite 10, 4, 12, 5, $51, $1
-	dsprite 10, 0, 13, 5, $40, $4
-	dsprite 11, 0, 8, 5, $53, $4
-	dsprite 11, 0, 9, 5, $54, $4
-	dsprite 11, 0, 10, 5, $55, $4
-	dsprite 11, 0, 11, 5, $56, $4
+	dsprite 10, 0, 13, 5, $40, $3
+	dsprite 11, 0, 8, 5, $53, $3
+	dsprite 11, 0, 9, 5, $54, $3
+	dsprite 11, 0, 10, 5, $55, $3
+	dsprite 11, 0, 11, 5, $56, $3
 	dsprite 11, 4, 12, 5, $57, $1
 	dsprite 11, 0, 13, 5, $46, $1
-	dsprite 12, 0, 9, 5, $5a, $4
-	dsprite 12, 0, 10, 5, $5b, $4
-	dsprite 12, 0, 11, 5, $5c, $4
-	dsprite 13, 0, 9, 5, $60, $4
-	dsprite 13, 0, 10, 5, $61, $4
+	dsprite 12, 0, 9, 5, $5a, $3
+	dsprite 12, 0, 10, 5, $5b, $3
+	dsprite 12, 0, 11, 5, $5c, $3
+	dsprite 13, 0, 9, 5, $60, $3
+	dsprite 13, 0, 10, 5, $61, $3
 	
 	dsprite 8, 0, 8, 7, $43, $1
 	dsprite 8, 0, 9, 7, $44, $1
@@ -1003,10 +980,10 @@ IslandCutscenePart2_Clouds_OAM:
 	
 IslandCutscenePart2_Characters_OAM1:
 ;wendy
-	dsprite 20, 2, 26, 5, $00, $3
-	dsprite 20, 2, 27, 5, $01, $3
-	dsprite 21, 2, 26, 5, $10, $3
-	dsprite 21, 2, 27, 5, $11, $3
+	dsprite 20, 2, 26, 5, $00, $4
+	dsprite 20, 2, 27, 5, $01, $4
+	dsprite 21, 2, 26, 5, $10, $4
+	dsprite 21, 2, 27, 5, $11, $4
 ;player
 	dsprite 20, 2, 28, 6, $02, $5
 	dsprite 20, 2, 29, 6, $03, $5
@@ -1028,10 +1005,10 @@ IslandCutscenePart2_Characters_OAM1:
 	
 IslandCutscenePart2_Characters_OAM2:
 ;wendy
-	dsprite 20, 2, 26, 5, $00, $3
-	dsprite 20, 2, 27, 5, $01, $3
-	dsprite 21, 2, 26, 5, $10, $3
-	dsprite 21, 2, 27, 5, $0f, $3
+	dsprite 20, 2, 26, 5, $00, $4
+	dsprite 20, 2, 27, 5, $01, $4
+	dsprite 21, 2, 26, 5, $10, $4
+	dsprite 21, 2, 27, 5, $0f, $4
 ;player
 	dsprite 20, 2, 28, 6, $04, $5
 	dsprite 20, 2, 29, 6, $05, $5
@@ -1563,58 +1540,6 @@ INCBIN "gfx/island_cutscene/island.tilemap"
 
 IslandCutsceneAttrmap:
 INCBIN "gfx/island_cutscene/island.attrmap"
-
-IslandCutscenePart12BGPals:
-	RGB 31, 31, 31
-	RGB 21, 21, 21
-	RGB 13, 22, 31
-	RGB 07, 07, 07
-
-	RGB 21, 21, 21
-	RGB 13, 22, 31
-	RGB 13, 13, 13
-	RGB 07, 07, 07
-
-	RGB 31, 31, 31
-	RGB 21, 21, 21
-	RGB 13, 13, 13
-	RGB 07, 07, 07
-	
-	RGB 28, 30, 30
-	RGB 25, 30, 31
-	RGB 20, 28, 31
-	RGB 13, 22, 31
-	
-	RGB 27, 31, 27
-	RGB 21, 21, 21
-	RGB 13, 13, 13
-	RGB 07, 07, 07
-	
-IslandCutscenePart2OBPals:
-	RGB 13, 22, 31
-	RGB 13, 22, 31
-	RGB 13, 22, 31
-	RGB 13, 22, 31
-	
-	RGB 31, 31, 31
-	RGB 31, 31, 31
-	RGB 21, 21, 21
-	RGB 07, 07, 07
-	
-	RGB 31, 31, 31
-	RGB 28, 30, 30
-	RGB 25, 30, 31
-	RGB 20, 28, 31
-	
-	RGB 27, 31, 27
-	RGB 31, 19, 10
-	RGB 15, 10, 03
-	RGB 00, 00, 00
-	
-	RGB 31, 31, 31
-	RGB 21, 21, 21
-	RGB 13, 13, 13
-	RGB 07, 07, 07
 
 IslandCutscenePals:
 	RGB 24, 30, 12

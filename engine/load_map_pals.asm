@@ -15,6 +15,56 @@ endr
 	ld a, $5
 	jp FarCopyWRAM
 
+IslandCutscenePart1GetPals::
+	ld a, [wTimeOfDayPal]
+	and 3
+	ld bc, 5 palettes
+	ld hl, IslandCutscenePart12OBPals
+	call AddNTimes
+	
+	ld de, wUnknOBPals
+	ld bc, 5 palettes
+	ld a, $5 ; BANK(UnknOBPals)
+	call FarCopyWRAM
+	
+	ld a, [wTimeOfDayPal]
+	and 3
+	ld bc, 5 palettes
+	ld hl, IslandCutscenePart12BGPals
+	call AddNTimes
+	
+	ld de, wUnknBGPals
+	ld bc, 5 palettes
+	ld a, $5 ; BANK(UnknOBPals)
+	call FarCopyWRAM
+	
+	ld a, [wTimeOfDayPal]
+	and 3
+	ld bc, 8 palettes
+	ld hl, MapObjectPals
+	call AddNTimes
+	
+	ld a, [wPlayerInitialPalette]
+	ld bc, 1 palettes
+	call AddNTimes
+	
+	ld de, wUnknOBPals + 5 palettes
+	ld bc, 1 palettes
+	ld a, $5 ; BANK(UnknOBPals)
+	jp FarCopyWRAM
+	
+IslandCutscenePart1UpdateBgPal1::
+	ld a, [wTimeOfDayPal]
+	and 3
+	ld bc, 5 palettes
+	ld hl, IslandCutscenePart12OBPals
+	call AddNTimes
+	
+	ld de, wUnknBGPals + 4 palettes
+	ld bc, 1 palettes
+	ld a, $5 ; BANK(UnknOBPals)
+	jp FarCopyWRAM
+
 LightUpPlayerPal:
 	ld a, [wIsNearCampfire]
 	bit 0, a
@@ -1647,3 +1697,9 @@ INCLUDE "maps/palettes/roofpals/roofdusk.pal"
 
 StandardGrassPalette::
 INCLUDE "maps/palettes/obpals/grass.pal"
+
+IslandCutscenePart12OBPals:
+INCLUDE "gfx/island_cutscene/ob.pal"
+
+IslandCutscenePart12BGPals:
+INCLUDE "gfx/island_cutscene/bg.pal"

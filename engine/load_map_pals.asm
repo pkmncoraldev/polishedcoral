@@ -16,7 +16,7 @@ endr
 	jp FarCopyWRAM
 
 IslandCutscenePart1GetPals::
-	ld a, [wTimeOfDayPal]
+	ld a, [wTimeOfDay]
 	and 3
 	ld bc, 5 palettes
 	ld hl, IslandCutscenePart12OBPals
@@ -27,7 +27,7 @@ IslandCutscenePart1GetPals::
 	ld a, $5 ; BANK(UnknOBPals)
 	call FarCopyWRAM
 	
-	ld a, [wTimeOfDayPal]
+	ld a, [wTimeOfDay]
 	and 3
 	ld bc, 5 palettes
 	ld hl, IslandCutscenePart12BGPals
@@ -38,7 +38,7 @@ IslandCutscenePart1GetPals::
 	ld a, $5 ; BANK(UnknOBPals)
 	call FarCopyWRAM
 	
-	ld a, [wTimeOfDayPal]
+	ld a, [wTimeOfDay]
 	and 3
 	ld bc, 8 palettes
 	ld hl, MapObjectPals
@@ -54,7 +54,7 @@ IslandCutscenePart1GetPals::
 	jp FarCopyWRAM
 	
 IslandCutscenePart1UpdateBgPal1::
-	ld a, [wTimeOfDayPal]
+	ld a, [wTimeOfDay]
 	and 3
 	ld bc, 5 palettes
 	ld hl, IslandCutscenePart12OBPals

@@ -1,19 +1,22 @@
+DEF ISLAND_CUTSCENE_PART_1_SPRITES EQU 37
+DEF ISLAND_CUTSCENE_PART_1_SHADOW_SPRITES EQU 3
+DEF ISLAND_CUTSCENE_PART_1_PLANE_SPRITES EQU 35
 DEF ISLAND_CUTSCENE_PART_2_SPRITES EQU 20
 DEF ISLAND_CUTSCENE_PART_2_COVER_SPRITES EQU 11
 
 FlyToIslandCutscene::
+	call FlyToIslandCutscenePart1
 	call FlyToIslandCutscenePart2
 	call FlyToIslandCutscenePart3
 	ret
 	
-	
-FlyToIslandCutscenePart2:
+FlyToIslandCutscenePart1:
 	ld hl, rIE
 	set LCD_STAT, [hl]
-	ldh a, [hSCX]
-	push af
-	ldh a, [hSCY]
-	push af
+;	ldh a, [hSCX]
+;	push af
+;	ldh a, [hSCY]
+;	push af
 	
 	call ClearBGPalettes
 	call ClearSprites
@@ -24,6 +27,8 @@ FlyToIslandCutscenePart2:
 	push af
 	xor a
 	ldh [rVBK], a
+	ld [wIntroSceneFrameCounter], a
+	ld [wJumptableIndex], a
 	ld hl, SkyTilemap
 	call LoadIslandCutsceneTilemap
 	ld hl, BigPlaneTilemap
@@ -33,13 +38,13 @@ FlyToIslandCutscenePart2:
 	push af
 	ld a, $5
 	ldh [rSVBK], a
-	ld hl, IslandCutscenePart2BGPals
+	ld hl, IslandCutscenePart12BGPals
 	ld de, wUnknBGPals
-	ld bc, 4 palettes
+	ld bc, 5 palettes
 	rst CopyBytes
 	ld hl, IslandCutscenePart2OBPals
 	ld de, wUnknOBPals
-	ld bc, 3 palettes
+	ld bc, 5 palettes
 	rst CopyBytes
 	farcall IslandCutsceneGetPlayerPal
 	pop af
@@ -48,6 +53,8 @@ FlyToIslandCutscenePart2:
 	pop af
 	ldh [rVBK], a
 	call EnableLCD
+	xor a
+	ldh [hBGMapMode], a
 	ld de, MUSIC_NONE
 	call PlayMusic
 	lb bc, BANK(IslandCutscenePart2GFX), $74
@@ -66,6 +73,370 @@ FlyToIslandCutscenePart2:
 	ld hl, IslandCutscenePart2CloudSpritesGFX
 	ld de, VTiles0 tile $20
 	call DecompressRequest2bpp
+	lb bc, BANK(IslandCutscenePart1GFX), 48
+	ld hl, IslandCutscenePart1GFX
+	ld de, VTiles0 tile $40
+	call DecompressRequest2bpp
+	
+	ld a, 112
+	ldh [hSCY], a
+	
+	ld hl, IslandCutscenePart1_Plane_OAM
+	ld de, wSprites
+	ld bc, ISLAND_CUTSCENE_PART_1_SPRITES * 4	; # of sprites * 4
+	call CopyBytes
+	
+	ld c, 1
+	call FadePalettes
+	
+	ld a, 15
+	ld [wTitleScreenTimerLo], a
+	ld [wTitleScreenTimerHi], a
+	
+.loop
+	ld a, [wJumptableIndex]
+	bit 7, a
+	jr nz, .done
+	call IslandCutscenePart1_Jumptable
+	call DelayFrame
+	jr .loop
+	
+.done
+	call ClearBGPalettes
+	ret
+	
+IslandCutscenePart1_Jumptable:
+	ld a, [wJumptableIndex]
+	ld e, a
+	ld d, 0
+	ld hl, .Jumptable
+	add hl, de
+	add hl, de
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	jp hl
+
+.Jumptable:
+	dw .Init
+	dw .Start
+	dw .Part1
+	dw .Part2
+	dw .Part3
+	dw .Part4
+	dw .Part5
+	dw .Part6
+	dw .Part7
+	dw .End
+	
+.Init
+	ld a, [wMagnetTrainDirection]
+	inc a
+	ld [wMagnetTrainDirection], a
+	cp 75
+	jr z, .next
+	ret
+	
+.Start
+	ld de, MUSIC_CYCLING
+	call PlayMusic
+	call FlyToIslandCutscenePart1PlaneTakeoffY
+	call DelayFrame
+;fallthru
+.next:
+	xor a
+	ld [wMagnetTrainDirection], a
+	ld hl, wJumptableIndex
+	inc [hl]
+	ret
+	
+.Part1
+	ld a, [wMagnetTrainDirection]
+	inc a
+	ld [wMagnetTrainDirection], a
+	cp 50
+	jr z, .next
+	ld hl, IslandCutscenePart1_Plane_OAM
+	ld de, wSprites
+	ld bc, ISLAND_CUTSCENE_PART_1_SPRITES * 4	; # of sprites * 4
+	call CopyBytes
+	ret
+.satrtmusic
+	ld de, MUSIC_CYCLING
+	call PlayMusic
+	jr .next
+	
+.Part2
+	ld a, [wTitleScreenTimerLo]
+	dec a
+	ld [wTitleScreenTimerLo], a
+	and a
+	ret nz
+	ldh a, [hSCX]
+	dec a
+	ldh [hSCX], a
+	call FlyToIslandCutscenePart1AnimatePropeller1
+	ld a, [wTitleScreenTimerHi]
+	dec a
+	ld [wTitleScreenTimerHi], a
+	ld [wTitleScreenTimerLo], a
+	and a
+	ret nz
+	
+	ld a, 6
+	ld [wTitleScreenTimerLo], a
+	ld [wTitleScreenTimerHi], a
+	jr .next
+	
+.Part3
+	ld a, [wMagnetTrainDirection]
+	inc a
+	ld [wMagnetTrainDirection], a
+	and 1
+	jr nz, .Part3_skip
+	call FlyToIslandCutscenePart1AnimatePropeller1
+	
+.Part3_skip
+	ldh a, [hSCX]
+	dec a
+	ldh [hSCX], a
+	
+	ld a, [wTitleScreenTimerLo]
+	dec a
+	ld [wTitleScreenTimerLo], a
+	and a
+	ret nz
+	ldh a, [hSCX]
+	dec a
+	ldh [hSCX], a
+	ld a, [wTitleScreenTimerHi]
+	dec a
+	ld [wTitleScreenTimerHi], a
+	ld [wTitleScreenTimerLo], a
+	and a
+	ret nz
+	ld a, 6
+	ld [wTitleScreenTimerLo], a
+	ld [wTitleScreenTimerHi], a
+	jp .next
+	
+.Part4
+	ldh a, [hSCX]
+	sub 2
+	ldh [hSCX], a
+	call FlyToIslandCutscenePart1AnimatePropeller1
+	
+	ld a, [wTitleScreenTimerLo]
+	dec a
+	ld [wTitleScreenTimerLo], a
+	and a
+	ret nz
+	ldh a, [hSCX]
+	dec a
+	ldh [hSCX], a
+	ld a, [wTitleScreenTimerHi]
+	dec a
+	ld [wTitleScreenTimerHi], a
+	ld [wTitleScreenTimerLo], a
+	and a
+	ret nz
+	ld a, 6
+	ld [wTitleScreenTimerLo], a
+	ld [wTitleScreenTimerHi], a
+	
+	ld hl, wSprites + 2
+	ld a, $69
+	ld [hli], a
+	ld a, 1
+	ld [hl], a
+	
+	ld hl, wSprites + 6
+	ld a, $6f
+	ld [hli], a
+	ld a, 1
+	ld [hl], a
+	
+	jp .next
+	
+.Part5
+	ld a, [wMagnetTrainDirection]
+	inc a
+	ld [wMagnetTrainDirection], a
+	ldh a, [hSCX]
+	sub 3
+	ldh [hSCX], a
+	call FlyToIslandCutscenePart1AnimatePropeller2
+	
+	ld a, [wTitleScreenTimerLo]
+	dec a
+	ld [wTitleScreenTimerLo], a
+	and a
+	ret nz
+	ldh a, [hSCX]
+	dec a
+	ldh [hSCX], a
+	ld a, [wTitleScreenTimerHi]
+	dec a
+	ld [wTitleScreenTimerHi], a
+	ld [wTitleScreenTimerLo], a
+	and a
+	ret nz
+	ld a, 6
+	ld [wTitleScreenTimerLo], a
+	ld [wTitleScreenTimerHi], a
+	jp .next
+	
+.Part6
+	ld a, [wMagnetTrainDirection]
+	inc a
+	ld [wMagnetTrainDirection], a
+	cp 150
+	jp z, .next
+	ldh a, [hSCX]
+	sub 5
+	ldh [hSCX], a
+	call FlyToIslandCutscenePart1AnimatePropeller2
+	ret
+	
+.Part7
+	ld a, [wMagnetTrainDirection]
+	inc a
+	ld [wMagnetTrainDirection], a
+	cp 125
+	jp z, .next
+	ldh a, [hSCX]
+	sub 5
+	ldh [hSCX], a
+	call FlyToIslandCutscenePart1AnimatePropeller2
+	call FlyToIslandCutscenePart1PlaneTakeoffX
+	ld a, [wMagnetTrainDirection]
+	and 1
+	ret nz
+	call FlyToIslandCutscenePart1PlaneTakeoffY
+	call FlyToIslandCutscenePart1ClearShadow
+	ret
+	
+.End
+	xor a
+	ld [wMagnetTrainDirection], a
+	ld hl, wJumptableIndex
+	set 7, [hl]
+	ret
+	
+FlyToIslandCutscenePart1ClearShadow:
+	ld hl, wSprites + 78
+	ld a, $5f
+	ld [hli], a
+	ld hl, wSprites + (ISLAND_CUTSCENE_PART_1_PLANE_SPRITES * 4)
+	ld c, ISLAND_CUTSCENE_PART_1_SHADOW_SPRITES
+	
+.loop
+	xor a
+	ld [hli], a
+	inc hl
+	inc hl
+	inc hl
+	dec c
+	jr nz, .loop
+	ret
+	
+FlyToIslandCutscenePart1PlaneTakeoffX:
+	ld hl, wSprites + 1
+	ld c, ISLAND_CUTSCENE_PART_1_SPRITES
+	jr FlyToIslandCutscenePart1PlaneTakeoff
+FlyToIslandCutscenePart1PlaneTakeoffY:
+	ld hl, wSprites
+	ld c, ISLAND_CUTSCENE_PART_1_PLANE_SPRITES
+;fallthru
+FlyToIslandCutscenePart1PlaneTakeoff:
+	ld a, [hl]
+	dec a
+	ld [hli], a
+	inc hl
+	inc hl
+	inc hl
+	dec c
+	jr nz, FlyToIslandCutscenePart1PlaneTakeoff
+	ret
+	
+FlyToIslandCutscenePart1AnimatePropeller1:
+	ld a, [wIntroSceneFrameCounter]
+	inc a
+	ld [wIntroSceneFrameCounter], a
+	ld hl, wSprites + 2
+	ld c, 2
+.loop
+	ld a, [wIntroSceneFrameCounter]
+	cp 4
+	jr nz, .inc
+	ld a, [hl]
+	sub 3
+	jr .cont
+.inc
+	ld a, [hl]
+	inc a
+.cont
+	ld [hli], a
+	inc hl
+	inc hl
+	inc hl
+	dec c
+	jr nz, .loop
+	ld a, [wIntroSceneFrameCounter]
+	cp 4
+	ret nz
+	xor a
+	ld [wIntroSceneFrameCounter], a
+	ret
+	
+FlyToIslandCutscenePart1AnimatePropeller2:
+	ld a, [wMagnetTrainDirection]
+	and 3
+	ret nz
+	ld hl, wSprites + 2
+	ld c, 2
+.loop
+	ld a, [hl]
+	cp $69
+	jr z, .dec
+	cp $6f
+	jr z, .dec
+;.inc
+	inc a
+	jr .cont
+.dec
+	dec a
+.cont
+	ld [hli], a
+	inc hl
+	inc hl
+	inc hl
+	dec c
+	jr nz, .loop
+	ret
+	
+FlyToIslandCutscenePart2:
+	ld hl, SkyPlaneTilemap
+	decoord 0, 0
+	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
+	rst CopyBytes
+	
+	ld hl, SkyPlaneAttrmap
+	decoord 0, 0, wAttrMap
+	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
+	rst CopyBytes
+	call ApplyAttrAndTilemapInVBlank
+	
+	ldh a, [rSVBK]
+	push af
+	ld a, $5
+	ldh [rSVBK], a
+	ld hl, IslandCutscenePart2OBPals
+	ld de, wUnknBGPals + 4 palettes
+	ld bc, 1 palettes
+	rst CopyBytes
+	pop af
+	ldh [rSVBK], a
 	
 	ld a, [wPlayerGender]
 	cp 0
@@ -112,15 +483,11 @@ FlyToIslandCutscenePart2:
 	ld bc, 8 * 4
 	call CopyBytes
 	
-	ld c, 1
-	call FadePalettes
 ;done loading graphics
 	ldh a, [hVBlank]
 	push af
 	ld a, $3
 	ldh [hVBlank], a
-	ld de, MUSIC_CYCLING
-	call PlayMusic
 	
 .loop
 	ld a, [wJumptableIndex]
@@ -153,10 +520,10 @@ FlyToIslandCutscenePart2:
 	call ByteFill
 	call ClearTileMap
 
-	pop af
-	ldh [hSCY], a
-	pop af
-	ldh [hSCX], a
+;	pop af
+;	ldh [hSCY], a
+;	pop af
+;	ldh [hSCX], a
 	ld hl, rIE
 	res LCD_STAT, [hl]
 	xor a
@@ -177,6 +544,7 @@ IslandCutscenePart2_Jumptable:
 
 .Jumptable:
 	dw .Init
+	dw .Pal
 	dw .Part1
 	dw .Part2
 	dw .Part3
@@ -190,16 +558,24 @@ IslandCutscenePart2_Jumptable:
 .Init
 	ld a, LOW(rSCX)
 	ldh [hLCDCPointer], a
+	ld a, 112
+	ld [wTitleScreenTimerHi], a
 	ld hl, IslandCutscenePart2_Characters_OAM1
 	ld de, wSprites + 32
 	ld bc, ISLAND_CUTSCENE_PART_2_SPRITES * 4
 	call CopyBytes
+	call IslandCutscenePart2_ScrollCloudsFast
 .next:
 	xor a
 	ld [wMagnetTrainDirection], a
 	ld hl, wJumptableIndex
 	inc [hl]
 	ret
+	
+.Pal
+	ld c, 1
+	call FadePalettes
+	jr .next
 	
 .Part1
 	
@@ -227,7 +603,7 @@ IslandCutscenePart2_Jumptable:
 	ret
 	
 .Part3
-	ld a, 100
+	ld a, -20
 	ld [wTitleScreenTimerHi], a
 	call IslandCutscenePart2ClearSprites
 	ld a, [wMagnetTrainDirection]
@@ -340,7 +716,7 @@ IslandCutscenePart2_Jumptable:
 	call IslandCutscenePart2ScrollSpritesX
 	ret
 .Part7_next
-	ld a, 169
+	ld a, 25
 	ld [wTitleScreenTimerHi], a
 	ld a, $fe
 	ldh [hWX], a
@@ -560,6 +936,47 @@ LoadIslandCutsceneTilemap2:
 	or c
 	jr nz, .copy
 	ret
+	
+IslandCutscenePart1_Plane_OAM:
+	dsprite 10, 0, 7, 5, $64, $4
+	dsprite 11, 0, 7, 5, $6a, $4
+
+	dsprite 11, 3, 9, 7, $5d, $1
+	dsprite 8, 0, 8, 7, $41, $4
+	dsprite 8, 0, 9, 7, $42, $4
+	dsprite 9, 0, 8, 5, $47, $4
+	dsprite 9, 0, 9, 5, $48, $4
+	dsprite 9, 0, 10, 5, $49, $4
+	dsprite 9, 0, 11, 5, $4a, $4
+	dsprite 9, 4, 12, 5, $4b, $1
+	dsprite 10, 0, 8, 5, $4d, $1
+	dsprite 10, 0, 9, 5, $4e, $4
+	dsprite 10, 0, 10, 5, $4f, $4
+	dsprite 10, 0, 11, 5, $50, $1
+	dsprite 10, 4, 12, 5, $51, $1
+	dsprite 10, 0, 13, 5, $40, $4
+	dsprite 11, 0, 8, 5, $53, $4
+	dsprite 11, 0, 9, 5, $54, $4
+	dsprite 11, 0, 10, 5, $55, $4
+	dsprite 11, 0, 11, 5, $56, $4
+	dsprite 11, 4, 12, 5, $57, $1
+	dsprite 11, 0, 13, 5, $46, $1
+	dsprite 12, 0, 9, 5, $5a, $4
+	dsprite 12, 0, 10, 5, $5b, $4
+	dsprite 12, 0, 11, 5, $5c, $4
+	dsprite 13, 0, 9, 5, $60, $4
+	dsprite 13, 0, 10, 5, $61, $4
+	
+	dsprite 8, 0, 8, 7, $43, $1
+	dsprite 8, 0, 9, 7, $44, $1
+	dsprite 9, 0, 8, 5, $45, $1
+	dsprite 9, 3, 11, 5, $5e, $1
+	dsprite 10, 4, 8, 8, $59, $1
+	dsprite 10, 3, 10, 5, $62, $1
+	dsprite 10, 0, 13, 5, $52, $1
+	dsprite 10, 4, 12, 5, $4c, $1
+	dsprite 11, 4, 7, 9, $58, $1
+	dsprite 11, 4, 8, 9, $63, $1
 
 IslandCutscenePart2_Cover_OAM:
 	dsprite 11, 0, 1, 0, $1f, $0
@@ -676,7 +1093,8 @@ FlyToIslandCutscenePart3:
 	
 	pop af
 	ldh [rSVBK], a
-	farcall FadeInPalettes
+	ld c, 1
+	call FadePalettes
 .loop
 	ld a, [wJumptableIndex]
 	bit 7, a
@@ -1101,6 +1519,9 @@ IslandCutscenePart3_Plane_OAM6:
 IslandCutscenePart3_Plane_OAM7:
 	dsprite 21, 4, 18, 5, $61, $1
 	
+IslandCutscenePart1GFX:
+INCBIN "gfx/island_cutscene/part1_plane.2bpp.lz"
+	
 IslandCutscenePart2GFX:
 INCBIN "gfx/island_cutscene/big_plane.2bpp.lz"
 
@@ -1124,6 +1545,12 @@ INCBIN "gfx/island_cutscene/big_plane.tilemap"
 
 SkyTilemap:
 INCBIN "gfx/island_cutscene/sky.tilemap"
+
+SkyPlaneTilemap:
+INCBIN "gfx/island_cutscene/sky_plane.tilemap"
+
+SkyPlaneAttrmap:
+INCBIN "gfx/island_cutscene/sky_plane.attrmap"
 	
 IslandCutsceneGFX:
 INCBIN "gfx/island_cutscene/island.2bpp.lz"
@@ -1137,7 +1564,7 @@ INCBIN "gfx/island_cutscene/island.tilemap"
 IslandCutsceneAttrmap:
 INCBIN "gfx/island_cutscene/island.attrmap"
 
-IslandCutscenePart2BGPals:
+IslandCutscenePart12BGPals:
 	RGB 31, 31, 31
 	RGB 21, 21, 21
 	RGB 13, 22, 31
@@ -1157,6 +1584,11 @@ IslandCutscenePart2BGPals:
 	RGB 25, 30, 31
 	RGB 20, 28, 31
 	RGB 13, 22, 31
+	
+	RGB 27, 31, 27
+	RGB 21, 21, 21
+	RGB 13, 13, 13
+	RGB 07, 07, 07
 	
 IslandCutscenePart2OBPals:
 	RGB 13, 22, 31
@@ -1178,6 +1610,11 @@ IslandCutscenePart2OBPals:
 	RGB 31, 19, 10
 	RGB 15, 10, 03
 	RGB 00, 00, 00
+	
+	RGB 31, 31, 31
+	RGB 21, 21, 21
+	RGB 13, 13, 13
+	RGB 07, 07, 07
 
 IslandCutscenePals:
 	RGB 24, 30, 12

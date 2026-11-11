@@ -390,6 +390,8 @@ PlayerHouseDebugPoster:
 	closewindow
 	farwritetext StdBlankText
 	callasm FlyToIslandCutscene
+	warp SUNBEAM_ISLAND, 8, 51
+	end
 	jump .return
 .mina
 	closewindow

@@ -187,7 +187,7 @@
 	tilecoll WALL, WALL, WALL, WALL ; ba
 	tilecoll WALL, WALL, WALL, WALL ; bb
 	tilecoll WALL, WALL, WALL, WALL ; bc
-	tilecoll WALL, WALL, WALL, WALL ; bd
+	tilecoll SKATE, SKATE, SKATE, SKATE ; bd
 	tilecoll WALL, WALL, HEADBUTT_TREE, HEADBUTT_TREE ; be
 	tilecoll WALL, WALL, WALL, WALL ; bf
 	tilecoll WALL, WALL, FLOOR, FLOOR ; c0

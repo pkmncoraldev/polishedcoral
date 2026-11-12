@@ -49,12 +49,24 @@ LusterSewerThroneRoomNidokingLeader:
 	playsound SFX_ITEM
 	waitsfx
 	writetext PutAwayNidokingDollText
+	checkevent EVENT_KNOW_GRIND_TURN
+	iffalse .remind_learn_tricks
 	waitbutton
 	closetext
 	spriteface LUSTERSEWERSTHRONEROOM_NIDO_LEADER, DOWN
 	end
 .done_doll
 	writetext LusterSewerThroneRoomNidokingLeaderText2
+	checkevent EVENT_KNOW_GRIND_TURN
+	iffalse .remind_learn_tricks
+	waitbutton
+	closetext
+	end
+.remind_learn_tricks
+	buttonsound
+	farwritetext StdBlankText
+	pause 6
+	writetext LusterSewerThroneRoomNidokingLeaderText3
 	waitbutton
 	closetext
 	end
@@ -83,6 +95,14 @@ LusterSewerThroneRoomNidokingLeaderText2:
 	line "ready when they"
 	cont "show their faces"
 	cont "again."
+	done
+	
+LusterSewerThroneRoomNidokingLeaderText3:
+	text "Oh yeah,"
+	
+	para "don't forget to"
+	line "visit my buddy at"
+	cont "the skate shop!"
 	done
 	
 GiveNidokingDollText:

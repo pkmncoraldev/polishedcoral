@@ -71,7 +71,7 @@ PlayerHouse2F_MapScriptHeader:
 	bg_event  4, 22, SIGNPOST_JUMPTEXT, PlayerHouseNett
 	bg_event  6, 22, SIGNPOST_JUMPTEXT, PlayerHouseBeacon
 
-	db 9 ; object events
+	db 10 ; object events
 	object_event  6,  2, SPRITE_CONSOLE, SPRITEMOVEDATA_DOLL, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, GameConsole, EVENT_KRISS_HOUSE_2F_CONSOLE
 	object_event  6,  4, SPRITE_DOLL_1, SPRITEMOVEDATA_DOLL, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, Doll1, EVENT_KRISS_HOUSE_2F_DOLL_1
 	object_event  7,  4, SPRITE_DOLL_2, SPRITEMOVEDATA_DOLL, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, Doll2, EVENT_KRISS_HOUSE_2F_DOLL_2
@@ -81,6 +81,7 @@ PlayerHouse2F_MapScriptHeader:
 	object_event -5, -5, SPRITE_MUSEUM_STANDEE, SPRITEMOVEDATA_TILE_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
 	object_event -5, -5, SPRITE_MINA_PAINTING, SPRITEMOVEDATA_TILE_DOWN, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
 	itemball_event  7,  4, TAPE_PLAYER, 1, EVENT_GOT_TAPE_PLAYER
+	itemball_event  2,  1, SKATEBOARD, 1, EVENT_GOT_SKATEBOARD
 	
 
 	const_def 1 ; object constants
@@ -167,7 +168,7 @@ PlayerHouseDebugPoster:
 	setflag ENGINE_MAP_CARD
 	setflag ENGINE_RADIO_CARD
 	setflag ENGINE_BANK_CARD
-	setevent EVENT_RUNNING_SHOES
+;	setevent EVENT_RUNNING_SHOES
 	setevent EVENT_BIKE_UPGRADED
 	addcellnum PHONE_MOM
 	addcellnum PHONE_SPRUCE

@@ -53,8 +53,8 @@ FakeSunsetBaytNPC1:
 	jumptextfaceplayer FakeSunsetBaytNPC1Text
 	
 FakeSunsetBaytNPC1Text:
-	text "NICE SHOES."
-	line "PRESS B TO RUN."
+	text "SKATEBOARDS FASTER"
+	line "THAN WALKING."
 	done
 	
 FakeSunsetBaytNPC2:

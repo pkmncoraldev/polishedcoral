@@ -601,11 +601,15 @@ LusterMall_NPC12:
 	jumptextfaceplayer LusterMall_NPC12Text
 	
 LusterMall_NPC13:
+	checkevent EVENT_KNOW_GRIND_TURN
+	iftrue .know_tricks
 	checkitem SKATEBOARD
 	iftrue .have_skateboard
 	jumptextfaceplayer LusterMall_NPC13Text1
 .have_skateboard
 	jumptextfaceplayer LusterMall_NPC13Text2
+.know_tricks
+	jumptextfaceplayer LusterMall_NPC13Text3
 	
 LusterMall_NPC14:
 	faceplayer
@@ -787,8 +791,19 @@ LusterMall_NPC13Text2:
 	text "SKATERS are so"
 	line "dreamy!"
 	
-	para "Do you have a"
-	line "SKATEBOARD?"
+	para "Do you know any"
+	line "tricks?"
+	
+	para "No, I didn't think"
+	line "so…"
+	done
+	
+LusterMall_NPC13Text3:
+	text "SKATERS are so"
+	line "dreamy!"
+	
+	para "Do you know any"
+	line "tricks?"
 	
 	para "You do?"
 	

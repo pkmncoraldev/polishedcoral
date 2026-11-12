@@ -633,8 +633,8 @@ RivalPokedexDesc:
 	next "#DEX.@"
 
 SkateboardDesc:
-	db   "A cool SKATEBOARD."
-	next "Can do tricks!@"
+	db   "Your trusty"
+	next "SKATEBOARD.@"
 
 TrainTicketDesc:
 	db   "Lets you ride the"

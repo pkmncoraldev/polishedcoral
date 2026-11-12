@@ -629,11 +629,6 @@ LusterPunkLeader:
 	opentext TEXTBOX_PUNK_BOSS
 	writetext LusterPunkLeaderText12
 	waitbutton
-	changetextboxspeaker
-	verbosegiveitem SKATEBOARD
-	changetextboxspeaker TEXTBOX_PUNK_BOSS
-	writetext LusterPunkLeaderText13
-	waitbutton
 	closetext
 	pause 10
 	special FadeOutPalettesBlack
@@ -650,7 +645,7 @@ LusterPunkLeader:
 	end
 .saidno2
 	changetextboxspeaker TEXTBOX_PUNK_BOSS
-	writetext LusterPunk1Text14
+	writetext LusterPunk1Text13
 	yesorno
 	iffalse .saidno2
 	checkcode VAR_FACING
@@ -1214,32 +1209,10 @@ LusterPunkLeaderText12:
 	line "good people of"
 	cont "LUSTER CITY!"
 	
-	para "Here, kid."
+	para "…"
 	
-	para "I told you I'd"
-	line "make this worth"
-	cont "your while!"
-	done
-	
-LusterPunkLeaderText13:
-	text "That SKATEBOARD"
-	line "let's you roll"
-	cont "around in style!"
-	
-	para "It's faster than"
-	line "walking,"
-	
-	para "but you have to"
-	line "kick every once in"
-	cont "a while for speed."
-	
-	para "You can also only"
-	line "skate on certain"
-	cont "surfaces."
-	
-	para "You can't roll on"
-	line "grass, gravel, or"
-	cont "other bumpy stuff!"
+	para "You got a"
+	line "SKATEBOARD, yeah?"
 	
 	para "You should stop"
 	line "by the SKATE SHOP"
@@ -1248,8 +1221,9 @@ LusterPunkLeaderText13:
 	para "I know a guy that"
 	line "works there."
 	
-	para "He can teach you"
-	line "some cool tricks!"
+	para "Now that you roll"
+	line "with us, he'll"
+	cont "hook you up."
 	
 	para "…"
 	
@@ -1264,9 +1238,13 @@ LusterPunkLeaderText13:
 	
 	para "you're one of us"
 	line "now kid!"
+	
+	para "Don't forget to"
+	line "visit my buddy at"
+	cont "the skate shop!"
 	done
 	
-LusterPunk1Text14:
+LusterPunk1Text13:
 	text "Aw, you're kidding,"
 	line "right?"
 	
@@ -1472,12 +1450,11 @@ Luster1NPC5Text:
 Luster1NPC6Text:
 	text "There's some cool"
 	line "dudes that hang"
-	cont "out at the park"
-	cont "to the SOUTH."
+	cont "out at the"
+	cont "SKATEPARK."
 	
-	para "I wish I had a"
-	line "SKATEBOARD like"
-	cont "them!"
+	para "I wish I knew"
+	line "tricks like them!"
 	done
 
 Luster1NPC7Text:

@@ -206,7 +206,11 @@ SunsetGramps:
 	jumptextfaceplayer SunsetGrampsText
 	
 SunsetNPC4:
-	jumptextfaceplayer SunsetNPC4Text
+	checkitem SKATEBOARD
+	iftrue .have_board
+	jumptextfaceplayer SunsetNPC4Text1
+.have_board
+	jumptextfaceplayer SunsetNPC4Text2
 	
 SunsetNPC5:
 	checkevent EVENT_SUNSET_BAY_HIDDEN_POTION
@@ -400,13 +404,29 @@ SunsetGrampsText2:
 	line "go?"
 	done
 	
-SunsetNPC4Text:
-	text "Nice RUNNING"
-	line "SHOES!"
+SunsetNPC4Text1:
+	text "Not on your"
+	line "SKATEBOARD today,"
+	cont "<PLAYER>?"
 	
-	para "You can run if"
-	line "you hold the"
-	cont "B BUTTON, <WAIT_S>right?"
+	para "You never leave"
+	line "home without it!"
+	done
+
+SunsetNPC4Text2:
+	text "Nice SKATEBOARD,"
+	line "<PLAYER>."
+	
+	para "It's faster than"
+	line "walking,"
+	
+	para "but you have to"
+	line "kick every once in"
+	cont "a while for speed."
+	
+	para "You also can't roll"
+	line "on grass, gravel,"
+	cont "or bumpy stuff!"
 	done
 	
 SunsetNPC5Text:

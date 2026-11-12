@@ -23,7 +23,7 @@ LusterMallSkateShop_MapScriptHeader:
 	signpost  0,  5, SIGNPOST_JUMPTEXT, LusterMallSkateShopDoorText
 
 	db 3 ; object events
-	person_event SPRITE_BIRD_KEEPER,  1,  1, SPRITEMOVEDATA_STANDING_DOWN, 0, 1, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, LusterMallSkateShop_Clerk, -1
+	person_event SPRITE_BIRD_KEEPER,  1,  1, SPRITEMOVEDATA_STANDING_DOWN, 0, 1, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, LusterMallSkateShop_Clerk, -1
 	person_event SPRITE_YOUNGSTER,  2,  7, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, LusterMallSkateShop_NPC1, -1
 	person_event SPRITE_SKATER,  4,  1, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, LusterMallSkateShop_NPC2, -1
 
@@ -99,8 +99,8 @@ LusterMallSkateShop_NPC1Text:
 	line "counter is a real"
 	cont "jerk!"
 	
-	para "He won't sell me a"
-	line "SKATEBOARD!"
+	para "He won't take me"
+	line "seriously at all!"
 	done
 	
 LusterMallSkateShop_NPC2Text:
@@ -114,20 +114,13 @@ LusterMallSkateShop_NPC2Text:
 LusterMallSkateShop_ClerkText1:
 	text "What do you want?"
 	
+	para "You're no skater!"
+	
 	para "I don't got time"
 	line "to babysit some"
-	cont "kid!"
-	
-	para "A SKATEBOARD?"
-	
-	para "Hahaha!<WAIT_M>"
-	line "You're no skater!"
+	cont "poser kid!"
 	
 	para "Tell ya what,"
-	
-	para "I'll give you the"
-	line "“annoying kid”"
-	cont "deal."
 	
 	para "You get out of"
 	line "my shop,"

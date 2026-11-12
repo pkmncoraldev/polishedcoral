@@ -305,6 +305,11 @@ DecosIconPointers:
 	dba NoItemIcon
 	dba NoItemIcon
 	dba NoItemIcon
+	dba NoItemIcon
+	dba NoItemIcon
+	dba NoItemIcon
+	dba NoItemIcon
+	dba NoItemIcon
 	dba BigSnorlaxIcon
 	dba NoItemIcon
 	dba BigLaprasIcon

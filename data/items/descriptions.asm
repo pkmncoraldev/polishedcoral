@@ -1280,6 +1280,11 @@ DecoDescriptions:
 	dw NoDecoDesc
 	dw NoDecoDesc
 	dw NoDecoDesc
+	dw NoDecoDesc
+	dw NoDecoDesc
+	dw NoDecoDesc
+	dw NoDecoDesc
+	dw NoDecoDesc
 	dw BigSnorlaxDollDesc
 	dw NoDecoDesc
 	dw BigLaprasDollDesc

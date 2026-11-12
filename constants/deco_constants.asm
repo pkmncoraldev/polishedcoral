@@ -12,8 +12,13 @@ DEF const_value = 1
 	const TROPICPLANT
 	const JUMBOPLANT
 	const SPIKEYPLANT
-	const SUPER_NES
-	const NINTENDO_64
+	const SMW
+	const FZERO
+	const ZELDA
+	const POCKYROCKY
+	const EARTHBOUND
+	const METROID
+	const KIRBY
 	const GOLD_TROPHY
 	const SILVER_TROPHY
 	const SURF_PIKA_DOLL
@@ -97,8 +102,13 @@ DEF __enum__ = 0
 	deco  MUSEUM_PHOTO
 
 	const CONSOLES
-	deco  SNES
-	deco  N64
+	deco  SMW
+	deco  FZERO
+	deco  ZELDA
+	deco  POCKYROCKY
+	deco  EARTHBOUND
+	deco  METROID
+	deco  KIRBY
 
 	const BIG_DOLLS
 	deco  BIG_SNORLAX_DOLL
@@ -175,8 +185,13 @@ DEF __enum__ = 0
 	const MARILL_POSTER_BUY
 	const TOWN_MAP_BUY
 	const MINAS_PAINTING_BUY
-	const SNES_BUY
-	const N64_BUY
+	const SMW_BUY
+	const F_ZERO_BUY
+	const ZELDA_BUY
+	const POCKY_ROCKY_BUY
+	const EARTHBOUND_BUY
+	const METROID_BUY
+	const KIRBY_BUY
 	const BIG_SNORLAX_DOLL_BUY
 	const BIG_ONIX_DOLL_BUY
 	const BIG_LAPRAS_DOLL_BUY

@@ -319,8 +319,13 @@ PlayerHouseDebugPoster:
 	setevent EVENT_DECO_POSTER_6
 	setevent EVENT_DECO_POSTER_7
 	setevent EVENT_DECO_POSTER_8
-	setevent EVENT_DECO_SNES
-	setevent EVENT_DECO_N64
+	setevent EVENT_DECO_SMW
+	setevent EVENT_DECO_F_ZERO
+	setevent EVENT_DECO_ZELDA
+	setevent EVENT_DECO_POCKY_ROCKY
+	setevent EVENT_DECO_EARTHBOUND
+	setevent EVENT_DECO_METROID
+	setevent EVENT_DECO_KIRBY
 	setevent EVENT_DECO_BIG_SNORLAX_DOLL
 ;	setevent EVENT_DECO_BIG_ONIX_DOLL
 	setevent EVENT_DECO_BIG_LAPRAS_DOLL
@@ -339,6 +344,7 @@ PlayerHouseDebugPoster:
 	setevent EVENT_DECO_GROWLITHE_DOLL
 	setevent EVENT_DECO_BUIZEL_DOLL
 	setevent EVENT_DECO_DITTO_DOLL
+	setevent EVENT_DECO_CORSOLA_DOLL
 	setevent EVENT_DECO_GOLD_TROPHY
 	setevent EVENT_DECO_SILVER_TROPHY
 	
@@ -1783,20 +1789,6 @@ PlayerHouse2FSetSpawn:
 	moveperson PLAYERHOUSE2F_FRAME, 8, 0
 	moveperson PLAYERHOUSE2F_MINA_MON, 8, 0
 .done_poster
-	callasm PlayerHouseCheckConsoleAsm
-	ifequal 1, .snes
-	ifequal 2, .n64
-	clearevent EVENT_N64
-	clearevent EVENT_SNES
-	jump .done_console
-.snes
-	clearevent EVENT_N64
-	setevent EVENT_SNES
-	jump .done_console
-.n64
-	setevent EVENT_N64
-	clearevent EVENT_SNES
-.done_console
 	checkdebugmode
 	iffalse .skip_debug
 	changeblock $2, $6, $23
@@ -1812,24 +1804,6 @@ PlayerHouseCheckPosterAsm:
 	ret
 .yes
 	ld a, 1
-	ld [wScriptVar], a
-	ret
-
-PlayerHouseCheckConsoleAsm:
-	ld a, [wConsole]
-	cp DECO_SNES
-	jr z, .snes
-	cp DECO_N64
-	jr z, .n64
-	xor a
-	ld [wScriptVar], a
-	ret
-.snes
-	ld a, 1
-	ld [wScriptVar], a
-	ret
-.n64
-	ld a, 2
 	ld [wScriptVar], a
 	ret
 
@@ -1954,17 +1928,23 @@ GameConsole:
 	waitbutton
 	closetext
 	callasm GameConsoleSetMapMusic
-	playmusic MUSIC_SNES_KIRBY
+	playmusic MUSIC_NONE
+	pause 2
+	callasm GetGameConsoleMusic
 	pause 20
 	opentext
-	writetext GameConsoleText_Kirby
+	callasm GetGameConsoleText
 	waitbutton
 	closetext
 	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2
 	callasm GameConsoleForceTapePlayerOffAsm
 	end
 .turnoff
-	writetext GameConsoleText_AskTurnOffKirby
+	callasm GetGameConsoleText
+	buttonsound
+	farwritetext StdBlankText
+	pause 6
+	writetext GameConsoleText_AskTurnOff
 	yesorno
 	iffalse .no
 	writetext GameConsoleText_TurnOffSnes
@@ -1981,6 +1961,54 @@ GameConsole:
 	closetext
 	end
 	
+GetGameConsoleMusic:
+	ld hl, GameConsoleMusic
+	ld a, [wConsole]
+	sub $1d
+.loop
+	dec a
+	cp 0
+	inc hl
+	jr nz, .loop
+	ld e, [hl]
+	ld d, 0
+	jp PlayMusic
+	
+GetGameConsoleText:
+	ld hl, GameConsoleText
+	ld a, [wConsole]
+	sub $1d
+.loop2
+	dec a
+	cp 0
+	inc hl
+	inc hl
+	jr nz, .loop2
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	jp BattleTextBox
+	
+GameConsoleMusic:
+	db -1
+	db MUSIC_SNES_SMW
+	db MUSIC_NONE		;MUSIC_SNES_FZERO
+	db MUSIC_NONE		;MUSIC_SNES_ZELDA
+	db MUSIC_NONE		;MUSIC_SNES_POCKY_ROCKY
+	db MUSIC_NONE		;MUSIC_SNES_EARTHBOUND
+	db MUSIC_NONE		;MUSIC_SNES_METROID
+	db MUSIC_SNES_KIRBY
+	
+GameConsoleText:
+	dw -1
+	dw GameConsoleText_SMW
+	dw GameConsoleText_FZero
+	dw GameConsoleText_Zelda
+	dw GameConsoleText_PockyRocky
+	dw GameConsoleText_Earthbound
+	dw GameConsoleText_Metroid
+	dw GameConsoleText_Kirby
+	
 GameConsoleForceTapePlayerOffAsm:
 	xor a
 	ld [wTapePlayerActive], a
@@ -1988,10 +2016,11 @@ GameConsoleForceTapePlayerOffAsm:
 	
 GameConsoleSetMapMusic:
 	xor a
-	jr GameConsoleMusic
+	ld [wMapMusic], a
+	ret
+
 GameConsoleRestoreMapMusic:
 	ld a, MUSIC_SUNSET_BAY
-GameConsoleMusic:
 	ld [wMapMusic], a
 	ret
 
@@ -2010,14 +2039,6 @@ SunbeamWarp:
 	warp SUNBEAM_ISLAND, 8, 51
 	end
 	
-GameConsoleText_SMW:
-	text "It's an SNES."
-	
-	para "A man wearing"
-	line "overalls is riding"
-	cont "a green dinosaur."
-	done
-	
 GameConsoleText_AskTurnOnSnes:
 	text "It's an SNES."
 	
@@ -2034,18 +2055,52 @@ GameConsoleText_TurnOffSnes:
 	line "off the SNES!"
 	done
 	
+GameConsoleText_SMW:
+	text "A man wearing"
+	line "overalls is riding"
+	cont "a green dinosaur."
+	done
+	
+GameConsoleText_FZero:
+	text "A blue machine"
+	line "speeds down the"
+	cont "track with a cool"
+	cont "3D effect!"
+	done
+	
+GameConsoleText_Zelda:
+	text "A kid in a green"
+	line "hat swings a sword"
+	cont "at a chicken."
+	done
+	
+GameConsoleText_PockyRocky:
+	text "A shrine maiden"
+	line "and a tanuki throw"
+	cont "cards at ghosts."
+	done
+	
+GameConsoleText_Earthbound:
+	text "Three boys and a"
+	line "girl are hanging"
+	cont "out at a hotel."
+	done
+	
+GameConsoleText_Metroid:
+	text "An intergalactic"
+	line "bounty hunter is"
+	cont "recounting her"
+	cont "past adventures."
+	done
+	
 GameConsoleText_Kirby:
 	text "A Pink Puff is"
 	line "eating everything"
 	cont "in its path."
 	done
 	
-GameConsoleText_AskTurnOffKirby:
-	text "A Pink Puff is"
-	line "eating everything"
-	cont "in its path."
-	
-	para "Turn off the SNES?"
+GameConsoleText_AskTurnOff:
+	text "Turn off the SNES?"
 	done
 
 PlayerHousePCText:

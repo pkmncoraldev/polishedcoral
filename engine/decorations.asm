@@ -299,8 +299,13 @@ FindOwnedConsoles: ; 26910
 ; 26918
 
 .consoles ; 26918
-	db DECO_SNES
-	db DECO_N64
+	db DECO_SMW
+	db DECO_FZERO
+	db DECO_ZELDA
+	db DECO_POCKYROCKY
+	db DECO_EARTHBOUND
+	db DECO_METROID
+	db DECO_KIRBY
 	db -1
 ; 2691d
 
@@ -717,11 +722,25 @@ DecoAction_putawayposter: ; 26d0f
 ; 26d15
 
 DecoAction_setupconsole: ; 26d15
+	eventflagcheck EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2
+	jr z, .skip
+	ld a, MUSIC_SUNSET_BAY
+	ld [wMapMusic], a
+	eventflagreset EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2
+	call RestartMapMusic
+.skip
 	ld hl, wConsole
 	jp DecoAction_TrySetItUp
 ; 26d1b
 
 DecoAction_putawayconsole: ; 26d1b
+	eventflagcheck EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2
+	jr z, .skip
+	ld a, MUSIC_SUNSET_BAY
+	ld [wMapMusic], a
+	eventflagreset EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2
+	call RestartMapMusic
+.skip
 	ld hl, wConsole
 	jp DecoAction_TryPutItAway
 ; 26d21

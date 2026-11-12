@@ -36,8 +36,13 @@ DecorationAttributes:
 	decoration DECO_PLANT,    MINAS_PAINTING,    SET_UP_POSTER,      EVENT_DECO_POSTER_8,               $30
 	decoration DECO_PLANT,    MUSEUM_PHOTO,   	 SET_UP_POSTER,      EVENT_DECO_POSTER_9,               $31
 	decoration DECO_PLANT,    PUT_IT_AWAY,       PUT_AWAY_CONSOLE,   EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1,         $00
-	decoration DECO_PLANT,    SUPER_NES,         SET_UP_CONSOLE,     EVENT_DECO_SNES,                   SPRITE_SNES
-	decoration DECO_PLANT,    NINTENDO_64,       SET_UP_CONSOLE,     EVENT_DECO_N64,                    SPRITE_N64
+	decoration DECO_PLANT,    SMW,      	     SET_UP_CONSOLE,     EVENT_DECO_SMW,                    SPRITE_SNES
+	decoration DECO_PLANT,    FZERO,             SET_UP_CONSOLE,     EVENT_DECO_F_ZERO,                 SPRITE_SNES
+	decoration DECO_PLANT,    ZELDA,             SET_UP_CONSOLE,     EVENT_DECO_ZELDA,                  SPRITE_SNES
+	decoration DECO_PLANT,    POCKYROCKY,        SET_UP_CONSOLE,     EVENT_DECO_POCKY_ROCKY,            SPRITE_SNES
+	decoration DECO_PLANT,    EARTHBOUND,        SET_UP_CONSOLE,     EVENT_DECO_EARTHBOUND,             SPRITE_SNES
+	decoration DECO_PLANT,    METROID,           SET_UP_CONSOLE,     EVENT_DECO_METROID,                SPRITE_SNES
+	decoration DECO_PLANT,    KIRBY,             SET_UP_CONSOLE,     EVENT_DECO_KIRBY,                  SPRITE_SNES
 	decoration DECO_PLANT,    PUT_IT_AWAY,       PUT_AWAY_BIG_DOLL,  EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1,         $00
 	decoration DECO_BIGDOLL,  SNORLAX,           SET_UP_BIG_DOLL,    EVENT_DECO_BIG_SNORLAX_DOLL,       SPRITE_BIG_SNORLAX
 	decoration DECO_BIGDOLL,  ONIX,              SET_UP_BIG_DOLL,    EVENT_DECO_BIG_ONIX_DOLL,          SPRITE_BIG_ONIX

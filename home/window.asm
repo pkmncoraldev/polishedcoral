@@ -61,8 +61,8 @@ OpenText:: ; 2e08
 	rst Bankswitch
 
 	call ReanchorBGMap_NoOAMUpdate
-	call SpeechTextBox
 	call BGMapAnchorTopLeft
+	call SpeechTextBox
 	call LoadFonts_NoOAMUpdate
 	pop af
 	rst Bankswitch

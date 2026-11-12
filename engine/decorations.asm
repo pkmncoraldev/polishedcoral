@@ -372,12 +372,18 @@ FindOwnedOrnaments: ; 26925
 	db -1
 ; 26945
 
-DecoBigDollMenu: ; 26945
+DecoBigDollMenu:
+	eventflagcheck EVENT_GOT_SKATEBOARD
+	jr z, .skateboard
 	call FindOwnedBigDolls
 	call PopulateDecoCategoryMenu
 	xor a
 	ret
-; 2694d
+.skateboard
+	ld hl, DecoText_GrabTapePlayer
+	call MenuTextBoxBackup
+	xor a
+	ret
 
 FindOwnedBigDolls: ; 2694d
 	ld hl, .big_dolls

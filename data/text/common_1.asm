@@ -208,8 +208,8 @@ UnknownText_0x1bc4b2::
 	done
 
 UnknownText_GrabTapePlayer::
-	text "You must clear off"
-	line "the table first!"
+	text "You have to clean"
+	line "up the area first!"
 	prompt
 
 UnknownText_0x1bc4d7::

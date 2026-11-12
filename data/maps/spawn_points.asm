@@ -26,6 +26,7 @@ SpawnPoints: ; 0x152ab
 	spawn OBSCURA_CITY,	 			   31, 36
 	spawn LUMINA_TOWN,	 			   27, 18
 	spawn BRILLO_TOWN,				   22, 14
+	spawn BEACON_ATOLL,				    0,  0
 	
 	spawn STARGLOW_CAVERN_DEPTHS,	   16, 15
 	spawn FAKE_PLAYERS_HOUSE_2F,	    1,  4

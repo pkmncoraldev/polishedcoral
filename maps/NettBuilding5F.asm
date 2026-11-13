@@ -63,7 +63,7 @@ NettBuilding5F_MapScriptHeader:
 
 
 TrainerNettBuilding5F_1:
-	generictrainer GRUNTM, NETT_GRUNTM_6, EVENT_BEAT_NETT_BUILDING_TRAINER_11, .SeenText, .BeatenText
+	generictrainer GRUNTM, NETT_GRUNTM_6, EVENT_BEAT_NETT_BUILDING_TRAINER_9, .SeenText, .BeatenText
 
 	text "No matter how fast"
 	line "you scurry, you'll"
@@ -84,7 +84,7 @@ TrainerNettBuilding5F_1:
 	done
 
 TrainerNettBuilding5F_2:
-	generictrainer GRUNTM, NETT_GRUNTM_7, EVENT_BEAT_NETT_BUILDING_TRAINER_12, .SeenText, .BeatenText
+	generictrainer GRUNTM, NETT_GRUNTM_7, EVENT_BEAT_NETT_BUILDING_TRAINER_10, .SeenText, .BeatenText
 
 	text "I honestly don't"
 	line "really care if"
@@ -107,7 +107,7 @@ TrainerNettBuilding5F_2:
 	done
 
 TrainerNettBuilding5F_3:
-	generictrainer GRUNTF, NETT_GRUNTF_6, EVENT_BEAT_NETT_BUILDING_TRAINER_13, .SeenText, .BeatenText
+	generictrainer GRUNTF, NETT_GRUNTF_4, EVENT_BEAT_NETT_BUILDING_TRAINER_11, .SeenText, .BeatenText
 
 	text "Intruder alert!<WAIT_S>"
 	line "Intruder alert!"
@@ -128,7 +128,7 @@ TrainerNettBuilding5F_3:
 	done
 
 TrainerNettBuilding5F_4:
-	generictrainer GRUNTM, NETT_GRUNTM_8, EVENT_BEAT_NETT_BUILDING_TRAINER_14, .SeenText, .BeatenText
+	generictrainer GRUNTM, NETT_GRUNTM_8, EVENT_BEAT_NETT_BUILDING_TRAINER_12, .SeenText, .BeatenText
 
 	text "At this rate,"
 	line "TEAM SNARE is done"
@@ -149,7 +149,7 @@ TrainerNettBuilding5F_4:
 	done
 
 TrainerNettBuilding5F_5:
-	generictrainer GRUNTF, NETT_GRUNTF_7, EVENT_BEAT_NETT_BUILDING_TRAINER_15, .SeenText, .BeatenText
+	generictrainer GRUNTF, NETT_GRUNTF_5, EVENT_BEAT_NETT_BUILDING_TRAINER_13, .SeenText, .BeatenText
 
 	text "Fine.<WAIT_S>"
 	line "Go on then."
@@ -167,7 +167,7 @@ TrainerNettBuilding5F_5:
 	done
 	
 TrainerNettBuilding5F_6:
-	generictrainer GRUNTM, NETT_GRUNTM_9, EVENT_BEAT_NETT_BUILDING_TRAINER_16, .SeenText, .BeatenText
+	generictrainer GRUNTM, NETT_GRUNTM_9, EVENT_BEAT_NETT_BUILDING_TRAINER_14, .SeenText, .BeatenText
 
 	text "Listen, just don't"
 	line "touch any of the"

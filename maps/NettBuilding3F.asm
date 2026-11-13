@@ -21,7 +21,7 @@ NettBuilding3F_MapScriptHeader:
 	db 1 ; bg events
 	signpost  0, 19, SIGNPOST_JUMPTEXT, NettBuilding3FSignText
 
-	db 8 ; object events
+	db 7 ; object events
 	person_event SPRITE_SLOWPOKETAIL,  7,  4, SPRITEMOVEDATA_TILE_UP_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, 0, -1
 	person_event SPRITE_SLOWPOKETAIL,  9,  8, SPRITEMOVEDATA_TILE_UP_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, 0, -1
 	person_event SPRITE_SLOWPOKETAIL,  9,  0, SPRITEMOVEDATA_TILE_UP_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, 0, -1
@@ -29,7 +29,6 @@ NettBuilding3F_MapScriptHeader:
 	person_event SPRITE_SNARE, 11, 12, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 3, TrainerNettBuilding3F_2, -1
 	person_event SPRITE_SNARE,  2,  5, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 1, TrainerNettBuilding3F_3, -1
 	person_event SPRITE_SNARE,  5,  7, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 1, TrainerNettBuilding3F_4, -1
-	person_event SPRITE_SNARE_GIRL, 10, 14, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 3, TrainerNettBuilding3F_5, -1
 
 
 NettBuilding3FCallback:
@@ -37,7 +36,7 @@ NettBuilding3FCallback:
 	return
 
 TrainerNettBuilding3F_1:
-	generictrainer GRUNTM, NETT_GRUNTM_2, EVENT_BEAT_NETT_BUILDING_TRAINER_3, .SeenText, .BeatenText
+	generictrainer GRUNTM, NETT_GRUNTM_2, EVENT_BEAT_NETT_BUILDING_TRAINER_2, .SeenText, .BeatenText
 
 	text "We don't need your"
 	line "grubby fingers all"
@@ -62,7 +61,7 @@ TrainerNettBuilding3F_1:
 	done
 	
 TrainerNettBuilding3F_2:
-	generictrainer GRUNTM, NETT_GRUNTM_3, EVENT_BEAT_NETT_BUILDING_TRAINER_4, .SeenText, .BeatenText
+	generictrainer GRUNTM, NETT_GRUNTM_3, EVENT_BEAT_NETT_BUILDING_TRAINER_3, .SeenText, .BeatenText
 	
 	text "If you're tired,"
 	line "have a rest in"
@@ -83,7 +82,7 @@ TrainerNettBuilding3F_2:
 	done
 	
 TrainerNettBuilding3F_3:
-	generictrainer GRUNTM, NETT_GRUNTM_4, EVENT_BEAT_NETT_BUILDING_TRAINER_5, .SeenText, .BeatenText
+	generictrainer GRUNTM, NETT_GRUNTM_4, EVENT_BEAT_NETT_BUILDING_TRAINER_4, .SeenText, .BeatenText
 
 	text "I can't do anything"
 	line "right!"
@@ -106,30 +105,7 @@ TrainerNettBuilding3F_3:
 	done
 	
 TrainerNettBuilding3F_4:
-	generictrainer GRUNTM, NETT_GRUNTM_5, EVENT_BEAT_NETT_BUILDING_TRAINER_6, .SeenText, .BeatenText
-
-	text "Well, there's tons"
-	line "more where I came"
-	cont "from."
-	
-	para "There's no way"
-	line "you'll beat us all!"
-	done
-
-.SeenText:
-	text "You're on our turf"
-	line "now."
-	
-	para "There's no way TEAM"
-	line "SNARE will lose!"
-	done
-
-.BeatenText:
-	text "I lose!?"
-	done
-	
-TrainerNettBuilding3F_5:
-	generictrainer GRUNTF, NETT_GRUNTF_2, EVENT_BEAT_NETT_BUILDING_TRAINER_7, .SeenText, .BeatenText
+	generictrainer GRUNTM, NETT_GRUNTM_5, EVENT_BEAT_NETT_BUILDING_TRAINER_5, .SeenText, .BeatenText
 
 	text "Well, you've made"
 	line "it pretty far"

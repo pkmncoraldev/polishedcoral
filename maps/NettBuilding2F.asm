@@ -21,10 +21,9 @@ NettBuilding2F_MapScriptHeader:
 	signpost  2, 19, SIGNPOST_JUMPTEXT, NettBuilding2FSignText
 	signpost  3,  4, SIGNPOST_READ, NettBuilding2FNurse
 
-	db 4 ; object events
+	db 3 ; object events
 	person_event SPRITE_BACKPACK,  2,  4, SPRITEMOVEDATA_TILE_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, NettBuilding2FNurse, -1
 	person_event SPRITE_SNARE, 13, 19, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 2, TrainerNettBuilding2F_1, -1
-	person_event SPRITE_SNARE_GIRL, 13,  4, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 4, TrainerNettBuilding2F_2, -1
 	person_event SPRITE_SNARE,  9,  7, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, NettBuilding2FNPC, -1
 	
 	
@@ -76,25 +75,6 @@ TrainerNettBuilding2F_1:
 .BeatenText:
 	text "I guess I can't"
 	line "stop you."
-	done
-	
-TrainerNettBuilding2F_2:
-	generictrainer GRUNTF, NETT_GRUNTF_1, EVENT_BEAT_NETT_BUILDING_TRAINER_2, .SeenText, .BeatenText
-
-	text "You'll never find"
-	line "all 3 key cards."
-	done
-
-.SeenText:
-	text "Why are you here?"
-	
-	para "Do you even know"
-	line "what you're looking"
-	cont "for?"
-	done
-
-.BeatenText:
-	text "You won, ok?"
 	done
 	
 NettBuilding2FNPC:

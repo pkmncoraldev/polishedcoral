@@ -36,7 +36,7 @@ NettBuilding7FCallback:
 	return
 
 TrainerNettBuilding7F:
-	generictrainer GRUNTM, NETT_GRUNTM_12, EVENT_BEAT_NETT_BUILDING_TRAINER_19, .SeenText, .BeatenText
+	generictrainer GRUNTM, NETT_GRUNTM_10, EVENT_BEAT_NETT_BUILDING_TRAINER_16, .SeenText, .BeatenText
 
 	text "You have to find"
 	line "a way to get over"

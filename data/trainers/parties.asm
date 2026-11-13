@@ -1977,16 +1977,19 @@ GruntMGroup:
 	db "GRUNT@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 49, SCYTHER
 	db -1 ; end
 
 ; ================
 
 	; NETT_GRUNTM_2
 	db "GRUNT@"
-	db TRAINERTYPE_NORMAL
+	db TRAINERTYPE_MOVES
 	; party
-	db 1, BULBASAUR
+	db 48, SLOWBRO
+		db PSYCHIC_M, REST, AMNESIA, BUBBLE_BEAM
+	db 49, CINCCINO
+		db HYPER_VOICE, CHARM_FEATHER_DANCE, DOUBLE_HIT, SING_HYPNOSIS
 	db -1 ; end
 
 ; ================
@@ -1995,7 +1998,7 @@ GruntMGroup:
 	db "GRUNT@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 51, NIDOKING
 	db -1 ; end
 
 ; ================
@@ -2004,7 +2007,8 @@ GruntMGroup:
 	db "GRUNT@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 50, GOLBAT
+	db 49, COMFEY
 	db -1 ; end
 	
 ; ================
@@ -2013,7 +2017,8 @@ GruntMGroup:
 	db "GRUNT@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 50, RATICATE
+	db 48, CACTURNE
 	db -1 ; end
 	
 ; ================
@@ -2022,7 +2027,9 @@ GruntMGroup:
 	db "GRUNT@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 50, RATICATE
+	db 51, RATICATE
+	db 52, RATICATE
 	db -1 ; end
 	
 ; ================
@@ -2031,7 +2038,8 @@ GruntMGroup:
 	db "GRUNT@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 49, TOUCANNON
+	db 48, HERACROSS
 	db -1 ; end
 	
 ; ================
@@ -2040,7 +2048,9 @@ GruntMGroup:
 	db "GRUNT@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 47, WEAVILE
+	db 47, PILOSWINE
+	db 47, ARCANINE
 	db -1 ; end
 	
 ; ================
@@ -2049,34 +2059,19 @@ GruntMGroup:
 	db "GRUNT@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 51, GALVANTULA
 	db -1 ; end
 	
 ; ================
 
 	; NETT_GRUNTM_10
 	db "GRUNT@"
-	db TRAINERTYPE_NORMAL
+	db TRAINERTYPE_PERSONALITY
 	; party
-	db 1, BULBASAUR
-	db -1 ; end
-	
-; ================
-
-	; NETT_GRUNTM_11
-	db "GRUNT@"
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
-	db -1 ; end
-	
-; ================
-
-	; NETT_GRUNTM_12
-	db "GRUNT@"
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
+	db 48, CORSOLA, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM
+	db 49, CORSOLA, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM
+	db 50, CORSOLA, ABILITY_1 | QUIRKY, MALE | PLAIN_FORM
+	db 51, CORSOLA, ABILITY_1 | QUIRKY, MALE | GALARIAN_FORM
 	db -1 ; end
 	
 ; ================
@@ -2210,7 +2205,8 @@ GruntFGroup:
 	db "GRUNT@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 48, MAGNETON
+	db 48, MAGNETON
 	db -1 ; end
 	
 ; ================
@@ -2219,7 +2215,8 @@ GruntFGroup:
 	db "GRUNT@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 50, GOLBAT
+	db 50, MARACTUS
 	db -1 ; end
 	
 ; ================
@@ -2228,7 +2225,7 @@ GruntFGroup:
 	db "GRUNT@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 51, MILTANK
 	db -1 ; end
 	
 ; ================
@@ -2237,7 +2234,7 @@ GruntFGroup:
 	db "GRUNT@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 50, PORYGON_Z
 	db -1 ; end
 	
 ; ================
@@ -2246,7 +2243,8 @@ GruntFGroup:
 	db "GRUNT@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 48, RAPIDASH
+	db 47, FARIGIRAF
 	db -1 ; end
 	
 ; ================
@@ -2255,15 +2253,8 @@ GruntFGroup:
 	db "GRUNT@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
-	db -1 ; end
-; ================
-
-	; NETT_GRUNTF_7
-	db "GRUNT@"
-	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
+	db 48, FERALIGATR
+	db 48, POLIWRATH
 	db -1 ; end
 ; ================
 ; ================================

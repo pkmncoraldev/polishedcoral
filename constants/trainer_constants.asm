@@ -231,8 +231,6 @@ DEF PLAYER_F EQU __enum__
 	const NETT_GRUNTM_8
 	const NETT_GRUNTM_9
 	const NETT_GRUNTM_10
-	const NETT_GRUNTM_11
-	const NETT_GRUNTM_12
 
 
 	trainerclass GRUNTF
@@ -253,7 +251,6 @@ DEF PLAYER_F EQU __enum__
 	const NETT_GRUNTF_4
 	const NETT_GRUNTF_5
 	const NETT_GRUNTF_6
-	const NETT_GRUNTF_7
 
 
 	trainerclass KAGE

@@ -1713,18 +1713,22 @@ HikerGroup:
 
 	; HIKER
 	db "BRUCE@"
-	db TRAINERTYPE_NORMAL
+	db TRAINERTYPE_MOVES
 	; party
-	db 1, BULBASAUR
+	db 48, GOLEM
+		db BULLDOZE, ROCK_BLAST, DEFENSE_CURL_HARDEN_WITHDRAW, 0
+	db 49, BRELOOM
+		db DRAIN_PUNCH, BULLET_SEED, ENDURE, 0
 	db -1 ; end
 
 ; ================
 
 	; HIKER
 	db "JOE@"
-	db TRAINERTYPE_NORMAL
+	db TRAINERTYPE_MOVES
 	; party
-	db 1, BULBASAUR
+	db 60, MACHOP
+		db MACH_PUNCH, KNOCK_OFF, CROSS_CHOP, BRICK_BREAK
 	db -1 ; end
 
 ; ================
@@ -2664,7 +2668,9 @@ PokemaniacGroup:
 	db "BENNY@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 55, LARVESTA
+	db 55, LARVESTA
+	db 55, LARVESTA
 	db -1 ; end
 
 ; ================
@@ -2673,7 +2679,8 @@ PokemaniacGroup:
 	db "MILO@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 48, DONPHAN
+	db 47, NOIVERN
 	db -1 ; end
 
 ; ================
@@ -2754,7 +2761,8 @@ SuperNerdGroup:
 	db "ADAM@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 49, GLIGAR
+	db 47, GLISCOR
 	db -1 ; end
 
 ; ================
@@ -3212,16 +3220,22 @@ PsychicGroup:
 	db "JACQUES@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 48, WYRDEER
+	db 48, FARIGIRAF
 	db -1 ; end
 
 ; ================
 
 	; PSYCHIC_T
 	db "RHETT@"
-	db TRAINERTYPE_NORMAL
+	db TRAINERTYPE_MOVES
 	; party
-	db 1, BULBASAUR
+	db 47, CHANDELURE
+		db HEX, FLAMETHROWER, WILL_O_WISP, 0
+	db 48, SLOWKING
+		db NASTY_PLOT, PSYCHIC_M, BUBBLE_BEAM, 0
+	db 48, EXEGGUTOR
+		db SOLAR_BEAM, PSYSHOCK, EGG_BOMB, 0
 	db -1 ; end
 
 ; ================
@@ -4316,7 +4330,7 @@ CooltrainerMGroup:
 	db "LUCAS@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 51, KINGDRA
 	db -1 ; end
 
 ; ================
@@ -4418,7 +4432,7 @@ CooltrainerFGroup:
 	db "BROOKE@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 51, DRAGAPULT
 	db -1 ; end
 
 ; ================
@@ -4426,8 +4440,10 @@ CooltrainerFGroup:
 	; COOLTRAINERF
 	db "MAE@"
 	db TRAINERTYPE_NORMAL
-	; party
-	db 1, BULBASAUR
+	; party	
+	db 48, JOLTEON
+	db 48, FLAREON
+	db 48, VAPOREON
 	db -1 ; end
 
 ; ================
@@ -4693,7 +4709,7 @@ DelinquentmGroup:
 	db "QUINCY@"
 	db TRAINERTYPE_NORMAL
 	; party
-	db 1, BULBASAUR
+	db 51, SCRAFTY
 	db -1 ; end
 
 ; ================

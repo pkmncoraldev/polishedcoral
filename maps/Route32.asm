@@ -32,9 +32,32 @@ Route32Callback:
 	return
 
 Route32NPC1:
-	jumptextfaceplayer Route32NPC1Text
+	checkevent EVENT_FOUGHT_SNORLAX_ROUTE_32
+	iftrue .fought
+	jumptextfaceplayer Route32NPC1Text1
+.fought
+	jumptextfaceplayer Route32NPC1Text2
 	
-Route32NPC1Text:
+Route32NPC1Text1:
+	text "That other SNORLAX"
+	line "blocked my way by"
+	cont "STARGLOW VALLEY,"
+	
+	para "and now THIS one"
+	line "was blocking the"
+	cont "road here!"
+	
+	para "Hey!"
+	
+	para "You were there"
+	line "last time too!"
+	
+	para "Can't you play"
+	line "that flute thingy"
+	cont "again?"
+	done
+	
+Route32NPC1Text2:
 	text "That other SNORLAX"
 	line "blocked my way by"
 	cont "STARGLOW VALLEY,"

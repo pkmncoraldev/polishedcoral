@@ -31,6 +31,15 @@ LegendaryAppearedText:
 	text_from_ram wEnemyMonNick
 	text ""
 	line "attacked!"
+	
+	para "It means"
+	line "business!"
+	prompt
+	
+RoamingAppearedText:
+	text_from_ram wEnemyMonNick
+	text ""
+	line "appeared!"
 	prompt
 
 QuestionAppearedText: ; 0x80793
@@ -431,15 +440,14 @@ BattleText_EnemyAreAboutToUseWillPlayerSwitchPkmn:
 	line "your #MON?"
 	done
 
-BattleText_EnemyIsAboutToSwitchWillPlayerSwitchPkmn:
-	text "<ENEMY>"
-	line "is about to switch"
-	cont "#MON."
+; BattleText_EnemyIsAboutToSwitchWillPlayerSwitchPkmn:
+	; text "<ENEMY>"
+	; line "is about to switch"
+	; cont "#MON."
 
-	para "Will you switch"
-	line "your #MON?"
-	done
-; 0x80af8
+	; para "Will you switch"
+	; line "your #MON?"
+	; done
 
 BattleText_EnemyAreAboutToSwitchWillPlayerSwitchPkmn:
 	text "<ENEMY>"

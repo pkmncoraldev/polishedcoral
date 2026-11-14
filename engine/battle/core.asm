@@ -9872,9 +9872,10 @@ BattleStartMessage: ; 3fc8b
 	ld hl, PokemonFellFromTreeText
 	cp BATTLETYPE_TREE
 	jr z, .PlaceBattleStartText
-	ld hl, LegendaryAppearedText
+	ld hl, RoamingAppearedText
 	cp BATTLETYPE_ROAMING
 	jr z, .PlaceBattleStartText
+	ld hl, LegendaryAppearedText
 	cp BATTLETYPE_LEGENDARY ; or BATTLETYPE_LEGENDARY_2
 	jr nc, .PlaceBattleStartText
 .pory

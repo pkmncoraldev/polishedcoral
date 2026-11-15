@@ -267,7 +267,7 @@ Pokedex_UpdateMainScreen: ; 401ae (10:41ae)
 	ret
 
 .select
-	call Pokedex_BlackOutBG
+	call ClearBGPalettes
 	ld a, DEXSTATE_OPTION_SCR
 	ld [wJumptableIndex], a
 	xor a
@@ -324,10 +324,11 @@ Pokedex_InitDexEntryScreen: ; 40217 (10:4217)
 	ld [wDexMonShiny], a
 	ld a, CGB_POKEDEX
 	call Pokedex_GetCGBLayout
-	call DelayFrame
+;	call DelayFrame
 	call Pokedex_IncrementDexPointer
-	ld a, [wCurPartySpecies]
-	jp PlayCry
+	ret
+;	ld a, [wCurPartySpecies]
+;	jp PlayCry
 
 Pokedex_UpdateDexEntryScreen: ; 40258 (10:4258)
 	ld a, [wCelebiEvent]
@@ -381,7 +382,7 @@ Pokedex_Page: ; 40292
 
 Pokedex_ReinitDexEntryScreen: ; 402aa (10:42aa)
 ; Reinitialize the Pokédex entry screen after changing the selected mon.
-	call Pokedex_BlackOutBG
+;	call ClearBGPalettes
 	xor a
 	ld [wPokedexStatus], a
 	xor a
@@ -390,18 +391,20 @@ Pokedex_ReinitDexEntryScreen: ; 402aa (10:42aa)
 	call Pokedex_InitArrowCursor
 ;	call Pokedex_LoadCurrentFootprint
 	call Pokedex_GetSelectedMon
+	push af
+	ld [wCurPartySpecies], a
+	ld a, CGB_POKEDEX
+	call Pokedex_GetCGBLayout
+	pop af
 	ld [wLastDexEntry], a
 	farcall DisplayDexEntry
 ;	call Pokedex_DrawFootprint
 	call Pokedex_LoadSelectedMonTiles
 	call ApplyTilemapInVBlank
-	call Pokedex_GetSelectedMon
-	ld [wCurPartySpecies], a
-	ld a, CGB_POKEDEX
-	call Pokedex_GetCGBLayout
-	call DelayFrame
-	ld a, [wCurPartySpecies]
-	call PlayCry
+
+;	call DelayFrame
+;	ld a, [wCurPartySpecies]
+;	call PlayCry
 	ld hl, wJumptableIndex
 	dec [hl]
 	ret
@@ -426,7 +429,7 @@ DexEntryScreen_MenuActionJumptable: ; 402f2
 	dw .Shiny
 
 .Area: ; 402fa
-	call Pokedex_BlackOutBG
+	call ClearBGPalettes
 	xor a
 	ldh [hSCX], a
 	call DelayFrame
@@ -438,15 +441,15 @@ DexEntryScreen_MenuActionJumptable: ; 402f2
 	ld a, [wDexCurrentLocation]
 	ld e, a
 	predef _Area
-	call Pokedex_BlackOutBG
-	call DelayFrame
+	call ClearBGPalettes
+;	call DelayFrame
 	xor a
 	ldh [hBGMapMode], a
 	ld a, $90
 	ldh [hWY], a
 	ld a, $5
 	ldh [hSCX], a
-	call DelayFrame
+;	call DelayFrame
 	call Pokedex_RedisplayDexEntry
 	call Pokedex_LoadSelectedMonTiles
 	call ApplyTilemapInVBlank
@@ -511,7 +514,7 @@ Pokedex_UpdateOptionScreen:
 	jp hl
 
 .return_to_main_screen
-	call Pokedex_BlackOutBG
+	call ClearBGPalettes
 	ld a, DEXSTATE_MAIN_SCR
 	ld [wJumptableIndex], a
 	ret
@@ -553,13 +556,13 @@ Pokedex_UpdateOptionScreen:
 	call Pokedex_InitCursorPosition
 
 .skip_changing_mode
-	call Pokedex_BlackOutBG
+	call ClearBGPalettes
 	ld a, DEXSTATE_MAIN_SCR
 	ld [wJumptableIndex], a
 	ret
 
 .MenuAction_UnownMode: ; 4043a (10:443a)
-	call Pokedex_BlackOutBG
+	call ClearBGPalettes
 	ld a, DEXSTATE_UNOWN_MODE
 	ld [wJumptableIndex], a
 	ret
@@ -603,7 +606,7 @@ Pokedex_UpdateSearchScreen: ; 40471 (10:4471)
 	jp hl
 
 .cancel
-	call Pokedex_BlackOutBG
+	call ClearBGPalettes
 	ld a, DEXSTATE_MAIN_SCR
 	ld [wJumptableIndex], a
 	ret
@@ -653,13 +656,13 @@ Pokedex_UpdateSearchScreen: ; 40471 (10:4471)
 	xor a
 	ld [wDexListingScrollOffset], a
 	ld [wDexListingCursor], a
-	call Pokedex_BlackOutBG
+	call ClearBGPalettes
 	ld a, DEXSTATE_SEARCH_RESULTS_SCR
 	ld [wJumptableIndex], a
 	ret
 
 .MenuAction_Cancel: ; 40501
-	call Pokedex_BlackOutBG
+	call ClearBGPalettes
 	ld a, DEXSTATE_MAIN_SCR
 	ld [wJumptableIndex], a
 	ret
@@ -732,7 +735,7 @@ Pokedex_UpdateSearchResultsScreen: ; 40562 (10:4562)
 	ld [wDexListingCursor], a
 	ld a, [wcf65]
 	ld [wLastDexEntry], a
-	call Pokedex_BlackOutBG
+	call ClearBGPalettes
 	call ClearSprites
 	call Pokedex_OrderMonsByMode
 	ld a, DEXSTATE_SEARCH_SCR
@@ -760,7 +763,7 @@ Pokedex_UpdateUnownMode: ; 405df (10:45df)
 	ld a, [hl]
 	and A_BUTTON | B_BUTTON
 	jr z, Pokedex_UnownModeHandleDPadInput
-	call Pokedex_BlackOutBG
+	call ClearBGPalettes
 	ld a, [wOptionsBuffer]
 	ld [wOptions2], a
 	xor a

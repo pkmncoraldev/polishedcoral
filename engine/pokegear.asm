@@ -2951,7 +2951,6 @@ _Area: ; 91d11
 
 .UpdateGFX:
 	call ClearSprites
-	farcall _Pokedex_JustBlackOutBG
 	ld a, [wTownMapCursorLandmark]
 	cp SOUTH_ONWA_REGION
 	jr z, .SouthOnwaGFX

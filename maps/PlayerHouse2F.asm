@@ -217,15 +217,19 @@ PlayerHouseDebugPoster:
 	setflag ENGINE_GOT_WATERFALL
 	setflag ENGINE_GOT_STRENGTH
 	setflag ENGINE_GOT_DIVE
-	givetmhm TM_DESTINY_BOND
-	givetmhm TM_FALSE_SWIPE
 	givetmhm TM_WORK_UP_GROWTH
-	givetmhm TM_CHARM
+	givetmhm TM_HEADBUTT
 	givetmhm TM_CURSE
+	givetmhm TM_CALM_MIND
+	givetmhm TM_CHARM
+	givetmhm TM_TOXIC
 	givetmhm TM_HAIL
-	givetmhm TM_ZAP_CANNON
-	givetmhm TM_BRICK_BREAK
+	givetmhm TM_BULK_UP
+	givetmhm TM_VENOSHOCK
+	givetmhm TM_MUD_SLAP
 	givetmhm TM_SUNNY_DAY
+	givetmhm TM_TAUNT
+	givetmhm TM_ICE_BEAM
 	givetmhm TM_BLIZZARD
 	givetmhm TM_HYPER_BEAM
 	givetmhm TM_LIGHT_SCREEN
@@ -235,31 +239,59 @@ PlayerHouseDebugPoster:
 	givetmhm TM_SAFEGUARD
 	givetmhm TM_BULLDOZE
 	givetmhm TM_SOLAR_BEAM
+	givetmhm TM_DESTINY_BOND
+	givetmhm TM_THUNDERBOLT
 	givetmhm TM_THUNDER
+	givetmhm TM_EARTHQUAKE
+	givetmhm TM_RETURN
 	givetmhm TM_DIG
+	givetmhm TM_PSYCHIC
+	givetmhm TM_SHADOW_BALL
 	givetmhm TM_METAL_CLAW
+	givetmhm TM_DOUBLE_TEAM
 	givetmhm TM_REFLECT
+	givetmhm TM_SHOCK_WAVE
+	givetmhm TM_FLAMETHROWER
+	givetmhm TM_SLUDGE_BOMB
+	givetmhm TM_SANDSTORM
 	givetmhm TM_FIRE_BLAST
+	givetmhm TM_POWER_GEM
 	givetmhm TM_FAKE_OUT
 	givetmhm TM_SUBSTITUTE
+	givetmhm TM_ZAP_CANNON
+	givetmhm TM_BRICK_BREAK
+	givetmhm TM_REST
+	givetmhm TM_ATTRACT
 	givetmhm TM_WEATHER_BALL
 	givetmhm TM_STEEL_WING
+	givetmhm TM_SUPERPOWER
+	givetmhm TM_DAZZLINGLEAM
+	givetmhm TM_THUNDERPUNCH
+	givetmhm TM_FIRE_PUNCH
+	givetmhm TM_ICE_PUNCH
+	givetmhm TM_ENERGY_BALL
+	givetmhm TM_FALSE_SWIPE
+	givetmhm TM_SCALD
 	givetmhm TM_ROOST
 	givetmhm TM_DARK_PULSE
 	givetmhm TM_ENDURE
+	givetmhm TM_DRAGON_PULSE
+	givetmhm TM_DRAGON_CLAW
 	givetmhm TM_WILL_O_WISP
 	givetmhm TM_ACROBATICS
 	givetmhm TM_STONE_EDGE
 	givetmhm TM_SELFDESTRUCT
+	givetmhm TM_FLAME_CHARGE
+	givetmhm TM_X_SCISSOR
+	givetmhm TM_RAPID_SPIN
 	givetmhm TM_GIGA_IMPACT
-	givetmhm TM_SAND_ATTACK_SMOKESCREEN_FLASH
 	givetmhm TM_ANCIENTPOWER
-	givetmhm TM_THUNDERPUNCH
-	givetmhm TM_FIRE_PUNCH
-	givetmhm TM_ICE_PUNCH
-	givetmhm TM_SUPERPOWER
-	givetmhm TM_HEADBUTT
-	givetmhm TM_DRAGON_CLAW
+	givetmhm TM_BULLET_SEED
+	givetmhm TM_SIGNAL_BEAM
+	givetmhm TM_SUCKER_PUNCH
+	givetmhm TM_FLASH_CANNON
+	givetmhm TM_HEX
+	givetmhm TM_SAND_ATTACK_SMOKESCREEN_FLASH
 	givetmhm HM_CUT
 	givetmhm HM_FLY
 	givetmhm HM_SURF

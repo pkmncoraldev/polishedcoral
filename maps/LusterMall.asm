@@ -389,7 +389,7 @@ LusterMallCoffeeSignText:
 	done
 
 LusterMallSkateSignText:
-	text "HI JUMP KICKFLIP"
+	text "DOUBLE KICKFLIP"
 	
 	para "“Best boards in"
 	line "town.”"

@@ -174,19 +174,19 @@ TreeMonsShimmer:
 	db -1
 	
 TreeMonsOasis:
-	db 50, EXEGGCUTE,	33
+	db 50, HERACROSS,	33
 	db 15, TOUCANNON,	33
-	db 15, HERACROSS,	33
-	db 10, HERACROSS,	33
-	db  5, HERACROSS,	33
+	db 15, EXEGGCUTE,	33
+	db 10, EXEGGCUTE,	33
+	db  5, EXEGGCUTE,	33
 	db  5, TOUCANNON,	33
 	db -1
 	; rare
-	db 50, EXEGGCUTE,	38
+	db 50, HERACROSS,	38
 	db 15, TOUCANNON,	38
-	db 15, HERACROSS,	38
-	db 10, HERACROSS,	38
-	db  5, HERACROSS,	38
+	db 15, EXEGGCUTE,	38
+	db 10, EXEGGCUTE,	38
+	db  5, EXEGGCUTE,	38
 	db  5, TOUCANNON,	38
 	db -1
 	
@@ -247,7 +247,7 @@ RockMons:
 	db -1
 	
 PetalMons:
-	db 50, CHERUBI,		7
-	db 25, VENIPEDE,	7
+	db 50, COTTONEE,	7
 	db 25, CHERUBI,		7
+	db 25, COTTONEE,	7
 	db -1

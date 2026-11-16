@@ -441,8 +441,11 @@ endr
 	call LearnEvolutionMove
 	call LearnLevelMoves
 	
+	ld a, [wEvoOnlyChangingForms]
+	and a
+	jr z, .skip
 	call FormChangeMoves
-	
+.skip
 	pop de
 	ld l, e
 	ld h, d

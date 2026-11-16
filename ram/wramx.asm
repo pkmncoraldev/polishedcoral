@@ -124,7 +124,9 @@ wMinigameCentiseconds:: ds 1
 wRiverRapidsScoreCentiseconds:: ds 1
 wRiverRapidsScoreSeconds:: ds 1
 wRiverRapidsScoreMinutes:: ds 1
-	ds 43
+wCuttingRafflesia::
+wEvoOnlyChangingForms:: ds 1
+	ds 42
 
 UNION
 ; engine buffers

@@ -295,7 +295,7 @@ RanchRideRaceFinishLine:
 	writetext RanchRideGotDoduoText
 	playsound SFX_CAUGHT_MON
 	waitsfx
-	givepoke DODUO, 10
+	givepoke DODUO, 25
 	special TeachDoduoExtremeSpeed
 	writetext RanchRideRaceText7
 	waitbutton

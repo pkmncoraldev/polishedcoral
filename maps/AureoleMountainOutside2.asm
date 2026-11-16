@@ -4,7 +4,7 @@ AureoleMountainOutside2_MapScriptHeader:
 	db 0 ; callbacks
 
 	db 1 ; warp events
-	warp_def 23, 30, 4, AUREOLE_MOUNTAIN_5F
+	warp_def 13, 26, 4, AUREOLE_MOUNTAIN_5F
 
 	db 0 ; coord events
 

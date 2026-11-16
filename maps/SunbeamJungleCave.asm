@@ -11,5 +11,6 @@ SunbeamJungleCave_MapScriptHeader:
 
 	db 0 ; bg events
 
-	db 1 ; object events
+	db 2 ; object events
 	itemball_event 10,  8, ULTRA_BALL, 1, EVENT_SUNBEAM_CAVE_ITEM
+	smashrock_event 11,  6

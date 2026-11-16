@@ -15,10 +15,10 @@ AureoleMountainOutside_MapScriptHeader:
 	warp_def  5, 20, 3, LUMINA_TOWN_CAVE
 
 	db 4 ; coord events
-	coord_event  4, 10, 0, AureoleMountainOutsideBridgeUp
-	coord_event  5, 10, 0, AureoleMountainOutsideBridgeUp
-	coord_event  4, 11, 1, AureoleMountainOutsideBridgeDown
-	coord_event  5, 11, 1, AureoleMountainOutsideBridgeDown
+	coord_event 14, 16, 0, AureoleMountainOutsideBridgeUp
+	coord_event 15, 16, 0, AureoleMountainOutsideBridgeUp
+	coord_event 14, 17, 1, AureoleMountainOutsideBridgeDown
+	coord_event 15, 17, 1, AureoleMountainOutsideBridgeDown
 
 	db 2 ; bg events
 	signpost  4, 27, SIGNPOST_JUMPTEXT, AureoleMountainOutsideBarrelText

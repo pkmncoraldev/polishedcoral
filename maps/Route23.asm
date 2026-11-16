@@ -9,20 +9,20 @@ Route23_MapScriptHeader:
 	db 0 ; coord events
 
 	db 3 ; bg events
-	bg_event 41, 53, SIGNPOST_ITEM + TAPE_PLAYER, EVENT_MUSIC_MINIBOSS_BATTLE
-	signpost 44, 37, SIGNPOST_ITEM + FULL_RESTORE, EVENT_ROUTE_23_HIDDEN_ITEM
+	bg_event 41, 49, SIGNPOST_ITEM + TAPE_PLAYER, EVENT_MUSIC_MINIBOSS_BATTLE
+	signpost 40, 37, SIGNPOST_ITEM + FULL_RESTORE, EVENT_ROUTE_23_HIDDEN_ITEM
 	signpost 48, 24, SIGNPOST_JUMPTEXT, Route23Sign
 
 	db 9 ; object events
-	smashrock_event 37, 52
-	smashrock_event 38, 53
+	smashrock_event 37, 48
+	smashrock_event 38, 49
 	tapeball_event 41, 53, MUSIC_MINIBOSS_BATTLE, 2, EVENT_MUSIC_MINIBOSS_BATTLE
-	fruittree_event 20,  8, FRUITTREE_ROUTE_23, PERSIM_BERRY
-	person_event SPRITE_TEACHER, 11,  9, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 4, TrainerRoute23_1, -1
-	person_event SPRITE_GRANNY, 53, 27, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 5, TrainerRoute23_2, -1
-	person_event SPRITE_LASS, 40, 36, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_GENERICTRAINER, 3, TrainerRoute23_3, -1
-	person_event SPRITE_PONYTAIL, 21, 27, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, Route23NPC1, -1
-	person_event SPRITE_POKEFAN_F, 38, 25, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, Route23NPC2, -1
+	fruittree_event 20, 10, FRUITTREE_ROUTE_23, PERSIM_BERRY
+	person_event SPRITE_TEACHER, 13,  9, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 4, TrainerRoute23_1, -1
+	person_event SPRITE_GRANNY, 51, 27, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 5, TrainerRoute23_2, -1
+	person_event SPRITE_LASS, 39, 36, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_GENERICTRAINER, 3, TrainerRoute23_3, -1
+	person_event SPRITE_PONYTAIL, 21, 28, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, Route23NPC1, -1
+	person_event SPRITE_POKEFAN_F, 38, 27, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, Route23NPC2, -1
 	
 	
 Route23Trigger0:
@@ -45,8 +45,8 @@ Route23NPC1:
 	
 Route23NPC1Text:
 	text "That poor SNUBBULL"
-	line "at that house over"
-	cont "there."
+	line "at that house up"
+	cont "ahead."
 	
 	para "Forced to sleep"
 	line "outside in a tiny"
@@ -138,24 +138,6 @@ TrainerRoute23_3:
 	text "Aaah!<WAIT_S>"
 	line "My team!"
 	done
-
-	; text "I wonder if that"
-	; line "little #MON I"
-	; cont "saw lost its mama…"
-	; done
-
-; .SeenText:
-	; text "I saw a little"
-	; line "#MON crying in"
-	; cont "the grass."
-	
-	; para "How sad…"
-	; done
-
-; .BeatenText:
-	; text "You beat me!"
-	; line "How sad…"
-	; done
 	
 Route23StrengthMan:
 	faceplayer

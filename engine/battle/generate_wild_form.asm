@@ -125,11 +125,9 @@ WildSpeciesForms:
 	ret
 
 WooperLandmarks:
-	db ROUTE_25
-	db ROUTE_26
-	db ROUTE_27
-	db ROUTE_28
+	db ROUTE_30
 	db GREEN_GROTTO
+	db ROUTE_31
 	db -1
 
 MeowthLandmarks:

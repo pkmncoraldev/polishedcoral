@@ -3,24 +3,24 @@
 	map_id ROUTE_17
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 31, NUMEL		;30%
-	db 31, DWEBBLE		;30%
+	db 31, ARON			;30%
+	db 31, ONIX			;30%
 	db 31, CACNEA		;20%
 	db 31, MINCCINO		;10%
 	db 31, CACNEA		;5%
 	db 31, CACTURNE		;4%
 	db 31, CACTURNE		;1%
 	; day
-	db 31, NUMEL		;30%
-	db 31, DWEBBLE		;30%
+	db 31, ARON			;30%
+	db 31, ONIX			;30%
 	db 31, CACNEA		;20%
 	db 31, MINCCINO		;10%
 	db 31, CACNEA		;5%
 	db 31, CACTURNE		;4%
 	db 31, CACTURNE		;1%
 	; nite
-	db 31, NUMEL		;30%
-	db 31, DWEBBLE		;30%
+	db 31, ARON			;30%
+	db 31, ONIX			;30%
 	db 31, CACNEA		;20%
 	db 31, MINCCINO		;10%
 	db 31, CACNEA		;5%
@@ -30,24 +30,24 @@
 	map_id ROUTE_18
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 31, NUMEL		;30%
-	db 31, DWEBBLE		;30%
+	db 31, ARON			;30%
+	db 31, ONIX			;30%
 	db 31, CACNEA		;20%
 	db 31, MINCCINO		;10%
 	db 31, CACNEA		;5%
 	db 31, CACTURNE		;4%
 	db 31, CACTURNE		;1%
 	; day
-	db 31, NUMEL		;30%
-	db 31, DWEBBLE		;30%
+	db 31, ARON			;30%
+	db 31, ONIX			;30%
 	db 31, CACNEA		;20%
 	db 31, MINCCINO		;10%
 	db 31, CACNEA		;5%
 	db 31, CACTURNE		;4%
 	db 31, CACTURNE		;1%
 	; nite
-	db 31, NUMEL		;30%
-	db 31, DWEBBLE		;30%
+	db 31, ARON			;30%
+	db 31, ONIX			;30%
 	db 31, CACNEA		;20%
 	db 31, MINCCINO		;10%
 	db 31, CACNEA		;5%
@@ -59,33 +59,33 @@
 	; morn
 	db 32, GLIGAR		;30%
 	db 32, GLIGAR		;30%
-	db 32, DWEBBLE		;20%
-	db 32, DWEBBLE		;10%
-	db 32, DWEBBLE		;5%
-	db 32, DWEBBLE		;4%
-	db 32, DWEBBLE		;1%
+	db 32, GLIGAR		;20%
+	db 32, GLIGAR		;10%
+	db 32, GLIGAR		;5%
+	db 32, GLIGAR		;4%
+	db 32, GLIGAR		;1%
 	; day
 	db 32, GLIGAR		;30%
 	db 32, GLIGAR		;30%
-	db 32, DWEBBLE		;20%
-	db 32, DWEBBLE		;10%
-	db 32, DWEBBLE		;5%
-	db 32, DWEBBLE		;4%
-	db 32, DWEBBLE		;1%
+	db 32, GLIGAR		;20%
+	db 32, GLIGAR		;10%
+	db 32, GLIGAR		;5%
+	db 32, GLIGAR		;4%
+	db 32, GLIGAR		;1%
 	; nite
 	db 32, GLIGAR		;30%
 	db 32, GLIGAR		;30%
-	db 32, DWEBBLE		;20%
-	db 32, DWEBBLE		;10%
-	db 32, DWEBBLE		;5%
-	db 32, DWEBBLE		;4%
-	db 32, DWEBBLE		;1%
+	db 32, GLIGAR		;20%
+	db 32, GLIGAR		;10%
+	db 32, GLIGAR		;5%
+	db 32, GLIGAR		;4%
+	db 32, GLIGAR		;1%
 	
 	map_id DESERT_WASTELAND_1
 	db 2 percent, 2 percent, 2 percent ; encounter rates: morn/day/nite
 	; morn
 	db 31, CACNEA		;30%
-	db 31, NUMEL		;30%
+	db 31, ARON			;30%
 	db 31, CACNEA		;20%
 	db 31, MARACTUS		;10%
 	db 32, MARACTUS		;5%
@@ -93,7 +93,7 @@
 	db 32, LARVESTA		;1%
 	; day
 	db 31, CACNEA		;30%
-	db 31, NUMEL		;30%
+	db 31, ARON			;30%
 	db 31, CACNEA		;20%
 	db 31, MARACTUS		;10%
 	db 32, MARACTUS		;5%
@@ -101,7 +101,7 @@
 	db 32, LARVESTA		;1%
 	; nite
 	db 31, CACNEA		;30%
-	db 31, NUMEL		;30%
+	db 31, ARON			;30%
 	db 31, CACNEA		;20%
 	db 31, MARACTUS		;10%
 	db 32, MARACTUS		;5%
@@ -112,7 +112,7 @@
 	db 2 percent, 2 percent, 2 percent ; encounter rates: morn/day/nite
 	; morn
 	db 31, CACNEA		;30%
-	db 31, NUMEL		;30%
+	db 31, ARON			;30%
 	db 31, CACNEA		;20%
 	db 31, MARACTUS		;10%
 	db 32, MARACTUS		;5%
@@ -120,7 +120,7 @@
 	db 32, LARVESTA		;1%
 	; day
 	db 31, CACNEA		;30%
-	db 31, NUMEL		;30%
+	db 31, ARON			;30%
 	db 31, CACNEA		;20%
 	db 31, MARACTUS		;10%
 	db 32, MARACTUS		;5%
@@ -128,7 +128,7 @@
 	db 32, LARVESTA		;1%
 	; nite
 	db 31, CACNEA		;30%
-	db 31, NUMEL		;30%
+	db 31, ARON			;30%
 	db 31, CACNEA		;20%
 	db 31, MARACTUS		;10%
 	db 32, MARACTUS		;5%
@@ -139,7 +139,7 @@
 	db 2 percent, 2 percent, 2 percent ; encounter rates: morn/day/nite
 	; morn
 	db 31, CACNEA		;30%
-	db 31, NUMEL		;30%
+	db 31, ARON			;30%
 	db 31, CACNEA		;20%
 	db 31, MARACTUS		;10%
 	db 32, MARACTUS		;5%
@@ -147,7 +147,7 @@
 	db 32, LARVESTA		;1%
 	; day
 	db 31, CACNEA		;30%
-	db 31, NUMEL		;30%
+	db 31, ARON			;30%
 	db 31, CACNEA		;20%
 	db 31, MARACTUS		;10%
 	db 32, MARACTUS		;5%
@@ -155,7 +155,7 @@
 	db 32, LARVESTA		;1%
 	; nite
 	db 31, CACNEA		;30%
-	db 31, NUMEL		;30%
+	db 31, ARON			;30%
 	db 31, CACNEA		;20%
 	db 31, MARACTUS		;10%
 	db 32, MARACTUS		;5%
@@ -166,7 +166,7 @@
 	db 2 percent, 2 percent, 2 percent ; encounter rates: morn/day/nite
 	; morn
 	db 31, CACNEA		;30%
-	db 31, NUMEL		;30%
+	db 31, ARON			;30%
 	db 31, CACNEA		;20%
 	db 31, MARACTUS		;10%
 	db 32, MARACTUS		;5%
@@ -174,7 +174,7 @@
 	db 32, LARVESTA		;1%
 	; day
 	db 31, CACNEA		;30%
-	db 31, NUMEL		;30%
+	db 31, ARON			;30%
 	db 31, CACNEA		;20%
 	db 31, MARACTUS		;10%
 	db 32, MARACTUS		;5%
@@ -182,7 +182,7 @@
 	db 32, LARVESTA		;1%
 	; nite
 	db 31, CACNEA		;30%
-	db 31, NUMEL		;30%
+	db 31, ARON			;30%
 	db 31, CACNEA		;20%
 	db 31, MARACTUS		;10%
 	db 32, MARACTUS		;5%
@@ -193,7 +193,7 @@
 	db 2 percent, 2 percent, 2 percent ; encounter rates: morn/day/nite
 	; morn
 	db 31, CACNEA		;30%
-	db 31, NUMEL		;30%
+	db 31, ARON			;30%
 	db 31, CACNEA		;20%
 	db 31, MARACTUS		;10%
 	db 32, MARACTUS		;5%
@@ -201,7 +201,7 @@
 	db 32, LARVESTA		;1%
 	; day
 	db 31, CACNEA		;30%
-	db 31, NUMEL		;30%
+	db 31, ARON			;30%
 	db 31, CACNEA		;20%
 	db 31, MARACTUS		;10%
 	db 32, MARACTUS		;5%
@@ -209,7 +209,7 @@
 	db 32, LARVESTA		;1%
 	; nite
 	db 31, CACNEA		;30%
-	db 31, NUMEL		;30%
+	db 31, ARON			;30%
 	db 31, CACNEA		;20%
 	db 31, MARACTUS		;10%
 	db 32, MARACTUS		;5%
@@ -220,7 +220,7 @@
 	db 2 percent, 2 percent, 2 percent ; encounter rates: morn/day/nite
 	; morn
 	db 31, CACNEA		;30%
-	db 31, NUMEL		;30%
+	db 31, ARON			;30%
 	db 31, CACNEA		;20%
 	db 31, MARACTUS		;10%
 	db 32, MARACTUS		;5%
@@ -228,7 +228,7 @@
 	db 32, LARVESTA		;1%
 	; day
 	db 31, CACNEA		;30%
-	db 31, NUMEL		;30%
+	db 31, ARON			;30%
 	db 31, CACNEA		;20%
 	db 31, MARACTUS		;10%
 	db 32, MARACTUS		;5%
@@ -236,7 +236,7 @@
 	db 32, LARVESTA		;1%
 	; nite
 	db 31, CACNEA		;30%
-	db 31, NUMEL		;30%
+	db 31, ARON			;30%
 	db 31, CACNEA		;20%
 	db 31, MARACTUS		;10%
 	db 32, MARACTUS		;5%
@@ -247,7 +247,7 @@
 	db 2 percent, 2 percent, 2 percent ; encounter rates: morn/day/nite
 	; morn
 	db 31, CACNEA		;30%
-	db 31, NUMEL		;30%
+	db 31, ARON			;30%
 	db 31, CACNEA		;20%
 	db 31, MARACTUS		;10%
 	db 32, MARACTUS		;5%
@@ -255,7 +255,7 @@
 	db 32, LARVESTA		;1%
 	; day
 	db 31, CACNEA		;30%
-	db 31, NUMEL		;30%
+	db 31, ARON			;30%
 	db 31, CACNEA		;20%
 	db 31, MARACTUS		;10%
 	db 32, MARACTUS		;5%
@@ -263,7 +263,7 @@
 	db 32, LARVESTA		;1%
 	; nite
 	db 31, CACNEA		;30%
-	db 31, NUMEL		;30%
+	db 31, ARON			;30%
 	db 31, CACNEA		;20%
 	db 31, MARACTUS		;10%
 	db 32, MARACTUS		;5%
@@ -274,7 +274,7 @@
 	db 2 percent, 2 percent, 2 percent ; encounter rates: morn/day/nite
 	; morn
 	db 31, CACNEA		;30%
-	db 31, NUMEL		;30%
+	db 31, ARON			;30%
 	db 31, CACNEA		;20%
 	db 31, MARACTUS		;10%
 	db 32, MARACTUS		;5%
@@ -282,7 +282,7 @@
 	db 32, LARVESTA		;1%
 	; day
 	db 31, CACNEA		;30%
-	db 31, NUMEL		;30%
+	db 31, ARON			;30%
 	db 31, CACNEA		;20%
 	db 31, MARACTUS		;10%
 	db 32, MARACTUS		;5%
@@ -290,7 +290,7 @@
 	db 32, LARVESTA		;1%
 	; nite
 	db 31, CACNEA		;30%
-	db 31, NUMEL		;30%
+	db 31, ARON			;30%
 	db 31, CACNEA		;20%
 	db 31, MARACTUS		;10%
 	db 32, MARACTUS		;5%
@@ -301,7 +301,7 @@
 	db 2 percent, 2 percent, 2 percent ; encounter rates: morn/day/nite
 	; morn
 	db 31, CACNEA		;30%
-	db 31, NUMEL		;30%
+	db 31, ARON			;30%
 	db 31, CACNEA		;20%
 	db 31, MARACTUS		;10%
 	db 32, MARACTUS		;5%
@@ -309,7 +309,7 @@
 	db 32, LARVESTA		;1%
 	; day
 	db 31, CACNEA		;30%
-	db 31, NUMEL		;30%
+	db 31, ARON			;30%
 	db 31, CACNEA		;20%
 	db 31, MARACTUS		;10%
 	db 32, MARACTUS		;5%
@@ -317,7 +317,7 @@
 	db 32, LARVESTA		;1%
 	; nite
 	db 31, CACNEA		;30%
-	db 31, NUMEL		;30%
+	db 31, ARON			;30%
 	db 31, CACNEA		;20%
 	db 31, MARACTUS		;10%
 	db 32, MARACTUS		;5%
@@ -328,26 +328,26 @@
 	db 25 percent, 25 percent, 25 percent ; encounter rates: morn/day/nite
 	; morn
 	db 32, MINCCINO		;30%
-	db 32, PHANPY		;30%
+	db 32, GLOOM		;30%
 	db 32, TOUCANNON	;20%
-	db 32, DONPHAN		;10%
-	db 32, DONPHAN		;5%
+	db 32, GLOOM		;10%
+	db 32, VILEPLUME	;5%
 	db 32, CHANSEY		;4%
 	db 32, CHANSEY		;1%
 	; day
 	db 32, MINCCINO		;30%
-	db 32, PHANPY		;30%
+	db 32, GLOOM		;30%
 	db 32, TOUCANNON	;20%
-	db 32, DONPHAN		;10%
-	db 32, DONPHAN		;5%
+	db 32, GLOOM		;10%
+	db 32, VILEPLUME	;5%
 	db 32, CHANSEY		;4%
 	db 32, CHANSEY		;1%
 	; nite
 	db 32, MINCCINO		;30%
 	db 32, PHANPY		;30%
 	db 32, TOUCANNON	;20%
-	db 32, DONPHAN		;10%
-	db 32, DONPHAN		;5%
+	db 32, GLOOM		;10%
+	db 32, VILEPLUME	;5%
 	db 32, CHANSEY		;4%
 	db 32, CHANSEY		;1%
 	

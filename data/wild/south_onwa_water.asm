@@ -67,8 +67,8 @@
 	db 39, CARVANHA		;20%
 	db 39, MARILL		;10%
 	db 39, MARILL		;5%
-	db 39, LAPRAS		;4%
-	db 39, LAPRAS		;1%
+	db 39, MARILL		;4%
+	db 39, MARILL		;1%
 	
 	map_id ROUTE_11_2
 	db 5 percent ; encounter rate

@@ -60,17 +60,16 @@ Route26NorthTrainer2:
 	generictrainer BIRD_KEEPER, SIDNEY, EVENT_BEAT_ROUTE_26_NORTH_TRAINER_2, .SeenText, .BeatenText
 
 	text "You can find some"
-	line "pretty fierce bird"
-	cont "#MON here on"
-	cont "windy days!"
+	line "pretty fierce #-"
+	cont "MON here on windy"
+	cont "days!"
 	done
 
 .SeenText:
 	text "Better look out!"
 	
-	para "My fierce birds"
-	line "will slice you to"
-	cont "pieces!"
+	para "My fierce #MON"
+	line "slice you to bits!"
 	done
 
 .BeatenText:

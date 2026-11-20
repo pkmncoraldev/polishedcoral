@@ -33,7 +33,7 @@ Moves:: ; 41afb
 	move FLAIL,                    EFFECT_REVERSAL,            1, NORMAL,    100, 15,   0, PHYSICAL
 	move VINE_WHIP,                EFFECT_NORMAL_HIT,         45, GRASS,     100, 25,   0, PHYSICAL
 	move STOMP,                    EFFECT_STOMP,              65, NORMAL,    100, 20,  30, PHYSICAL
-	move HEX,                      EFFECT_HEX, 				  65, GHOST,     100, 10,   0, SPECIAL
+	move HEX,                      EFFECT_HEX, 				  55, GHOST,     100, 10,   0, SPECIAL
 	move FLARE_BLITZ,              EFFECT_FLARE_BLITZ,       120, FIRE,      100, 15,  10, PHYSICAL
 	move STONE_EDGE,               EFFECT_NORMAL_HIT,        100, ROCK,       80,  5,   0, PHYSICAL
 	move FOCUS_BLAST,              EFFECT_SP_DEF_DOWN_HIT,   120, FIGHTING,   70,  5,  10, SPECIAL

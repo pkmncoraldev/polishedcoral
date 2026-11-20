@@ -131,7 +131,7 @@ Moves:: ; 41afb
 	move SCALD,                    EFFECT_BURN_HIT,           80, WATER,     100, 15,  30, SPECIAL
 	move SELFDESTRUCT,             EFFECT_EXPLOSION,         200, NORMAL,    100,  5,   0, PHYSICAL
 	move COTTON_GUARD,             EFFECT_COTTON_GUARD,        0, GRASS,     100, 10, 100, STATUS
-	move JUMP_KICK,                EFFECT_JUMP_KICK,         100, FIGHTING,   95, 10,   0, PHYSICAL
+	move JUMP_KICK,                EFFECT_JUMP_KICK,          85, FIGHTING,   95, 10,   0, PHYSICAL
 	move PSYSHOCK,                 EFFECT_PSYSTRIKE,          80, PSYCHIC,   100, 10,   0, SPECIAL
 	move VENOSHOCK,                EFFECT_VENOSHOCK, 		  65, POISON,    100, 10,   0, SPECIAL
 	move EARTH_POWER,              EFFECT_SP_DEF_DOWN_HIT,    90, GROUND,    100, 10,  10, SPECIAL
@@ -145,7 +145,7 @@ Moves:: ; 41afb
 	move AMNESIA,                  EFFECT_SP_DEF_UP_2,         0, PSYCHIC,   100, 20,   0, STATUS
 	move ROOST,                    EFFECT_ROOST,               0, FLYING,    100,  5,   0, STATUS
 	move SOFTBOILED_MILK_DRINK_RECOVER,   EFFECT_HEAL,         0, NORMAL,    100, 10,   0, STATUS
-	move HI_JUMP_KICK,             EFFECT_JUMP_KICK,         130, FIGHTING,   90, 10,   0, PHYSICAL
+	move HI_JUMP_KICK,             EFFECT_JUMP_KICK,         110, FIGHTING,   90, 10,   0, PHYSICAL
 	move FIERY_DANCE,              EFFECT_SP_ATK_UP_HIT,      80, FIRE,      100, 10,  50, SPECIAL
 	move DREAM_EATER,              EFFECT_DREAM_EATER,       100, PSYCHIC,   100, 15,   0, SPECIAL
 	move POISON_JAB,               EFFECT_POISON_HIT,         80, POISON,    100, 20,  30, PHYSICAL

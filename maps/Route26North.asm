@@ -69,7 +69,8 @@ Route26NorthTrainer2:
 	text "Better look out!"
 	
 	para "My fierce #MON"
-	line "slice you to bits!"
+	line "will slice you"
+	cont "to pieces!"
 	done
 
 .BeatenText:

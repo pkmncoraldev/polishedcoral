@@ -817,7 +817,7 @@
 	db 40, GRAVELER		;30%
 	db 41, NOIBAT		;20%
 	db 40, MEDICHAM		;10%
-	db 42, LARVITAR		;5%
+	db 40, MIENFOO		;5%
 	db 40, MIENFOO		;4%
 	db 40, MIENFOO		;1%
 	; day
@@ -825,7 +825,7 @@
 	db 40, GRAVELER		;30%
 	db 41, NOIBAT		;20%
 	db 40, MEDICHAM		;10%
-	db 42, LARVITAR		;5%
+	db 40, MIENFOO		;5%
 	db 40, MIENFOO		;4%
 	db 40, MIENFOO		;1%
 	; nite
@@ -833,7 +833,7 @@
 	db 40, GRAVELER		;30%
 	db 41, NOIBAT		;20%
 	db 40, MEDICHAM		;10%
-	db 42, LARVITAR		;5%
+	db 40, MIENFOO		;5%
 	db 40, MIENFOO		;4%
 	db 40, MIENFOO		;1%
 	
@@ -844,7 +844,7 @@
 	db 40, GRAVELER		;30%
 	db 41, NOIBAT		;20%
 	db 40, MEDICHAM		;10%
-	db 42, LARVITAR		;5%
+	db 40, MIENFOO		;5%
 	db 40, MIENFOO		;4%
 	db 40, MIENFOO		;1%
 	; day
@@ -852,7 +852,7 @@
 	db 40, GRAVELER		;30%
 	db 41, NOIBAT		;20%
 	db 40, MEDICHAM		;10%
-	db 42, LARVITAR		;5%
+	db 40, MIENFOO		;5%
 	db 40, MIENFOO		;4%
 	db 40, MIENFOO		;1%
 	; nite
@@ -860,7 +860,7 @@
 	db 40, GRAVELER		;30%
 	db 41, NOIBAT		;20%
 	db 40, MEDICHAM		;10%
-	db 42, LARVITAR		;5%
+	db 40, MIENFOO		;5%
 	db 40, MIENFOO		;4%
 	db 40, MIENFOO		;1%
 	
@@ -871,7 +871,7 @@
 	db 40, GRAVELER		;30%
 	db 41, NOIBAT		;20%
 	db 40, MEDICHAM		;10%
-	db 42, LARVITAR		;5%
+	db 40, MIENFOO		;5%
 	db 40, MIENFOO		;4%
 	db 40, MIENFOO		;1%
 	; day
@@ -879,7 +879,7 @@
 	db 40, GRAVELER		;30%
 	db 41, NOIBAT		;20%
 	db 40, MEDICHAM		;10%
-	db 42, LARVITAR		;5%
+	db 40, MIENFOO		;5%
 	db 40, MIENFOO		;4%
 	db 40, MIENFOO		;1%
 	; nite
@@ -887,7 +887,7 @@
 	db 40, GRAVELER		;30%
 	db 41, NOIBAT		;20%
 	db 40, MEDICHAM		;10%
-	db 42, LARVITAR		;5%
+	db 40, MIENFOO		;5%
 	db 40, MIENFOO		;4%
 	db 40, MIENFOO		;1%
 	
@@ -898,7 +898,7 @@
 	db 40, GRAVELER		;30%
 	db 41, NOIBAT		;20%
 	db 40, MEDICHAM		;10%
-	db 42, LARVITAR		;5%
+	db 40, MIENFOO		;5%
 	db 40, MIENFOO		;4%
 	db 40, MIENFOO		;1%
 	; day
@@ -906,7 +906,7 @@
 	db 40, GRAVELER		;30%
 	db 41, NOIBAT		;20%
 	db 40, MEDICHAM		;10%
-	db 42, LARVITAR		;5%
+	db 40, MIENFOO		;5%
 	db 40, MIENFOO		;4%
 	db 40, MIENFOO		;1%
 	; nite
@@ -914,7 +914,7 @@
 	db 40, GRAVELER		;30%
 	db 41, NOIBAT		;20%
 	db 40, MEDICHAM		;10%
-	db 42, LARVITAR		;5%
+	db 40, MIENFOO		;5%
 	db 40, MIENFOO		;4%
 	db 40, MIENFOO		;1%
 	
@@ -925,7 +925,7 @@
 	db 40, GRAVELER		;30%
 	db 41, NOIBAT		;20%
 	db 40, MEDICHAM		;10%
-	db 42, LARVITAR		;5%
+	db 40, MIENFOO		;5%
 	db 40, MIENFOO		;4%
 	db 40, MIENFOO		;1%
 	; day
@@ -933,7 +933,7 @@
 	db 40, GRAVELER		;30%
 	db 41, NOIBAT		;20%
 	db 40, MEDICHAM		;10%
-	db 42, LARVITAR		;5%
+	db 40, MIENFOO		;5%
 	db 40, MIENFOO		;4%
 	db 40, MIENFOO		;1%
 	; nite
@@ -941,7 +941,7 @@
 	db 40, GRAVELER		;30%
 	db 41, NOIBAT		;20%
 	db 40, MEDICHAM		;10%
-	db 42, LARVITAR		;5%
+	db 40, MIENFOO		;5%
 	db 40, MIENFOO		;4%
 	db 40, MIENFOO		;1%
 	
@@ -951,24 +951,24 @@
 	db 40, MIENFOO		;30%
 	db 40, DONPHAN		;30%
 	db 40, URSARING		;20%
-	db 43, LARVITAR		;10%
-	db 43, LARVITAR		;5%
+	db 40, URSARING		;10%
+	db 39, LARVITAR		;5%
 	db 40, MIENFOO		;4%
 	db 40, MIENSHAO		;1%
 	; day
 	db 40, MIENFOO		;30%
 	db 40, DONPHAN		;30%
 	db 40, URSARING		;20%
-	db 43, LARVITAR		;10%
-	db 43, LARVITAR		;5%
+	db 40, URSARING		;10%
+	db 39, LARVITAR		;5%
 	db 40, MIENFOO		;4%
 	db 40, MIENSHAO		;1%
 	; nite
 	db 40, MIENFOO		;30%
 	db 40, DONPHAN		;30%
 	db 40, URSARING		;20%
-	db 43, LARVITAR		;10%
-	db 43, LARVITAR		;5%
+	db 40, URSARING		;10%
+	db 39, LARVITAR		;5%
 	db 40, MIENFOO		;4%
 	db 40, MIENSHAO		;1%
 	
@@ -979,7 +979,7 @@
 	db 40, GRAVELER		;30%
 	db 41, NOIBAT		;20%
 	db 40, MEDICHAM		;10%
-	db 42, LARVITAR		;5%
+	db 39, MIENFOO		;5%
 	db 40, MIENFOO		;4%
 	db 40, MIENFOO		;1%
 	; day
@@ -987,7 +987,7 @@
 	db 40, GRAVELER		;30%
 	db 41, NOIBAT		;20%
 	db 40, MEDICHAM		;10%
-	db 42, LARVITAR		;5%
+	db 39, MIENFOO		;5%
 	db 40, MIENFOO		;4%
 	db 40, MIENFOO		;1%
 	; nite
@@ -995,7 +995,7 @@
 	db 40, GRAVELER		;30%
 	db 41, NOIBAT		;20%
 	db 40, MEDICHAM		;10%
-	db 42, LARVITAR		;5%
+	db 39, MIENFOO		;5%
 	db 40, MIENFOO		;4%
 	db 40, MIENFOO		;1%
 	

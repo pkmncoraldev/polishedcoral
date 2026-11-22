@@ -31,7 +31,7 @@ EvolutionMoves::
 	db NO_MOVE                              ; GLOOM
 	db NO_MOVE                              ; VILEPLUME
 	db NO_MOVE                              ; VENONAT
-	db GUST	                                ; VENOMOTH
+	db QUIVER_DANCE                         ; VENOMOTH
 	db NO_MOVE                              ; MEOWTH
 	db POWER_GEM                            ; PERSIAN
 	db NO_MOVE                              ; GROWLITHE
@@ -41,7 +41,7 @@ EvolutionMoves::
 	db DYNAMICPUNCH                         ; POLIWRATH
 	db NO_MOVE                              ; MACHOP
 	db NO_MOVE                              ; MACHOKE
-	db NO_MOVE                              ; MACHAMP
+	db BULLET_PUNCH                         ; MACHAMP
 	db NO_MOVE                              ; GEODUDE
 	db NO_MOVE                              ; GRAVELER
 	db NO_MOVE                              ; GOLEM
@@ -57,23 +57,23 @@ EvolutionMoves::
 	db NO_MOVE                              ; MUK
 	db NO_MOVE                              ; GASTLY
 	db SHADOW_CLAW                          ; HAUNTER
-	db SHADOW_CLAW                          ; GENGAR
+	db NO_MOVE		                        ; GENGAR
 	db NO_MOVE                              ; ONIX
 	db NO_MOVE                              ; DROWZEE
 	db NO_MOVE                              ; HYPNO
 	db NO_MOVE                              ; VOLTORB
 	db NO_MOVE                              ; ELECTRODE
 	db NO_MOVE                              ; EXEGGCUTE
-	db WOOD_HAMMER                          ; EXEGGUTOR
+	db STOMP		                        ; EXEGGUTOR
 	db NO_MOVE                              ; CUBONE
-	db NO_MOVE                              ; MAROWAK
+	db ROCK_THROW                           ; MAROWAK
 	db NO_MOVE                              ; KOFFING
 	db DOUBLE_HIT                           ; WEEZING
 	db NO_MOVE                              ; CHANSEY
 	db NO_MOVE                              ; HORSEA
 	db NO_MOVE                              ; SEADRA
 	db NO_MOVE                              ; STARYU
-	db NO_MOVE                              ; STARMIE
+	db CONFUSE_RAY                          ; STARMIE
 	db NO_MOVE                              ; SCYTHER
 	db NO_MOVE                              ; ELECTABUZZ
 	db NO_MOVE                              ; MAGMAR
@@ -100,7 +100,7 @@ EvolutionMoves::
 	db CALM_MIND                            ; MEGANIUM
 	db NO_MOVE                              ; CYNDAQUIL
 	db FLAME_CHARGE                         ; QUILAVA
-	db WORK_UP_GROWTH                       ; TYPHLOSION
+	db REVERSAL			                    ; TYPHLOSION
 	db NO_MOVE                              ; TOTODILE
 	db AQUA_JET                             ; CROCONAW
 	db BULK_UP                              ; FERALIGATR
@@ -142,14 +142,14 @@ EvolutionMoves::
 	db NO_MOVE                              ; SLUGMA
 	db SHELL_SMASH                          ; MAGCARGO
 	db NO_MOVE                              ; SWINUB
-	db MULTI_MOVE_FURY_COMET_BARRAGE_SLAP_CANNON  ; PILOSWINE
+	db HORN_ATTACK							; PILOSWINE
 	db NO_MOVE                              ; CORSOLA
 	db NO_MOVE                              ; SKARMORY
 	db NO_MOVE                              ; HOUNDOUR
 	db NO_MOVE                              ; HOUNDOOM
 	db NO_MOVE                              ; KINGDRA
 	db NO_MOVE                              ; PHANPY
-	db MULTI_MOVE_FURY_COMET_BARRAGE_SLAP_CANNON  ; DONPHAN
+	db HORN_ATTACK                          ; DONPHAN
 	db NO_MOVE                              ; PORYGON2
 	db NO_MOVE                              ; STANTLER
 	db NO_MOVE                              ; SMEARGLE
@@ -178,7 +178,7 @@ EvolutionMoves::
 	db NO_MOVE                              ; SWABLU
 	db DRAGONBREATH                         ; ALTARIA
 	db NO_MOVE                              ; SNORUNT
-	db ICE_BEAM                             ; GLALIE
+	db ICE_FANG                             ; GLALIE
 	db NO_MOVE                              ; BUIZEL
 	db ICE_FANG                             ; FLOATZEL
 	db NO_MOVE                              ; CHERUBI
@@ -187,7 +187,7 @@ EvolutionMoves::
 	db NO_MOVE                              ; DRIFBLIM
 	db NO_MOVE                              ; BUNEARY
 	db NO_MOVE                              ; LOPUNNY
-	db NO_MOVE                              ; HONCHKROW
+	db SUCKER_PUNCH                         ; HONCHKROW
 	db NO_MOVE                              ; SPIRITOMB
 	db NO_MOVE                              ; MUNCHLAX
 	db NO_MOVE                              ; CROAGUNK
@@ -198,11 +198,11 @@ EvolutionMoves::
 	db NO_MOVE                              ; MAGNEZONE
 	db NO_MOVE                              ; ELECTIVIRE
 	db NO_MOVE                              ; MAGMORTAR
-	db NO_MOVE                              ; TOGEKISS
+	db AIR_SLASH                            ; TOGEKISS
 	db RAZOR_LEAF                           ; LEAFEON
 	db ICY_WIND                             ; GLACEON
 	db NO_MOVE                              ; GLISCOR
-	db DOUBLE_HIT                           ; MAMOSWINE
+	db SCARY_FACE_COTTON_SPORE_STRING_SHOT  ; MAMOSWINE
 	db NO_MOVE                              ; PORYGON_Z
 	db HEX                                  ; FROSLASS
 	db NO_MOVE                              ; DRILBUR
@@ -231,7 +231,7 @@ EvolutionMoves::
 	db NO_MOVE                              ; MIENFOO
 	db NO_MOVE                              ; MIENSHAO
 	db NO_MOVE                              ; LARVESTA
-	db QUIVER_DANCE                         ; VOLCARONA
+	db FLARE_BLITZ	                        ; VOLCARONA
 	db FAIRY_WIND                           ; SYLVEON
 	db NO_MOVE                              ; PHANTUMP
 	db SHADOW_CLAW                          ; TREVENANT
@@ -239,7 +239,7 @@ EvolutionMoves::
 	db DRAGON_PULSE                         ; NOIVERN
 	db NO_MOVE                              ; PIKIPEK
 	db NO_MOVE                              ; TRUMBEAK
-	db ACROBATICS                           ; TOUCANNON ;BEAK_BLAST
+	db ACROBATICS ;TODO BEAK_BLAST?  		; TOUCANNON ;BEAK_BLAST
 	db NO_MOVE                              ; MAREANIE
 	db PROTECT ;TODO BANEFUL_BUNKER?                              ; TOXAPEX
 	db NO_MOVE                              ; COMFEY
@@ -258,7 +258,7 @@ EvolutionMoves::
 	db NO_MOVE                              ; PIDGEY_RG
 	db NO_MOVE                              ; RATTATA_RG
 	db NO_MOVE                              ; RATICATE_RG
-	db PSYCHIC_M                            ; RAICHU_A
+	db PSYBEAM	                            ; RAICHU_A
 	db NO_MOVE                              ; RAICHU_RG
 	db NO_MOVE                              ; MEOWTH_A
 	db POWER_GEM                            ; PERSIAN_A
@@ -267,7 +267,7 @@ EvolutionMoves::
 	db NO_MOVE                              ; EXEGGCUTE_A
 	db DRAGONHAMMER                         ; EXEGGUTOR_A
 	db NO_MOVE                              ; EXEGGUTOR_RG
-	db NO_MOVE 		                        ; MAROWAK_A
+	db FLAME_CHARGE	                        ; MAROWAK_A
 	db NO_MOVE                              ; GYARADOS_RG
 	db NO_MOVE                              ; SUNFLORA_S
 	db NO_MOVE                              ; SUNFLORA_S

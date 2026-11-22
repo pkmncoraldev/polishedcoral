@@ -83,12 +83,12 @@ SunbeamJunglePlumeCaveBoss:
 	playmapmusic
 	setevent EVENT_SUNBEAM_JUNGLE_PLUME_CAVE_VILEPLUME_GONE
 	checkcode VAR_MONJUSTCAUGHT
-	if_equal VILEPLUME, .CaughtLedian
+	if_equal VILEPLUME, .CaughtVileplume
 	opentext
 	writetext SunbeamJunglePlumeCaveVileplumeTextGone
 	waitbutton
 	closetext
-.CaughtLedian
+.CaughtVileplume
 	writecode VAR_BATTLETYPE, BATTLETYPE_NORMAL
 	setevent EVENT_UNIQUE_ENCOUNTER_VILEPLUME_BOSS
 	end

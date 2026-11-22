@@ -23,8 +23,8 @@ SpriteMovementData::
 	sprite_movement_data SPRITEMOVEFN_BIG_SNORLAX,           DOWN,   PERSON_ACTION_BIG_SNORLAX,     	$2e,    $01,    %1100 ; SPRITEMOVEDATA_SNORLAX
 	sprite_movement_data SPRITEMOVEFN_BOUNCE,                DOWN,   PERSON_ACTION_BOUNCE,          	$2e,    $00,    %0000 ; SPRITEMOVEDATA_POKEMON
 	sprite_movement_data SPRITEMOVEFN_STANDING,              DOWN,   PERSON_ACTION_STAND,           	$0c,    $00,    %0000 ; SPRITEMOVEDATA_SUDOWOODO
-	sprite_movement_data SPRITEMOVEFN_STANDING,              UP,     PERSON_ACTION_STAND,           	$2e,    $10,    %0000 ; SPRITEMOVEDATA_SMASHABLE_ROCK
-	sprite_movement_data SPRITEMOVEFN_STRENGTH,              DOWN,   PERSON_ACTION_STAND,           	$2e,    $00,    %0100 ; SPRITEMOVEDATA_STRENGTH_BOULDER
+	sprite_movement_data SPRITEMOVEFN_STANDING,              DOWN,     PERSON_ACTION_STAND,           	$2e,    $10,    %0000 ; SPRITEMOVEDATA_SMASHABLE_ROCK
+	sprite_movement_data SPRITEMOVEFN_STRENGTH,              UP,   PERSON_ACTION_STAND,           	$2e,    $00,    %0100 ; SPRITEMOVEDATA_STRENGTH_BOULDER
 	sprite_movement_data SPRITEMOVEFN_FOLLOWNOTEXACT,        DOWN,   PERSON_ACTION_STAND,           	$02,    $00,    %0000 ; SPRITEMOVEDATA_FOLLOWNOTEXACT
 	sprite_movement_data SPRITEMOVEFN_SHADOW,                DOWN,   PERSON_ACTION_00,              	$8e,    $01,    %0000 ; SPRITEMOVEDATA_SHADOW
 	sprite_movement_data SPRITEMOVEFN_EMOTE,                 DOWN,   PERSON_ACTION_EMOTE,           	$8e,    $02,    %0000 ; SPRITEMOVEDATA_EMOTE
@@ -127,3 +127,4 @@ SpriteMovementData::
 	sprite_movement_data SPRITEMOVEFN_BILLBOARD_2_R,		 DOWN,   PERSON_ACTION_BILLBOARD_2_R, 		$00,    $00,    %0000 ; SPRITEMOVEDATA_BILLBOARD_2_R
 	sprite_movement_data SPRITEMOVEFN_NETT_BALL_L,			 LEFT,   PERSON_ACTION_NETT_BALL_L, 		$7c,    $02,    %0000 ; SPRITEMOVEDATA_NETT_BALL_L
 	sprite_movement_data SPRITEMOVEFN_NETT_BALL_R,			 RIGHT,  PERSON_ACTION_NETT_BALL_R, 		$7c,    $02,    %0000 ; SPRITEMOVEDATA_NETT_BALL_R
+	sprite_movement_data SPRITEMOVEFN_BOUNCE,                DOWN,   PERSON_ACTION_BOUNCE,          	$2e,    $02,    %0000 ; SPRITEMOVEDATA_POKEMON_PRIORITY

@@ -39,7 +39,7 @@ LusterMallStoneShop_MapScriptHeader:
 	const LUSTER_MALL_STONE_SHOP_POLLY
 	
 LusterMallStoneShopCallback:
-	checkevent EVENT_GLINT_GROVE_EAST_POKE_BALL
+	checkevent EVENT_GLINT_GROVE_POKE_BALL
 	iftrue .move
 	checkevent EVENT_AUREOLE_MOUNTAIN_4F_ITEM_1
 	iffalse .skip

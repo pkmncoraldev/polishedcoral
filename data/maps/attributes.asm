@@ -118,11 +118,7 @@ ENDM
 	map_attributes GlintGroveEntrance, GLINT_GROVE_ENTRANCE, $d4, SOUTH
 	connection south, GlintCity, GLINT_CITY, -1
 	
-	map_attributes GlintGrove, GLINT_GROVE, $11, EAST
-	connection east, GlintGroveEast, GLINT_GROVE_EAST, 27
-	
-	map_attributes GlintGroveEast, GLINT_GROVE_EAST, $11, WEST
-	connection west, GlintGrove, GLINT_GROVE, -27
+	map_attributes GlintGrove, GLINT_GROVE, $11, 0
 	
 	map_attributes Route3, ROUTE_3, $d4, NORTH | SOUTH | WEST | EAST
 	connection north, Route3StarglowCavernTop, ROUTE_3_STARGLOW_CAVERN_TOP, 10
@@ -888,3 +884,4 @@ ENDM
 	map_attributes Route11Padding, ROUTE_11_PADDING, 0, 0
 	map_attributes PokemonLeagueInside, POKEMON_LEAGUE_INSIDE, 0, 0
 	map_attributes PokemonLeagueArena, POKEMON_LEAGUE_ARENA, 0, 0
+	map_attributes GlintGroveNorth, GLINT_GROVE_NORTH, $11, 0

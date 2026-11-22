@@ -4,7 +4,7 @@ GlintGroveUnderground_MapScriptHeader:
 	db 0 ; callbacks
 
 	db 3 ; warp events
-	warp_def  7, 31, 1, GLINT_GROVE_EAST
+	warp_def  7, 31, 5, GLINT_GROVE
 	warp_def  5, 43, 3, GLINT_GROVE_UNDERGROUND
 	warp_def 40, 31, 2, GLINT_GROVE_UNDERGROUND
 
@@ -15,7 +15,6 @@ GlintGroveUnderground_MapScriptHeader:
 	coord_event 13,  7, 0, GlintGroveUndergroundClefScene4
 	coord_event 28, 38, 2, GlintGroveUndergroundIntroScene
 	coord_event 29, 38, 2, GlintGroveUndergroundIntroScene
-	
 
 	db 6 ; bg events
 	signpost  4, 11, SIGNPOST_READ, GlintGroveUndergroundMoonStone

@@ -357,7 +357,7 @@ LoadMapPals::
 	eventflagcheck EVENT_GLINT_GROVE_ROCK_GONE
 	jp nz, .normal
 	ld a, [wYCoord]
-	cp $1c
+	cp $0a
 	jp nc, .normal
 	jp .rocks
 .bar

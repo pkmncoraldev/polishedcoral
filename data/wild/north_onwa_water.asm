@@ -70,7 +70,7 @@
 	db 27, AZUMARILL	;4%
 	db 27, AZUMARILL	;1%
 	
-	map_id GLINT_GROVE_EAST
+	map_id GLINT_GROVE_NORTH
 	db 8 percent ; encounter rate
 	db 27, POLIWHIRL	;30%
 	db 27, POLIWHIRL	;30%

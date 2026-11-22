@@ -17,7 +17,7 @@ MapTriggers::
 	scene_var DAYBREAK_VILLAGE,						  wDaybreakVillageTrigger
 	scene_var GLINT_GROVE_ENTRANCE,					  wGlintGroveEntranceTrigger
 	scene_var GLINT_GROVE,							  wGlintGroveTrigger
-	scene_var GLINT_GROVE_EAST,						  wAlways0Trigger
+	scene_var GLINT_GROVE_NORTH,					  wGlintGroveTrigger
 	scene_var GLINT_GROVE_DEEP,						  wGlintGroveEntranceTrigger
 	scene_var GLINT_GROVE_UNDERGROUND,				  wGlintGroveUndergroundTrigger
 	scene_var GLINT_APARTMENT_LEFT_2F,				  wGlintApartmentLeft2FTrigger

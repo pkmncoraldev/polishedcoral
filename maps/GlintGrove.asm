@@ -7,52 +7,54 @@ GlintGrove_MapScriptHeader:
 	db 1 ; callbacks
 	callback MAPCALLBACK_TILES, GlintGrovePiles
 
-	db 3 ; warp events
-	warp_def 78, 27, 1, GLINT_GROVE_ENTRANCE
-	warp_def 78, 26, 2, GLINT_GROVE_ENTRANCE
-	warp_def 13, 12, 1, GLINT_GROVE_DEEP
+	db 5 ; warp events
+	warp_def 58, 27, 1, GLINT_GROVE_ENTRANCE
+	warp_def 58, 26, 2, GLINT_GROVE_ENTRANCE
+	warp_def  1, 16, 1, GLINT_GROVE_NORTH
+	warp_def  1, 17, 2, GLINT_GROVE_NORTH
+	warp_def 45, 53, 1, GLINT_GROVE_UNDERGROUND
 
 	db 7 ; coord events
-	xy_trigger 0, 66, 24, 0, GlintGrovePile1, 0, 0
-	xy_trigger 0, 60,  9, 0, GlintGrovePile2, 0, 0
-	xy_trigger 0, 60, 30, 0, GlintGrovePile3, 0, 0
-	xy_trigger 0, 48, 17, 0, GlintGrovePile4, 0, 0
-	xy_trigger 0, 44, 26, 0, GlintGrovePile5, 0, 0
-	xy_trigger 0, 68, 12, 0, GlintGrovePile6, 0, 0
-	xy_trigger 0, 30, 29, 0, GlintGrovePile7, 0, 0
+	xy_trigger 0, 46, 24, 0, GlintGrovePile1, 0, 0
+	xy_trigger 0, 40,  9, 0, GlintGrovePile2, 0, 0
+	xy_trigger 0, 40, 30, 0, GlintGrovePile3, 0, 0
+	xy_trigger 0, 28, 17, 0, GlintGrovePile4, 0, 0
+	xy_trigger 0, 24, 26, 0, GlintGrovePile5, 0, 0
+	xy_trigger 0, 48, 12, 0, GlintGrovePile6, 0, 0
+	xy_trigger 0, 10, 29, 0, GlintGrovePile7, 0, 0
 
-	db 9 ; bg events
-	signpost  7,  8, SIGNPOST_IFNOTSET, GlintGroveSecret
-	signpost 26, 15, SIGNPOST_JUMPTEXT, GlintGroveBigTreeText
-	signpost 26, 16, SIGNPOST_JUMPTEXT, GlintGroveBigTreeText
-	signpost 26, 17, SIGNPOST_JUMPTEXT, GlintGroveBigTreeText
-	signpost 27, 15, SIGNPOST_JUMPTEXT, GlintGroveBigTreeText
-	signpost 27, 17, SIGNPOST_JUMPTEXT, GlintGroveBigTreeText
-	signpost 28, 15, SIGNPOST_JUMPTEXT, GlintGroveBigTreeText
-	signpost 28, 16, SIGNPOST_JUMPTEXT, GlintGroveBigTreeText
-	signpost 28, 17, SIGNPOST_JUMPTEXT, GlintGroveBigTreeText
+	db 8 ; bg events
+	signpost  7, 15, SIGNPOST_JUMPTEXT, GlintGroveBigTreeText
+	signpost  7, 16, SIGNPOST_JUMPTEXT, GlintGroveBigTreeText
+	signpost  7, 17, SIGNPOST_JUMPTEXT, GlintGroveBigTreeText
+	signpost  8, 15, SIGNPOST_JUMPTEXT, GlintGroveBigTreeText
+	signpost  8, 17, SIGNPOST_JUMPTEXT, GlintGroveBigTreeText
+	signpost  9, 15, SIGNPOST_JUMPTEXT, GlintGroveBigTreeText
+	signpost  9, 16, SIGNPOST_JUMPTEXT, GlintGroveBigTreeText
+	signpost  9, 17, SIGNPOST_JUMPTEXT, GlintGroveBigTreeText
 
 	db 20 ; object events
-	person_event SPRITE_LASS, 62, 32, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_GENERICTRAINER, 1, TrainerGlintGrove_1, -1
-	person_event SPRITE_PICNICKER, 68,  6, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 3, TrainerGlintGrove_2, -1
-	person_event SPRITE_CAMPER, 39,  7, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 4, TrainerGlintGrove_3, -1
-	person_event SPRITE_TWIN, 39, 31, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_GENERICTRAINER, 1, TrainerGlintGrove_4, -1
-	person_event SPRITE_TWIN, 38, 31, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_GENERICTRAINER, 1, TrainerGlintGrove_5, -1
-	person_event SPRITE_BUG_CATCHER, 30,  4, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 3, TrainerGlintGrove_6, -1
-	person_event SPRITE_MINA, 23, 16, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, GlintGroveMina, EVENT_GLINT_GROVE_MINA_GONE
-	person_event SPRITE_SNUBBULL_SHRINK, 23, 17, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, GlintGroveSnubbull, EVENT_GLINT_GROVE_MINA_GONE
-	person_event SPRITE_PONYTAIL, 72, 21, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, GlintGroveNPC1, -1
-	person_event SPRITE_PONYTAIL, 55, 16, SPRITEMOVEDATA_WANDER, 1, 3, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, GlintGroveNPC3, -1
-	person_event SPRITE_POKEMANIAC, 74, 31, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, GlintGroveNPC4, -1
-	itemball_event 10, 41, AWAKENING, 1, EVENT_GLINT_GROVE_POKE_BALL1
-	person_event SPRITE_ELDER, 66, 29, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, GlintGrovePetalMan, -1
-	person_event SPRITE_MISC_OVERHEAD, 21, -1, SPRITEMOVEDATA_TILE_DOWN_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_GENERICTRAINER, 1, 0, -1
-	person_event SPRITE_BOULDER_ROCK_FOSSIL, 22, 17, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, GlintGroveRock, EVENT_GLINT_GROVE_ROCK_GONE
-	tmhmball_event 37, 44, TM_METAL_CLAW, EVENT_TM31
+	person_event SPRITE_LASS, 42, 32, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_GENERICTRAINER, 1, TrainerGlintGrove_1, -1
+	person_event SPRITE_PICNICKER, 48,  6, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 3, TrainerGlintGrove_2, -1
+	person_event SPRITE_CAMPER, 19,  7, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_GENERICTRAINER, 4, TrainerGlintGrove_3, -1
+	person_event SPRITE_TWIN, 19, 31, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_GENERICTRAINER, 1, TrainerGlintGrove_4, -1
+	person_event SPRITE_TWIN, 18, 31, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_GENERICTRAINER, 1, TrainerGlintGrove_5, -1
+	person_event SPRITE_BUG_CATCHER, 10,  4, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_GENERICTRAINER, 3, TrainerGlintGrove_6, -1
+	person_event SPRITE_DISGUISEMAN,  5, 16, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, GlintGroveMina, EVENT_GLINT_GROVE_POKE_BALL
+	person_event SPRITE_SNUBBULL_SHRINK,  5, 17, SPRITEMOVEDATA_POKEMON_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, GlintGroveSnubbull, EVENT_GLINT_GROVE_MINA_GONE
+	person_event SPRITE_PONYTAIL, 52, 21, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, GlintGroveNPC1, -1
+	person_event SPRITE_PONYTAIL, 35, 16, SPRITEMOVEDATA_WANDER, 1, 3, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, GlintGroveNPC3, -1
+	person_event SPRITE_POKEMANIAC, 54, 31, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, GlintGroveNPC4, -1
+	itemball_event 10, 21, AWAKENING, 1, EVENT_GLINT_GROVE_POKE_BALL1
+	person_event SPRITE_ELDER, 46, 29, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_PINK, PERSONTYPE_SCRIPT, 0, GlintGrovePetalMan, -1
+	person_event SPRITE_ICESKATER_VARIABLE,  4, 17, SPRITEMOVEDATA_TILE_DOWN_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_GENERICTRAINER, 1, 0, -1
+	strengthboulder_event 52, 49, EVENT_GLINT_GROVE_BOULDER_1
+	strengthboulder_event 53, 50, EVENT_GLINT_GROVE_BOULDER_2
+	tmhmball_event 37, 24, TM_METAL_CLAW, EVENT_TM31
 	fruittreeinvis_event 15, 63, FRUITTREE_GLINT_GROVE_1, CHESTO_BERRY
 	fruittreeinvis_event 17, 41, FRUITTREE_GLINT_GROVE_2, PECHA_BERRY
 	tapeball_event 17, 36, MUSIC_LASS_ENCOUNTER, 2, EVENT_MUSIC_LASS_ENCOUNTER
-	itemball_event 10, 12, REPEL, 1, EVENT_GLINT_GROVE_POKE_BALL
+	
 	
 	const_def 1 ; object constants
 	const GLINTGROVE_TRAINER1
@@ -69,7 +71,6 @@ GlintGrove_MapScriptHeader:
 	const GLINTGROVE_POKEBALL
 	const GLINTGROVE_PETALMAN
 	const GLINTGROVE_PETALS
-	const GLINTGROVE_ROCK
 	
 GlintGroveTrigger0:
 GlintGroveTrigger1:
@@ -224,20 +225,60 @@ GlintGroveSecret:
 	text_jump UnknownText_0x1c0a1c
 	db "@"
 	
-GlintGrovePile1:
-	checkflag ENGINE_GLINT_GROVE_PILE_1
-	iftrue .end
+GlintGroveAnimatePetals:
 	special Special_StopRunning
 	disappear GLINTGROVE_PETALS
 	refreshscreen
 	callasm MakePalPink
-	moveperson GLINTGROVE_PETALS, $18, $42
+	variablesprite SPRITE_ICESKATER_VARIABLE, SPRITE_MISC_OVERHEAD
+	callasm GlintGroveMovePetalsAsm
 	appear GLINTGROVE_PETALS
 	playsound SFX_POWDER
-	changeblock $18, $42, $2b
+	callasm GlintGroveClearGroundPetalsAsm
 	reloadmappart
-	pause 3
+	pause 1
+	applyonemovement GLINTGROVE_PETALS, turn_step_down
+	pause 1
 	disappear GLINTGROVE_PETALS
+	applyonemovement PLAYER, remove_fixed_facing
+	checkevent EVENT_GLINT_GROVE_MINA_GONE
+	iftrue .mina_gone
+	variablesprite SPRITE_ICESKATER_VARIABLE, SPRITE_BOULDER_ROCK_FOSSIL
+	moveperson GLINTGROVE_PETALS, 17, 4
+	jump .cont
+.mina_gone
+	moveperson GLINTGROVE_PETALS, -1, -1
+.cont
+	appear GLINTGROVE_PETALS
+	end
+	
+GlintGroveClearGroundPetalsAsm:
+	ld a, [wXCoord]
+	add 4
+	ld d, a
+	ld a, [wYCoord]
+	add 4
+	ld e, a
+	call GetBlockLocation
+	ld a, $2b
+	ld [hl], a
+	call BufferScreen
+	jp GetMovementPermissions
+	
+GlintGroveMovePetalsAsm:
+	ld b, GLINTGROVE_PETALS
+	ld a, [wXCoord]
+	add 4
+	ld d, a
+	ld a, [wYCoord]
+	add 4
+	ld e, a
+	farjp CopyDECoordsToMapObject
+	
+GlintGrovePile1:
+	checkflag ENGINE_GLINT_GROVE_PILE_1
+	iftrue .end
+	scall GlintGroveAnimatePetals
 	opentext
 	setflag ENGINE_GLINT_GROVE_PILE_1
 	checkevent EVENT_GOT_PETAL_PILE_1
@@ -253,17 +294,7 @@ GlintGrovePile1:
 GlintGrovePile2:
 	checkflag ENGINE_GLINT_GROVE_PILE_2
 	iftrue .end
-	special Special_StopRunning
-	disappear GLINTGROVE_PETALS
-	refreshscreen
-	callasm MakePalPink
-	moveperson GLINTGROVE_PETALS, $9, $3c
-	appear GLINTGROVE_PETALS
-	playsound SFX_POWDER
-	changeblock $8, $3c, $2b
-	reloadmappart
-	pause 3
-	disappear GLINTGROVE_PETALS
+	scall GlintGroveAnimatePetals
 	opentext
 	setflag ENGINE_GLINT_GROVE_PILE_2
 	checkevent EVENT_GOT_PETAL_PILE_1
@@ -279,17 +310,7 @@ GlintGrovePile2:
 GlintGrovePile3:
 	checkflag ENGINE_GLINT_GROVE_PILE_3
 	iftrue .end
-	special Special_StopRunning
-	disappear GLINTGROVE_PETALS
-	refreshscreen
-	callasm MakePalPink
-	moveperson GLINTGROVE_PETALS, $1e, $3c
-	appear GLINTGROVE_PETALS
-	playsound SFX_POWDER
-	changeblock $1e, $3c, $2b
-	reloadmappart
-	pause 3
-	disappear GLINTGROVE_PETALS
+	scall GlintGroveAnimatePetals
 	opentext
 	verbosegiveitem FLOWER_PETAL
 	closetext
@@ -305,17 +326,7 @@ GlintGrovePile3:
 GlintGrovePile4:
 	checkflag ENGINE_GLINT_GROVE_PILE_4
 	iftrue .end
-	special Special_StopRunning
-	disappear GLINTGROVE_PETALS
-	refreshscreen
-	callasm MakePalPink
-	moveperson GLINTGROVE_PETALS, $11, $30
-	appear GLINTGROVE_PETALS
-	playsound SFX_POWDER
-	changeblock $10, $30, $2b
-	reloadmappart
-	pause 3
-	disappear GLINTGROVE_PETALS
+	scall GlintGroveAnimatePetals
 	opentext
 	setflag ENGINE_GLINT_GROVE_PILE_4
 	checkevent EVENT_GOT_PETAL_PILE_1
@@ -331,17 +342,7 @@ GlintGrovePile4:
 GlintGrovePile5:
 	checkflag ENGINE_GLINT_GROVE_PILE_5
 	iftrue .end
-	special Special_StopRunning
-	disappear GLINTGROVE_PETALS
-	refreshscreen
-	callasm MakePalPink
-	moveperson GLINTGROVE_PETALS, $1a, $2c
-	appear GLINTGROVE_PETALS
-	playsound SFX_POWDER
-	changeblock $1a, $2c, $2b
-	reloadmappart
-	pause 3
-	disappear GLINTGROVE_PETALS
+	scall GlintGroveAnimatePetals
 	opentext
 	verbosegiveitem FLOWER_PETAL
 	closetext
@@ -357,17 +358,7 @@ GlintGrovePile5:
 GlintGrovePile6:
 	checkflag ENGINE_GLINT_GROVE_PILE_6
 	iftrue .end
-	special Special_StopRunning
-	disappear GLINTGROVE_PETALS
-	refreshscreen
-	callasm MakePalPink
-	moveperson GLINTGROVE_PETALS, $c, $44
-	appear GLINTGROVE_PETALS
-	playsound SFX_POWDER
-	changeblock $c, $44, $2b
-	reloadmappart
-	pause 3
-	disappear GLINTGROVE_PETALS
+	scall GlintGroveAnimatePetals
 	opentext
 	setflag ENGINE_GLINT_GROVE_PILE_6
 	checkevent EVENT_GOT_PETAL_PILE_1
@@ -383,17 +374,7 @@ GlintGrovePile6:
 GlintGrovePile7:
 	checkflag ENGINE_GLINT_GROVE_PILE_7
 	iftrue .end
-	special Special_StopRunning
-	disappear GLINTGROVE_PETALS
-	refreshscreen
-	callasm MakePalPink
-	moveperson GLINTGROVE_PETALS, $1d, $1e
-	appear GLINTGROVE_PETALS
-	playsound SFX_POWDER
-	changeblock $1c, $1e, $2b
-	reloadmappart
-	pause 3
-	disappear GLINTGROVE_PETALS
+	scall GlintGroveAnimatePetals
 	opentext
 	setflag ENGINE_GLINT_GROVE_PILE_7
 	checkevent EVENT_GOT_PETAL_PILE_1
@@ -426,6 +407,14 @@ GlintGroveSecondPile2:
 	end
 	
 GlintGrovePiles:
+	variablesprite SPRITE_DISGUISEMAN, SPRITE_MINA
+	variablesprite SPRITE_ICESKATER_VARIABLE, SPRITE_BOULDER_ROCK_FOSSIL
+	checkevent EVENT_GLINT_GROVE_MINA_GONE
+	iffalse .skip_mina
+	variablesprite SPRITE_DISGUISEMAN, SPRITE_MISC_PALM
+	variablesprite SPRITE_ICESKATER_VARIABLE, SPRITE_MISC_OVERHEAD
+	moveperson GLINTGROVE_MINA, 50, 52
+.skip_mina
 	checkflag ENGINE_GLINT_GROVE_PILE_1
 	iftrue .GlintGrovePile1
 .cont1
@@ -449,31 +438,31 @@ GlintGrovePiles:
 	return
 
 .GlintGrovePile1:
-	changeblock $18, $42, $2b
+	changeblock 24, 46, $2b
 	jump .cont1
 
 .GlintGrovePile2:
-	changeblock $8, $3c, $2b
+	changeblock 9, 40, $2b
 	jump .cont2
 	
 .GlintGrovePile3:
-	changeblock $1e, $3c, $2b
+	changeblock 30, 40, $2b
 	jump .cont3
 	
 .GlintGrovePile4:
-	changeblock $10, $30, $2b
+	changeblock 17, 28, $2b
 	jump .cont4
 	
 .GlintGrovePile5:
-	changeblock $1a, $2c, $2b
+	changeblock 26, 24, $2b
 	jump .cont5
 	
 .GlintGrovePile6:
-	changeblock $c, $44, $2b
+	changeblock 12, 48, $2b
 	jump .cont6
 	
 .GlintGrovePile7:
-	changeblock $1c, $1e, $2b
+	changeblock 29, 10, $2b
 	return
 	
 TrainerGlintGrove_1:
@@ -697,7 +686,21 @@ GlintGroveSnubbullText2:
 	text "It's panting…"
 	done
 
+GlintGroveShinyStone:
+	loadvar wCurItemBallContents, SHINY_STONE
+	loadvar wCurItemBallQuantity, 1
+	farscall FindItemInBallScript
+	iffalse .end
+	disappear GLINTGROVE_MINA
+.end
+	end
+
 GlintGroveMina:
+	checkevent EVENT_GLINT_GROVE_MINA_GONE
+	iftrue GlintGroveShinyStone
+	waitsfx
+	playmusic MUSIC_MINA
+	pause 5
 	checkevent EVENT_TALKED_TO_MINA_ONCE
 	iftrue .talked
 	setevent EVENT_TALKED_TO_MINA_ONCE
@@ -709,13 +712,6 @@ GlintGroveMina:
 	faceplayer
 	opentext TEXTBOX_UNKNOWN
 	writetext GlintGroveMinaText1
-	buttonsound
-	changetextboxspeaker TEXTBOX_MINA
-	farwritetext StdBlankText
-	special Special_FadeOutMusic
-	pause 6
-	writetext GlintGroveMinaText9
-	playmusic MUSIC_MINA
 	waitbutton
 	closetext
 	spriteface GLINTGROVE_MINA, DOWN
@@ -762,7 +758,7 @@ GlintGroveMina:
 	end
 .talked_have_tea
 	opentext TEXTBOX_MINA
-	playmusic MUSIC_MINA
+;	playmusic MUSIC_MINA
 	writetext GlintGroveMinaText4
 .have_tea
 	farwritetext StdBlankText
@@ -810,9 +806,9 @@ GlintGroveMina:
 	closepokepic
 	playsound SFX_STRENGTH
 	earthquake 84
-	setlasttalked GLINTGROVE_ROCK
+	setlasttalked GLINTGROVE_PETALS
 	applymovement2 MovementData_Mina_Rock_Smash
-	disappear GLINTGROVE_ROCK
+	disappear GLINTGROVE_PETALS
 	setlasttalked GLINTGROVE_MINA
 	pause 5
 	opentext TEXTBOX_MINA
@@ -834,6 +830,12 @@ GlintGroveMina:
 	disappear GLINTGROVE_MINA
 	setevent EVENT_GLINT_GROVE_MINA_GONE
 	setevent EVENT_TALKED_TO_MINA_ONCE
+	variablesprite SPRITE_DISGUISEMAN, SPRITE_MISC_PALM
+	moveperson GLINTGROVE_MINA, 50, 52
+	moveperson GLINTGROVE_PETALS, -1, -1
+	appear GLINTGROVE_MINA
+	appear GLINTGROVE_PETALS
+	pause 15
 	special Special_FadeOutMusic
 	pause 10
 	playmapmusic
@@ -844,7 +846,7 @@ GlintGroveMina:
 	writetext GlintGroveMinaTextNo
 	waitbutton
 	closetext
-	spriteface GLINTGROVE_MINA, UP
+	spriteface GLINTGROVE_MINA, RIGHT
 	special Special_FadeOutMusic
 	pause 10
 	playmapmusic
@@ -853,7 +855,7 @@ GlintGroveMina:
 	writetext GlintGroveMinaTextNo
 	waitbutton
 	closetext
-	spriteface GLINTGROVE_MINA, UP
+	spriteface GLINTGROVE_MINA, RIGHT
 	end
 .said_no
 	checkitem BLOSSOM_TEA
@@ -867,7 +869,7 @@ GlintGroveMina:
 	playsound SFX_LEVEL_UP 
 	waitsfx
 	closetext
-	playmusic MUSIC_MINA
+;	playmusic MUSIC_MINA
 	jump .return
 	
 GlintGroveMinaText1:
@@ -878,6 +880,8 @@ GlintGroveMinaText1:
 	cont "around here, huh?"
 	
 	para "Well anyway…"
+	
+	para "My name is MINA."
 	done
 	
 GlintGroveMinaText2:
@@ -939,8 +943,10 @@ GlintGroveMinaText5:
 	done
 	
 GlintGroveMinaText6:
-	text "Here ya go, buddy.<WAIT_S>"
-	line "Drink up!"
+	text "Here ya go,"
+	line "SNUBBULL."
+	
+	para "Drink up!"
 	done
 	
 GlintGroveMinaText7:
@@ -986,7 +992,7 @@ GlintGroveMinaText10:
 	done
 	
 GlintGroveMinaText11:
-	text "Ok, SNUBBULL!"
+	text "Ok, buddy!"
 	
 	para "Let's do it!"
 	done
@@ -1020,9 +1026,6 @@ Movement_Mina_Walk_Away:
 	step_right
 	step_up
 	step_up
-	step_up
-	step_right
-	step_right
 	step_up
 	step_up
 	step_end

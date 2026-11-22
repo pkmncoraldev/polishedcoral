@@ -57,7 +57,7 @@ INCLUDE "maps/AureoleMountain2F.asm"
 SECTION "Dungeon Scripts2", ROMX
 
 INCLUDE "maps/GlintGrove.asm"
-INCLUDE "maps/GlintGroveEast.asm"
+INCLUDE "maps/GlintGroveNorth.asm"
 INCLUDE "maps/GlintGroveDeep.asm"
 INCLUDE "maps/StarglowCavernFossilRoom.asm"
 INCLUDE "maps/MtOnwa1F.asm"

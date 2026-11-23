@@ -902,9 +902,9 @@ YoungsterGroup:
 
 	; YOUNGSTER
 	db "JOEY@"
-	db TRAINERTYPE_DVS | TRAINERTYPE_PERSONALITY
+	db TRAINERTYPE_NORMAL
 	; party
-	db 5, RATTATA, FAKE_PERFECT_DVS, ABILITY_1 | ADAMANT, MALE | PLAIN_FORM
+	db 4, RATTATA
 	db -1 ; end
 
 ; ================

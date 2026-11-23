@@ -120,48 +120,48 @@
 	db 5, PIKACHU		;4%
 	db 5, PIKACHU		;1%
 	; day
-	db 5, LEDYBA		;30%
 	db 5, JIGGLYPUFF	;30%
+	db 5, LEDYBA		;30%
 	db 5, VENIPEDE		;20%
 	db 5, SNUBBULL		;10%
-	db 5, LEDYBA		;5%
-	db 5, LEDYBA		;4%
-	db 5, LEDYBA		;1%
+	db 5, PIKACHU		;5%
+	db 5, PIKACHU		;4%
+	db 5, PIKACHU		;1%
 	; nite
-	db 5, LEDYBA		;30%
 	db 5, JIGGLYPUFF	;30%
+	db 5, LEDYBA		;30%
 	db 5, VENIPEDE		;20%
 	db 5, SNUBBULL		;10%
-	db 5, LEDYBA		;5%
-	db 5, LEDYBA		;4%
-	db 5, LEDYBA		;1%
+	db 5, PIKACHU		;5%
+	db 5, PIKACHU		;4%
+	db 5, PIKACHU		;1%
 	
-; map_id GLINT_GROVE_NORTH
-	; db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
-	; ; morn
-	; db 5, JIGGLYPUFF	;30%
-	; db 5, LEDYBA		;30%
-	; db 5, VENIPEDE	;20%
-	; db 5, JIGGLYPUFF	;10%
-	; db 5, CLEFAIRY	;5%
-	; db 5, CLEFAIRY	;4%
-	; db 5, CLEFAIRY	;1%
-	; ; day
-	; db 5, LEDYBA		;30%
-	; db 5, JIGGLYPUFF	;30%
-	; db 5, VENIPEDE	;20%
-	; db 5, SNUBBULL	;10%
-	; db 5, CLEFAIRY	;5%
-	; db 5, CLEFAIRY	;4%
-	; db 5, CLEFAIRY	;1%
-	; ; nite
-	; db 5, LEDYBA		;30%
-	; db 5, JIGGLYPUFF	;30%
-	; db 5, VENIPEDE	;20%
-	; db 5, SNUBBULL	;10%
-	; db 5, CLEFAIRY	;5%
-	; db 5, CLEFAIRY	;4%
-	; db 5, CLEFAIRY	;1%
+	map_id GLINT_GROVE_NORTH
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	; morn
+	db 5, JIGGLYPUFF	;30%
+	db 5, LEDYBA		;30%
+	db 5, VENIPEDE		;20%
+	db 5, JIGGLYPUFF	;10%
+	db 5, CLEFAIRY		;5%
+	db 5, CLEFAIRY		;4%
+	db 5, CLEFAIRY		;1%
+	; day
+	db 5, JIGGLYPUFF	;30%
+	db 5, LEDYBA		;30%
+	db 5, VENIPEDE		;20%
+	db 5, JIGGLYPUFF	;10%
+	db 5, CLEFAIRY		;5%
+	db 5, CLEFAIRY		;4%
+	db 5, CLEFAIRY		;1%
+	; nite
+	db 5, JIGGLYPUFF	;30%
+	db 5, LEDYBA		;30%
+	db 5, VENIPEDE		;20%
+	db 5, JIGGLYPUFF	;10%
+	db 5, CLEFAIRY		;5%
+	db 5, CLEFAIRY		;4%
+	db 5, CLEFAIRY		;1%
 	
 	map_id GLINT_GROVE_DEEP
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite

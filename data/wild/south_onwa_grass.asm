@@ -167,25 +167,25 @@
 	; morn
 	db 21, MACHOP		;30%
 	db 21, DWEBBLE		;30%
-	db 21, RATTATA		;20%
-	db 21, RATICATE		;10%
-	db 21, RATTATA		;5%
+	db 21, COTTONEE		;20%
+	db 21, MACHOP		;10%
+	db 21, DWEBBLE		;5%
 	db 21, DWEBBLE		;4%
 	db 21, DWEBBLE		;1%
 	; day
 	db 21, MACHOP		;30%
 	db 21, DWEBBLE		;30%
-	db 21, RATTATA		;20%
-	db 21, RATICATE		;10%
-	db 21, RATTATA		;5%
+	db 21, COTTONEE		;20%
+	db 21, MACHOP		;10%
+	db 21, DWEBBLE		;5%
 	db 21, DWEBBLE		;4%
 	db 21, DWEBBLE		;1%
 	; nite
 	db 21, MACHOP		;30%
 	db 21, DWEBBLE		;30%
-	db 21, RATTATA		;20%
-	db 21, RATICATE		;10%
-	db 21, RATTATA		;5%
+	db 21, COTTONEE		;20%
+	db 21, MACHOP		;10%
+	db 21, DWEBBLE		;5%
 	db 21, DWEBBLE		;4%
 	db 21, DWEBBLE		;1%
 	

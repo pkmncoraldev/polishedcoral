@@ -439,9 +439,9 @@ GetNextTrainerDataByte:
 CheckMinaMons:
 	cp MINA_MON_MT_ONWA
 	jp z, .mina_mon_1
-	cp MINA_MON_ROUTE_6
-	jp z, .mina_mon_2
 	cp MINA_MON_ROUTE_11
+	jp z, .mina_mon_2
+	cp MINA_MON_ROUTE_6
 	jp z, .mina_mon_3
 	cp MINA_MON_RADIANT_FIELD
 	jp z, .mina_mon_4
@@ -459,13 +459,13 @@ CheckMinaMons:
 .mina_mon_2
 	push hl
 	ld hl, wMinaFlags
-	bit 2, [hl] ; ENGINE_MINA_ROUTE_6
+	bit 2, [hl] ; ENGINE_MINA_ROUTE_11
 	jr nz, .do_mina_mon
 	jr .next_mina_mon
 .mina_mon_3
 	push hl
 	ld hl, wMinaFlags
-	bit 3, [hl] ; ENGINE_MINA_ROUTE_11
+	bit 3, [hl] ; ENGINE_MINA_ROUTE_6
 	jr nz, .do_mina_mon
 	jr .next_mina_mon
 .mina_mon_4

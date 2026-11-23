@@ -136,6 +136,7 @@ TheThingIcon: 	  				INCBIN "gfx/items/the_thing.2bpp"
 TorchIcon:        				INCBIN "gfx/items/torch.2bpp"
 OldKeyIcon:       				INCBIN "gfx/items/old_key.2bpp"
 ClayPotIcon:  	  				INCBIN "gfx/items/clay_pot.2bpp"			;redone by nuuk
+LostKeyringIcon:
 ServiceKeyIcon:
 Room104KeyIcon:
 BRoomKeyIcon:

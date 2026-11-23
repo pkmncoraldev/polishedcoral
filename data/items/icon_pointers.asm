@@ -130,7 +130,7 @@ ItemIconPointers:
 	dba KeyCardIcon
 	dba OldCoinIcon
 	dba OldCoinIcon
-	dba NoItemIcon
+	dba LostKeyringIcon
 	dba RareBoneIcon
 	dba CometShardIcon
 	dba BerryJuiceIcon

@@ -150,7 +150,7 @@ ItemNameOrder:
 	db NAM_KEY_CARD_Y ; a0
 	db NAM_GOLD_COIN ; 05
 	db NAM_SILVER_COIN ; 5e
-	db NAM_UNUSED7  ; c5
+	db NAM_LOST_KEYRING  ; c5
 	db NAM_UNUSED8   ; 5f
 	db NAM_COMET_SHARD ; 77
 

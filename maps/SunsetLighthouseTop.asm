@@ -10,7 +10,7 @@ SunsetLighthouseTop_MapScriptHeader:
 
 	db 0 ; coord events
 
-	db 27 ; bg events
+	db 28 ; bg events
 	signpost  4,  6, SIGNPOST_JUMPTEXT, SunsetLighthouseTopFoodText
 	signpost  4,  0, SIGNPOST_DOWN, SunsetLighthouseTopTV
 	signpost  4,  1, SIGNPOST_JUMPTEXT, SunsetLighthouseTopFanText
@@ -38,11 +38,12 @@ SunsetLighthouseTop_MapScriptHeader:
 	signpost  1,  7, SIGNPOST_JUMPTEXT, SunsetLighthouseTopFridgeText
 	signpost  1,  6, SIGNPOST_JUMPTEXT, SunsetLighthouseTopStoveText
 	signpost  1,  5, SIGNPOST_JUMPTEXT, SunsetLighthouseTopSinkText
+	signpost  2,  2, SIGNPOST_READ, SunsetLighthouseTopDrawer
 
 	db 3 ; object events
 	object_event  3,  4, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, AMPHAROS, -1, -1, PAL_NPC_RED, PERSONTYPE_SCRIPT, 0, SunsetLighthouseTopAmpharos, -1
 	person_event SPRITE_WEIRD_TREE,  3,  0, SPRITEMOVEDATA_TILE_LEFT_PRIORITY, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
-	person_event SPRITE_BALL_CUT_FRUIT,  1, 0, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, SunsetLighthouseMareepDoll, EVENT_DECO_MAREEP_DOLL
+	person_event SPRITE_BALL_CUT_FRUIT,  1,  0, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, SunsetLighthouseMareepDoll, EVENT_DECO_MAREEP_DOLL
 
 
 SunsetLighthouseMareepDoll:
@@ -175,9 +176,13 @@ TastyFoodItems:
 	db -1
 	
 SunsetLighthouseTopTV:
+	checkcode VAR_FACING
+	if_equal DOWN, .YouAreFacingDown
+	jumptext SunsetLighthouseTopTVText2
+.YouAreFacingDown
 	callasm SunsetLighthouseTopTVAsm
 	iffalse .normal
-	jumptext SunsetLighthouseTopTVText2
+	jumptext SunsetLighthouseTopTVText3
 .normal
 	jumptext SunsetLighthouseTopTVText
 	
@@ -196,6 +201,134 @@ SunsetLighthouseTopTVAsm:
 .end
 	ld [wScriptVar], a
 	ret
+	
+SunsetLighthouseTopDrawer:
+	opentext
+	checkevent EVENT_LIGHTHOUSE_DRAWER_OPEN
+	iftrue .open
+	checkitem LOST_KEYRING
+	iffalse .locked
+	setevent EVENT_LIGHTHOUSE_DRAWER_OPEN
+	writetext SunsetLighthouseTopDrawerLocked2
+	waitbutton
+	closetext
+	pause 7
+	playsound SFX_WALL_OPEN
+	pause 14
+	opentext
+	writetext SunsetLighthouseTopDrawerLocked3
+	buttonsound
+	farwritetext StdBlankText
+	pause 6
+.open
+	writetext SunsetLighthouseTopDrawerText1
+	yesorno
+	iffalse .no
+	writetext SunsetLighthouseTopDrawerText3
+	waitbutton
+	endtext
+.no
+	writetext SunsetLighthouseTopDrawerText2
+	waitbutton
+	endtext
+.locked
+	writetext SunsetLighthouseTopDrawerLocked
+	waitbutton
+	endtext
+	
+SunsetLighthouseTopDrawerLocked:
+	text "A drawer."
+	
+	para "It's locked"
+	line "tight."
+	done
+	
+SunsetLighthouseTopDrawerLocked2:
+	text "A drawer."
+	
+	para "The key on the"
+	line "LOST KEYRING might"
+	cont "work."
+	done 
+	
+SunsetLighthouseTopDrawerLocked3:
+	text "A perfect fit!"
+	done
+	
+SunsetLighthouseTopDrawerText1:
+	text "<PLAYER> dug"
+	line "in the drawer."
+	
+	para "Inside was an"
+	line "unfinished letter."
+	
+	para "Read it?"
+	done
+	
+SunsetLighthouseTopDrawerText2:
+	text "Better not…"
+	done
+	
+SunsetLighthouseTopDrawerText3:
+	text "“To my son,"
+	
+	para "I know it must"
+	line "seem like I thrust"
+	cont "the entire world"
+	cont "on your shoulders."
+	
+	para "Like I dumped my"
+	line "responsibilities"
+	cont "onto you and ran."
+	
+	para "I guess that is"
+	line "what I did."
+	
+	para "You were too."
+	line "young."
+	
+	para "I know that now."
+	
+	para "I think I knew"
+	line "it then, too."
+	
+	para "But, I just had"
+	line "to do something."
+	
+	para "Despite starting"
+	line "the company with"
+	cont "a noble goal,"
+	
+	para "it ended up"
+	line "changing me."
+	
+	para "It was turning me"
+	line "into someone I"
+	cont "wasn't."
+	
+	para "I had to leave it"
+	line "behind."
+	
+	para "I needed a person"
+	line "I could trust."
+	
+	para "One who wouldn't"
+	line "be corrupted by"
+	cont "the money and"
+	cont "power like I was."
+	
+	para "I needed you,<WAIT_S>"
+	line "ELI."
+	
+	para "You were always"
+	line "the best of us."
+	
+	para "I'm sorry I"
+	line "didn't-”"
+	
+	para "The rest is"
+	line "blank."
+	done
 	
 GiveMareepDollText:
 	text "<PLAYER> found"
@@ -319,6 +452,10 @@ SunsetLighthouseTopTVText:
 	done
 	
 SunsetLighthouseTopTVText2:
+	text "Oops, wrong side."
+	done
+	
+SunsetLighthouseTopTVText3:
 	text "Nothing but"
 	line "static…"
 	done

@@ -5,10 +5,10 @@ Route15_MapScriptHeader:
 
 	db 55 ; warp events
 	warp_event 46,  7, CONNECTING_CAVERN_ENTRANCE, 1
-	warp_event  6, 22, ROUTE_14_15_UNDERWATER, 17
-	warp_event  7, 22, ROUTE_14_15_UNDERWATER, 18
-	warp_event  6, 23, ROUTE_14_15_UNDERWATER, 19
-	warp_event  7, 23, ROUTE_14_15_UNDERWATER, 20
+	warp_event  4, 22, ROUTE_14_15_UNDERWATER, 17
+	warp_event  5, 22, ROUTE_14_15_UNDERWATER, 18
+	warp_event  4, 23, ROUTE_14_15_UNDERWATER, 19
+	warp_event  5, 23, ROUTE_14_15_UNDERWATER, 20
 	warp_event 18, 19, ROUTE_14_15_UNDERWATER, 21
 	warp_event 19, 19, ROUTE_14_15_UNDERWATER, 22
 	warp_event 17, 20, ROUTE_14_15_UNDERWATER, 23

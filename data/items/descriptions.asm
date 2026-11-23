@@ -130,7 +130,7 @@ ItemDescriptions:
 	dw KeyCardDesc
 	dw GoldCoinDesc
 	dw SilverCoinDesc
-	dw TeruSamaDesc
+	dw LostKeyringDesc
 	dw RareBoneDesc
 	dw CometShardDesc
 	dw BerryJuiceDesc
@@ -1133,6 +1133,10 @@ StarPieceDesc:
 CometShardDesc:
 	db   "A rare blue gem."
 	next "Sell very high!@"
+
+LostKeyringDesc:
+	db   "An old keyring"
+	next "with only one key.@"
 
 RareBoneDesc:
 	db   "A rare bone."

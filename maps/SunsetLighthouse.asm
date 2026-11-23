@@ -140,8 +140,6 @@ LighthousePokeMenu:
 	yesorno
 	iffalse DidntChooseStarterScript
 	setevent EVENT_GOT_CHARMANDER_FROM_SPRUCE
-	writetext ChoseStarterText
-	buttonsound
 	waitsfx
 	pokenamemem CHARMANDER, $0
 	writetext ReceivedStarterText
@@ -164,8 +162,6 @@ LighthousePokeMenu:
 	yesorno
 	iffalse DidntChooseStarterScript
 	setevent EVENT_GOT_SQUIRTLE_FROM_SPRUCE
-	writetext ChoseStarterText
-	buttonsound
 	waitsfx
 	pokenamemem SQUIRTLE, $0
 	writetext ReceivedStarterText
@@ -188,8 +184,6 @@ LighthousePokeMenu:
 	yesorno
 	iffalse DidntChooseStarterScript
 	setevent EVENT_GOT_BULBASAUR_FROM_SPRUCE
-	writetext ChoseStarterText
-	buttonsound
 	waitsfx
 	pokenamemem BULBASAUR, $0
 	writetext ReceivedStarterText
@@ -212,8 +206,6 @@ LighthousePokeMenu:
 	yesorno
 	iffalse DidntChooseStarterScript
 	setevent EVENT_GOT_CYNDAQUIL_FROM_SPRUCE
-	writetext ChoseStarterText
-	buttonsound
 	waitsfx
 	pokenamemem CYNDAQUIL, $0
 	writetext ReceivedStarterText
@@ -237,8 +229,6 @@ LighthousePokeMenu:
 	yesorno
 	iffalse DidntChooseStarterScript
 	setevent EVENT_GOT_TOTODILE_FROM_SPRUCE
-	writetext ChoseStarterText
-	buttonsound
 	waitsfx
 	pokenamemem TOTODILE, $0
 	writetext ReceivedStarterText
@@ -262,8 +252,6 @@ LighthousePokeMenu:
 	yesorno
 	iffalse DidntChooseStarterScript
 	setevent EVENT_GOT_CHIKORITA_FROM_SPRUCE
-	writetext ChoseStarterText
-	buttonsound
 	waitsfx
 	pokenamemem CHIKORITA, $0
 	writetext ReceivedStarterText
@@ -652,13 +640,48 @@ LighthouseAbner:
 	iftrue .beentoisland
 	checkevent EVENT_SPRUCE_CALLED_COME_TO_ISLAND
 	iftrue .second_visit
-	jumptextfaceplayer LighthouseAbnerText
+	jumptextfaceplayer TEXTBOX_ABNER, LighthouseAbnerText
 .second_visit
 	jumptextfaceplayer TEXTBOX_ABNER, LighthouseAbner2ndVisitText
 .beentoisland
-	jumptextfaceplayer TEXTBOX_ABNER, LighthouseAbnerBeenToHouseText
+	checkevent EVENT_TALKED_TO_ABNER_ABOUT_ELEVATOR
+	iftrue .elevator_repeat
+	setevent EVENT_TALKED_TO_ABNER_ABOUT_ELEVATOR
+	faceplayer
+	opentext TEXTBOX_ABNER
+	writetext LighthouseAbnerBeenToHouseText
+	scall LighthouseAbnerKeyring
+	end
+.elevator_repeat
+	faceplayer
+	opentext TEXTBOX_ABNER
+	writetext LighthouseAbnerBeenToHouseText2
+	scall LighthouseAbnerKeyring
+	end
 .elevator_unlocked
+	checkevent EVENT_SHOWED_LOST_KEYRING
+	iftrue .skip_keyring
+	checkitem LOST_KEYRING
+	iffalse .skip_keyring
+	setevent EVENT_SHOWED_LOST_KEYRING
+	jumptextfaceplayer TEXTBOX_ABNER, LighthouseAbnerKeyRingText
+.skip_keyring
 	jumptextfaceplayer TEXTBOX_ABNER, LighthouseAbnerText
+	
+LighthouseAbnerKeyring:
+	checkevent EVENT_SHOWED_LOST_KEYRING
+	iftrue .skip_keyring
+	checkitem LOST_KEYRING
+	iffalse .skip_keyring
+	setevent EVENT_SHOWED_LOST_KEYRING
+	buttonsound
+	farwritetext StdBlankText
+	pause 6
+	writetext LighthouseAbnerKeyRingText
+.skip_keyring
+	waitbutton
+	closetext
+	end
 	
 LighthouseKid1:
 	faceplayer
@@ -1223,12 +1246,6 @@ DidntChooseStarterText:
 	line "important."
 	done
 
-ChoseStarterText:
-	text "I think"
-	line "that's a great"
-	cont "#MON too!"
-	done
-
 ReceivedStarterText:
 	text "<PLAYER> received"
 	line "@"
@@ -1272,27 +1289,58 @@ LighthouseAbner2ndVisitText:
 LighthouseAbnerBeenToHouseText:
 	text "<PLAYER>!"
 	
-	para "It's great to see"
-	line "you!"
+	para "You came at the"
+	line "perfect time!"
 	
 	para "I seem to have"
 	line "locked the door to"
 	cont "the elevator from"
 	cont "the other side…"
 	
-	para "I haven't seen the"
-	line "keys in years so I"
-	cont "can't get to the"
-	cont "top anymore!"
+	para "To make matters"
+	line "worse, I dropped"
+	cont "my key ring off of"
+	cont "the cape."
 	
-	para "The only way in"
-	line "is through the"
-	cont "basement under the"
-	cont "lighthouse."
+	para "It's long gone at"
+	line "the bottom of the"
+	cont "ocean by now!"
+	
+	para "The basement is"
+	line "the only way to"
+	cont "the elevator now."
+	
+	para "There should be a"
+	line "way in through a"
+	cont "little grotto out"
+	cont "on the cape."
+	
+	para "Could you run down"
+	line "there and see if"
+	cont "you can find a"
+	cont "way up?"
 	
 	para "I hope the #MON"
-	line "at the top is"
-	cont "alright…"
+	line "at the top is ok…"
+	done
+	
+LighthouseAbnerBeenToHouseText2:
+	text "The basement is"
+	line "the only way to"
+	cont "the elevator now."
+	
+	para "There should be a"
+	line "way in through a"
+	cont "little grotto out"
+	cont "on the cape."
+	
+	para "Could you run down"
+	line "there and see if"
+	cont "you can find a"
+	cont "way up?"
+	
+	para "I hope the #MON"
+	line "at the top is ok…"
 	done
 	
 LighthouseAbnerElevatorUnlockedText:
@@ -1306,4 +1354,30 @@ LighthouseAbnerElevatorUnlockedText:
 	
 	para "Say hi to your MOM"
 	line "for me!"
+	done
+	
+LighthouseAbnerKeyRingText:
+	text "…"
+	
+	para "What in the world?"
+	
+	para "My KEYRING?"
+	
+	para "You say you found"
+	line "it at the bottom"
+	cont "of the ocean?"
+	
+	para "What are the"
+	line "chances?"
+	
+	para "Hmmmm…"
+	
+	para "It seems all the"
+	line "important keys"
+	cont "washed away."
+	
+	para "Ah, well."
+	
+	para "I have no need for"
+	line "it now."
 	done

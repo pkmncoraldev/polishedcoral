@@ -203,9 +203,6 @@ NettBuildingTopEliText1:
 	para "You made it past"
 	line "the others…"
 	
-	para "It was inevitable,"
-	line "really."
-	
 	para "From the moment"
 	line "I met you in the"
 	cont "train station,"

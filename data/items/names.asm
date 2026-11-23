@@ -130,7 +130,7 @@ ItemNames::
 	db "KEY CARD@"
 	db "GOLD COIN@"
 	db "SILVER COIN@"
-	db "UNUSED@"
+	db "LOST KEYRING@"
 	db "RARE BONE@"
 	db "COMET SHARD@"
 	db "BERRY JUICE@"

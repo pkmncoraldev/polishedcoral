@@ -151,7 +151,7 @@
 	const KEY_CARD_Y   ; 81
 	const GOLD_COIN    ; 82
 	const SILVER_COIN  ; 83
-	const UNUSED7      ; 84 - replace
+	const LOST_KEYRING ; 84 - replace
 	const RARE_BONE    ; 85
 	const COMET_SHARD  ; 86
 
@@ -491,7 +491,7 @@
 	const NAM_REVIVAL_HERB ; c2
 	const NAM_REVIVE       ; c3
 	const NAM_ROCKY_HELMET ; c4
-	const NAM_UNUSED7      ; c5
+	const NAM_LOST_KEYRING      ; c5
 	const NAM_B_ROOM_KEY   ; c6
 	const NAM_SACRED_ASH   ; c7
 	const NAM_SAFARI_BALL  ; c8

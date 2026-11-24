@@ -10,14 +10,15 @@ SunsetLighthouse_MapScriptHeader:
 	db 3 ; warp events
 	warp_event 5, 9, SUNSET_CAPE, 1
 	warp_event 4, 9, SUNSET_CAPE, 1
-	warp_event  5,  2, SUNSET_LIGHTHOUSE_ELEVATOR, 1
+	warp_event  5,  2, SUNSET_LIGHTHOUSE_ELEVATOR, 2
+	
 
 	db 0 ; coord events
 
 	db 0 ; bg events
 
 	db 6 ; object events
-	person_event SPRITE_GENTLEMAN, 4, 4, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, LighthouseAbner, -1
+	person_event SPRITE_GENTLEMAN, 4, 4, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, LighthouseAbner, EVENT_LIGHTHOUSE_ABNER_GONE
 	person_event SPRITE_COLBY, -6, -6, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_GLINT_RIVAL_NOT_IN_HOUSE
 	person_event SPRITE_CUTE_GIRL, 6, 5, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, LighthouseKid1, EVENT_GOT_A_POKEMON_FROM_SPRUCE
 	person_event SPRITE_POKEMANIAC, 6, 6, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, LighthouseKid2, EVENT_GOT_A_POKEMON_FROM_SPRUCE
@@ -642,7 +643,7 @@ LighthouseAbner:
 	iftrue .second_visit
 	jumptextfaceplayer TEXTBOX_ABNER, LighthouseAbnerText
 .second_visit
-	jumptextfaceplayer TEXTBOX_ABNER, LighthouseAbner2ndVisitText
+	jump LighthouseAbnerFirstRidetoIsland
 .beentoisland
 	checkevent EVENT_TALKED_TO_ABNER_ABOUT_ELEVATOR
 	iftrue .elevator_repeat
@@ -681,6 +682,35 @@ LighthouseAbnerKeyring:
 .skip_keyring
 	waitbutton
 	closetext
+	end
+	
+LighthouseAbnerFirstRidetoIsland:
+	setevent EVENT_PLAYER_HOUSE_MOM_2
+	clearevent EVENT_PLAYER_HOUSE_MOM_1
+	faceplayer
+	opentext TEXTBOX_ABNER
+	checkevent EVENT_TALKED_TO_MOM_IN_PERSON_ABOUT_ABNER
+	iftrue .ride
+	checkevent EVENT_CALLED_MOM_CANT_GET_ON_ISLAND
+	iffalse .howdidyouknow
+.ride
+	writetext SunsetCaptainFirstRidetoIslandText1
+	jump .walk_away
+.howdidyouknow
+	writetext SunsetCaptainFirstRidetoIslandText2
+.walk_away
+	waitbutton
+	closetext
+	checkcode VAR_FACING
+	if_equal UP, .YouAreFacingUp
+	applymovement LIGHTHOUSE_ABNER, Movement_AbnerLighthouseLeave1
+	jump .end
+.YouAreFacingUp
+	applymovement LIGHTHOUSE_ABNER, Movement_AbnerLighthouseLeave2
+.end
+	playsound SFX_EXIT_BUILDING
+	disappear LIGHTHOUSE_ABNER
+	clearevent EVENT_SUNSET_BAY_ABNER_GONE
 	end
 	
 LighthouseKid1:
@@ -748,6 +778,75 @@ Movement_LighthouseRivalLeaves:
 	step_right
 	step_down
 	step_end
+	
+Movement_AbnerLighthouseLeave2:
+	step_right
+Movement_AbnerLighthouseLeave1:
+	step_down
+	step_down
+	step_down
+	step_down
+	step_down
+	step_end
+	
+SunsetCaptainFirstRidetoIslandText1:
+	text "Ah, hello,"
+	line "<PLAYER>."
+	
+	para "Your mother told"
+	line "me that you need"
+	cont "a ride to SUNBEAM"
+	cont "ISLAND."
+	
+	para "Of course I can"
+	line "take you there!"
+	
+	para "It might be a long"
+	line "while before you"
+	cont "can come back."
+	
+	para "You should take"
+	line "care of anything"
+	cont "you need to before"
+	cont "we go."
+	
+	para "I'll go on ahead to"
+	line "the docks and meet"
+	cont "you there."
+	done
+	
+SunsetCaptainFirstRidetoIslandText2:
+	text "Ah, <PLAYER>!"
+	
+	para "What are you doing"
+	line "here?"
+	
+	para "What's that?"
+	
+	para "A ride to SUNBEAM"
+	line "ISLAND?"
+	
+	para "I wish you had"
+	line "called."
+	
+	para "Anyway…"
+	
+	para "Of course I can"
+	line "take you there!"
+	
+	para "It might be a long"
+	line "while before you"
+	cont "can come back."
+	
+	para "You should take"
+	line "care of anything"
+	cont "you need to before"
+	cont "we go."
+	
+	para "I'll go on ahead to"
+	line "the docks and meet"
+	cont "you there."
+	done
 	
 LighthouseGotRivalDexText:
 	text "<PLAYER> received"
@@ -1261,29 +1360,6 @@ LighthouseKid1Text:
 LighthouseKid2Text:
 	text "I can't believe"
 	line "I lost…"
-	done
-
-LighthouseAbner2ndVisitText:
-	text "<PLAYER>!"
-	
-	para "It's great to see"
-	line "you!"
-	
-	para "How is your #-"
-	line "MON?"
-	
-	para "A trip to the"
-	line "island?"
-	
-	para "You must be"
-	line "looking for"
-	cont "CAP'N STRAND."
-	
-	para "He lives on the"
-	line "beach to the SOUTH"
-	cont "of town."
-	
-	para "Good luck!"
 	done
 	
 LighthouseAbnerBeenToHouseText:

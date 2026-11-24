@@ -1009,7 +1009,6 @@ wPlayerHouse1FTrigger:: ds 1
 wPlayerHouse2FTrigger:: ds 1
 wSunsetBayTrigger:: ds 1
 wSunsetGengarHouseTrigger:: ds 1
-wSunsetCaptainsHouseTrigger:: ds 1
 wSunsetLighthouseTrigger:: ds 1
 wRoute1GateTrigger:: ds 1
 wDaybreakVillageTrigger:: ds 1
@@ -1107,7 +1106,7 @@ wAureoleMountainOutsideTrigger:: ds 1
 wPokemonLeagueArenaTrigger:: ds 1
 wLuminaHealerHouseTrigger:: ds 1
 wDragonShrineTopTrigger:: ds 1
-ds 12
+ds 13
 
 wAmpharosFood:: ds 1
 

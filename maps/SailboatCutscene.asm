@@ -50,6 +50,8 @@ SailboatCutsceneTrigger0:
 	clearevent EVENT_DONT_SCROLL_OW
 	clearevent EVENT_SAILBOAT_LEFT
 .find_destination
+	checkevent EVENT_ABNER_GOING_TO_SUNBEAM
+	iftrue .abner_sunbeam
 	checkevent EVENT_BOAT_GOING_TO_SUNSET
 	iftrue .sunset
 	checkevent EVENT_BOAT_GOING_TO_LAKE_L
@@ -99,6 +101,13 @@ SailboatCutsceneTrigger0:
 	special FadeOutPalettes
 	warpfacing UP, BRILLO_TOWN, 17, 27
 	end
+.abner_sunbeam
+	clearevent EVENT_ABNER_GOING_TO_SUNBEAM
+	domaptrigger SUNBEAM_ISLAND, $0
+	special FadeOutPalettes
+	warpfacing DOWN, SUNBEAM_ISLAND, 13, 51
+	end
+	
 	
 Movement_SailboatCutsceneRight:
 	step_sleep 50

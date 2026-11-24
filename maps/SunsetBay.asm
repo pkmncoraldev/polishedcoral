@@ -10,7 +10,7 @@ SunsetBay_MapScriptHeader:
 	callback MAPCALLBACK_NEWMAP, SunsetBayFlyPoint
 	callback MAPCALLBACK_TILES, SunsetBayCallback
 
-	db 7 ; warp events
+	db 8 ; warp events
 	warp_event 13, 13, PLAYER_HOUSE_1F, 2
 	warp_event 25,  9, SUNSET_POKECENTER, 2
 	warp_event 29, 15, SUNSET_CAFE, 2
@@ -18,12 +18,9 @@ SunsetBay_MapScriptHeader:
 	warp_event 19,  9, SUNSET_WATER_GRASS_HOUSE, 2
 	warp_event 31,  9, SUNSET_LEGENDS_HOUSE, 2
 	warp_event 21, 15, SUNSET_GENGAR_HOUSE, 2
+	warp_event 28, 29, SAILBOAT_CUTSCENE, 2
 
-	db 4 ; coord events
-	coord_event 37, 12, 0, SunsetGrampsStopsYou1
-	coord_event 37, 15, 0, SunsetGrampsStopsYou2
-	coord_event 37, 16, 0, SunsetGrampsStopsYou3
-	coord_event 37, 17, 0, SunsetGrampsStopsYou4
+	db 0 ; coord events
 
 	db 23 ; bg events
 	bg_event 11, 13, SIGNPOST_READ, PlayersHouseSign
@@ -50,17 +47,17 @@ SunsetBay_MapScriptHeader:
 	signpost 21,  8, SIGNPOST_ITEM + BOTTLE_CAP, EVENT_SUNSET_BAY_HIDDEN_BOTTLE_CAP_2
 	signpost 23, 31, SIGNPOST_ITEM + BOTTLE_CAP, EVENT_SUNSET_BAY_HIDDEN_BOTTLE_CAP_3
 
-	db 19 ; object events
+	db 20 ; object events
 	person_event SPRITE_CUTE_GIRL, 15, 32, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, SunsetNPC1, -1
 	object_event 32, 13, SPRITE_ROCKER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ObjectEvent, -1
-	person_event SPRITE_GRAMPS, 14, 37, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, SunsetNPC3, -1
+	person_event SPRITE_GRAMPS, 15, 38, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, SunsetNPC3, -1
 	person_event SPRITE_COOLTRAINER_F, 11, 18, SPRITEMOVEDATA_WANDER, 2, 0, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, SunsetNPC4, -1
 	person_event SPRITE_FAT_GUY, 18, 15, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, SunsetNPC5, -1
 	person_event SPRITE_SUPER_NERD, 18, 33, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, SunsetNPC6, -1
-	object_event 27, 28, SPRITE_SAILBOAT, SPRITEMOVEDATA_SAILBOAT_TOP, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, SunsetSailboat2, -1
-	object_event 27, 29, SPRITE_SAILBOAT, SPRITEMOVEDATA_TILE_UP_SOLID, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, SunsetSailboat2, -1
-	object_event 26, 29, SPRITE_SAILBOAT, SPRITEMOVEDATA_TILE_DOWN_SOLID, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, SunsetSailboat2, -1
-	object_event 26, 28, SPRITE_SAILBOAT, SPRITEMOVEDATA_TILE_LEFT_PRIORITY, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, SunsetSailboat2, -1
+	object_event 26, 28, SPRITE_SAILBOAT, SPRITEMOVEDATA_SAILBOAT_TOP, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, SunsetSailboat2, -1
+	object_event 26, 29, SPRITE_SAILBOAT, SPRITEMOVEDATA_TILE_UP_SOLID, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, SunsetSailboat2, -1
+	object_event 25, 29, SPRITE_SAILBOAT, SPRITEMOVEDATA_TILE_DOWN_SOLID, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, SunsetSailboat2, -1
+	object_event 25, 28, SPRITE_SAILBOAT, SPRITEMOVEDATA_TILE_LEFT_PRIORITY, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, SunsetSailboat2, -1
 	object_event 10, 24, SPRITE_SAILBOAT, SPRITEMOVEDATA_SAILBOAT_TOP, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, SunsetSailboat, -1
 	object_event 10, 25, SPRITE_SAILBOAT, SPRITEMOVEDATA_TILE_UP_SOLID, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, SunsetSailboat, -1
 	object_event  9, 25, SPRITE_SAILBOAT, SPRITEMOVEDATA_TILE_DOWN_SOLID, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, SunsetSailboat, -1
@@ -69,6 +66,7 @@ SunsetBay_MapScriptHeader:
 	object_event 13, 29, SPRITE_SAILBOAT, SPRITEMOVEDATA_TILE_UP_SOLID, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, SunsetSailboat, -1
 	object_event 12, 29, SPRITE_SAILBOAT, SPRITEMOVEDATA_TILE_DOWN_SOLID, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, SunsetSailboat, -1
 	object_event 12, 28, SPRITE_SAILBOAT, SPRITEMOVEDATA_TILE_LEFT_PRIORITY, 0, 0, -1, -1, PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, SunsetSailboat, -1
+	person_event SPRITE_GENTLEMAN, 28, 27, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_SCRIPT, 0, SunsetAbner, EVENT_SUNSET_BAY_ABNER_GONE
 	hiddentape_event 33, 6, MUSIC_SUNSET_BAY, 1, EVENT_MUSIC_SUNSET_BAY
 
 	const_def 1 ; object constants
@@ -90,6 +88,7 @@ SunsetBay_MapScriptHeader:
 	const SUNSET_SAILBOAT3_T2
 	const SUNSET_SAILBOAT3_B1
 	const SUNSET_SAILBOAT3_B2
+	const SUNSET_ABNER
 
 SunsetBayTrigger0:
 	end
@@ -161,6 +160,60 @@ JustRodeBoatSunset:
 	dotrigger $1
 	end
 	
+SunsetAbner:
+	faceplayer
+	opentext TEXTBOX_ABNER
+	writetext SunsetCaptainRidetoIslandReadyText
+	yesorno
+	iftrue .yes
+	writetext SunsetCaptainRidetoIslandTextNo
+	waitbutton
+	closetext
+	end
+.yes
+	setevent EVENT_ABNER_GOING_TO_SUNBEAM
+	setevent EVENT_FIRST_TRIP_TO_ISLAND
+	blackoutmod SUNBEAM_ISLAND
+	clearevent EVENT_CAN_GET_FIRST_RIDE_TO_ISLAND
+	clearevent EVENT_CALLED_SPRUCE_CANT_GET_ON_ISLAND
+	clearevent EVENT_CAN_CALL_SPRUCE_ABOUT_ISLAND
+	clearevent EVENT_CALLED_MOM_CANT_GET_ON_ISLAND
+	clearevent EVENT_CAN_CALL_MOM_ABOUT_ISLAND
+	clearevent EVENT_TALKED_TO_MOM_IN_PERSON_ABOUT_ABNER
+	clearevent EVENT_ISLAND_BOATMAN
+	setevent EVENT_ISLAND_STRAND
+	writetext SunsetCaptainRidetoIslandTextYes
+	waitbutton
+	closetext
+	special FadeOutPalettes
+	applyonemovement PLAYER, hide_person
+	changeblock 28, 28, 205
+	special Special_FadeOutMusic
+	applyonemovement PLAYER, big_step_down
+	variablesprite SPRITE_ICESKATER_VARIABLE, SPRITE_GENTLEMAN
+	setevent EVENT_DONT_SCROLL_OW
+	warpcheck
+	end
+	
+SunsetCaptainRidetoIslandReadyText:
+	text "Well, <WAIT_S>are you"
+	line "ready to ship out?"
+	done
+	
+SunsetCaptainRidetoIslandTextYes:
+	text "Great!"
+	
+	para "SUNBEAM ISLAND,"
+	line "ho!"
+	done
+	
+SunsetCaptainRidetoIslandTextNo:
+	text "Ok."
+	
+	para "I'll be here when"
+	line "you're ready."
+	done
+	
 PlayersHouseSign:
 	jumptext PlayersHouseSignText
 
@@ -198,11 +251,6 @@ SunsetGuyOnDate:
 	jumptext SunsetGuyOnDateText
 	
 SunsetNPC3:
-	checkevent EVENT_TALKED_TO_MAN_IN_SHACK
-	iffalse SunsetGramps
-	jumptextfaceplayer SunsetGrampsText2
-	
-SunsetGramps:
 	jumptextfaceplayer SunsetGrampsText
 	
 SunsetNPC4:
@@ -224,102 +272,9 @@ SunsetNPC5:
 
 SunsetNPC5_2:
 	jumptextfaceplayer SunsetNPC5Text2
-
-	
-SunsetGrampsStopsYou1:
-	special Special_StopRunning
-	playsound SFX_PAY_DAY
-	spriteface SUNSET_NPC3, UP
-	showemote EMOTE_SHOCK, SUNSET_NPC3, 15
-	spriteface PLAYER, DOWN
-;	applymovement SUNSET_NPC3, Movement_GrampsStart1
-	opentext
-	writetext SunsetGrampsText
-	waitbutton
-	closetext
-	applymovement PLAYER, Movement_BackToSunset
-;	stopfollow
-;	applymovement SUNSET_NPC3, Movement_GrampsReset1
-	end
-	
-SunsetGrampsStopsYou2:
-	special Special_StopRunning
-	playsound SFX_PAY_DAY
-	spriteface SUNSET_NPC3, DOWN
-	showemote EMOTE_SHOCK, SUNSET_NPC3, 15
-	spriteface PLAYER, UP
-	opentext
-	writetext SunsetGrampsText
-	waitbutton
-	closetext
-	applymovement PLAYER, Movement_BackToSunset
-	stopfollow
-	end
-	
-SunsetGrampsStopsYou3:
-	special Special_StopRunning
-	playsound SFX_PAY_DAY
-	spriteface SUNSET_NPC3, DOWN
-	showemote EMOTE_SHOCK, SUNSET_NPC3, 15
-	spriteface PLAYER, UP
-	applymovement SUNSET_NPC3, Movement_GrampsStart2
-	opentext
-	writetext SunsetGrampsText
-	waitbutton
-	closetext
-	applymovement PLAYER, Movement_BackToSunset
-	stopfollow
-	applymovement SUNSET_NPC3, Movement_GrampsReset2
-	end
-	
-SunsetGrampsStopsYou4:
-	special Special_StopRunning
-	playsound SFX_PAY_DAY
-	spriteface SUNSET_NPC3, DOWN
-	showemote EMOTE_SHOCK, SUNSET_NPC3, 15
-	spriteface PLAYER, UP
-	applymovement SUNSET_NPC3, Movement_GrampsStart3
-	opentext
-	writetext SunsetGrampsText
-	waitbutton
-	closetext
-	applymovement PLAYER, Movement_BackToSunset
-	stopfollow
-	applymovement SUNSET_NPC3, Movement_GrampsReset3
-	end
 	
 SunsetNPC6:
 	jumptextfaceplayer SunsetNPC6Text
-	
-Movement_BackToSunset:
-	step_left
-	step_end
-	
-Movement_GrampsStart1:
-	step_up
-	step_end	
-
-Movement_GrampsReset1:
-	step_down
-	step_end
-	
-Movement_GrampsStart2:
-	step_down
-	step_end	
-
-Movement_GrampsReset2:
-	step_up
-	step_end
-	
-Movement_GrampsStart3:
-	step_down
-	step_down
-	step_end	
-
-Movement_GrampsReset3:
-	step_up
-	step_up
-	step_end
 	
 SunsetSailboatText:
 	text "It's a sailboat."
@@ -330,7 +285,7 @@ SunsetSailboatText:
 	done
 	
 SunsetSailboat2Text:
-	text "CAP'N STRAND's"
+	text "CAP'N ABNER's"
 	line "sailboat."
 	
 	para "It's seen a lot of"
@@ -384,16 +339,6 @@ SunsetGuyOnDateText:
 	done
 	
 SunsetGrampsText:
-	text "<PLAYER>!"
-	
-	para "CAP'N STRAND"
-	line "wanted to see you."
-	
-	para "He lives down by"
-	line "the pier."
-	done
-
-SunsetGrampsText2:
 	text "The lighthouse is"
 	line "up ahead."
 	

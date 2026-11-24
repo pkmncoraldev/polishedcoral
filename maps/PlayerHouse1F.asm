@@ -118,7 +118,7 @@ SunsetMomScript:
 	end
 	
 SunsetMomRetellsYouAboutStrand:
-	checkevent EVENT_TALKED_TO_MOM_IN_PERSON_ABOUT_STRAND
+	checkevent EVENT_TALKED_TO_MOM_IN_PERSON_ABOUT_ABNER
 	iftrue .islandmomtalkloop
 	checkevent EVENT_CALLED_MOM_CANT_GET_ON_ISLAND
 	iffalse .howdidyouknow
@@ -128,7 +128,7 @@ SunsetMomRetellsYouAboutStrand:
 	waitbutton
 	closetext
 	spriteface PLAYERHOUSE1F_MOM1, LEFT
-	setevent EVENT_TALKED_TO_MOM_IN_PERSON_ABOUT_STRAND
+	setevent EVENT_TALKED_TO_MOM_IN_PERSON_ABOUT_ABNER
 	clearevent EVENT_CALLED_MOM_CANT_GET_ON_ISLAND
 	clearevent EVENT_CAN_CALL_MOM_ABOUT_ISLAND
 	end
@@ -139,7 +139,7 @@ SunsetMomRetellsYouAboutStrand:
 	waitbutton
 	closetext
 	spriteface PLAYERHOUSE1F_MOM1, LEFT
-	setevent EVENT_TALKED_TO_MOM_IN_PERSON_ABOUT_STRAND
+	setevent EVENT_TALKED_TO_MOM_IN_PERSON_ABOUT_ABNER
 	clearevent EVENT_CALLED_MOM_CANT_GET_ON_ISLAND
 	clearevent EVENT_CAN_CALL_MOM_ABOUT_ISLAND
 	end
@@ -310,16 +310,13 @@ SunsetMomTextGivePass1:
 	para "How's your"
 	line "adventure going?"
 	
-	para "CAP'N STRAND can"
+	para "CAP'N ABNER can"
 	line "take you to"
 	cont "SUNBEAM ISLAND."
 	
-	para "Do you remember"
-	line "where he lives?"
-	
-	para "His house is on"
-	line "the beach SOUTH"
-	cont "of town."
+	para "He should be at"
+	line "the LIGHTHOUSE"
+	cont "on the cape."
 	
 	para "Good luck out"
 	line "there, sweetie."
@@ -346,32 +343,26 @@ SunsetMomTextGivePass2:
 	
 	para "Well, anyway…"
 	
-	para "CAP'N STAND can"
-	line "probably give"
-	cont "you a ride."
+	para "CAP'N ABNER can"
+	line "take you to"
+	cont "SUNBEAM ISLAND."
 	
-	para "Do you remember"
-	line "where he lives?"
-	
-	para "His house is on"
-	line "the beach SOUTH"
-	cont "of town."
+	para "He should be at"
+	line "the LIGHTHOUSE"
+	cont "on the cape."
 	
 	para "Good luck out"
 	line "there, sweetie."
 	done
 	
 SunsetMomTextGivePass3:
-	text "CAP'N STRAND can"
+	text "CAP'N ABNER can"
 	line "take you to"
 	cont "SUNBEAM ISLAND."
 	
-	para "Do you remember"
-	line "where he lives?"
-	
-	para "His house is on"
-	line "the beach SOUTH"
-	cont "of town."
+	para "He should be at"
+	line "the LIGHTHOUSE"
+	cont "on the cape."
 	
 	para "Good luck out"
 	line "there, sweetie."
@@ -478,18 +469,18 @@ SunsetMomText1:
 	
 	para "You're supposed"
 	line "to be at CAP'N"
-	cont "STRAND's place."
+	cont "ABNER's place."
 	
 	para "Don't tell me you"
 	line "forgot."
 	
-	para "He and MR. ABNER"
-	line "are giving you a"
-	cont "#MON today!"
+	para "He's giving you"
+	line "a #MON today!"
 	
-	para "CAP'N STRAND's"
-	line "house is down on"
-	cont "the dock."
+	para "CAP'N ABNER"
+	line "lives in the"
+	cont "LIGHTHOUSE on"
+	cont "SUNSET CAPE."
 	
 	para "Hurry! <WAIT_S>You're late!"
 	done

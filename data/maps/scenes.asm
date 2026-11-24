@@ -11,7 +11,6 @@ MapTriggers::
 	scene_var SUNSET_BAY,     	                      wSunsetBayTrigger
 	scene_var SUNSET_CAPE,     	                      wAlways0Trigger
 	scene_var SUNSET_GENGAR_HOUSE,     	        	  wSunsetGengarHouseTrigger
-	scene_var SUNSET_CAPTAINS_HOUSE,     	          wSunsetCaptainsHouseTrigger
 	scene_var SUNSET_LIGHTHOUSE,     	       	      wSunsetLighthouseTrigger
 	scene_var ROUTE_1_GATE,							  wRoute1GateTrigger
 	scene_var DAYBREAK_VILLAGE,						  wDaybreakVillageTrigger

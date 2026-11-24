@@ -43,7 +43,7 @@ MomPhoneGoToIsland1Text:
 	para "That's weird…"
 	
 	para "Well, I'm sure"
-	line "CAP'N STRAND would"
+	line "CAP'N ABNER would"
 	cont "be willing to give"
 	cont "you a ride."
 	

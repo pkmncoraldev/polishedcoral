@@ -7,7 +7,7 @@ NPCTrades:
 	db "JAKE@@@@", $00
 ; TRADE_WITH_PAUL_FOR_PONYTA on Sunbeam Island
 	db 1, SLOWPOKE,       PONYTA,     "SLOW RIDE@@"
-	db $DD, $DD, $DD, HIDDEN_ABILITY | HASTY, MALE,   POKE_BALL,   RAWST_BERRY
+	db $DD, $DD, $DD, ABILITY_2 | HASTY, MALE,   POKE_BALL,   RAWST_BERRY
 	dw 15832
 	db "PAULIE@@", $00
 ; TRADE_WITH_ALICE_FOR_GLIGAR in Twinkle Town

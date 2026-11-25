@@ -128,7 +128,7 @@ FishGroups: ; 92488
 	
 .Sunbeam_Reserve_Old:
 .Sunbeam_Reserve_Good:
-	db 100 percent, SLOWPOKE,   15	;100%
+	db 100 percent, SLOWPOKE,   16	;100%
 .Sunbeam_Reserve_Super:
 	db 100 percent, SLOWPOKE,   34	;100%
 

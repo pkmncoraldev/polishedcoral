@@ -792,12 +792,12 @@ PonytaEvosAttacks:
 	db EVOLVE_LEVEL, 40, RAPIDASH
 	db 0 ; no more evolutions
 	db 1, TACKLE_SCRATCH_POUND
-	db 1, GROWL
-	db 5, LEER_TAIL_WHIP
+	db 1, LEER_TAIL_WHIP
+	db 5, CHARM_FEATHER_DANCE
 	db 9, EMBER
 	db 13, FIRE_SPIN
-	db 17, STOMP
-	db 21, DOUBLE_KICK
+	db 16, DOUBLE_KICK
+	db 21, STOMP
 	db 25, FLAME_BURST
 	db 29, TAKE_DOWN
 	db 33, FLAME_CHARGE
@@ -808,16 +808,14 @@ PonytaEvosAttacks:
 
 RapidashEvosAttacks:
 	db  0 ; no more evolutions
-	db 1, MEGAHORN
-	db 1, POISON_JAB
 	db 1, MULTI_MOVE_FURY_COMET_BARRAGE_SLAP_CANNON
 	db 1, TACKLE_SCRATCH_POUND
-	db 1, GROWL
 	db 1, LEER_TAIL_WHIP
+	db 1, CHARM_FEATHER_DANCE
 	db 1, EMBER
 	db 1, FLAME_CHARGE
-	db 1, STOMP
 	db 1, DOUBLE_KICK
+	db 1, STOMP
 	db 1, FIRE_SPIN
 	db 1, TAKE_DOWN
 	db 1, FLAME_BURST

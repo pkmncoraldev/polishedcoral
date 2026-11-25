@@ -564,9 +564,9 @@ GiveDoduoDollText:
 	done
 	
 PutAwayDoduoDollText:
-	text "DODUO DOLL was"
-	line "sent to the PC in"
-	cont "<PLAYER>'s room."
+	text "DODUO DOLL"
+	line "was sent to the PC"
+	cont "in <PLAYER>'s room."
 	done
 	
 RanchRideRaceText1:

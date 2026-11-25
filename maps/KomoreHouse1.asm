@@ -59,7 +59,7 @@ GiveGirafarigDollText:
 	done
 	
 PutAwayGirafarigDollText:
-	text "GIRAFARIG DOLL was"
-	line "sent to the PC in"
-	cont "<PLAYER>'s room."
+	text "GIRAFARIG DOLL"
+	line "was sent to the PC"
+	cont "in <PLAYER>'s room."
 	done

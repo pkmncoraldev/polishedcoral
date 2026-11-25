@@ -293,9 +293,9 @@ GiveTogepiDollText:
 	done
 	
 PutAwayTogepiDollText:
-	text "TOGEPI DOLL was"
-	line "sent to the PC in"
-	cont "<PLAYER>'s room."
+	text "TOGEPI DOLL"
+	line "was sent to the PC"
+	cont "in <PLAYER>'s room."
 	done
 	
 StarglowHouse1Rocket:

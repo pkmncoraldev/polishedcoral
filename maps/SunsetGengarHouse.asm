@@ -409,10 +409,10 @@ GiveSmeargleDollText:
 	line "SMEARGLE DOLL!"
 	done
 	
-PutAwaySmeargleDollText:
-	text "SMEARGLE DOLL was"
-	line "sent to the PC in"
-	cont "<PLAYER>'s room."
+PutAwaySmeargleDollText: 
+	text "SMEARGLE DOLL"
+	line "was sent to the PC"
+	cont "in <PLAYER>'s room."
 	done
 	
 GiveGyaradosDollText:
@@ -422,8 +422,8 @@ GiveGyaradosDollText:
 	
 PutAwayGyaradosDollText:
 	text "BIG GYARADOS DOLL"
-	line "sent to the PC in"
-	cont "<PLAYER>'s room."
+	line "was sent to the PC"
+	cont "in <PLAYER>'s room."
 	done
 	
 GiveSwabluDollText:
@@ -432,9 +432,9 @@ GiveSwabluDollText:
 	done
 	
 PutAwaySwabluDollText:
-	text "SWABLU DOLL was"
-	line "sent to the PC in"
-	cont "<PLAYER>'s room."
+	text "SWABLU DOLL"
+	line "was sent to the PC"
+	cont "in <PLAYER>'s room."
 	done
 	
 GiveCuboneDollText:
@@ -443,9 +443,9 @@ GiveCuboneDollText:
 	done
 	
 PutAwayCuboneDollText:
-	text "CUBONE DOLL was"
-	line "sent to the PC in"
-	cont "<PLAYER>'s room."
+	text "CUBONE DOLL"
+	line "was sent to the PC"
+	cont "in <PLAYER>'s room."
 	done
 	
 GiveWooperDollText:
@@ -454,9 +454,9 @@ GiveWooperDollText:
 	done
 	
 PutAwayWooperDollText:
-	text "WOOPER DOLL was"
-	line "sent to the PC in"
-	cont "<PLAYER>'s room."
+	text "WOOPER DOLL"
+	line "was sent to the PC"
+	cont "in <PLAYER>'s room."
 	done
 	
 GiveSunfloraDollText:
@@ -465,9 +465,9 @@ GiveSunfloraDollText:
 	done
 	
 PutAwaySunfloraDollText:
-	text "SUNFLORA DOLL was"
-	line "sent to the PC in"
-	cont "<PLAYER>'s room."
+	text "SUNFLORA DOLL"
+	line "was sent to the PC"
+	cont "in <PLAYER>'s room."
 	done
 	
 GiveSudowoodoDollText:
@@ -476,9 +476,9 @@ GiveSudowoodoDollText:
 	done
 	
 PutAwaySudowoodoDollText:
-	text "SUDOWOODO DOLL was"
-	line "sent to the PC in"
-	cont "<PLAYER>'s room."
+	text "SUDOWOODO DOLL"
+	line "was sent to the PC"
+	cont "in <PLAYER>'s room."
 	done
 	
 GiveNatuDollText:
@@ -487,8 +487,8 @@ GiveNatuDollText:
 	done
 	
 PutAwayNatuDollText:
-	text "NATU DOLL was"
-	line "sent to the PC in"
-	cont "<PLAYER>'s room."
+	text "NATU DOLL"
+	line "was sent to the PC"
+	cont "in <PLAYER>'s room."
 	done
 	

@@ -276,9 +276,9 @@ GiveBulbaDollText:
 	done
 	
 PutAwayBulbaDollText:
-	text "BULBASAUR DOLL was"
-	line "sent to the PC in"
-	cont "<PLAYER>'s room."
+	text "BULBASAUR DOLL"
+	line "was sent to the PC"
+	cont "in <PLAYER>'s room."
 	done
 	
 GiveCharmDollText:
@@ -288,8 +288,8 @@ GiveCharmDollText:
 	
 PutAwayCharmDollText:
 	text "CHARMANDER DOLL"
-	line "sent to the PC in"
-	cont "<PLAYER>'s room."
+	line "was sent to the PC"
+	cont "in <PLAYER>'s room."
 	done
 	
 GiveSquirtDollText:
@@ -298,9 +298,9 @@ GiveSquirtDollText:
 	done
 	
 PutAwaySquirtDollText:
-	text "SQUIRTLE DOLL was"
-	line "sent to the PC in"
-	cont "<PLAYER>'s room."
+	text "SQUIRTLE DOLL"
+	line "was sent to the PC"
+	cont "in <PLAYER>'s room."
 	done
 	
 GiveChikoDollText:
@@ -309,9 +309,9 @@ GiveChikoDollText:
 	done
 	
 PutAwayChikoDollText:
-	text "CHIKORITA DOLL was"
-	line "sent to the PC in"
-	cont "<PLAYER>'s room."
+	text "CHIKORITA DOLL"
+	line "was sent to the PC"
+	cont "in <PLAYER>'s room."
 	done
 	
 GiveCyndaDollText:
@@ -320,9 +320,9 @@ GiveCyndaDollText:
 	done
 	
 PutAwayCyndaDollText:
-	text "CYNDAQUIL DOLL was"
-	line "sent to the PC in"
-	cont "<PLAYER>'s room."
+	text "CYNDAQUIL DOLL"
+	line "was sent to the PC"
+	cont "in <PLAYER>'s room."
 	done
 	
 GiveTotoDollText:
@@ -331,8 +331,8 @@ GiveTotoDollText:
 	done
 	
 PutAwayTotoDollText:
-	text "TOTODILE DOLL was"
-	line "sent to the PC in"
-	cont "<PLAYER>'s room."
+	text "TOTODILE DOLL"
+	line "was sent to the PC"
+	cont "in <PLAYER>'s room."
 	done
 	

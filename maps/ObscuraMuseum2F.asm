@@ -390,9 +390,9 @@ GiveMuseumPhotoText:
 	done
 	
 PutAwayMuseumPhotoText:
-	text "MUSEUM PHOTO was"
-	line "sent to the PC in"
-	cont "<PLAYER>'s room."
+	text "MUSEUM PHOTO"
+	line "was sent to the PC"
+	cont "in <PLAYER>'s room."
 	done
 	
 ObscuraMuseum2FPhotoLadyTextReady:

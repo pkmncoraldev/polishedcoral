@@ -225,9 +225,9 @@ GiveLedianDollText:
 	done
 	
 PutAwayLedianDollText:
-	text "LEDIAN DOLL was"
-	line "sent to the PC in"
-	cont "<PLAYER>'s room."
+	text "LEDIAN DOLL"
+	line "was sent to the PC"
+	cont "in <PLAYER>'s room."
 	done
 
 HuntersThicketRanger:

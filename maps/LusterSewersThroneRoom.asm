@@ -111,9 +111,9 @@ GiveNidokingDollText:
 	done
 	
 PutAwayNidokingDollText:
-	text "NIDOKING DOLL was"
-	line "sent to the PC in"
-	cont "<PLAYER>'s room."
+	text "NIDOKING DOLL"
+	line "was sent to the PC"
+	cont "in <PLAYER>'s room."
 	done
 	
 LusterSewerThroneRoomNidokingGirl:

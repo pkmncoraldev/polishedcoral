@@ -131,9 +131,9 @@ GiveMinasPaintingText:
 	done
 	
 PutAwayMinasPaintingText:
-	text "MINA's PAINTING was"
-	line "sent to the PC in"
-	cont "<PLAYER>'s room."
+	text "MINA's PAINTING"
+	line "was sent to the PC"
+	cont "in <PLAYER>'s room."
 	done
 	
 LusterApartment2_2F_PaintText:

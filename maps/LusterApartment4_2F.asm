@@ -66,9 +66,9 @@ GiveBunearyDollText:
 	done
 	
 PutAwayBunearyDollText:
-	text "BUNEARY DOLL was"
-	line "sent to the PC in"
-	cont "<PLAYER>'s room."
+	text "BUNEARY DOLL"
+	line "was sent to the PC"
+	cont "in <PLAYER>'s room."
 	done
 	
 LusterApartment4_2F_Brutus:

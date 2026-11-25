@@ -336,9 +336,9 @@ GiveMareepDollText:
 	done
 	
 PutAwayMareepDollText:
-	text "MAREEP DOLL was"
-	line "sent to the PC in"
-	cont "<PLAYER>'s room."
+	text "MAREEP DOLL"
+	line "was sent to the PC"
+	cont "in <PLAYER>'s room."
 	done
 	
 SunsetLighthouseTopStoveText:

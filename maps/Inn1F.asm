@@ -1563,7 +1563,7 @@ GiveDrowzeeDollText:
 	done
 	
 PutAwayDrowzeeDollText:
-	text "DROWZEE DOLL was"
-	line "sent to the PC in"
-	cont "<PLAYER>'s room."
+	text "DROWZEE DOLL"
+	line "was sent to the PC"
+	cont "in <PLAYER>'s room."
 	done

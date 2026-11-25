@@ -1452,9 +1452,9 @@ GiveMiltankDollText::
 	done
 	
 PutAwayMiltankDollText::
-	text "MILTANK DOLL was"
-	line "sent to the PC in"
-	cont "<PLAYER>'s room."
+	text "MILTANK DOLL"
+	line "was sent to the PC"
+	cont "in <PLAYER>'s room."
 	done
 	
 MartMaractusDollText::
@@ -1469,9 +1469,9 @@ GiveMaractusDollText::
 	done
 	
 PutAwayMaractusDollText::
-	text "MARACTUS DOLL was"
-	line "sent to the PC in"
-	cont "<PLAYER>'s room."
+	text "MARACTUS DOLL"
+	line "was sent to the PC"
+	cont "in <PLAYER>'s room."
 	done
 	
 RefreshmentsMartExtraItemText::

@@ -59,9 +59,9 @@ GiveSpiritombDollText:
 	done
 	
 PutAwaySpiritombDollText:
-	text "SPIRITOMB DOLL was"
-	line "sent to the PC in"
-	cont "<PLAYER>'s room."
+	text "SPIRITOMB DOLL"
+	line "was sent to the PC"
+	cont "in <PLAYER>'s room."
 	done
 	
 OldManorExteriorLockedDoor:

@@ -648,9 +648,9 @@ GiveMunchDollText:
 	done
 	
 PutAwayMunchDollText:
-	text "MUNCHLAX DOLL was"
-	line "sent to the PC in"
-	cont "<PLAYER>'s room."
+	text "MUNCHLAX DOLL"
+	line "was sent to the PC"
+	cont "in <PLAYER>'s room."
 	done
 	
 SpruceLabPokeFluteText1:

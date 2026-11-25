@@ -683,7 +683,7 @@
 	db 17, ODDISH		;30%
 	db 17, MARILL		;20%
 	db 17, ELEKID		;10%
-	db 17, SCYTHER		;5%
+	db 17, ODDISH		;5%
 	db 16, GLOOM		;4%
 	db 16, GLOOM		;1%
 	; day
@@ -691,7 +691,7 @@
 	db 17, ODDISH		;30%
 	db 17, MARILL		;20%
 	db 17, ELEKID		;10%
-	db 17, SCYTHER		;5%
+	db 17, ODDISH		;5%
 	db 16, GLOOM		;4%
 	db 16, GLOOM		;1%
 	; nite
@@ -699,7 +699,7 @@
 	db 17, ODDISH		;30%
 	db 17, MARILL		;20%
 	db 17, ELEKID		;10%
-	db 17, SCYTHER		;5%
+	db 17, ODDISH		;5%
 	db 16, GLOOM		;4%
 	db 16, GLOOM		;1%
 	
@@ -737,7 +737,7 @@
 	db 18, MARILL		;30%
 	db 18, ELEKID		;20%
 	db 18, ODDISH		;10%
-	db 18, SCYTHER		;5%
+	db 18, GLOOM		;5%
 	db 17, GLOOM		;4%
 	db 17, GLOOM		;1%
 	; day
@@ -745,7 +745,7 @@
 	db 18, MARILL		;30%
 	db 18, ELEKID		;20%
 	db 18, ODDISH		;10%
-	db 18, SCYTHER		;5%
+	db 18, GLOOM		;5%
 	db 17, GLOOM		;4%
 	db 17, GLOOM		;1%
 	; nite
@@ -753,7 +753,7 @@
 	db 18, MARILL		;30%
 	db 18, ELEKID		;20%
 	db 18, ODDISH		;10%
-	db 18, SCYTHER		;5%
+	db 18, GLOOM		;5%
 	db 17, GLOOM		;4%
 	db 17, GLOOM		;1%
 	

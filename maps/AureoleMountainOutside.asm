@@ -243,8 +243,8 @@ AureoleMountainOutsideWellText1:
 	done
 	
 AureoleMountainOutsideWellText2:
-	text "<PLAYER> tossed down"
-	line "the @"
+	text "<PLAYER> tossed"
+	line "down the @"
 	text_from_ram wStringBuffer1
 	text "."
 	done

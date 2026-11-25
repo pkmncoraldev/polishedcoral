@@ -607,7 +607,7 @@ ObscuraCityDarcyText6:
 	
 	para "You do remember"
 	line "LUMINA TOWN,"
-	cont "don't you ROCKY?"
+	cont "don't you, ROCKY?"
 	
 	para "You were only born"
 	line "and raised there!"

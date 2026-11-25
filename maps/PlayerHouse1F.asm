@@ -89,8 +89,6 @@ SunsetMomScript:
 	iftrue SunsetMomGotPokeGear
 	checkevent EVENT_GOT_A_POKEMON_FROM_SPRUCE
 	iftrue SunsetMomGotAPokemon
-	checkevent EVENT_TALKED_TO_MAN_IN_SHACK
-	iftrue SunsetMomGoToLighthouse
 	jumptextfaceplayer TEXTBOX_MOM, SunsetMomText2
 .bank_card
 	faceplayer
@@ -165,15 +163,6 @@ SunsetMomGotPokeGear:
 	faceplayer
 	opentext TEXTBOX_MOM
 	writetext SunsetMomText5
-	waitbutton
-	closetext
-	spriteface PLAYERHOUSE1F_MOM1, LEFT
-	end
-	
-SunsetMomGoToLighthouse:
-	faceplayer
-	opentext TEXTBOX_MOM
-	writetext SunsetMomText3
 	waitbutton
 	closetext
 	spriteface PLAYERHOUSE1F_MOM1, LEFT
@@ -259,7 +248,7 @@ SunsetMomTextBankCard1:
 	text "Welcome home,"
 	line "honey."
 	
-	para "Are you doing ok?"
+	para "Are you doing OK?"
 	
 	para "Here's that thing"
 	line "that came for you"
@@ -491,17 +480,6 @@ SunsetMomText2::
 	
 	para "Go get your"
 	line "#MON!"
-	done
-	
-SunsetMomText3:
-	text "Oh?"
-	
-	para "They weren't at"
-	line "CAP'N STAND's?"
-	
-	para "You'd better hurry"
-	line "over to the light-"
-	cont "house then."
 	done
 	
 SunsetMomText4:

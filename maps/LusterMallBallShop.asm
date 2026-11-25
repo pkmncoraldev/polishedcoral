@@ -184,7 +184,7 @@ LusterMallBallShop_NPC1Text:
 	
 LusterMallBallShop_NPC2Text1:
 	text "Are you finding"
-	line "everything ok?"
+	line "everything OK?"
 	
 	para "I'm actually the"
 	line "owner of this"
@@ -217,8 +217,9 @@ LusterMallBallShop_NPC2Text3:
 	cont "building."
 	
 	para "Your job is to go"
-	line "out there see what"
-	cont "the holdup is."
+	line "out there and see"
+	cont "what the holdup"
+	cont "is."
 	
 	para "Go through the"
 	line "employees only"
@@ -240,8 +241,8 @@ LusterMallBallShop_NPC2Text4:
 	line "good choice when I"
 	cont "hired you."
 	
-	para "As thanks for your"
-	line "all your help,"
+	para "As thanks for all"
+	line "your help,"
 	
 	para "why don't I give"
 	line "you the employee"

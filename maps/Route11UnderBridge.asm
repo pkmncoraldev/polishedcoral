@@ -159,13 +159,13 @@ Route11UnderBridgeMinaText3:
 	line "though."
 	
 	para "It was so bustling"
-	line "and busy, that I"
+	line "and busy that I"
 	cont "wasn't really"
 	cont "feeling inspired."
 	
 	para "I came down here"
 	line "for some peace and"
-	cont "quite, and next"
+	cont "quiet, and next"
 	cont "thing I knew,"
 	
 	para "inspiration"

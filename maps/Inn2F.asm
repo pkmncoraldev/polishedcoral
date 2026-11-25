@@ -171,7 +171,7 @@ TrainerInn2FSnareNPCText5:
 	
 TrainerInn2FSnareNPCText6:
 	text "Don't forget it,"
-	line "ok?"
+	line "OK?"
 	done
 	
 Inn2FCustomer1:
@@ -332,7 +332,7 @@ Inn2F204DoorText1:
 	done
 	
 Inn2F204DoorText2:
-	text "Ok, come on in!"
+	text "OK, come on in!"
 	done
 	
 Inn2F203Door:

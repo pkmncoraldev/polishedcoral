@@ -93,7 +93,7 @@ DragonShrineInteriorBigStatueText:
 	para "It shines, radiant"
 	line "and untarnished."
 	
-	para "The plaque on the"
+	para "The plaque on"
 	line "the front seems"
 	cont "undamaged."
 	done
@@ -282,7 +282,7 @@ DragonShrineInteriorBigStatueLegendText7:
 DragonShrineInteriorBigStatueLegendText8:
 	text "The dragon then"
 	line "descended from its"
-	cont "pearch."
+	cont "perch."
 	
 	para "It seized him as"
 	line "he fell,"

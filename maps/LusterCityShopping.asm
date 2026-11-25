@@ -515,11 +515,11 @@ LusterShoppingSnareText4:
 	done
 	
 LusterShoppingSnareWinText:
-	text "Ah geeze…"
+	text "Ah geez…"
 	done
 	
 LusterShoppingDeliveryText1:
-	text "Ok… <WAIT_S>ok…"
+	text "OK… <WAIT_S>OK…"
 	
 	para "Just take them!"
 	

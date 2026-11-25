@@ -566,7 +566,7 @@ DuskTurnpikeNPC1Text:
 	done
 	
 DuskTurnpikeNPC2Text:
-	text "I heard theres a"
+	text "I heard there's a"
 	line "cave nearby that"
 	cont "goes deep under"
 	cont "the ocean."

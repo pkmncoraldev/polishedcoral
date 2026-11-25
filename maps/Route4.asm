@@ -127,7 +127,7 @@ TrainerRoute4_3:
 	done
 
 .BeatenText:
-	text "Well I'll be!"
+	text "Well, I'll be!"
 	done
 	
 TrainerRoute4_4:

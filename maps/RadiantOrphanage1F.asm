@@ -173,7 +173,7 @@ RadiantOrphanage1FErikaText1:
 	para "I'm sure she would"
 	line "love to offer you"
 	cont "a GYM battle if"
-	cont "asked her."
+	cont "you asked her."
 	done
 	
 RadiantOrphanage1FErikaText2:
@@ -536,7 +536,7 @@ RadiantOrphanage1FLeilaniText2:
 	done
 	
 RadiantOrphanage1FLeilaniText3:
-	text "Ok girls!"
+	text "OK girls!"
 	
 	para "Battle time!"
 	done

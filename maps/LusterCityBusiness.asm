@@ -288,7 +288,7 @@ LusterCityBusinessRivalText2:
 	
 	para "You've gotta be!"
 	
-	para "Well if you can"
+	para "Well, if you can"
 	line "cheat, then…"
 	
 	para "Then maybe I can"
@@ -420,7 +420,7 @@ Luster3NPC4Text2:
 	
 	para "It raises the"
 	line "user's ATTACK and"
-	cont "SPCL. ATK!"
+	cont "SPCL.ATK!"
 	
 	para "It'll give you the"
 	line "boost you need to"

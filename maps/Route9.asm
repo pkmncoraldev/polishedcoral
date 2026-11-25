@@ -171,7 +171,8 @@ Route9NPC2Text:
 Route9NPC2Text2:
 	text "NORTH or SOUTH."
 	
-	para "Decisions, decisions…"
+	para "Decisions,"
+	line "decisions…"
 	done
 	
 Route9Sign:

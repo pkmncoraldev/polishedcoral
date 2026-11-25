@@ -590,7 +590,7 @@ ShimmerLabFossilCutsceneText5:
 	para "This is a very"
 	line "technical process"
 	cont "and could take a"
-	cont "very very long-"
+	cont "very, very long-"
 	done
 	
 ShimmerLabFossilCutsceneText6:

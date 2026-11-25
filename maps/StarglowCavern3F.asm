@@ -44,7 +44,7 @@ StarglowCavern3FNPC:
 
 StarglowCavern3FNPCText:
 	text "STARGLOW CAVERN"
-	line "eminates funky"
+	line "emanates funky"
 	cont "magnetic waves."
 	
 	para "They apparently"

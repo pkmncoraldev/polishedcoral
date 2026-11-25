@@ -108,7 +108,7 @@ LusterSpamBuilding_4FWrongSignText10:
 	done
 	
 LusterSpamBuilding_4FWrongSignText11:
-	text "Sub-Vice Sandwhich"
+	text "Sub-Vice Sandwich"
 	line "Manager"
 	done
 	

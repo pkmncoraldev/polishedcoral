@@ -221,7 +221,7 @@ WestTrainCabooseSnareGruntText3:
 	
 WestTrainCabooseSnareOfficerText1:
 	text "What are you wait-"
-	line "ing for kid?"
+	line "ing for, kid?"
 	
 	para "You heard him!"
 	

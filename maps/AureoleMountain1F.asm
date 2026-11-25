@@ -72,7 +72,7 @@ AureoleMountain1F_Trainer_2:
 	text "You climbing the"
 	line "mountain too?"
 	
-	para "I bet their are"
+	para "I bet there are"
 	line "some crazy rare"
 	cont "#MON up top!"
 	done
@@ -111,8 +111,8 @@ AureoleMountain1F_Trainer_4:
 	generictrainer DELINQUENT_M, QUINCY, EVENT_BEAT_AUREOLE_MOUNTAIN_1F_TRAINER_4, .SeenText, .BeatenText
 
 	text "You knocked my"
-	line "my #MON out"
-	cont "like a light!"
+	line "#MON out like"
+	cont "a light!"
 	done
 
 .SeenText:

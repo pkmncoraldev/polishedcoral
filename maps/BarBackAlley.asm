@@ -288,7 +288,7 @@ BarBackAlleyFeliciaText5:
 	
 	para "The kitty gave me"
 	line "a scratch, <WAIT_S>but I'm"
-	cont "ok."
+	cont "OK."
 	
 	para "I guess it didn't"
 	line "want to be my"

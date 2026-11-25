@@ -249,7 +249,7 @@ LusterMallSkateTest_ClerkText1:
 	cont "to land,"
 	
 	para "you should do an"
-	line "do an OLLIE!"
+	line "OLLIE!"
 	
 	para "…"
 	
@@ -263,7 +263,7 @@ LusterMallSkateTest_ClerkText1:
 	
 	para "…"
 	
-	para "Ok."
+	para "OK."
 	
 	para "You got all that?"
 	done
@@ -354,7 +354,7 @@ LusterMallSkateTest_ClerkText6:
 	
 	para "…"
 	
-	para "Ok."
+	para "OK."
 	
 	para "You got all that?"
 	done
@@ -444,7 +444,7 @@ LusterMallSkateTest_ClerkText15:
 	done
 	
 LusterMallSkateTest_ClerkText16:
-	text "Ok, last trick."
+	text "OK, last trick."
 	
 	para "A GRIND TURN is"
 	line "exactly what it"
@@ -467,7 +467,7 @@ LusterMallSkateTest_ClerkText16:
 	
 	para "…"
 	
-	para "Ok."
+	para "OK."
 	
 	para "You got all that?"
 	done

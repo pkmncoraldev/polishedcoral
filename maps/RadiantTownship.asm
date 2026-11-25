@@ -237,13 +237,13 @@ RadiantTownshipSolarPanelText:
 RadiantTownshipNPC1Text1:
 	text "Hello!"
 	
-	para "Beautiful day"
+	para "Beautiful day,"
 	line "isn't it?"
 	done
 	
 RadiantTownshipNPC1Text2:
 	text "The girls from the"
-	line "orhpanage have"
+	line "orphanage have"
 	cont "gone missing?"
 	
 	para "How terrible!"

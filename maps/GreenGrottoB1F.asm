@@ -162,7 +162,7 @@ TrainerGreenGrottoB1F_5:
 
 .BeatenText:
 	text "You weren't"
-	line "sneaking a peak?"
+	line "sneaking a peek?"
 	done
 
 GreenGrottoB1FRock1:

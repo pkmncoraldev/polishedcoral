@@ -112,7 +112,7 @@ LuminaRussHouseRussText1:
 	cont "his son was born,"
 	
 	para "ANDRE left them"
-	line "to persue strength"
+	line "to pursue strength"
 	cont "once again."
 	
 	para "And, he did it."

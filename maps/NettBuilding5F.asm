@@ -171,7 +171,7 @@ TrainerNettBuilding5F_6:
 
 	text "Listen, just don't"
 	line "touch any of the"
-	cont "servers, ok?"
+	cont "servers."
 	
 	para "Our whole system"
 	line "could go down!"
@@ -184,13 +184,13 @@ TrainerNettBuilding5F_6:
 	line "warehouse!"
 	
 	para "You aren't"
-	line "authroized to be"
+	line "authorized to be"
 	cont "down there!"
 	done
 
 .BeatenText:
 	text "You aren't"
-	line "authroized to be"
+	line "authorized to be"
 	cont "up here, either!"
 	done
 

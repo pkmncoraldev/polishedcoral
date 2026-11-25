@@ -260,7 +260,7 @@ Text_ReceivedFirstBadge:
 	done
 	
 GlintGymStanleyTextAfterBattle:
-	text "That badge shows"
+	text "That BADGE shows"
 	line "that you bested me"
 	cont "in battle."
 	

@@ -39,12 +39,12 @@ SunbeamIslandSoftSandHouseNPC:
 	end
 
 SunbeamIslandSoftSandHouseNPCText1:
-	text "Hey kid."
+	text "Hey."
 	
 	para "Want something"
 	line "cool?"
 	
-	para "Ok, <WAIT_S>hold out your"
+	para "OK, <WAIT_S>hold out your"
 	line "hands."
 	done
 	

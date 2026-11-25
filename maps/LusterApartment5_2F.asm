@@ -96,7 +96,7 @@ LusterApartment5_2F_NPC1Text1:
 	done
 	
 LusterApartment5_2F_NPC1Text2:
-	text "CURSE has mulitple"
+	text "CURSE has multiple"
 	line "effects based on"
 	cont "the type of the"
 	cont "user."
@@ -125,7 +125,7 @@ LusterApartment5_2F_NPC1Text3:
 	done
 	
 LusterApartment5_2F_NPC1Text4:
-	text "The acursed"
+	text "The accursed"
 	line "outsider returns…"
 	
 	para "The vibe is truly"
@@ -169,7 +169,7 @@ LusterApartment5_2F_NPC3Text:
 	text "The flowers are so"
 	line "beautiful,"
 	
-	para "But their thorns"
+	para "but their thorns"
 	line "cut so deep…"
 	
 	para "Alas, I am more"

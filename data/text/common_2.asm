@@ -1459,7 +1459,7 @@ _SpruceText4::
 _SpruceText5::
 	text "I study #MON"
 	line "training and how"
-	cont "it relates to the"
+	cont "it relates to"
 	cont "the expansion of"
 	cont "civilization."
 	

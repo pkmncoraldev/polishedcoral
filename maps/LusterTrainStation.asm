@@ -380,7 +380,7 @@ LusterTrainStationConductorText3:
 	
 	para "It mattered not!"
 	
-	para "As I lie on the"
+	para "As I lay on the"
 	line "ground, I knew I"
 	cont "couldn't let this"
 	cont "stand!"
@@ -446,7 +446,7 @@ LusterStationNettText1:
 	line "the NETT BUILDING."
 	
 	para "I'd love to show"
-	line "my graditude for"
+	line "my gratitude for"
 	cont "the hero of LUSTER"
 	cont "CITY!"
 	

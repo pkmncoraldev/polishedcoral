@@ -71,7 +71,7 @@ BoneCavernB1FNPCText:
 	line "like they're ready"
 	cont "to crumble."
 	
-	para "I bet a a #MON's"
+	para "I bet a #MON's"
 	line "hard head could"
 	cont "smash them with"
 	cont "a HEADBUTT!"
@@ -175,7 +175,7 @@ BoneCavernBoneText1:
 	cont "blocking the way."
 	
 	para "Maybe you could"
-	line "clear the it from"
+	line "clear it from"
 	cont "down below."
 	done
 	

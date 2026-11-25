@@ -152,7 +152,7 @@ DuskHouse2NPC2Text2:
 	
 DuskHouse2NPC2Text3:
 	text "I was going to"
-	line "give you something,"
+	line "give you a gift,"
 	cont "but your bag is"
 	cont "full."
 	

@@ -551,8 +551,8 @@ RadiantFieldTrainer3:
 	text "Join me!"
 	
 	para "Let's dance among"
-	line "the flowers toget-"
-	cont "her!"
+	line "the flowers"
+	cont "together!"
 	done
 
 .SeenText:

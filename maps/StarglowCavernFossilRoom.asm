@@ -201,7 +201,7 @@ StarglowCavernFossilRoomNpcText1:
 	
 	para "They're all mine!"
 	
-	para "Don't worry my"
+	para "Don't worry, my"
 	line "beauties…"
 	
 	para "No one will ever"
@@ -251,7 +251,7 @@ StarglowCavernFossilRoomNpcText5:
 	done
 	
 StarglowCavernFossilRoomNpcText6:
-	text "Ok, you got your"
+	text "OK, you got your"
 	line "fossil, now leave"
 	cont "us alone!"
 	done

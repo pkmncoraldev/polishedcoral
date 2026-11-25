@@ -49,13 +49,13 @@ Route10RestHouseNPC:
 	end
 	
 Route10RestHouseNPCText1:
-	text "Oh it's freezing"
+	text "Oh, it's freezing"
 	line "cold out there!"
 	
 	para "You must be"
 	line "exhausted, child!"
 	
-	para "Why dont you rest"
+	para "Why don't you rest"
 	line "a while here?"
 	done
 	

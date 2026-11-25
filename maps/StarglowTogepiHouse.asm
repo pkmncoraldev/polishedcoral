@@ -716,7 +716,7 @@ StarglowHouse1LittleGirlText10:
 	
 StarglowHouse1LittleGirlText11:
 	text "Try your best and"
-	line "help out, ok EGGY?"
+	line "help out, OK EGGY?"
 	done
 
 StarglowHouse1LittleGirlText12:

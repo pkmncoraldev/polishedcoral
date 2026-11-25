@@ -130,7 +130,7 @@ LusterMallBackRoomNpc2Text:
 	cont "you a hint."
 	
 	para "It's two words, it"
-	line "starts with a “L”,"
+	line "starts with “L”,"
 	cont "and you can buy it"
 	cont "at the ELECTRONICS"
 	cont "STORE."

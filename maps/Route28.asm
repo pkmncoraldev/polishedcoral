@@ -93,8 +93,8 @@ Route28Trainer1:
 	generictrainer BATTLE_GIRL, SHOO, EVENT_BEAT_ROUTE_28_TRAINER_1, .SeenText, .BeatenText
 
 	text "You've trained"
-	line "under the MASTER"
-	cont "haven't you?"
+	line "under the MASTER,"
+	cont "have you not?"
 	
 	para "I can tell by"
 	line "how you battle."

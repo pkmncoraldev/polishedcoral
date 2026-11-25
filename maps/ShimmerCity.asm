@@ -518,7 +518,7 @@ ShimmerCityNpc14Text:
 	text "Ancient temples!<WAIT_S>"
 	line "Buried treasure!"
 	
-	para "Being an archeol-"
+	para "Being an archaeol-"
 	line "ogist sounds so"
 	cont "exciting!"
 	

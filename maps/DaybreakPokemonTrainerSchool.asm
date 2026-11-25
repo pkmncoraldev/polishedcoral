@@ -255,7 +255,7 @@ DaybreakPokemonTrainerSchoolTeacherText4:
 	line "<PLAYER>!"
 	
 	para "To commemorate"
-	line "your victory you"
+	line "your victory, you"
 	cont "should have this."
 	done
 	

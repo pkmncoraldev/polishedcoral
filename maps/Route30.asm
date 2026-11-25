@@ -115,7 +115,7 @@ Route30NPC2:
 	
 Route30NPC2Text1:
 	text "I saw a kid with"
-	line "spikey hair go"
+	line "spiky hair go"
 	cont "into that tent"
 	cont "up ahead."
 	
@@ -904,7 +904,7 @@ Route30Trainer4:
 	cont "happening in"
 	cont "BRIGHTBURG."
 	
-	para "Is it sickenss?"
+	para "Is it sickness?"
 	line "Mass hysteria?"
 	
 	para "I came to"

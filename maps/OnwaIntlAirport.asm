@@ -330,7 +330,7 @@ OnwaIntlAirportNPC6Text:
 	done
 	
 OnwaIntlAirportNPC7Text1:
-	text "It's ok, buddy."
+	text "It's OK, buddy."
 	
 	para "It'll be over"
 	line "before you know"
@@ -365,7 +365,7 @@ OnwaIntlAirportXatuText2:
 	done
 	
 OnwaIntlAirportWendyText1:
-	text "Oh pardon me!"
+	text "Oh, pardon me!"
 	done
 	
 OnwaIntlAirportWendyText2:
@@ -445,7 +445,7 @@ OnwaIntlAirportWendyText5:
 	
 OnwaIntlAirportWendyText6:
 	text "This place is"
-	line "amazing, isnt it?"
+	line "amazing, isn't it?"
 	
 	para "I work here as a"
 	line "pilot during my"

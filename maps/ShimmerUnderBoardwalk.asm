@@ -322,7 +322,7 @@ ShimmerUnderBoardwalkLilyText5:
 	cont "picking on me!"
 	
 	para "I think I want"
-	line "to go home, now…"
+	line "to go home now…"
 	done
 	
 ShimmerUnderBoardwalkPunk1:

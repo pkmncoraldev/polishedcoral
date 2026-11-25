@@ -156,7 +156,7 @@ LusterMallClothesShopPollyText2:
 	para "Can't you see"
 	line "I'm busy?"
 	
-	para "Anyway I'm going"
+	para "Anyway, I'm going"
 	line "shopping for a"
 	cont "new phone."
 	
@@ -195,7 +195,7 @@ LusterMallClothesShopShoes:
 	jumptextfaceplayer LusterMallClothesShopShoesText
 	
 LusterMallClothesShopNpc1Text:
-	text "Oh these clothes"
+	text "Oh, these clothes"
 	line "are cute."
 	
 	para "Hmm…"

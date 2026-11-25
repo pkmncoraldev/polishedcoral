@@ -1011,7 +1011,7 @@ LighthouseAbnerText9:
 	line "from PROF. SPRUCE's"
 	cont "#MON LAB."
 	
-	para "Unfortunately the"
+	para "Unfortunately, the"
 	line "PROF. couldn't be"
 	cont "here today,"
 	
@@ -1278,7 +1278,7 @@ LighthouseRivalLoseText:
 	text "Haha!"
 	
 	para "Looks like I'm the"
-	line "better trainer!"
+	line "better TRAINER!"
 	done
 	
 LighthouseTakeCharmanderText:

@@ -401,7 +401,7 @@ Route12Npc9Text:
 Route12Npc10Text:
 	text "My nephew lives in"
 	line "a little town in"
-	cont "SOUTH OWNA called"
+	cont "SOUTH ONWA called"
 	cont "BRIGHTBURG."
 	
 	para "I haven't heard"
@@ -416,7 +416,7 @@ Route12Npc11Text:
 	text "There's an entrance"
 	line "to the SEWERS by"
 	cont "the train station"
-	cont "in LUSTER CITY."
+	cont "in LUSTER CITY's"
 	cont "HOUSING DISTRICT."
 	
 	para "Hm?"

@@ -660,7 +660,7 @@ GlintGroveNPC3Text:
 GlintGroveNPC4Text:
 	text "I think I see a"
 	line "clearing in the" 
-	cont "trees down river."
+	cont "trees downriver."
 	
 	para "I wish I could"
 	line "explore it,"
@@ -913,7 +913,7 @@ GlintGroveMinaText2:
 GlintGroveMinaText3:
 	text "Unfortunately,"
 	line "this rock is in"
-	cont "in the way!"
+	cont "the way!"
 	done
 	
 GlintGroveMinaText4:
@@ -925,7 +925,7 @@ GlintGroveMinaText4:
 	
 	para "If I had some"
 	line "tasty BLOSSOM TEA,"
-	cont "I'd all set!"
+	cont "I'd be all set!"
 	
 	para "Sigh…"
 	done
@@ -992,7 +992,7 @@ GlintGroveMinaText10:
 	done
 	
 GlintGroveMinaText11:
-	text "Ok, buddy!"
+	text "OK, buddy!"
 	
 	para "Let's do it!"
 	done

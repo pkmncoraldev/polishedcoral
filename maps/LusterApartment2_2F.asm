@@ -199,7 +199,7 @@ LusterApartment2_2F_MinaText2:
 	done
 	
 LusterApartment2_2F_MinaText3:
-	text "Ok!<WAIT_S>"
+	text "OK!<WAIT_S>"
 	line "I'll get started!"
 	done
 	
@@ -249,7 +249,7 @@ LusterApartment2_2F_NoRoomText:
 	
 LusterApartment2_2F_NoText:
 	text "No?<WAIT_S>"
-	line "Aww… Ok."
+	line "Aww… OK."
 	
 	para "Maybe next time."
 	done

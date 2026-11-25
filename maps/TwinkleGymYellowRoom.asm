@@ -318,7 +318,7 @@ TwinkleGymYellowRoomTrainer2SeenText:
 	done
 
 TwinkleGymYellowRoomTrainer2BeatenText:
-	text "Well that's <WAIT_S>that!"
+	text "Well, that's <WAIT_S>that!"
 	done
 	
 TwinkleGymYellowRoomWorker1:

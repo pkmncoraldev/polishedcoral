@@ -556,7 +556,7 @@ TwinkleTownNPC2Text1:
 TwinkleTownNPC2Text2:
 	text "Don't throw that"
 	line "BOTTLE CAP away,"
-	cont "ok?"
+	cont "OK?"
 	done
 	
 TwinkleTownNPC2TextNoRoom:

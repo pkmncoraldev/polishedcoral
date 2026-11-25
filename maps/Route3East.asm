@@ -190,8 +190,8 @@ Route3RodmanText1:
 	para "…<WAIT_L>Look."
 	
 	para "If I give you"
-	line "something will you"
-	cont "leave?"
+	line "something, will"
+	cont "you leave?"
 	done
 	
 Route3RodmanText2:
@@ -237,8 +237,8 @@ Route3RodmanText6:
 	para "…<WAIT_L>Look."
 	
 	para "If I give you"
-	line "something will you"
-	cont "leave?"
+	line "something, will"
+	cont "you leave?"
 	done
 	
 Route3East_sign:

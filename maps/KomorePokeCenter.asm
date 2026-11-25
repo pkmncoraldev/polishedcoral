@@ -50,7 +50,7 @@ KomorePokeCenterNPC2:
 	end
 	
 KomorePokeCenterNPC2Text1:
-	text "Hey you wanna"
+	text "Hey, you wanna"
 	line "battle?"
 	done
 	

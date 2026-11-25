@@ -238,7 +238,7 @@ SunsetGengarHouseNPC2TextBadge1:
 	para "Is that the"
 	line "STARKBADGE?"
 	
-	para "That badge shows"
+	para "That BADGE shows"
 	line "your potential as"
 	cont "a new TRAINER!"
 	
@@ -253,7 +253,7 @@ SunsetGengarHouseNPC2TextBadge2:
 	para "Is that the"
 	line "SPLASHBADGE?"
 	
-	para "That badge shows"
+	para "That BADGE shows"
 	line "that you battle"
 	cont "with the force of"
 	cont "a mighty wave!"
@@ -269,7 +269,7 @@ SunsetGengarHouseNPC2TextBadge3:
 	para "Is that the"
 	line "GALEBADGE?"
 	
-	para "That badge shows"
+	para "That BADGE shows"
 	line "that you will soar"
 	cont "to the top!"
 	
@@ -284,7 +284,7 @@ SunsetGengarHouseNPC2TextBadge4:
 	para "Is that the"
 	line "BURNBADGE?"
 	
-	para "That badge shows"
+	para "That BADGE shows"
 	line "that your spirit"
 	cont "burns like flame!"
 	
@@ -299,7 +299,7 @@ SunsetGengarHouseNPC2TextBadge5:
 	para "Is that the"
 	line "BANEBADGE?"
 	
-	para "That badge shows"
+	para "That BADGE shows"
 	line "your strategic"
 	cont "superiority!"
 	
@@ -314,7 +314,7 @@ SunsetGengarHouseNPC2TextBadge6:
 	para "Is that the"
 	line "PETALBADGE?"
 	
-	para "That badge shows"
+	para "That BADGE shows"
 	line "your composure in"
 	cont "battle!"
 	
@@ -329,7 +329,7 @@ SunsetGengarHouseNPC2TextBadge7:
 	para "Is that the"
 	line "GEOBADGE?"
 	
-	para "That badge shows"
+	para "That BADGE shows"
 	line "your resolve to"
 	cont "win no matter the"
 	cont "cost!"
@@ -345,7 +345,7 @@ SunsetGengarHouseNPC2TextBadge8:
 	para "Is that the"
 	line "DRAKEBADGE?"
 	
-	para "That badge shows"
+	para "That BADGE shows"
 	line "that you are an"
 	cont "honorable TRAINER."
 	

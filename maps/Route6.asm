@@ -297,7 +297,7 @@ TrainerRoute6_6:
 	done
 
 .BeatenText:
-	text "Ok, you won!"
+	text "OK, you won!"
 	para "I'll tell you."
 	done
 	

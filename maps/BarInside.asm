@@ -330,7 +330,7 @@ BarInsideBartenderText2:
 	para "MOOMOO BREW?"
 	
 	para "I can't sell"
-	line "em' to a kid!"
+	line "'em to a kid!"
 	
 	para "…<WAIT_L>Alright, <WAIT_S>tell ya"
 	line "what."
@@ -586,7 +586,7 @@ BarInsideRegular3Text3:
 	done
 	
 BarInsideRegular3WinText:
-	text "Alright you win."
+	text "Alright, you win."
 	
 	para "Now leave me"
 	line "alone."

@@ -375,7 +375,7 @@ SpruceLabSpruceText5:
 	text "Ah ha!"
 	
 	para "Seems like he's"
-	line "fallen asleep,"
+	line "fallen asleep"
 	cont "again."
 	
 	para "I have just the"
@@ -435,7 +435,7 @@ SpruceLabSpruceText8:
 	cont "up to you."
 	
 	para "A small word of"
-	line "advice however:"
+	line "advice, however:"
 	
 	para "If you find your-"
 	line "self struggling"
@@ -547,10 +547,11 @@ SpruceLabSpruceText14:
 	cont "was a relatively"
 	cont "recent invention,"
 	
-	para "and that idea of"
-	line "catching #MON"
-	cont "originated a few"
-	cont "hundred years ago."
+	para "and that the idea"
+	line "of catching"
+	cont "#MON originated"
+	cont "a few hundred"
+	cont "years ago."
 
 	para "My work attempted"
 	line "to prove that this"
@@ -678,7 +679,7 @@ SpruceLabPokeFluteText5:
 	cont "hand."
 	
 	para "It offers it to"
-	line "to you."
+	line "you."
 	done
 	
 SpruceLabMunchlaxText1:

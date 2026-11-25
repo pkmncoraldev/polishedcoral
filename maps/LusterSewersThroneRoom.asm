@@ -138,7 +138,7 @@ LusterSewerThroneRoomNidokingGuyText:
 	cont "you."
 	
 	para "That means you're"
-	line "ok by me!"
+	line "OK by me!"
 	done
 	
 LusterSewerThroneRoomNidokingPunk1:
@@ -640,7 +640,7 @@ LusterSewerThroneRoomGrunt1Text:
 	done
 	
 LusterSewerThroneRoomGrunt2Text:
-	text "Move along, kid"
+	text "Move along, kid."
 	done
 	
 Movement_LusterSewerThroneRoomGruntStepAside:

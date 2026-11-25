@@ -340,7 +340,7 @@ LuminaGymElderText7:
 	line "lessly training"
 	cont "for quite a while."
 	
-	para "The time has come,"
+	para "The time has come"
 	line "for you to take"
 	cont "your place as the"
 	cont "village champion."
@@ -357,7 +357,7 @@ LuminaGymElderText8:
 LuminaGymElderText9:
 	text "I know you will."
 	
-	para "I hearby bestow to"
+	para "I hereby bestow to"
 	line "you the titles of"
 	cont "village champion"
 	cont "and GYM LEADER."
@@ -388,20 +388,20 @@ LuminaGymDarcySceneText3:
 LuminaGymDarcySceneText4:
 	text "…<WAIT_S>in due time."
 	
-	para "…<WAIT_L>Ok.<WAIT_M> I trust you."
+	para "…<WAIT_L>OK.<WAIT_M> I trust you."
 	
 	para "I'll make you"
 	line "proud, GRANDPA!"
 	done
 	
 LuminaGymDarcyTextBeforeBattle:
-	text "Ok, <PLAYER>!"
+	text "OK, <PLAYER>!"
 	
 	para "Here we go."
 	
 	para "For GRANDPA,"
 	
-	para "For the people"
+	para "for the people"
 	line "of LUMINA TOWN,"
 	
 	para "and even for the"
@@ -451,7 +451,7 @@ LuminaGymDarcyTextTMSpeech:
 	
 	para "…"
 	
-	para "Ok, now what are"
+	para "OK, now what are"
 	line "you waiting for?"
 	
 	para "You gotta convince"
@@ -743,7 +743,7 @@ LuminaGymPostDragonShrineElderText7:
 	cont "day."
 	
 	para "Now if you'll"
-	line "excuse me."
+	line "excuse me,"
 	
 	para "I'll be on my way."
 	done

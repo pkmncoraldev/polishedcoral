@@ -279,7 +279,8 @@ Polly_FirstBattleFinalPkmnText:
 Polly_RematchFinalPkmnText:
 	text "Yes! <WAIT_M>Yes!"
 	
-	para "That feeling again!"
+	para "That feeling"
+	line "again!"
 	prompt
 	
 Leilani_FirstBattleFinalPkmnText:
@@ -360,7 +361,7 @@ Frankie_FinalPkmnText:
 	prompt
 	
 MallCop_FinalPkmnText:
-	text "We got a 87-12"
+	text "We got an 87-12"
 	line "here!"
 	
 	para "Code blue!"

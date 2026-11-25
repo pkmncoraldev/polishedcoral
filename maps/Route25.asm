@@ -435,11 +435,11 @@ Route25Trainer5:
 Route25Trainer6:
 	generictrainer BURGLAR, CHASE, EVENT_BEAT_ROUTE_25_TRAINER_6, .SeenText, .BeatenText
 
-	text "Ok so I'm hiding in"
-	line "the leaves!"
+	text "OK, so I'm hiding"
+	line "in the leaves!"
 	
-	para "Can't a guy hide in"
-	line "the leaves?"
+	para "Can't a guy hide"
+	line "in the leaves?"
 	done
 
 .SeenText:
@@ -822,8 +822,8 @@ Route25MasterText5:
 Route25FisherText1:
 	text "Well, <WAIT_S>hi."
 	
-	para "It's not everyday I"
-	line "see someone else"
+	para "It's not every day"
+	line "I see someone else"
 	cont "at this little"
 	cont "pond."
 	

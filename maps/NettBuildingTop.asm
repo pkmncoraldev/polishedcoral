@@ -271,7 +271,7 @@ NettBuildingTopEliText5:
 	
 	para "And the ones that"
 	line "DO call themselves"
-	cont "TRAINERS, treat it"
+	cont "TRAINERS treat it"
 	cont "like a game."
 	
 	para "Humans and #MON"
@@ -291,7 +291,7 @@ NettBuildingTopEliText6:
 	
 	para "What if there was"
 	line "a way to introduce"
-	cont "fear into people."
+	cont "fear into people?"
 	
 	para "A healthy amount"
 	line "of fear."
@@ -362,7 +362,7 @@ NettBuildingTopEliText9:
 	
 	para "You've beaten me,"
 	
-	para "you've beaten KAGE"
+	para "you've beaten CAGE"
 	line "and LOCKE,"
 	
 	para "you've even beaten"

@@ -226,7 +226,7 @@ BrilloLemonadeText5:
 	
 BrilloLemonadeText6:
 	text "Sorry, you can't"
-	line "hold anything else…"
+	line "carry any more…"
 	done
 	
 BrilloLemonadeText7:
@@ -921,7 +921,7 @@ BrilloCommanderCopText2:
 BrilloTownGoPText:
 	text "There is graffiti"
 	line "spray-painted on"
-	cont "on the wall."
+	cont "the wall."
 	
 	para "“The password is"
 	line "STORM DRAIN.”"

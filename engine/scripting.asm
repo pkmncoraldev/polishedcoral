@@ -3540,7 +3540,7 @@ HeadbuttBoneText3:
 	line "through it."
 	
 	para "You could probably"
-	line "smaash it with a"
+	line "smash it with a"
 	cont "#MON's HEADBUTT…"
 	done
 	

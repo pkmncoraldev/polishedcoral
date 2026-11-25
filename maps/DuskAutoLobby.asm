@@ -303,7 +303,7 @@ DuskAutoLobbyGuyText2:
 	line "do the trick."
 	
 	para "Oh, <WAIT_S>you don't have"
-	line "a bike?"
+	line "a BIKE?"
 	
 	para "Well, my MOM runs"
 	line "a BIKE SHOP in"
@@ -312,7 +312,7 @@ DuskAutoLobbyGuyText2:
 	cont "brother."
 	
 	para "If you need a"
-	line "BIKE, thats the"
+	line "BIKE, that's the"
 	cont "place to be!"
 	done
 	
@@ -400,17 +400,17 @@ DuskAutoLobbyGuyText4:
 	done
 	
 DuskAutoLobbyGuyText5:
-	text "Oh you're back."
+	text "Oh, you're back."
 	
 	para "Did you get a"
-	line "bike?"
+	line "BIKE?"
 	
 	para "Nice! <WAIT_S>Let me see!"
 	
 	para "Wait a minute…"
 	
 	para "This is one of my"
-	line "MOM's bikes!"
+	line "MOM's BIKES!"
 	
 	para "Is your name"
 	line "<PLAYER>?"
@@ -449,7 +449,7 @@ DuskAutoLobbyGuyText6:
 	cont "with me for a bit,"
 	cont "though."
 	
-	para "Is that ok?"
+	para "Is that OK?"
 	done
 	
 DuskAutoLobbyGuyText7:

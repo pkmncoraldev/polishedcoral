@@ -426,7 +426,7 @@ LusterMallBallSignText:
 	done
 
 LusterMallClothesSignText:
-	text "BOUTIQUE COTOUR"
+	text "BOUTIQUE COUTURE"
 	
 	para "“Designer Clothes."
 	line "Designer Prices.”"
@@ -440,7 +440,7 @@ LusterMallCopText1:
 LusterMallCopText2:
 	text "Can't you read?"
 	
-	para "It's says very"
+	para "It says very"
 	line "clearly,"
 	
 	para "“Please don't walk"
@@ -469,7 +469,7 @@ LusterMallCopText3:
 	done
 	
 LusterMallCopText4:
-	text "Ok, kid!"
+	text "OK, kid!"
 	
 	para "Last chance."
 	

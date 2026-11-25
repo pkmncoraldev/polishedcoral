@@ -168,8 +168,8 @@ LusterMallElectronicsShopPollyText:
 	para "No, I won't battle"
 	line "you!"
 	
-	para "Leave me alone you"
-	line "little creep!"
+	para "Leave me alone,"
+	line "you little creep!"
 	
 	para "I'm going to get"
 	line "some cute #-"

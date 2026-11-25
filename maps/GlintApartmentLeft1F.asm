@@ -84,6 +84,6 @@ GlintApt11FNpc3Text:
 	
 	para "She was running"
 	line "into some kind of"
-	cont "issue it seems."
+	cont "issue, it seems."
 	done
 	

@@ -138,7 +138,7 @@ TrainerRoute5_5:
 	
 	para "This weather is"
 	line "perfect for a hike"
-	cont "though the woods!"
+	cont "through the woods!"
 	
 	para "It's also perfect"
 	line "for a #MON"

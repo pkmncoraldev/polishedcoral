@@ -245,7 +245,7 @@ NettBuilding7FCardReaderText2:
 	
 NettBuilding7FCardReaderText3:
 	text "Credentials"
-	line "confrimed!"
+	line "confirmed!"
 	done
 	
 NettBuilding7FCardReaderText4:

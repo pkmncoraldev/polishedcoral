@@ -128,7 +128,7 @@ TrainerGreenGrotto1F_1:
 	done
 
 .SeenText:
-	text "Hey let's battle!"
+	text "Hey, let's battle!"
 	
 	para "You ain't doin'"
 	line "nothin' right now,"
@@ -192,13 +192,13 @@ TrainerGreenGrotto1F_3:
 	cont "are covered in"
 	cont "moss."
 	
-	para "Well they're not."
+	para "Well, they're not."
 	
 	para "It's lichen!"
 	done
 
 .BeatenText:
-	text "Facinating…"
+	text "Fascinating…"
 	done
 	
 TrainerGreenGrotto1F_4:

@@ -134,7 +134,7 @@ Route30OttosTentOtto:
 Route30OttosTentOttoText1:
 	text "Hey, hey!"
 	
-	para "Good to see ya,"
+	para "Good to see ya"
 	line "again!"
 	done
 

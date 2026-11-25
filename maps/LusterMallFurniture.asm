@@ -149,7 +149,7 @@ LusterMallFurnitureClerk3Text1:
 	done
 	
 LusterMallFurnitureClerk3Text2:
-	text "Come again, ok?"
+	text "Come again, OK?"
 	done
 	
 LusterMallFurnitureClerk3Asm:

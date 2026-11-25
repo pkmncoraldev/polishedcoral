@@ -189,12 +189,13 @@ LusterSpamBuilding_RightRoom_NPC3Text1:
 	para "Head of Marketing?<WAIT_S>"
 	line "Who's asking?"
 	
-	para "You're number's on"
+	para "Your number's on"
 	line "the call list?"
 	
-	para "Yeah sure, beat me"
-	line "and I might help"
-	cont "you out."
+	para "Yeah sure."
+	
+	para "Beat me, and I"
+	line "might help you."
 	
 	para "…<WAIT_M>Maybe."
 	done
@@ -288,7 +289,7 @@ LusterSpamBuilding_RightRoom_NPC4Text2:
 	line "You win."
 	
 	para "I'll take you off"
-	line "call list, jeez!"
+	line "call list, geez!"
 	
 	para "You know, it"
 	line "wouldn't hurt you"

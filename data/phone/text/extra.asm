@@ -80,7 +80,7 @@ WendyVoicemailText:
 AutoPhoneComeGetBikeText:
 	text "<PLAYER>!"
 	
-	para "You're BIKE is"
+	para "Your BIKE is"
 	line "ready!"
 	
 	para "Oh you're gonna"
@@ -135,7 +135,7 @@ AutoPhoneNormalText:
 	
 	para "How are you liking"
 	line "your new, souped"
-	cont "up bike?"
+	cont "up BIKE?"
 	
 	para "Pretty neat,"
 	line "right?"
@@ -172,7 +172,7 @@ SpamPhoneText3:
 	done
 	
 SpamPhoneText4:
-	text "Hello MR. or MRS."
+	text "Hello, MR. or MRS."
 	line "<PLAYER>."
 	
 	para "Congratulations!"

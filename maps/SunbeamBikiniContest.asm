@@ -599,7 +599,7 @@ SunBeamContestBikiniPText2:
 	text "I can't believe I"
 	line "won!"
 	
-	para "Thanks everyone!"
+	para "Thanks, everyone!"
 	done
 	
 SunBeamContestBikiniPWinText:

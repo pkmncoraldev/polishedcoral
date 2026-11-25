@@ -107,7 +107,7 @@ Route10TentNPCText1:
 	line "PROF. SPRUCE said"
 	cont "would swing by?"
 	
-	para "There is record"
+	para "There's a record"
 	line "of a ruined temple"
 	cont "deep within the"
 	cont "caves near here."
@@ -189,7 +189,7 @@ Route10TentNPCText4:
 	done
 	
 Route10TentNPCText5:
-	text "Come on kid!"
+	text "Come on, kid!"
 	
 	line "I'm begging here!"
 	done
@@ -219,7 +219,7 @@ Route10TentNPCText8:
 	done
 	
 Route10TentNPCText9:
-	text "Ok, kid!"
+	text "OK, kid!"
 	
 	para "I work at a"
 	line "RESEARCH LAB in"

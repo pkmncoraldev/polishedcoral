@@ -44,7 +44,7 @@ FlickerHouse1NPC2Text:
 	cont "people don't even"
 	cont "have a #MON."
 	
-	para "Ok, the train"
+	para "OK, the train"
 	line "whistles keep it"
 	cont "from being TOO"
 	cont "quiet, but you"

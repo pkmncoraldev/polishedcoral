@@ -144,7 +144,7 @@ Movement_SunsetOfficerStopsYou2:
 	step_end
 	
 OfficerStopsYouText1:
-	text "Hey kid!"
+	text "Hey, kid!"
 	done
 	
 OfficerStopsYouText2:

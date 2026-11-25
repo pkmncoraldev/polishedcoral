@@ -102,8 +102,8 @@ GlintApt12FNpc1Text:
 	cont "to every person"
 	cont "you see."
 	
-	para "Except for me that"
-	line "is."
+	para "Except for me,"
+	line "that is."
 	
 	para "I'm trying to watch"
 	line "TV."
@@ -132,7 +132,7 @@ GlintApt12FNpc2Text2:
 	text "Think about me"
 	line "every time you"
 	cont "check your map,"
-	cont "ok?"
+	cont "OK?"
 	done
 	
 GlintApt12FTVText1:

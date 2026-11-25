@@ -708,7 +708,7 @@ WendyTourneyText:
 	line "we would."
 	
 	para "Well, don't try"
-	line "TOO hard, ok?"
+	line "TOO hard, OK?"
 	
 	para "I'm still your"
 	line "ride home!"
@@ -754,7 +754,7 @@ PollyTourneyText:
 	done
 	
 LeilaniTourneyText:
-	text "Oh sweetie!"
+	text "Oh, sweetie!"
 	
 	para "You've made it"
 	line "so far!"
@@ -784,7 +784,7 @@ RockyTourneyText:
 	para "I should thank"
 	line "you."
 	
-	para "But, don't think"
+	para "But don't think"
 	line "that means I'll"
 	cont "let you win!"
 	done
@@ -899,7 +899,7 @@ LedianRangerTourneyText:
 	
 	para "Fighting for"
 	line "justice in my"
-	cont "sted, no doubt."
+	cont "stead, no doubt."
 	
 	para "Though that's"
 	line "surely the case,"
@@ -1089,7 +1089,7 @@ RodneyTourneyText2:
 	para "The way you battle"
 	line "is so fierce!"
 	
-	para "Just ike an"
+	para "Just like an"
 	line "unstoppable"
 	cont "tsunami."
 	
@@ -1212,7 +1212,7 @@ MinaTourneyText2:
 	cont "thing special."
 	
 	para "I'll be cheering"
-	line "for you, ok?"
+	line "for you!"
 	
 	para "ALOLA!"
 	done
@@ -1296,7 +1296,7 @@ LedianRangerTourneyText2:
 	line "the LEDIAN RANGER?"
 	
 	para "…<WAIT_L>Yes.<WAIT_M>"
-	line "Yes it is."
+	line "Yes, it is."
 	
 	para "I don't deserve"
 	line "to wear this"
@@ -1593,7 +1593,7 @@ MasterScreenFace:
 	
 ArenaIntroText1:
 	text "Ladies and"
-	line "gentleman!"
+	line "gentlemen!"
 	
 	para "Welcome to the"
 	line "ONWA #MON"

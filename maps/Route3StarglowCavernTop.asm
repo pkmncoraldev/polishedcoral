@@ -408,7 +408,7 @@ Route3StarglowCavernTopPatchesDoneCaveText1::
 Route3StarglowCavernTopPatchesDoneCaveText2:
 	text "See?"
 	
-	para "No harm no foul!"
+	para "No harm, no foul!"
 	
 	para "And just to show"
 	line "that there's no"
@@ -433,7 +433,7 @@ Route3StarglowCavernTopPatchesDoneCaveText3:
 	cont "outside of battle."
 	
 	para "But at least you"
-	line "don't need a badge!"
+	line "don't need a BADGE!"
 	
 	para "Anyway…"
 	
@@ -453,7 +453,7 @@ Route3StarglowCavernTopPatchesDoneCaveText5:
 	line "new leaf, honest."
 	
 	para "I won't be causing"
-	line "anymore trouble"
+	line "any more trouble"
 	cont "for anyone else."
 	done
 	

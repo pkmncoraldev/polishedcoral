@@ -794,7 +794,7 @@ TM46Text:
 TM56Text:
 TM57Text:
 TM63Text:
-	text "It's a given to"
+	text "It's given to"
 	line "you by a strong"
 	cont "TRAINER."
 	
@@ -906,7 +906,7 @@ TM28Text:
 	line "glows like stars."
 	
 	para "You'll need to find"
-	line "an second entrance."
+	line "a second entrance."
 	prompt
 
 TM29Text:
@@ -1045,8 +1045,8 @@ TM47Text:
 	line "runway."
 	
 	para "Now if you sneak"
-	line "out there, I don't"
-	cont "responsibility!"
+	line "out there, I take"
+	cont "no responsibility!"
 	prompt
 
 TM48Text:
@@ -1104,7 +1104,7 @@ TM59Text:
 	text "It's in LUMINA"
 	line "TOWN."
 	
-	para "It's nearby an"
+	para "It's near an"
 	line "ELDER's house."
 	prompt
 
@@ -1175,7 +1175,7 @@ TM69Text:
 	
 	para "A man in a tent"
 	line "will give it to"
-	cont "as a reward."
+	cont "you as a reward."
 	prompt
 
 TM70Text:
@@ -1211,7 +1211,7 @@ TM72Text:
 	prompt
 	
 TM73Text:
-	text "It's on Route 11."
+	text "It's on ROUTE 11."
 	
 	para "Wherever it is, it"
 	line "sure is dark."
@@ -1441,7 +1441,7 @@ Music_DayBreakGrottoText:
 	line "MT. ONWA."
 	
 	para "A room with many"
-	line "stairs nearby"
+	line "stairs close to"
 	cont "DAYBREAK VILLAGE."
 	prompt
 	
@@ -1690,8 +1690,8 @@ Music_TrainText:
 	prompt
 	
 Music_LusterCityText:
- 	text "It's in shop in the"
-	line "SHOPPING MALL."
+ 	text "It's in a shop in"
+	line "the SHOPPING MALL."
 	
 	para "CASSETTE TAPES"
 	line "are outdated."
@@ -1951,8 +1951,8 @@ TotodileDollText:
 TogepiDollText:
 	text "A little girl in"
 	line "STARGLOW VALLEY"
-	cont "entrusts you her"
-	cont "precious #MON."
+	cont "entrusts you with"
+	cont "her dear #MON."
 	
 	para "Show her how well"
 	line "it's doing!"
@@ -2055,7 +2055,7 @@ DoduoDollText:
 	line "has many prizes."
 	
 	para "Try visiting"
-	line "everyday."
+	line "every day."
 	prompt
 	
 MiltankDollText:

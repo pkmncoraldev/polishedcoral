@@ -302,7 +302,7 @@ RadiantOrphanageLeilanisRoomErikaSavedAlmostAllText2:
 	line "GRAMMA?"
 	
 	para "It's going to be"
-	line "ok!"
+	line "OK!"
 	done
 	
 RadiantOrphanageLeilanisRoomErikaText1:
@@ -352,7 +352,7 @@ RadiantOrphanageLeilanisRoomErikaText4:
 	line "get any better!"
 	
 	para "Oh, I hope they're"
-	line "ok…"
+	line "OK…"
 	done
 	
 RadiantOrphanageLeilanisRoomErikaText5:

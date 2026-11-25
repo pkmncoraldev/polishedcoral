@@ -36,7 +36,7 @@ LusterPokeCenterChansey:
 	end
 	
 LusterPokeCenterNPC1Text:
-	text "Whaddya ya want"
+	text "Whaddya want,"
 	line "twerp?"
 	
 	para "Can't you see our"

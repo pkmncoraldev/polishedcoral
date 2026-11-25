@@ -72,7 +72,7 @@ TrainerRoute3West_1:
 
 	text "Someday I'm gonna"
 	line "beat STANLEY and"
-	cont "get my own badge."
+	cont "get my own BADGE."
 	done
 
 .SeenText:

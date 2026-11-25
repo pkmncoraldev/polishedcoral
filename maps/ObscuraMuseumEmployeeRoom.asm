@@ -267,7 +267,7 @@ ObscuraMuseumEmployeeRoomAbiegailText5:
 	cont "involved so far,"
 	
 	para "I must ask for"
-	line "your assitance"
+	line "your assistance"
 	cont "one more time."
 	
 	para "Here, take this."
@@ -292,7 +292,7 @@ ObscuraMuseumEmployeeRoomAbiegailText6:
 	para "If my hunch is"
 	line "correct, you just"
 	cont "might find signs"
-	cont "of ancient civili-"
+	cont "of ancient civil-"
 	cont "ization nearby."
 	
 	para "Who knows what new"
@@ -322,7 +322,7 @@ ObscuraMuseumEmployeeRoomAbiegailText7:
 	para "And you say you"
 	line "found an artifact?"
 	
-	para "Well let's see!"
+	para "Well, let's see!"
 	done
 	
 ObscuraMuseumEmployeeRoomAbiegailText8:
@@ -397,7 +397,7 @@ ObscuraMuseumEmployeeRoomAbiegailText13:
 	
 	para "He told me that"
 	line "you were one of"
-	cont "the kids that was"
+	cont "the kids that were"
 	cont "sent one of his"
 	cont "starter #MON."
 	

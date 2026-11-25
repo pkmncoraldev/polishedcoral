@@ -841,7 +841,7 @@ LakeRivalText2:
 	para "They aren't trying"
 	line "hard enough!"
 	
-	para "Well that's gonna"
+	para "Well, that's gonna"
 	line "change."
 	
 	para "This won't happen"

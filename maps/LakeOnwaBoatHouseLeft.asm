@@ -367,7 +367,7 @@ LakeBoatManText8:
 	line "meet someone on"
 	cont "SUNBEAM ISLAND?"
 	
-	para "Sorry kid."
+	para "Sorry, kid."
 	
 	para "The boats aren't"
 	line "running to the"
@@ -396,7 +396,7 @@ LakeBoatManText9:
 	done
 	
 LakeBoatManText10:
-	text "Sorry kid."
+	text "Sorry, kid."
 	
 	para "The boats aren't"
 	line "running to the"

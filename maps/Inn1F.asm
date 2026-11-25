@@ -329,7 +329,7 @@ Inn1FKageText5:
 	
 	para "How much"
 	line "humiliation must"
-	cont "I put up with?"
+	cont "I endure?"
 	
 	para "No more!"
 	done
@@ -701,7 +701,7 @@ Inn1FSnareSupervisor2:
 	end
 	
 Inn1FSnareSupervisor2Text1:
-	text "Ahem! <WAIT_S> Like I was"
+	text "Ahem!<WAIT_S> Like I was"
 	line "saying…"
 	done
 	
@@ -1476,7 +1476,7 @@ Inn1FClerkDeskText2:
 	done
 	
 Inn1FClerkDeskText3:
-	text "Ok, we have you"
+	text "OK, we have you"
 	line "right here."
 	
 	para "Your room has"
@@ -1510,7 +1510,7 @@ Inn1FClerkDeskText6:
 	line "guys have no sense"
 	cont "of respect!"
 	
-	para "I mean a battle"
+	para "I mean, a battle"
 	line "in the lobby?"
 	
 	para "Seriously!?<WAIT_S>"

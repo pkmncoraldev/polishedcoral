@@ -1230,14 +1230,14 @@ LusterPunkLeaderText12:
 	para "Anyway, we're outta"
 	line "here!"
 	
-	para "Come visit us in"
+	para "Come visit us"
 	line "down here anytime."
 	
 	para "As far as we're"
 	line "concerned,"
 	
 	para "you're one of us"
-	line "now kid!"
+	line "now, kid!"
 	
 	para "Don't forget to"
 	line "visit my buddy at"
@@ -1359,7 +1359,7 @@ LusterShadyGuyText2:
 	
 	para "…"
 	
-	para "Ah whatever!"
+	para "Ah, whatever!"
 	
 	para "Here's the uh…"
 	line "“THING”."

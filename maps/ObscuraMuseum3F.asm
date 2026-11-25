@@ -314,8 +314,8 @@ ObscuraMuseum3FColbyText2:
 	line "finally be on even"
 	cont "ground!"
 	
-	para "Just try stop me,"
-	line "<PLAYER>!"
+	para "Just try stop and"
+	line "me, <PLAYER>!"
 	done
 	
 ObscuraMuseum3FColbyText3:

@@ -3746,14 +3746,14 @@ ChangeHiddenAbilityText:
 	
 
 ChangeAbilityToText:
-	text "Change ability to"
+	text "Change ABILITY to"
 	line "@"
 	text_from_ram wStringBuffer1
 	text "?"
 	done
 
 AbilityChangedText:
-	text "The ability was"
+	text "The ABILITY was"
 	line "changed!"
 	done
 

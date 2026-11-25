@@ -249,7 +249,7 @@ MtOnwa_DisguiseMan1Text4:
 	
 MtOnwaDisguisemanBeatenText:
 	text "Well, I guess that"
-	line "that is that"
+	line "that is that."
 	
 	para "It seems that I"
 	line "have fallen flat…"

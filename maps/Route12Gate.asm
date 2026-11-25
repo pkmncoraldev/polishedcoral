@@ -40,9 +40,9 @@ Route12GateOfficerText:
 	cont "doors."
 	
 	para "It may seem like"
-	line "like you're still"
-	cont "in the city,"
-	cont "but watch out!"
+	line "you're still in"
+	cont "the city, but"
+	cont "watch out!"
 	
 	para "Plenty of TRAINERS"
 	line "will want a fight!"

@@ -1358,7 +1358,7 @@ UnknownText_TradeIntroText5::
 	cont "tion she needs…"
 	
 	para "I think I need a"
-	line "lower mantinence"
+	line "lower maintenance"
 	cont "#MON!"
 	
 	para "Do you have a"
@@ -1472,13 +1472,13 @@ UnknownText_TradeIntroText7::
 	cont "GIRAFARIG before,"
 	
 	para "but now I'm"
-	line "obssessed!"
+	line "obsessed!"
 	
 	para "I wish I had a"
 	line "real GIRAFARIG!"
 	
 	para "Would you trade"
-	line "for my MEINFOO?"
+	line "for my MIENFOO?"
 	done
 	
 UnknownText_TradeCancelText7::
@@ -1518,7 +1518,7 @@ UnknownText_TradeAfterText7::
 UnknownText_TradeIntroText8::
 	text "There's a seed"
 	line "#MON called"
-	cont "SUNRKERN."
+	cont "SUNKERN."
 	
 	para "It has such a"
 	line "funny face!"
@@ -1554,7 +1554,7 @@ UnknownText_TradeWrongText8::
 	text_from_ram wStringBuffer1
 	text "!"
 	
-	para "It's face isn't"
+	para "Its face isn't"
 	line "nearly as funny!"
 	done
 
@@ -1574,7 +1574,7 @@ UnknownText_TradeAfterText8::
 	text "Oh hey!"
 	
 	para "Is BOOMER doing"
-	line "ok?"
+	line "OK?"
 	
 	para "@"
 	text_from_ram wTradeSunkernName
@@ -1653,7 +1653,7 @@ UnknownText_TradeAfterText9::
 	
 	para "Now I'm known as a"
 	line "cool, mysterious,"
-	cont "and debonaire guy."
+	cont "and debonair guy."
 	
 	para "How's my silly,"
 	line "frilly, little"

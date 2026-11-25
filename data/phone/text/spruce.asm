@@ -360,7 +360,7 @@ SprucePhoneAllBadgesText:
 	
 	para "That means you"
 	line "qualify for the"
-	cont "POKEMON LEAGUE"
+	cont "#MON LEAGUE"
 	cont "TOURNAMENT!"
 	
 	para "Worry not, though."

@@ -326,7 +326,7 @@ WoodHammerDescription:
 	next "hurts the user.@"
 	
 DragonHammerDescription:
-	db   "Attacks using it's"
+	db   "Attacks using its"
 	next "body as a hammer.@"
 	
 TakeDownDescription:
@@ -826,11 +826,11 @@ WaterGunDescription:
 	next "attack.@"
 
 SurfDescription:
-	db   "A strong Water-"
+	db   "A strong WATER-"
 	next "type attack.@"
 
 HydroPumpDescription:
-	db   "A powerful Water-"
+	db   "A powerful WATER-"
 	next "type attack.@"
 
 DrillPeckDescription:
@@ -939,7 +939,7 @@ BrickBreakDescription:
 	next "and LIGHT SCREEN.@"
 
 HyperVoiceDescription:
-	db   "Attack the foe"
+	db   "Attacks the foe"
 	next "with sound waves.@"
 
 CurseDescription:
@@ -1004,8 +1004,8 @@ ReturnDescription:
 	next "based on loyalty.@"
 
 QuiverDanceDescription:
-	db   "SPCL. ATK, SPCL."
-	next "DEF and SPEED up.@"
+	db   "Raises SPCL.ATK, "
+	next "SPCL.DEF & SPEED.@"
 	
 PsyshockDescription:
 	db   "A wave that does"
@@ -1053,7 +1053,7 @@ PursuitDescription:
 	next "switching #MON.@"
 
 RapidSpinDescription:
-	db   "Ups speed and"
+	db   "Ups SPEED and"
 	next "removes hazards.@"
 
 HealingLightDescription:

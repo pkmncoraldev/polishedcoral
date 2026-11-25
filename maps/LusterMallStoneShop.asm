@@ -70,7 +70,7 @@ LusterMallStoneShopPolly:
 	end
 	
 LusterMallStoneShopPollyText:
-	text "Oh it's you…"
+	text "Oh, it's you…"
 	
 	para "Nope!"
 	
@@ -79,7 +79,7 @@ LusterMallStoneShopPollyText:
 	
 	para "But look at how"
 	line "beautiful all this"
-	cont "jewlery is!"
+	cont "jewelry is!"
 	
 	para "It's totally"
 	line "making my mouth"

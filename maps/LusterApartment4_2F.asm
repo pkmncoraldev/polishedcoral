@@ -232,7 +232,7 @@ LusterApartment4_2F_Buneary1Text:
 	done
 	
 LusterApartment4_2F_Buneary2Text:
-	text "We had it all 'till"
+	text "We had it all 'til"
 	line "you came along!"
 	done
 	

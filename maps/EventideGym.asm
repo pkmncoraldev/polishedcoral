@@ -302,7 +302,7 @@ EventideGymWendyTextBeforeBattle:
 	cont "EVENTIDE VILLAGE."
 	
 	para "I've flown just"
-	line "about everwhere"
+	line "about everywhere"
 	cont "in this world,"
 	
 	para "but this sleepy"
@@ -361,7 +361,7 @@ EventideGymWendyTextTMSpeech:
 	
 	para "It lets your"
 	line "#MON land and"
-	cont "rest for a while"
+	cont "rest for awhile,"
 	cont "which will restore"
 	cont "half of its HP!"
 	
@@ -421,7 +421,7 @@ EventideGymTrainer1:
 	done
 
 .BeatenText:
-	text "Well you showed"
+	text "Well, you showed"
 	line "me!"
 	done
 	
@@ -456,7 +456,11 @@ EventideGymTrainer3:
 .SeenText:
 	text "Have you figured"
 	line "out the conveyor"
-	cont "belts work?"
+	cont "belts?"
+	
+	para "Beat me, and I'll"
+	line "tell you how they"
+	cont "work."
 	done
 
 .BeatenText:

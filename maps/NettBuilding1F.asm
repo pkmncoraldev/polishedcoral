@@ -146,7 +146,7 @@ NettBuilding1F_LadiesRoomText:
 	
 NettBuilding1F_NPC_1_Text:
 	text "The CEO, MR. ELI,"
-	line "inhereted the"
+	line "inherited the"
 	cont "company from his"
 	cont "father."
 	

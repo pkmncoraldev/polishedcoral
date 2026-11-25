@@ -328,7 +328,7 @@ TwinkleGymGuyText2:
 	para "Just like I"
 	line "thought!"
 	
-	para "Now if you'll"
+	para "Now, if you'll"
 	line "excuse me,"
 	
 	para "I think I'm gonna"

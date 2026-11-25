@@ -27,7 +27,7 @@ DuskHouse1NPC1Text:
 	line "NETT CORP.?"
 	
 	para "No one knows what"
-	line "happened to it's"
+	line "happened to its"
 	cont "founder."
 	
 	para "He gave the whole"

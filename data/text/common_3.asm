@@ -357,7 +357,7 @@ UnknownText_StoneShop_Intro::
 UnknownText_StoneShop_ComeAgain::
 	text "Very well."
 	
-	para "Have a pleasent"
+	para "Have a pleasant"
 	line "day."
 	done
 	
@@ -435,7 +435,7 @@ UnknownText_0x1c4dcd2::
 	done
 	
 UnknownText_0x1c4dd6::
-	text "Uh-oh, your Bag"
+	text "Uh-oh, your PACK"
 	line "is chock-full."
 	done
 
@@ -501,7 +501,7 @@ UnknownText_0x1c4ef6::
 	
 UnknownText_BallMart_Intro::
 	text "Welcome to"
-	line "AZAELA BALL CO."
+	line "AZALEA BALL CO."
 	
 	para "How can I help"
 	line "you today?"
@@ -647,7 +647,7 @@ BTMartInsufficientFundsText::
 
 BTMartBagFullText::
 	text "I'm sorry, but your"
-	line "Bag is full."
+	line "PACK is full."
 	done
 
 BTMartComeAgainText::

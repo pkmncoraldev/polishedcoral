@@ -326,7 +326,7 @@ Route10MinaText8:
 	line "What a hot battle!"
 	
 	para "I'm sweating like"
-	line "a pig, now!"
+	line "a pig now!"
 	
 	para "That was just what"
 	line "I needed!"
@@ -517,7 +517,7 @@ Route10NPCText4:
 	
 Route10NPCText5:
 	text "<PLAYER> handed"
-	line "over SAFTEYGOGGLE."
+	line "over SAFETYGOGGLE."
 	done
 	
 Route10NPCText6:

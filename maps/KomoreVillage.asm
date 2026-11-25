@@ -143,7 +143,7 @@ KomoreTeaMasterSignText3:
 	
 	para "Upon further"
 	line "inspection, the"
-	cont "word “BREWER ” is"
+	cont "word “BREWER” is"
 	cont "at the end in"
 	cont "small letters."
 	done

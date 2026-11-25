@@ -42,7 +42,7 @@ TrainerNettBuilding3F_1:
 	line "grubby fingers all"
 	cont "on the computers!"
 	
-	para "Ok?"
+	para "OK?"
 	done
 
 .SeenText:
@@ -51,13 +51,13 @@ TrainerNettBuilding3F_1:
 	para "Don't touch"
 	line "anything!"
 	
-	para "Ok?"
+	para "OK?"
 	done
 
 .BeatenText:
 	text "You got me."
 	
-	para "Ok?"
+	para "OK?"
 	done
 	
 TrainerNettBuilding3F_2:

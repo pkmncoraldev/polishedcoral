@@ -53,7 +53,7 @@ Route20Trainer1:
 	done
 
 .SeenText:
-	text "Caught a wiff of"
+	text "Caught a whiff of"
 	line "something sweet?"
 	
 	para "Very keen nose!"
@@ -78,11 +78,12 @@ Route20Trainer2:
 	line "GRASS-type #MON"
 	cont "for school."
 	
-	para "They're facinating!"
+	para "They're"
+	line "fascinating!"
 	done
 
 .BeatenText:
-	text "Facinating!"
+	text "Fascinating!"
 	done
 	
 Route20SunflowerText:

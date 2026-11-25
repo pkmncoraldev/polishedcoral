@@ -248,7 +248,7 @@ ShimmerLabResearchRoomProfText4:
 	para "If you'd continue"
 	line "to assist us, it"
 	cont "would be most"
-	cont "appreicated!"
+	cont "appreciated!"
 	done
 	
 ShimmerLabResearchRoomProfText5:

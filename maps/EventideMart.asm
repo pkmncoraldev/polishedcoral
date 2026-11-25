@@ -43,7 +43,7 @@ EventideMartNPC1Text:
 	done
 	
 EventideMartNPC2Text:
-	text "MOO MOO MILK is"
+	text "MOOMOO MILK is"
 	line "much better for"
 	cont "your #MON than"
 	cont "the POTIONs they"

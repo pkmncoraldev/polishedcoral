@@ -95,7 +95,7 @@ SunsetLighthouseSign:
 TrainerSunsetCape:
 	generictrainer SWIMMERF, BECKY, EVENT_BEAT_SUNSET_CAPE_TRAINER, .SeenText, .BeatenText
 	
-	text "Well, It WAS <WAIT_S>nice"
+	text "Well, it WAS <WAIT_S>nice"
 	line "and secluded…"
 	done
 
@@ -117,7 +117,7 @@ SunsetCapeNpc1Text:
 	cont "at this very"
 	cont "spot."
 	
-	para "I come here every-"
+	para "I come here every"
 	line "day with my RAICHU"
 	cont "to watch the"
 	cont "sunrise."

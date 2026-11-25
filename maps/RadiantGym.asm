@@ -183,7 +183,7 @@ RadiantGymLeilaniTextBeforeBattle2:
 	done
 	
 RadiantGymLeilaniTextAfterBattle:
-	text "That badge will"
+	text "That BADGE will"
 	line "let you use the"
 	cont "move STRENGTH"
 	cont "outside of battle."
@@ -280,7 +280,7 @@ RadiantGymRose:
 	text "The challenger is"
 	line "you?"
 	
-	para "Ok, <WAIT_S>I won't go"
+	para "OK, <WAIT_S>I won't go"
 	line "easy on you!"
 	done
 
@@ -444,7 +444,7 @@ RadiantGymGuyText2:
 	line "sweet, little old"
 	cont "lady what's what."
 	
-	para "Six badges down!"
+	para "Six BADGES down!"
 	
 	para "You're getting"
 	line "there!"

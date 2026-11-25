@@ -62,7 +62,7 @@ TrainerRoute14_2:
 	text "Just get outta"
 	line "here, kid."
 	
-	para "Before I push ya'"
+	para "Before I push ya"
 	line "in the water!"
 	done
 
@@ -159,7 +159,7 @@ TrainerRoute14_6:
 	done
 
 .BeatenText:
-	text "Ok…<WAIT_M>"
+	text "OK…<WAIT_M>"
 	line "That's enough…"
 	done
 	

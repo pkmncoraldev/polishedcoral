@@ -285,7 +285,7 @@ ObscuraMuseumArcheopsFossilText:
 	line "fierce hunter."
 	
 	para "Despite its large"
-	line "wing plummage,"
+	line "wing plumage,"
 	cont "it was far more"
 	cont "adept at running"
 	cont "than flying."
@@ -427,7 +427,7 @@ ObscuraMuseum1FNPC10:
 
 ObscuraMuseum1FNPC1Text1:
 	text "Thank goodness"
-	line "all the commontion"
+	line "all the commotion"
 	cont "is over."
 	
 	para "Now I can go back"
@@ -628,7 +628,7 @@ ObscuraMuseum1FRockyText1:
 	
 	para "You think you can"
 	line "just come in here"
-	cont "and run amuck?"
+	cont "and run amok?"
 	
 	para "That's not gonna"
 	line "happen!"

@@ -249,7 +249,7 @@ StarglowCavern1FNPC2:
 StarglowCavern_DisguiseMan1Text1:
 	text "Ohohohoho!"
 	
-	para "Appearing right,"
+	para "Appearing right"
 	line "before your eyes!"
 	
 	para "'Tis I, the MASTER"
@@ -269,7 +269,7 @@ StarglowCavern_DisguiseMan1Text2:
 	para "you could've passed"
 	line "without a care."
 	
-	para "He's not a TRAINER"
+	para "He's not a TRAINER,"
 	line "can't you see?"
 	
 	para "I cannot say the"
@@ -292,7 +292,7 @@ StarglowCavern_DisguiseMan1Text3_boy:
 	text "A TRAINER strong,"
 	line "and handsome, too."
 	
-	para "It seem's that I"
+	para "It seems that I"
 	line "have lost to you."
 	
 	para "Someday I'll cut"
@@ -306,7 +306,7 @@ StarglowCavern_DisguiseMan1Text3_girl:
 	text "A TRAINER strong,"
 	line "and pretty, too."
 	
-	para "It seem's that I"
+	para "It seems that I"
 	line "have lost to you."
 	
 	para "Someday I'll cut"
@@ -321,7 +321,7 @@ StarglowCavern_DisguiseMan1Text4:
 	done
 	
 StarglowCavern_DisguiseMan1Text5:
-	text "Appearing right,"
+	text "Appearing right"
 	line "before your eyes!"
 	
 	para "'Tis I, the MASTER"

@@ -480,7 +480,7 @@ TrainCabin2NPC2AfterBattleTextGirl:
 	done
 
 TrainCabin2NPC2SaidNoText:
-	text "That's ok I"
+	text "That's OK I"
 	line "guess…"
 	done
 
@@ -628,7 +628,7 @@ TrainCabin2NPC7Text2:
 	done
 	
 TrainCabin2NPC7StartBattleText:
-	text "Ok!"
+	text "OK!"
 	
 	para "Let's go, TIA!"
 	done

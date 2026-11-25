@@ -190,7 +190,7 @@ TrainerEventide_5:
 .SeenText:
 	text "They say these"
 	line "woods are haunted"
-	cont "by the a ghost."
+	cont "by a ghost."
 	
 	para "It sneaks up on"
 	line "unsuspecting young"
@@ -207,7 +207,7 @@ TrainerEventide_6:
 	generictrainer BUG_CATCHER, TURK, EVENT_BEAT_EVENTIDE_TRAINER_6, .SeenText, .BeatenText
 
 	text "There's some crazy"
-	line "cool BUG-TYPEs"
+	line "cool BUG-types"
 	cont "around here."
 	done
 
@@ -215,7 +215,7 @@ TrainerEventide_6:
 	text "Check out my cool"
 	line "#MON!"
 	
-	para "BUG-TYPEs are the"
+	para "BUG-types are the"
 	line "best!"
 	done
 	

@@ -506,8 +506,8 @@ CloudNineDescription:
 	next1 "of weather. @"
 
 CompoundEyesDescription:
-	db    "Boosts the Poké-"
-	next1 "mon's accuracy.@"
+	db    "Boosts the #-"
+	next1 "MON's accuracy.@"
 
 InsomniaDescription:
 VitalSpiritDescription:
@@ -524,7 +524,7 @@ FlashFireDescription:
 
 ShieldDustDescription:
 	db    "Blocks additional"
-	next1 "ATTACK effects.@"
+	next1 "attack effects.@"
 
 OwnTempoDescription:
 	db    "Prevents it from"
@@ -580,11 +580,11 @@ ChlorophyllDescription:
 
 IlluminateDescription:
 	db    "Raises the rate"
-	next1 "of wild Pokémon.@"
+	next1 "of wild #MON.@"
 
 TraceDescription:
 	db    "Copies the foe's"
-	next1 "Ability.@"
+	next1 "ABILITY.@"
 
 HugePowerDescription:
 	db    "Boosts its ATTACK"
@@ -640,7 +640,7 @@ FlameBodyDescription:
 
 RunAwayDescription:
 	db    "Sure getaway from"
-	next1 "wild Pokémon.@"
+	next1 "wild #MON.@"
 
 KeenEyeDescription:
 	db    "Prevents foes from"
@@ -651,7 +651,7 @@ HyperCutterDescription:
 	next1 "lowering ATTACK.@"
 
 PickupDescription:
-	db    "The Pokémon may"
+	db    "The #MON may"
 	next1 "pick up items.@"
 
 HustleDescription:
@@ -861,7 +861,7 @@ SheerForceDescription:
 
 UnnerveDescription:
 	db    "Prevents foes from"
-	next1 "eating Berries.@"
+	next1 "eating BERRIES.@"
 
 DefiantDescription:
 	db    "Boosts ATTACK when"
@@ -873,7 +873,7 @@ CursedBodyDescription:
 
 WeakArmorDescription:
 	db    "Physical ATTACKs"
-	next1 "trade Def for Spd.@"
+	next1 "trade DEF for SPD.@"
 
 MultiscaleDescription:
 	db    "Reduces damage"
@@ -1010,7 +1010,7 @@ DisguiseDescription:
 	
 FlowerGiftDescription:
 	db    "Boosts ATK and"
-	next1 "SP.DEF in sun.@"
+	next1 "SPCL.DEF in sun.@"
 	
 TriageDescription:
 	db    "Healing moves"

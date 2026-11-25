@@ -415,7 +415,7 @@ FlickerTrainStationClerkText11:
 	
 	para "You again?"
 	
-	para "Well tough luck,"
+	para "Well, tough luck,"
 	line "twerp."
 	
 	para "Your last ticket"
@@ -483,7 +483,7 @@ FlickerTrainStationNPC2Text2:
 	done
 	
 FlickerTrainStationNPC2Text3:
-	text "Sorry MOMMY…"
+	text "Sorry, MOMMY…"
 	done
 	
 FlickerTrainStationNPC3Text:

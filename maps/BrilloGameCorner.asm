@@ -365,7 +365,7 @@ BrilloGameCornerMoogooMankeyTextWin:
 	done
 	
 BrilloGameCornerMoogooMankeyTextTie:
-	text "Oh you tied!"
+	text "Oh, you tied!"
 	
 	para "You get your COINs"
 	line "back!"

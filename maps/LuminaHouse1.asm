@@ -90,13 +90,13 @@ LuminaHouse1NPCGirl:
 	end
 	
 LuminaHouse1NPCText1:
-	text "Oh, RAPLHIE!"
+	text "Oh, RALPHIE!"
 	
 	para "You came to visit"
 	line "GRANDMA."
 	
 	para "You are a good"
-	line "boy, RAPLHIE."
+	line "boy, RALPHIE."
 	
 	para "Here, have some"
 	line "pocket money."
@@ -109,7 +109,7 @@ LuminaHouse1NPCText2:
 	cont "crackerjacks."
 	
 	para "Come visit again"
-	line "tomorrow, RAPLHIE."
+	line "tomorrow, RALPHIE."
 	
 	para "GRANDMA will give"
 	line "you some more"
@@ -118,7 +118,7 @@ LuminaHouse1NPCText2:
 	
 LuminaHouse1NPCTextDone:
 	text "Come visit again"
-	line "tomorrow, RAPLHIE."
+	line "tomorrow, RALPHIE."
 	
 	para "GRANDMA will give"
 	line "you some more"
@@ -127,7 +127,7 @@ LuminaHouse1NPCTextDone:
 	
 LuminaHouse1NPCTextNoRoom:
 	text "Your pockets are"
-	line "too full, RAPLHIE!"
+	line "too full, RALPHIE!"
 	
 	para "Make some room for"
 	line "GRANDMA's gift."

@@ -164,7 +164,7 @@ Route22TunnelTrainer1:
 	
 	para "Just a bunch of"
 	line "hooligans and"
-	cont "ner'er-do-wells."
+	cont "ne'er-do-wells."
 	
 	para "My people!"
 	
@@ -226,7 +226,7 @@ Route22TunnelTrainer3:
 Route22TunnelTrainer4:
 	generictrainer CUEBALL, CURLY, EVENT_BEAT_ROUTE_22_TUNNEL_TRAINER_4, Route22TunnelTrainer4SeenText, Route22TunnelTrainer4BeatenText
 
-	text "Alright! <WAIT_S>alright!"
+	text "Alright, <WAIT_S>alright!"
 	
 	para "You win, just"
 	line "leave me alone!"

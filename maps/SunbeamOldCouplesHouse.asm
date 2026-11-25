@@ -223,8 +223,8 @@ SunbeamIslandHouse1NPC2Text1:
 	cont "to train as their"
 	cont "starter #MON."
 	
-	para "If show me one of"
-	line "them, I'll give you"
+	para "Show me one, and"
+	line "I'll give you"
 	cont "something good!"
 	done
 	

@@ -289,7 +289,7 @@ Route5Gate1FNPC3Text:
 	done
 	
 Route5Gate1FNPC4Text1:
-	text "Oh hi!"
+	text "Oh, hi!"
 	
 	para "Are you trying to"
 	line "use the ATM?"
@@ -306,7 +306,7 @@ Route5Gate1FNPC4Text2:
 	done
 	
 Route5Gate1FNPC4Text3:
-	text "Ok then!"
+	text "OK, then!"
 	
 	para "You'd better keep"
 	line "your word!"

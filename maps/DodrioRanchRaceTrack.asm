@@ -576,7 +576,7 @@ RanchRideRaceText1:
 	
 	para "Want to test your"
 	line "riding skills with"
-	cont "with a TIME TRIAL?"
+	cont "a TIME TRIAL?"
 	
 	para "You could even win"
 	line "a prize!"
@@ -713,7 +713,7 @@ RanchRideRaceText12:
 	
 	para "Want to test your"
 	line "riding skills with"
-	cont "with a TIME TRIAL?"
+	cont "a TIME TRIAL?"
 	
 	para "You could even win"
 	line "a prize!"
@@ -830,7 +830,7 @@ RanchRideReturnGirlText2:
 	done
 	
 RanchRideReturnGirlText3:
-	text "Ok!"
+	text "OK!"
 	
 	para "Just let me know"
 	line "when you're ready."

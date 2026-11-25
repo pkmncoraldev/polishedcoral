@@ -354,7 +354,7 @@ SunsetLighthouseTopFridgeText:
 	text "Let's see what's"
 	line "in the fridge…"
 	
-	para "…<WAIT_L>Wow it's fully"
+	para "…<WAIT_L>Wow, it's fully"
 	line "stocked!"
 	done
 	
@@ -413,7 +413,7 @@ SunsetLighthouseTopAmpharosTextFull:
 	cont "hand."
 	
 	para "It offers it to"
-	line "to you."
+	line "you."
 	done
 	
 SunsetLighthouseTopAmpharosTextNo:
@@ -423,7 +423,7 @@ SunsetLighthouseTopAmpharosTextNo:
 	
 SunsetLighthouseTopAmpharosTextNotInterested:
 	text "It doesn't seem"
-	line "intereseted in"
+	line "interested in"
 	cont "the @"
 	text_from_ram wMonOrItemNameBuffer
 	text "."
@@ -447,7 +447,7 @@ SunsetLighthouseTopTVText:
 	line "old cartoon."
 	
 	para "A PERSIAN is"
-	line "chasing a RATATTA"
+	line "chasing a RATTATA"
 	cont "with a frying pan."
 	done
 	

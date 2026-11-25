@@ -977,8 +977,8 @@ FightingDojoMasterTestofMindPassedText2:
 	cont "themselves."
 	
 	para "This raises both"
-	line "their SPCL. ATK"
-	cont "and SPCL DEF."
+	line "their SPCL.ATK"
+	cont "and SPCL.DEF."
 	
 	para "…"
 	done
@@ -1023,7 +1023,7 @@ FightingDojoMasterTestofBodyPassedText:
 FightingDojoMasterTestofBodyPassedText2:
 	text "BULK UP allows the"
 	line "user to hone their"
-	cont "body's muscle."
+	cont "body's muscles."
 	
 	para "This raises both"
 	line "their ATTACK and"
@@ -1068,7 +1068,7 @@ FightingDojoMasterTestsTapeText2:
 	done
 	
 FightingDojoMasterTestsTapeText3:
-	text "<PLAYER> recieved"
+	text "<PLAYER> received"
 	line "AUDIO CASSETTE 61!"
 	done
 	
@@ -1081,7 +1081,7 @@ FightingDojoMasterTestsTapeText4:
 	
 FightingDojoMasterTestsTapeText5:
 	text "<PLAYER> put the"
-	line "cassette in the"
+	line "CASSETTE in the"
 	cont "TAPE PLAYER."
 	done
 	

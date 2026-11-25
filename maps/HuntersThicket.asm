@@ -117,7 +117,7 @@ HuntersThicketCutMan:
 HuntersThicketCutManText:
 	text "You make sure to"
 	line "take good care of"
-	cont "that HM, ok?"
+	cont "that HM, OK?"
 	done
 	
 HuntersThicketCutManText2:
@@ -817,7 +817,7 @@ TrainerHunters_6:
 	done
 
 .SeenText:
-	text "The woods makes"
+	text "The woods make"
 	line "for excellent"
 	cont "training!"
 	

@@ -349,7 +349,7 @@ CoinVendor_WelcomeText2:
 	
 	para "Say the password"
 	line "to the guy up"
-	cont "front to exhange"
+	cont "front to exchange"
 	cont "'em for prizes."
 	
 	para "Come talk to me"
@@ -376,7 +376,7 @@ CoinVendor_Buy50CoinsText:
 	
 	para "Say the password"
 	line "to the guy up"
-	cont "front to exhange"
+	cont "front to exchange"
 	cont "'em for prizes."
 	done
 
@@ -387,7 +387,7 @@ CoinVendor_Buy500CoinsText:
 	
 	para "Say the password"
 	line "to the guy up"
-	cont "front to exhange"
+	cont "front to exchange"
 	cont "'em for prizes."
 	done
 
@@ -398,7 +398,7 @@ CoinVendor_NotEnoughMoneyText:
 
 CoinVendor_CoinCaseFullText:
 	text "You can't hold"
-	line "anymore COINs."
+	line "any more COINs."
 	done
 
 CoinVendor_CancelText:

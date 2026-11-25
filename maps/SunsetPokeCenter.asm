@@ -36,7 +36,7 @@ SunsetPokeCenterFairyGirl:
 
 SunsetPokeCenterSunsetPokeCenterYounginText:
 	text "I want to be a"
-	line "#MON trainer,"
+	line "#MON TRAINER,"
 	cont "but my mom says"
 	cont "we don't need a"
 	cont "#MON."

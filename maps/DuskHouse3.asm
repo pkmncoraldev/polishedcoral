@@ -27,8 +27,8 @@ DuskHouse3NPC1Text:
 	cont "to live."
 	
 	para "Then that MOOMOO's"
-	line "starting drawing"
-	cont "in a bad crowd…"
+	line "started drawing in"
+	cont "a bad crowd…"
 	
 	para "Now it's noisy,"
 	line "smelly, and"

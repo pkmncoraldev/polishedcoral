@@ -105,7 +105,7 @@ ObscuraMuseumResearchNPCText5:
 	cont "VOLCARONA can't use"
 	cont "FIRE-type attacks."
 	
-	para "It's moves will"
+	para "Its moves will"
 	line "surely change!"
 	
 	para "Is all of that"
@@ -124,7 +124,7 @@ ObscuraMuseumResearchNPCText7:
 	para "This is a big"
 	line "breakthrough!"
 	
-	para "But, we can always"
+	para "But we can always"
 	line "use more data."
 	
 	para "Come back if you"

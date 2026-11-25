@@ -66,7 +66,7 @@ GlintGroveUndergroundTrainer1:
 	cont "be in a rush."
 	
 	para "I hope it was"
-	line "ok!"
+	line "OK!"
 	done
 
 .SeenText:

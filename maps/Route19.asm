@@ -208,7 +208,7 @@ Route19Trainer5:
 Route19Trainer6:
 	generictrainer GENTLEMAN, ELWARD, EVENT_BEAT_ROUTE_19_TRAINER_6, .SeenText, .BeatenText
 
-	text "“MOOMOO'S” it's"
+	text "“MOOMOO'S,” it's"
 	line "called."
 	
 	para "Never in all of"

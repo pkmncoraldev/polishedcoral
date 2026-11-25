@@ -681,7 +681,7 @@ SkateparkTMNPCText6:
 	cont "by doing GRIND"
 	cont "TURNs."
 	
-	para "If you keeping"
+	para "If you keep"
 	line "hitting the same"
 	cont "line, you'll earn"
 	cont "less points."
@@ -756,7 +756,7 @@ SkateparkTMNPCText10:
 	done
 	
 SkateparkTMNPCText11:
-	text "A tie huh?"
+	text "A tie, huh?"
 	
 	para "You're good, but"
 	line "not good enough."

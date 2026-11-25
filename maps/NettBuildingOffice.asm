@@ -494,9 +494,9 @@ NettBuildingOfficeNettText11:
 	
 	para "He sought to make"
 	line "these things in"
-	cont "the hope that they"
-	cont "help foster that"
-	cont "relationship."
+	cont "the hope that"
+	cont "they'd help foster"
+	cont "that relationship."
 	
 	para "Since he passed"
 	line "the torch to me,"
@@ -561,7 +561,7 @@ NettBuildingOfficeNettText8:
 	cont "let you on, no"
 	cont "questions asked."
 	
-	para "Now if you'll"
+	para "Now, if you'll"
 	line "excuse me, I have"
 	cont "some business to"
 	cont "attend to."

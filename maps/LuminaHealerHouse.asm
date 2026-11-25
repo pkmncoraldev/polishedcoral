@@ -422,7 +422,7 @@ LuminaHealerHouseNPC1Text2:
 	line "SERPSPARILLA!"
 	
 	para "Like serpent and"
-	line "sarsparilla!"
+	line "sarsaparilla!"
 	
 	para "That's…<WAIT_L> kinda"
 	line "dumb…"

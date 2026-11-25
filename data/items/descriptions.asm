@@ -548,7 +548,7 @@ PokeDollDesc:
 
 AbilityCapDesc:
 	db   "Switches a"
-	next "#MON's ability.@"
+	next "#MON's ABILITY.@"
 
 LeafStoneDesc:
 FireStoneDesc:
@@ -1051,8 +1051,8 @@ SweetHoneyDesc:
 	next "boost healing.@"
 
 EvioliteDesc:
-	db   "Ups DEF and SPCL."
-	next "DEF of evolvers.@"
+	db   "Ups DEF & SPCL.DEF"
+	next "of evolvers.@"
 
 MuscleBandDesc:
 	db   "Powers up physical"
@@ -1376,7 +1376,7 @@ JigglypuffPosterDesc:
 	next "JIGGLYPUFF design.@"
 	
 EeveePosterDesc:
-	db   "A poster with as"
+	db   "A poster with an"
 	next "EEVEE design.@"
 	
 MarillPosterDesc:

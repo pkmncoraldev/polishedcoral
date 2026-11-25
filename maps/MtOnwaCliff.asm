@@ -310,7 +310,7 @@ MtOnwaMinaText8:
 	done
 
 MtOnwaMinaText9:
-	text "Ok!"
+	text "OK!"
 	
 	para "Let's do it!"
 	done

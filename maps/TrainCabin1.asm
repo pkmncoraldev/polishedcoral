@@ -149,7 +149,7 @@ TrainCabin1Snare1:
 TrainCabin1Snare2:
 	generictrainer GRUNTM, TRAIN_GRUNTM_3, EVENT_BEAT_TRAIN_CABIN_1_SNARE_2, .SeenText, .BeatenText
 
-	text "Ok. <WAIT_S>Ok."
+	text "OK. <WAIT_S>OK."
 	
 	para "I really wish you"
 	line "just sat down like"
@@ -798,7 +798,7 @@ TrainCabin1NPC4Text1:
 	done
 	
 TrainCabin1NPC4Text2:
-	text "Oh come on."
+	text "Oh, come on."
 	
 	para "Now I'm going to be"
 	line "late to work…"

@@ -29,7 +29,7 @@ TrainerNettBuilding6F_1:
 
 	text "TEAM SNARE's goal?"
 	
-	para "To cause waton"
+	para "To cause wanton"
 	line "mayhem of course!"
 	done
 
@@ -42,7 +42,7 @@ TrainerNettBuilding6F_1:
 	done
 
 .BeatenText:
-	text "Ok, I'll tell you."
+	text "OK, I'll tell you."
 	done
 	
 NettBuilding6FTeleporter1:

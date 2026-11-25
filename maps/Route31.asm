@@ -116,7 +116,7 @@ Route31Trainer4:
 	line "You got me."
 	
 	para "I'll cut the"
-	line "helpless damsal"
+	line "helpless damsel"
 	cont "act."
 	done
 

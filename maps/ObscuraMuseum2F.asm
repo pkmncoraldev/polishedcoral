@@ -369,7 +369,7 @@ ObscuraMuseum2FPhotoLadyText3:
 	text "Perfect!"
 	line "You look great!"
 	
-	para "Ok, say…<WAIT_L>"
+	para "OK, say…<WAIT_L>"
 	line "SQUIRTBOTTLE!"
 	done
 	

@@ -385,8 +385,8 @@ EventideVillageMilkGirlTextNoRoom:
 	para "It looks like your"
 	line "PACK is full…"
 	
-	para "Come back when you've"
-	line "made some room."
+	para "Come back after"
+	line "making some room."
 	done
 	
 EventideVillageMilkGirlTextNo:

@@ -121,7 +121,7 @@ RanchHouseDodrioGirlText4:
 	
 	para "Sorry, sugar."
 	
-	para "Seems like your a"
+	para "Seems like you're a"
 	line "little short on"
 	cont "funds…"
 	

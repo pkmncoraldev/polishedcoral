@@ -415,8 +415,8 @@ Route6SouthMinaSceneText8_1:
 	cont "huh?"
 	
 	para "I mean you could"
-	line "at least cracked"
-	cont "a smile…"
+	line "have at least"
+	cont "cracked a smile…"
 	done
 	
 Route6SouthMinaSceneText8_2:

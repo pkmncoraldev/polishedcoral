@@ -371,7 +371,7 @@ BrilloPoliceStationPrisoner3Text:
 
 BrilloPoliceStationPrisoner4Text:
 	text "I ain't tellin' no"
-	line "cop nothing'!"
+	line "cop nothin'!"
 	
 	para "You hear me?"
 	
@@ -462,7 +462,7 @@ BrilloPoliceStationCaptainText3:
 	
 	para "I'll help you out."
 	
-	para "But only If you do"
+	para "But only if you do"
 	line "something for me."
 	done
 	
@@ -657,7 +657,7 @@ BrilloPoliceStationCop1Text2:
 	done
 
 BrilloPoliceStationCop2Text1:
-	text "Man we are all"
+	text "Man, we're all"
 	line "gonna get it if we"
 	cont "can't figure this"
 	cont "out soon…"

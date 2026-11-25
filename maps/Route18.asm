@@ -63,7 +63,7 @@ TrainerRoute18_1:
 	done
 
 .BeatenText:
-	text "Ok fine!"
+	text "OK fine!"
 	
 	para "Take my money"
 	line "instead…"
@@ -196,7 +196,7 @@ Route18_DisguiseMan1Text2:
 	para "even though I'd"
 	line "blown my cover."
 	
-	para "Are your just a"
+	para "Are you just a"
 	line "battle lover?"
 	
 	para "Well, without"

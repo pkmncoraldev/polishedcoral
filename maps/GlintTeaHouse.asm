@@ -104,7 +104,7 @@ GlintTeaHouseTeaLadyText2:
 	done
 	
 GlintTeaHouseTeaLadyText3:
-	text "Alright sweetie!"
+	text "Alright, sweetie!"
 	
 	para "Coming right up!"
 	done

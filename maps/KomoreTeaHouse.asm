@@ -218,7 +218,7 @@ KomoreTeaHouseMasterText1_3:
 	cont "drinks that will"
 	cont "surely help you."
 	
-	para "I mean seriously,"
+	para "I mean, seriously,"
 	line "you want this tea,"
 	cont "young one."
 	

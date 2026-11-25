@@ -70,7 +70,7 @@ DaybreakVillageSignText:
 	text "DAYBREAK VILLAGE"
 	
 	para "A village of new"
-	line "beginings."
+	line "beginnings."
 	done
 	
 DaybreakTrainerSchoolSignText:

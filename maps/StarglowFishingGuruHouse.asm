@@ -50,7 +50,7 @@ StarglowHouse4FishingGuruText1:
 	line "FISHING GURU!"
 	
 	para "I'm sure my reputa-"
-	line "tion preceeds me."
+	line "tion precedes me."
 	
 	para "…"
 	

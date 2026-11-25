@@ -30,7 +30,7 @@ Route23Trigger0:
 	end
 	
 Route23Sign:
-	text "ROUTE 32"
+	text "ROUTE 23"
 	
 	para "SOUTH:"
 	line "CROSSROADS"

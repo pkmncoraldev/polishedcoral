@@ -95,5 +95,5 @@ EventideBikeShopOwnerNpcText:
 	cont "come home."
 	
 	para "Oh, I hope he's"
-	line "ok…"
+	line "OK…"
 	done

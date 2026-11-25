@@ -68,7 +68,7 @@ LusterSkyscraper_4F_NPC1Text:
 ;	done
 	
 LusterSkyscraper_4F_NPC3Text:
-	text "Man I'm so tired"
+	text "Man, I'm so tired"
 	line "of this job."
 	
 	para "I wanna quit and"

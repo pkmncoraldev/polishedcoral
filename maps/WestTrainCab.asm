@@ -189,7 +189,7 @@ WestTrainCabLocke:
 WestTrainCabEngineerText1:
 	text "Pssst…"
 	
-	para "Hey kid!"
+	para "Hey, kid!"
 	
 	para "Keep your voice"
 	line "down!"
@@ -256,7 +256,7 @@ WestTrainCabEngineerText5:
 	done
 	
 WestTrainCabEngineerText6:
-	text "Hey kid."
+	text "Hey, kid."
 	
 	para "Why don't we keep"
 	line "this between you"
@@ -355,8 +355,8 @@ WestTrainCabLockeText4:
 WestTrainCabLockeText5:
 	text "Ding<WAIT_S>-dong!"
 	
-	para "Attention TEAM"
-	line "SNARE!"
+	para "Attention,"
+	line "TEAM SNARE!"
 	
 	para "This is LOCKE."
 	

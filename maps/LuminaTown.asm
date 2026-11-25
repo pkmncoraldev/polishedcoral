@@ -142,7 +142,7 @@ LuminaTownNPCText1_boy:
 	line "boy, and now you."
 	
 	para "What's the"
-	line "occassion?"
+	line "occasion?"
 	done
 	
 LuminaTownNPCText1_girl:
@@ -155,7 +155,7 @@ LuminaTownNPCText1_girl:
 	line "and now you."
 	
 	para "What's the"
-	line "occassion?"
+	line "occasion?"
 	done
 	
 LuminaTownNPC1:
@@ -312,7 +312,7 @@ LuminaTownBigStatueLegendText2:
 	line "dragon's…"
 	
 	para "…climbed high up"
-	line "the mountia…"
+	line "the mountai…"
 	
 	para "…and tore its"
 	line "flesh…"

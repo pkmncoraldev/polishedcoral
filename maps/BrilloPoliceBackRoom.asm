@@ -279,7 +279,7 @@ BrilloPoliceBackRoomCaptainText4:
 	text "What is happening"
 	line "right now?"
 	
-	para "You've embarassed"
+	para "You've embarrassed"
 	line "our entire police"
 	cont "force!"
 	
@@ -309,7 +309,7 @@ BrilloPoliceBackRoomCaptainText5:
 	
 	para "…"
 	
-	para "Yeah, ok."
+	para "Yeah, OK."
 	done
 	
 BrilloPoliceBackRoomCaptainText6:

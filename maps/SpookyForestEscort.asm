@@ -121,7 +121,7 @@ SpookyForestEscortLostKidText1:
 	done
 
 SpookyForestEscortLostKidText2:
-	text "Thanks big kid!"
+	text "Thanks, big kid!"
 	done
 
 SpookyForestEscortLostKidText3:

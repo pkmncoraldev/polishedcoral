@@ -431,7 +431,7 @@ Route31MinaText13:
 	done
 	
 Route31MinaText14:
-	text "…Or was is green?"
+	text "…Or was it green?"
 	line "Yeah! It was!<WAIT_S>"
 	done
 	
@@ -530,7 +530,7 @@ Route31MinaText25:
 	para "No luck, though!"
 	
 	para "Anyway, I've been"
-	line "laying around for"
+	line "lying around for"
 	cont "long enough."
 	
 	para "I'll be on my way"

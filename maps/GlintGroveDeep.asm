@@ -260,8 +260,7 @@ GlintGroveDeepMinaText7:
 	line "found my spark if"
 	cont "it weren't for you."
 	
-	para "So, uhh…<WAIT_M>"
-	line "Take this thanks!"
+	para "So, uhh…<WAIT_M> Here!"
 	done
 	
 GlintGroveDeepMinaText8:
@@ -285,7 +284,7 @@ GlintGroveDeepMinaText8:
 	
 	para "…"
 	
-	para "Anyway, <WAIT_S>I better"
+	para "Anyway, <WAIT_S>I'd better"
 	line "be going."
 	
 	para "I'm sure we'll"

@@ -549,8 +549,7 @@ StarglowFisher2Text:
 	
 	para "and none of them"
 	line "are as good as"
-	cont "as STARGLOW"
-	cont "VALLEY."
+	cont "STARGLOW VALLEY."
 	done
 	
 StarglowFisher3Text:

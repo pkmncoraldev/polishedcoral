@@ -91,7 +91,7 @@ LusterSpamBuilding_2FWrongRoom:
 	
 LusterSpamBuildingWrongRoomText:
 	text "Hey!<WAIT_S> You shouldn't"
-	line "in be here!"
+	line "be in here!"
 	
 	para "SECURITY!"
 	done

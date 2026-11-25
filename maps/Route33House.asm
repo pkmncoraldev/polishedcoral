@@ -483,7 +483,7 @@ Route33HouseNPCArticunoText3:
 	done
 
 Route33HouseNPCTapeText1:
-	text "<PLAYER> recieved"
+	text "<PLAYER> received"
 	line "AUDIO CASSETTE 72!"
 	done
 	
@@ -496,7 +496,7 @@ Route33HouseNPCTapeText2:
 	
 Route33HouseNPCTapeText3:
 	text "<PLAYER> put the"
-	line "cassette in the"
+	line "CASSETTE in the"
 	cont "TAPE PLAYER."
 	done
 	

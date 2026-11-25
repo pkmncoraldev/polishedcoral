@@ -25,7 +25,7 @@ LusterApartment2_1F_NPC:
 	
 LusterApartment2_1F_NPCText1:
 	text "Living alone is"
-	line "ok, but I wouldn't"
+	line "OK, but I wouldn't"
 	cont "mind a roommate."
 	
 	para "Maybe a cute girl…"

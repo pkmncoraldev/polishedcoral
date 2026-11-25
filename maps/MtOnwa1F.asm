@@ -160,7 +160,7 @@ TrainerMtOnwa_6:
 	done
 
 .SeenText:
-	text "My POKEMON is"
+	text "My #MON is"
 	line "always hungry."
 	
 	para "Like TRAINER, like"
@@ -175,7 +175,7 @@ TrainerMtOnwa_6:
 TrainerMtOnwa_7:
 	generictrainer POKEMANIAC, PAUL, EVENT_BEAT_MT_ONWA_1F_TRAINER_7, .SeenText, .BeatenText
 
-	text "Ok you win…"
+	text "OK you win…"
 	
 	para "Just go…"
 	done

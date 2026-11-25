@@ -385,7 +385,7 @@ RiverRapidsHouseLadyText9:
 	para "You got under"
 	line "45 seconds again!"
 	
-	para "Good job little,"
+	para "Good job, little"
 	line "BREEZE."
 	
 	para "Let me reward you"

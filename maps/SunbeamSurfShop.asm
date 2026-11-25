@@ -209,7 +209,7 @@ SunbeamIslandSurfShopNPC3:
 	jumptextfaceplayer SunbeamIslandSurfShopNPC3Text
 	
 SunbeamIslandSurfShopNPC1Text1:
-	text "Hey dude!"
+	text "Hey, dude!"
 	
 	para "We're looking for"
 	line "judges for the"
@@ -239,7 +239,7 @@ SunbeamIslandSurfShopNPC1Text3:
 	done
 	
 SunbeamIslandSurfShopNPC1Text4:
-	text "Hey dude!"
+	text "Hey, dude!"
 	
 	para "Today's contest is"
 	line "already over."
@@ -269,7 +269,7 @@ SunbeamIslandSurfShopNPC1Text6:
 	done
 	
 SunbeamIslandSurfShopNPC1Text7:
-	text "Hey dude!"
+	text "Hey, dude!"
 	
 	para "The contest is"
 	line "already happening."
@@ -327,7 +327,7 @@ SunbeamIslandSurfShopNPC2Text2:
 	text "Woah!<WAIT_M>"
 	line "Look at that!"
 	
-	para "Hang ten little"
+	para "Hang ten, little"
 	line "RAICHU!"
 	
 	para "Thanks for showing"
@@ -339,7 +339,7 @@ SunbeamIslandSurfShopNPC2Text2:
 	
 SunbeamIslandSurfShopNPC2Text3:
 	text "THUNDER is a real"
-	line "rightous move!"
+	line "righteous move!"
 	
 	para "It does serious"
 	line "damage, but can"

@@ -200,7 +200,7 @@ ObscuraGymRockyTextTMSpeech:
 	text "That TM contains"
 	line "STONE EDGE."
 	
-	para "It has a tendancy"
+	para "It has a tendency"
 	line "to miss,"
 	
 	para "but it does big"
@@ -257,7 +257,7 @@ ObscuraGymRockyCallText2:
 	
 	para "…"
 	
-	para "Ok, calm down,"
+	para "OK, calm down,"
 	line "DARCY."
 	
 	para "I'll let him know."
@@ -280,7 +280,7 @@ ObscuraGymRockyCallText2_girl:
 	
 	para "…"
 	
-	para "Ok, calm down,"
+	para "OK, calm down,"
 	line "DARCY."
 	
 	para "I'll let her know."
@@ -660,10 +660,10 @@ ObscuraGymClerk2Text5:
 	done
 	
 ObscuraGymClerk2Text6:
-	text "Ok!<WAIT_S> I'll move the"
+	text "OK!<WAIT_S> I'll move the"
 	line "rope."
 	
-	para "…<WAIT_L><WAIT_L>But first one"
+	para "…<WAIT_L><WAIT_L>But first, one"
 	line "more question!"
 	
 	para "Sorry, he made"
@@ -695,17 +695,17 @@ ObscuraGymClerk2Text8:
 	text "The answer is…<WAIT_L>"
 	line "ROCKFORD!"
 	
-	para "He desparately"
+	para "He desperately"
 	line "wants people to"
 	cont "call him by his"
 	cont "full name."
 	
 	para "“It's a matter of"
-	line "respect”, he says."
+	line "respect,” he says."
 	
 	para "“Don't let them"
 	line "pass unless they"
-	cont "call me ROCKFORD”."
+	cont "call me ROCKFORD.”"
 	
 	para "So that means it's"
 	line "battle time!"
@@ -1546,7 +1546,7 @@ ObscuraGymQ1Q1WrongText:
 	done
 	
 ObscuraGymQ1Q2Text:
-	text "What color is"
+	text "What color is the"
 	line "lady by the rope"
 	cont "barrier wearing?"
 	done
@@ -1556,7 +1556,7 @@ ObscuraGymQ1Q2CorrectText:
 	line "her, don't you"
 	cont "think?"
 	
-	para "Ok, last question"
+	para "OK, last question"
 	line "for this quiz:"
 	done
 	
@@ -1659,7 +1659,7 @@ ObscuraGymQ2Q2CorrectText:
 	cont "trouble keeping"
 	cont "it in stock."
 	
-	para "Ok, last question"
+	para "OK, last question"
 	line "for this quiz:"
 	done
 	
@@ -1756,7 +1756,7 @@ ObscuraGymQ3Q2CorrectText:
 	line "isn't actually"
 	cont "wood at all!"
 	
-	para "Ok, last question"
+	para "OK, last question"
 	line "for this quiz:"
 	done
 	
@@ -1856,7 +1856,7 @@ ObscuraGymQ4Q2CorrectText:
 	line "to crush rocks"
 	cont "and prey."
 	
-	para "Ok, last question"
+	para "OK, last question"
 	line "for this quiz:"
 	done
 	
@@ -1997,7 +1997,7 @@ ObscuraGymGuyText1:
 ObscuraGymGuyText2:
 	text "Way to go!"
 	
-	para "Seven badges down,"
+	para "Seven BADGES down,"
 	line "only one more to"
 	cont "go!"
 	

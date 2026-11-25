@@ -154,7 +154,7 @@ LusterGymPollyTextBeforeBattle:
 LusterGymPollyTextAfterBattle:
 	text "I've never had to"
 	line "give out that"
-	cont "badge before."
+	cont "BADGE before."
 	
 	para "It lets you use"
 	line "SURF outside of"
@@ -170,7 +170,7 @@ LusterGymPollyTextTMSpeech:
 	
 	para "It… <WAIT_S>uh…<WAIT_S> deals more"
 	line "damage if your foe"
-	cont "is POISONED."
+	cont "is poisoned."
 	
 	para "…"
 	
@@ -431,7 +431,7 @@ LusterGymGuyText1:
 LusterGymGuyText2:
 	text "Nice job!"
 	
-	para "Yet another badge"
+	para "Yet another BADGE"
 	line "in the books!"
 	
 	para "Keep it up, kid!"

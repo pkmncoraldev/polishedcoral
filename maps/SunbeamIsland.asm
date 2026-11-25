@@ -632,7 +632,7 @@ SunbeamIslandNPC1Text2:
 	text "Look at him"
 	line "snooze!"
 
-	para "Seem's like that"
+	para "Seems like that"
 	line "flute did the"
 	cont "trick!"
 	done
@@ -776,7 +776,7 @@ SunbeamSnareSleepyText:
 
 	para "…<WAIT_L>Huh!?"
 
-	para "Move along kid."
+	para "Move along, kid."
 
 	para "Nothing to see"
 	line "here!"
@@ -852,7 +852,7 @@ SunbeamFirstContestCharlieText2:
 	line "from around here,"
 	cont "are you?"
 	
-	para "That's ok, I'm not"
+	para "That's OK, I'm not"
 	line "either."
 	
 	para "I'm CHARLIE!"

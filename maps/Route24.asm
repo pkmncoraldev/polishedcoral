@@ -65,7 +65,7 @@ Route24Trainer1:
 Route24Trainer2:
 	generictrainer SCIENTIST, MARTY, EVENT_BEAT_ROUTE_24_TRAINER_2, .SeenText, .BeatenText
 
-	text "My colleage went"
+	text "My colleague went"
 	line "ahead to the"
 	cont "BONE CAVERNS."
 	
@@ -79,15 +79,15 @@ Route24Trainer2:
 .SeenText:
 	text "My colleague and I"
 	line "were tasked with"
-	cont "with researching"
-	cont "the BONE CAVERNS."
+	cont "researching the"
+	cont "BONE CAVERNS."
 	
 	para "He ran ahead"
 	line "without me!"
 	done
 
 .BeatenText:
-	text "YOU WIN"
+	text "AIIIIEEE!"
 	done
 	
 Route24Trainer3:

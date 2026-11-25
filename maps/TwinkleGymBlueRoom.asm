@@ -273,7 +273,7 @@ TwinkleGymBlueRoomLeaderWinText:
 	done
 	
 TwinkleGymBlueRoomWorker1Text:
-	text "Heya kid."
+	text "Heya, kid."
 	
 	para "Can you see me?"
 	
@@ -306,7 +306,7 @@ TwinkleGymBlueRoomWorker1Text:
 	done
 	
 TwinkleGymBlueRoomWorkerText1:
-	text "Heya kid."
+	text "Heya, kid."
 	
 	para "Let me turn the"
 	line "steam down a bit."

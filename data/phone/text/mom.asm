@@ -190,7 +190,7 @@ MomPhoneComeGetBankCardText:
 	text "Hi, sweetie!"
 	line "It's MOM!"
 	
-	para "You doing ok?"
+	para "You doing OK?"
 	
 	para "You got something"
 	line "in the mail!"
@@ -201,7 +201,7 @@ MomPhoneComeGetBankCardText:
 	
 	para "Come home and get"
 	line "it when you can,"
-	cont "ok?"
+	cont "OK?"
 	
 	para "See you soon,"
 	line "honey!"
@@ -215,7 +215,7 @@ MomPhoneComeGetBankCardText2:
 	
 	para "Come home and get"
 	line "it when you can,"
-	cont "ok?"
+	cont "OK?"
 	
 	para "See you soon,"
 	line "honey!"

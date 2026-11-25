@@ -59,7 +59,7 @@ Route3FriendshipHouseNPC:
 	jumpopenedtext FriendshipDislikeText
 	
 FriendshipIntroText:
-	text "Hello sweetie."
+	text "Hello, sweetie."
 	
 	para "Oh, your"
 	line "@"

@@ -67,7 +67,7 @@ TrainerRoute8_1:
 	
 	para "but more and more"
 	line "people hang around"
-	cont "here everyday…"
+	cont "here every day…"
 	done
 
 .SeenText:
@@ -116,7 +116,7 @@ TrainerRoute8_3:
 	done
 
 .BeatenText:
-	text "Yes you are!"
+	text "Yes, you are!"
 	done
 	
 TrainerRoute8_4:

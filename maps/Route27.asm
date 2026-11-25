@@ -26,7 +26,7 @@ Route27NPC1:
 	
 Route27NPC1Text:
 	text "I think they're"
-	line "buidling something"
+	line "building something"
 	cont "up ahead."
 	
 	para "I don't see any"
@@ -116,7 +116,7 @@ Route27Trainer3:
 	done
 
 .BeatenText:
-	text "Well you've"
+	text "Well, you've"
 	line "beaten me, at"
 	cont "least."
 	done

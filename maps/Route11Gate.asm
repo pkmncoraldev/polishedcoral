@@ -138,7 +138,7 @@ Route11NPCsText5:
 	
 	para "So suave!"
 	
-	para "A debonaire dude"
+	para "A debonair dude"
 	line "like him would"
 	cont "never have a cute,"
 	cont "girly #MON like"

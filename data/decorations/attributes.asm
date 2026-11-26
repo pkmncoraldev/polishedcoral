@@ -90,5 +90,5 @@ DecorationAttributes:
 	decoration DECO_DOLL,     SUDOWOODO,   	     SET_UP_DOLL,        EVENT_DECO_SUDOWOODO_DOLL,   	    SPRITE_MON_DOLL_1
 	decoration DECO_DOLL,     NATU,   	   		 SET_UP_DOLL,        EVENT_DECO_NATU_DOLL,   	   		SPRITE_MON_DOLL_1
 
-	decoration DECO_PLANT,    GOLD_TROPHY,       SET_UP_DOLL,        EVENT_DECO_GOLD_TROPHY,            SPRITE_N64
-	decoration DECO_PLANT,    MAGNAPLANT,     	 SET_UP_DOLL,        EVENT_DECO_SILVER_TROPHY,          SPRITE_N64
+	decoration DECO_PLANT,    GOLD_TROPHY,       SET_UP_DOLL,        EVENT_DECO_GOLD_TROPHY,            SPRITE_GOLD_TROPHY
+	decoration DECO_PLANT,    SILVER_TROPHY,   	 SET_UP_DOLL,        EVENT_DECO_SILVER_TROPHY,          SPRITE_GOLD_TROPHY

@@ -58,7 +58,7 @@ ObscuraMuseumEmployeeRoomBooksText:
 	done
 
 ObscuraMuseumEmployeeRoomAbiegail:
-	checkevent EVENT_GOT_MASTERBALL
+	checkevent EVENT_GOT_PROF_ORB
 	iftrue .got_masterball
 	checkevent EVENT_SNARE_AT_MUSEUM
 	iftrue .snare

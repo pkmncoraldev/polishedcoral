@@ -22,7 +22,7 @@ LusterApartment2_2F_MapScriptHeader:
 	person_event SPRITE_LEAVES,  3,  4, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, LusterApartment2_2F_Easel, EVENT_MINA_APARTMENT_EMPTY
 	person_event SPRITE_LEAVES,  5,  2, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, LusterApartment2_2F_Easel, EVENT_MINA_APARTMENT_EMPTY
 	person_event SPRITE_LEAVES,  2,  6, SPRITEMOVEDATA_TILE_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_SILVER, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_MINA_APARTMENT_EMPTY
-	person_event SPRITE_MINA,  6,  4, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, LusterApartment2_2F_Mina, EVENT_MINA_NOT_AT_HOME
+	person_event SPRITE_MINA,  6,  4, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, LusterApartment2_2F_Mina, -1;EVENT_MINA_NOT_AT_HOME
 
 
 LusterApartment2_2FCallback:
@@ -38,21 +38,28 @@ LusterApartment2_2FCallback:
 LusterApartment2_2F_Mina:
 	faceplayer
 	opentext TEXTBOX_MINA
-	checkevent EVENT_GOT_LUCKY_EGG
-	iftrue .already_got_lucky_egg
+	checkevent EVENT_GOT_MINA_ORB
+	iftrue .already_got_orb
 	setevent EVENT_TOURNEY_MINA
 	writetext LusterApartment2_2F_MinaText1
 	waitbutton
 	changetextboxspeaker
-	verbosegiveitem LUCKY_EGG
+	checkevent EVENT_MOLTRES_ACTIVE
+	iftrue .moltres_active
+	verbosegiveitem MOLTRES_ITEM
 	iffalse .no_room
-	setevent EVENT_GOT_LUCKY_EGG
+	jump .cont
+.moltres_active
+	verbosegiveitem ZAPDOS_ITEM
+	iffalse .no_room
+.cont
+	setevent EVENT_GOT_MINA_ORB
 	changetextboxspeaker TEXTBOX_MINA
 	writetext LusterApartment2_2F_MinaText2
 	yesorno
 	iffalse .painting_no
 	jump .do_painting
-.already_got_lucky_egg
+.already_got_orb
 	checkevent EVENT_DAILY_MINA_PAINTING_DONE
 	iftrue .done_painting_today
 	writetext LusterApartment2_2F_MinaText6
@@ -179,12 +186,14 @@ LusterApartment2_2F_MinaText1:
 	done
 	
 LusterApartment2_2F_MinaText2:
-	text "Let your #MON"
-	line "hold that, and"
-	cont "it'll earn bonus"
-	cont "experience points."
+	text "I found it during"
+	line "my travels."
 	
-	para "It's super handy!"
+	para "I don't know if it's"
+	line "worth anything,"
+	
+	para "but it sure is"
+	line "pretty!"
 	
 	para "…"
 	

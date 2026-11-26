@@ -72,7 +72,7 @@ Route33HouseNPCArticuno:
 	iffalse .done_articuno
 	writetext Route33HouseNPCArticunoText2
 	waitbutton
-	verbosegiveitem POTION	 ;TODO red item
+	verbosegiveitem ARTICUNO_ITEM
 	writetext Route33HouseNPCArticunoText3
 	setevent EVENT_PRESENTED_LEGENDARY_BIRD
 	buttonsound
@@ -112,7 +112,7 @@ Route33HouseNPCZapdos:
 	iffalse .done_zapdos
 	writetext Route33HouseNPCZapdosText2
 	waitbutton
-	verbosegiveitem SUPER_POTION	 ;TODO yellow item
+	verbosegiveitem ZAPDOS_ITEM
 	writetext Route33HouseNPCZapdosText3
 	setevent EVENT_PRESENTED_LEGENDARY_BIRD
 	buttonsound
@@ -152,7 +152,7 @@ Route33HouseNPCMoltres:
 	iffalse .done_moltres
 	writetext Route33HouseNPCMoltresText2
 	waitbutton
-	verbosegiveitem HYPER_POTION	 ;TODO red item
+	verbosegiveitem MOLTRES_ITEM
 	writetext Route33HouseNPCMoltresText3
 	setevent EVENT_PRESENTED_LEGENDARY_BIRD
 	buttonsound
@@ -318,7 +318,7 @@ Route33HouseNPCEndText:
 	
 Route33HouseNPCArticunoItemText:
 	text "…<WAIT_M>Oh!<WAIT_S> You have the"
-	line "blue item!"
+	line "BLUE ORB!"
 	
 	para "It'll let you get"
 	line "onto BOREAL ISLET"
@@ -326,7 +326,7 @@ Route33HouseNPCArticunoItemText:
 	done
 	
 Route33HouseNPCArticunoItemText2:
-	text "That blue item"
+	text "That BLUE ORB"
 	line "will let you get"
 	cont "onto BOREAL ISLET"
 	cont "to the EAST."
@@ -334,7 +334,7 @@ Route33HouseNPCArticunoItemText2:
 	
 Route33HouseNPCZapdosItemText:
 	text "…<WAIT_M>Oh!<WAIT_S> You have the"
-	line "yellow item!"
+	line "YELLOW ORB!"
 	
 	para "It'll let you get"
 	line "onto TEMPEST ISLET"
@@ -342,7 +342,7 @@ Route33HouseNPCZapdosItemText:
 	done
 	
 Route33HouseNPCZapdosItemText2:
-	text "That yellow item"
+	text "That YELLOW ORB"
 	line "will let you get"
 	cont "onto TEMPEST ISLET"
 	cont "to the SOUTH."
@@ -350,7 +350,7 @@ Route33HouseNPCZapdosItemText2:
 	
 Route33HouseNPCMoltresItemText:
 	text "…<WAIT_M>Oh!<WAIT_S> You have the"
-	line "red item!"
+	line "RED ORB!"
 	
 	para "It'll let you get"
 	line "onto EMBER ISLET"
@@ -358,7 +358,7 @@ Route33HouseNPCMoltresItemText:
 	done
 	
 Route33HouseNPCMoltresItemText2:
-	text "That red item"
+	text "That RED ORB"
 	line "will let you get"
 	cont "onto EMBER ISLET"
 	cont "to the WEST."

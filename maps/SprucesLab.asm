@@ -84,11 +84,11 @@ SpruceLabPlayedFluteForMunch::
 	
 SpruceLabSpruce:
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
-	iftrue .repeatmasterballspeech
-	checkevent EVENT_NO_ROOM_FOR_MASTER_BALL
-	iftrue .trymasterballagain
-	checkevent EVENT_SPRUCE_CAN_GET_MASTER_BALL
-	iftrue .masterballspeech
+	iftrue .repeatorbspeech
+	checkevent EVENT_NO_ROOM_FOR_PROF_ORB
+	iftrue .tryorbagain
+	checkevent EVENT_SPRUCE_CAN_GET_ORB
+	iftrue .orbspeech
 	checkevent EVENT_TALKED_TO_SPRUCE
 	iftrue .alreadytalked
 	setevent EVENT_TALKED_TO_SPRUCE
@@ -131,30 +131,37 @@ SpruceLabSpruce:
 	jumptextfaceplayer TEXTBOX_SPRUCE, SpruceLabSpruceText18
 .snare_asleep
 	jumptextfaceplayer TEXTBOX_SPRUCE, SpruceLabSpruceText8
-.trymasterballagain
+.tryorbagain
 	faceplayer
 	opentext TEXTBOX_SPRUCE
 	writetext SpruceLabSpruceText17
 	waitbutton
-	jump .getmasterball
-.masterballspeech
+	jump .getorb
+.orbspeech
 	faceplayer
 	opentext TEXTBOX_SPRUCE
 	writetext SpruceLabSpruceText14
 	waitbutton
-.getmasterball
+.getorb
 	changetextboxspeaker
-	verbosegiveitem MASTER_BALL
+	checkevent EVENT_ARTICUNO_ACTIVE
+	iftrue .articuno_active
+	verbosegiveitem ARTICUNO_ITEM
 	iffalse .no_room
+	jump .orb_cont
+.articuno_active
+	verbosegiveitem ZAPDOS_ITEM
+	iffalse .no_room
+.orb_cont
 	changetextboxspeaker TEXTBOX_SPRUCE
 	writetext SpruceLabSpruceText15
 	waitbutton
 	closetext
-	clearevent EVENT_NO_ROOM_FOR_MASTER_BALL
-	clearevent EVENT_SPRUCE_CAN_GET_MASTER_BALL
+	clearevent EVENT_NO_ROOM_FOR_PROF_ORB
+	clearevent EVENT_SPRUCE_CAN_GET_ORB
 	clearevent EVENT_SPRUCE_CAN_RECALL_ABOUT_ANCIENTBALL
 	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
-	setevent EVENT_GOT_MASTERBALL
+	setevent EVENT_GOT_PROF_ORB
 	clearevent EVENT_MUSEUM_ABIE_GONE
 	end
 .no_room
@@ -162,9 +169,9 @@ SpruceLabSpruce:
 	writetext SpruceLabSpruceText16
 	waitbutton
 	closetext
-	setevent EVENT_NO_ROOM_FOR_MASTER_BALL
+	setevent EVENT_NO_ROOM_FOR_PROF_ORB
 	end
-.repeatmasterballspeech
+.repeatorbspeech
 	faceplayer
 	opentext TEXTBOX_SPRUCE
 	writetext SpruceLabSpruceText15
@@ -525,7 +532,6 @@ SpruceLabSpruceText14:
 	
 	para "Well, you see,"
 	line "DR. ABIEGAIL is"
-	cont "none other than"
 	cont "my daughter!"
 	
 	para "Before my current"
@@ -584,26 +590,28 @@ SpruceLabSpruceText14:
 	para "but I do have"
 	line "something to show"
 	cont "my thanks."
-	
-	para "Take it.<WAIT_S>"
-	line "It's yours."
 	done
 	
 SpruceLabSpruceText15:
-	text "The MASTER BALL"
-	line "cannot fail."
+	text "It's said that ORB"
+	line "summons a rare and"
+	cont "powerful #MON"
+	cont "in the ONWA KEYS."
 	
-	para "It'll catch any"
-	line "#MON no matter"
-	cont "what."
+	para "I'm unsure if"
+	line "there's any merit"
+	cont "to that rumor,"
 	
-	para "It's a very rare"
-	line "and valuable item."
-	
-	para "I can't think"
+	para "but I can't think"
 	line "of anyone more"
-	cont "deserving of it"
-	cont "than you."
+	cont "qualified to find"
+	cont "out than you."
+	
+	para "…"
+	
+	para "Thank you again"
+	line "for everything,"
+	cont "<PLAYER>."
 	done
 	
 SpruceLabSpruceText16:

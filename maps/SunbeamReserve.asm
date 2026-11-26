@@ -22,7 +22,7 @@ SunbeamReserve_MapScriptHeader:
 	object_event 15,  9, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, NIDORAN_M, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, SunbeamReserveNidoranM, -1
 	object_event 14,  7, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, NIDORAN_F, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, SunbeamReserveNidoranF, -1
 	object_event  8, 12, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, LOPUNNY, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, SunbeamReserveLopunny, -1
-	object_event  5, 10, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, ALTARIA, -1, -1, (1 << 3) | PAL_OW_TEAL, PERSONTYPE_SCRIPT, 0, SunbeamReserveAltaria, -1
+	object_event  5, 10, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, GRANBULL, -1, -1, (1 << 3) | PAL_OW_PURPLE, PERSONTYPE_SCRIPT, 0, SunbeamReserveGranbull, -1
 	object_event 13, 14, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, MAGMAR, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, SunbeamReserveMagmar, -1
 	object_event 19, 13, SPRITE_MON_ICON, SPRITEMOVEDATA_POKEMON, 0, ELECTABUZZ, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_SCRIPT, 0, SunbeamReserveElectabuzz, -1
 	itemball_event  6,  4, RARE_CANDY, 1, EVENT_SUNBEAM_RESERVE_ITEM_BALL
@@ -151,10 +151,10 @@ SunbeamReserveLopunny:
 	closetext
 	end
 	
-SunbeamReserveAltaria:
-	opentext TEXTBOX_POKEMON, ALTARIA
-	writetext SunbeamReserveAltariaText
-	cry ALTARIA
+SunbeamReserveGranbull:
+	opentext TEXTBOX_POKEMON, GRANBULL
+	writetext SunbeamReserveGranbullText
+	cry GRANBULL
 	waitbutton
 	closetext
 	end
@@ -204,8 +204,8 @@ SunbeamReserveLopunnyText:
 	text "Lop! <WAIT_S>Lop!"
 	done
 	
-SunbeamReserveAltariaText:
-	text "…<WAIT_M>Taria?"
+SunbeamReserveGranbullText:
+	text "…Bulu?"
 	done
 	
 SunbeamReserveDonphanText:

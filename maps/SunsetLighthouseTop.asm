@@ -225,6 +225,31 @@ SunsetLighthouseTopDrawer:
 	yesorno
 	iffalse .no
 	writetext SunsetLighthouseTopDrawerText3
+	checkevent EVENT_GOT_MASTER_BALL
+	iftrue .end
+	buttonsound
+	farwritetext StdBlankText
+	pause 6
+	writetext SunsetLighthouseTopDrawerText4
+	waitbutton
+	loadvar wScriptVar, MASTER_BALL
+	itemtotext $0, $0
+	writetext .found_text
+	giveitem ITEM_FROM_MEM
+	iffalse .bag_full
+	setevent EVENT_GOT_MASTER_BALL
+	specialsound
+	itemnotify
+	endtext
+.bag_full
+	buttonsound
+	pocketisfull
+	endtext
+.found_text
+	; found @ !
+	text_jump UnknownText_0x1c0a1c
+	db "@"
+.end
 	waitbutton
 	endtext
 .no
@@ -281,8 +306,8 @@ SunsetLighthouseTopDrawerText3:
 	line "responsibilities"
 	cont "onto you and ran."
 	
-	para "I guess that is"
-	line "what I did."
+	para "I guess that's ex-"
+	line "actly what I did."
 	
 	para "You were too."
 	line "young."
@@ -328,6 +353,13 @@ SunsetLighthouseTopDrawerText3:
 	
 	para "The rest is"
 	line "blank."
+	done
+	
+SunsetLighthouseTopDrawerText4:
+	text "Oh!"
+	
+	para "There's something"
+	line "else in here…"
 	done
 	
 GiveMareepDollText:

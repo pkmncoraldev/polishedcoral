@@ -106,7 +106,7 @@ GlintApt12FNpc1Text:
 	line "that is."
 	
 	para "I'm trying to watch"
-	line "TV."
+	line "my stories!"
 	done
 	
 GlintApt12FNpc2Text1:

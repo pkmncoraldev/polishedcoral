@@ -37,19 +37,19 @@ GlintApt21FNpc1Text:
 	cont "battle."
 	
 	para "They'll use items"
-	line "such as BERRIES"
-	cont "all by themselves."
+	line "such as BERRIES or"
+	cont "TEA by themselves."
 	done
 	
 GlintApt21FNpc2Text:
-	text "#MON don't know"
-	line "how to use manmade"
-	cont "items like POTIONS"
+	text "#MON can't use"
+	line "manmade medicine"
+	cont "such as POTION"
 	cont "or ANTIDOTE,"
 	
 	para "so don't bother"
-	line "making them hold"
-	cont "them."
+	line "having them hold"
+	cont "it."
 	done
 	
 GlintApt21FNpc3Text:

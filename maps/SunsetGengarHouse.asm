@@ -359,15 +359,15 @@ SunsetGengarHouseNPC2TextNoBadges:
 	line "taking the GYM"
 	cont "CHALLENGE, eh?"
 	
-	para "Come back here"
-	line "when you get your"
-	cont "first GYM BADGE."
+	para "Come back after"
+	line "you get a GYM"
+	cont "BADGE or two."
 	
 	para "I'll be sure to"
 	line "give you something"
 	cont "special."
 	
-	para "Hohohoho."
+	para "Ohoho!"
 	done
 	
 SunsetGengarHouseNPC2TextMoreLater:
@@ -379,7 +379,7 @@ SunsetGengarHouseNPC2TextMoreLater:
 	line "give you something"
 	cont "special."
 	
-	para "Hohohoho."
+	para "Ohoho!"
 	done
 	
 SunsetGengarHouseNPC2TextNoMoreDolls:
@@ -392,7 +392,7 @@ SunsetGengarHouseNPC2TextNoMoreDolls:
 	para "You've truly come"
 	line "a long way!"
 	
-	para "Hohohoho."
+	para "Ohoho!"
 	done
 
 SunsetGengarHouseGengarText1:

@@ -673,6 +673,9 @@ GlintGroveSnubbull:
 	cry SNUBBULL
 	waitsfx
 	buttonsound
+	changetextboxspeaker
+	farwritetext StdBlankText
+	pause 6
 	writetext GlintGroveSnubbullText2
 	waitbutton
 	closetext
@@ -722,7 +725,7 @@ GlintGroveMina:
 	buttonsound
 	farwritetext StdBlankText
 	pause 6
-	spriteface GLINTGROVE_MINA, UP
+	spriteface GLINTGROVE_MINA, RIGHT
 	writetext GlintGroveMinaText3
 	buttonsound
 	farwritetext StdBlankText
@@ -732,10 +735,10 @@ GlintGroveMina:
 	waitbutton
 	checkitem BLOSSOM_TEA
 	iftrue .have_tea
-	spriteface GLINTGROVE_MINA, UP
+	spriteface GLINTGROVE_MINA, RIGHT
 	closetext
 	special Special_FadeOutMusic
-	pause 5
+	pause 10
 	playmapmusic
 	end
 .talked
@@ -754,7 +757,10 @@ GlintGroveMina:
 	writetext GlintGroveMinaText4
 	waitbutton
 	closetext
-	spriteface GLINTGROVE_MINA, UP
+	spriteface GLINTGROVE_MINA, RIGHT
+	special Special_FadeOutMusic
+	pause 10
+	playmapmusic
 	end
 .talked_have_tea
 	opentext TEXTBOX_MINA

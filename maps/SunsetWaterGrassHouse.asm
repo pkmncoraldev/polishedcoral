@@ -25,20 +25,32 @@ SunsetWaterGrassHouseNPC2:
 
 	
 SunsetWaterGrassHouseNPC1Text:
-	text "I prefer WATER"
-	line "#MON,"
+	text "CAP'N ABNER lives"
+	line "in the LIGHTHOUSE"
+	cont "on SUNSET CAPE."
 	
-	para "but you'll be more"
-	line "successful with a"
-	cont "balanced team."
+	para "Keeping that thing"
+	line "in working order"
+	cont "is an important"
+	cont "job, for sure."
+	
+	para "Not something I"
+	line "would want to do!"
 	done
 	
 SunsetWaterGrassHouseNPC2Text:
-	text "Do you like GRASS"
-	line "#MON?"
+	text "ABNER just showed"
+	line "up to SUNSET BAY"
+	cont "one day out of"
+	cont "the blue."
 	
-	para "I love them, <WAIT_S>but"
-	line "I just wish they"
-	cont "didn't have so many"
-	cont "weaknesses!"
+	para "All anyone knows"
+	line "about his past is"
+	cont "that he was once"
+	cont "a rich and power-"
+	cont "ful man."
+	
+	para "No one is sure"
+	line "why he left that"
+	cont "life behind…"
 	done

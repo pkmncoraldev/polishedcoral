@@ -47,16 +47,11 @@ SunsetPokeCenterSunsetPokeCenterYounginText:
 	done
 
 SunsetPokeCenterFireGuyText:
-	text "Have you talked"
-	line "to my sister and"
-	cont "her husband in the"
-	cont "house next door?"
+	text "Have you heard of"
+	line "FAIRY #MON?"
 	
-	para "Don't listen to"
-	line "them!"
-	
-	para "FIRE #MON are"
-	line "the best #MON!"
+	para "They're great, <WAIT_S>and"
+	line "all so adorable!"
 	done
 
 SunsetPokeCenterFairyGirlText:

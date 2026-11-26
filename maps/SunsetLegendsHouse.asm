@@ -43,5 +43,5 @@ SunsetLegendsHouseNPC2Text:
 	
 	para "I wonder if the"
 	line "ONWA region has"
-	cont "something similar."
+	cont "anything similar."
 	done

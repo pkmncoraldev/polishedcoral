@@ -467,9 +467,9 @@ SunsetMomText1:
 	line "a #MON today!"
 	
 	para "CAP'N ABNER"
-	line "lives in the"
-	cont "LIGHTHOUSE on"
-	cont "SUNSET CAPE."
+	line "lives out on"
+	cont "SUNSET CAPE,"
+	cont "remember?"
 	
 	para "Hurry! <WAIT_S>You're late!"
 	done

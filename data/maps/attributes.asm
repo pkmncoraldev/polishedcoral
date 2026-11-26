@@ -658,7 +658,7 @@ ENDM
 	map_attributes SunbeamBoatHouse, SUNBEAM_BOAT_HOUSE, $0, 0
 	map_attributes SunbeamSurfShop, SUNBEAM_SURF_SHOP, $0, 0
 	map_attributes SunbeamBikiniContest, SUNBEAM_BIKINI_CONTEST, $0, 0
-	map_attributes SunbeamDodrioHouse, SUNBEAM_DODRIO_HOUSE, $0, 0
+	map_attributes SunbeamExeggcuteHouse, SUNBEAM_EXEGGCUTE_HOUSE, $0, 0
 	map_attributes SunbeamOldCouplesHouse, SUNBEAM_OLD_COUPLES_HOUSE, $0, 0
 	map_attributes SunbeamSoftSandHouse, SUNBEAM_SOFT_SAND_HOUSE, $0, 0
 	map_attributes SunbeamTradeHouse, SUNBEAM_TRADE_HOUSE, $0, 0

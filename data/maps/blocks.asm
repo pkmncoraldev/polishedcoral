@@ -82,7 +82,7 @@ ObscuraGate_BlockData:
 
 SunsetWaterGrassHouse_BlockData:
 StarglowGrandpaHouse_BlockData:
-SunbeamDodrioHouse_BlockData:
+SunbeamExeggcuteHouse_BlockData:
 ShimmerHouse1_BlockData:
 Route3FriendshipHouse_BlockData:
 DuskHouse1_BlockData:

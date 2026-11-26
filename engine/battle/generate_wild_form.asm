@@ -112,7 +112,7 @@ WildSpeciesForms:
 	call IsInArray
 	jr nc, .CheckGen1
 	call Random
-	cp 50 percent + 1
+	cp 25 percent + 1
 	jr nc, .Default
 	jr .AlolanForm
 .LandmarkForm:
@@ -136,6 +136,7 @@ MeowthLandmarks:
 	db -1
 
 ExeggcuteLandmarks:
+	db ROUTE_15
 	db ROUTE_16
 	db SUNBEAM_ISLAND
 	db SUNBEAM_JUNGLE

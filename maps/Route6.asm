@@ -308,8 +308,8 @@ TrainerRoute6_7:
 	line "the tickets."
 	
 	para "They were in my"
-	line "trousers instead"
-	cont "of my jacket."
+	line "jacket instead"
+	cont "of my trousers."
 	
 	para "It's too late to"
 	line "tell her now."

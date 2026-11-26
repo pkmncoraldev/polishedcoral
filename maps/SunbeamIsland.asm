@@ -15,7 +15,7 @@ SunbeamIsland_MapScriptHeader:
 	warp_def 35, 17, 1, SUNBEAM_POKECENTER
 	warp_def 21, 34, 1, SUNBEAM_JUNGLE
 	warp_def 11, 25, 1, SUNBEAM_TRADE_HOUSE
-	warp_def 11, 31, 1, SUNBEAM_DODRIO_HOUSE
+	warp_def 11, 31, 1, SUNBEAM_EXEGGCUTE_HOUSE
 	warp_def 17, 16, 1, SPRUCES_LAB
 	warp_def 27, 11, 1, SUNBEAM_OLD_COUPLES_HOUSE
 	warp_def 27, 17, 1, SUNBEAM_SOFT_SAND_HOUSE
@@ -424,67 +424,8 @@ SunbeamIslandNPC1:
 	jumptextfaceplayer SunbeamIslandNPC1Text3
 
 SunbeamIslandNPC2:
-	faceplayer
-	opentext
-	writetext SunbeamIslandNPC2Text1
-	waitbutton
-	writebyte EXEGGCUTE
-	special Special_FindThatSpecies
-	iftrue .haveegg
-	closetext
-	end
-.haveegg
-	special FadeOutPalettes
-	callasm SunbeamIslandExeggcuteAsm
-	ifequal 4, .wrong_exeggcute
-	ifequal 3, .cancel
-	iffalse .no
-	writetext SunbeamIslandNPC2Text2
-	waitbutton
-	closetext
-	end
-.cancel
-	writetext SunbeamIslandNPC2Text3
-	waitbutton
-	closetext
-	end
-.no
-	writetext SunbeamIslandNPC2Text4
-	waitbutton
-	closetext
-	end
-.wrong_exeggcute
-	writetext SunbeamIslandNPC2Text5
-	waitbutton
-	closetext
-	end
+	jumptextfaceplayer SunbeamIslandNPC2Text
 	
-SunbeamIslandExeggcuteAsm:
-	farcall SelectEncounterHouseMon
-	jr c, .cancel
-	ld a, [wCurPartySpecies]
-	cp EXEGGCUTE
-	jr nz, .no
-	ld a, [wCurForm]
-	cp ALOLAN_FORM
-	jr nz, .wrong_exeggcute
-	ld a, TRUE
-	ld [wScriptVar], a
-	ret
-.no
-	ld a, FALSE
-	ld [wScriptVar], a
-	ret
-.cancel
-	ld a, 3
-	ld [wScriptVar], a
-	ret
-.wrong_exeggcute
-	ld a, 4
-	ld [wScriptVar], a
-	ret
-	
-
 SunbeamIslandNPC3:
 	faceplayer
 	opentext
@@ -647,48 +588,14 @@ SunbeamIslandNPC1Text3:
 	line "went."
 	done
 	
-SunbeamIslandNPC2Text1:
-	text "EXEGGCUTE around"
-	line "here are sometimes"
-	cont "taller than usual"
-	cont "after they evolve."
+SunbeamIslandNPC2Text:
+	text "There is a DODRIO"
+	line "RANCH to the NORTH"
+	cont "EAST."
 	
-	para "You can tell which"
-	line "ones will get big"
-	cont "by looking closely" 
-	cont "at their color."
-	
-	para "If you bring me an"
-	line "EXEGGCUTE, I can"
-	cont "tell you if it'll"
-	cont "grow tall."
-	done
-	
-SunbeamIslandNPC2Text2:
-	text "Yes!"
-	
-	para "This EXEGGCUTE"
-	line "will grow tall"
-	cont "for sure!"
-	done
-	
-SunbeamIslandNPC2Text3:
-	text "I'll be here if you"
-	line "find an EXEGGCUTE."
-	done
-	
-SunbeamIslandNPC2Text4:
-	text "That's not"
-	line "EXEGGCUTE!"
-	done
-	
-SunbeamIslandNPC2Text5:
-	text "Hmm…"
-	
-	para "Nope."
-	
-	para "This one won't get"
-	line "too big…"
+	para "The DODUO bred"
+	line "there are the"
+	cont "fastest around."
 	done
 
 SunbeamIslandNPC3Text1:

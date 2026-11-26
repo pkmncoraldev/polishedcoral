@@ -157,7 +157,7 @@ DEF MAP_NONE   EQU 0
 	map_const SUNBEAM_BOAT_HOUSE,                   	   4,  3 ;  5
 	map_const SUNBEAM_SURF_SHOP,						   4,  4 ;  6
 	map_const SUNBEAM_BIKINI_CONTEST,					   6,  5 ;  7
-	map_const SUNBEAM_DODRIO_HOUSE,               		   4,  4 ;  8
+	map_const SUNBEAM_EXEGGCUTE_HOUSE,             		   4,  4 ;  8
 	map_const SUNBEAM_OLD_COUPLES_HOUSE,               	   4,  4 ;  9
 	map_const SUNBEAM_SOFT_SAND_HOUSE,               	   4,  4 ; 10
 	map_const SUNBEAM_TRADE_HOUSE,						   4,  4 ; 11

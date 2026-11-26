@@ -3564,11 +3564,10 @@ SwimmerFGroup:
 
 	; SWIMMERF
 	db "MARIA@"
-	db TRAINERTYPE_NORMAL
+	db TRAINERTYPE_PERSONALITY
 	; party
-	db 17, WINGULL
-	db 16, SQUIRTLE
-	db 17, WINGULL
+	db 17, EXEGGCUTE, ABILITY_1 | QUIRKY, FEMALE | PLAIN_FORM
+	db 17, EXEGGCUTE, ABILITY_1 | QUIRKY, FEMALE | ALOLAN_FORM
 	db -1 ; end
 
 ; ================
@@ -5123,9 +5122,10 @@ TuberGroup:
 
 	; TUBER
 	db "SAMANTHA@"
-	db TRAINERTYPE_NORMAL
+	db TRAINERTYPE_MOVES
 	; party
-	db 17, MARILL
+	db 17, SQUIRTLE
+		db WATER_GUN, DEFENSE_CURL_HARDEN_WITHDRAW, 0, 0
 	db -1 ; end
 
 ; ================

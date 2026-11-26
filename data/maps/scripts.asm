@@ -247,7 +247,7 @@ INCLUDE "maps/SunbeamIslandEast.asm"
 
 SECTION "Sunbeam Island Scripts2", ROMX
 
-INCLUDE "maps/SunbeamDodrioHouse.asm"
+INCLUDE "maps/SunbeamExeggcuteHouse.asm"
 INCLUDE "maps/SunbeamSoftSandHouse.asm"
 INCLUDE "maps/SunbeamOldCouplesHouse.asm"
 INCLUDE "maps/SunbeamTradeHouse.asm"

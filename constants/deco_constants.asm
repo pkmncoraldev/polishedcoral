@@ -43,6 +43,7 @@ DEF const_value = 1
 	const MINAS_PAINTING
 	const MUSEUM_PHOTO
 	const P_WOOPER_DOLL
+	const CURSOLA_DOLL
 
 DEF const_value = 1
 	const SET_UP_BED
@@ -112,11 +113,11 @@ DEF __enum__ = 0
 
 	const BIG_DOLLS
 	deco  BIG_SNORLAX_DOLL
-	deco  BIG_ONIX_DOLL
+;	deco  BIG_ONIX_DOLL
 	deco  BIG_LAPRAS_DOLL
 	deco  BIG_GYARADOS_DOLL
 	deco  BIG_MAMOSWINE_DOLL
-	deco  BIG_MUK_DOLL
+;	deco  BIG_MUK_DOLL
 
 	const DOLLS
 	deco  PIKACHU_DOLL
@@ -132,13 +133,25 @@ DEF __enum__ = 0
 	deco  BUIZEL_DOLL
 	deco  DITTO_DOLL
 	deco  CORSOLA_DOLL
-;above dolls sold at store	
+;above dolls sold at store
+	deco  SMEARGLE_DOLL
+	deco  SWABLU_DOLL
+	deco  CUBONE_DOLL
+	deco  P_WOOPER_DOLL
+	deco  SUNFLORA_DOLL
+	deco  SUDOWOODO_DOLL
+	deco  ELEKID_DOLL
+	deco  MAGBY_DOLL
+	deco  VOLCARONA_DOLL
 	deco  BULBASAUR_DOLL
 	deco  CHARMANDER_DOLL
 	deco  SQUIRTLE_DOLL
 	deco  CHIKORITA_DOLL
 	deco  CYNDAQUIL_DOLL
 	deco  TOTODILE_DOLL
+	deco  GOLD_TROPHY_DOLL
+	deco  SILVER_TROPHY_DOLL
+;above dolls arent tracked by fortune teller
 	deco  TOGEPI_DOLL
 	deco  MAREEP_DOLL
 	deco  GIRAFARIG_DOLL
@@ -151,15 +164,9 @@ DEF __enum__ = 0
 	deco  DODUO_DOLL
 	deco  MILTANK_DOLL
 	deco  MARACTUS_DOLL
-	deco  SMEARGLE_DOLL
-	deco  SWABLU_DOLL
-	deco  CUBONE_DOLL
-	deco  P_WOOPER_DOLL
-	deco  SUNFLORA_DOLL
-	deco  SUDOWOODO_DOLL
 	deco  NATU_DOLL
-	deco  GOLD_TROPHY_DOLL
-	deco  SILVER_TROPHY_DOLL
+	deco  CURSOLA_DOLL
+	
 	
 	const_def 1
 	const FEATHERY_BED_BUY
@@ -193,11 +200,11 @@ DEF __enum__ = 0
 	const METROID_BUY
 	const KIRBY_BUY
 	const BIG_SNORLAX_DOLL_BUY
-	const BIG_ONIX_DOLL_BUY
+;	const BIG_ONIX_DOLL_BUY
 	const BIG_LAPRAS_DOLL_BUY
 	const BIG_GYARADOS_DOLL_BUY
 	const BIG_MAMOSWINE_DOLL_BUY
-	const BIG_MUK_DOLL_BUY
+;	const BIG_MUK_DOLL_BUY
 	const PIKACHU_DOLL_BUY
 	const EEVEE_DOLL_BUY
 	const CLEFAIRY_DOLL_BUY

@@ -39,7 +39,7 @@ SunsetGengarHouseNPC2:
 	iftrue .badge2
 	jumptext SunsetGengarHouseNPC2TextMoreLater
 .badge2
-	checkevent EVENT_DECO_GYARADOS_DOLL
+	checkevent EVENT_DECO_BIG_GYARADOS_DOLL
 	iffalse .gyarados
 	checkflag ENGINE_THIRDBADGE
 	iftrue .badge3
@@ -92,7 +92,7 @@ SunsetGengarHouseNPC2:
 	opentext
 	writetext SunsetGengarHouseNPC2TextBadge2
 	waitbutton
-	setevent EVENT_DECO_GYARADOS_DOLL
+	setevent EVENT_DECO_BIG_GYARADOS_DOLL
 	writetext GiveGyaradosDollText
 	playsound SFX_ITEM
 	waitsfx

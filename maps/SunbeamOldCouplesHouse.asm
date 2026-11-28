@@ -35,6 +35,7 @@ SunbeamIslandHouse1NPC2:
 	iffalse .do_dolls
 	checkevent EVENT_DECO_TOTODILE_DOLL
 	iffalse .do_dolls
+	setevent EVENT_DECO_ALL_STARTERS
 	jumptextfaceplayer SunbeamIslandHouse1NPC2Text2
 .do_dolls
 	faceplayer

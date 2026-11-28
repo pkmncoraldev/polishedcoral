@@ -168,6 +168,7 @@ ObscuraFortuneHouseTeller:
 	pause 15
 	refreshscreen $0
 	pause 5
+	closetext
 	end
 .no_more2
 	writetext NoMoreFortunesRightNowText
@@ -402,8 +403,8 @@ ObscuraFortuneHouseTellerSetupTapesAsm:
 	jr ObscuraFortuneHouseTellerAsm
 
 ObscuraFortuneHouseTellerSetupDecosAsm:
-	ld a, 28 ;number of tracked decos + 1
-	ld hl, DECO_FLAGS_START + 46 ;number of untracked decos
+	ld a, 18 ;number of tracked decos + 1
+	ld hl, DECO_FLAGS_START + 64 ;number of untracked decos
 	jr ObscuraFortuneHouseTellerAsm
 	
 ObscuraFortuneHouseTellerSetupUniqueEncountersAsm:
@@ -459,7 +460,7 @@ ObscuraFortuneHouseTellerAsm:
 	ld a, [wCurBattleMon]
 	cp 63 ;number of tracked TMHMs + 1
 	jr z, .tms
-	cp 28 ;number of tracked decos + 1
+	cp 18 ;number of tracked decos + 1
 	jr z, .decos
 	cp NUM_TAPE_PLAYER_SONGS
 	jr z, .tape
@@ -593,12 +594,12 @@ GivePsychicTMScript:
 NoMoreFortunesText:
 	text "Hmm…"
 	
-	para "I can't see"
-	line "anything…"
+	para "I see…<WAIT_L>"
+	line "Nothing!"
 	
-	para "I guess I can't"
-	line "help you with that"
-	cont "anymore…"
+	para "I can't help you"
+	line "with that anymore"
+	cont "at the moment…"
 	
 	para "Here, I'll give"
 	line "you your money"
@@ -1906,12 +1907,6 @@ Music_Unused:
 	prompt
 	
 TellerDecosText:
-	dw BulbasaurDollText
-	dw CharmanderDollText
-	dw SquirtleDollText
-	dw ChikoritaDollText
-	dw CyndaquilDollText
-	dw TotodileDollText
 	dw TogepiDollText
 	dw MareepDollText
 	dw GirafarigDollText
@@ -1924,22 +1919,12 @@ TellerDecosText:
 	dw DoduoDollText
 	dw MiltankDollText
 	dw MaractusDollText
-	dw SmeargleDollText
-	dw SwabluDollText
-	dw CuboneDollText
-	dw WooperDollText
-	dw SunfloraDollText
-	dw SudowoodoDollText
 	dw NatuDollText
+	dw CursolaDollText
 	dw MuseumPhotoText
-	dw GyaradosDollText
+	dw StartersDollText
 	
-BulbasaurDollText:
-CharmanderDollText:
-SquirtleDollText:
-ChikoritaDollText:
-CyndaquilDollText:
-TotodileDollText:
+StartersDollText:
 	text "There's a lady on"
 	line "SUNBEAM ISLAND."
 	
@@ -2090,19 +2075,22 @@ MaractusDollText2:
 	para "Check the shelves."
 	prompt
 	
-SmeargleDollText:
-GyaradosDollText:
-SwabluDollText:
-CuboneDollText:
-WooperDollText:
-SunfloraDollText:
-SudowoodoDollText:
 NatuDollText:
-	text "Have you rematched"
-	line "the GYM LEADERS?"
+	text "Your neighbor…"
 	
-	para "You might get a"
-	line "little surprise."
+	para "You should show"
+	line "him your progress."
+	
+	para "I'm sure he'd be"
+	line "proud of you."
+	prompt
+	
+CursolaDollText:
+	text "There is a girl"
+	line "in KOMORE VILLAGE."
+	
+	para "She has plenty of"
+	line "DOLLs to share."
 	prompt
 	
 MuseumPhotoText:

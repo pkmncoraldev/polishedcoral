@@ -36,3 +36,4 @@ DecorationNames:
 	db "MINA's PAINTING@"
 	db "MUSUEM PHOTO@"
 	db "WOOPER DOLL@"
+	db "CURSOLA DOLL@"

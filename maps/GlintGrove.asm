@@ -51,9 +51,9 @@ GlintGrove_MapScriptHeader:
 	strengthboulder_event 52, 49, EVENT_GLINT_GROVE_BOULDER_1
 	strengthboulder_event 53, 50, EVENT_GLINT_GROVE_BOULDER_2
 	tmhmball_event 37, 24, TM_METAL_CLAW, EVENT_TM31
-	fruittreeinvis_event 15, 63, FRUITTREE_GLINT_GROVE_1, CHESTO_BERRY
-	fruittreeinvis_event 17, 41, FRUITTREE_GLINT_GROVE_2, PECHA_BERRY
-	tapeball_event 17, 36, MUSIC_LASS_ENCOUNTER, 2, EVENT_MUSIC_LASS_ENCOUNTER
+	fruittreeinvis_event 15, 43, FRUITTREE_GLINT_GROVE_1, CHESTO_BERRY
+	fruittreeinvis_event 17, 21, FRUITTREE_GLINT_GROVE_2, PECHA_BERRY
+	tapeball_event 17, 16, MUSIC_LASS_ENCOUNTER, 2, EVENT_MUSIC_LASS_ENCOUNTER
 	
 	
 	const_def 1 ; object constants
